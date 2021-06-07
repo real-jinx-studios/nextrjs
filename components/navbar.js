@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import styles from './navbar.module.css'
 import Link from 'next/link'
 import utilStyles from "../styles/utils.module.css";
-import Image from "next/image";
+import MyImage from "./myImage";
 import cn from 'classnames';
 export default function Navbar(){
     const [scroll, setScroll]=useState(false)
@@ -52,8 +52,8 @@ export default function Navbar(){
                         [styles.nav_icon_wrapper]: scroll === false,
                         [styles.nav_icon_wrapper_scroll]: scroll === true
                     })}>
-                    <Link href='/'><a><img
-                        priority
+                    <Link href='/'><a><MyImage
+                        priority={true}
                         src='/images/ezlogo.png'
                         height={50}
                         width={100}

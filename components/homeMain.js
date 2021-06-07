@@ -1,6 +1,6 @@
 import utilStyles from "../styles/utils.module.css";
 import styles from "./homeMain.module.css";
-import Image from 'next/image'
+import MyImage from "./myImage";
 const myLoader = ({ src, width, quality }) => {
     return `https://master.d2174uzsw3epqk.amplifyapp.com${src}?w=${width}&q=${quality || 75}`
 }
@@ -31,11 +31,11 @@ export default function HomeMain(){
                 <div className={styles.product_cards}>
                     <div className={styles.product_card}>
                         <div className={styles.product_card_icon}>
-                            <Image loader={myLoader} src='/images/ezt.png' width={32} height={32} alt='ez titles icon'/>
+                            <MyImage  src='/images/ezt.png' width={32} height={32} alt='ez titles icon'/>
 
                         </div>
                         <div className={styles.product_card_software}>
-                            <Image loader={myLoader} src='/images/windows.png' width={20} height={20} alt='supported software'/>
+                            <MyImage  src='/images/windows.png' width={20} height={20} alt='supported software'/>
 
                         </div>
                         <h2>EZTitles</h2>
@@ -45,11 +45,11 @@ export default function HomeMain(){
                     </div>
                     <div className={styles.product_card} style={{'border':'1px solid #613dc1', 'background':'#613dc1ee'}}>
                         <div className={styles.product_card_icon}>
-                            <Image loader={myLoader} src='/images/ezc.png' width={32} height={32} alt='ez titles icon'/>
+                            <MyImage  src='/images/ezc.png' width={32} height={32} alt='ez titles icon'/>
 
                         </div>
                         <div className={styles.product_card_software}>
-                            <Image loader={myLoader} src='/images/windows.png' width={20} height={20} alt='supported software'/>
+                            <MyImage  src='/images/windows.png' width={20} height={20} alt='supported software'/>
 
                         </div>
                         <h2>EZConvert</h2>
@@ -59,11 +59,11 @@ export default function HomeMain(){
                     </div>
                     <div className={styles.product_card} style={{'border':'1px solid #de6b48', 'background':'#de6b48ee'}}>
                         <div className={styles.product_card_icon}>
-                            <Image loader={myLoader} src='/images/ep.png' width={32} height={32} alt='ez titles icon'/>
+                            <MyImage  src='/images/ep.png' width={32} height={32} alt='ez titles icon'/>
 
                         </div>
                         <div className={styles.product_card_software}>
-                            <Image loader={myLoader} src='/images/windows.png' width={20} height={20} alt='supported software'/>
+                            <MyImage  src='/images/windows.png' width={20} height={20} alt='supported software'/>
 
                         </div>
                         <h2>EZTitles Plug-ins</h2>
@@ -73,11 +73,11 @@ export default function HomeMain(){
                     </div>
                     <div className={styles.product_card} style={{'border':'1px solid #79b473', 'background':'#79b473ee'}}>
                         <div className={styles.product_card_icon}>
-                            <Image loader={myLoader} src='/images/3d.png' width={32} height={32} alt='ez titles icon'/>
+                            <MyImage  src='/images/3d.png' width={32} height={32} alt='ez titles icon'/>
 
                         </div>
                         <div className={styles.product_card_software}>
-                            <Image loader={myLoader} src='/images/windows.png' width={20} height={20} alt='supported software'/>
+                            <MyImage  src='/images/windows.png' width={20} height={20} alt='supported software'/>
 
                         </div>
                         <h2>3DTitles</h2>
