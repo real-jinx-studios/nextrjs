@@ -4,7 +4,6 @@ import utilStyles from '../styles/utils.module.css'
 import Navbar from "../components/navbar";
 import HomeMain from "../components/homeMain";
 import HomePostMain from "../components/homePostMain";
-import {getTables} from "../lib/mysql";
 
 export async function getStaticProps(){
     const allPostsData='undefined'
