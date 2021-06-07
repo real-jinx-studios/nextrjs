@@ -17,7 +17,7 @@ export default function HomePostMain(){
     const elements=stuff.map((x,i)=><div key={i} className={styles.home_post_main_content}><div className={styles.home_post_main_content_inner}>
         <div className={styles.home_post_main_content_icon}>
             <div className={styles.line}></div>
-                <div className={styles.home_post_main_content_icon_image}><Image
+                <div className={styles.home_post_main_content_icon_image}><img
                 priority
                 src={x.icon_url}
                 height={50}

@@ -52,7 +52,7 @@ export default function Navbar(){
                         [styles.nav_icon_wrapper]: scroll === false,
                         [styles.nav_icon_wrapper_scroll]: scroll === true
                     })}>
-                    <Link href='/'><a><Image
+                    <Link href='/'><a><img
                         priority
                         src='/images/ezlogo.png'
                         height={50}
