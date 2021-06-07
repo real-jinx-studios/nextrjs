@@ -7,8 +7,8 @@ import HomePostMain from "../components/homePostMain";
 import {getTables} from "../lib/mysql";
 
 export async function getStaticProps(){
-    const allPostsData=getTables()
-    if(allPostsData!=undefined){
+    const allPostsData='undefined'
+    if(allPostsData!='undefined'){
         return{
             props:{
                 allPostsData
