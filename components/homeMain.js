@@ -1,7 +1,9 @@
 import utilStyles from "../styles/utils.module.css";
 import styles from "./homeMain.module.css";
 import Image from 'next/image'
-
+const myLoader = ({ src, width, quality }) => {
+    return `https://master.d2174uzsw3epqk.amplifyapp.com/${src}?w=${width}&q=${quality || 75}`
+}
 
 export default function HomeMain(){
     return(
@@ -75,7 +77,7 @@ export default function HomeMain(){
 
                         </div>
                         <div className={styles.product_card_software}>
-                            <img src='/images/windows.png' width={20} height={20} alt='supported software'/>
+                            <Image loader={myLoader} src='/images/windows.png' width={20} height={20} alt='supported software'/>
 
                         </div>
                         <h2>3DTitles</h2>
