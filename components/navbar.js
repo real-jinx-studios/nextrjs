@@ -4,7 +4,9 @@ import Link from 'next/link'
 import utilStyles from "../styles/utils.module.css";
 import MyImage from "./myImage";
 import cn from 'classnames';
+import {useRouter} from 'next/router'
 export default function Navbar(){
+    const router = useRouter();
     const [scroll, setScroll]=useState(false)
     const sticky=80
     const catchScroll=(e)=>{
@@ -49,10 +51,10 @@ export default function Navbar(){
                 </div>
                 <div className={styles.nav_sec_center}>
                     <div className={cn({
-                        [styles.nav_icon_wrapper]: scroll === false,
+                        [router.pathname!=='/'?styles.nav_icon_wrapper:styles.nav_icon_wrapper_home]: scroll === false,
                         [styles.nav_icon_wrapper_scroll]: scroll === true
                     })}>
-                    <Link href='/'><a><MyImage
+                    <Link href={router.pathname!=='/'?'/':'/all'}><a><MyImage
                         priority={true}
                         src='/images/ezlogo.png'
                         height={50}
