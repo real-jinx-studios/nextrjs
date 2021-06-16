@@ -1,0 +1,132 @@
+.main_wrapper{
+    position:relative;
+    width:100%;
+    background: #2e77bb;
+    overflow: hidden;
+
+}
+.main_inner{
+    position:relative;
+    padding-top: 175px;
+    margin:0 auto;
+    text-align: center;
+    overflow:hidden;
+    z-index:1;
+}
+.title_icon_wrapper{
+    display: flex;
+    justify-content: center;
+}
+.caption_wrapper{
+
+}
+.free_trial_wrapper{
+
+}
+.big_title{
+    font-size: 48px;
+    font-weight: 900;
+    padding-left: 1%;
+
+}
+.caption{
+    font-size: 36px;
+    margin-top:0;
+
+}
+
+.free_trial{
+    height: 50px;
+    padding: 0 50px;
+    border-radius: 18px;
+    line-height: 50px;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    -webkit-transition: background-color .2s;
+    transition: background-color .2s;
+    color: #fff;
+    background:#191919;
+    margin-bottom:80px;
+
+}
+.free_trial:hover{
+background: #ffffff;
+    color: #191919;
+}
+.background_letter{
+    font-size: 900px;
+    color:#ffffff;
+    opacity:20%;
+    position:absolute;
+    user-select: none;
+    z-index: 0;
+}
+.E{
+    left:0;
+    top:-80%;
+}
+.Z{
+    left:15%;
+    top:-60%;
+}
+.T{
+    left:29%;
+    top:-39%;
+}
+
+
+/*content css*/
+
+
+.content_wrapper{
+    padding-top:80px;
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 22px;
+    padding-right: 22px;
+    max-width: 1276px;
+}
+.content_inner{
+    display: flex;
+    margin: 0 auto;
+
+}
+.content_inner_text{
+   /*flex-basis: calc(8.3333%*4 - 16px*2);*/
+    flex:0 0 25%;
+   max-width: calc(8.3333%*4 - 16px*2);
+    flex-direction: column;
+}
+.paragraph{
+    margin-bottom: 58px;
+    line-height: 25px;
+}
+.image_wrapper{
+    margin-left:calc(8.33333%*1 + 16px);
+    /*flex-basis: calc(8.33333%*8 - 16px*2);*/
+    flex:0 0 74%;
+    box-sizing: border-box;
+    position: relative;
+
+}
+.image_inner{
+
+
+
+}
+
