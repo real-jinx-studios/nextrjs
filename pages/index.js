@@ -31,9 +31,11 @@ export async function getStaticProps(){
 export default function Home({results}) {
     const { entries, isLoading } = useEntries()
 
-    if(results!=undefined)
-    results=results.map(x=><div key={x.prID} className='db'><h3>{x.prName}</h3><br/><p>{x.prText}</p></div>)
-
+    if(results!=undefined) {
+        results = results.map(x => <div key={x.prID} className='db'><h3>{x.prName}</h3><br/><p>{x.prText}</p></div>)
+    }else{
+        results=<div>error fetching</div>
+    }
     if (isLoading) {
     return(
         <Layout home>
