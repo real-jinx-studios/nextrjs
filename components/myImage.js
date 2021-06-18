@@ -8,7 +8,7 @@ const MyImage = (props) => {
     return (
         <Image
             priority={props.priority || false}
-            // loader={myLoader}
+            loader={myLoader}
             src={props.src || ''}
             alt={props.alt || ''}
             width={props.width}
