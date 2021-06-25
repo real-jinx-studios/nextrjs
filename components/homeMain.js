@@ -126,7 +126,7 @@ export default function HomeMain(props){
                                 <h2>EZPlug-ins</h2>
                             </div>
                             <div className={styles.card_description}>
-                                <p>The plug-ins for ProMedia Carbon, Rhozet Carbon Coder, Adobe® Premiere® Pro, Avid® Media Composer® and Capella Systems Cambria File Convert are powerful tools which allows you to load and encode (burn) your subtitles Closed Caption, Teletext or DVB files with the video.</p>
+                                <p>The plug-ins for ProMedia Carbon, Rhozet&apos; Carbon Coder, Adobe® Premiere® Pro, Avid® Media Composer® and Capella Systems Cambria File Convert are powerful tools which allows you to load and encode (burn) your subtitles Closed Caption, Teletext or DVB files with the video.</p>
                             </div>
                             <div className={styles.card_button}>
                                 <Link href='/products/plugins'><a className={styles.card_button_inner}>Learn More</a></Link>
