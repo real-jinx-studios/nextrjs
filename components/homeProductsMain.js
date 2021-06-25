@@ -63,7 +63,7 @@ export default function HomeProductsMain(){
                         </div>
                         <h2>EZTitles Plug-ins</h2>
                         <h4><strong>for integration</strong></h4>
-                        <p>The plug-ins for ProMedia Carbon & Rhozet Carbon Coder, and Capella Systems' Cambria File Convert are powerful tools which allows you to load and encode your subtitles Closed Caption, Teletext or DVB files with the video.</p>
+                        <p>The plug-ins for ProMedia Carbon & Rhozet Carbon Coder, and Capella Systems Cambria File Convert are powerful tools which allows you to load and encode your subtitles Closed Caption, Teletext or DVB files with the video.</p>
 
                     </div>
                     <div className={styles.product_card} style={{'border':'1px solid #79b473', 'background':'#79b47366'}}>
