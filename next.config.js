@@ -1,8 +1,5 @@
-module.exports = {
-    trailingSlash: true,
-    exportPathMap: function() {
-      return {
-        '/': { page: '/' }
-      };
+module.exports={
+    images:{
+        domains: ['https://master.d2174uzsw3epqk.amplifyapp.com']
     }
-  };
+}
