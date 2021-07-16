@@ -348,6 +348,152 @@
     color:#78b2e8;
 }
 
+.clients_title{
+    margin: 0 auto;
+    padding-bottom: 80px;
+    text-decoration: underline;
+    text-decoration-color: #ffffff88;
+    z-index: 2;
+    position: relative;
+}
+.customers_slider{
+    margin-top: 16rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+}
+.customers_slider_container{
+    overflow: hidden;
+    white-space: nowrap;
+}
+.customers_slider_wrapper{
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+.slow{
+    -webkit-animation: slide 80s linear infinite;
+    animation: slide 80s linear infinite;
+}
+.fast{
+    -webkit-animation: slide 120s linear infinite;
+    animation: slide 100s linear infinite;
+}
+.customers_slider_inner{
+    display: inline-block;
+    margin-bottom: 40px;
+    width: max-content;
+}
+.customers_logos_container{
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+.customers_logos{
+    display: inline-block;
+    padding: 0 4rem;
+    vertical-align: middle;
+    opacity: 1;
+    outline: none;
+    cursor: default;
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+}
+.customers_svg:hover{
+    opacity: 0.96;
+}
+.customers_svg{
+    opacity:0.48;
+    padding-left: 2%;
+    padding-right: 2%;
+    display: inline-block;
+}
+@-webkit-keyframes slide {
+    from {
+        -webkit-transform:translate3d(0,0,0);
+        -ms-transform:translate3d(0,0,0);
+        transform:translate3d(0,0,0);
+    }
+    to {
+        -webkit-transform:translate3d(-50%,0,0);
+        -ms-transform:translate3d(-50%,0,0);
+        transform:translate3d(-50%,0,0);
+    }
+}
+@keyframes slide {
+    from {
+        -webkit-transform:translate3d(0,0,0);
+        -ms-transform:translate3d(0,0,0);
+        transform:translate3d(0,0,0);
+    }
+    to {
+        -webkit-transform:translate3d(-50%,0,0);
+        -ms-transform:translate3d(-50%,0,0);
+        transform:translate3d(-50%,0,0);
+    }
+}
+
+
+/*slider animation*/
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.slider_container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.slider_content_wrapper {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.slider-content-wrapper.fast {
+    -webkit-animation: scroll 20s linear infinite;
+    animation: scroll 20s linear infinite;
+}
+
+.slider-content-wrapper.slow {
+    -webkit-animation: scroll 60s linear infinite;
+    animation: scroll 60s linear infinite;
+}
+
+.slider-content-wrapper > div {
+    display: inline-block;
+}
+
+@-webkit-keyframes scroll {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(-50%, 0, 0);
+        -ms-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+@keyframes scroll {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(-50%, 0, 0);
+        -ms-transform: translate3d(-50%, 0, 0);
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+
 
 /*card animation*/
 

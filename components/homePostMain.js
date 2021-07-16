@@ -1,6 +1,7 @@
 import styles from './homeMain.module.css'
 import MyImage from "./myImage"
 import Link from 'next/link'
+import Logo from "./logo";
 
 export default function HomePostMain(){
     const stuff=Array.from({length:14},()=>{
@@ -27,6 +28,7 @@ export default function HomePostMain(){
     return(
         <div className={styles.home_post_main_wrapper}>
             {elements}
+
 
         </div>
     )
