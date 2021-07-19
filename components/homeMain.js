@@ -1,12 +1,18 @@
 import utilStyles from "../styles/utils.module.css";
 import styles from "./homeMain.module.css";
 import MyImage from "./myImage";
-import Link from 'next/link'
+import Link from 'next/link';
+import {useEffect, useState} from 'react';
+import AppShowcase from "./appShowcase";
 const myLoader = ({ src, width, quality }) => {
     return `https://master.d2174uzsw3epqk.amplifyapp.com${src}?w=${width}&q=${quality || 75}`
 }
 
 export default function HomeMain(props){
+    const [selectedApp, setSelectedApp]=useState(3)
+    useEffect(()=>{
+        console.log(selectedApp)
+    },[selectedApp])
     return(
         <div className={''}>
             <div className={styles.video_background}>
@@ -16,7 +22,7 @@ export default function HomeMain(props){
                 </video>
             </div>
             <div className={styles.landing}>
-            <div className={styles.intro}>
+            {/*<div className={styles.intro}>
                 <div className={`${styles.intro_paragraph} ${utilStyles.whiteText}`}>
                     <h1 style={{'fontWeight':'lighter'}}>Start subtitling with some of the world’s most advanced professional subtitling tools.</h1>
                     <br />
@@ -30,13 +36,14 @@ export default function HomeMain(props){
                 </div>
 
 
-            </div>
+            </div>*/}
+                <AppShowcase id={selectedApp}/>
                 <div className={styles.products_outer}>
                     <div className={styles.products}>
-                        <input className={`${styles.radio} ${styles.r1}`} type="radio" name="slider" id="item-1"/>
-                            <input className={`${styles.radio} ${styles.r2}`} type="radio" name="slider" id="item-2"/>
-                                <input className={`${styles.radio} ${styles.r3}`} type="radio" name="slider" id="item-3" defaultChecked/>
-                                    <input className={`${styles.radio} ${styles.r4}`} type="radio" name="slider" id="item-4"/>
+                        <input className={`${styles.radio} ${styles.r1}`} type="radio" name="slider" id="item-1" onClick={()=>{setSelectedApp(1)}}/>
+                            <input className={`${styles.radio} ${styles.r2}`} type="radio" name="slider" id="item-2" onClick={()=>{setSelectedApp(2)}}/>
+                                <input className={`${styles.radio} ${styles.r3}`} type="radio" name="slider" id="item-3" defaultChecked onClick={()=>{setSelectedApp(3)}}/>
+                                    <input className={`${styles.radio} ${styles.r4}`} type="radio" name="slider" id="item-4" onClick={()=>{setSelectedApp(4)}}/>
 
 
                         <label id='slide3' htmlFor='item-3' className={`${styles.product_card} ${styles.eztitles_card}`}>

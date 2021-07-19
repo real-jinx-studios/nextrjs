@@ -54,7 +54,9 @@ export default function Footer(){
                         ©
                         2002 - 2022 EZTitles Development Studio
                     </div>
-
+                    <div className={styles.footer_bottom_inner}>
+                        <small style={{"color":"#ffffff66"}}>site ver.: 0.1.1</small>
+                    </div>
                 </div>
             </div>
         </div>
