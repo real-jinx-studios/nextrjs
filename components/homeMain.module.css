@@ -245,17 +245,37 @@
 
 
 /*home post main css*/
+.spotlight_main{
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 100%;
+    justify-content: center;
+}
+.spotlight_secondary{
+    display: flex;
+    position: relative;
+    z-index: 2;
+    flex-direction: row;
+    color:#ffffffcc;
+    flex: 0 0 100%;
+    justify-content: center;
+}
+.spotlight_undertext{
+
+}
 .spotlight_title{
     position: relative;
     z-index: 2;
-    width: 100%;
-    text-align: center;
-    margin-top: 320px;
-    margin-bottom: 58px;
+    padding-left:20px;
+
 }
 .feature_spotlight{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 238px;
+    margin-bottom: 58px;
+    justify-content: center;
 }
 .home_post_main_wrapper{
     position: relative;
@@ -386,12 +406,16 @@
 
 }
 .slow{
-    -webkit-animation: slide 80s linear infinite;
-    animation: slide 80s linear infinite;
+    -webkit-animation: slide 60s linear infinite;
+    animation: slide 60s linear infinite;
 }
 .fast{
-    -webkit-animation: slide 120s linear infinite;
-    animation: slide 120s linear infinite;
+    -webkit-animation: slide 100s linear infinite;
+    animation: slide 100s linear infinite;
+}
+.super_fast{
+    -webkit-animation: slide 30s linear infinite;
+    animation: slide 30s linear infinite;
 }
 .customers_slider_inner{
     display: inline-block;

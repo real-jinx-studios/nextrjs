@@ -48,12 +48,28 @@ export default function Home() {
                     <div className={`${styles.customers_slider_wrapper} ${styles.slow}`}>
                         <div className={styles.customers_slider_inner}>
                             <div className={styles.customers_logos_container}>
-                                <Logo class={styles.customers_logos} img={styles.customers_svg} reverse={0} part={2}/>
+                                <Logo class={styles.customers_logos} img={styles.customers_svg} reverse={0} part={3}/>
                             </div>
                         </div>
                         <div className={styles.customers_slider_inner}>
                             <div className={styles.customers_logos_container}>
-                                <Logo class={styles.customers_logos} img={styles.customers_svg} reverse={0} part={1}/>
+                                <Logo class={styles.customers_logos} img={styles.customers_svg} reverse={0} part={4}/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div className={styles.customers_slider_container}>
+                    <div className={`${styles.customers_slider_wrapper} ${styles.super_fast}`}>
+                        <div className={styles.customers_slider_inner}>
+                            <div className={styles.customers_logos_container}>
+                                <Logo class={styles.customers_logos} img={styles.customers_svg} reverse={1} part={5}/>
+                            </div>
+                        </div>
+                        <div className={styles.customers_slider_inner}>
+                            <div className={styles.customers_logos_container}>
+                                <Logo class={styles.customers_logos} img={styles.customers_svg} reverse={1} part={5}/>
                             </div>
                         </div>
 
