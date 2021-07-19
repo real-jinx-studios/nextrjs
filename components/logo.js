@@ -34,12 +34,21 @@ export default function Logo(props){
         url:'/images/ViaSat.svg'
     },{
         url:'/images/ZDF.svg'
-    }]
+    }, {
+        url: '/images/EA.svg'
+    }
+        ]
 
     let containers=logos.map(x=><img className={props.img} src={x.url}/>)
     if(props.reverse==1){
         containers.reverse()
     }
+    if(props.part==1 || props.part==2){
+        containers=containers.slice(0, containers.length-3)
+    }else{
+        containers=containers.slice(3)
+    }
+
 
 
     return (<div className={props.class}>{containers}</div>);

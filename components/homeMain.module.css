@@ -245,8 +245,19 @@
 
 
 /*home post main css*/
-.home_post_main_wrapper{
+.spotlight_title{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
     margin-top: 320px;
+    margin-bottom: 58px;
+}
+.feature_spotlight{
+    display:flex;
+    flex-direction: row;
+}
+.home_post_main_wrapper{
     position: relative;
     display: flex;
     flex-direction: row;
@@ -350,11 +361,12 @@
 
 .clients_title{
     margin: 0 auto;
-    padding-bottom: 80px;
-    text-decoration: underline;
-    text-decoration-color: #ffffff88;
+    padding-bottom: 60px;
     z-index: 2;
     position: relative;
+}
+.clients_title h2{
+    color:#ffffffbb !important;
 }
 .customers_slider{
     margin-top: 16rem;
@@ -379,7 +391,7 @@
 }
 .fast{
     -webkit-animation: slide 120s linear infinite;
-    animation: slide 100s linear infinite;
+    animation: slide 120s linear infinite;
 }
 .customers_slider_inner{
     display: inline-block;

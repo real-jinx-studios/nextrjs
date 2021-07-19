@@ -26,11 +26,14 @@ export default function HomePostMain(){
     </div></div>)
 
     return(
+        <>
+            <div className={styles.feature_spotlight}><MyImage src='/images/spotlight.png' width={50} height={50}></MyImage> <h2 className={styles.spotlight_title}>Feature Spotlight</h2></div>
         <div className={styles.home_post_main_wrapper}>
             {elements}
 
 
         </div>
+        </>
     )
 }
 
