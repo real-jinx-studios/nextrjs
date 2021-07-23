@@ -4,9 +4,6 @@ import MyImage from "./myImage";
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
 import AppShowcase from "./appShowcase";
-const myLoader = ({ src, width, quality }) => {
-    return `https://master.d2174uzsw3epqk.amplifyapp.com${src}?w=${width}&q=${quality || 75}`
-}
 
 export default function HomeMain(props){
     const [selectedApp, setSelectedApp]=useState(3)
