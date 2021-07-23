@@ -321,6 +321,10 @@ text-align: center;
     height:98px;
     background: #78b2e8cc;
 }
+.res_ultra:hover, .res_full:hover, .res_hd:hover, .res_sd:hover{
+    background: #c7441fee;
+    cursor: pointer;
+}
 .res_inner{
     position: relative;
     width: 100%;
