@@ -7,7 +7,7 @@ export default function Subtitle(){
     return (
         <>
             <div className={styles.video_background}>
-                <video autoPlay loop>
+                <video style={{"width":"100%"}} autoPlay loop>
 
                     <source src="/videos/hero-eztitles.mp4"/>
                 </video>
