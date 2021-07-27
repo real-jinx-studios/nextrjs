@@ -121,7 +121,7 @@ export default function Logo(props){
     }
         ]
 
-    let containers=logos.map(x=><img className={props.img} src={x.url}/>)
+    let containers=logos.map((x,i)=><img key={i} className={props.img} src={x.url}/>)
     if(props.reverse==-1){
         containers.reverse()
     }

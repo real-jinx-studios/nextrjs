@@ -1,9 +1,13 @@
 import styles from '../styles/subtitle.module.css'
 import MyImage from "../components/myImage";
 import Link from 'next/link'
+import ReactTooltip from 'react-tooltip';
 
 
 export default function Subtitle(){
+
+
+
     return (
         <>
             <div className={styles.video_background}>
@@ -30,6 +34,7 @@ export default function Subtitle(){
             </div>
         </div>
         <div className={styles.content_wrapper}>
+            {/*first section*/}
             <div className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
@@ -135,7 +140,8 @@ export default function Subtitle(){
 
 
             </div>
-            <div style={{"margin-top":"230px"}} className={styles.content_inner}>
+            {/*second section*/}
+            <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Almost any Video File</h2>
@@ -255,16 +261,17 @@ export default function Subtitle(){
 
 
             </div>
-            <div style={{"margin-top":"230px", "padding-bottom":"230px"}} className={styles.content_inner}>
+            {/*third section*/}
+            <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Any type of resolution</h2>
                     </div>
                 </div>
                 <div className={styles.dc}>
-                    <div className={`${styles.dc_inner_res} ${styles.text_focus_in}`}>
+                    <div style={{"textAlign":"center"}} className={`${styles.dc_inner_res} ${styles.text_focus_in}`}>
+                        <h1 className={styles.h1_res}>from SD<small className={styles.very_small}>(640x480)</small> up to 4k<small className={styles.very_small}>(4096x2160)</small></h1>
                         <div className={styles.dc_inner_content_res}>
-                           {/* <div className={styles.boxes_info_res}><div className={styles.full_res}><MyImage src='/images/res2.jpg' width={1500} height={800}/></div></div>*/}
                             <div className={styles.boxes_info_res}>
                                 <div className={`${styles.res_ultra} ${styles.scale_in_bl_3}`}><div className={styles.res_inner}><h1 className={styles.res_size_ultra}>4096x2160</h1><div className={styles.res_name}><p>4K</p></div></div></div>
                                 <div className={`${styles.res_full} ${styles.scale_in_bl_2}`}><div className={styles.res_inner}><h1 className={styles.res_size_full}>1920x1080</h1><div className={styles.res_name}><p>FULL HD</p></div></div></div>
@@ -284,7 +291,274 @@ export default function Subtitle(){
 
 
             </div>
+            {/*fourth section*/}
+            <div style={{"marginTop":"230px"}} className={styles.content_inner}>
+                <div className={styles.content_inner_text}>
+                    <div className={styles.paragraph}>
+                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>and any screen ratio</h2>
 
+                    </div>
+                </div>
+                <div className={styles.dc_ratio}>
+                    <div className={styles.ratio}>
+                        <div className={`${styles.ratio_row}`}>
+                            <div data-tip data-for='info1' className={`${styles.dc_inner_ratio_5_4} ${styles.dc_ratio_hover}`}>
+                                <div className={styles.info_icon}><MyImage src='/images/icons/info.png' width={20} height={20}/></div>
+                                <ReactTooltip id='info1' type='info'>
+                                    <span>Early television receivers and large-format computer monitors</span>
+
+                                </ReactTooltip>
+
+                                <div className={styles.dc_inner_content}>
+                                    <div className={styles.boxes_info}>
+                                        <Link href="/pages/Streaming_Services">
+                                            <a>
+                                                <div className={styles.center_elem_ratio}>
+                                                    <div className={styles.center_elem_ratio_wrapper}>
+                                                            <h3 className={styles.center_elem_text}>5:4</h3>
+
+                                                        <div className={styles.center_elem_ratio_inner}>
+                                                            <MyImage src='/images/icons/pc.png' width={39} height={39}/>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-tip data-for='info2' className={`${styles.dc_inner_ratio_4_3} ${styles.dc_ratio_hover}`}>
+                                <div className={styles.info_icon}><MyImage src='/images/icons/info.png' width={20} height={20}/></div>
+                                <ReactTooltip id='info2' type='info'>
+                                    <span>4:3 was the normal ratio for standard-definition television sets.<br/>Today, the 4:3 aspect ratio primarily serves artistic purposes.</span>
+
+                                </ReactTooltip>
+                                <div className={styles.dc_inner_content}>
+                                    <div className={styles.boxes_info}>
+                                        <Link href="/pages/Streaming_Services">
+                                            <a>
+                                                <div className={styles.center_elem_ratio}>
+                                                    <div className={styles.center_elem_ratio_wrapper}>
+                                                        <h3 className={styles.center_elem_text}>4:3</h3>
+
+                                                        <div className={styles.center_elem_ratio_inner}>
+                                                            <MyImage src='/images/icons/tv.png' width={39} height={39}/>
+                                                            <MyImage src='/images/icons/pc.png' width={39} height={39}/>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-tip data-for='info3' className={`${styles.dc_inner_ratio_3_2} ${styles.dc_ratio_hover}`}>
+                                <div className={styles.info_icon}><MyImage src='/images/icons/info.png' width={20} height={20}/></div>
+                                <ReactTooltip id='info3' type='info'>
+                                    <span>Classic 35 mm still photographic film.</span>
+
+                                </ReactTooltip>
+                                <div className={styles.dc_inner_content}>
+                                    <div className={styles.boxes_info}>
+                                        <Link href="/pages/Streaming_Services">
+                                            <a>
+                                                <div className={styles.center_elem_ratio}>
+                                                    <div className={styles.center_elem_ratio_wrapper}>
+                                                        <h3 className={styles.center_elem_text}>3:2</h3>
+
+                                                        <div className={styles.center_elem_ratio_inner}>
+                                                            <MyImage src='/images/icons/photographic-film.png' width={39} height={39}/>
+                                                            <MyImage src='/images/icons/camera.png' width={39} height={39}/>
+                                                            <MyImage src='/images/icons/tablet.png' width={39} height={39}/>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-tip data-for='info4' className={`${styles.dc_inner_ratio_16_10} ${styles.dc_ratio_hover}`}>
+                                <div className={styles.info_icon}><MyImage src='/images/icons/info.png' width={20} height={20}/></div>
+                                <ReactTooltip id='info4' type='info'>
+                                    <span>A common computer screen ratio.</span>
+
+                                </ReactTooltip>
+
+                                <div className={styles.dc_inner_content}>
+                                    <div className={styles.boxes_info}>
+                                        <Link href="/pages/Streaming_Services">
+                                            <a>
+                                                <div className={styles.center_elem_ratio}>
+                                                    <div className={styles.center_elem_ratio_wrapper}>
+                                                        <h3 className={styles.center_elem_text}>16:10</h3>
+
+                                                        <div className={styles.center_elem_ratio_inner}>
+                                                            <MyImage src='/images/icons/computer-widescreen.png' width={39} height={39}/>
+                                                            <MyImage src='/images/icons/pc.png' width={39} height={39}/>
+                                                            <MyImage src='/images/icons/smartphone.png' width={39} height={39}/>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={`${styles.ratio_row}`}>
+                            <div data-tip data-for='info5' className={`${styles.dc_inner_ratio_16_9} ${styles.dc_ratio_hover}`}>
+                                <div className={styles.info_icon}><MyImage src='/images/icons/info.png' width={20} height={20}/></div>
+                                <ReactTooltip id='info5' type='info'>
+                                    <span>The standard size for high definition widescreen televisions and most computer monitors,<br/>16:9 is the most common aspect ratio used today.</span>
+
+                                </ReactTooltip>
+                                <div className={styles.dc_inner_content}>
+                                    <div className={styles.boxes_info}>
+                                        <Link href="/pages/Streaming_Services">
+                                            <a>
+                                                <div className={styles.center_elem_ratio}>
+                                                    <div className={styles.center_elem_ratio_wrapper}>
+                                                        <h3 className={styles.center_elem_text}>16:9</h3>
+
+                                                        <div className={styles.center_elem_ratio_inner}>
+                                                            <MyImage src='/images/icons/tv.png' width={39} height={39}/>
+                                                            <MyImage src='/images/icons/computer-widescreen.png' width={39} height={39}/>
+                                                            <MyImage src='/images/icons/smartphone.png' width={39} height={39}/>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-tip data-for='info6' className={`${styles.dc_inner_ratio_185_100} ${styles.dc_ratio_hover}`}>
+                                <div className={styles.info_icon}><MyImage src='/images/icons/info.png' width={20} height={20}/></div>
+                                <ReactTooltip id='info6' type='info'>
+                                    <span>One of the two standard aspect ratios in modern cinema,<br/>1.85:1 is regarded as the normal widescreen format and is actually quite similar in size to 16:9.</span>
+
+                                </ReactTooltip>
+                                <div className={styles.dc_inner_content}>
+                                    <div className={styles.boxes_info}>
+                                        <Link href="/pages/Streaming_Services">
+                                            <a>
+                                                <div className={styles.center_elem_ratio}>
+                                                    <div className={styles.center_elem_ratio_wrapper}>
+                                                        <h3 className={styles.center_elem_text}>1.85:1</h3>
+
+                                                        <div className={styles.center_elem_ratio_inner}>
+                                                            <MyImage src='/images/icons/cinema.png' width={39} height={39}/>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-tip data-for='info7' className={`${styles.dc_inner_ratio_235_100} ${styles.dc_ratio_hover}`}>
+                                <div className={styles.info_icon}><MyImage src='/images/icons/info.png' width={20} height={20}/></div>
+                                <ReactTooltip id='info7' type='info'>
+                                    <span> Debuting in 1953, Cinemascope was a super widescreen format<br/>developed by the head of research at 20th Century Fox.</span>
+
+                                </ReactTooltip>
+                                <div className={styles.dc_inner_content}>
+                                    <div className={styles.boxes_info}>
+                                        <Link href="/pages/Streaming_Services">
+                                            <a>
+                                                <div className={styles.center_elem_ratio}>
+                                                    <div className={styles.center_elem_ratio_wrapper}>
+                                                        <h3 className={styles.center_elem_text}>2.35:1</h3>
+
+                                                        <div className={styles.center_elem_ratio_inner}>
+                                                            <MyImage src='/images/icons/movie-reel.png' width={39} height={39}/>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+            {/*fifth section*/}
+            <div style={{"marginTop":"230px"}} className={styles.content_inner}>
+                <div className={styles.content_inner_text}>
+                    <div className={styles.paragraph}>
+                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>in any language</h2>
+                        <h3>in jeder Sprache in qualsiasi lingua на любом языке herhangi bir dilde بأي لغة <br/><br/>
+
+                            dans n'importe quelle langue בכל שפה bármilyen nyelven em qualquer idioma <br/><br/>
+
+                            Σε οποιαδήποτε γλώσσα किसी भी भाषा में En cualquier idioma In elke taal <br/><br/>
+
+                            På ethvert sprog Na bilo kojem jeziku あらゆる言語で Noma yiluphi ulimi </h3>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            {/*sixth section*/}
+            <div style={{"marginTop":"230px"}} className={styles.content_inner}>
+                <div className={styles.content_inner_text}>
+                    <div className={styles.paragraph}>
+                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "2.3em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Vertical orientation, Horizontal groups,<br/>Rubies and Bouten for East Asian scripts</h2>
+                        <h3>
+                            With EZTitles you can input text in the vertical direction common for the Chinese, Japanese and Korean language scripts. An interesting requirement can be identified as the need to display horizontal and vertical text simultaneously on the screen. In EZTitles this can be achieved easily by using two subtitle tracks.
+
+                            Most of the time the non-Asian text inserted in a vertical subtitle doesn’t need to be rotated but there are cases for which the text should remain easily readable. EZTitles is able to satisfy this requirement as well by marking the non-Asian text as Horizontal Group.
+
+                            Another feature is the ability to insert Rubies above or below (if horizontally oriented) or to the right or left side (if vertically oriented) of the letters.
+
+                            The Rubies’ traditional purpose is to give additional information about the pronunciation of particular characters and symbols, considering the complexity of the Asian scripts, which may be otherwise unknown to the reader.
+
+                            The Phonetic Guide provides the option to insert rubies for the whole phrase or only for the symbol that requires it. This tool can also be used for emphasizing part of the text or it is also known as inserting a Bouten.
+
+                            With the Asian Text Font option, EZTitles can display different fonts for Asian and non-Asian text pieces inserted to the same line. The Asian-font text has the same font size as the regular-font text.
+
+                        </h3>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            {/*seventh section*/}
+            <div style={{"marginTop":"230px", "paddingBottom":"230px"}} className={styles.content_inner}>
+                <div className={styles.content_inner_text}>
+                    <div className={styles.paragraph}>
+                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "2.3em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Export your work in any file format<br/>used in the industry today</h2>
+                        <p>69 file formats</p>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
 
         </div>
         </>
