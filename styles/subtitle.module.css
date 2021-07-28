@@ -475,6 +475,7 @@ text-align: center;
 
 }
 .info_icon{
+    opacity:0.6;
 
 }
 .center_elem_ratio{
@@ -502,6 +503,13 @@ text-align: center;
 .center_elem_ratio_inner div{
     padding:0 2px;
 
+}
+.file_format_tabs_wrapper{
+    width:100%;
+    text-align: center;
+}
+.file_format_tabs_wrapper > div{
+    margin: auto;
 }
 
 

@@ -2,6 +2,7 @@ import styles from '../styles/subtitle.module.css'
 import MyImage from "../components/myImage";
 import Link from 'next/link'
 import ReactTooltip from 'react-tooltip';
+import FileFormatTabs from "../components/fileFormatTabs";
 
 
 export default function Subtitle(){
@@ -546,11 +547,14 @@ export default function Subtitle(){
 
             </div>
             {/*seventh section*/}
-            <div style={{"marginTop":"230px", "paddingBottom":"230px"}} className={styles.content_inner}>
+            <div style={{"marginTop":"230px", "paddingBottom":"600px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "2.3em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Export your work in any file format<br/>used in the industry today</h2>
                         <p>69 file formats</p>
+                        <div className={styles.file_format_tabs_wrapper}>
+                            <FileFormatTabs/>
+                        </div>
 
                     </div>
                 </div>
