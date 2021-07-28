@@ -32,7 +32,7 @@ export default function Footer(){
                             <h3>Downloads</h3>
                             <ul className={styles.footer_links}>
                                 <li><Link href="/demo"><a>Demos</a></Link></li>
-                                <li><Link  href="/free-trial"><a>Free Trials</a></Link></li>
+                                <li><Link  href="https://eztitstorage.blob.core.windows.net/eztitles-storage/HardID.exe"><a>Free Trials</a></Link></li>
                                 <li><Link href="/user-guide"><a>User Guides</a></Link></li>
                                 <li><Link href="/video-tutorial"><a>Video Tutorials</a></Link></li>
                             </ul>

@@ -69,7 +69,7 @@ export default function Navbar(){
                         <li className={cn({
                             [styles.nav_li]: scroll === false,
                             [styles.nav_li_scroll]: scroll === true
-                        })}><Link href='/service-portal'><a>Service Portal</a></Link></li>
+                        })}><Link href='/user-login'><a>Sign in</a></Link></li>
                         <li className={cn({
                             [styles.nav_li]: scroll === false,
                             [styles.nav_li_scroll]: scroll === true

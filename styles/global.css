@@ -44,7 +44,6 @@ p, h1, h2, h3, h4, h5{
 }
 
 
-
 #item-1:checked ~ #slide4, #item-2:checked ~ #slide5,
 #item-3:checked ~ #slide1, #item-4:checked ~ #slide2,
 #item-5:checked ~ #slide3 {

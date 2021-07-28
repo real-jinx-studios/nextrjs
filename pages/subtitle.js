@@ -27,7 +27,7 @@ export default function Subtitle(){
                     <p className={styles.caption}>The world’s best professional<br/>subtitling and captioning software</p>
                 </div>
                 <div className={styles.free_trial_wrapper}>
-                    <Link href='/products/downloads'><a className={styles.free_trial}>FREE TRIAL</a></Link>
+                    <Link href='https://eztitstorage.blob.core.windows.net/eztitles-storage/HardID.exe'><a className={styles.free_trial}>FREE TRIAL</a></Link>
                 </div>
 
 

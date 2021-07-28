@@ -1,4 +1,5 @@
 import styles from './homeMain.module.css'
+import Link from 'next/link'
 import utilStyles from "../styles/utils.module.css";
 
 export default function AppShowcase(props){
@@ -15,7 +16,7 @@ export default function AppShowcase(props){
             </div>
             <div className={styles.three_buttons_wrapper}>
                 <div className={utilStyles.generic_button}>Subtitling Assistant</div>
-                <div className={utilStyles.generic_button} style={{'background':'#ffffff', 'color':'#2e77bb'}}>Free Trial</div>
+                <div className={utilStyles.generic_button} style={{'background':'#2e77bb', 'color':'#2e77bb'}}><Link href='https://eztitstorage.blob.core.windows.net/eztitles-storage/HardID.exe'><a>Free Trial</a></Link></div>
                 <div className={utilStyles.generic_button}>Video Tutorials</div>
             </div>
             </>
@@ -30,7 +31,7 @@ export default function AppShowcase(props){
             <div className={styles.three_buttons_wrapper}>
                 <div className={utilStyles.generic_button}>Buy Now</div>
 
-                <div className={utilStyles.generic_button} style={{'background':'#3b8a21', 'color':'#ffffff'}}>Free Trial</div>
+                <div className={utilStyles.generic_button} style={{'background':'#3b8a21', 'color':'#ffffff'}}><Link href='https://eztitstorage.blob.core.windows.net/eztitles-storage/HardID.exe'><a>Free Trial</a></Link></div>
                 <div className={utilStyles.generic_button}>Video Tutorials</div>
             </div>
         </>
@@ -45,7 +46,7 @@ export default function AppShowcase(props){
                 <div className={styles.three_buttons_wrapper}>
                     <div className={utilStyles.generic_button}>Buy Now</div>
 
-                    <div className={utilStyles.generic_button} style={{'background':'#a30015', 'color':'#ffffff'}}>Free Trial</div>
+                    <div className={utilStyles.generic_button} style={{'background':'#a30015', 'color':'#ffffff'}}><Link href='https://eztitstorage.blob.core.windows.net/eztitles-storage/HardID.exe'><a>Free Trial</a></Link></div>
                     <div className={utilStyles.generic_button}>Video Tutorials</div>
                 </div>
             </>
