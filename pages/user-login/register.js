@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import {useState} from "react";
 import Router from 'next/router'
 import {useEntries} from "../../lib/swr-hooks";
+import useSWR from "swr";
 
 const CssTextField = withStyles({
     root: {
@@ -81,7 +82,8 @@ export default function Register(){
             setSubmitting(false)
             const json = await res.json()
             if (!res.ok) throw Error(json.message)
-            Router.push('/user-login/register-success')
+
+            Router.push('/user-login/register-success?query-insert-execution-time='+json.message+'ms')
         } catch (e) {
             throw Error(e.message)
         }

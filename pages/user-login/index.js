@@ -4,7 +4,6 @@ import {makeStyles, withStyles, createGenerateClassName} from '@material-ui/core
 import TextField from '@material-ui/core/TextField';
 import {useEntries} from "../../lib/swr-hooks";
 import { useRouter } from 'next/router'
-
 const CssTextField = withStyles({
     root: {
         '& input': {
@@ -86,7 +85,7 @@ export default function ServicePortal() {
     const [username, setUsername]=useState('')
     const [password, setPassword]=useState('')
     const [error, setError]=useState(false)
-    const { entries, isLoading } = useEntries()
+    const { entries, isLoading, time} = useEntries()
     const router = useRouter()
 
     const classes = useStyles();
@@ -104,9 +103,10 @@ export default function ServicePortal() {
         if(isLoading){
             console.log('waiting for shit')
         }else{
+            console.log(entries, 'the fuck')
 
             if (entries.filter(function(e) { return e.username === username && e.password === password ; }).length > 0){
-                router.push('/user-login/login-success')
+                router.push('/user-login/login-success?select-all-query-execution-time='+entries[entries.length-1].time)
 
 
             }else{
