@@ -4,8 +4,8 @@
         try {
 
             const results = await query(`
-            SELECT *
-            FROM users
+            SELECT fFile
+            FROM files
         `)
             return res.json(results)
         } catch (e) {

@@ -43,9 +43,21 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: "#ffffff33",
-        transition: "0.3s"
+        backgroundColor: "#ffffff33"
     },
+    li:{
+        fontFamily:"'Montserrat', sans-serif",
+        fontWeight: "lighter",
+        cursor:"pointer",
+        color:"#ffffff",
+        '&:hover': {
+            color:"#35C9F2ee",
+            '&::marker':{
+                color:"#35C9F2ee"
+            }
+        }
+    }
+
 }));
 
 export default function FileFormatTabs() {
@@ -88,53 +100,53 @@ export default function FileFormatTabs() {
                     <div style={{"display":"flex","flexDirection":"row", "textAlign":"left"}}>
                         <div style={{"flex":"0 0 25%"}}>
                             <ul>
-                                <li>Compressed PAC (.pac)</li>
-                                <li>.890 files</li>
-                                <li>EBU (.STL)</li>
-                                <li>EBU (.STL) for ARTE</li>
-                                <li>Windows Media Player SAMI</li>
-                                <li>Plain ASCII text</li>
-                                <li>Rich Text Format (RTF) files</li>
-                                <li>XLS Excel Workbook file</li>
-                                <li>DLP Cinema™ Subtitle XML </li>
-                                <li>DLP Cinema™ Subtitle XML with quality images</li>
+                                <li className={classes.li}>Compressed PAC (.pac)</li>
+                                <li className={classes.li}>.890 files</li>
+                                <li className={classes.li}>EBU (.STL)</li>
+                                <li className={classes.li}>EBU (.STL) for ARTE</li>
+                                <li className={classes.li}>Windows Media Player SAMI</li>
+                                <li className={classes.li}>Plain ASCII text</li>
+                                <li className={classes.li}>Rich Text Format (RTF) files</li>
+                                <li className={classes.li}>XLS Excel Workbook file</li>
+                                <li className={classes.li}>DLP Cinema™ Subtitle XML </li>
+                                <li className={classes.li}>DLP Cinema™ Subtitle XML with quality images</li>
                             </ul>
                         </div>
                         <div style={{"flex":"0 0 25%"}}>
                             <ul>
-                                <li>DCDM SMPTE 428-7-2007 XML Subtitles</li>
-                                <li>QuickTime Text and .SMIL files</li>
-                                <li>SubRip (.srt) subtitles</li>
-                                <li>MicroDVD (.sub) subtitles</li>
-                                <li>WebVTT (.vtt) subtitles</li>
-                                <li>Videotron Lambda CAP (.cap)</li>
-                                <li>Unicode PAC (.fpc)</li>
-                                <li>Win2020 text files</li>
-                                <li>DAS</li>
+                                <li className={classes.li}>DCDM SMPTE 428-7-2007 XML Subtitles</li>
+                                <li className={classes.li}>QuickTime Text and .SMIL files</li>
+                                <li className={classes.li}>SubRip (.srt) subtitles</li>
+                                <li className={classes.li}>MicroDVD (.sub) subtitles</li>
+                                <li className={classes.li}>WebVTT (.vtt) subtitles</li>
+                                <li className={classes.li}>Videotron Lambda CAP (.cap)</li>
+                                <li className={classes.li}>Unicode PAC (.fpc)</li>
+                                <li className={classes.li}>Win2020 text files</li>
+                                <li className={classes.li}>DAS</li>
                             </ul>
                         </div>
                         <div style={{"flex":"0 0 25%"}}>
                             <ul>
-                                <li>Softitler .TXT</li>
-                                <li>Avid® DS Nitris™ Subtitles Files</li>
-                                <li>OVR</li>
-                                <li>VDPC</li>
-                                <li>Timed Text (TTML XML)</li>
-                                <li>Ooyala Timed Text XML</li>
-                                <li>IMSC1 &amp; IMSC 1.1 XML</li>
-                                <li>Netflix Timed Text (NFLX-TT)</li>
+                                <li className={classes.li}>Softitler .TXT</li>
+                                <li className={classes.li}>Avid® DS Nitris™ Subtitles Files</li>
+                                <li className={classes.li}>OVR</li>
+                                <li className={classes.li}>VDPC</li>
+                                <li className={classes.li}>Timed Text (TTML XML)</li>
+                                <li className={classes.li}>Ooyala Timed Text XML</li>
+                                <li className={classes.li}>IMSC1 &amp; IMSC 1.1 XML</li>
+                                <li className={classes.li}>Netflix Timed Text (NFLX-TT)</li>
                             </ul>
                         </div>
                         <div style={{"flex":"0 0 25%"}}>
                             <ul>
-                                <li>EBU Timed Text (EBU-TT and EBU-TT-D)</li>
-                                <li>EBU-TT and EBU-TT-D for BBC</li>
-                                <li>SMPTE-TT Subtitles</li>
-                                <li>Inscriber CG (.txt)</li>
-                                <li>Apple iTunes Timed Text (.itt)</li>
-                                <li>SubStation Alpha (.SSA, .ASS)</li>
-                                <li>Swift Interchange Format (.sif)</li>
-                                <li>Universal Subtitling Format (.usf)</li>
+                                <li className={classes.li}>EBU Timed Text (EBU-TT and EBU-TT-D)</li>
+                                <li className={classes.li}>EBU-TT and EBU-TT-D for BBC</li>
+                                <li className={classes.li}>SMPTE-TT Subtitles</li>
+                                <li className={classes.li}>Inscriber CG (.txt)</li>
+                                <li className={classes.li}>Apple iTunes Timed Text (.itt)</li>
+                                <li className={classes.li}>SubStation Alpha (.SSA, .ASS)</li>
+                                <li className={classes.li}>Swift Interchange Format (.sif)</li>
+                                <li className={classes.li}>Universal Subtitling Format (.usf)</li>
                             </ul>
                         </div>
                     </div>
@@ -143,23 +155,23 @@ export default function FileFormatTabs() {
                     <div style={{"display":"flex","flexDirection":"row", "textAlign":"left"}}>
                         <div style={{"flex":"0 0 50%"}}>
                             <ul>
-                                <li>Scenarist Closed Caption Format (SCC)</li>
-                                <li>MCC CEA-708 captions (.mcc)</li>
-                                <li>CPC-715 Online Caption Format (.onl)</li>
-                                <li>Captions Inc. Files (.cin)</li>
-                                <li>Cheetah CAP</li>
-                                <li>Cheetah ASC</li>
+                                <li className={classes.li}>Scenarist Closed Caption Format (SCC)</li>
+                                <li className={classes.li}>MCC CEA-708 captions (.mcc)</li>
+                                <li className={classes.li}>CPC-715 Online Caption Format (.onl)</li>
+                                <li className={classes.li}>Captions Inc. Files (.cin)</li>
+                                <li className={classes.li}>Cheetah CAP</li>
+                                <li className={classes.li}>Cheetah ASC</li>
 
                             </ul>
                         </div>
                         <div style={{"flex":"0 0 50%"}}>
                             <ul>
-                                <li>NCI caption files (.cap)</li>
-                                <li>Ultech caption files (.ult)</li>
-                                <li>TDS captions files</li>
-                                <li>ECF captions files</li>
-                                <li>ProCAP Closed Captions (.txt)</li>
-                                <li>NCI Timed Roll to Captions (.flc)</li>
+                                <li className={classes.li}>NCI caption files (.cap)</li>
+                                <li className={classes.li}>Ultech caption files (.ult)</li>
+                                <li className={classes.li}>TDS captions files</li>
+                                <li className={classes.li}>ECF captions files</li>
+                                <li className={classes.li}>ProCAP Closed Captions (.txt)</li>
+                                <li className={classes.li}>NCI Timed Roll to Captions (.flc)</li>
                             </ul>
                         </div>
                     </div>
@@ -177,25 +189,25 @@ export default function FileFormatTabs() {
                     <div style={{"display":"flex","flexDirection":"row", "textAlign":"left"}}>
                         <div style={{"flex":"0 0 50%"}}>
                             <ul>
-                                <li>Final Cut Pro® 7</li>
-                                <li>Final Cut Pro® X</li>
-                                <li>DaVinci Resolve</li>
-                                <li>Sonic Scenarist HDMV (Blu-ray)</li>
-                                <li>Sonic Scenarist Advanced Content (HD-DVD)</li>
-                                <li>Sonic Scenarist and Sonic Reel DVD</li>
-                                <li>Apple® DVD Studio Pro®</li>
+                                <li className={classes.li}>Final Cut Pro® 7</li>
+                                <li className={classes.li}>Final Cut Pro® X</li>
+                                <li className={classes.li}>DaVinci Resolve</li>
+                                <li className={classes.li}>Sonic Scenarist HDMV (Blu-ray)</li>
+                                <li className={classes.li}>Sonic Scenarist Advanced Content (HD-DVD)</li>
+                                <li className={classes.li}>Sonic Scenarist and Sonic Reel DVD</li>
+                                <li className={classes.li}>Apple® DVD Studio Pro®</li>
 
                             </ul>
                         </div>
                         <div style={{"flex":"0 0 50%"}}>
                             <ul>
-                                <li>Adobe® Encore® DVD</li>
-                                <li>Spruce Technologies DVD Maestro</li>
-                                <li>DoStudio Authoring Suite</li>
-                                <li>Ultech DV2000/3000 .USF File Format and .yuc images</li>
-                                <li>Pinnacle Impression DVD</li>
-                                <li>Toshiba Authoring System</li>
-                                <li>Panasonic Blu-Ray Authoring SPI</li>
+                                <li className={classes.li}>Adobe® Encore® DVD</li>
+                                <li className={classes.li}>Spruce Technologies DVD Maestro</li>
+                                <li className={classes.li}>DoStudio Authoring Suite</li>
+                                <li className={classes.li}>Ultech DV2000/3000 .USF File Format and .yuc images</li>
+                                <li className={classes.li}>Pinnacle Impression DVD</li>
+                                <li className={classes.li}>Toshiba Authoring System</li>
+                                <li className={classes.li}>Panasonic Blu-Ray Authoring SPI</li>
 
                             </ul>
                         </div>
@@ -206,25 +218,25 @@ export default function FileFormatTabs() {
                     <div style={{"display":"flex","flexDirection":"row", "textAlign":"left"}}>
                         <div style={{"flex":"0 0 50%"}}>
                             <ul>
-                                <li>Final Cut Pro® 7</li>
-                                <li>Final Cut Pro® X</li>
-                                <li>DaVinci Resolve</li>
-                                <li>Sonic Scenarist HDMV (Blu-ray)</li>
-                                <li>Sonic Scenarist Advanced Content (HD-DVD)</li>
-                                <li>Sonic Scenarist and Sonic Reel DVD</li>
-                                <li>Apple® DVD Studio Pro®</li>
+                                <li className={classes.li}>Final Cut Pro® 7</li>
+                                <li className={classes.li}>Final Cut Pro® X</li>
+                                <li className={classes.li}>DaVinci Resolve</li>
+                                <li className={classes.li}>Sonic Scenarist HDMV (Blu-ray)</li>
+                                <li className={classes.li}>Sonic Scenarist Advanced Content (HD-DVD)</li>
+                                <li className={classes.li}>Sonic Scenarist and Sonic Reel DVD</li>
+                                <li className={classes.li}>Apple® DVD Studio Pro®</li>
 
                             </ul>
                         </div>
                         <div style={{"flex":"0 0 50%"}}>
                             <ul>
-                                <li>Adobe® Encore® DVD</li>
-                                <li>Spruce Technologies DVD Maestro</li>
-                                <li>DoStudio Authoring Suite</li>
-                                <li>Ultech DV2000/3000 .USF File Format and .yuc images</li>
-                                <li>Pinnacle Impression DVD</li>
-                                <li>Toshiba Authoring System</li>
-                                <li>Panasonic Blu-Ray Authoring SPI</li>
+                                <li className={classes.li}>Adobe® Encore® DVD</li>
+                                <li className={classes.li}>Spruce Technologies DVD Maestro</li>
+                                <li className={classes.li}>DoStudio Authoring Suite</li>
+                                <li className={classes.li}>Ultech DV2000/3000 .USF File Format and .yuc images</li>
+                                <li className={classes.li}>Pinnacle Impression DVD</li>
+                                <li className={classes.li}>Toshiba Authoring System</li>
+                                <li className={classes.li}>Panasonic Blu-Ray Authoring SPI</li>
 
                             </ul>
                         </div>
