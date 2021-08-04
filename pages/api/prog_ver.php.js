@@ -1,5 +1,6 @@
     import { NextApiHandler } from 'next'
     import { query } from '../../lib/db'
+    import qs from "qs";
     export default async function NextApiHandler1(a, res) {
         try {
 

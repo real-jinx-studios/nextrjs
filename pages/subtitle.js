@@ -3,6 +3,12 @@ import MyImage from "../components/myImage";
 import Link from 'next/link'
 import ReactTooltip from 'react-tooltip';
 import FileFormatTabs from "../components/fileFormatTabs";
+import {motion, useAnimation} from "framer-motion"
+import {stagger, fadeInUp, easing} from "../components/animations";
+import {useEffect, useRef} from "react";
+import { useInView } from "react-intersection-observer";
+import AnimateOnScroll from "../components/animateOnScroll";
+import AnimateDirectionSlide from "../components/animateDirectionSlide";
 
 
 export default function Subtitle(){
@@ -10,42 +16,45 @@ export default function Subtitle(){
 
 
     return (
-        <>
-            <div className={styles.video_background}>
+        <motion.div exit={{opacity:0}} initial='initial' animate='animate'>
+            <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.08}} className={styles.video_background}>
                 <video style={{"width":"100%"}} autoPlay loop>
 
                     <source src="/videos/hero-eztitles.mp4"/>
                 </video>
-            </div>
+            </motion.div>
         <div className={styles.main_wrapper}>
 
-            <div className={styles.main_inner}>
-                <div className={styles.title_icon_wrapper}>
-                    <MyImage priority='true' src='/images/ezt.png' width={48} height={48} alt='EZTitles logo'/>
-                    <p className={styles.big_title}>EZTitles</p>
-                </div>
+            <motion.div variants={stagger} className={styles.main_inner}>
+                <motion.div variants={fadeInUp} className={styles.title_icon_wrapper}>
+                    <MyImage src='/images/ezt.png' width={48} height={48} alt='EZTitles logo'/>
+                    <motion.p variants={fadeInUp} className={styles.big_title}>EZTitles</motion.p>
+                </motion.div>
                 <div className={styles.caption_wrapper}>
-                    <p className={styles.caption}>The world’s best professional<br/>subtitling and captioning software</p>
+                    <motion.p variants={fadeInUp} className={styles.caption}>The world’s best professional<br/>subtitling and captioning software</motion.p>
                 </div>
                 <div className={styles.free_trial_wrapper}>
-                    <Link href='https://eztitstorage.blob.core.windows.net/eztitles-storage/HardID.exe'><a className={styles.free_trial}>FREE TRIAL</a></Link>
+                    <Link href='https://eztitstorage.blob.core.windows.net/eztitles-storage/HardID.exe'><motion.a variants={fadeInUp} className={styles.free_trial}>FREE TRIAL</motion.a></Link>
                 </div>
 
 
-            </div>
+            </motion.div>
         </div>
         <div className={styles.content_wrapper}>
             {/*first section*/}
             <div className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
-                    <div className={styles.paragraph}>
-                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Prepare subtitles for any content</h2>
-                        <p><strong>With EZTitles you can subtitle anything – Streaming Services as Netflix, Apple iTunes, Amazon Prime,<br/> Hulu or others, Open subtitles, Closed Captions, Digital Cinema, Blu-ray, Teletext, DVD<br/>and DVB Subtitles - and deliver your work in any file format your clients may require.</strong></p>
+                    <AnimateOnScroll>
+                        <div className={styles.paragraph}>
+                            <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Prepare subtitles for any content</h2>
+                            <p><strong>With EZTitles you can subtitle anything – Streaming Services as Netflix, Apple iTunes, Amazon Prime,<br/> Hulu or others, Open subtitles, Closed Captions, Digital Cinema, Blu-ray, Teletext, DVD<br/>and DVB Subtitles - and deliver your work in any file format your clients may require.</strong></p>
 
-                    </div>
+                        </div>
+                    </AnimateOnScroll>
                 </div>
                 <div className={styles.dc}>
-                    <div className={`${styles.dc_inner} ${styles.slide_in_blurred_right} ${styles.dc_side}`}>
+                    <AnimateDirectionSlide direction="left" className={`${styles.dc_inner} ${styles.dc_side}`}>
+                        <div >
                         <div className={styles.dc_background}><MyImage src='/images/icons/streaming-icon.svg' width={200} height={200} /></div>
                         <div className={styles.dc_inner_content}>
                             <div className={styles.boxes_info}>
@@ -60,6 +69,7 @@ export default function Subtitle(){
                             </div>
                         </div>
                     </div>
+                    </AnimateDirectionSlide>
                     <div className={`${styles.dc_inner} ${styles.dc_top}`}>
                         <div className={styles.dc_background}><MyImage src='/images/icons/digital-icon.svg' width={200} height={200} /></div>
                         <div className={styles.dc_inner_content}>
@@ -75,7 +85,8 @@ export default function Subtitle(){
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.dc_inner}  ${styles.slide_in_blurred_bottom} ${styles.dc_side}`}>
+                    <AnimateDirectionSlide direction="right" className={`${styles.dc_inner} ${styles.dc_side}`}>
+                     <div>
                         <div className={styles.dc_background}><MyImage src='/images/icons/blueray-icon.svg' width={200} height={200} /></div>
                         <div className={styles.dc_inner_content}>
                             <div className={styles.boxes_info}>
@@ -90,7 +101,9 @@ export default function Subtitle(){
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.dc_inner}  ${styles.slide_in_blurred_top} ${styles.dc_bottom}`}>
+                    </AnimateDirectionSlide>
+                    <AnimateDirectionSlide direction="bottom_left" className={`${styles.dc_inner}`}>
+                        <div>
                         <div className={styles.dc_background}><MyImage src='/images/icons/teletext-icon.svg' width={200} height={200} /></div>
                         <div className={styles.dc_inner_content}>
                             <div className={styles.boxes_info}>
@@ -105,7 +118,9 @@ export default function Subtitle(){
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.dc_inner}  ${styles.slide_in_blurred_left_2}  ${styles.dc_bottom}`}>
+                    </AnimateDirectionSlide>
+                    <AnimateDirectionSlide direction="bottom"  className={`${styles.dc_inner}`}>
+                        <div>
                         <div className={styles.dc_background}><MyImage src='/images/icons/dvb-icon.svg' width={200} height={200} /></div>
                         <div className={styles.dc_inner_content}>
                             <div className={styles.boxes_info}>
@@ -120,7 +135,9 @@ export default function Subtitle(){
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.dc_inner}  ${styles.slide_in_blurred_left_3}  ${styles.dc_bottom}`}>
+                    </AnimateDirectionSlide>
+                    <AnimateDirectionSlide direction="bottom_right"  className={`${styles.dc_inner}`}>
+                        <div>
                         <div className={styles.dc_background}><MyImage src='/images/icons/closed-icon.svg' width={200} height={200} /></div>
                         <div className={styles.dc_inner_content}>
                             <div className={styles.boxes_info}>
@@ -135,6 +152,7 @@ export default function Subtitle(){
                             </div>
                         </div>
                     </div>
+                    </AnimateDirectionSlide>
 
                 </div>
 
@@ -144,11 +162,13 @@ export default function Subtitle(){
             {/*second section*/}
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
-                    <div className={styles.paragraph}>
-                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Almost any Video File</h2>
-                        <p><strong>EZTitles works with nearly any known video format with embedded timecode and supports MPEG-1,<br/>MPEG-2, MPEG-4, AVI, WMV, MXF, MKV and Apple QuickTime .MOV video files.</strong></p>
+                    <AnimateOnScroll>
+                        <div className={styles.paragraph}>
+                            <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Almost any Video File</h2>
+                            <p><strong>EZTitles works with nearly any known video format with embedded timecode and supports MPEG-1,<br/>MPEG-2, MPEG-4, AVI, WMV, MXF, MKV and Apple QuickTime .MOV video files.</strong></p>
 
-                    </div>
+                        </div>
+                    </AnimateOnScroll>
                 </div>
                 <div className={styles.dc}>
                     <div className={`${styles.dc_inner_vf} ${styles.text_focus_in} ${styles.dc_side}`}>
@@ -264,13 +284,16 @@ export default function Subtitle(){
             </div>
             {/*third section*/}
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
-                <div className={styles.content_inner_text}>
+                <AnimateOnScroll>
+                    <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Any type of resolution</h2>
                     </div>
                 </div>
-                <div className={styles.dc}>
-                    <div style={{"textAlign":"center"}} className={`${styles.dc_inner_res} ${styles.text_focus_in}`}>
+                </AnimateOnScroll>
+                <AnimateOnScroll>
+                    <div className={styles.dc}>
+                        <div style={{"textAlign":"center"}} className={`${styles.dc_inner_res} ${styles.text_focus_in}`}>
                         <h1 className={styles.h1_res}>from SD<small className={styles.very_small}>(640x480)</small> up to 4k<small className={styles.very_small}>(4096x2160)</small></h1>
                         <div className={styles.dc_inner_content_res}>
                             <div className={styles.boxes_info_res}>
@@ -285,14 +308,15 @@ export default function Subtitle(){
                     </div>
 
 
-
-                </div>
+                     </div>
+                </AnimateOnScroll>
 
 
 
 
             </div>
             {/*fourth section*/}
+        <AnimateOnScroll>
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
@@ -499,8 +523,11 @@ export default function Subtitle(){
 
 
             </div>
+
+        </AnimateOnScroll>
             {/*fifth section*/}
-            <div style={{"marginTop":"230px"}} className={styles.content_inner}>
+            <AnimateOnScroll>
+                <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>in any language</h2>
@@ -522,6 +549,7 @@ export default function Subtitle(){
 
 
             </div>
+            </AnimateOnScroll>
             {/*sixth section*/}
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
@@ -600,7 +628,7 @@ export default function Subtitle(){
                                     </p>
                                 </div>
                                 <div className={styles.feature_image}>
-                                   <MyImage src="/images/shots/01-shot-detection-img.png" width={600} height={600}/>
+                                   <MyImage src="/images/shots/01-shot-detection-img.png" width={1111} height={1111}/>
 
                                 </div>
                             </div>
@@ -623,7 +651,7 @@ export default function Subtitle(){
                                     <div className={styles.free_trial}>LEARN MORE</div>
                                 </div>
                                 <div className={styles.feature_image}>
-                                    <MyImage src="/images/shots/03-offer-img-2.png" width={600} height={600}/>
+                                    <MyImage src="/images/shots/03-offer-img-2.png" width={1111} height={800}/>
 
                                 </div>
                             </div>
@@ -948,15 +976,15 @@ export default function Subtitle(){
 
             </div>
             {/*eleventh section*/}
-            <div style={{"marginTop":"80px", "paddingBottom":"600px"}} className={styles.content_inner}>
+            <div style={{"marginTop":"80px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "2.3em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>A license for every need</h2>
-                        <h3 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "2.3em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>EZTitles can be licensed in different ways so it could fit your desired workflow.</h3>
+                        <h3 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "1.6em","fontWeight": "lighter","padding": "0 0 20px","lineHeight": "63px"}}>EZTitles can be licensed in different ways so it could fit your desired workflow.</h3>
                         <div className={styles.license_wrapper}>
                             <div className={styles.license_option}>
                                 <div className={styles.m_feature_icon}>
-                                    <MyImage src="/images/icons/dongle-icon.svg" width={111} height={111}/>
+                                    <MyImage src="/images/features_icons/dongle.png" width={111} height={111}/>
 
                                 </div>
                                 <div className={styles.m_feature_text_short}>
@@ -968,7 +996,7 @@ export default function Subtitle(){
                             </div>
                             <div className={styles.license_option}>
                                 <div className={styles.m_feature_icon}>
-                                    <MyImage src="/images/icons/offline-icon.svg" width={111} height={111}/>
+                                    <MyImage src="/images/features_icons/no-wifi.png" width={111} height={111}/>
 
                                 </div>
                                 <div className={styles.m_feature_text_short}>
@@ -980,7 +1008,7 @@ export default function Subtitle(){
                             </div>
                             <div className={styles.license_option}>
                                 <div className={styles.m_feature_icon}>
-                                    <MyImage src="/images/icons/online-icon.svg" width={111} height={111}/>
+                                    <MyImage src="/images/features_icons/world-grid.png" width={111} height={111}/>
 
                                 </div>
                                 <div className={styles.m_feature_text_short}>
@@ -997,6 +1025,23 @@ export default function Subtitle(){
 
 
                         </div>
+                        <p>Ask us about the Enterprise solutions. <div className={styles.free_trial}>CONTACT US</div></p>
+                        <div className={styles.free_trial}>VIEW LICENSE EDITIONS</div>
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            {/*twelfth section*/}
+            <div style={{"marginTop":"80px", "paddingBottom":"30px"}} className={styles.content_inner}>
+                <div className={styles.content_inner_text}>
+                    <div className={styles.paragraph}>
+                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "2.3em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Find the right solution for you!</h2>
+                        <Link href="/buy/eztitles"><a><motion.button  whileHover={{scale:1.1}} whileTap={{scale:0.9}} className={styles.get_now}>GET NOW</motion.button></a></Link>
 
                     </div>
                 </div>
@@ -1007,6 +1052,6 @@ export default function Subtitle(){
             </div>
 
         </div>
-        </>
+        </motion.div>
     )
 }

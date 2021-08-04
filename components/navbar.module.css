@@ -103,4 +103,12 @@
 
 
 }
+.menu_button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
 

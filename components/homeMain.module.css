@@ -427,9 +427,9 @@
     overflow: hidden;
     width: 100%;
 }
-.customers_logos{
+.customers_logos img{
     display: inline-block;
-    padding: 0 4rem;
+    padding: 0 2px;
     vertical-align: middle;
     opacity: 1;
     outline: none;
