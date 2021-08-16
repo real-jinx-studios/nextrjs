@@ -64,7 +64,7 @@
     transition: background-color .2s;
     color: #fff;
     background: #35C9F2ee;
-    margin-bottom:80px;
+    margin-bottom:15px !important;
 
 }
 .free_trial:hover{

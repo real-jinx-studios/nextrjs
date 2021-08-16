@@ -25,9 +25,12 @@
     padding: 0 400px;
 }
 .ul_menu li{
-    flex: 0 0 25%;
+    flex: 0 0 24%;
+    margin-left: 1%;
     transition: 0.3s;
-    border-bottom:1px solid #35C9F2;
+    border: 1px solid #35C9F200;
+   /*border-bottom:1px solid #35C9F2;*/
+    transition: 0.3s;
 }
 .ul_menu li p{
     user-select: none;
@@ -40,12 +43,15 @@
     color: #ffffff;
 }
 .active{
-    border:1px solid #35C9F2;
+    border:1px solid #35C9F2 !important;
+    border:1px solid #2e77bb !important;
     border-radius: 12px 12px 0 0;
-    border-bottom:1px solid #35C9F200 !important;
+   /* border-bottom:1px solid #35C9F200 !important;*/
+    background-color:#35C9F2;
+    background-color:#2e77bb;
 }
 .active p{
-    color: #4DC4EF !important;
+    color: #ffffff !important;
 }
 .ul_menu li p::after{
     content: '';
@@ -57,16 +63,24 @@
     background-color: #ffffff00;
 }
 .offers{
+    background-color: #69676588;
+    background-color: #F5F5F5;
     display: flex;
-    flex-direction: row;
-    margin: 0 400px;
+    width:100%;
+    /*margin: 0 400px;*/
+    border-top:2px solid #35C9F2;
+    border-top:3px solid #2e77bb;
+    justify-content: center;
+}
+
+.offers_offer{
+    width: max-content;
 }
 .product_offer_menu{
 
 }
 .nav_sub_menu{
     box-sizing: border-box;
-    width: 100%;
     margin-top: 50px;
 }
 .ul_sub_menu{
@@ -75,19 +89,26 @@
     list-style: none;
     justify-content: center;
     margin: auto;
-    height: 600px;
 
 }
 .ul_sub_menu li{
-    flex: 0 0 32%;
     transition: 0.3s;
     border-radius: 12px;
+    width: min-content;
+    margin-left: 8px;
 }
 .ul_sub_menu li p{
+    width: max-content;
+    padding: 6px 20px;
     user-select: none;
     cursor: pointer;
     position: relative;
     color: #ffffff88;
+    border: 1px solid #2e77bb88;
+    background-color: #3D3D3D;
+    transition: 0.3s;
+    border-radius: 12px;
+
 }
 .ul_sub_menu li p:hover{
     position: relative;
@@ -95,4 +116,27 @@
     border: 1px solid #2e77bb;
     border-radius: 12px;
 }
+.active_offer p{
+    color: #ffffff !important;
+    border: 1px solid #2e77bb !important;
+    background-color: #2e77bb !important;
+}
+.offers_inner{
 
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+.offers_nav_wrapper{
+
+}
+.offers_options_wrapper{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.offers_bottom_disclamer h5{
+    color: #191919 !important;
+}

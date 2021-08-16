@@ -35,6 +35,9 @@ export default function Subtitle(){
                 </div>
                 <div className={styles.free_trial_wrapper}>
                     <Link href='https://eztitstorage.blob.core.windows.net/eztitles-storage/HardID.exe'><motion.a variants={fadeInUp} className={styles.free_trial}>FREE TRIAL</motion.a></Link>
+                    <br />
+                    <Link href="/buy/product?eztitles"><a><motion.button  whileHover={{scale:1.1}} whileTap={{scale:0.9}} className={styles.get_now}>BUY NOW</motion.button></a></Link>
+
                 </div>
 
 
@@ -1041,7 +1044,7 @@ export default function Subtitle(){
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "2.3em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Find the right solution for you!</h2>
-                        <Link href="/buy/eztitles"><a><motion.button  whileHover={{scale:1.1}} whileTap={{scale:0.9}} className={styles.get_now}>GET NOW</motion.button></a></Link>
+                        <Link href="/buy/product?eztitles"><a><motion.button  whileHover={{scale:1.1}} whileTap={{scale:0.9}} className={styles.get_now}>GET NOW</motion.button></a></Link>
 
                     </div>
                 </div>
