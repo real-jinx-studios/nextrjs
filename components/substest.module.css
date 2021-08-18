@@ -97,6 +97,7 @@ height: fit-content;
 }
 .card_content_format_list{
 text-align: left;
+    transition: 0.3s;
     height: auto;
     background-color: #919191;
     margin: 0px 12px;
@@ -104,16 +105,8 @@ text-align: left;
     border-radius: 16px;
     padding: 3px 0;
     margin-bottom: 8px;
-    transition: 0.3s;
-
-}
-.card_content_format_list ul{
-    transition: 0.3s;
-
 }
 .card_content_format_list li{
     font-weight: 100;
     font-size: 14px;
-    transition: 0.3s;
-
 }

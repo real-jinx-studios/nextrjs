@@ -36,7 +36,7 @@ export default function Subtitle(){
                 <div className={styles.free_trial_wrapper}>
                     <Link href='https://eztitstorage.blob.core.windows.net/eztitles-storage/HardID.exe'><motion.a variants={fadeInUp} className={styles.free_trial}>FREE TRIAL</motion.a></Link>
                     <br />
-                    <Link href="/buy/product?eztitles"><a><motion.button  whileHover={{scale:1.1}} whileTap={{scale:0.9}} className={styles.get_now}>BUY NOW</motion.button></a></Link>
+                    <Link href="/buy/product?eztitles"><motion.a variants={fadeInUp}><motion.button  whileHover={{scale:1.1}} whileTap={{scale:0.9}} className={styles.get_now}>BUY NOW</motion.button></motion.a></Link>
 
                 </div>
 

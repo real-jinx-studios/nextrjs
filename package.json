@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.12.2",
+    "@paypal/checkout-server-sdk": "^1.0.2",
+    "@stripe/stripe-js": "^1.17.0",
     "@terwanerik/scrolltrigger": "^1.0.5",
     "animate.css": "^4.1.1",
     "classnames": "^2.2.6",
@@ -26,11 +28,16 @@
     "react-animate-on-scroll": "^2.1.5",
     "react-dom": "17.0.1",
     "react-intersection-observer": "^8.32.0",
+    "react-redux": "^7.2.4",
     "react-swipeable-views": "^0.14.0",
     "react-tooltip": "^4.2.21",
+    "redux": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9",
     "serverless-mysql": "^1.5.4",
+    "stripe": "^8.169.0",
     "swr": "^0.5.6",
-    "tls": "0.0.1"
+    "tls": "0.0.1",
+    "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
     "@material-ui/icons": "^4.11.2"

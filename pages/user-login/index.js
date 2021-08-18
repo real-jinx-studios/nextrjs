@@ -92,7 +92,7 @@ export default function ServicePortal() {
 
     const classes = useStyles();
     const handleError=()=>{
-        setError(ture)
+        setError(true)
     }
     const handleChangePass=(e)=>{
         setPassword(e.target.value)

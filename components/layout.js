@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Navbar from "./navbar";
 
 const name ='Jinx Studios'
-export const siteTitle ='Next.js Sample Website'
+export const siteTitle ='EZTitles Dev Studio'
 
 
 
