@@ -8,6 +8,8 @@ import React, {useState} from "react";
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
+import LoginPop from "../../components/loginPop";
+import {Modal} from "@material-ui/core";
 
 
 
@@ -90,9 +92,10 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function SetupUser(){
-    const [username, setUsername]=useState('')
+    const [email, setEmail]=useState('')
     const [password, setPassword]=useState('')
     const [error, setError]=useState(false)
+    const [modal, setModal] = useState(false)
 
 
     const countriesOptions=countries.map((x,i)=><MenuItem key={i} value={x}>{x}</MenuItem>)
@@ -104,16 +107,17 @@ export default function SetupUser(){
     const handleChangePass=(e)=>{
         setPassword(e.target.value)
     }
-    const handleChangeUsr=(e)=>{
-        setUsername(e.target.value)
+    const handleChangeEmail=(e)=>{
+        setEmail(e.target.value)
     }
 
 
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        cookies.set('user-set', {user:[{email:e.target[0].value, country:e.target[1].value}]}, {path:'/'})
+        cookies.set('user', {user:[{email:e.target[0].value, country:e.target[1].value}]}, {path:'/'})
 
+        setModal(true)
         router.push('/buy/checkout')
 
     }
@@ -124,7 +128,7 @@ export default function SetupUser(){
                 <div className={styles.form_wrapper}>
                     <form className={styles.form} onSubmit={handleSubmit}>
                         <CssTextField
-                            onChange={handleChangeUsr}
+                            onChange={handleChangeEmail}
                             className={classes.margin}
                             label="Email"
                             type="text"
@@ -144,6 +148,7 @@ export default function SetupUser(){
                         </Button>
 
                     </form>
+                    <LoginPop email={email}/>
                 </div>
 
             </div>

@@ -14,6 +14,7 @@ export default function Navbar(){
     const sticky=80
     const cookies=new Cookies()
     const isCart=cookies.get('cart')
+    const isUser=cookies.get('user')
     const catchScroll=(e)=>{
         if(window.scrollY > sticky) {
             setScroll(true)
@@ -29,8 +30,13 @@ export default function Navbar(){
 
     const handleCartClick=(e)=>{
         e.preventDefault()
+        if(!isCart){
+            router.push('/buy/products')
 
-        if(isCart){
+        } else if(!isUser){
+            router.push('/buy/setup-user')
+
+        } else if(isCart){
             router.push('/buy/checkout')
 
         }else{
