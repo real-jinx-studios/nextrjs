@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
-import {makeStyles, withStyles} from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import {useEntries} from "../../lib/swr-hooks";
-import { useRouter } from 'next/router'
-import styles from '../../styles/login.module.css'
+import styles from "../../../styles/login.module.css";
+import React, {useState} from "react";
+import {makeStyles, withStyles} from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 
 
 const CssTextField = withStyles({
@@ -83,47 +81,35 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function ServicePortal() {
-    const [username, setUsername]=useState('')
-    const [password, setPassword]=useState('')
-    const [error, setError]=useState(false)
-    const { entries, isLoading, time} = useEntries()
-    const router = useRouter()
+export default function ChangePassword(){
 
+    const [password1, setPassword1]=useState('')
+    const [password2, setPassword2]=useState('')
+    const [error, setError]=useState(false)
     const classes = useStyles();
     const handleError=()=>{
         setError(true)
     }
-    const handleChangePass=(e)=>{
-        setPassword(e.target.value)
+    const handleChangePass1=(e)=>{
+        setPassword1(e.target.value)
     }
-    const handleChangeUsr=(e)=>{
-        setUsername(e.target.value)
+    const handleChangePass2=(e)=>{
+        setPassword2(e.target.value)
     }
     const handleClick=(e)=>{
         e.preventDefault()
-        if(isLoading){
-            console.log('waiting for shit')
-        }else{
-            console.log(entries, 'the fuck')
-
-            if (entries.filter(function(e) { return e.username === username && e.password === password && e.verified === 1; }).length > 0){
-                router.push('/user-login/user-profile/index?select-all-query-execution-time='+entries[entries.length-1].time)
-
-
-            }else{
-                setError(true)
-
-            }
-
+        if(password1 !== password2){
+            setError(true)
+            return
         }
+
     }
     return (
         <div className={styles.main_wrapper}>
             <div className={styles.main_inner}>
                 <form className={classes.root} noValidate onSubmit={handleClick}>
                     {error && <><CssTextFieldError
-                        onChange={handleChangeUsr}
+                        onChange={handleChangePass1}
                         className={classes.margin}
                         label="Username"
                         type="text"
@@ -131,15 +117,15 @@ export default function ServicePortal() {
                         id="custom-css-outlined-input"
                     />
                         <CssTextFieldError
-                        onChange={handleChangePass}
-                        className={classes.margin}
-                        label="Password"
-                        variant="outlined"
-                        type="password"
-                        id="custom-css-outlined-input"
+                            onChange={handleChangePass2}
+                            className={classes.margin}
+                            label="Password"
+                            variant="outlined"
+                            type="password"
+                            id="custom-css-outlined-input"
                         /> </>}
                     {!error && <><CssTextField
-                        onChange={handleChangeUsr}
+                        onChange={handleChangePass1}
                         className={classes.margin}
                         label="Username"
                         type="text"
@@ -147,7 +133,7 @@ export default function ServicePortal() {
                         id="custom-css-outlined-input"
                     />
                         <CssTextField
-                            onChange={handleChangePass}
+                            onChange={handleChangePass2}
                             className={classes.margin}
                             label="Password"
                             variant="outlined"
@@ -160,3 +146,4 @@ export default function ServicePortal() {
         </div>
     );
 }
+

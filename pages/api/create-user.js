@@ -15,6 +15,7 @@ export default async function Handler(req, res){
         return result;
     }
     const pass=makeid(8)
+    const confirmation=makeid(32)
     const {email} = req.query
 
     let transporter=nodemailer.createTransport({
@@ -33,7 +34,7 @@ export default async function Handler(req, res){
         to: email,
         subject: "Account creation on EZTitles",
         text: "Username: "+email+" // Password: "+pass,
-        html: `Username: ${email} // Password: ${pass}`
+        html: `Username: ${email} // Password: ${pass}<br>Please confirm your account by clicking the link http://localhost:3000/api/auth/confirm/${confirmation}`
     };
     transporter.verify(function (error, success) {
         if (error) {
@@ -52,10 +53,10 @@ export default async function Handler(req, res){
 
         const results = await query(
             `
-                INSERT INTO users (username, password)
-                VALUES (?, ?)
+                INSERT INTO users (username, password, confirmation)
+                VALUES (?, ?, ?)
             `,
-            [email, pass]
+            [email, pass, confirmation]
         )
         let end=performance.now()
         results.message=end-start
