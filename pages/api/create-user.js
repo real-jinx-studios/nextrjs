@@ -31,7 +31,8 @@ export default async function Handler(req, res){
 
     let message = {
         from: "real.martin.zannato@gmail.com",
-        to: email,
+        //to: email,
+        to: "real.jinx.studios@gmail.com",
         subject: "Account creation on EZTitles",
         text: "Username: "+email+" // Password: "+pass,
         html: `Username: ${email} // Password: ${pass}<br>Please confirm your account by clicking the link http://localhost:3000/api/auth/confirm/${confirmation}`

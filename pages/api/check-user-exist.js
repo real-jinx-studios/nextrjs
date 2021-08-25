@@ -2,11 +2,11 @@ import { NextApiHandler } from 'next'
 import { query } from '../../lib/db'
 const { performance } = require('perf_hooks');
 export default async function NextApiHandler3(req, res) {
-    const { email, password } = req.body
+    const { email } = req.query
     try {
         let start= performance.now()
 
-        const results = await query('SELECT * FROM users WHERE username = ? && password = ?', [email, password])
+        const results = await query('SELECT EXISTS (SELECT 1 FROM users WHERE username = ?) as truth', [email])
 
         let end=performance.now()
         return res.json([...results, {time: end-start}])

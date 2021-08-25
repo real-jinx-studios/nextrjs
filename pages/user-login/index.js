@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import {useEntries} from "../../lib/swr-hooks";
 import { useRouter } from 'next/router'
 import styles from '../../styles/login.module.css'
+import Cookies from "universal-cookie";
 
 
 const CssTextField = withStyles({
@@ -89,6 +90,7 @@ export default function ServicePortal() {
     const [error, setError]=useState(false)
     const { entries, isLoading, time} = useEntries()
     const router = useRouter()
+    const cookies = new Cookies();
 
     const classes = useStyles();
     const handleError=()=>{
@@ -108,7 +110,8 @@ export default function ServicePortal() {
             console.log(entries, 'the fuck')
 
             if (entries.filter(function(e) { return e.username === username && e.password === password && e.verified === 1; }).length > 0){
-                router.push('/user-login/user-profile/index?select-all-query-execution-time='+entries[entries.length-1].time)
+                cookies.set('logged', {email:username}, {path:'/'})
+                router.push('/user-login/user-profile?select-all-query-execution-time='+entries[entries.length-1].time)
 
 
             }else{

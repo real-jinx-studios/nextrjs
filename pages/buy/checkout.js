@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { initializeStore } from '../../store'
 import Cookies from 'universal-cookie';
 import {makeStyles, withStyles} from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
 import React, {useState} from "react";
 import {getClient} from "../../lib/swr-hooks";
 import Router, {useRouter} from "next/router";
 import { loadStripe } from '@stripe/stripe-js';
+import CustomInput from "../../components/customInput";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,54 +38,77 @@ export default function Checkout() {
     const [error, setError] = useState(false)
     let customer={}
 
+    const cookies = new Cookies();
+    const cart = cookies.get('cart')
+    const user = cookies.get('user')
+    console.log(user, 'fuck off')
+    const { entries, isLoading } = getClient(user?user.user[0].email:'undefined')
+    let customer_type=cart?cart.c_type : 'individual'
+    let customer_email=user?user.user[0].email : ''
+    let customer_country=user?user.user[0].country : ''
+    let user_exists=user?user.exists : ''
+    if(!isLoading && user.exists){
+        //customer_type=entries[0].type
+        customer=entries[0]
+    }
+
+
+
     const handleSubmit = async (e) => {
         e.preventDefault()
-        try {
-            const res = await fetch('/api/create-customer', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email:customer.email,
-                    first_name:customer.first_name,
-                    last_name:customer.last_name,
-                    street_address:customer.street_address,
-                    street_address_2:customer.street_address_2,
-                    postcode:customer.postcode,
-                    phone_num:customer.phone_num,
-                    city:customer.city,
-                    country:customer.country,
-                    company_name:customer.company_name,
-                    vat:customer.vat,
-                    type:customer.type
-                }),
-            })
+        if(!user_exists){
             try {
-                const json = await res.json()
-                if (!res.ok) throw Error(json.message)
+                const res = await fetch('/api/create-customer', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email:e.target[10].value,
+                        first_name:e.target[2].value,
+                        last_name:e.target[3].value,
+                        street_address:e.target[4].value,
+                        street_address_2:e.target[5].value,
+                        postcode:e.target[6].value,
+                        phone_num:e.target[9].value,
+                        city:e.target[7].value,
+                        country:e.target[8].value,
+                        company_name:e.target[1].value,
+                        vat:e.target[0].value,
+                        type:cart.c_type
+                    }),
+                })
                 try {
-                    const res = await fetch('/api/create-user?email='+customer.email, {
-                        method: 'GET'
-                    })
                     const json = await res.json()
-                    if (!res.ok) {
-                        console.log(json.message, 's3')
+                    if (!res.ok) throw Error(json.message)
+                    try {
+                        const res = await fetch('/api/create-user?email='+customer_email, {
+                            method: 'GET'
+                        })
+                        const json = await res.json()
+                        if (!res.ok) {
+                            console.log(json.message, 's3')
+                        }else{
+                            Router.push('/buy/success?from=new')
+                        }
+
+
+                    } catch (e) {
+                        console.log(e.message,'s1')
                     }
-
-
+                }catch(e){console.log(e,'1')}
+    /*
+                try {
+                    router.push('/buy/success')
                 } catch (e) {
-                    console.log(e.message,'s1')
-                }
-            }catch(e){console.log(e,'1')}
-/*
-            try {
-                router.push('/buy/success')
+                    console.log(e,'2')
+                }*/
             } catch (e) {
-                console.log(e,'2')
-            }*/
-        } catch (e) {
-            console.log(e.message, '3')
+                console.log(e.message, '3')
+            }
+        }else{
+            //call some confirmation email shit api
+            Router.push('/buy/success?from=old')
         }
 
     }
@@ -111,18 +134,12 @@ export default function Checkout() {
         cookies.remove('cart', {path: '/'})
 
     }
-    const cookies = new Cookies();
-    const cart = cookies.get('cart')
-    const user = cookies.get('user')
-    const { entries, isLoading } = getClient(user.user[0].email)
-    let customer_type='individual'
-    if(!isLoading){
-        customer_type=entries[0].type
-        customer=entries[0]
-    }
+    console.log(user, customer_email)
+
 
 
     let cart_table = <div>shit</div>
+    let tyst=0
 
     if (cart) {
         cart_table = cart.cart.map((x, i) => <tr key={i}>
@@ -130,6 +147,7 @@ export default function Checkout() {
             <td>€{x.price}</td>
             <td>{x.qty}</td>
             <td>€{x.qty * x.price}</td>
+            <td hidden={true}>{tyst+=x.qty * x.price}</td>
         </tr>)
 
     }
@@ -145,140 +163,152 @@ export default function Checkout() {
                     Order Checkout
 
                 </div>
-                <form className={classes.root} noValidate onSubmit={handleSubmit}>
-                    <div className={styles.wrapper}>
-                        <div className={styles.cart_info}>
-                            <table>
-                                <thead>
-                                <tr>
-                                    <td>Product</td>
-                                    <td>Price</td>
-                                    <td>Quantity</td>
-                                    <td>Total price</td>
-                                </tr>
+                <div className={styles.form_wrapper}>
+                    <form noValidate onSubmit={handleSubmit}>
+                        <div className={styles.wrapper}>
+                            <div className={styles.cart_info}>
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <td>Product</td>
+                                        <td>Price</td>
+                                        <td>Quantity</td>
+                                        <td>Total price</td>
+                                    </tr>
 
-                                </thead>
-                                <tbody>
-                                {cart_table}
+                                    </thead>
+                                    <tbody>
+                                    {cart_table}
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>VAT: 19%
+                                            <br/>
+                                            Total's total price: €{tyst+(tyst*0.19)}</td>
+                                    </tr>
 
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
 
+
+                            </div>
+                            <div className={styles.client_info}>
+                                {customer_type == 'organization' && <>
+                                    <CustomInput type='text' defaultValue={entries[0].vat} placeholder="VAT" onChange={handleChangeUsr}/>
+                                    <CustomInput
+                                        onChange={handleChangeUsr}
+                                        className={classes.margin}
+                                        label="Company Name"
+                                        type="text"
+                                        variant="outlined"
+                                        id="custom-css-outlined-input"
+                                        defaultValue={entries[0].company_name}
+                                        placeholder="Company name"
+                                    />
+                                </>}
+                                <CustomInput
+                                    onChange={handleChangeUsr}
+                                    className={classes.margin}
+                                    label="First Name"
+                                    type="text"
+                                    variant="outlined"
+                                    id="custom-css-outlined-input"
+                                    defaultValue={entries[0].first_name}
+                                    placeholder="First name"
+                                />
+                                <CustomInput
+                                    onChange={handleChangePass}
+                                    className={classes.margin}
+                                    label="Last Name"
+                                    type="text"
+                                    variant="outlined"
+                                    id="custom-css-outlined-input"
+                                    defaultValue={entries[0].last_name}
+                                    placeholder="last name"
+                                />
+                                <CustomInput
+                                    onChange={handleChangeUsr}
+                                    className={classes.margin}
+                                    label="Address line 1"
+                                    type="text"
+                                    variant="outlined"
+                                    id="custom-css-outlined-input"
+                                    defaultValue={entries[0].street_address}
+                                    placeholder="Street Address 1"
+                                />
+                                <CustomInput
+                                    onChange={handleChangeUsr}
+                                    className={classes.margin}
+                                    label="Address line 2"
+                                    type="text"
+                                    variant="outlined"
+                                    id="custom-css-outlined-input"
+                                    defaultValue={entries[0].street_address_2}
+                                    placeholder="Street Address 2"
+                                />
+                                <CustomInput
+                                    onChange={handleChangeUsr}
+                                    className={classes.margin}
+                                    label="Postcode"
+                                    type="text"
+                                    variant="outlined"
+                                    id="custom-css-outlined-input"
+                                    defaultValue={entries[0].postcode}
+                                    placeholder="Postcode"
+                                />
+                                <CustomInput
+                                    onChange={handleChangeUsr}
+                                    className={classes.margin}
+                                    label="City"
+                                    type="text"
+                                    variant="outlined"
+                                    id="custom-css-outlined-input"
+                                    defaultValue={entries[0].city}
+                                    placeholder="City"
+                                />
+                                <CustomInput
+                                    onChange={handleChangeUsr}
+                                    className={classes.margin}
+                                    label="Country"
+                                    type="text"
+                                    variant="outlined"
+                                    id="custom-css-outlined-input"
+                                    defaultValue={entries[0].country}
+                                    placeholder="Country"
+                                />
+                                <CustomInput
+                                    onChange={handleChangePass}
+                                    className={classes.margin}
+                                    label="Phone number"
+                                    variant="outlined"
+                                    type="text"
+                                    id="custom-css-outlined-input"
+                                    defaultValue={entries[0].phone_num}
+                                    placeholder="Phone number"
+                                />
+                                <CustomInput
+                                    onChange={handleChangePass}
+                                    className={classes.margin}
+                                    label="Email"
+                                    variant="outlined"
+                                    type="text"
+                                    id="custom-css-outlined-input"
+                                    defaultValue={customer_email}
+                                    placeholder="Email"
+                                />
+                            </div>
+                            <div className={styles.payment}>
+                                <button className={styles.submit_button} type="submit">Pay with Paypal</button>
+                                <button className={styles.submit_button} type="submit">Pay with Other</button>
+
+
+                            </div>
 
                         </div>
-                        <div className={styles.client_info}>
-                            {customer_type=='organization' && <>
-                                <TextField
-                                onChange={handleChangeUsr}
-                                className={classes.margin}
-                                label="VAT"
-                                type="text"
-                                variant="outlined"
-                                id="custom-css-outlined-input"
-                                defaultValue={entries[0].vat}
-                            />
-                                <TextField
-                                onChange={handleChangeUsr}
-                                className={classes.margin}
-                                label="Company Name"
-                                type="text"
-                                variant="outlined"
-                                id="custom-css-outlined-input"
-                                defaultValue={entries[0].company_name}
-                            />
-                            </>}
-                            <TextField
-                                onChange={handleChangeUsr}
-                                className={classes.margin}
-                                label="First Name"
-                                type="text"
-                                variant="outlined"
-                                id="custom-css-outlined-input"
-                                defaultValue={entries[0].first_name}
-                            />
-                            <TextField
-                                onChange={handleChangePass}
-                                className={classes.margin}
-                                label="Last Name"
-                                type="text"
-                                variant="outlined"
-                                id="custom-css-outlined-input"
-                                defaultValue={entries[0].last_name}
-                            />
-                            <TextField
-                                onChange={handleChangeUsr}
-                                className={classes.margin}
-                                label="Address line 1"
-                                type="text"
-                                variant="outlined"
-                                id="custom-css-outlined-input"
-                                defaultValue={entries[0].street_address}
-                            />
-                            <TextField
-                                onChange={handleChangeUsr}
-                                className={classes.margin}
-                                label="Address line 2"
-                                type="text"
-                                variant="outlined"
-                                id="custom-css-outlined-input"
-                                defaultValue={entries[0].street_address_2}
-                            />
-                            <TextField
-                                onChange={handleChangeUsr}
-                                className={classes.margin}
-                                label="Postcode"
-                                type="text"
-                                variant="outlined"
-                                id="custom-css-outlined-input"
-                                defaultValue={entries[0].postcode}
-                            />
-                            <TextField
-                                onChange={handleChangeUsr}
-                                className={classes.margin}
-                                label="City"
-                                type="text"
-                                variant="outlined"
-                                id="custom-css-outlined-input"
-                                defaultValue={entries[0].city}
-                            />
-                            <TextField
-                                onChange={handleChangeUsr}
-                                className={classes.margin}
-                                label="Country"
-                                type="text"
-                                variant="outlined"
-                                id="custom-css-outlined-input"
-                                defaultValue={entries[0].country}
-                            />
-                            <TextField
-                                onChange={handleChangePass}
-                                className={classes.margin}
-                                label="Phone number"
-                                variant="outlined"
-                                type="text"
-                                id="custom-css-outlined-input"
-                                defaultValue={entries[0].phone_num}
-                            />
-                            <TextField
-                                onChange={handleChangePass}
-                                className={classes.margin}
-                                label="Email"
-                                variant="outlined"
-                                type="text"
-                                id="custom-css-outlined-input"
-                                defaultValue={entries[0].email}
-                            />
-                        </div>
-                        <div className={styles.payment}>
-                            <button className={styles.submit_button} type="submit">Pay with Paypal</button>
-                            <button className={styles.submit_button} type="submit">Pay with Other</button>
-
-
-                        </div>
-
-                    </div>
-                </form>
+                    </form>
+                </div>
                 <div onClick={removeUser}><p>REMOVE USER</p></div>
                 <div onClick={removeCart}><p>CLEAN CART</p></div>
             </div>
