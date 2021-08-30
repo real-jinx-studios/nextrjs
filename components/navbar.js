@@ -99,7 +99,7 @@ export default function Navbar(){
                         <li className={cn({
                             [styles.nav_li]: scroll === false,
                             [styles.nav_li_scroll]: scroll === true
-                        })}><Link href='/buy/products'><a>Buy Now</a></Link></li>
+                        })}><Link href='/buy/products'><a>Store</a></Link></li>
                         <li className={cn({
                             [styles.nav_li]: scroll === false,
                             [styles.nav_li_scroll]: scroll === true

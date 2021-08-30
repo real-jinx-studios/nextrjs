@@ -3,18 +3,103 @@ import MyImage from "../components/myImage";
 import Link from 'next/link'
 import ReactTooltip from 'react-tooltip';
 import FileFormatTabs from "../components/fileFormatTabs";
-import {motion, useAnimation} from "framer-motion"
+import {motion, useAnimation, useSpring} from "framer-motion"
 import {stagger, fadeInUp, easing} from "../components/animations";
-import {useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import { useInView } from "react-intersection-observer";
 import AnimateOnScroll from "../components/animateOnScroll";
-import AnimateDirectionSlide from "../components/animateDirectionSlide";
-import {useSpring} from "react-spring";
+
+export default function Subtitle2(){
+    const [clicked, setClicked]=useState(false)
+    const [index, setIndex]=useState(0)
+    const handleClick=()=>{
+        setClicked(true)
+
+    }
+    useEffect(()=>{console.log(index)},[index])
 
 
-export default function Subtitle(){
+    const controls = useAnimation();
+    useEffect(() => {
+        if (clicked) {
+            controls.start("visible");
+        }
+    }, [controls, clicked]);
 
 
+    const bs=[
+        {title:'Streaming Services',url:'/images/icons/streaming-icon.svg'},
+        {title:'Digital Cinema',url:'/images/icons/digital-icon.svg'},
+        {title:'Blue-ray',url:'/images/icons/blueray-icon.svg'},
+        {title:'Teletext',url:'/images/icons/teletext-icon.svg'},
+        {title:'DVB',url:'/images/icons/dvb-icon.svg'},
+        {title:'Closed Captions',url:'/images/icons/closed-icon.svg'}]
+
+    const easing =[.6,-0.05,0.01,0.99]
+
+    const clicked_card={
+        initial:{
+            opacity:1
+        },
+        animate:{
+            opacity:1,
+            transition:{
+                duration:0.1,
+                ease: easing
+            }
+        }
+    }
+    const selected_main={
+        initial:{
+            opacity:1,
+            paddingBottom:'18%'
+
+        },
+        animate:{
+            opacity:0.8,
+            paddingBottom:'9%',
+            transition:{
+                duration:0.1,
+                ease: easing
+            }
+        }
+    }
+    const selected_move_up={
+        initial:{
+            translateY:'71%',
+            translateX:'-50%'
+
+        },
+        animate:{
+            translateY:'25%',
+            translateX:'-50%',
+            transition:{
+                duration:0.1,
+                ease: easing
+            }
+        }
+    }
+
+
+
+    const bs_html=bs.map((x,i)=> (
+        <motion.div key={i} onClick={()=>{handleClick(); setIndex(i)}} className={styles.dc_inner} animate={controls} initial='hidden' variants={{hidden:selected_main.initial,visible:selected_main.animate}}>
+            <div className={styles.dc_background}>
+                <MyImage src={x.url} width={200} height={200} />
+            </div>
+                <div className={styles.dc_inner_content}>
+                    <div className={styles.boxes_info}>
+                        <motion.div className={styles.center_elem} animate={controls} initial='hidden' variants={{hidden:selected_move_up.initial,visible:selected_move_up.animate}}>
+                             <div className={styles.center_elem_img}>
+                                 <MyImage src={x.url} width={80} height={80}/>
+                             </div>
+                            <h3 className={styles.center_elem_text}>{x.title}</h3>
+                        </motion.div>
+                    </div>
+                </div>
+        </motion.div>
+))
+    
 
 
 
@@ -53,115 +138,72 @@ export default function Subtitle(){
             {/*first section*/}
             <div className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
-                    <AnimateOnScroll>
                         <div className={styles.paragraph}>
                             <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Prepare subtitles for any content</h2>
                             <p><strong>With EZTitles you can subtitle anything – Streaming Services as Netflix, Apple iTunes, Amazon Prime,<br/> Hulu or others, Open subtitles, Closed Captions, Digital Cinema, Blu-ray, Teletext, DVD<br/>and DVB Subtitles - and deliver your work in any file format your clients may require.</strong></p>
 
                         </div>
-                    </AnimateOnScroll>
                 </div>
                 <div className={styles.dc}>
-                    <AnimateDirectionSlide direction="left" className={`${styles.dc_inner} ${styles.dc_side}`}>
-                        <div >
-                        <div className={styles.dc_background}><MyImage src='/images/icons/streaming-icon.svg' width={200} height={200} /></div>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <div className={styles.center_elem_img}><MyImage src='/images/icons/streaming-icon.svg' width={80} height={80}/></div>
-                                            <h3 className={styles.center_elem_text}>Streaming <span>Services</span></h3>
+                    <motion.div
+                        className={styles.dc_inner_main}
+                        animate={controls}
+                        initial="hidden"
+                        transition={{ duration: 0.3 }}
+                        variants={{
+                            visible: { opacity: 1,  height:398},
+                            hidden: { opacity: 0,  height:0 }
+                        }}
+                    >
+
+                        <motion.div className={styles.dc_background_main}><MyImage src={bs[index].url} width={200} height={200} /></motion.div>
+                        <motion.div className={styles.dc_inner_content}>
+                            <motion.div className={styles.boxes_info_main}>
+                                    <div className={styles.elem_main}>
+                                        <div><MyImage src={bs[index].url} width={80} height={80}/></div>
+                                        <div className={styles.center_elem_text_main}>
+                                            <motion.h3 exit={{opacity:0}} initial={{opacity:0}} animate={{opacity:1}}>{bs[index].title}</motion.h3>
+                                            <p>dsgsdkihewuih reswuif dskfuhasuhrfs fsoighs shsooij hgs ousdhfguisghosih 0s sog hasoi sof hr89eg 584 hsihsb uijh gs pgiu hdo hgso ghsogihjsoishgoegnsh.</p>
                                         </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    </AnimateDirectionSlide>
-                    <div className={`${styles.dc_inner} ${styles.dc_top}`}>
-                        <div className={styles.dc_background}><MyImage src='/images/icons/digital-icon.svg' width={200} height={200} /></div>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <div className={styles.center_elem_img}><MyImage src='/images/icons/digital-icon.svg' width={80} height={80}/></div>
-                                            <h3 className={styles.center_elem_text}>Digital <span>Cinema</span></h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <AnimateDirectionSlide direction="right" className={`${styles.dc_inner} ${styles.dc_side}`}>
-                     <div>
-                        <div className={styles.dc_background}><MyImage src='/images/icons/blueray-icon.svg' width={200} height={200} /></div>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <div className={styles.center_elem_img}><MyImage src='/images/icons/blueray-icon.svg' width={80} height={80}/></div>
-                                            <h3 className={styles.center_elem_text}>Blue-ray</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    </AnimateDirectionSlide>
-                    <AnimateDirectionSlide direction="bottom_left" className={`${styles.dc_inner}`}>
-                        <div>
-                        <div className={styles.dc_background}><MyImage src='/images/icons/teletext-icon.svg' width={200} height={200} /></div>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <div className={styles.center_elem_img}><MyImage src='/images/icons/teletext-icon.svg' width={80} height={80}/></div>
-                                            <h3 className={styles.center_elem_text}>Teletext</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    </AnimateDirectionSlide>
-                    <AnimateDirectionSlide direction="bottom"  className={`${styles.dc_inner}`}>
-                        <div>
-                        <div className={styles.dc_background}><MyImage src='/images/icons/dvb-icon.svg' width={200} height={200} /></div>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <div className={styles.center_elem_img}><MyImage src='/images/icons/dvb-icon.svg' width={80} height={80}/></div>
-                                            <h3 className={styles.center_elem_text}>DVB</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    </AnimateDirectionSlide>
-                    <AnimateDirectionSlide direction="bottom_right"  className={`${styles.dc_inner}`}>
-                        <div>
-                        <div className={styles.dc_background}><MyImage src='/images/icons/closed-icon.svg' width={200} height={200} /></div>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <div className={styles.center_elem_img}><MyImage src='/images/icons/closed-icon.svg' width={80} height={80}/></div>
-                                            <h3 className={styles.center_elem_text}>Closed <span>Captions</span></h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    </AnimateDirectionSlide>
+                                    </div>
+                                <div className={styles.elem_main_inner}>
+                                    <div className={styles.elem_main_inner_section}>
+                                        <h5>With the advantage of using digital video as a standard, you can prepare closed captions off-line stunningly fast.</h5>
+                                        <ul style={{'color':'#ffffff'}}>
+                                            <li>Scenarist Closed Caption Format (SCC)</li>
+                                            <li>SMPTE-TT (.xml) Captions with tunnel CEA-608 data</li>
+                                            <li>CPC-715 Online Caption Format (.onl)</li>
+                                            <li>Captions Inc. Files (.cin)</li>
+                                            <li>Cheetah CAP; Cheetah ASC</li>
+                                            <li>TDS Captions; ECF Captions</li>
+                                            <li>NCI Captions; NCI Timed Roll Up Captions (.flc)</li>
+                                            <li>ProCap Captions (.txt)</li>
+                                            <li>Ultech ULT Captions; MCC CEA-708 captions (.mcc)</li>
+                                        </ul>
+
+                                    </div>
+                                    <div className={styles.elem_main_inner_section}>
+                                        <h3>Tutorials</h3>
+                                        <ul>
+                                            <li><Link href='https://www.eztitles.com/Webhelp/EZTitles/'><a target='_blank'>General</a></Link></li>
+                                            <li><Link href='https://www.eztitles.com/Webhelp/EZTitles/'><a target='_blank'>Project Settings</a></Link></li>
+                                            <li><Link href='https://www.eztitles.com/Webhelp/EZTitles/'><a target='_blank'>Closed Captions specific operations</a></Link></li>
+                                            <li><Link href='https://www.eztitles.com/Webhelp/EZTitles/'><a target='_blank'>MCC Captions Export</a></Link></li>
+                                            <li><Link href='https://www.eztitles.com/Webhelp/EZTitles/'><a target='_blank'>Ultech captions (.ult)</a></Link></li>
+                                        </ul>
+                                    </div>
+
+
+                                </div>
+                            </motion.div>
+                        </motion.div>
+
+                    </motion.div>
+
+                </div>
+
+                <div className={styles.dc}>
+                    {bs_html}
 
                 </div>
 
@@ -286,6 +328,7 @@ export default function Subtitle(){
                     </div>
 
                 </div>
+
 
 
 

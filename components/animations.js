@@ -13,7 +13,8 @@ export const fadeInUp={
         opacity:1,
         transition:{
             duration:.6,
-            ease: easing
+            ease: easing,
+            bounce: 0.5
         }
     }
 }
@@ -22,7 +23,8 @@ export const fadeInUp={
 export const stagger={
     animate:{
         transition:{
-            staggerChildren:0.2
+            staggerChildren:0.2,
+            bounce:0.5
         }
     }
 }

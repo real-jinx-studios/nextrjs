@@ -97,7 +97,7 @@ export default function Checkout() {
                         console.log(e.message,'s1')
                     }
                 }catch(e){console.log(e,'1')}
-    /*
+                /*
                 try {
                     router.push('/buy/success')
                 } catch (e) {
@@ -299,6 +299,9 @@ export default function Checkout() {
                                     placeholder="Email"
                                 />
                             </div>
+                            <label><span>Please click here to confirm info is correct</span>
+                                <input type="checkbox"/>
+                            </label>
                             <div className={styles.payment}>
                                 <button className={styles.submit_button} type="submit">Pay with Paypal</button>
                                 <button className={styles.submit_button} type="submit">Pay with Other</button>
@@ -308,6 +311,7 @@ export default function Checkout() {
 
                         </div>
                     </form>
+
                 </div>
                 <div onClick={removeUser}><p>REMOVE USER</p></div>
                 <div onClick={removeCart}><p>CLEAN CART</p></div>

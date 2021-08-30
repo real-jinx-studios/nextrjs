@@ -1,6 +1,12 @@
+import Cookies from "universal-cookie";
 
 
 export default function Success(){
+
+
+    const cookies = new Cookies();
+    cookies.remove('cart', {path: '/'})
+
 
 
 

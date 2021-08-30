@@ -11,7 +11,7 @@ export default async function handler(req, res) {
         let end = performance.now()
         //return res.json([results, {time: end - start}])
         if (results.affectedRows == 1 && results.changedRows == 1) {
-            return res.redirect('/user-login/user-profile')
+            return res.redirect('/user-login')
         }
         return res.redirect('/user-login/confirmation-failed')
     } catch (e) {

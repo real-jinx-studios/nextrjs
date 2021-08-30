@@ -26,8 +26,8 @@ export default function SubscriptionCards(props){
         })*/
 
     const add=()=>{
-        cookies.set('cart', {c_type:'organization',cart:[{name:'EZTitles', version:'essentials',price:89.99,qty:8},{name:'EZConvert', version:'GUI',price:199.99,qty:1}]}, {path:'/'})
-        const isChecked=cookies.get('user-set');
+        cookies.set('cart', {c_type:props.type2,cart:[{name:'EZTitles', version:'essentials',price:89.99,qty:8},{name:'EZConvert', version:'GUI',price:199.99,qty:1}]}, {path:'/'})
+        const isChecked=cookies.get('user');
         if(isChecked){
             router.push('/buy/checkout')
 

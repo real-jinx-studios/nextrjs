@@ -209,43 +209,43 @@ export default function Products(){
 
     if (type=='organization') {
         if (billing == 'yearly') {
-            cards = options.map((x, i) => <SubscriptionCards url={x.url} title={x.name} description={x.description} price={x.price}
+            cards = options.map((x, i) => <SubscriptionCards type2={type} url={x.url} title={x.name} description={x.description} price={x.price}
                                                              type={x.type} formats={x.formats}/>)
 
         } else if (billing == 'monthly') {
-            cards = options1.map((x, i) => <SubscriptionCards url={x.url} title={x.name} description={x.description} price={x.price}
+            cards = options1.map((x, i) => <SubscriptionCards type2={type} url={x.url} title={x.name} description={x.description} price={x.price}
                                                               type={x.type} formats={x.formats}/>)
 
         } else {
-            cards = options2.map((x, i) => <SubscriptionCards url={x.url} title={x.name} description={x.description} price={x.price}
+            cards = options2.map((x, i) => <SubscriptionCards type2={type} url={x.url} title={x.name} description={x.description} price={x.price}
                                                               type={x.type} formats={x.formats}/>)
 
         }
     } else if(type=='personal'){
         if (billing == 'yearly') {
-            cards = options3.map((x, i) => <SubscriptionCards url={x.url} title={x.name} description={x.description} price={x.price}
+            cards = options3.map((x, i) => <SubscriptionCards type2={type} url={x.url} title={x.name} description={x.description} price={x.price}
                                                              type={x.type} formats={x.formats}/>)
 
         } else if (billing == 'monthly') {
-            cards = options4.map((x, i) => <SubscriptionCards url={x.url} title={x.name} description={x.description} price={x.price}
+            cards = options4.map((x, i) => <SubscriptionCards type2={type} url={x.url} title={x.name} description={x.description} price={x.price}
                                                               type={x.type} formats={x.formats}/>)
 
         } else {
-            cards = options5.map((x, i) => <SubscriptionCards url={x.url} title={x.name} description={x.description} price={x.price}
+            cards = options5.map((x, i) => <SubscriptionCards type2={type} url={x.url} title={x.name} description={x.description} price={x.price}
                                                               type={x.type} formats={x.formats}/>)
 
         }
     }else{
         if (billing == 'yearly') {
-            cards = options3.map((x, i) => <SubscriptionCards url={x.url} title={x.name} description={x.description} price={x.price}
+            cards = options3.map((x, i) => <SubscriptionCards type2={type} url={x.url} title={x.name} description={x.description} price={x.price}
                                                               type={x.type} formats={x.formats}/>)
 
         } else if (billing == 'monthly') {
-            cards = options4.map((x, i) => <SubscriptionCards url={x.url} title={x.name} description={x.description} price={x.price}
+            cards = options4.map((x, i) => <SubscriptionCards type2={type} url={x.url} title={x.name} description={x.description} price={x.price}
                                                               type={x.type} formats={x.formats}/>)
 
         } else {
-            cards = options5.map((x, i) => <SubscriptionCards url={x.url} title={x.name} description={x.description} price={x.price}
+            cards = options5.map((x, i) => <SubscriptionCards type2={type} url={x.url} title={x.name} description={x.description} price={x.price}
                                                               type={x.type} formats={x.formats}/>)
 
         }
