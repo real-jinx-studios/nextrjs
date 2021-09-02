@@ -80,7 +80,7 @@ export default function Navbar(){
                         [router.pathname!=='/'?styles.nav_icon_wrapper:styles.nav_icon_wrapper_home]: scroll === false,
                         [styles.nav_icon_wrapper_scroll]: scroll === true
                     })}>
-                    <Link href={router.pathname!=='/'?'/':'/all'}><a><MyImage
+                    <Link href={router.pathname!=='/'?'/':'/buy/products'}><a><MyImage
                         priority={true}
                         src='/images/ezlogo.png'
                         height={50}

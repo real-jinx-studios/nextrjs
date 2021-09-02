@@ -8,6 +8,7 @@ import {stagger, fadeInUp, easing} from "../components/animations";
 import React, {useEffect, useRef, useState} from "react";
 import { useInView } from "react-intersection-observer";
 import AnimateOnScroll from "../components/animateOnScroll";
+import {Helmet} from "react-helmet";
 
 export default function Subtitle2(){
     const [clicked, setClicked]=useState(false)
@@ -108,6 +109,14 @@ export default function Subtitle2(){
 
     return (
         <motion.div exit={{opacity:0}} initial='initial' animate='animate'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>EZTitles: Subtitling Software</title>
+                <meta name="description" content="World's best subtitling software at your fingertips. Closed Captions, DVB, Digital Cinema and many more." />
+            </Helmet>
+
+
+
             <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:0.08}} className={styles.video_background}>
                 <video style={{"width":"100%"}} autoPlay loop>
 
