@@ -3,6 +3,7 @@ import Layout, {siteTitle} from "../components/layout";
 import utilStyles from '../styles/utils.module.css'
 import Navbar from "../components/navbar";
 import HomeMain from "../components/homeMain";
+import HomeMain2 from "../components/homeMain2";
 import HomeProductsMain from "../components/homeProductsMain";
 import HomePostMain from "../components/homePostMain";
 import styles from "../components/homeMain.module.css";
@@ -25,8 +26,10 @@ export default function Home() {
 
             </Head>
 
+            <HomeMain2/>
             <HomeMain/>
-            <div className={styles.customers_slider}>
+
+          {/*  <div className={styles.customers_slider}>
                 <div className={styles.clients_title}>
                     <h2>Our Clients</h2>
                 </div>
@@ -80,7 +83,7 @@ export default function Home() {
                 </div>
 
             </div>
-            <HomePostMain/>
+            <HomePostMain/>*/}
 
 
 

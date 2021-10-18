@@ -1,9 +1,9 @@
-import styles from '../styles/subtitle.module.css'
+import styles from '../styles/subtitle2.module.css'
 import MyImage from "../components/myImage";
 import Link from 'next/link'
 import ReactTooltip from 'react-tooltip';
 import FileFormatTabs from "../components/fileFormatTabs";
-import {motion, useAnimation, useSpring} from "framer-motion"
+import {motion, useAnimation, useSpring, useTransform, useViewportScroll} from "framer-motion"
 import {stagger, fadeInUp, easing} from "../components/animations";
 import React, {useEffect, useRef, useState} from "react";
 import { useInView } from "react-intersection-observer";
@@ -16,6 +16,14 @@ export default function Subtitle2(){
     const handleClick=()=>{
         setClicked(true)
 
+    }
+    const parent={
+        animate:{
+            transition:{
+                staggerChildren:0.1,
+                delayChildren:1
+            }
+        }
     }
     useEffect(()=>{console.log(index)},[index])
 
@@ -81,6 +89,34 @@ export default function Subtitle2(){
         }
     }
 
+    const stagger_ul={
+
+        animate:{
+            transition:{
+                staggerChildren:0.03
+            }
+        }
+    }
+
+    const fadeInUp_li={
+        initial:{
+            y:80,
+            opacity:0
+        },
+        animate:{
+            y:0,
+            opacity:1,
+            transition:{
+                duration:.1,
+            }
+        }
+    }
+
+    const menu_item=Array.from('SUBTITLING ASSISTANT')
+    const menu_item1=Array.from('CLOSED CAPTIONS')
+    const menu_item2=Array.from('FEATURES')
+    const menu_item3=Array.from('DIGITAL CINEMA')
+    const menu_item4=Array.from('HOW TO')
 
 
     const bs_html=bs.map((x,i)=> (
@@ -104,6 +140,10 @@ export default function Subtitle2(){
 
 
 
+    //more features div anim
+    const { scrollYProgress } = useViewportScroll();
+    const translateX = useTransform(scrollYProgress, [0,1],[0, -1*(22*380)]);
+
 
 
 
@@ -125,7 +165,30 @@ export default function Subtitle2(){
             </motion.div>
         <div className={styles.main_wrapper}>
 
-            <motion.div variants={stagger} className={styles.main_inner}>
+
+            <motion.div variants={stagger} className={styles.main_inner_left}>
+                <motion.ul variants={stagger_ul} className={styles.title_nav_ul}>
+
+                    <motion.li className={styles.big_title_li}>
+                        {menu_item.map((x,i)=><motion.span variants={fadeInUp_li} key={i}>{x}</motion.span>)}
+                    </motion.li>
+                    <motion.li className={styles.big_title_li}>
+                        {menu_item1.map((x,i)=><motion.span variants={fadeInUp_li} key={i}>{x}</motion.span>)}
+                    </motion.li>
+                    <motion.li className={styles.big_title_li}>
+                        {menu_item2.map((x,i)=><motion.span variants={fadeInUp_li} key={i}>{x}</motion.span>)}
+                    </motion.li>
+                    <motion.li className={styles.big_title_li}>
+                        {menu_item3.map((x,i)=><motion.span variants={fadeInUp_li} key={i}>{x}</motion.span>)}
+                    </motion.li>
+                    <motion.li className={styles.big_title_li}>
+                        {menu_item4.map((x,i)=><motion.span variants={fadeInUp_li} key={i}>{x}</motion.span>)}
+                    </motion.li>
+                </motion.ul>
+
+
+            </motion.div>
+            <motion.div variants={stagger} className={styles.main_inner_right}>
                 <motion.div variants={fadeInUp} className={styles.title_icon_wrapper}>
                     <MyImage src='/images/ezt.png' width={48} height={48} alt='EZTitles logo'/>
                     <motion.p variants={fadeInUp} className={styles.big_title}>EZTitles</motion.p>
@@ -211,10 +274,10 @@ export default function Subtitle2(){
 
                 </div>
 
-                <div className={styles.dc}>
+                <motion.div variants={parent} className={styles.dc}>
                     {bs_html}
 
-                </div>
+                </motion.div>
 
 
 
@@ -778,7 +841,7 @@ export default function Subtitle2(){
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "2.3em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Even more features!</h2>
-                        <div className={styles.more_features_wrapper}>
+                        <motion.div style={{transform:translateX}} className={styles.more_features_wrapper}>
                             <div className={styles.m_feature}>
                                 <div className={styles.m_feature_icon}>
                                     <MyImage src="/images/features_icons/puzzle.png" width={111} height={111}/>
@@ -1027,7 +1090,7 @@ export default function Subtitle2(){
 
 
 
-                        </div>
+                        </motion.div>
 
                     </div>
                 </div>

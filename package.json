@@ -38,8 +38,11 @@
     "react-tooltip": "^4.2.21",
     "redux": "^4.1.1",
     "redux-devtools-extension": "^2.13.9",
+    "request": "^2.79.0",
     "serverless-mysql": "^1.5.4",
+    "soap": "^0.42.0",
     "stripe": "^8.169.0",
+    "strong-soap": "^3.3.1",
     "swr": "^0.5.6",
     "tls": "0.0.1",
     "universal-cookie": "^4.0.4"

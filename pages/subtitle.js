@@ -3,17 +3,179 @@ import MyImage from "../components/myImage";
 import Link from 'next/link'
 import ReactTooltip from 'react-tooltip';
 import FileFormatTabs from "../components/fileFormatTabs";
-import {motion, useAnimation} from "framer-motion"
+import {AnimatePresence, motion, useAnimation, useCycle} from "framer-motion"
 import {stagger, fadeInUp, easing} from "../components/animations";
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import { useInView } from "react-intersection-observer";
 import AnimateOnScroll from "../components/animateOnScroll";
 import AnimateDirectionSlide from "../components/animateDirectionSlide";
 import {useSpring} from "react-spring";
+import {useRouter} from "next/router";
 
 
 export default function Subtitle(){
+    /*state management is below*/
+    const [currentNav, setCurrentNav]=useState('none')
+    const [isVideoOpen, setIsVideoOpen]=useState(false)
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isPaymentSelected, setIsPaymentSelected] = useState('one-time');
+    const [isStreamingServices, setIsStreamingServices] = useState(false);
+    const [isClosedCaptions, setIsClosedCaptions] = useState(false);
 
+    /*scrolling triggers below for components in view*/
+    const [ref, inView] = useInView();
+    const [ref1, inView1] = useInView();
+    const [ref2, inView2] = useInView();
+    const [ref3, inView3] = useInView();
+    const [ref4, inView4] = useInView();
+    const videoRef=useRef();
+    const router = useRouter()
+    useEffect(()=>{
+        const nav=router.asPath.split('#')
+
+        if(inView1){
+            setCurrentNav('compatibility')
+        }else if(inView2){
+            setCurrentNav('formats')
+        }else if(inView3){
+            setCurrentNav('features')
+        }else if(inView4){
+            setCurrentNav('editions')
+        }else if(inView){
+            setCurrentNav('none')
+        }/*else{
+            setCurrentNav('none')
+        }*/
+    },[inView1, inView2, inView3, inView4])
+
+    /*event handlers like clicks and such below*/
+    const handleVideoPlay=()=>{
+        if (videoRef.current.paused)
+            videoRef.current.play();
+        else
+            videoRef.current.pause();
+
+    }
+    const handlePaymentSelect=(e)=>{
+        setIsPaymentSelected(e)
+
+    }
+    const handleStreamingServices=()=>{
+        setIsStreamingServices(!isStreamingServices)
+
+    }
+    const handleClosedCaptions=()=>{
+        setIsClosedCaptions(!isClosedCaptions)
+
+    }
+    const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen)
+
+    /*animation setup is below*/
+    const dropdownAnimVariantOption1={
+        initial:{
+            opacity:0,
+            y:-100
+        },
+        animate:{
+            opacity:1,
+            y:2,
+            transition:{
+
+
+
+
+            }
+        },
+        exit:{
+            opacity:0,
+            y:-50,
+            transition:{
+                duration:0.2
+            }
+        }
+    }
+    const dropdownAnimVariantOption2={
+        initial:{
+            opacity:0,
+            y:-150
+        },
+        animate:{
+            opacity:1,
+            y:3.5,
+            transition:{
+
+
+            }
+        },
+        exit:{
+            opacity:0,
+            y:-100,
+            transition:{
+                duration:0.2
+            }
+        }
+    }
+    const paymentRentInstallmentVariant={
+        initial:{
+            opacity:0,
+            y:-98
+        },
+        animate:{
+            opacity:1,
+            y:0,
+            transition:{
+
+
+            }
+        },
+        exit:{
+            opacity:0,
+            y:-50,
+            transition:{
+                duration:0.2
+            }
+        }
+    }
+    const cardOverlayVariant={
+        initial:{
+            opacity:0
+        },
+        animate:{
+            opacity:1,
+        },
+        exit:{
+            opacity:0
+        }
+    }
+    const showOverlaySvgVariant={
+        initial:{
+            rotate:'0deg',
+            fill:'#ffffff'
+        },
+        animate:{
+            originX:'50%',
+            originY:'50%',
+            rotate:'45deg',
+            fill:'#D92B3A'
+        },
+        exit:{
+            rotate:'0deg',
+            fill:'#ffffff'
+        }
+    }
+    const overlayTextVariant={
+        initial:{
+            opacity:0,
+            y:-60
+        },
+        animate:{
+            opacity:1,
+            y:'16%',
+            transition:{
+                delay:0.3
+            }
+        }
+    }
 
 
 
@@ -29,29 +191,249 @@ export default function Subtitle(){
                     <source src="/videos/hero-eztitles.mp4"/>
                 </video>
             </motion.div>
-        <div className={styles.main_wrapper}>
+        <div className={styles.main_wrapper} ref={ref}>
 
-            <motion.div variants={stagger} className={styles.main_inner}>
-                <motion.div variants={fadeInUp} className={styles.title_icon_wrapper}>
-                    <MyImage src='/images/ezt.png' width={48} height={48} alt='EZTitles logo'/>
-                    <motion.p variants={fadeInUp} className={styles.big_title}>EZTitles</motion.p>
-                </motion.div>
-                <div className={styles.caption_wrapper}>
-                    <motion.p variants={fadeInUp} className={styles.caption}>The world’s best professional<br/>subtitling and captioning software</motion.p>
+            {/*eztitles purchase menu*/}
+
+            <AnimatePresence exitBeforeEnter>
+                <div className={styles.product_purchase_info}>
+                    <motion.div variants={stagger} className={styles.main_inner}>
+                        <div className={styles.caption_wrapper}>
+                            <motion.p variants={fadeInUp} className={styles.caption}>The world’s best professional<br/>subtitling and captioning software</motion.p>
+                        </div>
+
+
+
+
+                    </motion.div>
+                    <div className={styles.purchase_info_title}>
+                        <div style={{height:132.4}}>
+                            <h1 className={styles.title_1}>EZTitles</h1>
+                            <select className={styles.version_dropdown_select}>
+                                <option value='essentials'>Essentials</option>
+                                <option value='standard'>Standard</option>
+                                <option value='ultimate'>Ultimate</option>
+                            </select>
+                            <div className={styles.version_dropdown} onClick={toggleDropdown}>
+                                <h2>Essentials</h2>
+                                {!isDropdownOpen && (<motion.svg
+                                    initial={{opacity: 0}}
+                                    animate={{opacity: 1}}
+                                    exit={{opacity: 0}}
+                                    className={styles.version_dropdown_svg}
+                                                                 xmlns="http://www.w3.org/2000/svg"
+                                                                 height="36px" viewBox="0 0 24 24" width="36px"
+                                                                 fill="#FFFFFF">
+                                    <path d="M24 24H0V0h24v24z" fill="none" opacity=".87"/>
+                                    <path
+                                        d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z"/>
+                                </motion.svg>)}
+                                {isDropdownOpen && (<motion.svg
+                                    initial={{opacity: 0}}
+                                    animate={{opacity: 1}}
+                                    exit={{opacity: 0}}
+                                    className={styles.version_dropdown_svg}
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="36px" viewBox="0 0 24 24" width="36px"
+                                    fill="#FFFFFF">
+                                    <path xmlns="http://www.w3.org/2000/svg" d="M0 0h24v24H0V0z" fill="none"/>
+                                    <path xmlns="http://www.w3.org/2000/svg" d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/>
+                                </motion.svg>)}
+                            </div>
+                            <AnimatePresence exitBeforeEnter>
+                            {isDropdownOpen && (<>
+                                <motion.div
+                                    variants={dropdownAnimVariantOption1}
+                                    initial='initial'
+                                    animate='animate'
+                                    exit='exit'
+                                key='option1'
+                                className={styles.version_dropdown} onClick={toggleDropdown}>
+                                <h2>Standard</h2>
+                            </motion.div>
+                                <motion.div
+                                    variants={dropdownAnimVariantOption2}
+                                    initial='initial'
+                                    animate='animate'
+                                    exit='exit'
+                                key='option2'
+                                className={styles.version_dropdown} onClick={toggleDropdown}>
+                                <h2>Ultimate</h2>
+                                </motion.div>
+                                </>
+                          )}
+                            </AnimatePresence>
+                        </div>
+                    </div>
+                    <div className={styles.product_versions}>
+                        <p className={styles.product_versions_label}>Payment:</p>
+
+                        <div className={styles.purchase_options}>
+                            <div className={styles.product_version} key='one-time' onClick={()=>handlePaymentSelect('one-time')}>
+                                <div className={styles.product_label_wrapper_off}>
+                                    one-time
+
+                                </div>
+
+                            </div>
+
+
+                            <div className={styles.product_version} key='rent' onClick={()=>handlePaymentSelect('rent')}>
+                                <div className={styles.product_label_wrapper_off}>
+                                    rent
+
+                                </div>
+
+                            </div>
+
+                            <div className={styles.product_version} key='installment' onClick={()=>handlePaymentSelect('installment')}>
+                                <div className={styles.product_label_wrapper_off}>
+                                    installments
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div className={styles.product_version}>
+                            <div className={styles.product_label_wrapper_off}>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <AnimatePresence exitBeforeEnter>
+                        {isPaymentSelected == 'rent' && <motion.div
+                            variants={paymentRentInstallmentVariant}
+                            initial='initial'
+                            animate='animate'
+                            exit='exit'
+                            key='rent-payment'
+                            className={styles.rent}>
+                            <p className={styles.product_versions_label}>Months:</p>
+                            <div className={styles.select}>
+                                <select name="size" className="o-caption o-caption--bold js-size-select">
+
+                                    <option value="6" selected="selected">1</option>
+
+                                    <option value="6.5">2</option>
+
+                                    <option value="7">3</option>
+
+                                    <option value="7.5">4</option>
+
+                                    <option value="8">5</option>
+
+                                    <option value="8.5">6</option>
+
+                                    <option value="9">7</option>
+
+                                    <option value="9.5">8</option>
+
+
+                                </select>
+                                <span className={styles.arrow} aria-hidden="true">
+
+        <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4"></path>
+        </svg>
+
+</span>
+
+                            </div>
+                        </motion.div>
+                    }
+
+                        {isPaymentSelected == 'installment' && <motion.div
+                            variants={paymentRentInstallmentVariant}
+                            initial='initial'
+                            animate='animate'
+                            exit='exit'
+                            key='installment-payment'
+                            className={styles.rent}>
+                            <p className={styles.product_versions_label}>Installment Plan:</p>
+                            <div className={styles.select}>
+                                <select name="size" className="o-caption o-caption--bold js-size-select">
+
+                                    <option value="6" selected="selected">12 months (4 payments)</option>
+
+                                    <option value="6.5">24 months (8 payments)</option>
+
+                                    <option value="7">36 months (12 payments)</option>
+
+
+                                </select>
+                                <span className={styles.arrow} aria-hidden="true">
+
+        <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1l4 4 4-4"></path>
+        </svg>
+
+</span>
+
+                            </div>
+                        </motion.div>
+                        }
+                    </AnimatePresence>
+
+                    <div className={styles.product_checkout_wrapper}>
+
+                        <button className={styles.buy_button}>
+                            <span>Go to checkout</span>
+
+                        </button>
+                        <p className={styles.price_1}>
+
+                            <span>€80.00<br/><small>W/O VAT</small></span>
+
+                        </p>
+                    </div>
+
+
                 </div>
-                <div className={styles.free_trial_wrapper}>
-                    <Link href='https://eztitstorage.blob.core.windows.net/eztitles-storage/HardID.exe'><motion.a variants={fadeInUp} className={styles.free_trial}>FREE TRIAL</motion.a></Link>
-                    <br />
-                    <Link href="/buy/product?eztitles"><motion.a variants={fadeInUp}><motion.button  whileHover={{scale:1.1}} whileTap={{scale:0.9}} className={styles.get_now}>BUY NOW</motion.button></motion.a></Link>
-
-                </div>
+            </AnimatePresence>
 
 
-            </motion.div>
+
         </div>
         <div className={styles.content_wrapper}>
+            <div className={styles.secondary_nav}>
+                <div className={styles.secondary_nav_inner}>
+                    <Link href="#compatibility"><motion.a className={`${styles.secondary_nav_inner_item1} ${currentNav=='compatibility'?styles.active_item1:''}`}>What you can do</motion.a></Link>
+                    <Link href="#formats"><motion.a className={`${styles.secondary_nav_inner_item2} ${currentNav=='formats'?styles.active_item2:''}`}>How it is easy</motion.a></Link>
+                    <Link href="#features"><motion.a className={`${styles.secondary_nav_inner_item3} ${currentNav=='features'?styles.active_item3:''}`}>Designed for you</motion.a></Link>
+                    <Link href="#editions"><motion.a className={`${styles.secondary_nav_inner_item4} ${currentNav=='editions'?styles.active_item4:''}`}>Samples</motion.a></Link>
+                    <div className="sticky-nav_overlay" style={{"backgroundColor": "#fefefe"}}></div>
+                </div>
+            </div>
+
+            {/*video section*/}
+            <div style={{"marginTop":"230px"}} className={styles.content_inner}>
+                <motion.div
+                    layout
+                    data-isOpen={isVideoOpen}
+                    initial={{ borderRadius: 50 }}
+                    className={styles.video_parent}
+                    onClick={() => {setIsVideoOpen(!isVideoOpen); handleVideoPlay()}}
+                >
+                    <motion.div layout className={styles.video_play} ><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="#f107a3"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg></motion.div>
+
+                    <motion.div
+                        className={styles.video_actual}>
+
+                        <video ref={videoRef} style={{width: 985, height: 554}}>
+                            <source src="/videos/subass_video.mp4"/>
+
+                        </video>
+                    </motion.div>
+                </motion.div>
+
+            </div>
+
+
             {/*first section*/}
-            <div className={styles.content_inner}>
+            <div style={{"marginTop":"320px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <AnimateOnScroll>
                         <div className={styles.paragraph}>
@@ -61,110 +443,245 @@ export default function Subtitle(){
                         </div>
                     </AnimateOnScroll>
                 </div>
-                <div className={styles.dc}>
-                    <AnimateDirectionSlide direction="left" className={`${styles.dc_inner} ${styles.dc_side}`}>
-                        <div >
-                        <div className={styles.dc_background}><MyImage src='/images/icons/streaming-icon.svg' width={200} height={200} /></div>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <div className={styles.center_elem_img}><MyImage src='/images/icons/streaming-icon.svg' width={80} height={80}/></div>
-                                            <h3 className={styles.center_elem_text}>Streaming <span>Services</span></h3>
-                                        </div>
-                                    </a>
-                                </Link>
+                <div className={styles.card_wrapper}>
+                    {/*<div className={styles.card}>
+                        <div className={styles.card_inner}>
+                            <div className={styles.card_inner_title}>
+                                <h4>Streaming Services</h4>
                             </div>
+                            <div className={styles.card_inner_description}>
+                                <p className={styles.card_inner_description_text}>EZTitles is designed to be a world-class professional subtitling software so it complies with all the TV broadcast, streaming services.</p>
+
+                            </div>
+                            <div className={styles.card_inner_background_icon}>
+                                <MyImage src='/images/icons/streaming-icon.svg' width={600} height={600} />
+                            </div>
+                            <div className={styles.card_inner_screenshot}>
+                                <MyImage src='/images/software/eztitles/netlix_menu.png' width={333} height={333} />
+                            </div>
+                            <div className={styles.card_inner_more_icon}>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 7c-.55 0-1 .45-1 1v3H8c-.55 0-1 .45-1 1s.45 1 1 1h3v3c0 .55.45 1 1 1s1-.45 1-1v-3h3c.55 0 1-.45 1-1s-.45-1-1-1h-3V8c0-.55-.45-1-1-1zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+
+                            </div>
+
+                        </div>
+                    </div>*/}
+                    {/*streaming services card with overlay*/}
+                    <div className={styles.card}>
+                        {/*hidden part*/}
+                        <AnimatePresence exitBeforeEnter>
+                            {isStreamingServices
+                                &&
+                                    (<motion.div
+                                            variants={cardOverlayVariant}
+                                            initial='initial'
+                                            animate='animate'
+                                            exit='exit'
+                                            key='overlay'
+                                            className={styles.card_inner_overlay}>
+                                <div className={styles.card_inner_title}>
+                                    <h4>Streaming Services</h4>
+                                </div>
+                                <div className={styles.card_inner_description}>
+                                    <motion.p   variants={overlayTextVariant}
+                                                initial='initial'
+                                                animate='animate'
+                                                exit='initial'
+                                                className={styles.card_inner_overlay_description_text}>Services such as:<br/>Disney+, Apple TV+, Netflix (<Link href='https://www.eztitles.com/download.php?file=prepare-subtitles-for-Netflix'><a style={{color:'#35C9F2', textDecoration:'underline', cursor:'pointer'}}>find our guide here</a></Link>), Amazon Prime or others, film, NLE, 4k, HD, Blu-ray and DVD standards.
+                                        <motion.div className={styles.card_inner_overlay_images}>
+                                            <MyImage src='/images/icons/disney.png' width={50} height={50}/>
+                                            <MyImage src='/images/icons/hbo.png' width={50} height={50}/>
+                                            <MyImage src='/images/icons/netflix.png' width={50} height={50}/>
+                                            <MyImage src='/images/icons/apple.png' width={50} height={50}/>
+                                            <MyImage src='/images/icons/amazon.png' width={50} height={50}/>
+                                            <MyImage src='/images/icons/hulu.png' width={50} height={50}/>
+                                        </motion.div>
+                                    </motion.p>
+
+
+                                </div>
+                                <div className={styles.card_inner_background_icon}>
+                                    <MyImage src='/images/icons/streaming-icon.svg' width={600} height={600}/>
+                                </div>
+                                <div className={styles.card_inner_more_icon}>
+                                    <motion.svg
+                                        variants={showOverlaySvgVariant}
+                                        onClick={handleStreamingServices} xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24"
+                                                width="48px" fill="#FFFFFF">
+                                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                                        <path
+                                            d="M12 7c-.55 0-1 .45-1 1v3H8c-.55 0-1 .45-1 1s.45 1 1 1h3v3c0 .55.45 1 1 1s1-.45 1-1v-3h3c.55 0 1-.45 1-1s-.45-1-1-1h-3V8c0-.55-.45-1-1-1zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                    </motion.svg>
+
+                                </div>
+                            </motion.div>
+                                )
+                            }
+                        </AnimatePresence>
+                        {/*visible part*/}
+                        <AnimatePresence>
+                            {!isStreamingServices &&
+                                (<motion.div
+                                        variants={cardOverlayVariant}
+                                        initial='initial'
+                                        animate='animate'
+                                        exit='exit'
+                                        key='initial'
+                                        className={styles.card_inner}>
+                                <div className={styles.card_inner_title}>
+                                    <h4>Streaming Services</h4>
+                                </div>
+                                <div className={styles.card_inner_description}>
+                                    <p className={styles.card_inner_description_text}>EZTitles is designed to be a
+                                        world-class professional subtitling software so it complies with all the TV
+                                        broadcast, streaming services.</p>
+
+                                </div>
+                                <div className={styles.card_inner_background_icon}>
+                                    <MyImage src='/images/icons/streaming-icon.svg' width={600} height={600}/>
+                                </div>
+                                <div className={styles.card_inner_more_icon}>
+                                    <motion.svg
+                                        variants={showOverlaySvgVariant}
+                                        initial='animate'
+                                        animate='initial'
+                                        exit='animate'
+                                        onClick={handleStreamingServices} xmlns="http://www.w3.org/2000/svg"
+                                         height="48px" viewBox="0 0 24 24" width="48px" fill="#FFFFFF">
+                                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                                        <path
+                                            d="M12 7c-.55 0-1 .45-1 1v3H8c-.55 0-1 .45-1 1s.45 1 1 1h3v3c0 .55.45 1 1 1s1-.45 1-1v-3h3c.55 0 1-.45 1-1s-.45-1-1-1h-3V8c0-.55-.45-1-1-1zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                    </motion.svg>
+
+                                </div>
+
+                            </motion.div>
+                                )
+                            }
+                        </AnimatePresence>
+                    </div>
+                    {/*digital cinema plain*/}
+                    <div className={styles.card}>
+                        <div className={styles.card_inner}>
+                            <div className={styles.card_inner_title}>
+                                <h4>Digital Cinema</h4>
+                            </div>
+                            <div className={styles.card_inner_description}>
+                                <p className={styles.card_inner_description_text}>This is a completely new presentation mode which complies with all the standards and requirements of Digital Cinema subtitling and provides an accurate preview of what your subtitles will look like on the theater’s screen.</p>
+
+                            </div>
+                            <div className={styles.card_inner_background_icon}>
+                                <MyImage src='/images/icons/digital-icon.svg' width={600} height={600}/>
+                            </div>
+
                         </div>
                     </div>
-                    </AnimateDirectionSlide>
-                    <div className={`${styles.dc_inner} ${styles.dc_top}`}>
-                        <div className={styles.dc_background}><MyImage src='/images/icons/digital-icon.svg' width={200} height={200} /></div>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <div className={styles.center_elem_img}><MyImage src='/images/icons/digital-icon.svg' width={80} height={80}/></div>
-                                            <h3 className={styles.center_elem_text}>Digital <span>Cinema</span></h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
+
+                    {/*closed captions card with overlay*/}
+                    <div className={styles.card}>
+                        {/*hidden part*/}
+                        <AnimatePresence exitBeforeEnter>
+                            {isClosedCaptions
+                            &&
+                            (<motion.div
+                                    variants={cardOverlayVariant}
+                                    initial='initial'
+                                    animate='animate'
+                                    exit='exit'
+                                    key='overlay'
+                                    className={styles.card_inner_overlay}>
+                                    <div className={styles.card_inner_title}>
+                                        <h4>Closed Captions</h4>
+                                    </div>
+                                    <div className={styles.card_inner_description}>
+                                        <motion.p   variants={overlayTextVariant}
+                                                    initial='initial'
+                                                    animate={{opacity:1,y:0}}
+                                                    exit='initial'
+                                                    className={styles.card_inner_overlay_description_text}>Main formats we support:<br/>
+                                            <ul className={styles.card_inner_overlay_description_ul}>
+                                                <li>Scenarist Closed Caption Format (SCC)
+                                                </li>
+                                                <li>SMPTE-TT (.xml) Captions with tunnel CEA-608 data
+                                                </li>
+                                                <li>CPC-715 Online Caption Format (.onl)
+                                                </li>
+                                                <li>Captions Inc. Files (.cin)
+                                                </li>
+                                                <li>Cheetah CAP; Cheetah ASC
+                                                </li>
+                                                <li>TDS Captions; ECF Captions
+                                                </li>
+                                                <li>NCI Captions; NCI Timed Roll Up Captions (.flc)
+                                                </li>
+                                                <li>ProCap Captions (.txt)
+                                                </li>
+                                                <li>Ultech ULT Captions; MCC CEA-708 captions (.mcc)</li>
+                                            </ul>
+                                        </motion.p>
+
+
+                                    </div>
+                                    <div className={styles.card_inner_background_icon}>
+                                        <MyImage src='/images/icons/closed-icon.svg' width={600} height={600}/>
+                                    </div>
+                                    <div className={styles.card_inner_more_icon}>
+                                        <motion.svg
+                                            variants={showOverlaySvgVariant}
+                                            onClick={handleClosedCaptions} xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24"
+                                            width="48px" fill="#FFFFFF">
+                                            <path d="M0 0h24v24H0V0z" fill="none"/>
+                                            <path
+                                                d="M12 7c-.55 0-1 .45-1 1v3H8c-.55 0-1 .45-1 1s.45 1 1 1h3v3c0 .55.45 1 1 1s1-.45 1-1v-3h3c.55 0 1-.45 1-1s-.45-1-1-1h-3V8c0-.55-.45-1-1-1zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                        </motion.svg>
+
+                                    </div>
+                                </motion.div>
+                            )
+                            }
+                        </AnimatePresence>
+                        {/*visible part*/}
+                        <AnimatePresence>
+                            {!isClosedCaptions &&
+                            (<motion.div
+                                    variants={cardOverlayVariant}
+                                    initial='initial'
+                                    animate='animate'
+                                    exit='exit'
+                                    key='initial'
+                                    className={styles.card_inner}>
+                                    <div className={styles.card_inner_title}>
+                                        <h4>Closed Captions</h4>
+                                    </div>
+                                    <div className={styles.card_inner_description}>
+                                        <p className={styles.card_inner_description_text}>With the advantage of using digital video as a standard, you can prepare closed captions off-line stunningly fast. And you can deliver them to your clients without having to leave your home or office, since you have all the popular closed captions file formats at your fingertips.</p>
+
+                                    </div>
+                                    <div className={styles.card_inner_background_icon}>
+                                        <MyImage src='/images/icons/closed-icon.svg' width={600} height={600}/>
+                                    </div>
+                                    <div className={styles.card_inner_more_icon}>
+                                        <motion.svg
+                                            variants={showOverlaySvgVariant}
+                                            initial='animate'
+                                            animate='initial'
+                                            exit='animate'
+                                            onClick={handleClosedCaptions} xmlns="http://www.w3.org/2000/svg"
+                                            height="48px" viewBox="0 0 24 24" width="48px" fill="#FFFFFF">
+                                            <path d="M0 0h24v24H0V0z" fill="none"/>
+                                            <path
+                                                d="M12 7c-.55 0-1 .45-1 1v3H8c-.55 0-1 .45-1 1s.45 1 1 1h3v3c0 .55.45 1 1 1s1-.45 1-1v-3h3c.55 0 1-.45 1-1s-.45-1-1-1h-3V8c0-.55-.45-1-1-1zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                        </motion.svg>
+
+                                    </div>
+
+                                </motion.div>
+                            )
+                            }
+                        </AnimatePresence>
                     </div>
-                    <AnimateDirectionSlide direction="right" className={`${styles.dc_inner} ${styles.dc_side}`}>
-                     <div>
-                        <div className={styles.dc_background}><MyImage src='/images/icons/blueray-icon.svg' width={200} height={200} /></div>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <div className={styles.center_elem_img}><MyImage src='/images/icons/blueray-icon.svg' width={80} height={80}/></div>
-                                            <h3 className={styles.center_elem_text}>Blue-ray</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    </AnimateDirectionSlide>
-                    <AnimateDirectionSlide direction="bottom_left" className={`${styles.dc_inner}`}>
-                        <div>
-                        <div className={styles.dc_background}><MyImage src='/images/icons/teletext-icon.svg' width={200} height={200} /></div>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <div className={styles.center_elem_img}><MyImage src='/images/icons/teletext-icon.svg' width={80} height={80}/></div>
-                                            <h3 className={styles.center_elem_text}>Teletext</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    </AnimateDirectionSlide>
-                    <AnimateDirectionSlide direction="bottom"  className={`${styles.dc_inner}`}>
-                        <div>
-                        <div className={styles.dc_background}><MyImage src='/images/icons/dvb-icon.svg' width={200} height={200} /></div>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <div className={styles.center_elem_img}><MyImage src='/images/icons/dvb-icon.svg' width={80} height={80}/></div>
-                                            <h3 className={styles.center_elem_text}>DVB</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    </AnimateDirectionSlide>
-                    <AnimateDirectionSlide direction="bottom_right"  className={`${styles.dc_inner}`}>
-                        <div>
-                        <div className={styles.dc_background}><MyImage src='/images/icons/closed-icon.svg' width={200} height={200} /></div>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <div className={styles.center_elem_img}><MyImage src='/images/icons/closed-icon.svg' width={80} height={80}/></div>
-                                            <h3 className={styles.center_elem_text}>Closed <span>Captions</span></h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    </AnimateDirectionSlide>
 
                 </div>
-
 
 
             </div>
@@ -535,7 +1052,7 @@ export default function Subtitle(){
 
         </AnimateOnScroll>
             {/*fifth section*/}
-            <AnimateOnScroll>
+
                 <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
@@ -558,7 +1075,7 @@ export default function Subtitle(){
 
 
             </div>
-            </AnimateOnScroll>
+
             {/*sixth section*/}
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
@@ -603,7 +1120,7 @@ export default function Subtitle(){
 
             </div>
             {/*seventh section*/}
-            <div style={{"marginTop":"230px"}} className={styles.content_inner}>
+            <div style={{"marginTop":"230px"}} className={styles.content_inner} id='formats' ref={ref2}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "2.3em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Export your work in any file format<br/>used in the industry today</h2>
