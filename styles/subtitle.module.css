@@ -151,6 +151,11 @@ background: #ffffff;
 
    /*flex-basis: calc(8.3333%*4 - 16px*2);*/
     flex:0 0 80%;
+    margin-bottom: 60px;
+
+}
+.content_inner_text h2{
+
 
 }
 .paragraph{
@@ -1056,6 +1061,8 @@ text-align: center;
     margin-top: 8px;
     margin-bottom: 60px;
     margin-left: 15px;
+    background-color: var(--main-color-light);
+    border-radius: 6px;
 }
 .secondary_nav_inner{
     position: relative;
@@ -1074,8 +1081,7 @@ text-align: center;
     position: relative;
     z-index: 2;
     display: inline-block;
-    margin-right: 2px;
-    margin-left: 2px;
+    margin: 2px;
     padding: .8em 1.2em .7em;
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 auto;
@@ -1093,10 +1099,30 @@ text-align: center;
     /*text-transform: uppercase;*/
     cursor: pointer;
 }
+/*.secondary_nav_inner_item1::before,.secondary_nav_inner_item2::before,.secondary_nav_inner_item3::before,.secondary_nav_inner_item4::before{
+    content:"";
+    left: 2%;
+    top:50%;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #fefefe;
+}
+.secondary_nav_inner_item1::after,.secondary_nav_inner_item2::after,.secondary_nav_inner_item3::after{
+    content:"";
+    left: 3.2%;
+    top:50%;
+    position: absolute;
+    width: 1px;
+    height: calc(100% + 4px);
+    background-color: #fefefe;
+}*/
 .secondary_nav_inner_item1:hover, .active_item1{
     /*border-radius: 20px;*/
     border-radius: 2px;
     background: #fefefe;
+    transform: translateX(12px) translateY(-3px);
     /*
 
     background: linear-gradient(90deg, rgba(86,135,200,1) 0%, rgba(116,157,210,1) 65%, rgba(147,179,220,1) 100%);
@@ -1108,6 +1134,7 @@ text-align: center;
     /*border-radius: 23px;*/
     border-radius: 2px;
     background: #fefefe;
+    transform: translateX(12px) translateY(-3px);
     /*
 
     background: linear-gradient(90deg, rgba(86,135,200,1) 0%, rgba(116,157,210,1) 65%, rgba(147,179,220,1) 100%);
@@ -1120,6 +1147,7 @@ text-align: center;
     /*border-radius: 23px;*/
     border-radius: 2px;
     background: #fefefe;
+    transform: translateX(12px) translateY(-3px);
     /*
 
     background: linear-gradient(90deg, rgba(86,135,200,1) 0%, rgba(116,157,210,1) 65%, rgba(147,179,220,1) 100%);
@@ -1131,6 +1159,7 @@ text-align: center;
     /*border-radius: 23px;*/
     border-radius: 2px;
     background: #fefefe;
+    transform: translateX(12px) translateY(-3px);
     /*
 
     background: linear-gradient(90deg, rgba(86,135,200,1) 0%, rgba(116,157,210,1) 65%, rgba(147,179,220,1) 100%);
@@ -1231,6 +1260,7 @@ text-align: center;
     justify-content: space-between;
     align-items: center;
     padding: 11px 0;
+    height: 50px;
     border-bottom: 1px solid #fff;
 }
 .select{
@@ -1312,6 +1342,86 @@ text-align: center;
     transform: translate(0%, -50%);
     fill: #191919;
 }
+
+
+.rent_dropdown{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    vertical-align: center;
+    position: absolute;
+    background: #fefefe;
+    height: max-content;
+    width: 200px;
+    padding-left: 6px;
+    cursor: pointer;
+    z-index: 2;
+}
+.rent_dropdown_item{
+    position: relative;
+    background: #fefefe;
+    height: max-content;
+    width: 200px;
+    padding-left: 6px;
+    margin-top: 1%;
+    cursor: pointer;
+    z-index: 2;
+}
+.rent_dropdown p, .rent_dropdown_item p{
+    color: #191919;
+    margin: 0;
+    font-size: 19px;
+}
+.rent_dropdown_select{
+    display: none;
+}
+.rent_dropdown_svg{
+    position: absolute;
+    top:50%;
+    right:0%;
+    transform: translate(0%, -50%);
+    fill: #191919;
+}
+
+.installment_dropdown{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    vertical-align: center;
+    position: absolute;
+    background: #fefefe;
+    height: max-content;
+    width: 298px;
+    padding-left: 6px;
+    cursor: pointer;
+    z-index: 2;
+}
+.installment_dropdown_item{
+    position: relative;
+    background: #fefefe;
+    height: max-content;
+    width: 298px;
+    padding-left: 6px;
+    margin-top: 1%;
+    cursor: pointer;
+    z-index: 2;
+}
+.installment_dropdown p, .installment_dropdown_item p{
+    color: #191919;
+    margin: 0;
+    font-size: 19px;
+}
+.installment_dropdown_select{
+    display: none;
+}
+.installment_dropdown_svg{
+    position: absolute;
+    top:50%;
+    right:0%;
+    transform: translate(0%, -50%);
+    fill: #191919;
+}
+
 
 
 /*video button*/
@@ -1444,7 +1554,7 @@ text-align: center;
     position: absolute;
     left:0px;
     top:0px;
-    opacity: 0.06;
+    opacity: 0.08;
     transform: scale(2);
 }
 .card_inner_more_icon{

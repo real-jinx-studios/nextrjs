@@ -11,6 +11,7 @@ import AnimateOnScroll from "../components/animateOnScroll";
 import AnimateDirectionSlide from "../components/animateDirectionSlide";
 import {useSpring} from "react-spring";
 import {useRouter} from "next/router";
+import ScrollDownPrompt from "../components/scrollDownPrompt";
 
 
 export default function Subtitle(){
@@ -18,6 +19,8 @@ export default function Subtitle(){
     const [currentNav, setCurrentNav]=useState('none')
     const [isVideoOpen, setIsVideoOpen]=useState(false)
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isRentDropdownOpen, setIsRentDropdownOpen] = useState(false);
+    const [isInstallmentDropdownOpen, setIsInstallmentDropdownOpen] = useState(false);
     const [isPaymentSelected, setIsPaymentSelected] = useState('one-time');
     const [isStreamingServices, setIsStreamingServices] = useState(false);
     const [isClosedCaptions, setIsClosedCaptions] = useState(false);
@@ -69,6 +72,8 @@ export default function Subtitle(){
 
     }
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen)
+    const toggleRentDropdown = () => setIsRentDropdownOpen(!isRentDropdownOpen)
+    const toggleInstallmentDropdown = () => setIsInstallmentDropdownOpen(!isInstallmentDropdownOpen)
 
     /*animation setup is below*/
     const dropdownAnimVariantOption1={
@@ -112,6 +117,65 @@ export default function Subtitle(){
             y:-100,
             transition:{
                 duration:0.2
+            }
+        }
+    }
+    const dropdownAnimVariantRentOption={
+        initial:{
+            opacity:0,
+
+        },
+        animate:{
+            opacity:1,
+            y:80,
+            transition:{
+                staggerChildren:0.11
+
+
+            }
+        },
+        exit:{
+
+            transition:{
+                staggerChildren:0.06
+            }
+        }
+    }
+    const dropdownAnimVariantRentItem={
+        initial:{
+            opacity:0,
+            x:-150
+        },
+        animate:{
+            opacity:1,
+            x:0
+        },
+        exit:{
+            opacity:0,
+            x:150,
+            transition:{
+                duration:0.2
+            }
+        }
+    }
+    const dropdownAnimVariantInstallmentOption={
+        initial:{
+            opacity:0,
+
+        },
+        animate:{
+            opacity:1,
+            y:48.5,
+            transition:{
+                staggerChildren:0.11
+
+
+            }
+        },
+        exit:{
+
+            transition:{
+                staggerChildren:0.06
             }
         }
     }
@@ -268,30 +332,35 @@ export default function Subtitle(){
                     <div className={styles.product_versions}>
                         <p className={styles.product_versions_label}>Payment:</p>
 
-                        <div className={styles.purchase_options}>
-                            <div className={styles.product_version} key='one-time' onClick={()=>handlePaymentSelect('one-time')}>
-                                <div className={styles.product_label_wrapper_off}>
-                                    one-time
+                        <div className={styles.select}>
+                            <div className={styles.purchase_options}>
+                                <div className={styles.product_version} key='one-time'
+                                     onClick={() => handlePaymentSelect('one-time')}>
+                                    <div className={styles.product_label_wrapper_off}>
+                                        one-time
+
+                                    </div>
 
                                 </div>
 
-                            </div>
 
+                                <div className={styles.product_version} key='rent'
+                                     onClick={() => handlePaymentSelect('rent')}>
+                                    <div className={styles.product_label_wrapper_off}>
+                                        rent
 
-                            <div className={styles.product_version} key='rent' onClick={()=>handlePaymentSelect('rent')}>
-                                <div className={styles.product_label_wrapper_off}>
-                                    rent
-
-                                </div>
-
-                            </div>
-
-                            <div className={styles.product_version} key='installment' onClick={()=>handlePaymentSelect('installment')}>
-                                <div className={styles.product_label_wrapper_off}>
-                                    installments
+                                    </div>
 
                                 </div>
 
+                                <div className={styles.product_version} key='installment'
+                                     onClick={() => handlePaymentSelect('installment')}>
+                                    <div className={styles.product_label_wrapper_off}>
+                                        installments
+
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
 
@@ -313,7 +382,7 @@ export default function Subtitle(){
                             className={styles.rent}>
                             <p className={styles.product_versions_label}>Months:</p>
                             <div className={styles.select}>
-                                <select name="size" className="o-caption o-caption--bold js-size-select">
+                                <select style={{display:"none"}} name="size" className="o-caption o-caption--bold js-size-select">
 
                                     <option value="6" selected="selected">1</option>
 
@@ -333,13 +402,68 @@ export default function Subtitle(){
 
 
                                 </select>
-                                <span className={styles.arrow} aria-hidden="true">
-
-        <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1l4 4 4-4"></path>
-        </svg>
-
-</span>
+                                <div className={styles.rent_dropdown} onClick={toggleRentDropdown}>
+                                    <p>1 MONTH</p>
+                                    {!isRentDropdownOpen && (<motion.svg
+                                        initial={{opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        exit={{opacity: 0}}
+                                        className={styles.rent_dropdown_svg}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        height="36px" viewBox="0 0 24 24" width="36px"
+                                        fill="#FFFFFF">
+                                        <path d="M24 24H0V0h24v24z" fill="none" opacity=".87"/>
+                                        <path
+                                            d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z"/>
+                                    </motion.svg>)}
+                                    {isRentDropdownOpen && (<motion.svg
+                                        initial={{opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        exit={{opacity: 0}}
+                                        className={styles.rent_dropdown_svg}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        height="36px" viewBox="0 0 24 24" width="36px"
+                                        fill="#FFFFFF">
+                                        <path xmlns="http://www.w3.org/2000/svg" d="M0 0h24v24H0V0z" fill="none"/>
+                                        <path xmlns="http://www.w3.org/2000/svg" d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/>
+                                    </motion.svg>)}
+                                </div>
+                                <AnimatePresence exitBeforeEnter>
+                                    {isRentDropdownOpen && (
+                                        <motion.div
+                                            variants={dropdownAnimVariantRentOption}
+                                            initial='initial'
+                                            animate='animate'
+                                            exit='exit'
+                                            key='rent'
+                                        >
+                                            <motion.div
+                                                variants={dropdownAnimVariantRentItem}
+                                                key='option1'
+                                                className={styles.rent_dropdown_item} onClick={toggleRentDropdown}>
+                                                <p>2 MONTHS</p>
+                                            </motion.div>
+                                            <motion.div
+                                                variants={dropdownAnimVariantRentItem}
+                                                key='option2'
+                                                className={styles.rent_dropdown_item} onClick={toggleRentDropdown}>
+                                                <p>3 MONTHS</p>
+                                            </motion.div>
+                                            <motion.div
+                                                variants={dropdownAnimVariantRentItem}
+                                                key='option2'
+                                                className={styles.rent_dropdown_item} onClick={toggleRentDropdown}>
+                                                <p>4 MONTHS</p>
+                                            </motion.div>
+                                            <motion.div
+                                                variants={dropdownAnimVariantRentItem}
+                                                key='option2'
+                                                className={styles.rent_dropdown_item} onClick={toggleRentDropdown}>
+                                                <p>5 MONTHS</p>
+                                            </motion.div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
 
                             </div>
                         </motion.div>
@@ -354,7 +478,7 @@ export default function Subtitle(){
                             className={styles.rent}>
                             <p className={styles.product_versions_label}>Installment Plan:</p>
                             <div className={styles.select}>
-                                <select name="size" className="o-caption o-caption--bold js-size-select">
+                                <select style={{display:'none'}} name="size" className="o-caption o-caption--bold js-size-select">
 
                                     <option value="6" selected="selected">12 months (4 payments)</option>
 
@@ -364,13 +488,56 @@ export default function Subtitle(){
 
 
                                 </select>
-                                <span className={styles.arrow} aria-hidden="true">
-
-        <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1l4 4 4-4"></path>
-        </svg>
-
-</span>
+                                <div className={styles.installment_dropdown} onClick={toggleInstallmentDropdown}>
+                                    <p>12 MONTHS (4 payments)</p>
+                                    {!isInstallmentDropdownOpen && (<motion.svg
+                                        initial={{opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        exit={{opacity: 0}}
+                                        className={styles.installment_dropdown_svg}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        height="36px" viewBox="0 0 24 24" width="36px"
+                                        fill="#FFFFFF">
+                                        <path d="M24 24H0V0h24v24z" fill="none" opacity=".87"/>
+                                        <path
+                                            d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z"/>
+                                    </motion.svg>)}
+                                    {isInstallmentDropdownOpen && (<motion.svg
+                                        initial={{opacity: 0}}
+                                        animate={{opacity: 1}}
+                                        exit={{opacity: 0}}
+                                        className={styles.installment_dropdown_svg}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        height="36px" viewBox="0 0 24 24" width="36px"
+                                        fill="#FFFFFF">
+                                        <path xmlns="http://www.w3.org/2000/svg" d="M0 0h24v24H0V0z" fill="none"/>
+                                        <path xmlns="http://www.w3.org/2000/svg" d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/>
+                                    </motion.svg>)}
+                                </div>
+                                <AnimatePresence exitBeforeEnter>
+                                    {isInstallmentDropdownOpen && (
+                                        <motion.div
+                                            variants={dropdownAnimVariantInstallmentOption}
+                                            initial='initial'
+                                            animate='animate'
+                                            exit='exit'
+                                            key='rent'
+                                        >
+                                            <motion.div
+                                                variants={dropdownAnimVariantRentItem}
+                                                key='option1'
+                                                className={styles.installment_dropdown_item} onClick={toggleInstallmentDropdown}>
+                                                <p>24 MONTHS (8 payments)</p>
+                                            </motion.div>
+                                            <motion.div
+                                                variants={dropdownAnimVariantRentItem}
+                                                key='option2'
+                                                className={styles.installment_dropdown_item} onClick={toggleInstallmentDropdown}>
+                                                <p>36 MONTHS (12 payments)</p>
+                                            </motion.div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
 
                             </div>
                         </motion.div>
@@ -393,6 +560,7 @@ export default function Subtitle(){
 
                 </div>
             </AnimatePresence>
+            <ScrollDownPrompt href='#compatibility'/>
 
 
 
@@ -433,15 +601,13 @@ export default function Subtitle(){
 
 
             {/*first section*/}
-            <div style={{"marginTop":"320px"}} className={styles.content_inner}>
+            <div style={{"marginTop":"320px", paddingTop:80}} ref={ref1} className={styles.content_inner} id='compatibility'>
                 <div className={styles.content_inner_text}>
-                    <AnimateOnScroll>
                         <div className={styles.paragraph}>
                             <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Prepare subtitles for any content</h2>
                             <p><strong>With EZTitles you can subtitle anything – Streaming Services as Netflix, Apple iTunes, Amazon Prime,<br/> Hulu or others, Open subtitles, Closed Captions, Digital Cinema, Blu-ray, Teletext, DVD<br/>and DVB Subtitles - and deliver your work in any file format your clients may require.</strong></p>
 
                         </div>
-                    </AnimateOnScroll>
                 </div>
                 <div className={styles.card_wrapper}>
                     {/*<div className={styles.card}>
@@ -680,6 +846,58 @@ export default function Subtitle(){
                             }
                         </AnimatePresence>
                     </div>
+
+
+                    {/*blue-ray plain*/}
+                    <div className={styles.card}>
+                        <div className={styles.card_inner}>
+                            <div className={styles.card_inner_title}>
+                                <h4>Blue-ray</h4>
+                            </div>
+                            <div className={styles.card_inner_description}>
+                                <p className={styles.card_inner_description_text}>This is a completely new presentation mode which complies with all the standards and requirements of Digital Cinema subtitling and provides an accurate preview of what your subtitles will look like on the theater’s screen.</p>
+
+                            </div>
+                            <div className={styles.card_inner_background_icon}>
+                                <MyImage src='/images/icons/blueray-icon.svg' width={600} height={600}/>
+                            </div>
+
+                        </div>
+                    </div>
+                    {/*teletext plain*/}
+                    <div className={styles.card}>
+                        <div className={styles.card_inner}>
+                            <div className={styles.card_inner_title}>
+                                <h4>Teletext</h4>
+                            </div>
+                            <div className={styles.card_inner_description}>
+                                <p className={styles.card_inner_description_text}>This is a completely new presentation mode which complies with all the standards and requirements of Digital Cinema subtitling and provides an accurate preview of what your subtitles will look like on the theater’s screen.</p>
+
+                            </div>
+                            <div className={styles.card_inner_background_icon}>
+                                <MyImage src='/images/icons/teletext-icon.svg' width={600} height={600}/>
+                            </div>
+
+                        </div>
+                    </div>
+                    {/*DVB plain*/}
+                    <div className={styles.card}>
+                        <div className={styles.card_inner}>
+                            <div className={styles.card_inner_title}>
+                                <h4>DVB</h4>
+                            </div>
+                            <div className={styles.card_inner_description}>
+                                <p className={styles.card_inner_description_text}>This is a completely new presentation mode which complies with all the standards and requirements of Digital Cinema subtitling and provides an accurate preview of what your subtitles will look like on the theater’s screen.</p>
+
+                            </div>
+                            <div className={styles.card_inner_background_icon}>
+                                <MyImage src='/images/icons/dvb-icon.svg' width={600} height={600}/>
+                            </div>
+
+                        </div>
+                    </div>
+
+
 
                 </div>
 

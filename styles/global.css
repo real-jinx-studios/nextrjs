@@ -13,6 +13,8 @@ body{
     background:#0E1F2F;
     /*filter: grayscale(100%);*/
     --main-color:#051624;
+    --main-color-light:#072136;
+    --main-color-hover:#0C375A;
     --accent-second:#F24C27;
     --gutter:60px;
     --no-color:#19191900;

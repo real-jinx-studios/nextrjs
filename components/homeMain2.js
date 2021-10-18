@@ -159,56 +159,85 @@ export default function HomeMain(props){
         <section>
             <div className={styles.container}>
 
-                <Link href="/animations"><a className={styles.scroll_down_mouse}></a></Link>
-                <motion.div ref={constraintsRefEzMain} variants={fadeInUp} initial='initial' animate='animate' className={styles.product}>
-                    <h1 className={styles.title}>EZTitles</h1>
-                    {/*  <motion.div className={styles.drag_container} drag dragConstraints={constraintsRefEzMain}>
-                        <motion.img variants={fadeInUpMain} className={styles.main_center} src='/images/software/eztitles/main_center.png'/>
-                    </motion.div>
-                    <motion.img drag dragConstraints={constraintsRefEzMain} variants={fadeInUpSecondaryRight} className={styles.main_right} src='/images/software/eztitles/main_right.png'/>
-                    <motion.img drag dragConstraints={constraintsRefEzMain} variants={fadeInUpSecondaryBottom} className={styles.main_bottom} src='/images/software/eztitles/main_bottom.png'/>
+               {/* <Link href="/animations"><a className={styles.scroll_down_mouse}></a></Link>*/}
+                <div className={styles.product_main_wrapper}>
+                    <motion.div ref={constraintsRefEzMain} variants={fadeInUp} initial='initial' animate='animate'
+                                className={styles.product_main}>
+                        <h1 className={styles.title}>EZTitles</h1>
+                        <div className={styles.product_main_inner}>
+                            <motion.div className={styles.stats}>
+                                <motion.div ref={constraintsRefEz} variants={logo_anim_outer} initial='initial'
+                                            animate='animate' className={styles.ez_logo}>
+                                    <motion.div drag dragConstraints={constraintsRefEz} variants={logo_anim_outer1}
+                                                initial='initial' animate='animate'
+                                                className={styles.ez_logo_anim_inner_1}>
+                                        <motion.div drag dragConstraints={constraintsRefEz} variants={logo_anim_outer2}
+                                                    initial='initial' animate='animate'
+                                                    className={styles.ez_logo_anim_inner_2}>
+                                            <motion.div drag dragConstraints={constraintsRefEz}
+                                                        variants={logo_anim_outer_text} initial='initial'
+                                                        animate='animate'
+                                                        className={styles.ez_logo_anim_inner_text}>Ez
+                                            </motion.div>
+                                        </motion.div>
+                                    </motion.div>
+                                </motion.div>
+                            </motion.div>
+                            {/*icons end*/}
 
-                    <motion.img variants={fadeInUp} className={styles.main_float} src='/images/software/eztitles/main_float.png'/>
-*/}
-                    {/*icons*/}
-                    <motion.div className={styles.stats}>
-                        <motion.div ref={constraintsRefEz} variants={logo_anim_outer} initial='initial' animate='animate' className={styles.ez_logo}>
-                            <motion.div drag dragConstraints={constraintsRefEz} variants={logo_anim_outer1} initial='initial' animate='animate' className={styles.ez_logo_anim_inner_1}>
-                                <motion.div drag dragConstraints={constraintsRefEz} variants={logo_anim_outer2} initial='initial' animate='animate' className={styles.ez_logo_anim_inner_2}>
-                                    <motion.div drag dragConstraints={constraintsRefEz} variants={logo_anim_outer_text} initial='initial' animate='animate' className={styles.ez_logo_anim_inner_text}>Ez</motion.div>
+                            <h2>Start subtitling with some of the world’s most<br/>advanced professional subtitling
+                                tools.
+                            </h2>
+                            <div className={styles.product_main_inner_try_button}><span className={styles.button_inner}>Free Trial</span></div>
+                            <div className={styles.product_main_inner_buy_button}><span className={styles.button_inner}>Buy now</span></div>
+
+
+                        </div>
+                        <div className={styles.product_main_description}>
+                            <p>EZTitles redefines what professional subtitling software can do! Word-class TV, Digital Cinema, DVD and Blu-ray subtitle preparation software. Powerful conversion tool for almost any known file format. Breakthrough module for Closed Captioning. Three groundbreaking products. Single software.</p>
+                            <div className={styles.product_main_inner_buy_button} style={{backgroundColor:'#fefefe00', border:'2px solid #ffffff'}}><span className={styles.button_inner}>Learn More</span></div>
+                        </div>
+
+
+                    </motion.div>
+
+                    <motion.div variants={fadeInUp} initial='initial' animate='animate' className={styles.product_main}>
+                        <h1 className={styles.title}>EZConvert</h1>
+
+                        <div className={styles.product_main_inner}>
+                        {/*icons*/}
+
+                        <motion.div className={styles.stats}>
+                            <motion.div ref={constraintsRefEc} variants={logo_anim_outer} initial='initial'
+                                        animate='animate' className={styles.ec_logo}>
+                                <motion.div drag dragConstraints={constraintsRefEc} variants={logo_anim_outer1}
+                                            initial='initial' animate='animate' className={styles.ec_logo_anim_inner_1}>
+                                    <motion.div drag dragConstraints={constraintsRefEc} variants={logo_anim_outer2}
+                                                initial='initial' animate='animate'
+                                                className={styles.ec_logo_anim_inner_2}>
+                                        <motion.span drag dragConstraints={constraintsRefEc}
+                                                     variants={logo_anim_outer_text} initial='initial' animate='animate'
+                                                     className={styles.ec_logo_anim_inner_text}>Ec
+                                        </motion.span>
+                                    </motion.div>
                                 </motion.div>
                             </motion.div>
                         </motion.div>
+
+                        {/*icons end*/}
+                        <h2>Start subtitling with some of the world’s most<br/>advanced professional subtitling tools.
+                        </h2>
+                        <div className={styles.product_main_inner_try_button}><span className={styles.button_inner}>Free Trial</span></div>
+                        <div className={styles.product_main_inner_buy_button} style={{backgroundColor:'#660720'}}><span className={styles.button_inner}>Buy now</span></div>
+
+
+</div>
+                        <div className={styles.product_main_description}>
+                            <p>Fast and accurate subtitle conversion tool which supports a variety of subtitle formats and DVD, Blu-ray and NLE authoring systems. EZConvert does not bother with different output file format a client may require. It simply has them all!</p>
+                            <div className={styles.product_main_inner_buy_button} style={{backgroundColor:'#fefefe00', border:'2px solid #ffffff'}}><span className={styles.button_inner}>Learn More</span></div>
+                        </div>
                     </motion.div>
-                    <div style={{height:50}}></div>
-
-                    {/*icons end*/}
-                    <h2>Start subtitling with some of the world’s most<br/>advanced professional subtitling tools.</h2>
-
-
-                </motion.div>
-                <div style={{height:160}}></div>
-                <motion.div variants={fadeInUp} initial='initial' animate='animate' className={styles.product}>
-                    <h1 className={styles.title} style={{textAlign:'right'}}>EZConvert</h1>
-
-                    {/*icons*/}
-
-                    <motion.div style={{float:'right'}} className={styles.stats}>
-                        <motion.div ref={constraintsRefEc} variants={logo_anim_outer} initial='initial' animate='animate' className={styles.ec_logo}>
-                            <motion.div drag dragConstraints={constraintsRefEc} variants={logo_anim_outer1} initial='initial' animate='animate' className={styles.ec_logo_anim_inner_1}>
-                                <motion.div drag dragConstraints={constraintsRefEc} variants={logo_anim_outer2} initial='initial' animate='animate' className={styles.ec_logo_anim_inner_2}>
-                                    <motion.span drag dragConstraints={constraintsRefEc} variants={logo_anim_outer_text} initial='initial' animate='animate' className={styles.ec_logo_anim_inner_text}>Ec</motion.span>
-                                </motion.div>
-                            </motion.div>
-                        </motion.div>
-                    </motion.div>
-
-                    <div style={{height:50}}></div>
-                    {/*icons end*/}
-                    <h2>Start subtitling with some of the world’s most<br/>advanced professional subtitling tools.</h2>
-
-
-                </motion.div>
+                </div>
                 <div style={{height:160}}></div>
                 <motion.div variants={fadeInUp} initial='initial' animate='animate' className={styles.product}>
                     <h1 className={styles.title} style={{textAlign:'left'}}>3DTitles</h1>
