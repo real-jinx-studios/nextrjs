@@ -4,9 +4,36 @@
     z-index: 22;
     position: relative;
 }
+.container_heading{
+    max-width: 1198px;
+    margin:80px auto;
+    text-align: center;
+
+}
 .title{
     /*background-color: var(--accent-second);*/
-    border-bottom: 1px solid #fefefe;
+    position: relative;
+    /*border-bottom: 1px solid #fefefe;*/
+
+}
+.title::before{
+    content:"";
+    height:1px;
+    width: 100vw;
+    position: absolute;
+    bottom:0;
+    left:-100%;
+    background-color: #fefefe;
+
+}
+.title::after{
+    content:"";
+    height:200vh;
+    width: 1px;
+    position: absolute;
+    top:-100%;
+    right:0;
+    background-color: #fefefe;
 
 }
 /*.product_main_wrapper{

@@ -158,6 +158,10 @@ export default function HomeMain(props){
     return(
         <section>
             <div className={styles.container}>
+                <div className={styles.container_heading}>
+                    <h1>Our wide range of cutting-edge professional subtitling products will help YOU complete even the most complex subtitling tasks at maximum speed, precision and ease.</h1>
+
+                </div>
 
                {/* <Link href="/animations"><a className={styles.scroll_down_mouse}></a></Link>*/}
                 <div className={styles.product_main_wrapper}>
