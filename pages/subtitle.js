@@ -906,13 +906,13 @@ export default function Subtitle(){
             {/*second section*/}
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
-                    <AnimateOnScroll>
+        
                         <div className={styles.paragraph}>
                             <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Almost any Video File</h2>
                             <p><strong>EZTitles works with nearly any known video format with embedded timecode and supports MPEG-1,<br/>MPEG-2, MPEG-4, AVI, WMV, MXF, MKV and Apple QuickTime .MOV video files.</strong></p>
 
                         </div>
-                    </AnimateOnScroll>
+              
                 </div>
                 <div className={styles.dc}>
                     <div className={`${styles.dc_inner_vf} ${styles.text_focus_in} ${styles.dc_side}`}>
@@ -1028,14 +1028,14 @@ export default function Subtitle(){
             </div>
             {/*third section*/}
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
-                <AnimateOnScroll>
+                
                     <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Any type of resolution</h2>
                     </div>
                 </div>
-                </AnimateOnScroll>
-                <AnimateOnScroll>
+                
+                
                     <div className={styles.dc}>
                         <div style={{"textAlign":"center"}} className={`${styles.dc_inner_res} ${styles.text_focus_in}`}>
                         <h1 className={styles.h1_res}>from SD<small className={styles.very_small}>(640x480)</small> up to 4k<small className={styles.very_small}>(4096x2160)</small></h1>
@@ -1053,14 +1053,14 @@ export default function Subtitle(){
 
 
                      </div>
-                </AnimateOnScroll>
+                
 
 
 
 
             </div>
             {/*fourth section*/}
-        <AnimateOnScroll>
+        
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
@@ -1268,7 +1268,7 @@ export default function Subtitle(){
 
             </div>
 
-        </AnimateOnScroll>
+        
             {/*fifth section*/}
 
                 <div style={{"marginTop":"230px"}} className={styles.content_inner}>

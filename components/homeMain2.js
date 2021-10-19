@@ -162,7 +162,7 @@ export default function HomeMain(props){
                {/* <Link href="/animations"><a className={styles.scroll_down_mouse}></a></Link>*/}
                 <div className={styles.product_main_wrapper}>
                     <motion.div ref={constraintsRefEzMain} variants={fadeInUp} initial='initial' animate='animate'
-                                className={styles.product_main}>
+                                className={`${styles.product_main} ${styles.eztitles}`}>
                         <h1 className={styles.title}>EZTitles</h1>
                         <div className={styles.product_main_inner}>
                             <motion.div className={styles.stats}>
@@ -185,8 +185,7 @@ export default function HomeMain(props){
                             </motion.div>
                             {/*icons end*/}
 
-                            <h2>Start subtitling with some of the world’s most<br/>advanced professional subtitling
-                                tools.
+                            <h2 className={styles.product_main_inner_title}>Professional Subtitling and Captioning Software.
                             </h2>
                             <div className={styles.product_main_inner_try_button}><span className={styles.button_inner}>Free Trial</span></div>
                             <div className={styles.product_main_inner_buy_button}><span className={styles.button_inner}>Buy now</span></div>
@@ -195,13 +194,14 @@ export default function HomeMain(props){
                         </div>
                         <div className={styles.product_main_description}>
                             <p>EZTitles redefines what professional subtitling software can do! Word-class TV, Digital Cinema, DVD and Blu-ray subtitle preparation software. Powerful conversion tool for almost any known file format. Breakthrough module for Closed Captioning. Three groundbreaking products. Single software.</p>
-                            <div className={styles.product_main_inner_buy_button} style={{backgroundColor:'#fefefe00', border:'2px solid #ffffff'}}><span className={styles.button_inner}>Learn More</span></div>
+
                         </div>
+                        <div className={styles.product_main_inner_buy_button} style={{backgroundColor:'#fefefe00', border:'2px solid #ffffff'}}><span className={styles.button_inner}>Learn More</span></div>
 
 
                     </motion.div>
 
-                    <motion.div variants={fadeInUp} initial='initial' animate='animate' className={styles.product_main}>
+                    <motion.div variants={fadeInUp} initial='initial' animate='animate' className={`${styles.product_main} ${styles.ezconvert}`}>
                         <h1 className={styles.title}>EZConvert</h1>
 
                         <div className={styles.product_main_inner}>
@@ -225,7 +225,7 @@ export default function HomeMain(props){
                         </motion.div>
 
                         {/*icons end*/}
-                        <h2>Start subtitling with some of the world’s most<br/>advanced professional subtitling tools.
+                        <h2 className={styles.product_main_inner_title}>The world's unique subtitles conversion software.
                         </h2>
                         <div className={styles.product_main_inner_try_button}><span className={styles.button_inner}>Free Trial</span></div>
                         <div className={styles.product_main_inner_buy_button} style={{backgroundColor:'#660720'}}><span className={styles.button_inner}>Buy now</span></div>
@@ -234,12 +234,11 @@ export default function HomeMain(props){
 </div>
                         <div className={styles.product_main_description}>
                             <p>Fast and accurate subtitle conversion tool which supports a variety of subtitle formats and DVD, Blu-ray and NLE authoring systems. EZConvert does not bother with different output file format a client may require. It simply has them all!</p>
-                            <div className={styles.product_main_inner_buy_button} style={{backgroundColor:'#fefefe00', border:'2px solid #ffffff'}}><span className={styles.button_inner}>Learn More</span></div>
                         </div>
+                        <div className={styles.product_main_inner_buy_button} style={{backgroundColor:'#fefefe00', border:'2px solid #ffffff'}}><span className={styles.button_inner}>Learn More</span></div>
                     </motion.div>
                 </div>
-                <div style={{height:160}}></div>
-                <motion.div variants={fadeInUp} initial='initial' animate='animate' className={styles.product}>
+                <motion.div variants={fadeInUp} initial='initial' animate='animate' className={`${styles.product} ${styles.titles3d}`}>
                     <h1 className={styles.title} style={{textAlign:'left'}}>3DTitles</h1>
 
                     {/*icons*/}
@@ -253,14 +252,12 @@ export default function HomeMain(props){
                             </motion.div>
                         </motion.div>
                     </motion.div>
-                    <div style={{height:50}}></div>
                     {/*icons end*/}
                     <h2>Start subtitling with some of the world’s most<br/>advanced professional subtitling tools.</h2>
 
 
                 </motion.div>
-                <div style={{height:160}}></div>
-                <motion.div variants={fadeInUp} initial='initial' animate='animate' className={styles.product}>
+                <motion.div variants={fadeInUp} initial='initial' animate='animate' className={`${styles.product} ${styles.plugins}`}>
                     <h1 className={styles.title} style={{textAlign:'right'}}>Plug-ins</h1>
 
                     {/*icons*/}
@@ -274,7 +271,6 @@ export default function HomeMain(props){
                             </motion.div>
                         </motion.div>
                     </motion.div>
-                    <div style={{height:50}}></div>
                     {/*icons end*/}
                     <h2>Start subtitling with some of the world’s most<br/>advanced professional subtitling tools.</h2>
 
@@ -282,7 +278,6 @@ export default function HomeMain(props){
                 </motion.div>
 
             </div>
-            <div style={{height:800}}></div>
         </section>
     )
 }
