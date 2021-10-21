@@ -15,9 +15,13 @@ body{
     --main-color:#051624;
     --main-color-light:#072136;
     --main-color-hover:#0C375A;
+    --main-color-somewhat-light:#186EB4;
+    --main-color-very-light:#288EE2;
+    --main-color-super-light:#6FB4EB;
     --accent-second:#F24C27;
     --gutter:60px;
     --no-color:#19191900;
+    --resolution-color-title:#cccccc;
 }
 
 *, ::before, ::after{

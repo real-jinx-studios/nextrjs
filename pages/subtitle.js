@@ -3,7 +3,7 @@ import MyImage from "../components/myImage";
 import Link from 'next/link'
 import ReactTooltip from 'react-tooltip';
 import FileFormatTabs from "../components/fileFormatTabs";
-import {AnimatePresence, motion, useAnimation, useCycle} from "framer-motion"
+import {AnimatePresence, motion, useAnimation, useCycle, useViewportScroll, useTransform} from "framer-motion"
 import {stagger, fadeInUp, easing} from "../components/animations";
 import {useEffect, useRef, useState} from "react";
 import { useInView } from "react-intersection-observer";
@@ -24,6 +24,10 @@ export default function Subtitle(){
     const [isPaymentSelected, setIsPaymentSelected] = useState('one-time');
     const [isStreamingServices, setIsStreamingServices] = useState(false);
     const [isClosedCaptions, setIsClosedCaptions] = useState(false);
+
+    /*viewport scroll handlers*/
+    const { scrollYProgress } = useViewportScroll()
+    const yRange = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
 
     /*scrolling triggers below for components in view*/
     const [ref, inView] = useInView();
@@ -240,6 +244,36 @@ export default function Subtitle(){
             }
         }
     }
+    const pixelVariant={
+        initial:{
+            opacity:0,
+            scale:1.5
+        },
+        animate:{
+            opacity:1,
+            scale:1,
+            transition:{
+                duration:0.3,
+            }
+        }
+    }
+
+    /*jsx generated divs*/
+
+
+    /*let pixel_grid = [];
+    for (var q = 0; q < 28; q++){
+        for (var i = 0; i < 53; i++) {
+
+            pixel_grid.push(<motion.div variants={pixelVariant} initial='initial' animate='animate' className={styles.resolution_pixel_wrapper} style={{top: 25 * q + 'px',left: 25 * i + 'px'}}>
+                <div className={styles.resolution_pixel_inner}>
+                    <div className={styles.resolution_pixel_core}>
+
+                    </div>
+                </div>
+            </motion.div>);
+        }
+    }*/
 
 
 
@@ -604,8 +638,8 @@ export default function Subtitle(){
             <div style={{"marginTop":"320px", paddingTop:80}} ref={ref1} className={styles.content_inner} id='compatibility'>
                 <div className={styles.content_inner_text}>
                         <div className={styles.paragraph}>
-                            <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Prepare subtitles for any content</h2>
-                            <p><strong>With EZTitles you can subtitle anything – Streaming Services as Netflix, Apple iTunes, Amazon Prime,<br/> Hulu or others, Open subtitles, Closed Captions, Digital Cinema, Blu-ray, Teletext, DVD<br/>and DVB Subtitles - and deliver your work in any file format your clients may require.</strong></p>
+                            <h2 className={styles.subsection_title}>Prepare subtitles<br/>for any content</h2>
+                            <p className={styles.subsection_description}>With EZTitles you can <span className={styles.text_highlight}>subtitle anything</span> – Streaming Services like <span className={styles.text_highlight}>Netflix, Apple iTunes, Amazon Prime, Hulu</span> and others, Open subtitles, Closed Captions, Digital Cinema, Blu-ray, Teletext, DVD/DVB Subtitles - and deliver your <span className={styles.text_highlight}>work in any file format</span><br/>your clients may require.</p>
 
                         </div>
                 </div>
@@ -903,168 +937,177 @@ export default function Subtitle(){
 
 
             </div>
-            {/*second section*/}
-            <div style={{"marginTop":"230px"}} className={styles.content_inner}>
-                <div className={styles.content_inner_text}>
-        
-                        <div className={styles.paragraph}>
-                            <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Almost any Video File</h2>
-                            <p><strong>EZTitles works with nearly any known video format with embedded timecode and supports MPEG-1,<br/>MPEG-2, MPEG-4, AVI, WMV, MXF, MKV and Apple QuickTime .MOV video files.</strong></p>
-
-                        </div>
-              
-                </div>
-                <div className={styles.dc}>
-                    <div className={`${styles.dc_inner_vf} ${styles.text_focus_in} ${styles.dc_side}`}>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <h3 className={styles.center_elem_text}>MPEG-1</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`${styles.dc_inner_vf} ${styles.text_focus_in} ${styles.dc_side}`}>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <h3 className={styles.center_elem_text}>MPEG-2</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`${styles.dc_inner_vf} ${styles.text_focus_in} ${styles.dc_side}`}>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <h3 className={styles.center_elem_text}>MPEG-4</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`${styles.dc_inner_vf} ${styles.text_focus_in} ${styles.dc_side}`}>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <h3 className={styles.center_elem_text}>AVI</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`${styles.dc_inner_vf} ${styles.text_focus_in} ${styles.dc_side}`}>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <h3 className={styles.center_elem_text}>WMV</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`${styles.dc_inner_vf} ${styles.text_focus_in} ${styles.dc_side}`}>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <h3 className={styles.center_elem_text}>Apple</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`${styles.dc_inner_vf} ${styles.text_focus_in} ${styles.dc_side}`}>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <h3 className={styles.center_elem_text}>MXF</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`${styles.dc_inner_vf} ${styles.text_focus_in} ${styles.dc_side}`}>
-                        <div className={styles.dc_inner_content}>
-                            <div className={styles.boxes_info}>
-                                <Link href="/pages/Streaming_Services">
-                                    <a>
-                                        <div className={styles.center_elem}>
-                                            <h3 className={styles.center_elem_text}>MVF</h3>
-                                        </div>
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-
-            </div>
-            {/*third section*/}
-            <div style={{"marginTop":"230px"}} className={styles.content_inner}>
-                
+            {/*video format section*/}
+                <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                     <div className={styles.content_inner_text}>
-                    <div className={styles.paragraph}>
-                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Any type of resolution</h2>
-                    </div>
-                </div>
-                
-                
-                    <div className={styles.dc}>
-                        <div style={{"textAlign":"center"}} className={`${styles.dc_inner_res} ${styles.text_focus_in}`}>
-                        <h1 className={styles.h1_res}>from SD<small className={styles.very_small}>(640x480)</small> up to 4k<small className={styles.very_small}>(4096x2160)</small></h1>
-                        <div className={styles.dc_inner_content_res}>
-                            <div className={styles.boxes_info_res}>
-                                <div className={`${styles.res_ultra} ${styles.scale_in_bl_3}`}><div className={styles.res_inner}><h1 className={styles.res_size_ultra}>4096x2160</h1><div className={styles.res_name}><p>4K</p></div></div></div>
-                                <div className={`${styles.res_full} ${styles.scale_in_bl_2}`}><div className={styles.res_inner}><h1 className={styles.res_size_full}>1920x1080</h1><div className={styles.res_name}><p>FULL HD</p></div></div></div>
-                                <div className={`${styles.res_hd} ${styles.scale_in_bl_1}`}><div className={styles.res_inner}><h1 className={styles.res_size_hd}>1366x738</h1><div className={styles.res_name}><p>HD</p></div></div></div>
-                                <div className={`${styles.res_sd} ${styles.scale_in_bl}`}><div className={styles.res_inner}><h1 className={styles.res_size_sd}>640x480</h1><div className={styles.res_name}><p>SD</p></div></div></div>
+
+                            <div className={styles.paragraph}>
+                                <h2 className={styles.subsection_title}>Almost any Video File</h2>
+                                <p className={styles.subsection_description} style={{textAlign:'center'}}>EZTitles works with nearly <span className={styles.text_highlight}>any known video format</span> with embedded timecodes.</p>
 
                             </div>
 
+                    </div>
+                    <div className={styles.video_format_wrapper}>
+
+                        <div className={styles.video_format_item}>
+                            <div className={styles.video_format_item_title}>
+                                <div className={styles.video_format_item_title_text}>
+                                    MPEG-1
+
+                                </div>
+                            </div>
+
                         </div>
+
+
+                        <div className={styles.video_format_item}>
+                            <div className={styles.video_format_item_title}>
+                                <div className={styles.video_format_item_title_text}>
+                                    MPEG-2
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div className={styles.video_format_item}>
+                            <div className={styles.video_format_item_title}>
+                                <div className={styles.video_format_item_title_text}>
+                                    MPEG-4
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                            <div className={styles.video_format_item}>
+                                <div className={styles.video_format_item_title}>
+                                    <div className={styles.video_format_item_title_text}>
+                                        AVI
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div className={styles.video_format_item}>
+                                <div className={styles.video_format_item_title}>
+                                    <div className={styles.video_format_item_title_text}>
+                                        WMV
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div className={styles.video_format_item}>
+                                <div className={styles.video_format_item_title}>
+                                    <div className={styles.video_format_item_title_text}>
+                                        APPLE
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div className={styles.video_format_item}>
+                                <div className={styles.video_format_item_title}>
+                                    <div className={styles.video_format_item_title_text}>
+                                        MXF
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div className={styles.video_format_item}>
+                                <div className={styles.video_format_item_title}>
+                                    <div className={styles.video_format_item_title_text}>
+                                        MVF
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
                     </div>
 
 
-                     </div>
+
+
+
+                </div>
+            {/*resolution section*/}
+            <div style={{"marginTop":"230px", maxWidth:1400}} className={styles.content_inner}>
+                
+                <div className={styles.content_inner_text} style={{marginBottom:20}}>
+                    <div className={styles.paragraph}>
+                        <h2 className={styles.subsection_title}>Any type of resolution</h2>
+                        <p className={`${styles.subsection_description}`} style={{textAlign:'center'}}>from <span className={styles.text_highlight}>SD</span><small className={styles.very_small}>(640x480)</small> up to <span className={styles.text_highlight}>4k</span><small className={styles.very_small}>(4096x2160)</small></p>
+
+                    </div>
+                </div>
+                <div className={styles.resolution_main_wrapper}>
+                    <div className={styles.resolution_main_inner}>
+                        <div className={styles.resolution_inner_title_4k}>
+                            4096x2160
+
+                        </div>
+                        <div className={styles.resolution_main_inner_2k}>
+                            <div className={styles.resolution_inner_title_2k}>
+                                2560x1440
+
+                            </div>
+
+
+                        </div>
+                        <div className={styles.resolution_main_inner_fhd}>
+                            <div className={styles.resolution_inner_title_fhd}>
+                                1920x1080
+
+                            </div>
+
+
+                        </div>
+                        <div className={styles.resolution_main_inner_hd}>
+                            <div className={styles.resolution_inner_title_hd}>
+                                1280x720
+
+                            </div>
+
+
+                        </div>
+                        <div className={styles.resolution_main_inner_sd}>
+                            <div className={styles.resolution_inner_title_sd}>
+                                640x480
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
                 
 
 
 
 
             </div>
-            {/*fourth section*/}
+            {/*ratio section*/}
         
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
-                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>and any screen ratio</h2>
+                        <h2 className={styles.subsection_title}>and any screen ratio</h2>
 
                     </div>
                 </div>

@@ -196,11 +196,12 @@ export default function HomeMain(props){
 
 
                         </div>
+                        <div className={styles.product_main_inner_buy_button} style={{backgroundColor:'#fefefe00', border:'2px solid #ffffff', marginTop:30}}><span className={styles.button_inner}>Learn More</span></div>
+
                         <div className={styles.product_main_description}>
                             <p>EZTitles redefines what professional subtitling software can do! Word-class TV, Digital Cinema, DVD and Blu-ray subtitle preparation software. Powerful conversion tool for almost any known file format. Breakthrough module for Closed Captioning. Three groundbreaking products. Single software.</p>
 
                         </div>
-                        <div className={styles.product_main_inner_buy_button} style={{backgroundColor:'#fefefe00', border:'2px solid #ffffff'}}><span className={styles.button_inner}>Learn More</span></div>
 
 
                     </motion.div>
