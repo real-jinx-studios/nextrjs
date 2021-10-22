@@ -1123,6 +1123,7 @@ text-align: center;
 .resolution_main_wrapper{
     max-width: 1400px;
     position: relative;
+    transform: scale(0.91);
 
 }
 .resolution_main_inner{
