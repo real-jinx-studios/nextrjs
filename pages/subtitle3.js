@@ -1,4 +1,4 @@
-import styles from '../styles/subtitle.module.css'
+import styles from '../styles/subtitle3.module.css'
 import MyImage from "../components/myImage";
 import Link from 'next/link'
 import ReactTooltip from 'react-tooltip';
@@ -948,11 +948,6 @@ export default function Subtitle(){
                             </div>
 
                     </div>
-
-                    <div className={styles.example_wrapper}>
-                        <MyImage src='/images/shots/example.png' width={1232} height={325} priority={true}/>
-                    </div>
-
                     <div className={styles.video_format_wrapper}>
 
                         <div className={styles.video_format_item}>
@@ -1109,7 +1104,7 @@ export default function Subtitle(){
             </div>
             {/*ratio section*/}
         
-            <div className={styles.content_inner} style={{marginTop:320,maxWidth:1400}}>
+            <div className={styles.content_inner} style={{marginTop:230,maxWidth:1400}}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 className={styles.subsection_title}>and any screen ratio</h2>
@@ -1389,32 +1384,22 @@ export default function Subtitle(){
             </div>
 
         
-            {/*any language section*/}
+            {/*fifth section*/}
 
                 <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
-                        <h2 className={styles.subsection_title}>in any language</h2>
-                        <div className={styles.languages_wrapper}>
-                            <div className={styles.language_left}>in jeder Sprache</div>
-                            <div className={styles.language_right}>на любом языке</div>
-                            <div className={styles.language_left}>in qualsiasi lingua</div>
-                            <div className={styles.language_right}>herhangi bir dilde</div>
-                            <div className={styles.language_left}>بأي لغ</div>
-                            <div className={styles.language_right}>dans n'importe quelle langue</div>
-                            <div className={styles.language_left}>בכל שפה</div>
-                            <div className={styles.language_right}>bármilyen nyelven</div>
-                            <div className={styles.language_left}>Σε οποιαδήποτε γλώσσα</div>
-                            <div className={styles.language_right}>em qualquer idioma</div>
-                            <div className={styles.language_left}>किसी भी भाषा में</div>
-                            <div className={styles.language_right}>En cualquier idioma</div>
-                            <div className={styles.language_left}>På ethvert sprog</div>
-                            <div className={styles.language_right}>あらゆる言語で</div>
-                            <div className={styles.language_left}>Na bilo kojem jeziku</div>
-                            <div className={styles.language_right}>Noma yiluphi ulimi</div>
-                            <div className={styles.language_left}>На всеки език</div>
+                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "4.063em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>in any language</h2>
+                        <h2 className={styles.tracking_in_expand}><span className={styles.highlight}>in jeder Sprache</span> <span>in qualsiasi
+                            lingua</span> <span className={styles.highlight}>на любом языке</span> <span>herhangi bir dilde</span> <span className={styles.highlight}>بأي
+                            لغة</span> <br/><br/>
 
-                        </div>
+                            <span>dans n'importe quelle langue</span> <span className={styles.highlight}>בכל שפה</span> <span>bármilyen nyelven</span> <span>em qualquer
+                                idioma</span> <br/><br/>
+
+                            <span>Σε οποιαδήποτε γλώσσα</span> <span className={styles.highlight}>किसी भी भाषा में</span> <span className={styles.highlight}>En cualquier idioma</span> <span className={styles.highlight}>In elke taal</span> <br/><br/>
+
+                            <span>På ethvert sprog</span> <span className={styles.highlight}>Na bilo kojem jeziku</span> <span>あらゆる言語で</span> <span className={styles.highlight}>Noma yiluphi ulimi</span> </h2>
 
                     </div>
                 </div>
@@ -1428,53 +1413,38 @@ export default function Subtitle(){
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
-                        <h2 className={styles.subsection_title}>Vertical orientation, Horizontal groups, Rubies and Bouten</h2>
-                        <div className={styles.asian_wrapper}>
-                            <MyImage src="/images/vertical-orientation-horizontal-text.svg" width={800} height={80}/>
+                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "2.3em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Vertical orientation, Horizontal groups,<br/>Rubies and Bouten for East Asian scripts</h2>
+                        <MyImage src="/images/vertical-orientation-horizontal-text.svg" width={800} height={80}/>
                             <div className={styles.vertical_horizontal}>
                                 <div className={styles.vertical_horizontal_inner}>
-                                    <p>With EZTitles you can input text in the vertical direction common for the
-                                        Chinese, Japanese
-                                        and Korean language scripts. An interesting requirement can be identified as the
-                                        need to
-                                        display horizontal and vertical text simultaneously on the screen. In EZTitles
-                                        this can be
+                                    <p>With EZTitles you can input text in the vertical direction common for the Chinese, Japanese
+                                    and Korean language scripts. An interesting requirement can be identified as the need to
+                                    display horizontal and vertical text simultaneously on the screen. In EZTitles this can be
                                         achieved easily by using two subtitle tracks.</p>
 
-                                    <p>Most of the time the non-Asian text inserted in a vertical subtitle doesn’t need
-                                        to be
-                                        rotated but there are cases for which the text should remain easily readable.
-                                        EZTitles is
-                                        able to satisfy this requirement as well by marking the non-Asian text as
-                                        Horizontal Group.</p>
+                                    <p>Most of the time the non-Asian text inserted in a vertical subtitle doesn’t need to be
+                                    rotated but there are cases for which the text should remain easily readable. EZTitles is
+                                    able to satisfy this requirement as well by marking the non-Asian text as Horizontal Group.</p>
 
-                                    <p>Another feature is the ability to insert Rubies above or below (if horizontally
-                                        oriented) or
+                                    <p>Another feature is the ability to insert Rubies above or below (if horizontally oriented) or
                                         to the right or left side (if vertically oriented) of the letters.</p>
                                 </div>
                                 <div className={styles.vertical_horizontal_inner}>
-                                    <p>The Rubies’ traditional purpose is to give additional information about the
-                                        pronunciation of
-                                        particular characters and symbols, considering the complexity of the Asian
-                                        scripts, which
-                                        may be otherwise unknown to the reader.</p>
+                                    <p>The Rubies’ traditional purpose is to give additional information about the pronunciation of
+                                    particular characters and symbols, considering the complexity of the Asian scripts, which
+                                    may be otherwise unknown to the reader.</p>
 
-                                    <p>The Phonetic Guide provides the option to insert rubies for the whole phrase or
-                                        only for the
-                                        symbol that requires it. This tool can also be used for emphasizing part of the
-                                        text or it
-                                        is also known as inserting a Bouten.</p>
+                                    <p>The Phonetic Guide provides the option to insert rubies for the whole phrase or only for the
+                                    symbol that requires it. This tool can also be used for emphasizing part of the text or it
+                                    is also known as inserting a Bouten.</p>
 
-                                    <p>With the Asian Text Font option, EZTitles can display different fonts for Asian
-                                        and
-                                        non-Asian text pieces inserted to the same line. The Asian-font text has the
-                                        same font size
+                                    <p>With the Asian Text Font option, EZTitles can display different fonts for Asian and
+                                    non-Asian text pieces inserted to the same line. The Asian-font text has the same font size
                                         as the regular-font text.</p>
                                 </div>
-                            </div>
-                            <img className={styles.asian_vertical_img}
-                                 src="/images/vertical-orientation-vertical-text.svg" width={158} height={800}/>
                         </div>
+                        <MyImage src="/images/vertical-orientation-vertical-text.svg" width={158} height={800}/>
+
                     </div>
                 </div>
 

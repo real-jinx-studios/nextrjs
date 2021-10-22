@@ -22,6 +22,7 @@ body{
     --gutter:60px;
     --no-color:#19191900;
     --resolution-color-title:#cccccc;
+    --ratio-height:480px;
 }
 
 *, ::before, ::after{
