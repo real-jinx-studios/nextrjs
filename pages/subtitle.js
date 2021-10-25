@@ -24,7 +24,7 @@ export default function Subtitle(){
     const [isPaymentSelected, setIsPaymentSelected] = useState('one-time');
     const [isStreamingServices, setIsStreamingServices] = useState(false);
     const [isClosedCaptions, setIsClosedCaptions] = useState(false);
-    const [isAsian, setIsAsian] = useState(false);
+    const [isAsian, setIsAsian] = useState(true);
 
     /*viewport scroll handlers*/
     const { scrollYProgress } = useViewportScroll()
@@ -272,7 +272,32 @@ export default function Subtitle(){
                 ease:[0.6,-0.05,0.01,0.99]
             }
         },
-        exit:{y:0, height:500}
+        exit:{y:0, height:500},
+        buttonMainAnimate:{
+            width:40,
+            height:40,
+            backgroundColor:'#D92B3A'
+        },
+        buttonMainInitial:{
+            width:126.167,
+            height:40.0667,
+        },
+        buttonTextInitial:{
+            opacity:1
+        },
+        buttonTextAnimate:{
+            opacity:0,
+            width:0,
+            letterSpacing:0,
+            fontSize:0
+        },
+        buttonIconInitial:{
+            rotate:'0deg'
+        },
+        buttonIconAnimate:{
+            rotateZ:'-45deg',
+            x:6
+        }
     }
 
     /*jsx generated divs*/
@@ -1518,6 +1543,7 @@ export default function Subtitle(){
 
             {/*asian section*/}
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
+                    {/*<div className={styles.note} style={{transform:'rotate(-90deg) translateX(-0%) translateY(-0%)'}}>&#x22EE; block of text shows on button press &#x22EE;</div>*/}
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 className={styles.subsection_title}>Vertical orientation, Horizontal groups, Rubies and Bouten</h2>
@@ -1528,11 +1554,11 @@ export default function Subtitle(){
     <span className={styles.text_highlight}> Chinese, Japanese
     and Korean</span> language scripts.</p>
 
-                            <div className={styles.asian_expand_button} onClick={extendAsian}>
-                                <div className={styles.asian_expand_button_icon}></div>
-                                <div className={styles.asian_expand_button_text}>view more</div>
+                            <motion.div variants={asianVariant} animate={isAsian?'buttonMainAnimate':'buttonMainInitial'}  className={styles.asian_expand_button} onClick={extendAsian}>
+                                <motion.div variants={asianVariant} animate={isAsian?'buttonIconAnimate':'buttonIconInitial'} className={styles.asian_expand_button_icon}></motion.div>
+                                <motion.div variants={asianVariant} animate={isAsian?'buttonTextAnimate':'buttonTextInitial'} className={styles.asian_expand_button_text}>view more</motion.div>
 
-                            </div>
+                            </motion.div>
 
                                  <div className={styles.asian_inner}>
                                      <AnimatePresence exitBeforeEnter>

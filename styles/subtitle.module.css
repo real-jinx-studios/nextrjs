@@ -1490,6 +1490,9 @@ text-align: center;
     display: flex;
     flex-direction: column;
 }
+.asian_wrapper > div:first-child{
+    left: 18px;
+}
 .asian_expand_button{
     margin: 0 auto;
     margin-top: 48px;
@@ -1575,6 +1578,10 @@ text-align: center;
     display:grid;
     grid-template-columns: 1fr 1fr;
 
+}
+.horizontal_asian_image_wrapper{
+    width:100%;
+    height:100%;
 }
 .asian_vertical_img{
     position: absolute;
