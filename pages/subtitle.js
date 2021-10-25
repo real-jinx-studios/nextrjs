@@ -24,6 +24,7 @@ export default function Subtitle(){
     const [isPaymentSelected, setIsPaymentSelected] = useState('one-time');
     const [isStreamingServices, setIsStreamingServices] = useState(false);
     const [isClosedCaptions, setIsClosedCaptions] = useState(false);
+    const [isAsian, setIsAsian] = useState(false);
 
     /*viewport scroll handlers*/
     const { scrollYProgress } = useViewportScroll()
@@ -78,6 +79,7 @@ export default function Subtitle(){
     const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen)
     const toggleRentDropdown = () => setIsRentDropdownOpen(!isRentDropdownOpen)
     const toggleInstallmentDropdown = () => setIsInstallmentDropdownOpen(!isInstallmentDropdownOpen)
+    const extendAsian = () => setIsAsian(!isAsian)
 
     /*animation setup is below*/
     const dropdownAnimVariantOption1={
@@ -256,6 +258,21 @@ export default function Subtitle(){
                 duration:0.3,
             }
         }
+    }
+
+    const asianVariant={
+        animate:{y:0,height:500},
+        initial:{
+            y:420,
+
+            height:1,
+            transition:{
+                type:'tween',
+                duration:0.2,
+                ease:[0.6,-0.05,0.01,0.99]
+            }
+        },
+        exit:{y:0, height:500}
     }
 
     /*jsx generated divs*/
@@ -1506,47 +1523,68 @@ export default function Subtitle(){
                         <h2 className={styles.subsection_title}>Vertical orientation, Horizontal groups, Rubies and Bouten</h2>
                         <div className={styles.asian_wrapper}>
                             <MyImage src="/images/vertical-orientation-horizontal-text.svg" width={800} height={80}/>
-                            <div className={styles.asian_inner}>
-                                <div className={styles.vertical_horizontal_inner}>
-                                    <p>With EZTitles you can input text in the vertical direction common for the
-                                        Chinese, Japanese
-                                        and Korean language scripts. An interesting requirement can be identified as the
-                                        need to
-                                        display horizontal and vertical text simultaneously on the screen. In EZTitles
-                                        this can be
-                                        achieved easily by using two subtitle tracks.</p>
+<p className={styles.subsection_description} style={{textAlign:'center'}}>With EZTitles you can input text in the
+    vertical direction common for the
+    <span className={styles.text_highlight}> Chinese, Japanese
+    and Korean</span> language scripts.</p>
 
-                                    <p>Most of the time the non-Asian text inserted in a vertical subtitle doesn’t need
-                                        to be
-                                        rotated but there are cases for which the text should remain easily readable.
-                                        EZTitles is
-                                        able to satisfy this requirement as well by marking the non-Asian text as
-                                        Horizontal Group.</p>
+                            <div className={styles.asian_expand_button} onClick={extendAsian}>
+                                <div className={styles.asian_expand_button_icon}></div>
+                                <div className={styles.asian_expand_button_text}>view more</div>
 
-                                    <p>Another feature is the ability to insert Rubies above or below (if horizontally
-                                        oriented) or
-                                        to the right or left side (if vertically oriented) of the letters.</p>
-                                </div>
-                                <div className={styles.vertical_horizontal_inner}>
-                                    <p>The Rubies’ traditional purpose is to give additional information about the
-                                        pronunciation of
-                                        particular characters and symbols, considering the complexity of the Asian
-                                        scripts, which
-                                        may be otherwise unknown to the reader.</p>
-
-                                    <p>The Phonetic Guide provides the option to insert rubies for the whole phrase or
-                                        only for the
-                                        symbol that requires it. This tool can also be used for emphasizing part of the
-                                        text or it
-                                        is also known as inserting a Bouten.</p>
-
-                                    <p>With the Asian Text Font option, EZTitles can display different fonts for Asian
-                                        and
-                                        non-Asian text pieces inserted to the same line. The Asian-font text has the
-                                        same font size
-                                        as the regular-font text.</p>
-                                </div>
                             </div>
+
+                                 <div className={styles.asian_inner}>
+                                     <AnimatePresence exitBeforeEnter>
+                                         <motion.div variants={asianVariant} animate={!isAsian?'exit':'initial'} exit='exit' key='cover' className={styles.asian_cover}></motion.div>
+
+                                     </AnimatePresence>
+                                    <div className={styles.asian_inner_text_wrapper}>
+                                        <p className={styles.asian_inner_text}>An interesting requirement can be identified as
+                                            the
+                                            need to
+                                            display horizontal and vertical text simultaneously on the screen. In
+                                            EZTitles
+                                            this can be
+                                            achieved easily by using two subtitle tracks.Most of the time the non-Asian
+                                            text
+                                            inserted in a vertical subtitle doesn’t need
+                                            to be
+                                            rotated but there are cases for which the text should remain easily
+                                            readable.
+                                            EZTitles is
+                                            able to satisfy this requirement as well by marking the non-Asian text as
+                                            Horizontal Group.Another feature is the ability to insert Rubies above or
+                                            below
+                                            (if horizontally
+                                            oriented) or
+                                            to the right or left side (if vertically oriented) of the letters.
+                                        </p>
+                                    </div>
+                                    <div className={styles.asian_inner_text_wrapper}>
+                                        <p className={styles.asian_inner_text}>The Rubies’ traditional purpose is to
+                                            give
+                                            additional information about the
+                                            pronunciation of
+                                            particular characters and symbols, considering the complexity of the Asian
+                                            scripts, which
+                                            may be otherwise unknown to the reader.
+                                            The Phonetic Guide provides the option to insert rubies for the whole phrase
+                                            or
+                                            only for the
+                                            symbol that requires it. This tool can also be used for emphasizing part of
+                                            the
+                                            text or it
+                                            is also known as inserting a Bouten.
+                                            With the Asian Text Font option, EZTitles can display different fonts for
+                                            Asian
+                                            and
+                                            non-Asian text pieces inserted to the same line. The Asian-font text has the
+                                            same font size
+                                            as the regular-font text.
+                                        </p>
+                                    </div>
+                                </div>
                             <img className={styles.asian_vertical_img}
                                  src="/images/vertical-orientation-vertical-text.svg" width={158} height={800}/>
                         </div>
