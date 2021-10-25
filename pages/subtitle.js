@@ -603,33 +603,51 @@ export default function Subtitle(){
             <div className={styles.secondary_nav}>
                 <div className={styles.secondary_nav_inner}>
                     <Link href="#compatibility"><motion.a className={`${styles.secondary_nav_inner_item1} ${currentNav=='compatibility'?styles.active_item1:''}`}>What you can do</motion.a></Link>
-                    <Link href="#formats"><motion.a className={`${styles.secondary_nav_inner_item2} ${currentNav=='formats'?styles.active_item2:''}`}>How it is easy</motion.a></Link>
-                    <Link href="#features"><motion.a className={`${styles.secondary_nav_inner_item3} ${currentNav=='features'?styles.active_item3:''}`}>Designed for you</motion.a></Link>
-                    <Link href="#editions"><motion.a className={`${styles.secondary_nav_inner_item4} ${currentNav=='editions'?styles.active_item4:''}`}>Samples</motion.a></Link>
+                    <Link href="#formats"><motion.a className={`${styles.secondary_nav_inner_item2} ${currentNav=='formats'?styles.active_item2:''}`}>Do it easy</motion.a></Link>
+                    <Link href="#features"><motion.a className={`${styles.secondary_nav_inner_item3} ${currentNav=='features'?styles.active_item3:''}`}>Guarantee quality</motion.a></Link>
+                    <Link href="#editions"><motion.a className={`${styles.secondary_nav_inner_item4} ${currentNav=='editions'?styles.active_item4:''}`}>Complete & export</motion.a></Link>
                     <div className="sticky-nav_overlay" style={{"backgroundColor": "#fefefe"}}></div>
                 </div>
             </div>
 
             {/*video section*/}
-            <div style={{"marginTop":"230px"}} className={styles.content_inner}>
-                <motion.div
-                    layout
-                    data-isOpen={isVideoOpen}
-                    initial={{ borderRadius: 50 }}
-                    className={styles.video_parent}
-                    onClick={() => {setIsVideoOpen(!isVideoOpen); handleVideoPlay()}}
-                >
-                    <motion.div layout className={styles.video_play} ><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="#fefefe"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg></motion.div>
+            <div className={styles.content_inner}>
+                <div className={styles.content_inner_text}>
+                    <div className={styles.paragraph}>
+                        <h2 className={styles.subsection_title}>Take a quick look at EZTitles’ capabilities</h2>
+
+                    </div>
+                </div>
+                <div className={styles.video_wrapper}>
+                    <div className={styles.note} style={{transform:'rotate(-90deg) translateX(-50%) translateY(-150%)'}}>&#x2237; on click video expands in all directions, same time &#x2237;</div>
+
+
 
                     <motion.div
-                        className={styles.video_actual}>
+                        layout
+                        data-isOpen={isVideoOpen}
+                        initial={{ borderRadius: 50 }}
+                        className={styles.video_parent}
+                        onClick={() => {setIsVideoOpen(!isVideoOpen); handleVideoPlay()}}>
 
-                        <video ref={videoRef} style={{width: 985, height: 554}}>
-                            <source src="/videos/subass_video.mp4"/>
+                        <motion.div layout className={styles.video_play} ><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="#fefefe"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg></motion.div>
 
-                        </video>
+                        <motion.div
+                            className={styles.video_actual}>
+
+                            <video ref={videoRef} style={{width: 985, height: 554}}>
+                                <source src="/videos/subass_video.mp4"/>
+
+                            </video>
+                        </motion.div>
                     </motion.div>
-                </motion.div>
+                </div>
+                <div className={styles.content_inner_text}>
+                    <div className={styles.paragraph}>
+                        <p className={styles.subsection_description} style={{textAlign:'center'}}>and <span className={styles.text_highlight}>scroll down</span> to explore its <span className={styles.text_highlight}>full power</span></p>
+
+                    </div>
+                </div>
 
             </div>
 
@@ -644,6 +662,8 @@ export default function Subtitle(){
                         </div>
                 </div>
                 <div className={styles.card_wrapper}>
+                    <div className={styles.note} style={{transform:'rotate(-90deg) translateX(-100%) translateY(-200%)'}}>&#x2297; no visible entry animations &#x2297;</div>
+
                     {/*<div className={styles.card}>
                         <div className={styles.card_inner}>
                             <div className={styles.card_inner_title}>
@@ -949,11 +969,56 @@ export default function Subtitle(){
 
                     </div>
 
-                    <div className={styles.example_wrapper}>
+                   {/* <div className={styles.example_wrapper}>
                         <MyImage src='/images/shots/example.png' width={1232} height={325} priority={true}/>
+                    </div>*/}
+                    <div className={styles.example_wrapper_real}>
+                        <div className={styles.note} style={{transform:'rotate(-90deg) translateX(-100%) translateY(-200%)'}}>&#x2251; text inside boxes slides in from left to right, staggered &#x2251;</div>
+
+                        <div className={styles.example_format}>
+                            <div className={styles.example_format_text}>
+                                mpeg-1
+                            </div>
+                        </div>
+                        <div className={styles.example_format}>
+                            <div className={styles.example_format_text}>
+                                mpeg-2
+                            </div>
+                        </div>
+                        <div className={styles.example_format}>
+                            <div className={styles.example_format_text}>
+                                mpeg-4
+                            </div>
+                        </div>
+                        <div className={styles.example_format}>
+                            <div className={styles.example_format_text}>
+                                avi
+                            </div>
+                        </div>
+                        <div className={styles.example_format}>
+                            <div className={styles.example_format_text}>
+                                wmv
+                            </div>
+                        </div>
+                        <div className={styles.example_format}>
+                            <div className={styles.example_format_text}>
+                                apple
+                            </div>
+                        </div>
+                        <div className={styles.example_format}>
+                            <div className={styles.example_format_text}>
+                                mxf
+                            </div>
+                        </div>
+                        <div className={styles.example_format}>
+                            <div className={styles.example_format_text}>
+                                mvf
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div className={styles.video_format_wrapper}>
+                    {/*<div className={styles.video_format_wrapper}>
 
                         <div className={styles.video_format_item}>
                             <div className={styles.video_format_item_title}>
@@ -1041,7 +1106,7 @@ export default function Subtitle(){
 
 
 
-                    </div>
+                    </div>*/}
 
 
 
@@ -1059,6 +1124,7 @@ export default function Subtitle(){
                     </div>
                 </div>
                 <div className={styles.resolution_main_wrapper}>
+                    <div className={styles.note}>&larr; fades in and down for every resolution, staggered &larr;</div>
                     <div className={styles.resolution_main_inner}>
                         <div className={styles.resolution_inner_title_4k}>
                             4096x2160
@@ -1117,6 +1183,7 @@ export default function Subtitle(){
                     </div>
                 </div>
                 <div className={styles.ratio_circle_wrapper}>
+                    <div className={styles.note}>&#x2235; fades in and right for every aspect ratio, staggered &#x2235;</div>
                     <div className={styles.ratio_circle}>
                         <div className={styles.ratio_circle_inner}>
                             <p className={styles.ratio_circle_inner_text}>4:3</p>
@@ -1392,28 +1459,36 @@ export default function Subtitle(){
             {/*any language section*/}
 
                 <div style={{"marginTop":"230px"}} className={styles.content_inner}>
-                <div className={styles.content_inner_text}>
+
+                    <div className={styles.content_inner_text}>
+
                     <div className={styles.paragraph}>
                         <h2 className={styles.subsection_title}>in any language</h2>
-                        <div className={styles.languages_wrapper}>
-                            <div className={styles.language_left}>in jeder Sprache</div>
-                            <div className={styles.language_right}>на любом языке</div>
-                            <div className={styles.language_left}>in qualsiasi lingua</div>
-                            <div className={styles.language_right}>herhangi bir dilde</div>
-                            <div className={styles.language_left}>بأي لغ</div>
-                            <div className={styles.language_right}>dans n'importe quelle langue</div>
-                            <div className={styles.language_left}>בכל שפה</div>
-                            <div className={styles.language_right}>bármilyen nyelven</div>
-                            <div className={styles.language_left}>Σε οποιαδήποτε γλώσσα</div>
-                            <div className={styles.language_right}>em qualquer idioma</div>
-                            <div className={styles.language_left}>किसी भी भाषा में</div>
-                            <div className={styles.language_right}>En cualquier idioma</div>
-                            <div className={styles.language_left}>På ethvert sprog</div>
-                            <div className={styles.language_right}>あらゆる言語で</div>
-                            <div className={styles.language_left}>Na bilo kojem jeziku</div>
-                            <div className={styles.language_right}>Noma yiluphi ulimi</div>
-                            <div className={styles.language_left}>На всеки език</div>
+                        <div className={styles.languages_outer}>
+                            <div className={styles.note} style={{transform:'rotate(-90deg) translateX(-100%) translateY(-225%)'}}>&#x223A; text starts centered then moves to sides like zipper gradually, staggered &#x223A;</div>
 
+
+                            <div className={styles.languages_wrapper}>
+
+                                <div className={styles.language_left}>in jeder Sprache</div>
+                                <div className={styles.language_right}>на любом языке</div>
+                                <div className={styles.language_left}>in qualsiasi lingua</div>
+                                <div className={styles.language_right}>herhangi bir dilde</div>
+                                <div className={styles.language_left}>بأي لغ</div>
+                                <div className={styles.language_right}>dans n'importe quelle langue</div>
+                                <div className={styles.language_left}>בכל שפה</div>
+                                <div className={styles.language_right}>bármilyen nyelven</div>
+                                <div className={styles.language_left}>Σε οποιαδήποτε γλώσσα</div>
+                                <div className={styles.language_right}>em qualquer idioma</div>
+                                <div className={styles.language_left}>किसी भी भाषा में</div>
+                                <div className={styles.language_right}>En cualquier idioma</div>
+                                <div className={styles.language_left}>På ethvert sprog</div>
+                                <div className={styles.language_right}>あらゆる言語で</div>
+                                <div className={styles.language_left}>Na bilo kojem jeziku</div>
+                                <div className={styles.language_right}>Noma yiluphi ulimi</div>
+                                <div className={styles.language_left}>На всеки език</div>
+
+                            </div>
                         </div>
 
                     </div>
@@ -1424,14 +1499,14 @@ export default function Subtitle(){
 
             </div>
 
-            {/*sixth section*/}
+            {/*asian section*/}
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
                         <h2 className={styles.subsection_title}>Vertical orientation, Horizontal groups, Rubies and Bouten</h2>
                         <div className={styles.asian_wrapper}>
                             <MyImage src="/images/vertical-orientation-horizontal-text.svg" width={800} height={80}/>
-                            <div className={styles.vertical_horizontal}>
+                            <div className={styles.asian_inner}>
                                 <div className={styles.vertical_horizontal_inner}>
                                     <p>With EZTitles you can input text in the vertical direction common for the
                                         Chinese, Japanese

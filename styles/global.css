@@ -27,6 +27,7 @@ body{
 
 *, ::before, ::after{
     box-sizing: border-box;
+    cursor: default;
 }
 
 a{

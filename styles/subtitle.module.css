@@ -1091,10 +1091,40 @@ text-align: center;
     grid-row-gap: 98px;
     margin: 0 auto;
 }
-.example_wrapper{
+.example_wrapper, .example_wrapper_real{
     position: relative;
     margin-top: 30px;
-    margin-bottom: 240px;
+    margin-bottom: 200px;
+}
+.example_wrapper_real{
+    width:1232px;
+    height:398px;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: 398px;
+}
+.example_format{
+    position: relative;
+    border-top: 1px solid #fefefe66;
+    border-left: 1px solid #fefefe66;
+    border-bottom: 1px solid #fefefe66;
+}
+.example_format_text{
+    position: absolute;
+    font-size: 96px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    right:0;
+    top:0;
+    transform-origin: top right;
+    transform: rotate(-90deg) translate(0, -125%);
+    color: #fefefe;
+    width: max-content;
+    height: max-content;
+
 }
 .video_format_item{
     width:180px;
@@ -1128,15 +1158,31 @@ text-align: center;
 
 
 .resolution_main_wrapper{
-    max-width: 1400px;
+    max-width: 100%;
     position: relative;
     /*transform: scale(0.91);*/
+
+}
+.note{
+    position: absolute;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin: 0;
+    padding: 0;
+    left:0;
+    top:0;
+    transform-origin: top left;
+    transform: rotate(-90deg) translate(-100%, 0);
+    color: #fefefe88;
+    width: max-content;
+    height: max-content;
 
 }
 .resolution_main_inner{
     position: relative;
     margin:0 auto;
-    width: 1365px;
+    width: 1232px;
     height: 720px;
     position: relative;
     border-radius: 8px;
@@ -1145,8 +1191,8 @@ text-align: center;
 
 }
 .resolution_inner_title_4k{
-    font-size: 270px;
-    line-height: 1.1428571429;
+    font-size: 245px;
+    line-height: 0.8;
     font-weight: 600;
     letter-spacing: .007em;
     font-synthesis: none;
@@ -1173,7 +1219,7 @@ text-align: center;
 .resolution_inner_title_2k{
 
     font-size: 168px;
-    line-height: 1.1428571429;
+    line-height: 0.8;
     font-weight: 600;
     letter-spacing: .007em;
     font-synthesis: none;
@@ -1201,7 +1247,7 @@ text-align: center;
 .resolution_inner_title_fhd{
 
     font-size: 127px;
-    line-height: 1.1428571429;
+    line-height: 0.8;
     font-weight: 600;
     letter-spacing: .007em;
     font-synthesis: none;
@@ -1228,7 +1274,7 @@ text-align: center;
 .resolution_inner_title_hd{
 
     font-size: 95px;
-    line-height: 1.1428571429;
+    line-height: 0.8;
     font-weight: 600;
     letter-spacing: .007em;
     font-synthesis: none;
@@ -1255,7 +1301,7 @@ text-align: center;
 .resolution_inner_title_sd{
 
     font-size: 53px;
-    line-height: 1.1428571429;
+    line-height: 0.8;
     font-weight: 600;
     letter-spacing: .007em;
     font-synthesis: none;
@@ -1355,15 +1401,19 @@ text-align: center;
     margin-top: 0;
     color: #fefefebb;
 }
-.ratio_circle:hover{
+/*.ratio_circle:hover{
     background-color: #fefefe;
 }
 .ratio_circle:hover > div > p{
     color:#191919;
+}*/
+
+.languages_outer{
+    width:100%;
+    position: relative;
 }
-
-
 .languages_wrapper{
+    position: relative;
     display:flex;
     width:600px;
     margin:0 auto;
@@ -1438,11 +1488,23 @@ text-align: center;
 .asian_wrapper{
     position: relative;
 }
+.asian_inner{
+    display:flex;
+    flex-direction: row;
+
+}
 .asian_vertical_img{
     position: absolute;
     right:0;
     top:0;
     transform: translateX(62%);
+}
+.asian_inner_text{
+    color:#ffffff;
+    font-size: 19px;
+    line-height: 1.4211026316;
+    font-weight: 600;
+    letter-spacing: .012em;
 }
 
 
@@ -1859,6 +1921,15 @@ text-align: center;
 
 
 /*video button*/
+.video_wrapper{
+    position: relative;
+    width: 1356px;
+    height:398px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+}
 .video_parent {
     overflow:hidden;
     position:relative;
@@ -1874,7 +1945,7 @@ text-align: center;
 
 .video_parent[data-isOpen="true"] {
     width: 985px;
-    height: 554px;
+    height: 620px;
     /*border-radius: 25px;*/
 }
 
@@ -1903,6 +1974,7 @@ text-align: center;
 
 /*cards section*/
 .card_wrapper{
+    position: relative;
     margin-top: 60px;
     width: 100%;
     display: grid;
