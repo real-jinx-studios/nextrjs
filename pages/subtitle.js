@@ -24,11 +24,15 @@ export default function Subtitle(){
     const [isPaymentSelected, setIsPaymentSelected] = useState('one-time');
     const [isStreamingServices, setIsStreamingServices] = useState(false);
     const [isClosedCaptions, setIsClosedCaptions] = useState(false);
-    const [isAsian, setIsAsian] = useState(true);
+    const [isAsian, setIsAsian] = useState(false);
+    const [shotChange, setShotChange] = useState(0);
 
     /*viewport scroll handlers*/
     const { scrollYProgress } = useViewportScroll()
     const yRange = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
+
+    /*variable*/
+    const shotChangesArray=["/images/shots/01-shot-detection-img.png","/images/shots/02-proper-timeline.png","/images/shots/03-offer-img-2.png","/images/shots/04-split-text-img.png","/images/shots/05-comprehensive-check-img.png","/images/shots/06-proofing-tools-img.png","/images/shots/07-macros-img.png"]
 
     /*scrolling triggers below for components in view*/
     const [ref, inView] = useInView();
@@ -36,6 +40,38 @@ export default function Subtitle(){
     const [ref2, inView2] = useInView();
     const [ref3, inView3] = useInView();
     const [ref4, inView4] = useInView();
+    //shot change detection in views
+    const [shotRef0, shotRefInView0] = useInView({threshold:0.6});
+    const [shotRef1, shotRefInView1] = useInView({threshold:0.6});
+    const [shotRef2, shotRefInView2] = useInView({threshold:0.6});
+    const [shotRef3, shotRefInView3] = useInView({threshold:0.6});
+    const [shotRef4, shotRefInView4] = useInView({threshold:0.6});
+    const [shotRef5, shotRefInView5] = useInView();
+    const [shotRef6, shotRefInView6] = useInView();
+    const [shotRef7, shotRefInView7] = useInView();
+    //shot change handler
+    useEffect(()=>{
+
+        if(shotRefInView0){
+            setShotChange(0)
+        }else if(shotRefInView1){
+            setShotChange(1)
+        }else if(shotRefInView2){
+            setShotChange(2)
+        }else if(shotRefInView3){
+            setShotChange(3)
+        }else if(shotRefInView4){
+            setShotChange(4)
+        }else if(shotRefInView5){
+            setShotChange(0)
+        }else if(shotRefInView6){
+            setShotChange(6)
+        }else if(shotRefInView7){
+            setShotChange(7)
+        }
+    },[shotRefInView0, shotRefInView1, shotRefInView2, shotRefInView3, shotRefInView4, shotRefInView5, shotRefInView6, shotRefInView7])
+
+
     const videoRef=useRef();
     const router = useRouter()
     useEffect(()=>{
@@ -297,6 +333,20 @@ export default function Subtitle(){
         buttonIconAnimate:{
             rotateZ:'-45deg',
             x:6
+        }
+    }
+    const shotChangeVariant={
+        initial:{
+            opacity:0,
+            y:-200
+        },
+        animate:{
+            opacity:1,
+            y:0
+        },
+        exit:{
+            opacity:0,
+            y:200
         }
     }
 
@@ -1621,14 +1671,80 @@ export default function Subtitle(){
 
 
             </div>
-            {/*seventh section*/}
+            {/*file formats section*/}
             <div style={{"marginTop":"230px"}} className={styles.content_inner} id='formats' ref={ref2}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
-                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "2.3em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>Export your work in any file format<br/>used in the industry today</h2>
-                        <p>69 file formats</p>
-                        <div className={styles.file_format_tabs_wrapper}>
-                            <FileFormatTabs/>
+                        <h2 className={styles.subsection_title}>Export your work in any file format used in the industry today</h2>
+                        <p className={styles.subsection_description} style={{textAlign:'center'}}>EZTitles supports <span className={styles.text_highlight}>over 69</span> file formats.</p>
+                        <div className={styles.file_formats_wrapper}>
+                                <div className={styles.note} style={{transform:'rotate(-90deg) translateX(-80%) translateY(-200%)'}}>&#x22EE; pressing every heading will switch files displayed in <span className={styles.text_highlight}>undefined</span> animation &#x22EE;</div>
+
+                            <div className={styles.file_formats_header}>
+                                <div className={styles.file_format_title_selected}>
+                                    Open subtitles
+                                </div>
+                                <div className={styles.file_format_title}>
+                                    Closed Captions
+                                </div>
+                                <div className={styles.file_format_title}>
+                                    DVB subtitles
+                                </div>
+                                <div className={styles.file_format_title}>
+                                    Images for DVD authoring and NLE system
+                                </div>
+                                <div className={styles.file_format_title}>
+                                    Text-only scripts for Authoring and NLE systems
+                                </div>
+
+                            </div>
+                            <div className={styles.file_formats_content_1}>
+                                <ul>
+                                    <li className={styles.file_format_item}>Compressed PAC (.pac)</li>
+                                    <li className={styles.file_format_item}>.890 files</li>
+                                    <li className={styles.file_format_item}>EBU (.STL)</li>
+                                    <li className={styles.file_format_item}>EBU (.STL) for ARTE</li>
+                                    <li className={styles.file_format_item}>Windows Media Player SAMI</li>
+                                    <li className={styles.file_format_item}>Plain ASCII text</li>
+                                    <li className={styles.file_format_item}>Rich Text Format (RTF) files</li>
+                                    <li className={styles.file_format_item}>DLP Cinema™ Subtitle XML </li>
+                                    <li className={styles.file_format_item}>DLP Cinema™ Subtitle XML with quality images</li>
+                                </ul>
+                                <ul>
+                                    <li className={styles.file_format_item}>DCDM SMPTE 428-7-2007 XML Subtitles</li>
+                                    <li className={styles.file_format_item}>QuickTime Text and .SMIL files</li>
+                                    <li className={styles.file_format_item}>SubRip (.srt) subtitles</li>
+                                    <li className={styles.file_format_item}>MicroDVD (.sub) subtitles</li>
+                                    <li className={styles.file_format_item}>WebVTT (.vtt) subtitles</li>
+                                    <li className={styles.file_format_item}>Videotron Lambda CAP (.cap)</li>
+                                    <li className={styles.file_format_item}>Unicode PAC (.fpc)</li>
+                                    <li className={styles.file_format_item}>Win2020 text files</li>
+                                    <li className={styles.file_format_item}>DAS</li>
+                                </ul>
+                                <ul>
+                                    <li className={styles.file_format_item}>Softitler .TXT</li>
+                                    <li className={styles.file_format_item}>Avid® DS Nitris™ Subtitles Files</li>
+                                    <li className={styles.file_format_item}>OVR</li>
+                                    <li className={styles.file_format_item}>VDPC</li>
+                                    <li className={styles.file_format_item}>XLS Excel Workbook file</li>
+                                    <li className={styles.file_format_item}>Timed Text (TTML XML)</li>
+                                    <li className={styles.file_format_item}>Ooyala Timed Text XML</li>
+                                    <li className={styles.file_format_item}>IMSC1 &amp; IMSC 1.1 XML</li>
+                                    <li className={styles.file_format_item}>Netflix Timed Text (NFLX-TT)</li>
+                                </ul>
+                                <ul>
+                                    <li className={styles.file_format_item}>EBU Timed Text (EBU-TT and EBU-TT-D)</li>
+                                    <li className={styles.file_format_item}>EBU-TT and EBU-TT-D for BBC</li>
+                                    <li className={styles.file_format_item}>SMPTE-TT Subtitles</li>
+                                    <li className={styles.file_format_item}>Inscriber CG (.txt)</li>
+                                    <li className={styles.file_format_item}>Apple iTunes Timed Text (.itt)</li>
+                                    <li className={styles.file_format_item}>SubStation Alpha (.SSA, .ASS)</li>
+                                    <li className={styles.file_format_item}>Swift Interchange Format (.sif)</li>
+                                    <li className={styles.file_format_item}>Universal Subtitling Format (.usf)</li>
+                                </ul>
+
+                            </div>
+
                         </div>
 
                     </div>
@@ -1638,97 +1754,109 @@ export default function Subtitle(){
 
 
             </div>
-            {/*eighth section*/}
+            {/*shot change section*/}
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
-                        <h2 style={{"fontFamily": "'Montserrat', sans-serif","fontSize": "2.3em","fontWeight": "100 !important","padding": "0 0 20px","lineHeight": "63px"}}>EZTitles offers an ocean of useful features and<br/>automations to help your subtitling endeavours.</h2>
+                        <h2 ref={shotRef0} className={styles.subsection_title}>EZTitles offers an ocean of useful features and automations to help your subtitling endeavours.</h2>
                         <div className={styles.features_wrapper}>
+                            <div className={styles.note} style={{transform:'rotate(-90deg) translateX(-80%) translateY(-200%)'}}>&#x2238; section <span className={styles.text_highlight}>not finished</span>, images static and change on feature scroll &#x2238;</div>
+
                             <div className={styles.feature}>
-                                <div className={styles.feature_text}>
-                                    <h2 className={styles.feature_title}>Shot change detection</h2>
-                                    <p>
-                                        Our stellar shot change detection will help you cue subtitles with an unprecedented accuracy.
-                                        <br/>EZTitles detects shot changes on its own, on the fly, in background and without any additional software or set-ups needed.
-                                        <br/>This means you can use EZTitles and all its features for subtitling while the video file is still being processed.
-                                        <br/>And there are also tools for fixing existing subtitles to meet the shot change requirements.
+                                <div className={styles.feature_text_outer}>
+                                    <div ref={shotRef1} className={styles.feature_text_wrapper}>
+                                        <h4 className={styles.subsection_description}>Shot change detection</h4>
+                                        <p className={styles.simple_text}>
+                                            Our stellar shot change detection will help you cue subtitles with an
+                                            unprecedented accuracy.
+                                            EZTitles detects shot changes on its own, on the fly, in background and
+                                            without any additional software or set-ups needed.
+                                            This means you can use EZTitles and all its features for subtitling while
+                                            the video file is still being processed.
+                                            And there are also tools for fixing existing subtitles to meet the shot
+                                            change requirements.
 
-                                    </p>
-                                </div>
-                                <div className={styles.feature_image}>
-                                   <MyImage src="/images/shots/01-shot-detection-img.png" width={1111} height={1111}/>
+                                        </p>
+                                    </div>
+                                    <div ref={shotRef2} className={styles.feature_text_wrapper}>
+                                        <h4 className={styles.subsection_description}>A proper Timeline</h4>
+                                        <p className={styles.simple_text}>
+                                            It displays not only the audio and video tracks but also the boundaries of
+                                            subtitles and shot changes. Navigation is as simple as it can get. For
+                                            example, you can drag a subtitle’s in- and out-cues to a new position just
+                                            using the mouse — and they will auto-snap to shot changes in vicinity.
+                                            Moreover, the EZTitles timeline can display your video as a strip of
+                                            consecutive frames, making it easy to find the exact position of a hidden
+                                            shot change, or even to precisely snap a subtitle’s cue to the shot change
+                                            by hand.
+                                            A great feature of EZTitles is you could have a second track on the Timeline
+                                            which can be used for overlapping subtitles, loading a script for reference
+                                            or more useful purposes.
+                                        </p>
+                                    </div>
+                                    <div ref={shotRef3} className={styles.feature_text_wrapper}>
+                                        <h4 className={styles.subsection_description}>Subtitling Assistant</h4>
+                                        <p className={styles.simple_text}>
+                                            Subtitling Assistant is THE next gen smart feature we’ve implemented into EZTitles intended to automate the process of creating Closed Captions both Pop-on and Roll-up, SDH Subtitles or Master Translation Templates in the same language.
+                                        </p>
+                                    </div>
+                                    <div ref={shotRef4} className={styles.feature_text_wrapper}>
+                                        <h4 className={styles.subsection_description}>Split text to subtitles</h4>
+                                        <p className={styles.simple_text}>
+                                            The Split text to subtitles feature can serve many purposes, but it is best described as an advanced set of tools for splitting any block of text into individual subtitles. The result will strictly comply with all the requirements for the minimum interval between subtitles, minimum and maximum durations, reading speed, line length restrictions and so on.
+                                            The Auto-Adjust can simultaneously perform multiple operations depending on the options you activate. In general, it word-wraps and splits your text to optimally fill the lines, splits it into individual subtitles and finally (re)calculates the in- and out-cues of the resulting new subtitles.
+                                            You can simply skip the non-speech scenes and focus on the relevant parts, and you can even split a block of text into proper subtitles by using the Auto-Adjust feature in conjunction with the Continuous Typing Workflow.
+                                        </p>
+                                    </div>
+                                    <div ref={shotRef5} className={styles.feature_text_wrapper}>
+                                        <h1 className={styles.subsection_description}>END END END END END END</h1>
+                                        <p className={styles.simple_text}></p>
+                                    </div>
+
+
 
                                 </div>
+
+                                <AnimatePresence>
+                                    {shotChange == 1 &&
+                                        <motion.div variants={shotChangeVariant}
+                                                    initial='initial'
+                                                    animate='animate'
+                                                    exit='exit'
+                                                    key='shot1'
+                                                    className={styles.feature_image}>
+                                            <MyImage src="/images/shots/01-shot-detection-img.png" width={1111} height={1111} priotity={true}/>
+                                        </motion.div>}
+                                    {shotChange == 2 &&
+                                        <motion.div variants={shotChangeVariant}
+                                                    initial='initial'
+                                                    animate='animate'
+                                                    exit='exit'
+                                                    key='shot2'
+                                                    className={styles.feature_image}>
+                                            <MyImage src="/images/shots/02-proper-timeline.png" width={1111} height={1111} priotity={true}/>
+                                        </motion.div>}
+                                    {shotChange == 3 &&
+                                    <motion.div variants={shotChangeVariant}
+                                                initial='initial'
+                                                animate='animate'
+                                                exit='exit'
+                                                key='shot3'
+                                                className={styles.feature_image}>
+                                        <MyImage src="/images/shots/03-offer-img-2.png" width={1111} height={1111} priotity={true}/>
+                                    </motion.div>}
+                                    {shotChange == 4 &&
+                                    <motion.div variants={shotChangeVariant}
+                                                initial='initial'
+                                                animate='animate'
+                                                exit='exit'
+                                                key='shot4'
+                                                className={styles.feature_image}>
+                                        <MyImage src="/images/shots/04-split-text-img.png" width={1111} height={1111} priotity={true}/>
+                                    </motion.div>}
+                                </AnimatePresence>
                             </div>
-                            <div className={styles.feature}>
-                                <div className={styles.feature_text}>
-                                    <h2 className={styles.feature_title}>A proper Timeline</h2>
-                                    <p>It displays not only the audio and video tracks but also the boundaries of subtitles and shot changes. Navigation is as simple as it can get. For example, you can drag a subtitle’s in- and out-cues to a new position just using the mouse — and they will auto-snap to shot changes in vicinity.</p>
-                                        <p>Moreover, the EZTitles timeline can display your video as a strip of consecutive frames, making it easy to find the exact position of a hidden shot change, or even to precisely snap a subtitle’s cue to the shot change by hand.</p>
-                                            <p>A great feature of EZTitles is you could have a second track on the Timeline which can be used for overlapping subtitles, loading a script for reference or more useful purposes.</p>
-                                </div>
-                                <div className={styles.feature_image}>
-                                    <MyImage src="/images/shots/02-proper-timeline.png" width={600} height={600}/>
 
-                                </div>
-                            </div>
-                            <div className={styles.feature}>
-                                <div className={styles.feature_text}>
-                                    <h2 className={styles.feature_title}>Subtitling Assistant</h2>
-                                    <p>Subtitling Assistant is THE next gen smart feature we’ve implemented into EZTitles intended to automate the process of creating Closed Captions both Pop-on and Roll-up, SDH Subtitles or Master Translation Templates in the same language.</p>
-                                    <div className={styles.free_trial}>LEARN MORE</div>
-                                </div>
-                                <div className={styles.feature_image}>
-                                    <MyImage src="/images/shots/03-offer-img-2.png" width={1111} height={800}/>
-
-                                </div>
-                            </div>
-                            <div className={styles.feature}>
-                                <div className={styles.feature_text}>
-                                    <h2 className={styles.feature_title}>Split text to subtitles</h2>
-                                    <p>The Split text to subtitles feature can serve many purposes, but it is best described as an advanced set of tools for splitting any block of text into individual subtitles. The result will strictly comply with all the requirements for the minimum interval between subtitles, minimum and maximum durations, reading speed, line length restrictions and so on.</p>
-                                    <p>The Auto-Adjust can simultaneously perform multiple operations depending on the options you activate. In general, it word-wraps and splits your text to optimally fill the lines, splits it into individual subtitles and finally (re)calculates the in- and out-cues of the resulting new subtitles.</p>
-                                    <p>You can simply skip the non-speech scenes and focus on the relevant parts, and you can even split a block of text into proper subtitles by using the Auto-Adjust feature in conjunction with the Continuous Typing Workflow.</p>
-                                </div>
-                                <div className={styles.feature_image}>
-                                    <MyImage src="/images/shots/04-split-text-img.png" width={600} height={600}/>
-
-                                </div>
-                            </div>
-                            <div className={styles.feature}>
-                                <div className={styles.feature_text}>
-                                    <h2 className={styles.feature_title}>Comprehensive Checks<br/>Quality Control<br/>Fix Subtitles</h2>
-                                    <p>Comprehensive checks are done in background, they indicate inconsistent cues as well as reading speed and safe area problems. </p>
-                                    <p>EZTitles offers you a wide range of tools to give you full control over your subtitles. You can check your project for inconsistent cues, reading speed/safe area problems, raised subtitles and snap thresholds. You can even check your subtitles’ visual attributes - fonts, color, alignment, box style, outline, italics and double height - for any issues.</p>
-                                    <p>The Fix Subtitles tool cleans your project file based on multiple rules of your choice. You can fix intervals, empty out-cues, subtitles below or above the reading speed, raised subtitles; you can also delete empty subtitles and do many other useful things. If you happen to have messed up some of the subtitles, you can fix them fast and easy without having to start from scratch.</p>
-                                    <p>EZTitles will also warn you if any attributes or features you’ve used are not supported by the file format you’re exporting your subtitles for.</p>
-                                </div>
-                                <div className={styles.feature_image}>
-                                    <MyImage src="/images/shots/05-comprehensive-check-img.png" width={600} height={600}/>
-
-                                </div>
-                            </div>
-                            <div className={styles.feature}>
-                                <div className={styles.feature_text}>
-                                    <h2 className={styles.feature_title}>Proofing Tools</h2>
-                                    <p>With its army of useful features, EZTitles will help you work faster than ever before! Autocorrect, Short Forms, Thesaurus, Spelling Suggestions, Negative Dictionaries, Unit Converter, and Web Search to search for a word or phrase on the Internet — EZTitles got all this covered for you! And all these tools can be customized to fit your needs and help you focus on the most important part of job – the subtitling itself.</p>
-                                    <p>EZTitles can work with Microsoft Office, Open Office or LibreOffice for the spellcheck. </p>
-                                 </div>
-                                <div className={styles.feature_image}>
-                                    <MyImage src="/images/shots/06-proofing-tools-img.png" width={600} height={600}/>
-
-                                </div>
-                            </div>
-                            <div className={styles.feature}>
-                                <div className={styles.feature_text}>
-                                    <h2 className={styles.feature_title}>Macros</h2>
-                                    <p>With its army of useful features, EZTitles will help you work faster than ever before! Autocorrect, Short Forms, Thesaurus, Spelling Suggestions, Negative Dictionaries, Unit Converter, and Web Search to search for a word or phrase on the Internet — EZTitles got all this covered for you! And all these tools can be customized to fit your needs and help you focus on the most important part of job – the subtitling itself.</p>
-                                </div>
-                                <div className={styles.feature_image}>
-                                    <MyImage src="/images/shots/07-macros-img.png" width={600} height={600}/>
-
-                                </div>
-                            </div>
 
 
                         </div>
@@ -1740,7 +1868,8 @@ export default function Subtitle(){
 
 
             </div>
-            {/*ninth section*/}
+            {/*
+            ninth section
             <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
@@ -2003,7 +2132,7 @@ export default function Subtitle(){
 
 
             </div>
-            {/*eleventh section*/}
+            eleventh section
             <div style={{"marginTop":"80px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
@@ -2064,7 +2193,7 @@ export default function Subtitle(){
 
 
             </div>
-            {/*twelfth section*/}
+            twelfth section
             <div style={{"marginTop":"80px", "paddingBottom":"30px"}} className={styles.content_inner}>
                 <div className={styles.content_inner_text}>
                     <div className={styles.paragraph}>
@@ -2077,7 +2206,7 @@ export default function Subtitle(){
 
 
 
-            </div>
+            </div>*/}
 
         </div>
         </motion.div>
