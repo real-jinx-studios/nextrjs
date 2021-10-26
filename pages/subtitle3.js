@@ -695,17 +695,20 @@ export default function Subtitle(){
                             </motion.div>
 
                         </motion.div>
-                        {/*digital cinema plain*/}
+                        {/*closed captions plain*/}
                         <motion.div layout className={styles.card}>
-                            <motion.div variants={cardInnerVariant} animate={isStreamingServices?'open':'closed'} className={styles.card_inner}>
+                            <motion.div variants={cardInnerVariant} animate={isStreamingServices?'open':'closed'} className={`${styles.card_inner} ${styles.closed_captions}`}>
                                 {!isStreamingServices && (<><div className={styles.card_inner_title}>
-                                    <h4>Digital Cinema</h4>
+                                    <h4>Closed Captions</h4>
                                 </div>
                                     <div className={styles.card_inner_description}>
-                                    <p className={styles.card_inner_description_text}>This is a completely new
-                                    presentation mode which complies with all the standards and requirements of
-                                    Digital Cinema subtitling and provides an accurate preview of what your
-                                    subtitles will look like on the theater’s screen.</p>
+                                    <p className={styles.card_inner_description_text}>EZTitles is a great software for
+                                        Closed Captions creation.
+                                        You can prepare stellar Roll-up,
+                                        Paint-on and Pop-on Closed
+                                        Captions stunningly fast in
+                                        CEA-608, CEA-708
+                                        or other file formats.</p>
 
                                     </div></>)}
 

@@ -1802,9 +1802,8 @@ text-align: center;
 
 .card_inner{
     position: relative;
-    background-color:#072136;
-    background: rgb(0,0,0);
-    background: linear-gradient(30deg, rgba(0,0,0,1) 0%, rgba(9,53,98,1) 24%, rgba(12,97,179,1) 100%);
+    background: rgb(5,11,20);
+    background: linear-gradient(30deg, rgba(5,11,20,1) 0%, rgba(9,53,98,1) 40%, rgba(12,97,179,1) 100%);
     display:flex;
     min-height: 580px;
     border-radius: 25px;
@@ -1812,6 +1811,12 @@ text-align: center;
     flex-direction: column;
     padding:0px 40px;
     /*padding-bottom: 68px;*/
+}
+.closed_captions{
+    background-image: url("/images/software/eztitles/cc_pad.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .card_inner_title{
 
