@@ -1769,17 +1769,23 @@ text-align: center;
 }
 
 /*cards section*/
-.card_wrapper{
+.card_wrapper {
     width: 100%;
     display: grid;
     grid-column-gap: 25px;
     grid-row-gap: 25px;
     padding-left: 25px;
     padding-right: 25px;
-    grid-template-columns: repeat(3,minmax(0,1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: 1fr 1fr;
 }
+
 .card{
     position:relative;
+    border-radius: 25px;
+    background-color:#072136;
+    overflow: hidden;
+    height: 580px;
 
 }
 .card_inner_overlay{
@@ -1797,6 +1803,8 @@ text-align: center;
 .card_inner{
     position: relative;
     background-color:#072136;
+    background: rgb(0,0,0);
+    background: linear-gradient(30deg, rgba(0,0,0,1) 0%, rgba(9,53,98,1) 24%, rgba(12,97,179,1) 100%);
     display:flex;
     min-height: 580px;
     border-radius: 25px;
@@ -1863,6 +1871,7 @@ text-align: center;
     right:5px;
     bottom:0px;
     cursor: pointer;
+    transform-origin: center center;
 }
 
 
