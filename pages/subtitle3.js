@@ -259,7 +259,7 @@ export default function Subtitle(){
 
         },
         open:{
-            gridTemplateColumns:'6fr 1fr 1fr'
+            gridTemplateColumns:'6fr 0.5fr 0.5fr'
         }
     }
     const cardInnerVariant={
@@ -646,7 +646,8 @@ export default function Subtitle(){
 
                         {/*streaming services card with overlay*/}
                         <motion.div layout className={styles.card}>
-                           <motion.div
+                            {/*shrunk part*/}
+                            <motion.div
                                 variants={cardOverlayVariant}
                                 initial='initial'
                                 animate='animate'
@@ -657,11 +658,70 @@ export default function Subtitle(){
                                     <h4>Streaming Services</h4>
                                 </div>
                                 <div className={styles.card_inner_description}>
-                                    <p className={styles.card_inner_description_text}>EZTitles is designed to be a
-                                        world-class professional subtitling software so it complies with all the TV
-                                        broadcast, streaming services.</p>
+                                    <p className={styles.card_inner_description_text}>EZTitles is designed to subtitle
+                                        all major Streaming Services
+                                        with a world class quality.</p>
 
                                 </div>
+                               <div className={styles.streaming_services_icons}>
+                                   <MyImage src='/images/software/eztitles/Netflix.png' width={153} height={75}/>
+                                   <MyImage src='/images/software/eztitles/hbo_max.png' width={153} height={75}/>
+                                   <MyImage src='/images/software/eztitles/apple_tv_plus.png' width={153} height={75}/>
+                                   <MyImage src='/images/software/eztitles/prime_video.png' width={153} height={75}/>
+                                   <MyImage src='/images/software/eztitles/disney_plus.png' width={153} height={75}/>
+                                   <MyImage src='/images/software/eztitles/hulu.png' width={153} height={75}/>
+
+                               </div>
+
+                                <div className={styles.card_inner_more_icon}>
+                                    <AnimatePresence exitBeforeEnter>{!isStreamingServices && <motion.svg
+                                        variants={showOverlaySvgVariant}
+                                        initial='animate'
+                                        animate='initial'
+                                        exit='animate'
+                                        onClick={handleStreamingServices} xmlns="http://www.w3.org/2000/svg"
+                                        height="48px" viewBox="0 0 20 20" width="48px" fill="#FFFFFF">
+                                        <g>
+                                            <rect fill="none" height="20" width="20"/>
+                                            <path
+                                                d="M10,4c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6S6.69,4,10,4 M10,3c-3.87,0-7,3.13-7,7c0,3.87,3.13,7,7,7 c3.87,0,7-3.13,7-7C17,6.13,13.87,3,10,3L10,3z M9.5,10v2.5c0,0.28,0.22,0.5,0.5,0.5h0c0.28,0,0.5-0.22,0.5-0.5V10H13l-3-3l-3,3 H9.5z"/>
+                                        </g>
+                                    </motion.svg>}{isStreamingServices && <motion.svg
+                                        variants={showOverlaySvgVariant}
+                                        initial='initial'
+                                        animate='animate'
+                                        exit='animate'
+                                        onClick={handleStreamingServices} xmlns="http://www.w3.org/2000/svg"
+                                        height="48px" viewBox="0 0 20 20" width="48px" fill="#FFFFFF">
+                                        <g>
+                                            <rect fill="none" height="20" width="20"/>
+                                            <path
+                                                d="M10,4c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6S6.69,4,10,4 M10,3c-3.87,0-7,3.13-7,7c0,3.87,3.13,7,7,7 c3.87,0,7-3.13,7-7C17,6.13,13.87,3,10,3L10,3z M9.5,10v2.5c0,0.28,0.22,0.5,0.5,0.5h0c0.28,0,0.5-0.22,0.5-0.5V10H13l-3-3l-3,3 H9.5z"/>
+                                        </g>
+                                    </motion.svg>}</AnimatePresence>
+
+                                </div>
+
+                            </motion.div>
+                            {/*extended part*/}
+                            <motion.div
+                                variants={cardOverlayVariant}
+                                initial='initial'
+                                animate='animate'
+                                exit='exit'
+                                key='initial'
+                                className={styles.card_inner}>
+                                <div className={styles.card_inner_title_extended}>
+                                    <h4>Streaming Services</h4>
+                                    <div className={styles.card_inner_title_extended_icon}>
+                                        <MyImage src='/images/software/eztitles/streaming-icon.svg' width={25} height={25}/>
+                                    </div>
+                                </div>
+                                <div className={styles.card_inner_description}>
+
+
+                                </div>
+
 
                                 <div className={styles.card_inner_more_icon}>
                                     <AnimatePresence exitBeforeEnter>{!isStreamingServices && <motion.svg
@@ -740,6 +800,23 @@ export default function Subtitle(){
                             <div className={styles.card_inner}>
                                 <div className={styles.card_inner_title}>
                                     <h4>Blue-ray</h4>
+                                </div>
+                                <div className={styles.card_inner_description}>
+                                    <p className={styles.card_inner_description_text}>This is a completely new
+                                        presentation mode which complies with all the standards and requirements of
+                                        Digital Cinema subtitling and provides an accurate preview of what your
+                                        subtitles will look like on the theater’s screen.</p>
+
+                                </div>
+
+
+                            </div>
+                        </motion.div>
+                        {/*teletext plain*/}
+                        <motion.div layout className={styles.card}>
+                            <div className={styles.card_inner}>
+                                <div className={styles.card_inner_title}>
+                                    <h4>Teletext</h4>
                                 </div>
                                 <div className={styles.card_inner_description}>
                                     <p className={styles.card_inner_description_text}>This is a completely new

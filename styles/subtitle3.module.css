@@ -1812,6 +1812,16 @@ text-align: center;
     padding:0px 40px;
     /*padding-bottom: 68px;*/
 }
+.streaming_services_icons{
+    margin-top: 30px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap:12px;
+    grid-row-gap:12px;
+}
+
+
 .closed_captions{
     background-image: url("/images/software/eztitles/cc_pad.png");
     background-position: center;
@@ -1822,11 +1832,26 @@ text-align: center;
 
 }
 .card_inner_title h4{
-    font-size: 21px;
-    color:#4DC4EF;
+    font-size: 23px;
+    color:#ffffff;
     letter-spacing: 0.011em;
 
 }
+.card_inner_title_extended{
+    margin: 0 auto;
+    text-align: center;
+}
+.card_inner_title_extended h4{
+    font-size: 23px;
+    color:#ffffff;
+    letter-spacing: 0.011em;
+
+}
+.card_inner_title_extended_icon{
+
+
+}
+
 .card_inner_description{
 
 }
