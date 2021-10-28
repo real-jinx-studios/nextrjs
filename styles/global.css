@@ -58,6 +58,14 @@ p, h1, h2, h3, h4, h5{
     padding:40px 200px;
 
 }
+ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+li{
+    color:#ffffff;
+}
 
 
 #item-1:checked ~ #slide4, #item-2:checked ~ #slide5,
