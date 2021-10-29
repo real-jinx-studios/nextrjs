@@ -33,6 +33,7 @@ export default function Subtitle(){
     const [isStreamingServices, setIsStreamingServices] = useState(false);
     const [isDigitalCinema, setIsDigitalCinema] = useState(false);
     const [isClosedCaptions, setIsClosedCaptions] = useState(false);
+    const [isBlueray, setIsBlueray] = useState(false);
 
     /*viewport scroll handlers*/
     const { scrollYProgress } = useViewportScroll()
@@ -93,6 +94,10 @@ export default function Subtitle(){
     }
     const handleDigitalCinema=()=>{
         setIsDigitalCinema(!isDigitalCinema)
+
+    }
+    const handleBlueray=()=>{
+        setIsBlueray(!isBlueray)
 
     }
     useEffect(()=>{
@@ -312,6 +317,23 @@ export default function Subtitle(){
             opacity:0,
             zIndex:1
         }
+    }
+    const cardsVariantsOuter={
+        closed:{
+            flex:'0 0 32%'
+
+        },
+        open:{
+            flex:'0 0 3%'
+        },
+        bluerayClosed:{
+            flex:'0 0 32%'
+
+        },
+        bluerayOpen:{
+            flex:'0 0 93%'
+        }
+
     }
 
     const cardsVariantsInitial={
@@ -676,33 +698,50 @@ export default function Subtitle(){
             <div className={styles.secondary_nav}>
                 <div className={styles.secondary_nav_inner}>
                     <Link href="#compatibility"><motion.a className={`${styles.secondary_nav_inner_item1} ${currentNav=='compatibility'?styles.active_item1:''}`}>What you can do</motion.a></Link>
-                    <Link href="#formats"><motion.a className={`${styles.secondary_nav_inner_item2} ${currentNav=='formats'?styles.active_item2:''}`}>How it is easy</motion.a></Link>
-                    <Link href="#features"><motion.a className={`${styles.secondary_nav_inner_item3} ${currentNav=='features'?styles.active_item3:''}`}>Designed for you</motion.a></Link>
-                    <Link href="#editions"><motion.a className={`${styles.secondary_nav_inner_item4} ${currentNav=='editions'?styles.active_item4:''}`}>Samples</motion.a></Link>
+                    <Link href="#formats"><motion.a className={`${styles.secondary_nav_inner_item2} ${currentNav=='formats'?styles.active_item2:''}`}>How to do it easy</motion.a></Link>
+                    <Link href="#features"><motion.a className={`${styles.secondary_nav_inner_item3} ${currentNav=='features'?styles.active_item3:''}`}>Ensure the quality</motion.a></Link>
+                    <Link href="#editions"><motion.a className={`${styles.secondary_nav_inner_item4} ${currentNav=='editions'?styles.active_item4:''}`}>Complete and export</motion.a></Link>
                     <div className="sticky-nav_overlay" style={{"backgroundColor": "#fefefe"}}></div>
                 </div>
             </div>
 
             {/*video section*/}
-            <div style={{"marginTop":"230px"}} className={styles.content_inner}>
-                <motion.div
-                    layout
-                    data-isOpen={isVideoOpen}
-                    initial={{ borderRadius: 50 }}
-                    className={styles.video_parent}
-                    onClick={() => {setIsVideoOpen(!isVideoOpen); handleVideoPlay()}}
-                >
-                    <motion.div layout className={styles.video_play} ><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="#fefefe"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg></motion.div>
+            <div className={styles.content_inner}>
+                <div className={styles.content_inner_text}>
+                    <div className={styles.paragraph}>
+                        <h2 className={styles.subsection_title}>Take a quick look at<br/>EZTitles’ capabilities</h2>
+
+                    </div>
+                </div>
+                <div className={styles.video_wrapper}>
+
+
 
                     <motion.div
-                        className={styles.video_actual}>
+                        layout
+                        data-isOpen={isVideoOpen}
+                        initial={{ borderRadius: 50 }}
+                        className={styles.video_parent}
+                        onClick={() => {setIsVideoOpen(!isVideoOpen); handleVideoPlay()}}>
 
-                        <video ref={videoRef} style={{width: 985, height: 554}}>
-                            <source src="/videos/subass_video.mp4"/>
+                        <motion.div layout className={styles.video_play} ><svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="#fefefe"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg></motion.div>
 
-                        </video>
+                        <motion.div
+                            className={styles.video_actual}>
+
+                            <video ref={videoRef} style={{width: 985, height: 554}}>
+                                <source src="/videos/subass_video.mp4"/>
+
+                            </video>
+                        </motion.div>
                     </motion.div>
-                </motion.div>
+                </div>
+                <div className={styles.content_inner_text}>
+                    <div className={styles.paragraph}>
+                        <h2 className={styles.subsection_title}>and explore its full power</h2>
+
+                    </div>
+                </div>
 
             </div>
 
@@ -711,8 +750,7 @@ export default function Subtitle(){
             <div style={{"marginTop":"320px", paddingTop:80}} ref={ref1} className={styles.content_inner} id='compatibility'>
                 <div className={styles.content_inner_text}>
                         <div className={styles.paragraph}>
-                            <h2 className={styles.subsection_title}>Prepare subtitles<br/>for any content</h2>
-                            <p className={styles.subsection_description}>With EZTitles you can <span className={styles.text_highlight}>subtitle anything</span> – Streaming Services like <span className={styles.text_highlight}>Netflix, Apple iTunes, Amazon Prime, Hulu</span> and others, Open subtitles, Closed Captions, Digital Cinema, Blu-ray, Teletext, DVD/DVB Subtitles - and deliver your <span className={styles.text_highlight}>work in any file format</span><br/>your clients may require.</p>
+                            <h2 className={styles.subsection_title} style={{fontSize:48}}>Prepare subtitles for any content</h2>
 
                         </div>
                 </div>
@@ -946,7 +984,7 @@ export default function Subtitle(){
                                                 Digital Cinema subtitling. The Digital Cinema mode supports the following image resolutions:</p>
                                         </div>
                                         <div className={styles.card_inner_extended_digital_cinema_list}>
-                                            <ul>
+                                            <ul  style={{margin:0, padding:0}}>
                                                 <li>1998 x 1080, 2K flat in 1.85 : 1 aspect ratio;</li>
                                                 <li>2048 x 858, 2K scope in 2.39 : 1 aspect ratio;</li>
                                                 <li>2048 x 1080, 2K full container in 1.90:1 aspect ratio;</li>
@@ -989,11 +1027,12 @@ export default function Subtitle(){
 
 
                         {/*blue-ray services*/}
-                        <motion.div variants={cardsVariants} animate='streamingServicesOuter' layout className={styles.card_flex}>
+                        <motion.div variants={cardsVariantsOuter}
+                                    animate={isBlueray?'bluerayOpen':'bluerayClosed'}
+                                    layout className={styles.card_flex}>
                             {/*shrunk part*/}
                             <motion.div
-                                variants={cardsVariants}
-                                animate='streamingServicesInner'
+                                animate={isBlueray?{opacity:0, zIndex:1}:{opacity:1, zIndex:2}}
                                 key='streaming'
                                 className={styles.card_inner}>
                                 <div className={styles.card_inner_title}>
@@ -1014,7 +1053,7 @@ export default function Subtitle(){
 
                                 <div className={styles.card_inner_more_icon}>
                                     <motion.svg
-                                        onClick={handleStreamingServices} xmlns="http://www.w3.org/2000/svg"
+                                        onClick={handleBlueray} xmlns="http://www.w3.org/2000/svg"
                                         height="48px" viewBox="0 0 20 20" width="48px" fill="#FFFFFF">
                                         <g>
                                             <rect fill="none" height="20" width="20"/>
@@ -1028,8 +1067,7 @@ export default function Subtitle(){
                             </motion.div>
                             {/*extended part*/}
                             <motion.div
-                                variants={cardsVariants}
-                                animate='streamingServicesExtended'
+                                animate={isBlueray?{opacity:1, zIndex:2}:{opacity:0, zIndex:1}}
                                 key='initial'
                                 className={styles.card_inner_extended}>
                                 <div className={styles.card_inner_title_extended}>
@@ -1048,7 +1086,7 @@ export default function Subtitle(){
                                             available for the following systems:</p>
                                     </div>
                                     <div className={styles.card_inner_extended_digital_cinema_list}>
-                                        <ul>
+                                        <ul style={{margin:0, padding:0}}>
                                             <li>DaVinci Resolve,</li>
                                             <li>Sony Blu-print™,</li>
                                             <li>Sonic Scenarist HDMV (Blu-ray),</li>
@@ -1073,7 +1111,7 @@ export default function Subtitle(){
 
                                 <div className={styles.card_inner_extended_more_icon}>
                                     <motion.svg
-                                        onClick={handleStreamingServices} xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24"
+                                        onClick={handleBlueray} xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24"
                                         width="48px" fill="#FFFFFF">
                                         <path d="M0 0h24v24H0V0z" fill="none"/>
                                         <path
@@ -1086,11 +1124,11 @@ export default function Subtitle(){
 
                         </motion.div>
                         {/*teletext plain*/}
-                        <motion.div variants={cardsVariants} animate='closedCaptionsOuter'  layout className={styles.card_flex}>
+                        <motion.div variants={cardsVariantsOuter} animate={isBlueray?'open':'closed'}  layout className={styles.card_flex}>
                             <motion.div variants={cardsVariants}
                                         animate='closedCaptionsInner'
                                         className={`${styles.card_inner} ${styles.teletext}`}>
-                                {!isStreamingServices && (<><div className={styles.card_inner_title}>
+                                {!isBlueray && (<><div className={styles.card_inner_title}>
                                     <h4>Teletext</h4>
                                 </div>
                                     <div className={styles.card_inner_description}>
@@ -1108,11 +1146,11 @@ export default function Subtitle(){
                             </motion.div>
                         </motion.div>
                         {/*dvb plain*/}
-                        <motion.div variants={cardsVariants} animate='closedCaptionsOuter'  layout className={styles.card_flex}>
+                        <motion.div variants={cardsVariantsOuter} animate={isBlueray?'open':'closed'}  layout className={styles.card_flex}>
                             <motion.div variants={cardsVariants}
                                         animate='closedCaptionsInner'
                                         className={`${styles.card_inner}`}>
-                                {!isStreamingServices && (<><div className={styles.card_inner_title}>
+                                {!isBlueray && (<><div className={styles.card_inner_title}>
                                     <h4>DVB Subtitles</h4>
                                 </div>
                                     <div className={styles.card_inner_description}>
@@ -1136,107 +1174,178 @@ export default function Subtitle(){
                 </AnimateSharedLayout>
 
             </div>
-            {/*video format section*/}
-                <div style={{"marginTop":"230px"}} className={styles.content_inner}>
-                    <div className={styles.content_inner_text}>
+            {/*video format resolution and aspect ratio section*/}
+                <div style={{"marginTop":"230px"}} className={styles.v_r_a_content_inner}>
+                    <div className={styles.v_r_a_video_background}>
+                        <video style={{"width":"100%"}} autoPlay loop muted>
+                            <source src="/videos/noway.mp4"/>
+                        </video>
+                    </div>
+                    <div className={styles.content_inner_text} style={{flex:'unset'}}>
 
                             <div className={styles.paragraph}>
-                                <h2 className={styles.subsection_title}>Almost any Video File</h2>
-                                <p className={styles.subsection_description} style={{textAlign:'center'}}>EZTitles works with nearly <span className={styles.text_highlight}>any known video format</span> with embedded timecodes.</p>
+                                <h2 className={styles.v_r_a_title}>Subtitle any video file</h2>
 
                             </div>
 
                     </div>
-                    <div className={styles.video_format_wrapper}>
+                    <div className={styles.video_resolution_aspect_wrapper}>
 
-                        <div className={styles.video_format_item}>
-                            <div className={styles.video_format_item_title}>
-                                <div className={styles.video_format_item_title_text}>
-                                    MPEG-1
+                        {/*file format card*/}
+                        <div className={styles.v_r_a_card}>
+                            <div className={`${styles.v_r_a_card_inner}`}>
+                              <div className={styles.v_r_a_card_inner_title}>
+                                    <h4>any file format</h4>
+                                </div>
+                                    <div className={styles.v_r_a_card_inner_description}>
+                                        <p className={styles.v_r_a_card_inner_description_text}>EZTitles works with nearly<br/>
+                                            any known video format<br/>
+                                            with embedded timecode</p>
+
+                                    </div>
+                                <div className={styles.v_r_a_card_inner_format_wrapper}>
+                                    <ul>
+                                        <li>MPEG-1</li>
+                                        <li>MPEG-2</li>
+                                        <li>MPEG-4</li>
+                                        <li>AVI</li>
+                                    </ul>
+                                    <ul>
+                                        <li>WMV</li>
+                                        <li>MOV</li>
+                                        <li>MXF</li>
+                                        <li>MVF</li>
+                                    </ul>
 
                                 </div>
-                            </div>
 
+
+                            </div>
                         </div>
 
+                        {/*resolution card*/}
+                        <div className={styles.v_r_a_card}>
+                            <div className={`${styles.v_r_a_card_inner}`}>
+                              <div className={styles.v_r_a_card_inner_title}>
+                                    <h4>any resolution</h4>
+                                </div>
+                                    <div className={styles.v_r_a_card_inner_description}>
+                                        <p className={styles.v_r_a_card_inner_description_text}>from SD up to 4K<br/>
+                                            and any custom resolution</p>
 
-                        <div className={styles.video_format_item}>
-                            <div className={styles.video_format_item_title}>
-                                <div className={styles.video_format_item_title_text}>
-                                    MPEG-2
+                                    </div>
+                                <div className={styles.v_r_a_card_inner_format_wrapper_resolution}>
+                                    <ul>
+                                        <li><span>SD</span> <span>640x480</span></li>
+                                        <li><span>HD</span> <span>1280x720</span></li>
+                                        <li><span>FULL HD</span> <span>1920x1080</span></li>
+                                        <li><span>4K</span> <span>4096x2160</span></li>
+                                    </ul>
 
                                 </div>
-                            </div>
 
+
+                            </div>
                         </div>
 
+                        {/*aspect ratio card*/}
+                        <div className={styles.v_r_a_card}>
+                            <div className={`${styles.v_r_a_card_inner}`}>
+                                <div className={styles.v_r_a_card_inner_title}>
+                                    <h4>any screen ratio</h4>
+                                </div>
+                                <div className={styles.v_r_a_card_inner_format_wrapper_ratio}>
+                                    <ul>
+                                        <li>
+                                            <span>16:10</span>
+                                            <div className={styles.ratio_icons}>
+                                                <MyImage src='/images/software/eztitles/computer-widescreen.png' width={35} height={35}/>
+                                                <MyImage src='/images/software/eztitles/pc.png' width={35} height={35}/>
+                                                <MyImage src='/images/software/eztitles/smartphone.png' width={35} height={35}/>
 
-                        <div className={styles.video_format_item}>
-                            <div className={styles.video_format_item_title}>
-                                <div className={styles.video_format_item_title_text}>
-                                    MPEG-4
+                                            </div>
+                                        </li>
+                                        <li>
+                                        <span>16:9</span>
+                                        <div className={styles.ratio_icons}>
+                                            <MyImage src='/images/software/eztitles/computer-widescreen.png' width={35} height={35}/>
+                                            <MyImage src='/images/software/eztitles/tv.png' width={35} height={35}/>
+                                            <MyImage src='/images/software/eztitles/smartphone.png' width={35} height={35}/>
+
+                                        </div>
+                                    </li>
+                                        <li>
+                                        <span>1.85:1</span>
+                                        <div className={styles.ratio_icons}>
+                                            <MyImage src='/images/software/eztitles/cinema.png' width={35} height={35}/>
+
+                                        </div>
+                                    </li>
+                                        <li>
+                                            <span>2.35:1</span>
+                                            <div className={styles.ratio_icons}>
+                                                <MyImage src='/images/software/eztitles/movie-reel.png' width={35} height={35}/>
+
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <span>1:1</span>
+                                            <div className={styles.ratio_icons}>
+                                                <MyImage src='/images/software/eztitles/social_media.png' width={35} height={35}/>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span>5:4</span>
+                                            <div className={styles.ratio_icons}>
+                                                <MyImage src='/images/software/eztitles/pc.png' width={35} height={35}/>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span>3:2</span>
+                                            <div className={styles.ratio_icons}>
+                                                <MyImage src='/images/software/eztitles/film.png' width={35} height={35}/>
+                                                <MyImage src='/images/software/eztitles/camera.png' width={35} height={35}/>
+                                                <MyImage src='/images/software/eztitles/tablet.png' width={35} height={35}/>
+
+                                            </div>
+                                        </li>
+                                    </ul>
 
                                 </div>
-                            </div>
 
+
+                            </div>
                         </div>
 
-
-                            <div className={styles.video_format_item}>
-                                <div className={styles.video_format_item_title}>
-                                    <div className={styles.video_format_item_title_text}>
-                                        AVI
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div className={styles.video_format_item}>
-                                <div className={styles.video_format_item_title}>
-                                    <div className={styles.video_format_item_title_text}>
-                                        WMV
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div className={styles.video_format_item}>
-                                <div className={styles.video_format_item_title}>
-                                    <div className={styles.video_format_item_title_text}>
-                                        APPLE
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                            <div className={styles.video_format_item}>
-                                <div className={styles.video_format_item_title}>
-                                    <div className={styles.video_format_item_title_text}>
-                                        MXF
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div className={styles.video_format_item}>
-                                <div className={styles.video_format_item_title}>
-                                    <div className={styles.video_format_item_title_text}>
-                                        MVF
-
-                                    </div>
-                                </div>
-
-                            </div>
 
 
 
                     </div>
 
+
+
+
+
+                </div>
+            {/*language section*/}
+                <div style={{"marginTop":"230px"}} className={styles.content_inner}>
+                    <div className={styles.content_inner_text}>
+                        <div className={styles.paragraph}>
+                           <p className={styles.language_text}>
+                               <span style={{fontSize:60, lineHeight:'1'}}>in any language</span>  <span className={styles.language_text_color}>dans n'importe quelle languein </span>
+                                en cualquier idioma  <span className={styles.language_text_color}>in jeder sprache</span>  на любом языке  <span className={styles.language_text_color}>به هر زبانی</span>&nbsp;
+                                <span className={styles.language_text_color}>herhangi bir dilde</span>  in qualsiasi lingua  <span className={styles.language_text_color}>w dowolnym języku </span>  בכל שפה
+                               på hvilket som helst språk &nbsp; <span className={styles.language_text_color}>任何語言</span> &nbsp;  σε οποιαδήποτε γλώσσα<span className={styles.language_text_color}>  بأي لغة</span>&nbsp;
+                               <span className={styles.language_text_color}>bármilyen nyelven</span>  em qualquer idioma  <span className={styles.language_text_color}>किसी भी भाषा म</span>    ในภาษาใดก็ได้
+                               모든 언어로  &nbsp; <span className={styles.language_text_color}>任意の言語で</span> &nbsp;  på vilket språk som helst  <span className={styles.language_text_color}>на всеки език</span>
+                           </p>
+                        </div>
+                    </div>
 
 
 

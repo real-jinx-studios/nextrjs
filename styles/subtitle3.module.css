@@ -1026,9 +1026,9 @@ text-align: center;
 }
 /*old shit bettered*/
 .subsection_title{
-    font-size: 96px;
+    font-size: 81px;
     line-height: 1.0416666667;
-    font-weight: 600;
+    font-weight: 100;
     letter-spacing: -0.015em;
     text-align: center;
     margin-left: auto;
@@ -1065,24 +1065,169 @@ text-align: center;
     font-weight: 600;
     text-decoration: underline;
 }
-.video_format_wrapper{
+.video_wrapper{
+    position: relative;
+    width: 1232px;
+    height:398px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+}
+.v_r_a_content_inner{
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 22px;
+    padding-right: 22px;
+    max-width: 100vw;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    height: 800px;
+    overflow: hidden;
+}
+.video_resolution_aspect_wrapper{
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 111px;
-    grid-row-gap: 98px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 80px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.v_r_a_title{
+    position: relative;
+    font-weight: 100;
+    font-size: 48px;
+    letter-spacing: 1.2px;
+    z-index: 2;
+    margin-top: -20px;
+    margin-bottom: 60px;
+}
+.v_r_a_video_background{
+    position: absolute;
+    top:-80px;
+    left:0;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+.v_r_a_card{
+    position: relative;
+    height:580px;
+    border-radius: 9px;
+    border:1px solid #fefefe;
+    background-color: #1f1f1f99;
+    transition: 0.3s;
+    z-index: 2;
+}
+.v_r_a_card_inner{
+
+}
+.v_r_a_card_inner_title{
+
+}
+.v_r_a_card_inner_title h4{
+    font-size: 39px;
+    font-weight: 100;
+    text-align: center;
+    margin: 20px auto;
+
+}
+.v_r_a_card_inner_description{
+    padding: 12px 58px;
+    text-align: center;
+
+}
+.v_r_a_card_inner_description_text{
+    font-weight: 100;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.3286;
+
+}
+.v_r_a_card_inner_format_wrapper{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    margin-top: 25px;
+}
+.v_r_a_card_inner_format_wrapper ul{
+    margin:0;
+    padding:0;
+}
+.v_r_a_card_inner_format_wrapper ul li{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.v_r_a_card_inner_format_wrapper_resolution{
+    display:grid;
+    grid-template-columns: 1fr;
+    margin-top: 25px;
+}
+.v_r_a_card_inner_format_wrapper_resolution ul{
+    margin:0;
+    padding:0;
+}
+.v_r_a_card_inner_format_wrapper_resolution ul li{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin:0;
+    padding:0;
+    margin-bottom: 19px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.v_r_a_card_inner_format_wrapper_resolution ul li span{
+    margin: 0;
+    padding: 0;
+    margin-top: -8px;
+}
+.v_r_a_card_inner_format_wrapper_ratio{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1px;
+    margin-top: 25px;
+
+}
+.v_r_a_card_inner_format_wrapper_ratio ul{
+    margin:0;
+    padding:0;
+}
+.v_r_a_card_inner_format_wrapper_ratio ul li{
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin:0;
+    padding:0;
+    margin-bottom: 19px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ratio_icons{
+
+}
+.language_text{
+    text-align: left;
+    word-break: keep-all;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.9;
+    letter-spacing: .007em;
+    width:1005px;
+    text-align: justify;
     margin: 0 auto;
 }
-.video_format_item{
-    width:180px;
-    height:98px;
-    border-radius: 8px;
-    border:1px solid #fefefe66;
-    /*
-    background-color:var(--main-color-light);
-
-    */
-    transition: 0.3s;
+.language_text_color{
+    color:#35C9F2;
 }
 .video_format_item_title{
     position: relative;
