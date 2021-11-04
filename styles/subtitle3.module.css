@@ -125,7 +125,6 @@ background: #ffffff;
 
 .content_wrapper{
     margin-top: 80px;
-    padding-top:80px;
     position: relative;
     width: 100%;
 
@@ -151,7 +150,7 @@ background: #ffffff;
 
    /*flex-basis: calc(8.3333%*4 - 16px*2);*/
     flex:0 0 80%;
-    margin-bottom: 60px;
+    /*margin-bottom: 60px;*/
 
 }
 .content_inner_text h2{
@@ -1026,13 +1025,14 @@ text-align: center;
 }
 /*old shit bettered*/
 .subsection_title{
-    font-size: 81px;
+    font-size: 76px;
     line-height: 1.0416666667;
-    font-weight: 100;
+    font-weight: 300;
     letter-spacing: -0.015em;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+
+    padding:0;
+    margin:0 auto;
 }
 .subsection_description{
     position: relative;
@@ -1479,7 +1479,182 @@ text-align: center;
 
 
 /*new shit*/
+    /*page top*/
+.page_top{
+    margin:130px 0;
+    width:100%
+}
+.page_top_wrapper{
+    max-width: 1232px;
+    margin: 0 auto;
+}
+.page_top_inner{
+    width:max-content;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-rows: repeat(7, 92px);
+    grid-template-columns: repeat(2, 459px);
+    grid-template-areas:
+    "description  description"
+		"title title"
+		"free  license"
+		"options options"
+		"payment payment"
+		"checkout price"
+		"more more";
 
+}
+.main_title_description_wrapper{
+    grid-area: description;
+}
+.main_title_description_text{
+    margin:0 auto;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 300;
+
+
+}
+.main_title_wrapper{
+    grid-area: title;
+    padding-top: 20px;
+
+}
+.main_title_text{
+    width:50%;
+    margin:0 auto;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 700;
+
+
+}
+.free_trial_wrapper{
+    grid-area: free;
+    text-align: right;
+    padding-right:20px;
+    margin-top:68px;
+
+}
+.free_trial_button{
+    margin:0 auto;
+    color:#ffffff;
+    font-weight: 500;
+    background-color: #0064B0;
+    border: none;
+    width:250px;
+    padding: 6px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50px;
+}
+.license_editions_wrapper{
+    grid-area: license;
+    text-align: left;
+    padding-left:20px;
+    margin-top:68px;
+
+}
+.license_editions_button{
+    margin:0 auto;
+    color:#ffffff;
+    font-weight: 500;
+    background-color: #0064B0;
+    border: none;
+    width:250px;
+    padding: 6px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50px;
+}
+.pricing_options_wrapper{
+    grid-area: options;
+    display: flex;
+    margin-top:68px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.pricing_options_description{
+
+
+}
+.pricing_options_description_title{
+    font-size:26px;
+    font-weight: 500;
+    margin:0;
+}
+.pricing_options_description_title span{
+    font-size:23px;
+    font-weight: 100;
+}
+.pricing_options_dropdown{
+    margin-top: 46px;
+
+
+}
+.payment_select_wrapper{
+    grid-area: payment;
+    margin-top:68px;
+
+}
+.payment_select_inner{
+    border-top: 1px solid #ffffff;
+
+
+}
+.go_to_checkout_wrapper{
+    grid-area: checkout;
+    margin-top:68px;
+
+}
+.go_to_checkout_button{
+    margin:0 auto;
+    color:#ffffff;
+    font-weight: 500;
+    background-color: #0064B0;
+    border: none;
+    width:250px;
+    padding: 6px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50px;
+}
+.price_wrapper{
+    grid-area: price;
+    margin-top:68px;
+    text-align: right;
+
+}
+.price_text{
+    font-size: 28px;
+    font-weight: 300;
+    color:#ffffff;
+    margin: 0;
+    padding: 0;
+
+}
+.scroll_down_wrapper{
+    grid-area: more;
+    margin-top:68px;
+
+}
+.scroll_down_svg{
+    margin: 0 auto;
+    width: max-content;
+
+}
+.scroll_down_svg svg{
+    fill:#fefefe66;
+    transform: rotate(90deg) scaleY(2.2) scaleX(1.39);
+
+}
 
 
     /*secondary nav*/
@@ -1689,6 +1864,7 @@ text-align: center;
     letter-spacing: .05em;
     text-transform: uppercase;
     margin-right: 20px;
+    font-weight: 500;
 }
 .product_versions_list{
     display: flex;
@@ -1714,6 +1890,7 @@ text-align: center;
     color:#919191;
     cursor: pointer;
     white-space: nowrap;
+    font-weight: 500;
 
 
 }
@@ -1724,6 +1901,9 @@ text-align: center;
     padding: 11px 0;
     height: 50px;
     border-bottom: 1px solid #fff;
+    position: relative;
+    z-index: 2;
+    background:#fefefe;
 }
 .select{
     position: relative;
@@ -1819,6 +1999,9 @@ text-align: center;
     cursor: pointer;
     z-index: 2;
 }
+.rent_dropdown p{
+    font-weight: 300;
+}
 .rent_dropdown_item{
     position: relative;
     background: #fefefe;
@@ -1833,6 +2016,7 @@ text-align: center;
     color: #191919;
     margin: 0;
     font-size: 19px;
+    font-weight: 300;
 }
 .rent_dropdown_select{
     display: none;
@@ -1840,7 +2024,7 @@ text-align: center;
 .rent_dropdown_svg{
     position: absolute;
     top:50%;
-    right:0%;
+    right:2%;
     transform: translate(0%, -50%);
     fill: #191919;
 }
@@ -1872,6 +2056,7 @@ text-align: center;
     color: #191919;
     margin: 0;
     font-size: 19px;
+    font-weight: 300;
 }
 .installment_dropdown_select{
     display: none;
@@ -1879,7 +2064,7 @@ text-align: center;
 .installment_dropdown_svg{
     position: absolute;
     top:50%;
-    right:0%;
+    right:2%;
     transform: translate(0%, -50%);
     fill: #191919;
 }
