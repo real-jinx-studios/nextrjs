@@ -1,6 +1,5 @@
 .navbar_wrapper{
     position: fixed;
-    top:48px;
     top:0;
     left:0;
     right:0;
@@ -20,21 +19,28 @@
     display: flex;
     margin:auto;
     flex-wrap: wrap !important;
-    justify-content: space-between;
+    justify-content: center;
+    padding-top: 8px;
 }
 .nav_sec_left{
-    flex:0 0 38%;
+    flex:0 0 50%;
+    display: flex;
+    justify-content: left;
+    justify-items: center;
+    padding-left: 1rem;
+
 }
-.nav_sec_left  ul li{
-    margin-right:6%;
-    white-space: nowrap;
-}
-.nav_sec_center{
-    flex:0 0 20%;
-    position: relative;
-}
+
 .nav_sec_right{
-    flex:0 0 38%;
+    flex:0 0 50%;
+    display: grid;
+    justify-content: right;
+    justify-items: center;
+    padding-right: 1rem;
+
+}
+.bobs_burgers{
+    border-radius: 50%;
 }
 .nav_ul{
     display:flex;
@@ -53,51 +59,18 @@
     text-decoration: none;
     font-weight: 500;
 }
-.nav_ul.text li a::before{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: currentColor;
-    transform: scaleX(0) translateZ(0);
-    transform-origin: 100% 50%;
-    transition: transform .3s cubic-bezier(.25,.8,.25,1);
-}
 .nav_ul.text li a:hover::before{
     transform: scaleX(1) translateZ(0);
     transform-origin: 0 50%;
 }
 
-.nav_icon_wrapper{
-    padding-top:36px;
-    margin: auto;
-    width: fit-content;
-    border-radius: 999px;
-    transition: all 0.6s cubic-bezier(.25,.8,.25,1);
-}
 .nav_icon_wrapper_home{
-    padding-top:20px;
-    margin: auto;
     width: fit-content;
-    border-radius: 999px;
-    transform: scale(1.25);
-    transition: all 0.6s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.8s cubic-bezier(.25,.8,.25,1);
 }
-.nav_search_svg{
-    margin-right: 6px;
-
-}
-.nav_cart_svg{
-
-}
-
-
 
 .navbar_wrapper_scroll{
     position: fixed;
-    top:48px;
     top:0;
     left:0;
     right:0;
@@ -111,7 +84,6 @@
     transition: all 0.6s cubic-bezier(.25,.8,.25,1);
 }
 .nav_icon_wrapper{
-    margin: auto;
     width: fit-content;
     transition: all 0.6s cubic-bezier(.25,.8,.25,1);
 
@@ -127,10 +99,7 @@
     fill:#12263a;
 }
 .nav_icon_wrapper_scroll{
-    padding-top: 5px;
-    margin: auto;
     width: fit-content;
-    border-radius: 999px;
     transition: all 0.8s cubic-bezier(.25,.8,.25,1);
 
 

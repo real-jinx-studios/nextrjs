@@ -717,7 +717,7 @@ export default function Subtitle(){
 
                     <motion.div
                         layout
-                        data-isOpen={isVideoOpen}
+                        data-isopen={isVideoOpen}
                         initial={{ borderRadius: 50 }}
                         className={styles.video_parent}
                         onClick={() => {setIsVideoOpen(!isVideoOpen); handleVideoPlay()}}>

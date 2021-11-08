@@ -55,30 +55,6 @@ export default function Navbar2(){
         enter:{width:60, transition:{duration:0.3}},
         exit:{width:-60, transition:{duration:0.3}},
     }
-    const svgAnimation={
-        hidden:{
-            rotate:'-180deg'
-        },
-        visible:{
-            rotate:'0deg',
-            transition:{
-                duration:1
-            }
-        }
-    }
-    const pathVariants={
-        hidden:{
-            opacity:0,
-            pathLength:0
-        },
-        visible:{
-            opacity: 1,
-            pathLength: 1,
-            transition:{
-                duration:2
-            }
-        }
-    }
 
 
 
@@ -129,7 +105,11 @@ export default function Navbar2(){
                         <li className={cn({
                             [styles.nav_li]: scroll === false,
                             [styles.nav_li_scroll]: scroll === true
-                        })}><Link href='/user-login'><a className={styles.profile_wrapper}><svg xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 0 24 24" width="36px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><motion.path d="M12 13.5c-2.33 0-4.31 1.46-5.11 3.5h10.22c-.8-2.04-2.78-3.5-5.11-3.5zM7.82 12l1.06-1.06L9.94 12 11 10.94 9.94 9.88 11 8.82 9.94 7.76 8.88 8.82 7.82 7.76 6.76 8.82l1.06 1.06-1.06 1.06zm4.17-10C6.47 2 2 6.47 2 12s4.47 10 9.99 10S22 17.53 22 12 17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm4.18-12.24l-1.06 1.06-1.06-1.06L13 8.82l1.06 1.06L13 10.94 14.06 12l1.06-1.06L16.18 12l1.06-1.06-1.06-1.06 1.06-1.06z"  variants={pathVariants} initial='hidden' animate='visible'/></svg></a></Link></li>
+                        })}><Link href='/buy/checkout2'><a className={styles.buy_now_wrapper}>BUY NOW</a></Link></li>
+                         <li className={cn({
+                            [styles.nav_li]: scroll === false,
+                            [styles.nav_li_scroll]: scroll === true
+                        })}><Link href='/user-login'><a className={styles.profile_wrapper}><svg xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 0 24 24" width="36px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 13.5c-2.33 0-4.31 1.46-5.11 3.5h10.22c-.8-2.04-2.78-3.5-5.11-3.5zM7.82 12l1.06-1.06L9.94 12 11 10.94 9.94 9.88 11 8.82 9.94 7.76 8.88 8.82 7.82 7.76 6.76 8.82l1.06 1.06-1.06 1.06zm4.17-10C6.47 2 2 6.47 2 12s4.47 10 9.99 10S22 17.53 22 12 17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm4.18-12.24l-1.06 1.06-1.06-1.06L13 8.82l1.06 1.06L13 10.94 14.06 12l1.06-1.06L16.18 12l1.06-1.06-1.06-1.06 1.06-1.06z"/></svg></a></Link></li>
                         <li className={cn({
                             [styles.nav_li]: scroll === false,
                             [styles.nav_li_scroll]: scroll === true
@@ -137,11 +117,11 @@ export default function Navbar2(){
                             className={styles.cart_items}>
                             <div className={styles.cart_items_inner}></div>
                             <div className={styles.cart_items_inner_number}>{isCart.cart.length}</div>
-                        </div>}<motion.svg variants={svgAnimation} initial='hidden' animate='visible' xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" height="29px" viewBox="0 0 24 24" width="36px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"/><motion.path d="M18,6h-2c0-2.21-1.79-4-4-4S8,3.79,8,6H6C4.9,6,4,6.9,4,8v12c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8C20,6.9,19.1,6,18,6z M12,4c1.1,0,2,0.9,2,2h-4C10,4.9,10.9,4,12,4z M18,20H6V8h2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V8h4v2c0,0.55,0.45,1,1,1s1-0.45,1-1V8 h2V20z" variants={pathVariants} initial='hidden' animate='visible'/></g></motion.svg></a></li>
+                        </div>}<svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" height="29px" viewBox="0 0 24 24" width="36px" fill="#FFFFFF"><g><rect fill="none" height="24" width="24"/><path d="M18,6h-2c0-2.21-1.79-4-4-4S8,3.79,8,6H6C4.9,6,4,6.9,4,8v12c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8C20,6.9,19.1,6,18,6z M12,4c1.1,0,2,0.9,2,2h-4C10,4.9,10.9,4,12,4z M18,20H6V8h2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V8h4v2c0,0.55,0.45,1,1,1s1-0.45,1-1V8 h2V20z"/></g></svg></a></li>
                         <li className={cn({
                             [styles.nav_li]: scroll === false,
                             [styles.nav_li_scroll]: scroll === true
-                        })}><a className={styles.search_wrapper}><svg className={styles.nav_search_svg} xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 0 24 24" width="36px" fill="#ffffff"><motion.path d="M0 0h24v24H0V0z" fill="none"/><motion.path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"  variants={pathVariants} initial='hidden' animate='visible'/></svg></a></li>
+                        })}><a className={styles.search_wrapper}><svg className={styles.nav_search_svg} xmlns="http://www.w3.org/2000/svg" height="29px" viewBox="0 0 24 24" width="36px" fill="#ffffff"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></a></li>
 
                         {/*<li className={cn({
                            [styles.nav_li]: scroll === false,

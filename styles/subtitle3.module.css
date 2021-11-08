@@ -132,6 +132,25 @@ background: #ffffff;
 
 
 }
+.video_section, .card_section, .video_format_section, .language_section{
+    position: relative;
+    padding: 5rem 0;
+}
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 70rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    margin: 0 auto;
+    height: 100%;
+}
+.container_full_width{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
 .content_inner{
     margin-left: auto;
     margin-right: auto;
@@ -1480,21 +1499,70 @@ text-align: center;
 
 /*new shit*/
     /*page top*/
+.main_wrapper{
+    position:relative;
+    width:100%;
+    height: auto;
+
+
+}
+.video_background{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 0;
+}
 .page_top{
     margin:130px 0;
     width:100%
 }
 .page_top_wrapper{
-    max-width: 1232px;
-    margin: 0 auto;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    height:100%;
+}
+@media (min-width: 375px) {
+    .page_top_wrapper {
+        max-width: 340px;
+    }
+}
+
+@media (min-width: 576px) {
+    .page_top_wrapper {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .page_top_wrapper {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .page_top_wrapper {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .page_top_wrapper {
+        max-width: 960px;
+    }
 }
 .page_top_inner{
-    width:max-content;
+
     margin: 0 auto;
     display: grid;
-    grid-gap: 15px;
-    grid-template-rows: repeat(7, 92px);
-    grid-template-columns: repeat(2, 459px);
+    grid-gap: 0.98rem;
+
+grid-column-gap: 38px;
     grid-template-areas:
     "description  description"
 		"title title"
@@ -1504,6 +1572,21 @@ text-align: center;
 		"checkout price"
 		"more more";
 
+}
+@media (max-width: 375px) {
+    .page_top_inner {
+        grid-template-areas:
+    "description"
+		"title"
+		"free"
+		"license"
+		"options"
+		"payment"
+		"checkout"
+		"price"
+		"more";
+
+    }
 }
 .main_title_description_wrapper{
     grid-area: description;
@@ -1519,10 +1602,11 @@ text-align: center;
 .main_title_wrapper{
     grid-area: title;
     padding-top: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
 }
 .main_title_text{
-    width:50%;
     margin:0 auto;
     text-align: center;
     font-size: 80px;
@@ -1533,7 +1617,6 @@ text-align: center;
 .free_trial_wrapper{
     grid-area: free;
     text-align: right;
-    padding-right:20px;
     margin-top:68px;
 
 }
@@ -1554,7 +1637,6 @@ text-align: center;
 .license_editions_wrapper{
     grid-area: license;
     text-align: left;
-    padding-left:20px;
     margin-top:68px;
 
 }
@@ -1584,13 +1666,13 @@ text-align: center;
 
 }
 .pricing_options_description_title{
-    font-size:26px;
+    font-size:1.8rem;
     font-weight: 500;
     margin:0;
 }
 .pricing_options_description_title span{
-    font-size:23px;
-    font-weight: 100;
+    font-size:1.38rem;
+    font-weight: 200;
 }
 .pricing_options_dropdown{
     margin-top: 46px;
@@ -1633,7 +1715,7 @@ text-align: center;
 
 }
 .price_text{
-    font-size: 28px;
+    font-size: 1.9rem;
     font-weight: 300;
     color:#ffffff;
     margin: 0;
@@ -1652,7 +1734,11 @@ text-align: center;
 }
 .scroll_down_svg svg{
     fill:#fefefe66;
-    transform: rotate(90deg) scaleY(2.2) scaleX(1.39);
+    transform: rotate(90deg) scaleY(2) scaleX(2);
+
+}
+    /*media for top page grid*/
+@media (min-width: 992px) {
 
 }
 
@@ -1844,7 +1930,6 @@ text-align: center;
     font-size: max(18px,1.25vw);
     line-height: 1;
     letter-spacing: -.02em;
-    font-weight: 400;
     display: flex;
     font-weight: 700;
     margin-block-start: 1em;
@@ -1863,7 +1948,6 @@ text-align: center;
     line-height: 1;
     letter-spacing: .05em;
     text-transform: uppercase;
-    margin-right: 20px;
     font-weight: 500;
 }
 .product_versions_list{
@@ -1897,13 +1981,13 @@ text-align: center;
 .rent{
     display: flex;
     justify-content: space-between;
+    justify-items: center;
     align-items: center;
-    padding: 11px 0;
+
     height: 50px;
     border-bottom: 1px solid #fff;
     position: relative;
     z-index: 2;
-    background:#fefefe;
 }
 .select{
     position: relative;
@@ -2085,7 +2169,7 @@ text-align: center;
     border:2px solid #fefefe66;
 }
 
-.video_parent[data-isOpen="true"] {
+.video_parent[data-isopen="true"] {
     width: 985px;
     height: 554px;
     /*border-radius: 25px;*/
@@ -2124,6 +2208,7 @@ text-align: center;
     margin-top: 25px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+
 .card_wrapper_flex {
     width: 100%;
     display: flex;
@@ -2140,6 +2225,16 @@ text-align: center;
     height: 630px;
 
 
+}
+@media (max-width: 900px) {
+    .card_wrapper_flex{
+        flex-direction: column;
+    }
+    .card_flex {
+        flex: 0 0 100% !important;
+        margin-bottom:1.8rem;
+
+    }
 }
 
 .card{

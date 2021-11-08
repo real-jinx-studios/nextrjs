@@ -10,6 +10,7 @@ import Link from 'next/link'
 
 import { useRouter } from 'next/router'
 import Modal from "../components/Modal";
+import NavbarSmall from "../components/navbarSmall";
 
 
 export default function App({Component, pageProps}){
@@ -17,13 +18,48 @@ export default function App({Component, pageProps}){
     const router = useRouter()
     console.log(Component.name, pageProps, router.pathname,'shit')
     const store = useStore(pageProps.initialReduxState)
+
+    /*get screen size for correct navbar*/
+    const useWindowDimensions = () => {
+        const hasWindow = typeof window !== "undefined"
+
+        function getWindowDimensions() {
+            const width = hasWindow ? window.innerWidth : null
+            const height = hasWindow ? window.innerHeight : null
+            return {
+                width,
+                height,
+            }
+        }
+
+        const [windowDimensions, setWindowDimensions] = useState(
+            getWindowDimensions()
+        )
+
+        useEffect(() => {
+            if (hasWindow) {
+                function handleResize() {
+                    setWindowDimensions(getWindowDimensions())
+                }
+
+                window.addEventListener("resize", handleResize)
+                return () => window.removeEventListener("resize", handleResize)
+            }
+        }, [hasWindow])
+
+        return windowDimensions
+    }
+    const { height, width } = useWindowDimensions()
+    console.log(width, height)
+
+
     return (
         <Provider store={store}>
             <AnimatePresence exitBeforeEnter onExitComplete={()=>{setModal(false)}}>
                 <main><Component setModal={setModal} location={router.pathname} key={router.pathname} {...pageProps} /></main>
 
             </AnimatePresence>
-            <Navbar2/>
+            {width < 982 ?( <NavbarSmall/>):(<Navbar2/>)}
             <Footer/>
             {(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}
             <Modal showModal={showModal} setModal={setModal}/>
