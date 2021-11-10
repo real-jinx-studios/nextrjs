@@ -5,12 +5,14 @@ import Footer from "../components/footer";
 import { Provider } from 'react-redux'
 import { useStore } from '../store'
 import {motion, useAnimation, AnimatePresence} from "framer-motion";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import Link from 'next/link'
 
 import { useRouter } from 'next/router'
 import Modal from "../components/Modal";
+import { IdProvider } from '@radix-ui/react-id';
 import NavbarSmall from "../components/navbarSmall";
+
 
 
 export default function App({Component, pageProps}){
@@ -20,49 +22,46 @@ export default function App({Component, pageProps}){
     const store = useStore(pageProps.initialReduxState)
 
     /*get screen size for correct navbar*/
-    const useWindowDimensions = () => {
-        const hasWindow = typeof window !== "undefined"
+    const useMediaQuery = (width) => {
+        const [targetReached, setTargetReached] = useState(false);
 
-        function getWindowDimensions() {
-            const width = hasWindow ? window.innerWidth : null
-            const height = hasWindow ? window.innerHeight : null
-            return {
-                width,
-                height,
+        const updateTarget = useCallback((e) => {
+            if (e.matches) {
+                setTargetReached(true);
+            } else {
+                setTargetReached(false);
             }
-        }
-
-        const [windowDimensions, setWindowDimensions] = useState(
-            getWindowDimensions()
-        )
+        }, []);
 
         useEffect(() => {
-            if (hasWindow) {
-                function handleResize() {
-                    setWindowDimensions(getWindowDimensions())
-                }
+            const media = window.matchMedia(`(max-width: ${width}px)`);
+            media.addListener(updateTarget);
 
-                window.addEventListener("resize", handleResize)
-                return () => window.removeEventListener("resize", handleResize)
+            // Check on mount (callback is not called until a change occurs)
+            if (media.matches) {
+                setTargetReached(true);
             }
-        }, [hasWindow])
 
-        return windowDimensions
-    }
-    const { height, width } = useWindowDimensions()
-    console.log(width, height)
+            return () => media.removeListener(updateTarget);
+        }, []);
+
+        return targetReached;
+    };
 
 
+    const isBreakpoint = useMediaQuery(1111)
     return (
         <Provider store={store}>
-            <AnimatePresence exitBeforeEnter onExitComplete={()=>{setModal(false)}}>
-                <main><Component setModal={setModal} location={router.pathname} key={router.pathname} {...pageProps} /></main>
+            <IdProvider>
+                <AnimatePresence exitBeforeEnter onExitComplete={()=>{setModal(false)}}>
+                    <main><Component setModal={setModal} location={router.pathname} key={router.pathname} {...pageProps} /></main>
 
-            </AnimatePresence>
-            {width < 982 ?( <NavbarSmall/>):(<Navbar2/>)}
-            <Footer/>
-            {(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}
-            <Modal showModal={showModal} setModal={setModal}/>
+                </AnimatePresence>
+                {isBreakpoint  ?( <NavbarSmall/>):(<Navbar2/>)}
+                <Footer/>
+                {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
+                <Modal showModal={showModal} setModal={setModal}/>
+            </IdProvider>
     </Provider>
     )
 }

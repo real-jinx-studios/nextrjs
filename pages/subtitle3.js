@@ -408,14 +408,28 @@ export default function Subtitle(){
                                     </h4>
                                 </div>
                                 <div className={styles.pricing_options_dropdown}>
-                                    <div style={{height: 132.4}}>
+                                    <div style={{height: 48}}>
                                         <select className={styles.version_dropdown_select}>
                                             <option value='essentials'>Essentials</option>
                                             <option value='standard'>Standard</option>
                                             <option value='ultimate'>Ultimate</option>
                                         </select>
                                         <div className={styles.version_dropdown} onClick={toggleDropdown}>
-                                            <h2>Essentials</h2>
+                                            <div className={styles.selected_version}>
+                                                <div className={styles.version_inner}>
+                                                    <h2 data-tip data-for='info1'>Essentials<svg className={styles.version_info_icon} xmlns="http://www.w3.org/2000/svg" height="18px"
+                                                                       viewBox="0 0 24 24" width="18px" fill="#000000">
+                                                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                                                        <path
+                                                            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                                    </svg></h2>
+                                                    <ReactTooltip id='info1' type='info'>
+                                                        <span>For subtitling streaming services</span>
+
+                                                    </ReactTooltip>
+
+                                                </div>
+                                            </div>
                                             {!isDropdownOpen && (<motion.svg
                                                 initial={{opacity: 0}}
                                                 animate={{opacity: 1}}
@@ -451,7 +465,7 @@ export default function Subtitle(){
                                                         exit='exit'
                                                         key='option1'
                                                         className={styles.version_dropdown} onClick={toggleDropdown}>
-                                                        <h2>Standard</h2>
+                                                        <div className={styles.selected_version}><h2>Standard</h2></div>
                                                     </motion.div>
                                                     <motion.div
                                                         variants={dropdownAnimVariantOption2}
@@ -460,7 +474,7 @@ export default function Subtitle(){
                                                         exit='exit'
                                                         key='option2'
                                                         className={styles.version_dropdown} onClick={toggleDropdown}>
-                                                        <h2>Ultimate</h2>
+                                                        <div className={styles.selected_version}><h2>Ultimate</h2></div>
                                                     </motion.div>
                                                 </>
                                             )}
@@ -477,7 +491,7 @@ export default function Subtitle(){
                                             <div className={styles.purchase_options}>
                                                 <div className={styles.product_version} key='one-time'
                                                      onClick={() => handlePaymentSelect('one-time')}>
-                                                    <div className={styles.product_label_wrapper_off}>
+                                                    <div className={isPaymentSelected=='one-time'?styles.product_label_wrapper_on:styles.product_label_wrapper_off}>
                                                         one-time
 
                                                     </div>
@@ -487,7 +501,7 @@ export default function Subtitle(){
 
                                                 <div className={styles.product_version} key='rent'
                                                      onClick={() => handlePaymentSelect('rent')}>
-                                                    <div className={styles.product_label_wrapper_off}>
+                                                    <div className={isPaymentSelected=='rent'?styles.product_label_wrapper_on:styles.product_label_wrapper_off}>
                                                         rent
 
                                                     </div>
@@ -496,7 +510,7 @@ export default function Subtitle(){
 
                                                 <div className={styles.product_version} key='installment'
                                                      onClick={() => handlePaymentSelect('installment')}>
-                                                    <div className={styles.product_label_wrapper_off}>
+                                                    <div className={isPaymentSelected=='installment'?styles.product_label_wrapper_on:styles.product_label_wrapper_off}>
                                                         installments
 
                                                     </div>
@@ -1419,7 +1433,7 @@ export default function Subtitle(){
                         <div className={styles.paragraph}>
                            <p className={styles.language_text}>
                                <span style={{fontSize:60, lineHeight:'1'}}>in any language</span>  <span className={styles.language_text_color}>dans n'importe quelle languein </span>
-                                en cualquier idioma  <span className={styles.language_text_color}>in jeder sprache</span>  на любом языке  <span className={styles.language_text_color}>به هر زبانی</span>&nbsp;
+                                en cualquier idioma  <span className={styles.language_text_color}>in jeder sprache</span> на любом языке <span className={styles.language_text_color}>به هر زبانی</span>&nbsp;
                                 <span className={styles.language_text_color}>herhangi bir dilde</span>  in qualsiasi lingua  <span className={styles.language_text_color}>w dowolnym języku </span>  בכל שפה
                                på hvilket som helst språk &nbsp; <span className={styles.language_text_color}>任何語言</span> &nbsp;  σε οποιαδήποτε γλώσσα<span className={styles.language_text_color}>  بأي لغة</span>&nbsp;
                                <span className={styles.language_text_color}>bármilyen nyelven</span>  em qualquer idioma  <span className={styles.language_text_color}>किसी भी भाषा म</span>    ในภาษาใดก็ได้
