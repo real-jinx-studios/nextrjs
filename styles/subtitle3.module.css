@@ -1981,7 +1981,7 @@ grid-column-gap: 38px;
     align-items: center;
 
     height: 50px;
-/*    border-bottom: 1px solid #fff;*/
+    border-top: 1px solid #fefefe33;
     position: relative;
     z-index: 2;
 }
