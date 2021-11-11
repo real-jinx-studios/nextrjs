@@ -171,7 +171,7 @@
 }
 .buy_now_wrapper{
     margin:0 auto;
-    color:#ffffff;
+    color:#ffffff !important;
     font-weight: 500;
     background-color: #D92B3A;
     border: none;

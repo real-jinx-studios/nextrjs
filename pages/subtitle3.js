@@ -114,6 +114,7 @@ export default function Subtitle(){
             cycleCardsVariants(0)
         }
     },[isDigitalCinema])
+    useEffect(()=>{console.log(isDigitalCinema,isStreamingServices,isBlueray)},[isDigitalCinema,isStreamingServices, isBlueray])
 
     const handleClosedCaptions=()=>{
         setIsClosedCaptions(!isClosedCaptions)
@@ -852,7 +853,7 @@ export default function Subtitle(){
                                 variants={cardsVariants}
                                 animate='streamingServicesInner'
                                 key='streaming'
-                                className={styles.card_inner}>
+                                className={`${styles.card_inner} ${styles.streaming_services}`}>
                                 <div className={styles.card_inner_title}>
                                     <h4>Streaming Services</h4>
                                 </div>
@@ -967,7 +968,12 @@ export default function Subtitle(){
                                         CEA-608, CEA-708
                                         or other file formats.</p>
 
-                                    </div></>)}
+                                    </div>
+                                    <div className={styles.cc_button}>
+                                        Learn More
+
+                                    </div>
+                                </>)}
 
 
                             </motion.div>
@@ -980,7 +986,7 @@ export default function Subtitle(){
                                     variants={cardsVariants}
                                     animate='digitalCinemaInner'
                                     key='digital'
-                                    className={styles.card_inner}>
+                                    className={`${styles.card_inner} ${styles.digital_cinema}`}>
                                     <div className={styles.card_inner_title}>
                                         <h4>Digital Cinema</h4>
                                     </div>
@@ -1121,7 +1127,7 @@ export default function Subtitle(){
                             <motion.div
                                 animate={isBlueray?{opacity:0, zIndex:1}:{opacity:1, zIndex:2}}
                                 key='streaming'
-                                className={styles.card_inner}>
+                                className={`${styles.card_inner} ${styles.blue_ray_pad}`}>
                                 <div className={styles.card_inner_title}>
                                     <h4>Blu-ray and DVD</h4>
                                 </div>
@@ -1211,9 +1217,9 @@ export default function Subtitle(){
 
                         </motion.div>
                         {/*teletext plain*/}
-                        <motion.div variants={cardsVariantsOuter} animate={isBlueray?'open':'closed'}  layout className={styles.card_flex}>
-                            <motion.div variants={cardsVariants}
-                                        animate='closedCaptionsInner'
+                        <motion.div variants={cardsVariantsOuter} animate={isBlueray?'open':'closed'} className={styles.card_flex}>
+                            <motion.div   animate={isBlueray?{opacity:0, zIndex:1}:{opacity:1, zIndex:2}}
+                                          key='teletext'
                                         className={`${styles.card_inner} ${styles.teletext}`}>
                                 {!isBlueray && (<><div className={styles.card_inner_title}>
                                     <h4>Teletext</h4>
@@ -1234,8 +1240,8 @@ export default function Subtitle(){
                         </motion.div>
                         {/*dvb plain*/}
                         <motion.div variants={cardsVariantsOuter} animate={isBlueray?'open':'closed'}  layout className={styles.card_flex}>
-                            <motion.div variants={cardsVariants}
-                                        animate='closedCaptionsInner'
+                            <motion.div   animate={isBlueray?{opacity:0, zIndex:1}:{opacity:1, zIndex:2}}
+                                          key='dvb'
                                         className={`${styles.card_inner}`}>
                                 {!isBlueray && (<><div className={styles.card_inner_title}>
                                     <h4>DVB Subtitles</h4>
@@ -1436,8 +1442,8 @@ export default function Subtitle(){
                                 en cualquier idioma  <span className={styles.language_text_color}>in jeder sprache</span> на любом языке <span className={styles.language_text_color}>به هر زبانی</span>&nbsp;
                                 <span className={styles.language_text_color}>herhangi bir dilde</span>  in qualsiasi lingua  <span className={styles.language_text_color}>w dowolnym języku </span>  בכל שפה
                                på hvilket som helst språk &nbsp; <span className={styles.language_text_color}>任何語言</span> &nbsp;  σε οποιαδήποτε γλώσσα<span className={styles.language_text_color}>  بأي لغة</span>&nbsp;
-                               <span className={styles.language_text_color}>bármilyen nyelven</span>  em qualquer idioma  <span className={styles.language_text_color}>किसी भी भाषा म</span>    ในภาษาใดก็ได้
-                               모든 언어로  &nbsp; <span className={styles.language_text_color}>任意の言語で</span> &nbsp;  på vilket språk som helst  <span className={styles.language_text_color}>на всеки език</span>
+                               <span className={styles.language_text_color}>bármilyen nyelven</span>  em qualquer idioma  <span className={styles.language_text_color}>किसी भी भाषा म</span> ในภาษาใดก็ได้
+                               모든 언어로&nbsp; <span className={styles.language_text_color}>任意の言語で</span> &nbsp;  på vilket språk som helst  <span className={styles.language_text_color}>на всеки език</span>
                            </p>
                         </div>
                     </div>

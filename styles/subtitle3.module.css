@@ -1984,6 +1984,7 @@ grid-column-gap: 38px;
     border-top: 1px solid #fefefe33;
     position: relative;
     z-index: 2;
+    padding:20px 0;
 }
 .select{
     position: relative;
@@ -2339,9 +2340,40 @@ grid-column-gap: 38px;
     white-space: nowrap;
 
 }
-
+.streaming_services{
+    background-image: url("/images/software/eztitles/blue_pad.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .closed_captions{
     background-image: url("/images/software/eztitles/cc_pad.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.cc_button{
+    margin:0 auto;
+    color:var(--not-black-black);
+    font-weight: 500;
+    background-color: var(--not-white);
+    border: none;
+    white-space: nowrap;
+    padding: 6px 23px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50px;
+}
+.digital_cinema{
+    background-image: url("/images/software/eztitles/dc_pad.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.blue_ray_pad{
+    background-image: url("/images/software/eztitles/ray_pad.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2353,10 +2385,11 @@ grid-column-gap: 38px;
     background-size: cover;
 }
 .card_inner_title{
+    padding:38px 0;
 
 }
 .card_inner_title h4{
-    font-size: 23px;
+    font-size: 1.68rem;
     color:#ffffff;
     text-align: center;
     letter-spacing: 0.011em;
@@ -2377,6 +2410,7 @@ grid-column-gap: 38px;
     letter-spacing: 0.011em;
     height:65px;
     margin: 0;
+    padding: 0;
     line-height: 65px;
     font-weight: 100;
 }
@@ -2385,9 +2419,12 @@ grid-column-gap: 38px;
     padding-right: 20px;
 
 }
-
 .card_inner_description{
-
+    padding-bottom:38px;
+}
+.card_inner_description p{
+font-size: 1.099rem;
+    font-weight: 400;
 }
 .card_inner_extended_description{
     width:100%;
