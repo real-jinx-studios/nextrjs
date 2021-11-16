@@ -66,6 +66,10 @@ p, h2, h3, h4, h5{
     /*make it same as font-size*/
     margin-bottom: 1em;
 }
+p{
+    font-size: 1.125rem;
+    max-width:68ch;
+}
 .py-2{
     position: relative;
     color:#ffffff;

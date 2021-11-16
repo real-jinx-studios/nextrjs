@@ -5,13 +5,14 @@ import Footer from "../components/footer";
 import { Provider } from 'react-redux'
 import { useStore } from '../store'
 import {motion, useAnimation, AnimatePresence} from "framer-motion";
-import {useCallback, useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import Link from 'next/link'
 
 import { useRouter } from 'next/router'
 import Modal from "../components/Modal";
 import { IdProvider } from '@radix-ui/react-id';
 import NavbarSmall from "../components/navbarSmall";
+import Head from "next/head";
 
 
 
@@ -53,6 +54,10 @@ export default function App({Component, pageProps}){
     return (
         <Provider store={store}>
             <IdProvider>
+                <Head>
+                    <meta name="google-site-verification" content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg" />
+
+                </Head>
                 <AnimatePresence exitBeforeEnter onExitComplete={()=>{setModal(false)}}>
                     <main><Component setModal={setModal} location={router.pathname} key={router.pathname} {...pageProps} /></main>
 

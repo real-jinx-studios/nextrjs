@@ -2,7 +2,6 @@ import styles from '../styles/subtitle3.module.css'
 import MyImage from "../components/myImage";
 import Link from 'next/link'
 import ReactTooltip from 'react-tooltip';
-import FileFormatTabs from "../components/fileFormatTabs";
 import {
     AnimatePresence,
     motion,
@@ -21,9 +20,11 @@ import {useSpring} from "react-spring";
 import {useRouter} from "next/router";
 import ScrollDownPrompt from "../components/scrollDownPrompt";
 import PaypalCheckout from "../components/paypalCheckout";
+import Head from "next/head";
 
 
 export default function Subtitle(){
+
     /*state management is below*/
     const [currentNav, setCurrentNav]=useState('none')
     const [isVideoOpen, setIsVideoOpen]=useState(false)
@@ -121,7 +122,6 @@ export default function Subtitle(){
         setIsClosedCaptions(!isClosedCaptions)
 
     }
-    const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen)
     const toggleRentDropdown = () => setIsRentDropdownOpen(!isRentDropdownOpen)
     const toggleInstallmentDropdown = () => setIsInstallmentDropdownOpen(!isInstallmentDropdownOpen)
 
@@ -270,75 +270,6 @@ export default function Subtitle(){
         duration:0.25,
         ease:[0.86,0,0.07,1]
     }
-    const cardOverlayVariant={
-        initial:{
-            opacity:0
-        },
-        animate:{
-            opacity:1,
-        },
-        exit:{
-            opacity:0
-        }
-    }
-    const showOverlaySvgVariant={
-        initial:{
-            rotate:'90deg',
-            fill:'#ffffff'
-        },
-        animate:{
-            originX:'50%',
-            originY:'50%',
-            rotate:'-90deg',
-            fill:'#D92B3A'
-        },
-        exit:{
-            rotate:'0deg',
-            fill:'#ffffff'
-        }
-    }
-    const overlayTextVariant={
-        initial:{
-            opacity:0,
-            y:-60
-        },
-        animate:{
-            opacity:1,
-            y:'16%',
-            transition:{
-                delay:0.3
-            }
-        }
-    }
-    const cardWrapperVariant={
-        closed:{
-            gridTemplateColumns:'1fr 1fr 1fr'
-
-        },
-        open:{
-            gridTemplateColumns:'6fr 0.25fr 0.25fr'
-        }
-    }
-    const cardFlexVariant1={
-        closed:{
-            gridTemplateColumns:'1fr 1fr 1fr'
-
-        },
-        open:{
-            gridTemplateColumns:'6fr 0.25fr 0.25fr'
-        }
-    }
-    const cardInnerVariant={
-        closed:{
-            opacity:1,
-            zIndex:2
-
-        },
-        open:{
-            opacity:0,
-            zIndex:1
-        }
-    }
     const cardsVariantsOuter={
         closed:{
             flex:'0 0 32%',
@@ -360,7 +291,6 @@ export default function Subtitle(){
         }
 
     }
-
     const cardsVariantsInitial={
         streamingServicesOuter:{flex:'0 0 32%'},
         streamingServicesInner:{opacity: 1, zIndex:2, transition:{delay:0.1}},
@@ -397,12 +327,116 @@ export default function Subtitle(){
     const [cardsVariants, cycleCardsVariants]= useCycle(cardsVariantsInitial, cardsVariantsStreamingOpen, cardsVariantsDigitalOpen)
 
 
+    /*dynamic element generation*/
+    const toggleDropdown = (e) => {
+        setIsDropdownOpen(!isDropdownOpen)
+        setLicense(e)
+    }
+
+    const license_editions=[{
+        name:'Essentials',
+        info:'For subtitling streaming services.'
+    },{
+        name:'Standard',
+        info:'For more standard sub stuff.'
+    },{
+        name:'Ultimate',
+        info:'for tesla owners.'
+    }]
+    const [license, setLicense]=useState('Essentials')
+    const liOptionsElement=license_editions.map((x,i)=>{
+        if(x.name!=license){
+            return ( <motion.div
+                variants={i==1?dropdownAnimVariantOption1:dropdownAnimVariantOption2}
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                className={styles.version_dropdown}
+                onClick={()=> {
+                    toggleDropdown(x.name)
+                }}
+                key={x.name}
+            >
+                <div key={i} className={styles.option_version}>
+                    <div className={styles.version_inner}>
+                        <h2 data-tip data-for={`info ${i}`}>{x.name}
+                            <svg className={styles.version_info_icon} xmlns="http://www.w3.org/2000/svg" height="18px"
+                                 viewBox="0 0 24 24" width="18px" fill="#000000">
+                                <path d="M0 0h24v24H0V0z" fill="none"/>
+                                <path
+                                    d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                            </svg>
+                        </h2>
+                        <ReactTooltip id={`info ${i}`} type='info'>
+                            <span>{x.info}</span>
+
+                        </ReactTooltip>
+
+                    </div>
+                </div>
+            </motion.div>);
+        }
+    })
+    const liSelectedElement=license_editions.map((x,i)=>{
+        if(x.name==license){
+            return (
+                <div key={x.name} className={styles.version_dropdown} onClick={()=> {
+                    toggleDropdown(x.name)
+                }}>
+                <div  className={styles.selected_version}>
+                    <div className={styles.version_inner}>
+                        <h2 data-tip data-for={`info ${i}`}>{x.name}
+                            <svg className={styles.version_info_icon} xmlns="http://www.w3.org/2000/svg" height="18px"
+                                 viewBox="0 0 24 24" width="18px" fill="#000000">
+                                <path d="M0 0h24v24H0V0z" fill="none"/>
+                                <path
+                                    d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                            </svg>
+                        </h2>
+                        <ReactTooltip id={`info ${i}`} type='info'>
+                            <span>{x.info}</span>
+                        </ReactTooltip>
+                    </div>
+                </div>
+            {!isDropdownOpen && (<motion.svg
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                exit={{opacity: 0}}
+                className={styles.version_dropdown_svg}
+                xmlns="http://www.w3.org/2000/svg"
+                height="36px" viewBox="0 0 24 24" width="36px"
+                fill="#FFFFFF">
+                <path d="M24 24H0V0h24v24z" fill="none" opacity=".87"/>
+                <path
+                    d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z"/>
+            </motion.svg>)}
+            {isDropdownOpen && (<motion.svg
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
+                exit={{opacity: 0}}
+                className={styles.version_dropdown_svg}
+                xmlns="http://www.w3.org/2000/svg"
+                height="36px" viewBox="0 0 24 24" width="36px"
+                fill="#FFFFFF">
+                <path xmlns="http://www.w3.org/2000/svg" d="M0 0h24v24H0V0z"
+                      fill="none"/>
+                <path xmlns="http://www.w3.org/2000/svg"
+                      d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/>
+            </motion.svg>)}
+        </div>
+            );
+        }
+    })
 
 
 
 
     return (
         <>
+            <Head>
+                <meta name="google-site-verification" content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg" />
+
+            </Head>
             <div className={styles.video_background}>
                 <video autoPlay loop>
 
@@ -414,7 +448,6 @@ export default function Subtitle(){
             {/*eztitles purchase menu*/}
                 <motion.div className={styles.page_top}>
                     <motion.div className={styles.page_top_wrapper}>
-
                         <motion.div className={styles.page_top_inner}>
                             <div className={styles.main_title_description_wrapper}><div className='wrapper--narrow'><h1
                                 className={styles.main_title_description_text}>The world’s best professional subtitling
@@ -440,68 +473,11 @@ export default function Subtitle(){
                                             <option value='standard'>Standard</option>
                                             <option value='ultimate'>Ultimate</option>
                                         </select>
-                                        <div className={styles.version_dropdown} onClick={toggleDropdown}>
-                                            <div className={styles.selected_version}>
-                                                <div className={styles.version_inner}>
-                                                    <h2 data-tip data-for='info1'>Essentials<svg className={styles.version_info_icon} xmlns="http://www.w3.org/2000/svg" height="18px"
-                                                                       viewBox="0 0 24 24" width="18px" fill="#000000">
-                                                        <path d="M0 0h24v24H0V0z" fill="none"/>
-                                                        <path
-                                                            d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                                                    </svg></h2>
-                                                    <ReactTooltip id='info1' type='info'>
-                                                        <span>For subtitling streaming services</span>
+                                        {liSelectedElement}
 
-                                                    </ReactTooltip>
-
-                                                </div>
-                                            </div>
-                                            {!isDropdownOpen && (<motion.svg
-                                                initial={{opacity: 0}}
-                                                animate={{opacity: 1}}
-                                                exit={{opacity: 0}}
-                                                className={styles.version_dropdown_svg}
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                height="36px" viewBox="0 0 24 24" width="36px"
-                                                fill="#FFFFFF">
-                                                <path d="M24 24H0V0h24v24z" fill="none" opacity=".87"/>
-                                                <path
-                                                    d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z"/>
-                                            </motion.svg>)}
-                                            {isDropdownOpen && (<motion.svg
-                                                initial={{opacity: 0}}
-                                                animate={{opacity: 1}}
-                                                exit={{opacity: 0}}
-                                                className={styles.version_dropdown_svg}
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                height="36px" viewBox="0 0 24 24" width="36px"
-                                                fill="#FFFFFF">
-                                                <path xmlns="http://www.w3.org/2000/svg" d="M0 0h24v24H0V0z"
-                                                      fill="none"/>
-                                                <path xmlns="http://www.w3.org/2000/svg"
-                                                      d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/>
-                                            </motion.svg>)}
-                                        </div>
                                         <AnimatePresence exitBeforeEnter>
                                             {isDropdownOpen && (<>
-                                                    <motion.div
-                                                        variants={dropdownAnimVariantOption1}
-                                                        initial='initial'
-                                                        animate='animate'
-                                                        exit='exit'
-                                                        key='option1'
-                                                        className={styles.version_dropdown} onClick={toggleDropdown}>
-                                                        <div className={styles.selected_version}><h2>Standard</h2></div>
-                                                    </motion.div>
-                                                    <motion.div
-                                                        variants={dropdownAnimVariantOption2}
-                                                        initial='initial'
-                                                        animate='animate'
-                                                        exit='exit'
-                                                        key='option2'
-                                                        className={styles.version_dropdown} onClick={toggleDropdown}>
-                                                        <div className={styles.selected_version}><h2>Ultimate</h2></div>
-                                                    </motion.div>
+                                                    {liOptionsElement}
                                                 </>
                                             )}
                                         </AnimatePresence>
@@ -762,7 +738,6 @@ export default function Subtitle(){
                                     </Link>
                                 </div>
                             </div>
-
                         </motion.div>
                     </motion.div>
                 </motion.div>
@@ -1288,10 +1263,10 @@ export default function Subtitle(){
             </section>
             {/*video format resolution and aspect ratio section*/}
             <section className={styles.video_format_section}>
-                <div className={styles.container_full_width}>
+                <div className={styles.container}>
                     <div style={{"marginTop":"230px"}} className={styles.v_r_a_content_inner}>
                     <div className={styles.v_r_a_video_background}>
-                        <video style={{"width":"100%"}} autoPlay loop muted>
+                        <video autoPlay loop muted>
                             <source src="/videos/noway.mp4"/>
                         </video>
                     </div>
