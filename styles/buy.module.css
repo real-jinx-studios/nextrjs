@@ -84,6 +84,7 @@
 
 .offers_offer{
     width: max-content;
+    max-width: 100%;
 }
 .product_offer_menu{
 
@@ -108,6 +109,7 @@
 }
 .ul_sub_menu li p{
     width: max-content;
+    max-width: 100%;
     padding: 6px 20px;
     user-select: none;
     cursor: pointer;

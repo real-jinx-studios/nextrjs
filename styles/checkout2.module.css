@@ -294,7 +294,9 @@
 .client_info_hardID_content_item_icon, .client_info_hardID_content_item_title{
     line-height: 1.35;
     width: max-content;
+    max-width: 100%;
     height: max-content;
+    max-width: 100%;
     padding-top: 20px;
     margin-bottom: 5px;
     margin-left: 8px;

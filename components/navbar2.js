@@ -66,7 +66,7 @@ export default function Navbar2(){
             <div className={styles.navbar_inner}>
 
                 <div className={styles.nav_sec_left}>
-                    <ul className={`${styles.nav_ul} ${styles.text}`}>
+                    <ul className={`${styles.nav_ul}`}>
                         <li className={cn({
                             [styles.nav_li]: scroll === false,
                             [styles.nav_li_scroll]: scroll === true

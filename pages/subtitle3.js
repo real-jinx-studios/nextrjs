@@ -20,6 +20,7 @@ import AnimateDirectionSlide from "../components/animateDirectionSlide";
 import {useSpring} from "react-spring";
 import {useRouter} from "next/router";
 import ScrollDownPrompt from "../components/scrollDownPrompt";
+import PaypalCheckout from "../components/paypalCheckout";
 
 
 export default function Subtitle(){
@@ -128,16 +129,15 @@ export default function Subtitle(){
     const dropdownAnimVariantOption1={
         initial:{
             opacity:0,
-            y:-100
+            y:-75
         },
         animate:{
             opacity:1,
             y:2,
             transition:{
-
-
-
-
+                type:'tween',
+                duration:0.12,
+                ease:[0.68,-0.55,0.27,1.55]
             }
         },
         exit:{
@@ -151,12 +151,16 @@ export default function Subtitle(){
     const dropdownAnimVariantOption2={
         initial:{
             opacity:0,
-            y:-150
+            y:-75
         },
         animate:{
             opacity:1,
             y:3.5,
             transition:{
+                type:'tween',
+                delay:0.096,
+                duration:0.12,
+                ease:[0.68,-0.55,0.27,1.55]
 
 
             }
@@ -172,13 +176,20 @@ export default function Subtitle(){
     const dropdownAnimVariantRentOption={
         initial:{
             opacity:0,
+            y:83,
 
         },
         animate:{
             opacity:1,
-            y:90,
+            y:83,
             transition:{
-                staggerChildren:0.08
+                staggerChildren:0.08,
+                transition:{
+                    type:'tween',
+                    ease:[0.68,-0.55,0.27,1.55]
+
+
+                }
 
 
             }
@@ -193,15 +204,20 @@ export default function Subtitle(){
     const dropdownAnimVariantRentItem={
         initial:{
             opacity:0,
-            x:-150
         },
         animate:{
             opacity:1,
-            x:0
+            transition:{
+                transition:{
+                    type:'tween',
+                    ease:[0.68,-0.55,0.27,1.55]
+
+
+                }
+            }
         },
         exit:{
             opacity:0,
-            x:150,
             transition:{
                 duration:0.2
             }
@@ -248,6 +264,11 @@ export default function Subtitle(){
                 duration:0.2
             }
         }
+    }
+    const cardTransition={
+        type:'tween',
+        duration:0.25,
+        ease:[0.86,0,0.07,1]
     }
     const cardOverlayVariant={
         initial:{
@@ -320,26 +341,30 @@ export default function Subtitle(){
     }
     const cardsVariantsOuter={
         closed:{
-            flex:'0 0 32%'
+            flex:'0 0 32%',
+            transition:cardTransition
 
         },
         open:{
-            flex:'0 0 3%'
+            flex:'0 0 3%',
+            transition:cardTransition
         },
         bluerayClosed:{
-            flex:'0 0 32%'
+            flex:'0 0 32%',
+            transition:cardTransition
 
         },
         bluerayOpen:{
-            flex:'0 0 93%'
+            flex:'0 0 93%',
+            transition:cardTransition
         }
 
     }
 
     const cardsVariantsInitial={
         streamingServicesOuter:{flex:'0 0 32%'},
-        streamingServicesInner:{opacity: 1, zIndex:2},
-        streamingServicesExtended:{opacity: 0, zIndex:1},
+        streamingServicesInner:{opacity: 1, zIndex:2, transition:{delay:0.1}},
+        streamingServicesExtended:{opacity: 0, zIndex:1, transition:{duration:0.1}},
         closedCaptionsOuter:{flex:'0 0 32%'},
         closedCaptionsInner:{opacity: 1, zIndex:2},
         closedCaptionsExtended:{opacity: 0, zIndex:1},
@@ -349,8 +374,8 @@ export default function Subtitle(){
     }
     const cardsVariantsStreamingOpen={
         streamingServicesOuter:{flex:'0 0 93%'},
-        streamingServicesInner:{opacity: 0, zIndex:1},
-        streamingServicesExtended:{opacity: 1, zIndex:2},
+        streamingServicesInner:{opacity: 0, zIndex:1, transition:{duration:0.1}},
+        streamingServicesExtended:{opacity: 1, zIndex:2, transition:{delay:0.1}},
         closedCaptionsOuter:{flex:'0 0 3%'},
         closedCaptionsInner:{opacity: 0, zIndex:1},
         closedCaptionsExtended:{opacity: 1, zIndex:2},
@@ -384,23 +409,23 @@ export default function Subtitle(){
                     <source src="/videos/hero-eztitles.mp4"/>
                 </video>
             </div>
-        <motion.div className={styles.main_wrapper} ref={ref}>
+        <motion.header className={styles.main_wrapper} ref={ref}>
 
             {/*eztitles purchase menu*/}
                 <motion.div className={styles.page_top}>
                     <motion.div className={styles.page_top_wrapper}>
 
                         <motion.div className={styles.page_top_inner}>
-                            <div className={styles.main_title_description_wrapper}><h1
-                                className={styles.main_title_description_text}>The world’s best professional<br/>subtitling
-                                and captioning software</h1></div>
+                            <div className={styles.main_title_description_wrapper}><div className='wrapper--narrow'><h1
+                                className={styles.main_title_description_text}>The world’s best professional subtitling
+                                and captioning software</h1></div></div>
                             <div className={styles.main_title_wrapper}><h2
                                 className={styles.main_title_text}>EZTITLES</h2></div>
                             <div className={styles.free_trial_wrapper}>
-                                <div className={styles.free_trial_button}>FREE TRIAL</div>
+                                <div className="button button_basic_long">FREE TRIAL</div>
                             </div>
                             <div className={styles.license_editions_wrapper}>
-                                <div className={styles.license_editions_button}>LICENSE EDITIONS</div>
+                                <div className="button button_basic_long">LICENSE EDITIONS</div>
                             </div>
                             <div className={styles.pricing_options_wrapper}>
                                 <div className={styles.pricing_options_description}>
@@ -725,18 +750,16 @@ export default function Subtitle(){
                             </div>
                             <div className={styles.scroll_down_wrapper}>
                                 <div className={styles.scroll_down_svg}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 20 20"
-                                         height="48px" viewBox="0 0 20 20" width="48px" fill="#FFFFFF">
-                                        <g>
-                                            <g>
-                                                <rect fill="none" height="20" width="20"/>
-                                            </g>
-                                        </g>
-                                        <g>
-                                            <path
-                                                d="M5.29,17.29L5.29,17.29c0.39,0.39,1.02,0.39,1.41,0l6.59-6.59c0.39-0.39,0.39-1.02,0-1.41L6.71,2.71 c-0.39-0.39-1.02-0.39-1.41,0l0,0C4.9,3.1,4.9,3.73,5.29,4.12L11.17,10l-5.88,5.88C4.9,16.27,4.9,16.9,5.29,17.29z"/>
-                                        </g>
-                                    </svg>
+                                    <Link href='#video'>
+                                        <a>
+                                            <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 50 50"
+                                                 height="48px"
+                                                 viewBox="0 0 50 50" width="48px" fill="#FFFFFF">
+                                                <path 
+                                                      d="M15.563,40.836c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l15-15  c0.391-0.391,0.391-1.023,0-1.414l-15-15c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l14.293,14.293L15.563,39.422  C15.172,39.813,15.172,40.446,15.563,40.836z"/>
+                                            </svg>
+                                        </a>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -748,7 +771,7 @@ export default function Subtitle(){
 
 
 
-        </motion.div>
+        </motion.header>
         <div className={styles.content_wrapper}>
             <div className={styles.secondary_nav}>
                 <div className={styles.secondary_nav_inner}>
@@ -756,18 +779,16 @@ export default function Subtitle(){
                     <Link href="#formats"><motion.a className={`${styles.secondary_nav_inner_item2} ${currentNav=='formats'?styles.active_item2:''}`}>How to do it easy</motion.a></Link>
                     <Link href="#features"><motion.a className={`${styles.secondary_nav_inner_item3} ${currentNav=='features'?styles.active_item3:''}`}>Ensure the quality</motion.a></Link>
                     <Link href="#editions"><motion.a className={`${styles.secondary_nav_inner_item4} ${currentNav=='editions'?styles.active_item4:''}`}>Complete and export</motion.a></Link>
-                    <div className="sticky-nav_overlay" style={{"backgroundColor": "#fefefe"}}></div>
                 </div>
             </div>
 
             {/*video section*/}
             <section className={styles.video_section}>
-                <div className={styles.container}>
+                <div className={styles.container} id='video'>
                     <div className={styles.content_inner}>
                         <div className={styles.content_inner_text}>
                             <div className={styles.paragraph}>
-                                <h2 className={styles.subsection_title}>Take a quick look at<br/>EZTitles’ capabilities
-                                </h2>
+                                <h2 className={styles.subsection_title}>Take a quick look at EZTitles’ capabilities</h2>
 
                             </div>
                         </div>
@@ -799,7 +820,7 @@ export default function Subtitle(){
                                 <motion.div
                                     className={styles.video_actual}>
 
-                                    <video ref={videoRef} style={{width: 985, height: 554}}>
+                                    <video ref={videoRef} style={{maxWidth: 985, maxHeight: 554}}>
                                         <source src="/videos/subass_video.mp4"/>
 
                                     </video>
@@ -812,18 +833,16 @@ export default function Subtitle(){
 
                             </div>
                             <div className={styles.scroll_down_svg}>
-                                <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 20 20" height="48px"
-                                     viewBox="0 0 20 20" width="48px" fill="#FFFFFF" style={{marginBottom: -111}}>
-                                    <g>
-                                        <g>
-                                            <rect fill="none" height="20" width="20"/>
-                                        </g>
-                                    </g>
-                                    <g>
-                                        <path
-                                            d="M5.29,17.29L5.29,17.29c0.39,0.39,1.02,0.39,1.41,0l6.59-6.59c0.39-0.39,0.39-1.02,0-1.41L6.71,2.71 c-0.39-0.39-1.02-0.39-1.41,0l0,0C4.9,3.1,4.9,3.73,5.29,4.12L11.17,10l-5.88,5.88C4.9,16.27,4.9,16.9,5.29,17.29z"/>
-                                    </g>
-                                </svg>
+                                <Link href='#compatibility'>
+                                    <a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 50 50"
+                                             height="48px"
+                                             viewBox="0 0 50 50" width="48px" fill="#FFFFFF">
+                                            <path
+                                                d="M15.563,40.836c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l15-15  c0.391-0.391,0.391-1.023,0-1.414l-15-15c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l14.293,14.293L15.563,39.422  C15.172,39.813,15.172,40.446,15.563,40.836z"/>
+                                        </svg>
+                                    </a>
+                                </Link>
                             </div>
                         </div>
 
@@ -835,7 +854,7 @@ export default function Subtitle(){
             {/*first section*/}
             <section className={styles.card_section}>
                 <div className={styles.container}>
-                    <div style={{"marginTop":"320px", paddingTop:80}} ref={ref1} className={styles.content_inner} id='compatibility'>
+                    <div style={{ paddingTop:30}} ref={ref1} className={styles.content_inner} id='compatibility'>
                 <div className={styles.content_inner_text}>
                         <div className={styles.paragraph}>
                             <h2 className={styles.subsection_title} style={{fontSize:48}}>Prepare subtitles for any content</h2>
@@ -843,11 +862,11 @@ export default function Subtitle(){
                         </div>
                 </div>
                 <AnimateSharedLayout>
-                <motion.div layout className={styles.card_wrapper_flex}>
+                    <motion.div layout className={styles.card_wrapper_flex}>
 
 
                         {/*streaming services*/}
-                        <motion.div variants={cardsVariants} animate='streamingServicesOuter' layout className={styles.card_flex}>
+                        <motion.div variants={cardsVariants} animate='streamingServicesOuter' transition={cardTransition} layout className={styles.card_flex}>
                             {/*shrunk part*/}
                             <motion.div
                                 variants={cardsVariants}
@@ -952,7 +971,7 @@ export default function Subtitle(){
 
                         </motion.div>
                         {/*closed captions plain*/}
-                        <motion.div variants={cardsVariants} animate='closedCaptionsOuter'  layout className={styles.card_flex}>
+                        <motion.div variants={cardsVariants} animate='closedCaptionsOuter' transition={cardTransition}  layout className={styles.card_flex}>
                             <motion.div variants={cardsVariants}
                                         animate='closedCaptionsInner'
                                         className={`${styles.card_inner} ${styles.closed_captions}`}>
@@ -979,7 +998,7 @@ export default function Subtitle(){
                             </motion.div>
                         </motion.div>
                         {/*digital cinema*/}
-                        <motion.div variants={cardsVariants} animate='digitalCinemaOuter' layout className={styles.card_flex}>
+                        <motion.div variants={cardsVariants} animate='digitalCinemaOuter' transition={cardTransition} layout className={styles.card_flex}>
 
                                 {/*shrunk part*/}
                                 <motion.div
@@ -1262,8 +1281,6 @@ export default function Subtitle(){
                         </motion.div>
 
                     </motion.div>
-
-
                 </AnimateSharedLayout>
 
             </div>
@@ -1295,8 +1312,8 @@ export default function Subtitle(){
                                     <h4>any file format</h4>
                                 </div>
                                     <div className={styles.v_r_a_card_inner_description}>
-                                        <p className={styles.v_r_a_card_inner_description_text}>EZTitles works with nearly<br/>
-                                            any known video format<br/>
+                                        <p className={styles.v_r_a_card_inner_description_text}>EZTitles works with nearly
+                                            any known video format
                                             with embedded timecode</p>
 
                                     </div>
@@ -1327,7 +1344,7 @@ export default function Subtitle(){
                                     <h4>any resolution</h4>
                                 </div>
                                     <div className={styles.v_r_a_card_inner_description}>
-                                        <p className={styles.v_r_a_card_inner_description_text}>from SD up to 4K<br/>
+                                        <p className={styles.v_r_a_card_inner_description_text}>from SD up to 4K
                                             and any custom resolution</p>
 
                                     </div>
@@ -1438,7 +1455,7 @@ export default function Subtitle(){
                     <div className={styles.content_inner_text}>
                         <div className={styles.paragraph}>
                            <p className={styles.language_text}>
-                               <span style={{fontSize:60, lineHeight:'1'}}>in any language</span>  <span className={styles.language_text_color}>dans n'importe quelle languein </span>
+                               <span className={styles.big_text}>in any language</span>  <span className={styles.language_text_color}>dans n'importe quelle languein </span>
                                 en cualquier idioma  <span className={styles.language_text_color}>in jeder sprache</span> на любом языке <span className={styles.language_text_color}>به هر زبانی</span>&nbsp;
                                 <span className={styles.language_text_color}>herhangi bir dilde</span>  in qualsiasi lingua  <span className={styles.language_text_color}>w dowolnym języku </span>  בכל שפה
                                på hvilket som helst språk &nbsp; <span className={styles.language_text_color}>任何語言</span> &nbsp;  σε οποιαδήποτε γλώσσα<span className={styles.language_text_color}>  بأي لغة</span>&nbsp;
@@ -1455,6 +1472,7 @@ export default function Subtitle(){
                 </div>
             </section>
         </div>
+            {/*<PaypalCheckout/>*/}
         </>
     )
 }

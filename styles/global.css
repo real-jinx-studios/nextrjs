@@ -8,35 +8,38 @@
     --main-color-super-light:#6FB4EB;
     --main-color-cta:#0064B0;
     --accent-second:#F24C27;
-    --not-black-black:#1F1F1F;
+    --mostly-red:#D92B3A;
+    --not-black:#1F1F1F;
     --not-white:#fefefe;
     --gutter:60px;
     --no-color:#19191900;
     --resolution-color-title:#cccccc;
     --ratio-height:480px;
+    --font-fam:  'Montserrat', sans-serif;
+    --font-acc:  'Montserrat', sans-serif;
 }
 html, body{
     /*scroll-snap-type: y proximity;*/
     padding:0;
     margin:0;
     /*font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;*/
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-fam);
     line-height: 1.6;
     font-size: 1rem;
     font-weight: 400;
     scroll-behavior: smooth;
-    background:#12263a;
     background:#0E1F2F;
     /*filter: grayscale(100%);*/
     box-sizing: border-box;
+    scroll-padding-top: 80px;
 }
 
-*, ::before, ::after{
+*, *::before, *::after{
     box-sizing: border-box;
 }
 
 a{
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-fam);
     font-weight: 500;
     color:#ffffff;
     text-decoration: none;
@@ -53,11 +56,15 @@ img {
 }
 
 p, h1, h2, h3, h4, h5{
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-fam);
     font-weight: 400;
     color:#ffffff;
-    margin-top: 0;
+    margin:0;
     margin-bottom: 0.53rem;
+}
+p, h2, h3, h4, h5{
+    /*make it same as font-size*/
+    margin-bottom: 1em;
 }
 .py-2{
     position: relative;
@@ -68,6 +75,9 @@ p, h1, h2, h3, h4, h5{
     padding:40px 200px;
 
 }
+.undefined{
+    background-color: #ea2222;
+}
 ul{
     list-style: none;
 /*    margin:0;
@@ -77,6 +87,40 @@ li{
     font-family: 'Montserrat', sans-serif;
     color:#ffffff;
     font-weight: 300;
+}
+.button{
+    margin:0 auto;
+    color:#ffffff;
+    font-weight: 500;
+    background-color: var(--main-color-cta);
+    border: none;
+    white-space: nowrap;
+    padding: 0.5em 1.45em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50px;
+}
+.button_basic_long{
+    width:13rem;
+
+}
+.wrapper--narrow{
+    margin: 0 auto;
+    max-width: 80%;
+}
+.button_white{
+    background-color: var(--not-white);
+    color:var(--not-black);
+}
+.button_red{
+    background-color: var(--mostly-red);
+
+}
+.button_outline{
+    background-color: var(--no-color);
+    border:1px solid var(--not-white);
 }
 
 

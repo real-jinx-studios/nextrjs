@@ -1090,6 +1090,7 @@ text-align: center;
     transform: rotate(-90deg) translate(0, -125%);
     color: var(--resolution-color-title);
     width: max-content;
+    max-width: 100%;
     height: max-content;
 
 }
@@ -1143,6 +1144,7 @@ text-align: center;
     transform: rotate(-90deg) translate(-100%, 0);
     color: #fefefe88;
     width: max-content;
+    max-width: 100%;
     height: max-content;
 
 }

@@ -363,6 +363,7 @@
     position: relative;
     height: 50px;
     width: max-content;
+    max-width: 100%;
     transition: 0.5s;
 
 }
@@ -427,6 +428,7 @@
     display: inline-block;
     margin-bottom: 40px;
     width: max-content;
+    max-width: 100%;
 }
 .customers_logos_container{
     white-space: nowrap;

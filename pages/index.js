@@ -28,7 +28,6 @@ export default function Home() {
 
             <HomeMain2/>
             <HomeMain/>
-
           {/*  <div className={styles.customers_slider}>
                 <div className={styles.clients_title}>
                     <h2>Our Clients</h2>
