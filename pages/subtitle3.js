@@ -858,7 +858,7 @@ export default function Subtitle(){
 
                                 </div>
                                <div className={styles.streaming_services_icons}>
-                                   <MyImage src='/images/software/eztitles/Netflix.png' width={153} height={75}/>
+                                   <MyImage src='/images/software/eztitles/netflix.png' width={153} height={75}/>
                                    <MyImage src='/images/software/eztitles/hbo_max.png' width={153} height={75}/>
                                    <MyImage src='/images/software/eztitles/apple_tv_plus.png' width={153} height={75}/>
                                    <MyImage src='/images/software/eztitles/prime_video.png' width={153} height={75}/>
