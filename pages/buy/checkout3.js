@@ -6,7 +6,6 @@ import {makeStyles, withStyles} from "@material-ui/core/styles";
 import React, {useState} from "react";
 import {getClient} from "../../lib/swr-hooks";
 import Router, {useRouter} from "next/router";
-import { loadStripe } from '@stripe/stripe-js';
 import CustomInput from "../../components/customInput";
 import MyImage from "../../components/myImage";
 import Link from 'next/link';

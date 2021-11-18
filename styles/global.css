@@ -15,6 +15,10 @@
     --no-color:#19191900;
     --resolution-color-title:#cccccc;
     --ratio-height:480px;
+    --text-color-white:#C9C9D1;
+    --heading-color-white:#F3F3F5;
+    --text-color-black:#6e6e73;
+    --heading-color-black:#1d1d1f;
     --font-fam:  'Montserrat', sans-serif;
     --font-acc:  'Montserrat', sans-serif;
 }
@@ -65,10 +69,13 @@ p, h1, h2, h3, h4, h5{
 p, h2, h3, h4, h5{
     /*make it same as font-size*/
     margin-bottom: 1em;
+    color:var(--heading-color-white);
 }
 p{
     font-size: 1.125rem;
     max-width:68ch;
+    font-weight: 500;
+    color:var(--text-color-white);
 }
 .py-2{
     position: relative;
