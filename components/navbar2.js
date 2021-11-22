@@ -65,8 +65,8 @@ export default function Navbar2(){
         })} role='navigation'>
             <div className={styles.navbar_inner}>
 
-                <div className={styles.nav_sec_left}>
-                    <ul className={`${styles.nav_ul}`}>
+
+                    <ul className={`${styles.nav_ul_left}`}>
                         <li className={cn({
                             [styles.nav_li]: scroll === false,
                             [styles.nav_li_scroll]: scroll === true
@@ -89,7 +89,7 @@ export default function Navbar2(){
                         })}><Link href='/go3d'><a className={styles.nav_link_a}>Go 3D</a></Link></li>
                     </ul>
 
-                </div>
+
                 <div className={styles.nav_sec_center}>
                     <div className={cn({
                         [router.pathname!=='/'?styles.nav_icon_wrapper:styles.nav_icon_wrapper_home]: scroll === false,
@@ -104,8 +104,7 @@ export default function Navbar2(){
                         /></a></Link>
                     </div>
                 </div>
-                <div className={styles.nav_sec_right}>
-                    <ul className={styles.nav_ul}>
+                    <ul className={styles.nav_ul_right}>
                         <li className={cn({
                             [styles.nav_li]: scroll === false,
                             [styles.nav_li_scroll]: scroll === true
@@ -138,7 +137,6 @@ export default function Navbar2(){
                        })}><HeaderMenuButton/></li>*/}
                     </ul>
 
-                </div>
 
             </div>
         </nav>

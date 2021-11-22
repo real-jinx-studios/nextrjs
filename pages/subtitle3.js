@@ -440,7 +440,11 @@ export default function Subtitle(){
             <div className={styles.video_background}>
                 <video autoPlay loop>
 
-                    <source src="/videos/hero-eztitles.mp4"/>
+                    <source src="/videos/hero-eztitles.webm"
+                            type="video/webm"/>
+
+                    <source src="/videos/hero-eztitles.mp4"
+                            type="video/mp4"/>
                 </video>
             </div>
         <motion.header className={styles.main_wrapper} ref={ref}>
@@ -767,41 +771,40 @@ export default function Subtitle(){
 
                             </div>
                         </div>
-                        <div className={styles.content_inner}>
+                        <AnimateSharedLayout>
+                            <motion.div className={styles.video_wrapper}>
 
-                        </div>
-                        <div className={styles.video_wrapper}>
-
-
-                            <motion.div
-                                layout
-                                data-isopen={isVideoOpen}
-                                initial={{borderRadius: 50}}
-                                className={styles.video_parent}
-                                onClick={() => {
-                                    setIsVideoOpen(!isVideoOpen);
-                                    handleVideoPlay()
-                                }}>
-
-                                <motion.div layout className={styles.video_play}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24"
-                                         width="48px"
-                                         fill="#fefefe">
-                                        <path
-                                            d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/>
-                                    </svg>
-                                </motion.div>
 
                                 <motion.div
-                                    className={styles.video_actual}>
+                                    layout
+                                    data-isopen={isVideoOpen}
+                                    initial={{borderRadius: 50}}
+                                    className={styles.video_parent}
+                                    onClick={() => {
+                                        setIsVideoOpen(!isVideoOpen);
+                                        handleVideoPlay()
+                                    }}>
 
-                                    <video ref={videoRef} style={{maxWidth: 985, maxHeight: 554}}>
-                                        <source src="/videos/subass_video.mp4"/>
+                                    <motion.div layout className={styles.video_play}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24"
+                                             width="48px"
+                                             fill="#fefefe">
+                                            <path
+                                                d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/>
+                                        </svg>
+                                    </motion.div>
 
-                                    </video>
+                                    <motion.div
+                                        className={styles.video_actual}>
+
+                                        <video ref={videoRef} style={{maxWidth: 985, maxHeight: 554}}>
+                                            <source src="/videos/subass_video.mp4"/>
+
+                                        </video>
+                                    </motion.div>
                                 </motion.div>
                             </motion.div>
-                        </div>
+                        </AnimateSharedLayout>
                         <div className={styles.content_inner_text}>
                             <div className={styles.paragraph}>
                                 <h2 className={styles.subsection_title}>and explore its full power</h2>
@@ -832,7 +835,7 @@ export default function Subtitle(){
                     <div style={{ paddingTop:30}} ref={ref1} className={styles.content_inner} id='compatibility'>
                 <div className={styles.content_inner_text}>
                         <div className={styles.paragraph}>
-                            <h2 className={styles.subsection_title} style={{fontSize:48}}>Prepare subtitles for any content</h2>
+                            <h2 className={styles.subsection_title}>Prepare subtitles for any content</h2>
 
                         </div>
                 </div>
@@ -1267,7 +1270,11 @@ export default function Subtitle(){
                     <div style={{"marginTop":"230px"}} className={styles.v_r_a_content_inner}>
                     <div className={styles.v_r_a_video_background}>
                         <video autoPlay loop muted>
-                            <source src="/videos/noway.mp4"/>
+                            <source src="/videos/noway.webm"
+                                    type="video/webm"/>
+
+                                <source src="/videos/noway.mp4"
+                                        type="video/mp4"/>
                         </video>
                     </div>
                     <div className={styles.content_inner_text} style={{flex:'unset'}}>
@@ -1325,10 +1332,10 @@ export default function Subtitle(){
                                     </div>
                                 <div className={styles.v_r_a_card_inner_format_wrapper_resolution}>
                                     <ul>
-                                        <li><span>SD</span> <span>640x480</span></li>
-                                        <li><span>HD</span> <span>1280x720</span></li>
-                                        <li><span>FULL HD</span> <span>1920x1080</span></li>
-                                        <li><span>4K</span> <span>4096x2160</span></li>
+                                        <li><span>SD<br/>640x480</span></li>
+                                        <li><span>HD<br/>1280x720</span></li>
+                                        <li><span>FULL HD<br/>1920x1080</span></li>
+                                        <li><span>4K<br/>4096x2160</span></li>
                                     </ul>
 
                                 </div>
