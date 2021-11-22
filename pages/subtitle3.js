@@ -451,11 +451,14 @@ export default function Subtitle(){
 
             {/*eztitles purchase menu*/}
                 <motion.div className={styles.page_top}>
-                    <motion.div className={styles.page_top_wrapper}>
+                    {/*<motion.div className={styles.page_top_wrapper}>
                         <motion.div className={styles.page_top_inner}>
-                            <div className={styles.main_title_description_wrapper}><div className='wrapper--narrow'><h1
-                                className={styles.main_title_description_text}>The world’s best professional subtitling
-                                and captioning software</h1></div></div>
+                            <div className={styles.main_title_description_wrapper}>
+                                <div className='wrapper--narrow'>
+                                    <h1 className={styles.main_title_description_text}>The world’s best professional subtitling
+                                and captioning software</h1>
+                                </div>
+                            </div>
                             <div className={styles.main_title_wrapper}><h2
                                 className={styles.main_title_text}>EZTITLES</h2></div>
                             <div className={styles.free_trial_wrapper}>
@@ -743,7 +746,103 @@ export default function Subtitle(){
                                 </div>
                             </div>
                         </motion.div>
-                    </motion.div>
+
+                    </motion.div>*/}
+                    <div className={styles.page_top_grid}>
+                        <div className={styles.title_desc_cell}>
+                            <h1 className={styles.main_title_description_text}>The world’s best professional subtitling
+                                and captioning software</h1>
+                        </div>
+                        <div className={styles.title_cell}>
+                            <h2 className={styles.main_title_text}>EZTITLES</h2>
+                        </div>
+                        <div className={styles.free_trial_cell}>
+                            <a href='#' className="button button_basic_long">FREE TRIAL</a>
+                        </div>
+                        <div className={styles.license_editions_cell}>
+                            <a href='#' className="button button_basic_long">LICENSE EDITIONS</a>
+                        </div>
+                        <div className={styles.pricing_cell}>
+                            <h4 className={styles.pricing_options_description_title}>CHECK PRICING
+                                OPTIONS<br/><span>EZTitles license editions differ only in the supported file formats</span>
+                            </h4>
+                        </div>
+                        <div className={styles.dropdown_cell}>
+                            <select className={styles.version_dropdown_select}>
+                                <option value='essentials'>Essentials</option>
+                                <option value='standard'>Standard</option>
+                                <option value='ultimate'>Ultimate</option>
+                            </select>
+                            {liSelectedElement}
+
+                            <AnimatePresence exitBeforeEnter>
+                                {isDropdownOpen && (<>
+                                        {liOptionsElement}
+                                    </>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                        <div className={styles.payment_text_cell}>
+                            <p className={styles.payment_text_cell_text}>Payment:</p>
+                        </div>
+                        <div className={styles.payment_select_cell}>
+                            <div className={styles.select}>
+                                <div className={styles.purchase_options}>
+                                    <div className={styles.product_version} key='one-time'
+                                         onClick={() => handlePaymentSelect('one-time')}>
+                                        <div className={isPaymentSelected=='one-time'?styles.product_label_wrapper_on:styles.product_label_wrapper_off}>
+                                            one-time
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div className={styles.product_version} key='rent'
+                                         onClick={() => handlePaymentSelect('rent')}>
+                                        <div className={isPaymentSelected=='rent'?styles.product_label_wrapper_on:styles.product_label_wrapper_off}>
+                                            rent
+
+                                        </div>
+
+                                    </div>
+
+                                    <div className={styles.product_version} key='installment'
+                                         onClick={() => handlePaymentSelect('installment')}>
+                                        <div className={isPaymentSelected=='installment'?styles.product_label_wrapper_on:styles.product_label_wrapper_off}>
+                                            installments
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.checkout_btn_cell}>
+                            <a href='#' className="button button_basic_long">GO TO CHECKOUT</a>
+                        </div>
+                        <div className={styles.checkout_price_cell}>
+                            <p className={styles.price_text}>1720€ w/o VAT</p>
+                        </div>
+                        <div className={styles.payment_info_cell}>
+                            <p>Edit stuff at checkout. Add whatever you want or not.</p>
+                        </div>
+                        <div className={styles.arrow_cell}>
+                            <div className={styles.scroll_down_svg}>
+                                <Link href='#video'>
+                                    <a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 50 50"
+                                             height="48px"
+                                             viewBox="0 0 50 50" width="48px" fill="#FFFFFF">
+                                            <path
+                                                d="M15.563,40.836c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l15-15  c0.391-0.391,0.391-1.023,0-1.414l-15-15c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l14.293,14.293L15.563,39.422  C15.172,39.813,15.172,40.446,15.563,40.836z"/>
+                                        </svg>
+                                    </a>
+                                </Link>
+                            </div>
+                        </div>
+
+                    </div>
                 </motion.div>
 
 

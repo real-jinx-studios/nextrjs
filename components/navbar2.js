@@ -62,7 +62,7 @@ export default function Navbar2(){
         <nav className={cn({
             [styles.navbar_wrapper]: scroll === false,
             [styles.navbar_wrapper_scroll]: scroll === true
-        })} role='navigation'>
+        })} role='navigation' aria-label='Primary'>
             <div className={styles.navbar_inner}>
 
 
