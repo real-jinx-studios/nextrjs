@@ -24,6 +24,27 @@ import Head from "next/head";
 
 
 export default function Subtitle(){
+    /*some more impractical bullshit about product prices*/
+    const prices={
+        essentials:{
+            ot:'1720',
+            rent:'80',
+            installment:'436',
+            installment_contd:'435',
+        },
+        standard:{
+            ot:'1940',
+            rent:'90',
+            installment:'491',
+            installment_contd:'490',
+        },
+        ultimate:{
+            ot:'2380',
+            rent:'100',
+            installment:'601',
+            installment_contd:'600',
+        }
+    }
 
     /*state management is below*/
     const [currentNav, setCurrentNav]=useState('none')
@@ -785,6 +806,7 @@ export default function Subtitle(){
                         <div className={styles.payment_text_cell}>
                             <p className={styles.payment_text_cell_text}>Payment:</p>
                         </div>
+                        <div className={styles.payment_empty_cell}></div>
                         <div className={styles.payment_select_cell}>
                             <div className={styles.select}>
                                 <div className={styles.purchase_options}>
@@ -822,10 +844,12 @@ export default function Subtitle(){
                             <a href='#' className="button button_basic_long">GO TO CHECKOUT</a>
                         </div>
                         <div className={styles.checkout_price_cell}>
-                            <p className={styles.price_text}>1720€ w/o VAT</p>
+                            {isPaymentSelected=='one-time' && <p className={styles.price_text}>{prices[license.toLowerCase()].ot}€ w/o VAT<sup>*</sup></p>}
+                            {isPaymentSelected=='rent' && <p className={styles.price_text}>{prices[license.toLowerCase()].rent}€ w/o VAT<br/><small>per/MO.</small></p>}
+                            {isPaymentSelected=='installment' && <p className={styles.price_text}>1 x {prices[license.toLowerCase()].installment}€ w/o VAT<br/><small>then</small><br/><small>3<small> x </small>{prices[license.toLowerCase()].installment_contd}€ w/o VAT</small></p>}
                         </div>
                         <div className={styles.payment_info_cell}>
-                            <p>Edit stuff at checkout. Add whatever you want or not.</p>
+                            <p>&#127544; Edit stuff at checkout. Add whatever you want or not. &#127544;</p>
                         </div>
                         <div className={styles.arrow_cell}>
                             <div className={styles.scroll_down_svg}>
