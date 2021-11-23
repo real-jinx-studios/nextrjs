@@ -953,7 +953,7 @@ export default function Subtitle(){
 
 
             {/*first section*/}
-            <section className={styles.card_section}>
+            {/*<section className={styles.card_section}>
                 <div className={styles.container}>
                     <div style={{ paddingTop:30}} ref={ref1} className={styles.content_inner} id='compatibility'>
                 <div className={styles.content_inner_text}>
@@ -966,9 +966,9 @@ export default function Subtitle(){
                     <motion.div layout className={styles.card_wrapper_flex}>
 
 
-                        {/*streaming services*/}
+                        streaming services
                         <motion.div variants={cardsVariants} animate='streamingServicesOuter' transition={cardTransition} layout className={styles.card_flex}>
-                            {/*shrunk part*/}
+                            shrunk part
                             <motion.div
                                 variants={cardsVariants}
                                 animate='streamingServicesInner'
@@ -1007,7 +1007,7 @@ export default function Subtitle(){
                                 </div>
 
                             </motion.div>
-                            {/*extended part*/}
+                            extended part
                             <motion.div
                                 variants={cardsVariants}
                                 animate='streamingServicesExtended'
@@ -1071,7 +1071,7 @@ export default function Subtitle(){
                             </motion.div>
 
                         </motion.div>
-                        {/*closed captions plain*/}
+                        closed captions plain
                         <motion.div variants={cardsVariants} animate='closedCaptionsOuter' transition={cardTransition}  layout className={styles.card_flex}>
                             <motion.div variants={cardsVariants}
                                         animate='closedCaptionsInner'
@@ -1098,10 +1098,10 @@ export default function Subtitle(){
 
                             </motion.div>
                         </motion.div>
-                        {/*digital cinema*/}
+                        digital cinema
                         <motion.div variants={cardsVariants} animate='digitalCinemaOuter' transition={cardTransition} layout className={styles.card_flex}>
 
-                                {/*shrunk part*/}
+                                shrunk part
                                 <motion.div
                                     variants={cardsVariants}
                                     animate='digitalCinemaInner'
@@ -1158,7 +1158,7 @@ export default function Subtitle(){
                                     </div>
 
                                 </motion.div>
-                                {/*extended part*/}
+                                extended part
                                 <motion.div
                                     variants={cardsVariants}
                                     animate='digitalCinemaExtended'
@@ -1239,11 +1239,11 @@ export default function Subtitle(){
                     <motion.div layout className={styles.card_wrapper_flex}>
 
 
-                        {/*blue-ray services*/}
+                        blue-ray services
                         <motion.div variants={cardsVariantsOuter}
                                     animate={isBlueray?'bluerayOpen':'bluerayClosed'}
                                     layout className={styles.card_flex}>
-                            {/*shrunk part*/}
+                            shrunk part
                             <motion.div
                                 animate={isBlueray?{opacity:0, zIndex:1}:{opacity:1, zIndex:2}}
                                 key='streaming'
@@ -1278,7 +1278,7 @@ export default function Subtitle(){
                                 </div>
 
                             </motion.div>
-                            {/*extended part*/}
+                            extended part
                             <motion.div
                                 animate={isBlueray?{opacity:1, zIndex:2}:{opacity:0, zIndex:1}}
                                 key='initial'
@@ -1336,7 +1336,7 @@ export default function Subtitle(){
                             </motion.div>
 
                         </motion.div>
-                        {/*teletext plain*/}
+                        teletext plain
                         <motion.div variants={cardsVariantsOuter} animate={isBlueray?'open':'closed'} className={styles.card_flex}>
                             <motion.div   animate={isBlueray?{opacity:0, zIndex:1}:{opacity:1, zIndex:2}}
                                           key='teletext'
@@ -1358,7 +1358,440 @@ export default function Subtitle(){
 
                             </motion.div>
                         </motion.div>
-                        {/*dvb plain*/}
+                        dvb plain
+                        <motion.div variants={cardsVariantsOuter} animate={isBlueray?'open':'closed'}  layout className={styles.card_flex}>
+                            <motion.div   animate={isBlueray?{opacity:0, zIndex:1}:{opacity:1, zIndex:2}}
+                                          key='dvb'
+                                        className={`${styles.card_inner}`}>
+                                {!isBlueray && (<><div className={styles.card_inner_title}>
+                                    <h4>DVB Subtitles</h4>
+                                </div>
+                                    <div className={styles.card_inner_description}>
+                                        <p className={styles.card_inner_description_text}>Generate ETSI EN 300 743
+                                            compatible DVB subtitling
+                                            elementary stream for
+                                            muxing with ProMedia Carbon
+                                            multiplexers. There is an option
+                                            to export Generic DVB
+                                            Elementary Stream as well.</p>
+
+                                    </div></>)}
+
+
+                            </motion.div>
+                        </motion.div>
+
+                    </motion.div>
+                </AnimateSharedLayout>
+
+            </div>
+                </div>
+            </section>*/}
+            <section className={styles.card_section}>
+                <div className={styles.container}>
+                    <div style={{ paddingTop:30}} ref={ref1} className={styles.content_inner} id='compatibility'>
+                <div className={styles.content_inner_text}>
+                        <div className={styles.paragraph}>
+                            <h2 className={styles.subsection_title}>Prepare subtitles for any content</h2>
+
+                        </div>
+                </div>
+                <AnimateSharedLayout>
+                    <motion.div layout className={styles.card_wrapper_flex}>
+
+
+
+                        <motion.div variants={cardsVariants} animate='streamingServicesOuter' transition={cardTransition} layout className={styles.card_flex}>
+
+                            <motion.div
+                                variants={cardsVariants}
+                                animate='streamingServicesInner'
+                                key='streaming'
+                                className={`${styles.card_inner} ${styles.streaming_services}`}>
+                                <div className={styles.card_inner_title}>
+                                    <h4>Streaming Services</h4>
+                                </div>
+                                <div className={styles.card_inner_description}>
+                                    <p className={styles.card_inner_description_text}>EZTitles is designed to subtitle
+                                        all major Streaming Services
+                                        with a world class quality.</p>
+
+                                </div>
+                               <div className={styles.streaming_services_icons}>
+                                   <MyImage src='/images/software/eztitles/netflix.png' width={153} height={75}/>
+                                   <MyImage src='/images/software/eztitles/hbo_max.png' width={153} height={75}/>
+                                   <MyImage src='/images/software/eztitles/apple_tv_plus.png' width={153} height={75}/>
+                                   <MyImage src='/images/software/eztitles/prime_video.png' width={153} height={75}/>
+                                   <MyImage src='/images/software/eztitles/disney_plus.png' width={153} height={75}/>
+                                   <MyImage src='/images/software/eztitles/hulu.png' width={153} height={75}/>
+
+                               </div>
+
+                                <div className={styles.card_inner_more_icon}>
+                                    <motion.svg
+                                        onClick={handleStreamingServices} xmlns="http://www.w3.org/2000/svg"
+                                        height="48px" viewBox="0 0 20 20" width="48px" fill="#FFFFFF">
+                                        <g>
+                                            <rect fill="none" height="20" width="20"/>
+                                            <path
+                                                d="M10,4c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6S6.69,4,10,4 M10,3c-3.87,0-7,3.13-7,7c0,3.87,3.13,7,7,7 c3.87,0,7-3.13,7-7C17,6.13,13.87,3,10,3L10,3z M9.5,10v2.5c0,0.28,0.22,0.5,0.5,0.5h0c0.28,0,0.5-0.22,0.5-0.5V10H13l-3-3l-3,3 H9.5z"/>
+                                        </g>
+                                    </motion.svg>
+
+                                </div>
+
+                            </motion.div>
+
+                            <motion.div
+                                variants={cardsVariants}
+                                animate='streamingServicesExtended'
+                                key='initial'
+                                className={styles.card_inner_extended}>
+                                <div className={styles.card_inner_title_extended}>
+                                    <div className={styles.card_inner_title_extended_icon}>
+                                        <MyImage src='/images/software/eztitles/streaming-icon.svg' width={65} height={65}/>
+                                    </div>
+                                    <div className={styles.card_inner_title_extended_text}>
+                                        <h4>Streaming Services an Open Subtitles</h4>
+                                    </div>
+
+                                </div>
+                                <div className={styles.card_inner_extended_description}>
+                                    <div className={styles.card_inner_extended_description_text}>
+                                        <p className={styles.simple_text}>EZTitles is designed to comply with all the <span className={styles.text_highlight_bold}>Streaming Services</span>  as <span className={styles.text_highlight_bold}>Netflix, Disney+, Apple TV+, Amazon Prime, Hulu
+                                        </span> and others, <span className={styles.text_highlight_bold}>TV broadcast, film</span> and <span className={styles.text_highlight_bold}>NLE standards</span>.</p>
+                                    </div>
+                                    <div className={styles.card_inner_extended_description_list}>
+                                        <ul>
+                                            <li className={styles.simple_text}>
+                                                EZTitles is an official <Link href='#'><a className={styles.link}>Netflix Partner</a></Link> for Timed Text creation and works together with both Netflix and Disney
+                                                on the easy and accurate fulfillment of their requirements with our products.
+                                            </li>
+                                            <li className={styles.simple_text}>
+                                                With our subtitling tools you could work in any language - West, Central and East European, Arabic, Hebrew,
+                                                Persian, South and East Asian, incl. <Link href='#'><a className={styles.link}>vertical orientation, Rubies and Bouten for Chinese, Japanese and
+                                                Korean scripts</a></Link>.
+                                            </li>
+                                            <li className={styles.simple_text}>
+                                                Export all industry standard <Link href='#'><a className={styles.link}>Timed Text and Open Subtitles File Formats</a></Link>.
+                                            </li>
+                                            <li className={styles.simple_text}>
+                                                Always deliver perfect subtitles to meet your client’s requirements thanks to the automated <Link href='#'><a className={styles.link}>Checks and Fixes</a></Link>.
+                                            </li>
+                                            <li className={styles.simple_text}>
+                                                EZTitles is fully geared up to prepare flawless SDH subtitles. They can be in the source language of the video,
+                                                as they include important non-dialogue audio sound effects and speaker identification, or in foreign languages
+                                                if needed. Overlaps, colors and precise text positioning on the screen are all supported by EZTitles.
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <div className={styles.card_inner_extended_more_icon}>
+                                    <motion.svg
+                                        onClick={handleStreamingServices} xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24"
+                                        width="48px" fill="#FFFFFF">
+                                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                                        <path
+                                            d="M12 7c-.55 0-1 .45-1 1v3H8c-.55 0-1 .45-1 1s.45 1 1 1h3v3c0 .55.45 1 1 1s1-.45 1-1v-3h3c.55 0 1-.45 1-1s-.45-1-1-1h-3V8c0-.55-.45-1-1-1zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                    </motion.svg>
+
+                                </div>
+
+                            </motion.div>
+
+                        </motion.div>
+
+                        <motion.div variants={cardsVariants} animate='closedCaptionsOuter' transition={cardTransition}  layout className={styles.card_flex}>
+                            <motion.div variants={cardsVariants}
+                                        animate='closedCaptionsInner'
+                                        className={`${styles.card_inner} ${styles.closed_captions}`}>
+                                {!isStreamingServices && (<><div className={styles.card_inner_title}>
+                                    <h4>Closed Captions</h4>
+                                </div>
+                                    <div className={styles.card_inner_description}>
+                                    <p className={styles.card_inner_description_text}>EZTitles is a great software for
+                                        Closed Captions creation.
+                                        You can prepare stellar Roll-up,
+                                        Paint-on and Pop-on Closed
+                                        Captions stunningly fast in
+                                        CEA-608, CEA-708
+                                        or other file formats.</p>
+
+                                    </div>
+                                    <div className={styles.cc_button}>
+                                        Learn More
+
+                                    </div>
+                                </>)}
+
+
+                            </motion.div>
+                        </motion.div>
+
+                        <motion.div variants={cardsVariants} animate='digitalCinemaOuter' transition={cardTransition} layout className={styles.card_flex}>
+
+                                <motion.div
+                                    variants={cardsVariants}
+                                    animate='digitalCinemaInner'
+                                    key='digital'
+                                    className={`${styles.card_inner} ${styles.digital_cinema}`}>
+                                    <div className={styles.card_inner_title}>
+                                        <h4>Digital Cinema</h4>
+                                    </div>
+                                    <div className={styles.card_inner_description}>
+                                        <p className={styles.card_inner_description_text}>Prepare quality subtitles for
+                                            Digital Cinema and see
+                                            exactly how they will look like
+                                            on the theater’s screen in any
+                                            resolution from 2K up to 4K.</p>
+                                    </div>
+                                    <div className={styles.digital_cinema_aspect_ratios}>
+                                        <div className={styles.digital_cinema_resolution}>
+                                            <p>Resolution</p>
+                                            <ul>
+                                                <li>1998 x 1080</li>
+                                                    <li>2048 x 858</li>
+                                                        <li>2048 x 1080</li>
+                                                            <li>3996 x 2160</li>
+                                                                <li>4096 x 1716</li>
+                                                                    <li>4096 x 2160</li>
+                                            </ul>
+                                        </div>
+                                        <div className={styles.digital_cinema_ratio}>
+                                            <p>Aspect Ratio</p>
+                                            <ul>
+                                                <li>1.85 : 1</li>
+                                                    <li>2.39 : 1</li>
+                                                        <li>1.90 : 1</li>
+                                                            <li>1.85 : 1</li>
+                                                                <li>2.39 : 1</li>
+                                                                    <li>1.90 : 1</li>
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div className={styles.card_inner_more_icon}>
+                                        <motion.svg
+                                            onClick={handleDigitalCinema} xmlns="http://www.w3.org/2000/svg"
+                                            height="48px" viewBox="0 0 20 20" width="48px" fill="#FFFFFF" style={{transform: 'rotate(-180deg)'}}>
+                                            <g>
+                                                <rect fill="none" height="20" width="20"/>
+                                                <path
+                                                    d="M10,4c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6S6.69,4,10,4 M10,3c-3.87,0-7,3.13-7,7c0,3.87,3.13,7,7,7 c3.87,0,7-3.13,7-7C17,6.13,13.87,3,10,3L10,3z M9.5,10v2.5c0,0.28,0.22,0.5,0.5,0.5h0c0.28,0,0.5-0.22,0.5-0.5V10H13l-3-3l-3,3 H9.5z"/>
+                                            </g>
+                                        </motion.svg>
+
+                                    </div>
+
+                                </motion.div>
+
+                                <motion.div
+                                    variants={cardsVariants}
+                                    animate='digitalCinemaExtended'
+                                    key='digital_extended'
+                                    className={styles.card_inner_extended}>
+                                    <div className={styles.card_inner_title_extended}>
+                                        <div className={styles.card_inner_title_extended_icon}>
+                                            <MyImage src='/images/software/eztitles/digital-icon.svg' width={65} height={65}/>
+                                        </div>
+                                        <div className={styles.card_inner_title_extended_text}>
+                                            <h4>Digital Cinema</h4>
+                                        </div>
+
+                                    </div>
+                                    <div className={styles.card_inner_extended_description}>
+                                        <div className={styles.card_inner_extended_description_title}>
+                                            <h4>Digital Cinema Ready</h4>
+                                        </div>
+                                        <div className={styles.card_inner_extended_description_text}>
+                                            <p className={styles.simple_text} style={{marginTop:6}}>EZTitles supports Texas Instruments CineCanvas XML-based subtitles for the DLP Cinema projection system
+                                                and the SMPTE 428-7-2014 DCDM (Digital Cinema Distribution Master) XML specifications.
+                                                Get a 100% accurate preview of your subtitles in the exact way they appear on the theater’s screen.</p>
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                    <div className={styles.card_inner_extended_description}>
+                                        <div className={styles.card_inner_extended_description_title}>
+                                            <h4>Digital Cinema Mode</h4>
+                                        </div>
+                                        <div className={styles.card_inner_extended_description_text}>
+                                            <p className={styles.simple_text} style={{marginTop:6}}>EZTitles has a dedicated presentation mode which complies with all the standards and requirements of
+                                                Digital Cinema subtitling. The Digital Cinema mode supports the following image resolutions:</p>
+                                        </div>
+                                        <div className={styles.card_inner_extended_digital_cinema_list}>
+                                            <ul  style={{margin:0, padding:0}}>
+                                                <li>1998 x 1080, 2K flat in 1.85 : 1 aspect ratio;</li>
+                                                <li>2048 x 858, 2K scope in 2.39 : 1 aspect ratio;</li>
+                                                <li>2048 x 1080, 2K full container in 1.90:1 aspect ratio;</li>
+                                                <li>3996 x 2160, 4K flat in 1.85 : 1 aspect ratio;</li>
+                                                <li>4096 x 1716, 4K scope in 2.39 : 1 aspect ratio;</li>
+                                                <li>4096 x 2160, 4K full container in 1.90:1 aspect ratio.</li>
+                                            </ul>
+
+                                        </div>
+                                        <div className={styles.card_inner_extended_description_text}>
+                                            <p className={styles.simple_text} style={{marginTop:6}}>EZTitles covers the full range of the Digital Cinema subtitle specifications by adding support for the <Link href='#'><a className={styles.link}>ruby characters
+                                                and vertical text</a></Link>. Subtitles containing ruby characters and vertical text can now be exported and imported as text
+                                                or image-based subtitles for Digital Cinema. Check all <Link href='#'><a className={styles.link}>exporting options</a></Link>.</p>
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                    <div className={styles.card_inner_extended_more_icon}>
+                                        <motion.svg
+                                            onClick={handleDigitalCinema} xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24"
+                                            width="48px" fill="#FFFFFF">
+                                            <path d="M0 0h24v24H0V0z" fill="none"/>
+                                            <path
+                                                d="M12 7c-.55 0-1 .45-1 1v3H8c-.55 0-1 .45-1 1s.45 1 1 1h3v3c0 .55.45 1 1 1s1-.45 1-1v-3h3c.55 0 1-.45 1-1s-.45-1-1-1h-3V8c0-.55-.45-1-1-1zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                        </motion.svg>
+
+                                    </div>
+
+                                </motion.div>
+
+
+
+                        </motion.div>
+
+                </motion.div>
+                    <motion.div layout className={styles.card_wrapper_flex}>
+
+
+
+                        <motion.div variants={cardsVariantsOuter}
+                                    animate={isBlueray?'bluerayOpen':'bluerayClosed'}
+                                    layout className={styles.card_flex}>
+
+                            <motion.div
+                                animate={isBlueray?{opacity:0, zIndex:1}:{opacity:1, zIndex:2}}
+                                key='streaming'
+                                className={`${styles.card_inner} ${styles.blue_ray_pad}`}>
+                                <div className={styles.card_inner_title}>
+                                    <h4>Blu-ray and DVD</h4>
+                                </div>
+                                <div className={styles.card_inner_description}>
+                                    <p className={styles.card_inner_description_text}>EZTitles can create BDN subtitle
+                                        files in compliance with all
+                                        industry standards.
+                                        Whether it is DVD, NLE or Blu-ray
+                                        with EZTitles you can create
+                                        subtitles for them all. Text script
+                                        formats and high-quality
+                                        anti-aliased images are available.</p>
+
+                                </div>
+
+
+                                <div className={styles.card_inner_more_icon}>
+                                    <motion.svg
+                                        onClick={handleBlueray} xmlns="http://www.w3.org/2000/svg"
+                                        height="48px" viewBox="0 0 20 20" width="48px" fill="#FFFFFF">
+                                        <g>
+                                            <rect fill="none" height="20" width="20"/>
+                                            <path
+                                                d="M10,4c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6S6.69,4,10,4 M10,3c-3.87,0-7,3.13-7,7c0,3.87,3.13,7,7,7 c3.87,0,7-3.13,7-7C17,6.13,13.87,3,10,3L10,3z M9.5,10v2.5c0,0.28,0.22,0.5,0.5,0.5h0c0.28,0,0.5-0.22,0.5-0.5V10H13l-3-3l-3,3 H9.5z"/>
+                                        </g>
+                                    </motion.svg>
+
+                                </div>
+
+                            </motion.div>
+
+                            <motion.div
+                                animate={isBlueray?{opacity:1, zIndex:2}:{opacity:0, zIndex:1}}
+                                key='initial'
+                                className={styles.card_inner_extended}>
+                                <div className={styles.card_inner_title_extended}>
+                                    <div className={styles.card_inner_title_extended_icon}>
+                                        <MyImage src='/images/software/eztitles/blueray-icon.svg' width={65} height={65}/>
+                                    </div>
+                                    <div className={styles.card_inner_title_extended_text}>
+                                        <h4>Blu-ray and DVD</h4>
+                                    </div>
+
+                                </div>
+                                <div className={styles.card_inner_extended_description}>
+                                    <div className={styles.card_inner_extended_description_text}>
+                                        <p className={styles.simple_text} style={{marginTop:6}}>EZTitles can prepare BDN subtitle files in compliance with all industry standards. Whether it is DVD, NLE or Blu-ray.
+                                            With EZTitles you can create subtitles for them all. Text script formats and high-quality anti-aliased images are
+                                            available for the following systems:</p>
+                                    </div>
+                                    <div className={styles.card_inner_extended_digital_cinema_list}>
+                                        <ul style={{margin:0, padding:0}}>
+                                            <li>DaVinci Resolve,</li>
+                                            <li>Sony Blu-print™,</li>
+                                            <li>Sonic Scenarist HDMV (Blu-ray),</li>
+                                            <li>Sonic Scenarist Advanced Contents (HD-DVD),</li>
+                                            <li>Adobe® Encore® DVD,</li>
+                                            <li>Apple® DVD Studio Pro®,</li>
+                                            <li>Spruce DVD Maestro,</li>
+                                            <li>Final Cut Pro®,</li>
+                                            <li>Sony DoStudio,</li>
+                                            <li>Sony DVD Architect and many more.</li>
+                                        </ul>
+
+                                    </div>
+                                    <div className={styles.card_inner_extended_description_text}>
+                                        <p className={styles.simple_text} style={{marginTop:6}}>Check <Link href='#'><a className={styles.link}>all supported formats</a></Link>.</p>
+                                    </div>
+
+
+
+                                </div>
+
+
+                                <div className={styles.card_inner_extended_more_icon}>
+                                    <motion.svg
+                                        onClick={handleBlueray} xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24"
+                                        width="48px" fill="#FFFFFF">
+                                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                                        <path
+                                            d="M12 7c-.55 0-1 .45-1 1v3H8c-.55 0-1 .45-1 1s.45 1 1 1h3v3c0 .55.45 1 1 1s1-.45 1-1v-3h3c.55 0 1-.45 1-1s-.45-1-1-1h-3V8c0-.55-.45-1-1-1zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                    </motion.svg>
+
+                                </div>
+
+                            </motion.div>
+
+                        </motion.div>
+
+                        <motion.div variants={cardsVariantsOuter} animate={isBlueray?'open':'closed'} className={styles.card_flex}>
+                            <motion.div   animate={isBlueray?{opacity:0, zIndex:1}:{opacity:1, zIndex:2}}
+                                          key='teletext'
+                                        className={`${styles.card_inner} ${styles.teletext}`}>
+                                {!isBlueray && (<><div className={styles.card_inner_title}>
+                                    <h4>Teletext</h4>
+                                </div>
+                                    <div className={styles.card_inner_description}>
+                                        <p className={styles.card_inner_description_text}>EZTitles easily prepare Teletext
+                                            subtitles and even offers
+                                            a specified profile preset for that.
+                                            Just choose it and the program
+                                            will change the interface to focus
+                                            on the tools you’d mostly need
+                                            to get the job done.</p>
+
+                                    </div></>)}
+
+
+                            </motion.div>
+                        </motion.div>
+
                         <motion.div variants={cardsVariantsOuter} animate={isBlueray?'open':'closed'}  layout className={styles.card_flex}>
                             <motion.div   animate={isBlueray?{opacity:0, zIndex:1}:{opacity:1, zIndex:2}}
                                           key='dvb'
@@ -1558,7 +1991,6 @@ export default function Subtitle(){
                 <div className={styles.container}>
                     <div style={{"marginTop":"230px"}} className={styles.content_inner}>
                     <div className={styles.content_inner_text}>
-                        <div className={styles.paragraph}>
                            <p className={styles.language_text}>
                                <span className={styles.big_text}>in any language</span>  <span className={styles.language_text_color}>dans n'importe quelle languein </span>
                                 en cualquier idioma  <span className={styles.language_text_color}>in jeder sprache</span> на любом языке <span className={styles.language_text_color}>به هر زبانی</span>&nbsp;
@@ -1567,7 +1999,6 @@ export default function Subtitle(){
                                <span className={styles.language_text_color}>bármilyen nyelven</span>  em qualquer idioma  <span className={styles.language_text_color}>किसी भी भाषा म</span> ในภาษาใดก็ได้
                                모든 언어로&nbsp; <span className={styles.language_text_color}>任意の言語で</span> &nbsp;  på vilket språk som helst  <span className={styles.language_text_color}>на всеки език</span>
                            </p>
-                        </div>
                     </div>
 
 

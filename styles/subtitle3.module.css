@@ -1297,6 +1297,18 @@ text-align: center;
 
     }
 }
+@media(max-width: 428px){
+    .language_text{
+        width:80px;
+        font-size: 0.5em;
+        /*max-width:1015px;
+        min-width:1015px;*/
+    }
+    .big_text{
+        font-size: 30px;
+
+    }
+}
 .language_text_color{
     color:#35C9F2;
 }
@@ -1560,11 +1572,11 @@ text-align: center;
     position: sticky;
     top: 81px;
     z-index: 22;
-    display: inline-block;
     margin-top: 8px;
     margin-left: 15px;
     /*background-color: var(--main-color-light);*/
     border-radius: 6px;
+    display:flex;
 }
 @media(prefers-reduced-motion: reduce){
     .secondary_nav{background-color: #ea2222}
@@ -1576,7 +1588,7 @@ text-align: center;
     display: -ms-flexbox;
     display: flex;
     padding: 4px 2px;
-    flex-direction: column;
+    flex-wrap: wrap;
     /*border-radius: 23px;*/
     border-radius: 1px;
     -webkit-transition:  0.3s cubic-bezier(.165, .84, .44, 1);
@@ -2476,6 +2488,7 @@ margin:0;
 }
 .payment_info_cell p{
     text-align: right;
+    margin:0;
 }
 .checkout_btn_cell{
     grid-column: 1 / 3;
