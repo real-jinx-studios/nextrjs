@@ -118,6 +118,11 @@ export default function Subtitle(){
         setIsDigitalCinema(!isDigitalCinema)
 
     }
+    const handleCloseCards=()=>{
+        setIsDigitalCinema(false)
+        setIsStreamingServices(false)
+
+    }
     const handleBlueray=()=>{
         setIsBlueray(!isBlueray)
 
@@ -312,36 +317,40 @@ export default function Subtitle(){
         }
 
     }
+
+    /*every const is like an animation end state. first is the initial animation when page loads or nothing is selected. the following const are representing each of the two states
+    * of a card being clicked. every const has the same object properties.
+    * the useCycle at the end is what effectively changes the state of the animation from one const to another. By doing this the Framer library automatically animates between states.*/
     const cardsVariantsInitial={
-        streamingServicesOuter:{flex:'0 0 32%'},
+        streamingServicesOuter:{flex:'0 1 32%'},
         streamingServicesInner:{opacity: 1, zIndex:2, transition:{delay:0.1}},
         streamingServicesExtended:{opacity: 0, zIndex:1, transition:{duration:0.1}},
-        closedCaptionsOuter:{flex:'0 0 32%'},
+        closedCaptionsOuter:{flex:'0 1 32%'},
         closedCaptionsInner:{opacity: 1, zIndex:2},
         closedCaptionsExtended:{opacity: 0, zIndex:1},
-        digitalCinemaOuter:{flex:'0 0 32%'},
+        digitalCinemaOuter:{flex:'0 1 32%'},
         digitalCinemaInner:{opacity: 1, zIndex:2},
         digitalCinemaExtended:{opacity: 0, zIndex:1},
     }
     const cardsVariantsStreamingOpen={
-        streamingServicesOuter:{flex:'0 0 93%'},
+        streamingServicesOuter:{flex:'0 1 93%'},
         streamingServicesInner:{opacity: 0, zIndex:1, transition:{duration:0.1}},
         streamingServicesExtended:{opacity: 1, zIndex:2, transition:{delay:0.1}},
-        closedCaptionsOuter:{flex:'0 0 3%'},
+        closedCaptionsOuter:{flex:'0 1 3%'},
         closedCaptionsInner:{opacity: 0, zIndex:1},
         closedCaptionsExtended:{opacity: 1, zIndex:2},
-        digitalCinemaOuter:{flex:'0 0 3%'},
+        digitalCinemaOuter:{flex:'0 1 3%'},
         digitalCinemaInner:{opacity: 1, zIndex:2},
         digitalCinemaExtended:{opacity: 0, zIndex:1},
     }
     const cardsVariantsDigitalOpen={
-        streamingServicesOuter:{flex:'0 0 3%'},
+        streamingServicesOuter:{flex:'0 1 3%'},
         streamingServicesInner:{opacity: 1, zIndex:2},
         streamingServicesExtended:{opacity: 2, zIndex:1},
-        closedCaptionsOuter:{flex:'0 0 3%'},
+        closedCaptionsOuter:{flex:'0 1 3%'},
         closedCaptionsInner:{opacity: 0, zIndex:1},
         closedCaptionsExtended:{opacity: 1, zIndex:2},
-        digitalCinemaOuter:{flex:'0 0 93%'},
+        digitalCinemaOuter:{flex:'0 1 93%'},
         digitalCinemaInner:{opacity: 0, zIndex:1},
         digitalCinemaExtended:{opacity: 1, zIndex:2},
     }
@@ -806,7 +815,7 @@ export default function Subtitle(){
                         <div className={styles.payment_text_cell}>
                             <p className={styles.payment_text_cell_text}>Payment:</p>
                         </div>
-                        <div className={styles.payment_empty_cell}></div>
+
                         <div className={styles.payment_select_cell}>
                             <div className={styles.select}>
                                 <div className={styles.purchase_options}>
@@ -1388,8 +1397,8 @@ export default function Subtitle(){
                 </div>
             </section>*/}
             <section className={styles.card_section}>
-                <div className={styles.container}>
-                    <div style={{ paddingTop:30}} ref={ref1} className={styles.content_inner} id='compatibility'>
+                <div className={styles.container} id='compatibility' ref={ref1}>
+
                 <div className={styles.content_inner_text}>
                         <div className={styles.paragraph}>
                             <h2 className={styles.subsection_title}>Prepare subtitles for any content</h2>
@@ -1401,44 +1410,50 @@ export default function Subtitle(){
 
 
 
-                        <motion.div variants={cardsVariants} animate='streamingServicesOuter' transition={cardTransition} layout className={styles.card_flex}>
+                        <motion.div variants={cardsVariants}
+                                    animate='streamingServicesOuter'
+                                    transition={cardTransition}
+                                    layout
+                                    className={styles.card_flex}>
 
                             <motion.div
                                 variants={cardsVariants}
                                 animate='streamingServicesInner'
                                 key='streaming'
-                                className={`${styles.card_inner} ${styles.streaming_services}`}>
-                                <div className={styles.card_inner_title}>
+                                className={`${styles.card_inner} ${styles.streaming_services}`}
+                                onClick={(isDigitalCinema)?handleCloseCards:()=>{}}
+                            >
+                                {!isDigitalCinema && (<><div className={styles.card_inner_title}>
                                     <h4>Streaming Services</h4>
                                 </div>
-                                <div className={styles.card_inner_description}>
+                                    <div className={styles.card_inner_description}>
                                     <p className={styles.card_inner_description_text}>EZTitles is designed to subtitle
-                                        all major Streaming Services
-                                        with a world class quality.</p>
+                                    all major Streaming Services
+                                    with a world class quality.</p>
 
-                                </div>
-                               <div className={styles.streaming_services_icons}>
-                                   <MyImage src='/images/software/eztitles/netflix.png' width={153} height={75}/>
-                                   <MyImage src='/images/software/eztitles/hbo_max.png' width={153} height={75}/>
-                                   <MyImage src='/images/software/eztitles/apple_tv_plus.png' width={153} height={75}/>
-                                   <MyImage src='/images/software/eztitles/prime_video.png' width={153} height={75}/>
-                                   <MyImage src='/images/software/eztitles/disney_plus.png' width={153} height={75}/>
-                                   <MyImage src='/images/software/eztitles/hulu.png' width={153} height={75}/>
+                                    </div>
+                                    <div className={styles.streaming_services_icons}>
+                                    <MyImage src='/images/software/eztitles/netflix.png' width={153} height={75}/>
+                                    <MyImage src='/images/software/eztitles/hbo_max.png' width={153} height={75}/>
+                                    <MyImage src='/images/software/eztitles/apple_tv_plus.png' width={153} height={75}/>
+                                    <MyImage src='/images/software/eztitles/prime_video.png' width={153} height={75}/>
+                                    <MyImage src='/images/software/eztitles/disney_plus.png' width={153} height={75}/>
+                                    <MyImage src='/images/software/eztitles/hulu.png' width={153} height={75}/>
 
-                               </div>
+                                    </div>
 
-                                <div className={styles.card_inner_more_icon}>
+                                    <div className={styles.card_inner_more_icon}>
                                     <motion.svg
-                                        onClick={handleStreamingServices} xmlns="http://www.w3.org/2000/svg"
-                                        height="48px" viewBox="0 0 20 20" width="48px" fill="#FFFFFF">
-                                        <g>
-                                            <rect fill="none" height="20" width="20"/>
-                                            <path
-                                                d="M10,4c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6S6.69,4,10,4 M10,3c-3.87,0-7,3.13-7,7c0,3.87,3.13,7,7,7 c3.87,0,7-3.13,7-7C17,6.13,13.87,3,10,3L10,3z M9.5,10v2.5c0,0.28,0.22,0.5,0.5,0.5h0c0.28,0,0.5-0.22,0.5-0.5V10H13l-3-3l-3,3 H9.5z"/>
-                                        </g>
+                                    onClick={handleStreamingServices} xmlns="http://www.w3.org/2000/svg"
+                                    height="48px" viewBox="0 0 20 20" width="48px" fill="#FFFFFF">
+                                    <g>
+                                    <rect fill="none" height="20" width="20"/>
+                                    <path
+                                    d="M10,4c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6S6.69,4,10,4 M10,3c-3.87,0-7,3.13-7,7c0,3.87,3.13,7,7,7 c3.87,0,7-3.13,7-7C17,6.13,13.87,3,10,3L10,3z M9.5,10v2.5c0,0.28,0.22,0.5,0.5,0.5h0c0.28,0,0.5-0.22,0.5-0.5V10H13l-3-3l-3,3 H9.5z"/>
+                                    </g>
                                     </motion.svg>
 
-                                </div>
+                                    </div></>)}
 
                             </motion.div>
 
@@ -1509,7 +1524,8 @@ export default function Subtitle(){
                         <motion.div variants={cardsVariants} animate='closedCaptionsOuter' transition={cardTransition}  layout className={styles.card_flex}>
                             <motion.div variants={cardsVariants}
                                         animate='closedCaptionsInner'
-                                        className={`${styles.card_inner} ${styles.closed_captions}`}>
+                                        className={`${styles.card_inner} ${styles.closed_captions}`}
+                                        onClick={(isStreamingServices || isDigitalCinema)?handleCloseCards:()=>{}}>
                                 {!isStreamingServices && (<><div className={styles.card_inner_title}>
                                     <h4>Closed Captions</h4>
                                 </div>
@@ -1539,56 +1555,57 @@ export default function Subtitle(){
                                     variants={cardsVariants}
                                     animate='digitalCinemaInner'
                                     key='digital'
-                                    className={`${styles.card_inner} ${styles.digital_cinema}`}>
-                                    <div className={styles.card_inner_title}>
+                                    className={`${styles.card_inner} ${styles.digital_cinema}`}
+                                    onClick={(isStreamingServices)?handleCloseCards:()=>{}}>
+                                    {(<><div className={styles.card_inner_title}>
                                         <h4>Digital Cinema</h4>
                                     </div>
-                                    <div className={styles.card_inner_description}>
+                                        <div className={styles.card_inner_description}>
                                         <p className={styles.card_inner_description_text}>Prepare quality subtitles for
-                                            Digital Cinema and see
-                                            exactly how they will look like
-                                            on the theater’s screen in any
-                                            resolution from 2K up to 4K.</p>
-                                    </div>
-                                    <div className={styles.digital_cinema_aspect_ratios}>
+                                        Digital Cinema and see
+                                        exactly how they will look like
+                                        on the theater’s screen in any
+                                        resolution from 2K up to 4K.</p>
+                                        </div>
+                                        <div className={styles.digital_cinema_aspect_ratios}>
                                         <div className={styles.digital_cinema_resolution}>
-                                            <p>Resolution</p>
-                                            <ul>
-                                                <li>1998 x 1080</li>
-                                                    <li>2048 x 858</li>
-                                                        <li>2048 x 1080</li>
-                                                            <li>3996 x 2160</li>
-                                                                <li>4096 x 1716</li>
-                                                                    <li>4096 x 2160</li>
-                                            </ul>
+                                        <p>Resolution</p>
+                                        <ul>
+                                        <li>1998 x 1080</li>
+                                        <li>2048 x 858</li>
+                                        <li>2048 x 1080</li>
+                                        <li>3996 x 2160</li>
+                                        <li>4096 x 1716</li>
+                                        <li>4096 x 2160</li>
+                                        </ul>
                                         </div>
                                         <div className={styles.digital_cinema_ratio}>
-                                            <p>Aspect Ratio</p>
-                                            <ul>
-                                                <li>1.85 : 1</li>
-                                                    <li>2.39 : 1</li>
-                                                        <li>1.90 : 1</li>
-                                                            <li>1.85 : 1</li>
-                                                                <li>2.39 : 1</li>
-                                                                    <li>1.90 : 1</li>
-                                            </ul>
+                                        <p>Aspect Ratio</p>
+                                        <ul>
+                                        <li>1.85 : 1</li>
+                                        <li>2.39 : 1</li>
+                                        <li>1.90 : 1</li>
+                                        <li>1.85 : 1</li>
+                                        <li>2.39 : 1</li>
+                                        <li>1.90 : 1</li>
+                                        </ul>
 
                                         </div>
 
-                                    </div>
+                                        </div>
 
-                                    <div className={styles.card_inner_more_icon}>
+                                        <div className={styles.card_inner_more_icon}>
                                         <motion.svg
-                                            onClick={handleDigitalCinema} xmlns="http://www.w3.org/2000/svg"
-                                            height="48px" viewBox="0 0 20 20" width="48px" fill="#FFFFFF" style={{transform: 'rotate(-180deg)'}}>
-                                            <g>
-                                                <rect fill="none" height="20" width="20"/>
-                                                <path
-                                                    d="M10,4c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6S6.69,4,10,4 M10,3c-3.87,0-7,3.13-7,7c0,3.87,3.13,7,7,7 c3.87,0,7-3.13,7-7C17,6.13,13.87,3,10,3L10,3z M9.5,10v2.5c0,0.28,0.22,0.5,0.5,0.5h0c0.28,0,0.5-0.22,0.5-0.5V10H13l-3-3l-3,3 H9.5z"/>
-                                            </g>
+                                        onClick={handleDigitalCinema} xmlns="http://www.w3.org/2000/svg"
+                                        height="48px" viewBox="0 0 20 20" width="48px" fill="#FFFFFF" style={{transform: 'rotate(-180deg)'}}>
+                                        <g>
+                                        <rect fill="none" height="20" width="20"/>
+                                        <path
+                                        d="M10,4c3.31,0,6,2.69,6,6s-2.69,6-6,6s-6-2.69-6-6S6.69,4,10,4 M10,3c-3.87,0-7,3.13-7,7c0,3.87,3.13,7,7,7 c3.87,0,7-3.13,7-7C17,6.13,13.87,3,10,3L10,3z M9.5,10v2.5c0,0.28,0.22,0.5,0.5,0.5h0c0.28,0,0.5-0.22,0.5-0.5V10H13l-3-3l-3,3 H9.5z"/>
+                                        </g>
                                         </motion.svg>
 
-                                    </div>
+                                        </div></>)}
 
                                 </motion.div>
 
@@ -1773,7 +1790,8 @@ export default function Subtitle(){
                         <motion.div variants={cardsVariantsOuter} animate={isBlueray?'open':'closed'} className={styles.card_flex}>
                             <motion.div   animate={isBlueray?{opacity:0, zIndex:1}:{opacity:1, zIndex:2}}
                                           key='teletext'
-                                        className={`${styles.card_inner} ${styles.teletext}`}>
+                                        className={`${styles.card_inner} ${styles.teletext}`}
+                                          onClick={isBlueray?handleBlueray:()=>{}}>
                                 {!isBlueray && (<><div className={styles.card_inner_title}>
                                     <h4>Teletext</h4>
                                 </div>
@@ -1795,7 +1813,8 @@ export default function Subtitle(){
                         <motion.div variants={cardsVariantsOuter} animate={isBlueray?'open':'closed'}  layout className={styles.card_flex}>
                             <motion.div   animate={isBlueray?{opacity:0, zIndex:1}:{opacity:1, zIndex:2}}
                                           key='dvb'
-                                        className={`${styles.card_inner}`}>
+                                        className={`${styles.card_inner}`}
+                            onClick={isBlueray?handleBlueray:()=>{}}>
                                 {!isBlueray && (<><div className={styles.card_inner_title}>
                                     <h4>DVB Subtitles</h4>
                                 </div>
@@ -1817,22 +1836,23 @@ export default function Subtitle(){
                     </motion.div>
                 </AnimateSharedLayout>
 
-            </div>
+
                 </div>
             </section>
             {/*video format resolution and aspect ratio section*/}
             <section className={styles.video_format_section}>
-                <div className={styles.container}>
-                    <div style={{"marginTop":"230px"}} className={styles.v_r_a_content_inner}>
-                    <div className={styles.v_r_a_video_background}>
-                        <video autoPlay loop muted>
-                            <source src="/videos/noway.webm"
-                                    type="video/webm"/>
+                <div className={styles.v_r_a_video_background}>
+                    <video autoPlay loop muted>
+                        <source src="/videos/noway.webm"
+                                type="video/webm"/>
 
-                                <source src="/videos/noway.mp4"
-                                        type="video/mp4"/>
-                        </video>
-                    </div>
+                        <source src="/videos/noway.mp4"
+                                type="video/mp4"/>
+                    </video>
+                </div>
+                <div className={styles.container}>
+
+
                     <div className={styles.content_inner_text} style={{flex:'unset'}}>
 
                             <div className={styles.paragraph}>
@@ -1983,7 +2003,6 @@ export default function Subtitle(){
 
 
 
-                </div>
                 </div>
             </section>
             {/*language section*/}
