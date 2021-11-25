@@ -336,18 +336,18 @@ export default function Subtitle(){
         streamingServicesOuter:{flex:'0 1 93%'},
         streamingServicesInner:{opacity: 0, zIndex:1, transition:{duration:0.1}},
         streamingServicesExtended:{opacity: 1, zIndex:2, transition:{delay:0.1}},
-        closedCaptionsOuter:{flex:'0 1 3%'},
+        closedCaptionsOuter:{flex:'0 1 2%'},
         closedCaptionsInner:{opacity: 0, zIndex:1},
         closedCaptionsExtended:{opacity: 1, zIndex:2},
-        digitalCinemaOuter:{flex:'0 1 3%'},
+        digitalCinemaOuter:{flex:'0 1 2%'},
         digitalCinemaInner:{opacity: 1, zIndex:2},
         digitalCinemaExtended:{opacity: 0, zIndex:1},
     }
     const cardsVariantsDigitalOpen={
-        streamingServicesOuter:{flex:'0 1 3%'},
+        streamingServicesOuter:{flex:'0 1 2%'},
         streamingServicesInner:{opacity: 1, zIndex:2},
         streamingServicesExtended:{opacity: 2, zIndex:1},
-        closedCaptionsOuter:{flex:'0 1 3%'},
+        closedCaptionsOuter:{flex:'0 1 2%'},
         closedCaptionsInner:{opacity: 0, zIndex:1},
         closedCaptionsExtended:{opacity: 1, zIndex:2},
         digitalCinemaOuter:{flex:'0 1 93%'},
@@ -791,7 +791,7 @@ export default function Subtitle(){
                             <a href='#' className="button button_basic_long">FREE TRIAL</a>
 
 
-                            <label for='button-mover-trigger'>
+                            <label htmlFor='button-mover-trigger'>
 
                                 <div className='chk_trigger'></div>
                             </label>

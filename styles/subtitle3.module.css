@@ -2089,14 +2089,15 @@ text-align: center;
     margin-top: 25px;
     flex-wrap: wrap;
     justify-content: center;
-    gap:1.5em
+    gap:1em;
 }
 .card_flex{
-    flex:0 1 33%;
+    flex:0 1 32%;
     position:relative;
     border-radius: 16px;
     background-color:#072136;
     overflow: hidden;
+    max-height: 39em;
 }
 
 
