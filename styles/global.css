@@ -65,12 +65,14 @@ html, body{
     margin:0;
     padding:0;
 }
-/**{
+/*
+*{
     -webkit-box-shadow: 0px 0px 2px 1px #D92B3A !important;
     box-shadow: 0px 0px 2px 1px #D92B3A !important;
  !*   background-color:#19191920 !important;
     background:#19191915 !important;*!
-}*/
+}
+*/
 
 a{
     font-family: var(--font-fam);
@@ -150,7 +152,27 @@ li{
 }
 .button_basic_long{
     width:13rem;
+    transition: all 0.3s;
 
+}
+
+/*trigger state using checkbox*/
+.button_basic_long:focus-within{
+    width:13rem;
+    background-color: #D92B3A;
+    transform: translateX(-50%);
+
+
+}
+.chk:checked + .button_basic_long{
+    width:13rem;
+    background-color: #D92B3A;
+    transform: translateX(-50%);
+}
+.chk_trigger{
+    width:2rem;
+    height:2rem;
+    background:#3b8a21;
 }
 .wrapper--narrow{
     margin: 0 auto;

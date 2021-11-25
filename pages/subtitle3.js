@@ -787,7 +787,14 @@ export default function Subtitle(){
                             <h2 className={styles.main_title_text}>EZTITLES</h2>
                         </div>
                         <div className={styles.free_trial_cell}>
+                            <input className='chk' type='checkbox' id='button-mover-trigger'/>
                             <a href='#' className="button button_basic_long">FREE TRIAL</a>
+
+
+                            <label for='button-mover-trigger'>
+
+                                <div className='chk_trigger'></div>
+                            </label>
                         </div>
                         <div className={styles.license_editions_cell}>
                             <a href='#' className="button button_basic_long">LICENSE EDITIONS</a>
@@ -1861,9 +1868,9 @@ export default function Subtitle(){
                             </div>
 
                     </div>
-                    <div className={styles.video_resolution_aspect_wrapper}>
+                    {/*commented out sections using grid*/}
+                    {/*<div className={styles.video_resolution_aspect_wrapper}>
 
-                        {/*file format card*/}
                         <div className={styles.v_r_a_card}>
                             <div className={`${styles.v_r_a_card_inner}`}>
                               <div className={styles.v_r_a_card_inner_title}>
@@ -1895,7 +1902,6 @@ export default function Subtitle(){
                             </div>
                         </div>
 
-                        {/*resolution card*/}
                         <div className={styles.v_r_a_card}>
                             <div className={`${styles.v_r_a_card_inner}`}>
                               <div className={styles.v_r_a_card_inner_title}>
@@ -1920,7 +1926,6 @@ export default function Subtitle(){
                             </div>
                         </div>
 
-                        {/*aspect ratio card*/}
                         <div className={styles.v_r_a_card}>
                             <div className={`${styles.v_r_a_card_inner}`}>
                                 <div className={styles.v_r_a_card_inner_title}>
@@ -1953,6 +1958,144 @@ export default function Subtitle(){
 
                                         </div>
                                     </li>
+                                        <li>
+                                            <span>2.35:1</span>
+                                            <div className={styles.ratio_icons}>
+                                                <MyImage src='/images/software/eztitles/movie-reel.png' width={35} height={35}/>
+
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <span>1:1</span>
+                                            <div className={styles.ratio_icons}>
+                                                <MyImage src='/images/software/eztitles/social_media.png' width={35} height={35}/>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span>5:4</span>
+                                            <div className={styles.ratio_icons}>
+                                                <MyImage src='/images/software/eztitles/pc.png' width={35} height={35}/>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span>3:2</span>
+                                            <div className={styles.ratio_icons}>
+                                                <MyImage src='/images/software/eztitles/film.png' width={35} height={35}/>
+                                                <MyImage src='/images/software/eztitles/camera.png' width={35} height={35}/>
+                                                <MyImage src='/images/software/eztitles/tablet.png' width={35} height={35}/>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>*/}
+                    {/*section using flex for more responsiveness*/}
+                    <div className={styles.video_resolution_aspect_wrapper_flex}>
+
+                        {/*file format card*/}
+                        <div className={styles.v_r_a_card_flex}>
+                            <div className={`${styles.v_r_a_card_inner}`}>
+                                <div className={styles.v_r_a_card_inner_title}>
+                                    <h4>any file format</h4>
+                                </div>
+                                <div className={styles.v_r_a_card_inner_description}>
+                                    <p className={styles.v_r_a_card_inner_description_text}>EZTitles works with nearly
+                                        any known video format
+                                        with embedded timecode</p>
+
+                                </div>
+                                <div className={styles.v_r_a_card_inner_format_wrapper}>
+                                    <ul>
+                                        <li>MPEG-1</li>
+                                        <li>MPEG-2</li>
+                                        <li>MPEG-4</li>
+                                        <li>AVI</li>
+                                    </ul>
+                                    <ul>
+                                        <li>WMV</li>
+                                        <li>MOV</li>
+                                        <li>MXF</li>
+                                        <li>MVF</li>
+                                    </ul>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        {/*resolution card*/}
+                        <div className={styles.v_r_a_card_flex}>
+                            <div className={`${styles.v_r_a_card_inner}`}>
+                                <div className={styles.v_r_a_card_inner_title}>
+                                    <h4>any resolution</h4>
+                                </div>
+                                <div className={styles.v_r_a_card_inner_description}>
+                                    <p className={styles.v_r_a_card_inner_description_text}>from SD up to 4K
+                                        and any custom resolution</p>
+
+                                </div>
+                                <div className={styles.v_r_a_card_inner_format_wrapper_resolution}>
+                                    <ul>
+                                        <li><span>SD<br/>640x480</span></li>
+                                        <li><span>HD<br/>1280x720</span></li>
+                                        <li><span>FULL HD<br/>1920x1080</span></li>
+                                        <li><span>4K<br/>4096x2160</span></li>
+                                    </ul>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        {/*aspect ratio card*/}
+                        <div className={styles.v_r_a_card_flex}>
+                            <div className={`${styles.v_r_a_card_inner}`}>
+                                <div className={styles.v_r_a_card_inner_title}>
+                                    <h4>any screen ratio</h4>
+                                </div>
+                                <div className={styles.v_r_a_card_inner_format_wrapper_ratio}>
+                                    <ul>
+                                        <li>
+                                            <span>16:10</span>
+                                            <div className={styles.ratio_icons}>
+                                                <MyImage src='/images/software/eztitles/computer-widescreen.png' width={35} height={35}/>
+                                                <MyImage src='/images/software/eztitles/pc.png' width={35} height={35}/>
+                                                <MyImage src='/images/software/eztitles/smartphone.png' width={35} height={35}/>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span>16:9</span>
+                                            <div className={styles.ratio_icons}>
+                                                <MyImage src='/images/software/eztitles/computer-widescreen.png' width={35} height={35}/>
+                                                <MyImage src='/images/software/eztitles/tv.png' width={35} height={35}/>
+                                                <MyImage src='/images/software/eztitles/smartphone.png' width={35} height={35}/>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span>1.85:1</span>
+                                            <div className={styles.ratio_icons}>
+                                                <MyImage src='/images/software/eztitles/cinema.png' width={35} height={35}/>
+
+                                            </div>
+                                        </li>
                                         <li>
                                             <span>2.35:1</span>
                                             <div className={styles.ratio_icons}>
