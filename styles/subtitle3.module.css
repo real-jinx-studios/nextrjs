@@ -1783,7 +1783,9 @@ text-align: center;
 }
 .product_version{
     position: relative;
-    margin-left: 30px;
+}
+.product_version + .product_version{
+    margin-left: 2rem;
 }
 .purchase_options{
     display:flex;
@@ -2460,6 +2462,63 @@ margin:0;
     border-top:1px solid #fefefe;
     margin-left:-1em;
     margin-right:-1em;
+}
+.payment_installment_cell{
+    grid-column: 1 / -1;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1em;
+    justify-content: space-between;
+}
+.dropdown_installment{
+    position: relative;
+    background-color: #ea2222;
+}
+.select_installment{
+    padding:0.8em 3em 0.8em 0.8em;
+    border:0;
+    font-size: 1rem;
+    color: var(--not-black);
+    font-family: var(--font-fam);
+    font-weight: 400;
+    background-color: var(--not-white);
+}
+.text_installment{
+margin:0;
+    padding:0;
+}
+.custom_arrow{
+    position: absolute;
+    top:0;
+    right:0;
+    height:100%;
+    width:2.2em;
+    background:#fefefe;
+    pointer-events: none;
+}
+.custom_arrow::before{
+    position: absolute;
+    content:'';
+    background-color: #191919;
+    top:50%;
+    left:35%;
+    width: 3px;
+    height:29%;
+    border-radius: 999px;
+    transform: translate(0, -50%) rotate(-40deg);
+}
+.custom_arrow::after{
+    position: absolute;
+    content:'';
+    background-color: #191919;
+    top:50%;
+    right:35%;
+    width: 3px;
+    height:29%;
+    border-radius: 999px;
+    transform: translate(0, -50%) rotate(40deg);
 }
 
 .payment_info_cell{

@@ -89,14 +89,6 @@ export default function Subtitle(){
         }*/
     },[inView1, inView2, inView3, inView4])
 
-    /*use cycle for animation state management for the card section after video*/
-    const [cardState, cycleCardState]=useCycle(
-        [{flex: '0 0 32%'},{flex: '0 0 32%'},{flex: '0 0 32%'}],
-        [{flex: '0 0 89%'},{flex: '0 0 5%'},{flex: '0 0 5%'}],
-        [{flex: '0 0 5%'},{flex: '0 0 5%'},{flex: '0 0 89%'}]
-    )
-
-    const [test, cycleTest]=useCycle('one','two','three')
 
     /*event handlers like clicks and such below*/
     const handleVideoPlay=()=>{
@@ -303,7 +295,7 @@ export default function Subtitle(){
 
         },
         open:{
-            flex:'0 0 3%',
+            flex:'0 0 2%',
             transition:cardTransition
         },
         bluerayClosed:{
@@ -390,12 +382,12 @@ export default function Subtitle(){
                 <div key={i} className={styles.option_version}>
                     <div className={styles.version_inner}>
                         <h2 data-tip data-for={`info ${i}`}>{x.name}
-                            <svg className={styles.version_info_icon} xmlns="http://www.w3.org/2000/svg" height="18px"
+                          {/*  <svg className={styles.version_info_icon} xmlns="http://www.w3.org/2000/svg" height="18px"
                                  viewBox="0 0 24 24" width="18px" fill="#000000">
                                 <path d="M0 0h24v24H0V0z" fill="none"/>
                                 <path
                                     d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                            </svg>
+                            </svg>*/}
                         </h2>
                         <ReactTooltip id={`info ${i}`} type='info'>
                             <span>{x.info}</span>
@@ -416,12 +408,12 @@ export default function Subtitle(){
                 <div  className={styles.selected_version}>
                     <div className={styles.version_inner}>
                         <h2 data-tip data-for={`info ${i}`}>{x.name}
-                            <svg className={styles.version_info_icon} xmlns="http://www.w3.org/2000/svg" height="18px"
+                           {/* <svg className={styles.version_info_icon} xmlns="http://www.w3.org/2000/svg" height="18px"
                                  viewBox="0 0 24 24" width="18px" fill="#000000">
                                 <path d="M0 0h24v24H0V0z" fill="none"/>
                                 <path
                                     d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                            </svg>
+                            </svg>*/}
                         </h2>
                         <ReactTooltip id={`info ${i}`} type='info'>
                             <span>{x.info}</span>
@@ -854,6 +846,17 @@ export default function Subtitle(){
 
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div className={styles.payment_installment_cell}>
+                            <p className={styles.text_installment}>1 payment of €436 and 3 payments of €435</p>
+                            <div className={styles.dropdown_installment}>
+                                <select className={styles.select_installment}>
+                                <option value=''>12 Months (4 payments)</option>
+                                <option value=''>24 Months (8 payments)</option>
+                                <option value=''>36 Months (12 payments)</option>
+                            </select>
+                                <span className={styles.custom_arrow}></span>
                             </div>
                         </div>
                         <div className={styles.checkout_btn_cell}>
