@@ -180,3 +180,29 @@
     height:2px;
     background-color: #fefefe;
 }
+.nav_side{
+    background-color: hsla(0 0% 0% / 0.5);
+
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:30%;
+    right:0;
+    /*when somebody turns phone to landscape the menu will decrease padding
+    the min will choose the smaller of the 2 values*/
+    padding: min(20vh, 11em) 2em;
+}
+.nav_button{
+    position: absolute;
+    background:#D92B3A;
+    width:1rem;
+    height:1rem;
+    border:0;
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+    .nav_side {
+        background-color: hsla(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);
+    }
+}

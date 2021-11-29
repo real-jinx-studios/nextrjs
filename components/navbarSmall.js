@@ -80,8 +80,22 @@ export default function NavbarSmall(){
                     </div>
 
                 </div>
-                <div className={styles.nav_sec_right}>
+                <div className={`${styles.nav_sec_right}`}>
                    <Hamburger scroll={scroll}/>
+                    <button className={styles.nav_button} aria-controls='primary-navigation' aria-expanded='false'><span className='sr-only'>Menu</span></button>
+                    <div className={styles.nav_side}>
+                        <ul id='primary-navigation'>
+                            <li>Subtitle</li>
+                            <li>Convert</li>
+                            <li>3DTitles</li>
+                            <li>Subtitling Assistant</li>
+                            <li><br/></li>
+                            <li>Services Portal</li>
+                            <li>Search</li>
+                            <li>Whatever</li>
+                        </ul>
+
+                    </div>
 
 
                 </div>

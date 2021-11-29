@@ -2245,8 +2245,8 @@ text-align: center;
 }
 .card_inner_title_extended{
     margin: 0 auto;
-    margin-top:60px;
-    margin-bottom:20px;
+    margin-bottom:1.2em;
+    margin-top:0.5em;
     text-align: center;
     display:flex;
     flex-direction: row;
@@ -2275,17 +2275,21 @@ font-size: 1.099rem;
     font-weight: 400;
 }
 .card_inner_extended_description{
-    width:68%;
+
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: column;
 }
 .card_inner_extended_description_text{
+    margin-bottom:1em;
 
 }
+.card_inner_extended_description_list ul{
+padding-left:0.6em;
+}
 .card_inner_extended_description_list ul li{
-    margin-top: 12px;
+    margin-bottom: 0.98em;
 
 }
 .card_inner_extended_description_list ul li::before{
@@ -2294,28 +2298,41 @@ font-size: 1.099rem;
     font-weight: bold;
     display: inline-block;
     width: 1em;
-    margin-left: -1em;
+    margin-left: -0.1em;
 }
 .card_inner_description_text{
-    font-size: 19px;
-    line-height: 1.5211026316;
-    font-weight: 600;
-    letter-spacing: .012em;
+    font-size: 1.125rem;
+    line-height: 1.518;
+    font-weight: normal;
+    color:#fefefeef;
 }
 .card_inner_extended_description_title h4{
-margin:0;
+    font-size: 1.5em;
+    font-weight: 600;
+
 }
 .card_inner_extended_digital_cinema_list{
-    margin-bottom: 11px;
+    margin-bottom: 0.3em;
+}
+.card_inner_extended_digital_cinema_list ul{
+    padding-left:0.6em;
 }
 .card_inner_extended_digital_cinema_list ul li{
-    line-height: 1.2;
+
+}
+.card_inner_extended_digital_cinema_list ul li::before{
+    content: "\2022";
+    color: #4DC4EF;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -0.1em;
 }
 .card_inner_overlay_description_text{
     color:#000000;
-    font-size: 19px;
-    line-height: 1.4211026316;
-    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.518;
+    font-weight: normal;
     letter-spacing: .012em;
 }
 .card_inner_overlay_description_ul li{
@@ -2324,7 +2341,7 @@ margin:0;
 
 }
 .card_inner_overlay_images{
-    margin-top: 18px;
+    margin-top: 1em;
     display:grid;
     grid-column-gap: 8px;
     grid-row-gap: 5px;

@@ -906,7 +906,6 @@ export default function Subtitle(){
             {/*video section*/}
             <section className={styles.video_section}>
                 <div className={styles.container} id='video'>
-                    <div className={styles.content_inner}>
                         <div className={styles.content_inner_text}>
                             <div className={styles.paragraph}>
                                 <h2 className={styles.subsection_title}>Take a quick look at EZTitles’ capabilities</h2>
@@ -966,7 +965,7 @@ export default function Subtitle(){
                             </div>
                         </div>
 
-                    </div>
+
                 </div>
             </section>
 
@@ -1657,7 +1656,7 @@ export default function Subtitle(){
                                                 Digital Cinema subtitling. The Digital Cinema mode supports the following image resolutions:</p>
                                         </div>
                                         <div className={styles.card_inner_extended_digital_cinema_list}>
-                                            <ul  style={{margin:0, padding:0}}>
+                                            <ul>
                                                 <li>1998 x 1080, 2K flat in 1.85 : 1 aspect ratio;</li>
                                                 <li>2048 x 858, 2K scope in 2.39 : 1 aspect ratio;</li>
                                                 <li>2048 x 1080, 2K full container in 1.90:1 aspect ratio;</li>
@@ -1759,7 +1758,7 @@ export default function Subtitle(){
                                             available for the following systems:</p>
                                     </div>
                                     <div className={styles.card_inner_extended_digital_cinema_list}>
-                                        <ul style={{margin:0, padding:0}}>
+                                        <ul>
                                             <li>DaVinci Resolve,</li>
                                             <li>Sony Blu-print™,</li>
                                             <li>Sonic Scenarist HDMV (Blu-ray),</li>
