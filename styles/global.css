@@ -60,6 +60,7 @@ html, body{
     /*filter: grayscale(100%);*/
     box-sizing: border-box;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
 }
 
 *, *::before, *::after{

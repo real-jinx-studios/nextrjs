@@ -46,7 +46,7 @@ export default function PaypalCheckout(){
     </script>*/
     return(
         <>
-            <Script src="https://www.paypal.com/sdk/js?client-id=AbPfHl4rmjuW5fptWJJec7Vx9_VqCUxsqR48RSTepYhyE9dcYDsimVGgontvstnHOcrYZBE6WPMglcR3&vault=true&intent=subscription"/>
+            <Script src="https://www.paypal.com/sdk/js?client-id=AbPfHl4rmjuW5fptWJJec7Vx9_VqCUxsqR48RSTepYhyE9dcYDsimVGgontvstnHOcrYZBE6WPMglcR3&vault=true&intent=subscription" defer/>
             {ready?<div id='paypal-button-container' style={{position:'relative'}}>BUY SHIT</div>:<h3>loading shit</h3>}
         </>
     )

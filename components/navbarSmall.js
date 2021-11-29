@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, Ref, useRef} from "react";
 import styles from './navbarSmall.module.css'
 import Link from 'next/link'
 import MyImage from "./myImage";
@@ -29,24 +29,7 @@ export default function NavbarSmall(){
         window.onscroll=(function(e){catchScroll(e)})
     },[])
 
-    const handleCartClick=(e)=>{
-        e.preventDefault()
-        if(!isCart){
-            router.push('/buy/products')
 
-        } else if(!isUser){
-            router.push('/buy/setup-user')
-
-        } else if(isCart){
-            router.push('/buy/checkout')
-
-        }else{
-            router.push('/buy/products')
-        }
-
-
-
-    }
 
 
     //animations
@@ -55,8 +38,21 @@ export default function NavbarSmall(){
         enter:{width:60, transition:{duration:0.3}},
         exit:{width:-60, transition:{duration:0.3}},
     }
+    const nav_btn=useRef()
+    const primary_nav=useRef()
 
+    const handleBorgerClick=(e)=>{
+        const vis=primary_nav.current.getAttribute('data-visible')
 
+        if(vis==='false'){
+            primary_nav.current.setAttribute('data-visible', 'true')
+            nav_btn.current.setAttribute('aria-expanded', 'true')
+        }else{
+            primary_nav.current.setAttribute('data-visible', 'false')
+            nav_btn.current.setAttribute('aria-expanded', 'false')
+        }
+
+    }
 
     return(
         <nav className={cn({
@@ -81,9 +77,9 @@ export default function NavbarSmall(){
 
                 </div>
                 <div className={`${styles.nav_sec_right}`}>
-                   <Hamburger scroll={scroll}/>
-                    <button className={styles.nav_button} aria-controls='primary-navigation' aria-expanded='false'><span className='sr-only'>Menu</span></button>
-                    <div className={styles.nav_side}>
+                   {/*<Hamburger scroll={scroll}/>*/}
+                    <button onClick={handleBorgerClick} ref={nav_btn} className={styles.nav_button} aria-controls='primary-navigation' aria-expanded='false'><span className='sr-only'>Menu</span></button>
+                    <div  ref={primary_nav} data-visible='false' className={styles.nav_side}>
                         <ul id='primary-navigation'>
                             <li>Subtitle</li>
                             <li>Convert</li>
