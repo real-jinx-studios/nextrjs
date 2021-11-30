@@ -61,6 +61,7 @@ html, body{
     box-sizing: border-box;
     scroll-padding-top: 80px;
     overflow-x: hidden;
+    background-color: #fefefe;
 }
 
 *, *::before, *::after{
