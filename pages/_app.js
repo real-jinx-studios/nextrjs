@@ -1,15 +1,12 @@
 import "../styles/global.css";
 import Navbar2 from "../components/navbar2";
 import Footer from "../components/footer";
-import { Provider } from "react-redux";
-import { useStore } from "../store";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import Link from "next/link";
 
 import { useRouter } from "next/router";
 import Modal from "../components/Modal";
-import { IdProvider } from "@radix-ui/react-id";
 import NavbarSmall from "../components/navbarSmall";
 import Head from "next/head";
 import { StoreProvider } from "../utils/store";
@@ -48,27 +45,25 @@ export default function App({ Component, pageProps }) {
   const isBreakpoint = useMediaQuery(1111);
   return (
     <StoreProvider>
-      <IdProvider>
-        <Head>
-          <meta
-            name="google-site-verification"
-            content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg"
-          />
-        </Head>
-        <main>
-          <Component
-            setModal={setModal}
-            location={router.pathname}
-            key={router.pathname}
-            {...pageProps}
-          />
-        </main>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg"
+        />
+      </Head>
+      <main>
+        <Component
+          setModal={setModal}
+          location={router.pathname}
+          key={router.pathname}
+          {...pageProps}
+        />
+      </main>
 
-        {isBreakpoint ? <NavbarSmall /> : <Navbar2 />}
-        <Footer />
-        {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
-        <Modal showModal={showModal} setModal={setModal} />
-      </IdProvider>
+      {isBreakpoint ? <NavbarSmall /> : <Navbar2 />}
+      <Footer />
+      {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
+      <Modal showModal={showModal} setModal={setModal} />
     </StoreProvider>
   );
 }

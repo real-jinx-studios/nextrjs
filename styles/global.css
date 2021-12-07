@@ -28,6 +28,11 @@
     --main-color-somewhat-light:#186EB4;
     --main-color-very-light:#288EE2;
     --main-color-super-light:#6FB4EB;
+    --system-w-blue:#007aff;
+    --system-b-blue:#0a84ff;
+    --system-w-teal:#5ac8fa;
+    --system-b-teal:#64d2ff;
+    --system-w-red:#ff453a;
     --main-color-super-super-light: #cddbe8;
     --main-color-ctaq:#E3B654;
     --accent-second:#F24C27;
@@ -266,7 +271,7 @@ li{
     margin:0 auto;
     color:#ffffff;
     font-weight: 500;
-    background-color: var(--clr-main-cta);
+    background-color: var(--system-b-blue);
     border: none;
     white-space: nowrap;
     padding: 0.5em 1.45em;
@@ -356,7 +361,23 @@ li{
 
 
 }
-
+.section-one{
+    position: relative;
+    z-index: 20;
+    margin-top:160px;
+    margin-bottom:80px;
+    margin-left:auto;
+    margin-right:auto;
+    max-width: var(--large-max-width);
+}
+.section-one h1{
+    color: var(--clr-neutral-50);
+    font-size:6rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -1.5px;
+    text-align: center;
+}
 .product-wrapper{
     position: relative;
     z-index: 20;
@@ -389,8 +410,9 @@ li{
     text-align: center;
     line-height: 1;
     font-size: 3rem;
-    font-weight: 700;
-    color: var(--clr-neutral-900);
+    font-weight: 500;
+    letter-spacing: 0px;
+    color: var(--clr-neutral-750);
 }
 .grid-wrapper__item p, .grid-wrapper__item p span{
     color: inherit !important;

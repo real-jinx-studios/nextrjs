@@ -61,7 +61,7 @@ export default function Navbar2() {
               [styles.nav_li_scroll]: scroll === true,
             })}
           >
-            <Link href="/subtitle">
+            <Link href="/subtitle3">
               <a className={styles.nav_link_a}>Subtitle</a>
             </Link>
           </li>
@@ -81,7 +81,7 @@ export default function Navbar2() {
               [styles.nav_li_scroll]: scroll === true,
             })}
           >
-            <Link href="/convert">
+            <Link href="/subass">
               <a className={styles.nav_link_a}>Subtitling Assistant</a>
             </Link>
           </li>
@@ -124,6 +124,7 @@ export default function Navbar2() {
                   height={50}
                   width={100}
                   alt="EZTitles Logo"
+                  layout="intrinsic"
                 />
               </a>
             </Link>

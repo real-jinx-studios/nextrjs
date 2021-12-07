@@ -24,6 +24,7 @@ import Head from "next/head";
 import { ref } from "react";
 import Layout from "../components/layout";
 import { Store } from "../utils/store";
+import axios from "axios";
 
 export default function Subtitle() {
   /*intersection observer shit*/
@@ -500,6 +501,23 @@ export default function Subtitle() {
     }
   });
 
+  const { state, dispatch } = useContext(Store);
+  const handleCheckout = async (e) => {
+    e.preventDefault();
+    const { data } = await axios.get(`/api/products/${product._id}`);
+    //do some check on data and stuff
+    console.log(data);
+    dispatch({
+      type: "ADD_TO_CHECKOUT_NORMAL",
+      payload: {
+        name: "EZTitles",
+        edition: "ESSENTIALS",
+        license: "RENT",
+        qty: 1,
+      },
+    });
+  };
+
   return (
     <Layout
       title="EZTitles subtitle software"
@@ -939,7 +957,11 @@ export default function Subtitle() {
               </div>
             </div>
             <div className={styles.checkout_btn_cell}>
-              <a href="#" className="button button_basic_long">
+              <a
+                href="#"
+                onClick={handleCheckout}
+                className="button button_basic_long"
+              >
                 GO TO CHECKOUT
               </a>
             </div>
