@@ -16,7 +16,8 @@ export default function Home(props) {
   const { products } = props;
   return (
     <Layout home>
-      <section>
+      <section className="section-one">
+        <h1>Cutting-edge professional subtitling products</h1>
         <div className="product-wrapper">
           {products.map((x) => (
             <Link href="/subtitle3">

@@ -2767,8 +2767,9 @@ margin:0;
 .main_title_text{
     margin:0 auto;
     text-align: center;
-    font-size: 5em;
-    font-weight: 700;
+    letter-spacing: -1.5px;
+    font-size: 6rem;
+    font-weight: 400;
 
 
 }
@@ -2782,7 +2783,7 @@ margin:0;
     margin:0 auto;
     color:#ffffff;
     font-weight: 500;
-    background-color: var(--clr-main-cta);
+    background-color: var(--system-b-teal);
     border: none;
     width:211px;
     white-space: nowrap;
