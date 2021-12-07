@@ -9,6 +9,7 @@ import HomePostMain from "../components/homePostMain";
 import styles from "../components/homeMain.module.css";
 import Logo from "../components/logo";
 import db from "../utils/db";
+import Link from "next/link";
 import Product from "../models/product";
 
 export default function Home(props) {
@@ -18,33 +19,35 @@ export default function Home(props) {
       <section>
         <div className="product-wrapper">
           {products.map((x) => (
-            <div key={x.name} className="grid-wrapper__item">
-              <h3>{x.name}</h3>
-              <p>
-                Editions:
-                {x.editions.map((y) => (
-                  <span>&nbsp; &#127569;{y}&nbsp;</span>
-                ))}
-              </p>
-              <p>
-                prices:
-                {x.price_no_vat.map((z) => (
-                  <span>&nbsp; &#127569;{z}EUR&nbsp;</span>
-                ))}
-              </p>
-              <p>
-                licenses:
-                {x.license.map((q) => (
-                  <span>&nbsp; &#127569;{q}&nbsp;</span>
-                ))}
-              </p>
-              <p>
-                tags:
-                {x.categories.map((w) => (
-                  <span>&nbsp; &#127569;{w}&nbsp;</span>
-                ))}
-              </p>
-            </div>
+            <Link href="/subtitle3">
+              <div key={x.name} className="grid-wrapper__item">
+                <h3>{x.name}</h3>
+                <p>
+                  Editions:
+                  {x.editions.map((y) => (
+                    <span>&nbsp; &#127569;{y}&nbsp;</span>
+                  ))}
+                </p>
+                <p>
+                  prices:
+                  {x.price_no_vat.map((z) => (
+                    <span>&nbsp; &#127569;{z}EUR&nbsp;</span>
+                  ))}
+                </p>
+                <p>
+                  licenses:
+                  {x.license.map((q) => (
+                    <span>&nbsp; &#127569;{q}&nbsp;</span>
+                  ))}
+                </p>
+                <p>
+                  tags:
+                  {x.categories.map((w) => (
+                    <span>&nbsp; &#127569;{w}&nbsp;</span>
+                  ))}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
