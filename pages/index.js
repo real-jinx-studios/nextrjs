@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import Layout, {siteTitle} from "../components/layout";
-import utilStyles from '../styles/utils.module.css'
+import Head from "next/head";
+import Layout, { siteTitle } from "../components/layout";
+import utilStyles from "../styles/utils.module.css";
 import Navbar from "../components/navbar";
 import HomeMain from "../components/homeMain";
 import HomeMain2 from "../components/homeMain2";
@@ -8,27 +8,54 @@ import HomeProductsMain from "../components/homeProductsMain";
 import HomePostMain from "../components/homePostMain";
 import styles from "../components/homeMain.module.css";
 import Logo from "../components/logo";
+import db from "../utils/db";
+import Product from "../models/product";
 
+export default function Home(props) {
+  const { products } = props;
+  return (
+    <Layout home>
+      <section>
+        <div className="product-wrapper">
+          {products.map((x) => (
+            <div key={x.name} className="grid-wrapper__item">
+              <h3>{x.name}</h3>
+              <p>
+                Editions:
+                {x.editions.map((y) => (
+                  <span>&nbsp; &#127569;{y}&nbsp;</span>
+                ))}
+              </p>
+              <p>
+                prices:
+                {x.price_no_vat.map((z) => (
+                  <span>&nbsp; &#127569;{z}EUR&nbsp;</span>
+                ))}
+              </p>
+              <p>
+                licenses:
+                {x.license.map((q) => (
+                  <span>&nbsp; &#127569;{q}&nbsp;</span>
+                ))}
+              </p>
+              <p>
+                tags:
+                {x.categories.map((w) => (
+                  <span>&nbsp; &#127569;{w}&nbsp;</span>
+                ))}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
 
-export default function Home() {
-
-
-
-
-    return(
-        <Layout home>
-
-            <Head>
-                <title>{siteTitle}</title>
-
-
-
-            </Head>
-
-            <HomeMain2/>
-            <HomeMain/>
-          {/*  <div className={styles.customers_slider}>
+      <HomeMain2 />
+      <HomeMain />
+      {/*  <div className={styles.customers_slider}>
                 <div className={styles.clients_title}>
                     <h2>Our Clients</h2>
                 </div>
@@ -83,10 +110,17 @@ export default function Home() {
 
             </div>
             <HomePostMain/>*/}
-
-
-
-        </Layout>
-    )
+    </Layout>
+  );
 }
+export async function getServerSideProps() {
+  await db.connect();
+  const products = await Product.find({}).lean();
 
+  await db.disconnect();
+  return {
+    props: {
+      products: products.map(db.convertDocToObj),
+    },
+  };
+}

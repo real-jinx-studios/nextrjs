@@ -2925,7 +2925,8 @@ margin:0;
     justify-content: center;
     place-items: center;
     flex-direction: column;
-    background:var(--clr-neutral-100);
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 18%, rgba(255,255,255,1) 19%, rgba(254,254,254,1) 22%, rgba(254,254,254,1) 36%, rgba(246,248,251,1) 36%, rgba(246,248,251,1) 52%, rgba(239,243,248,1) 52%, rgba(238,242,248,1) 74%, rgba(227,229,234,1) 74%);
 
 }
 .last_section p{

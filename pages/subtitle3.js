@@ -12,7 +12,7 @@ import {
   AnimateSharedLayout,
 } from "framer-motion";
 import { stagger, fadeInUp, easing } from "../components/animations";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import AnimateOnScroll from "../components/animateOnScroll";
 import AnimateDirectionSlide from "../components/animateDirectionSlide";
@@ -23,6 +23,7 @@ import PaypalCheckout from "../components/paypalCheckout";
 import Head from "next/head";
 import { ref } from "react";
 import Layout from "../components/layout";
+import { Store } from "../utils/store";
 
 export default function Subtitle() {
   /*intersection observer shit*/
@@ -2432,16 +2433,19 @@ export default function Subtitle() {
                             src="/images/software/eztitles/computer-widescreen.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                           <MyImage
                             src="/images/software/eztitles/pc.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                           <MyImage
                             src="/images/software/eztitles/smartphone.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                         </div>
                       </li>
@@ -2452,16 +2456,19 @@ export default function Subtitle() {
                             src="/images/software/eztitles/computer-widescreen.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                           <MyImage
                             src="/images/software/eztitles/tv.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                           <MyImage
                             src="/images/software/eztitles/smartphone.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                         </div>
                       </li>
@@ -2472,6 +2479,7 @@ export default function Subtitle() {
                             src="/images/software/eztitles/cinema.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                         </div>
                       </li>
@@ -2482,6 +2490,7 @@ export default function Subtitle() {
                             src="/images/software/eztitles/movie-reel.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                         </div>
                       </li>
@@ -2494,6 +2503,7 @@ export default function Subtitle() {
                             src="/images/software/eztitles/social_media.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                         </div>
                       </li>
@@ -2504,6 +2514,7 @@ export default function Subtitle() {
                             src="/images/software/eztitles/pc.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                         </div>
                       </li>
@@ -2514,16 +2525,19 @@ export default function Subtitle() {
                             src="/images/software/eztitles/film.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                           <MyImage
                             src="/images/software/eztitles/camera.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                           <MyImage
                             src="/images/software/eztitles/tablet.png"
                             width={35}
                             height={35}
+                            layout="intrinsic"
                           />
                         </div>
                       </li>
