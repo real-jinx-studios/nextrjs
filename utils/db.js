@@ -19,7 +19,11 @@ async function connect() {
   }
 
   //if we reach this point then it means we never have connected to db so do tha tnow
-  const db = await mongoose.connect(process.env.MONGODB_URI);
+  const db = await mongoose.connect(
+    process.env.NODE_ENV === "production"
+      ? process.env.MONGODB_URI_PROD
+      : process.env.MONGODB_URI
+  );
   console.log("new connection");
   connection.isConnected = db.connections[0].readyState;
 }
