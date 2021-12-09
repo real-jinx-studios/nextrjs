@@ -4,6 +4,9 @@ import Cookies from "js-cookie";
 export const Store = createContext();
 const initialState = {
   logged_in: Cookies.get("logged_in") === "true",
+  checkout: {
+    checkoutItems: [],
+  },
 };
 
 function reducer(state, action) {
@@ -12,6 +15,24 @@ function reducer(state, action) {
       return { ...state, logged_in: true };
     case "LOG_OUT":
       return { ...state, logged_in: false };
+    case "ADD_TO_CHECKOUT_NORMAL": {
+      const newItem = action.payload;
+      //check if item already exist in checkout
+      const existItem = state.checkout.checkoutItems.find(
+        (item) =>
+          item.name === newItem.name &&
+          item.edition === newItem.edition &&
+          item.license === newItem.license
+      );
+      const checkoutItems = existItem
+        ? state.checkout.checkoutItems.map((item) =>
+            item.name === existItem.name
+              ? { ...newItem, quantity: item.quantity + 1 }
+              : item
+          )
+        : [...state.checkout.checkoutItems, newItem];
+      return { ...state, checkout: { ...state.checkout, checkoutItems } };
+    }
     default:
       return state;
   }

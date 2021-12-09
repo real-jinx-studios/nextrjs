@@ -7,7 +7,7 @@ export const siteTitle = "EZTitles Dev Studio";
 
 export default function Layout({ children, home, title, description }) {
   const { state, dispatch } = useContext(Store);
-  const { logged_in } = state;
+  const { logged_in, checkout } = state;
   return (
     <>
       <Head>

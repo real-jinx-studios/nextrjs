@@ -2503,10 +2503,11 @@ padding-left:0.6em;
     gap:1em;
     justify-content: space-between;
 }
-.dropdown_installment{
+.dropdown_menu{
     position: relative;
+    overflow: hidden;
 }
-.select_installment{
+.select_custom{
     padding:0.8em 3em 0.8em 0.8em;
     border:0;
     font-size: 1rem;
@@ -2533,7 +2534,7 @@ margin:0;
     content:'';
     background-color: #191919;
     top:50%;
-    left:35%;
+    left:36%;
     width: 3px;
     height:29%;
     border-radius: 999px;
@@ -2544,7 +2545,7 @@ margin:0;
     content:'';
     background-color: #191919;
     top:50%;
-    right:35%;
+    right:36%;
     width: 3px;
     height:29%;
     border-radius: 999px;
@@ -2946,4 +2947,8 @@ margin:0;
     line-height: 1;
     font-weight: 800;
     margin-bottom: 1.5em;
+}
+.last_section p::selection{
+    background-color: var(--clr-neutral-750);
+    color:var(--clr-neutral-150);
 }

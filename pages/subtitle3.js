@@ -504,16 +504,20 @@ export default function Subtitle() {
   const { state, dispatch } = useContext(Store);
   const handleCheckout = async (e) => {
     e.preventDefault();
-    const { data } = await axios.get(`/api/products/${product._id}`);
+    const product = {
+      _id: "61af647e6d045de19b810b71",
+    };
+    /*const { data } = await axios.get(`/api/products/${product._id}`);*/
     //do some check on data and stuff
-    console.log(data);
+    console.log("fuk");
+    /*console.log(data);*/
     dispatch({
       type: "ADD_TO_CHECKOUT_NORMAL",
       payload: {
         name: "EZTitles",
         edition: "ESSENTIALS",
         license: "RENT",
-        qty: 1,
+        quantity: 1,
       },
     });
   };
@@ -539,303 +543,6 @@ export default function Subtitle() {
       <motion.header className={styles.main_wrapper} ref={ref}>
         {/*eztitles purchase menu*/}
         <motion.div className={styles.page_top}>
-          {/*<motion.div className={styles.page_top_wrapper}>
-                        <motion.div className={styles.page_top_inner}>
-                            <div className={styles.main_title_description_wrapper}>
-                                <div className='wrapper--narrow'>
-                                    <h1 className={styles.main_title_description_text}>The world’s best professional subtitling
-                                and captioning software</h1>
-                                </div>
-                            </div>
-                            <div className={styles.main_title_wrapper}><h2
-                                className={styles.main_title_text}>EZTITLES</h2></div>
-                            <div className={styles.free_trial_wrapper}>
-                                <div className="button button_basic_long">FREE TRIAL</div>
-                            </div>
-                            <div className={styles.license_editions_wrapper}>
-                                <div className="button button_basic_long">LICENSE EDITIONS</div>
-                            </div>
-                            <div className={styles.pricing_options_wrapper}>
-                                <div className={styles.pricing_options_description}>
-                                    <h4 className={styles.pricing_options_description_title}>CHECK PRICING
-                                        OPTIONS<br/><span>EZTitles license editions differ only in the supported file formats</span>
-                                    </h4>
-                                </div>
-                                <div className={styles.pricing_options_dropdown}>
-                                    <div style={{height: 48}}>
-                                        <select className={styles.version_dropdown_select}>
-                                            <option value='essentials'>Essentials</option>
-                                            <option value='standard'>Standard</option>
-                                            <option value='ultimate'>Ultimate</option>
-                                        </select>
-                                        {liSelectedElement}
-
-                                        <AnimatePresence exitBeforeEnter>
-                                            {isDropdownOpen && (<>
-                                                    {liOptionsElement}
-                                                </>
-                                            )}
-                                        </AnimatePresence>
-                                    </div>
-                                </div>
-                            </div>
-                            <motion.div className={styles.payment_select_wrapper}>
-                                <div className={styles.payment_select_inner}>
-                                    <div className={styles.product_versions}>
-                                        <p className={styles.product_versions_label}>Payment:</p>
-
-                                        <div className={styles.select}>
-                                            <div className={styles.purchase_options}>
-                                                <div className={styles.product_version} key='one-time'
-                                                     onClick={() => handlePaymentSelect('one-time')}>
-                                                    <div className={isPaymentSelected=='one-time'?styles.product_label_wrapper_on:styles.product_label_wrapper_off}>
-                                                        one-time
-
-                                                    </div>
-
-                                                </div>
-
-
-                                                <div className={styles.product_version} key='rent'
-                                                     onClick={() => handlePaymentSelect('rent')}>
-                                                    <div className={isPaymentSelected=='rent'?styles.product_label_wrapper_on:styles.product_label_wrapper_off}>
-                                                        rent
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div className={styles.product_version} key='installment'
-                                                     onClick={() => handlePaymentSelect('installment')}>
-                                                    <div className={isPaymentSelected=='installment'?styles.product_label_wrapper_on:styles.product_label_wrapper_off}>
-                                                        installments
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className={styles.product_version}>
-                                            <div className={styles.product_label_wrapper_off}>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                    <AnimatePresence exitBeforeEnter>
-                                        {isPaymentSelected == 'rent' && <motion.div
-                                            variants={paymentRentInstallmentVariant}
-                                            initial='initial'
-                                            animate='animate'
-                                            exit='exit'
-                                            key='rent-payment'
-                                            className={styles.rent}>
-                                            <p className={styles.product_versions_label}>Months:</p>
-                                            <div className={styles.select}>
-                                                <select style={{display: "none"}} name="size"
-                                                        className="o-caption o-caption--bold js-size-select">
-
-                                                    <option value="6" selected="selected">1</option>
-
-                                                    <option value="6.5">2</option>
-
-                                                    <option value="7">3</option>
-
-                                                    <option value="7.5">4</option>
-
-                                                    <option value="8">5</option>
-
-                                                    <option value="8.5">6</option>
-
-                                                    <option value="9">7</option>
-
-                                                    <option value="9.5">8</option>
-
-
-                                                </select>
-                                                <div className={styles.rent_dropdown} onClick={toggleRentDropdown}>
-                                                    <p>1 MONTH</p>
-                                                    {!isRentDropdownOpen && (<motion.svg
-                                                        initial={{opacity: 0}}
-                                                        animate={{opacity: 1}}
-                                                        exit={{opacity: 0}}
-                                                        className={styles.rent_dropdown_svg}
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        height="36px" viewBox="0 0 24 24" width="36px"
-                                                        fill="#FFFFFF">
-                                                        <path d="M24 24H0V0h24v24z" fill="none" opacity=".87"/>
-                                                        <path
-                                                            d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z"/>
-                                                    </motion.svg>)}
-                                                    {isRentDropdownOpen && (<motion.svg
-                                                        initial={{opacity: 0}}
-                                                        animate={{opacity: 1}}
-                                                        exit={{opacity: 0}}
-                                                        className={styles.rent_dropdown_svg}
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        height="36px" viewBox="0 0 24 24" width="36px"
-                                                        fill="#FFFFFF">
-                                                        <path xmlns="http://www.w3.org/2000/svg" d="M0 0h24v24H0V0z"
-                                                              fill="none"/>
-                                                        <path xmlns="http://www.w3.org/2000/svg"
-                                                              d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/>
-                                                    </motion.svg>)}
-                                                </div>
-                                                <AnimatePresence exitBeforeEnter>
-                                                    {isRentDropdownOpen && (
-                                                        <motion.div
-                                                            variants={dropdownAnimVariantRentOption}
-                                                            initial='initial'
-                                                            animate='animate'
-                                                            exit='exit'
-                                                            key='rent'
-                                                        >
-                                                            <motion.div
-                                                                variants={dropdownAnimVariantRentItem}
-                                                                key='option1'
-                                                                className={styles.rent_dropdown_item}
-                                                                onClick={toggleRentDropdown}>
-                                                                <p>2 MONTHS</p>
-                                                            </motion.div>
-                                                            <motion.div
-                                                                variants={dropdownAnimVariantRentItem}
-                                                                key='option2'
-                                                                className={styles.rent_dropdown_item}
-                                                                onClick={toggleRentDropdown}>
-                                                                <p>3 MONTHS</p>
-                                                            </motion.div>
-                                                            <motion.div
-                                                                variants={dropdownAnimVariantRentItem}
-                                                                key='option2'
-                                                                className={styles.rent_dropdown_item}
-                                                                onClick={toggleRentDropdown}>
-                                                                <p>4 MONTHS</p>
-                                                            </motion.div>
-                                                            <motion.div
-                                                                variants={dropdownAnimVariantRentItem}
-                                                                key='option2'
-                                                                className={styles.rent_dropdown_item}
-                                                                onClick={toggleRentDropdown}>
-                                                                <p>5 MONTHS</p>
-                                                            </motion.div>
-                                                        </motion.div>
-                                                    )}
-                                                </AnimatePresence>
-
-                                            </div>
-                                        </motion.div>
-                                        }
-
-                                        {isPaymentSelected == 'installment' && <motion.div
-                                            variants={paymentRentInstallmentVariant}
-                                            initial='initial'
-                                            animate='animate'
-                                            exit='exit'
-                                            key='installment-payment'
-                                            className={styles.rent}>
-                                            <p className={styles.product_versions_label}>Installment Plan:</p>
-                                            <div className={styles.select}>
-                                                <select style={{display: 'none'}} name="size"
-                                                        className="o-caption o-caption--bold js-size-select">
-
-                                                    <option value="6" selected="selected">12 months (4 payments)
-                                                    </option>
-
-                                                    <option value="6.5">24 months (8 payments)</option>
-
-                                                    <option value="7">36 months (12 payments)</option>
-
-
-                                                </select>
-                                                <div className={styles.installment_dropdown}
-                                                     onClick={toggleInstallmentDropdown}>
-                                                    <p>12 MONTHS (4 payments)</p>
-                                                    {!isInstallmentDropdownOpen && (<motion.svg
-                                                        initial={{opacity: 0}}
-                                                        animate={{opacity: 1}}
-                                                        exit={{opacity: 0}}
-                                                        className={styles.installment_dropdown_svg}
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        height="36px" viewBox="0 0 24 24" width="36px"
-                                                        fill="#FFFFFF">
-                                                        <path d="M24 24H0V0h24v24z" fill="none" opacity=".87"/>
-                                                        <path
-                                                            d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z"/>
-                                                    </motion.svg>)}
-                                                    {isInstallmentDropdownOpen && (<motion.svg
-                                                        initial={{opacity: 0}}
-                                                        animate={{opacity: 1}}
-                                                        exit={{opacity: 0}}
-                                                        className={styles.installment_dropdown_svg}
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        height="36px" viewBox="0 0 24 24" width="36px"
-                                                        fill="#FFFFFF">
-                                                        <path xmlns="http://www.w3.org/2000/svg" d="M0 0h24v24H0V0z"
-                                                              fill="none"/>
-                                                        <path xmlns="http://www.w3.org/2000/svg"
-                                                              d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"/>
-                                                    </motion.svg>)}
-                                                </div>
-                                                <AnimatePresence exitBeforeEnter>
-                                                    {isInstallmentDropdownOpen && (
-                                                        <motion.div
-                                                            variants={dropdownAnimVariantInstallmentOption}
-                                                            initial='initial'
-                                                            animate='animate'
-                                                            exit='exit'
-                                                            key='rent'
-                                                        >
-                                                            <motion.div
-                                                                variants={dropdownAnimVariantRentItem}
-                                                                key='option1'
-                                                                className={styles.installment_dropdown_item}
-                                                                onClick={toggleInstallmentDropdown}>
-                                                                <p>24 MONTHS (8 payments)</p>
-                                                            </motion.div>
-                                                            <motion.div
-                                                                variants={dropdownAnimVariantRentItem}
-                                                                key='option2'
-                                                                className={styles.installment_dropdown_item}
-                                                                onClick={toggleInstallmentDropdown}>
-                                                                <p>36 MONTHS (12 payments)</p>
-                                                            </motion.div>
-                                                        </motion.div>
-                                                    )}
-                                                </AnimatePresence>
-
-                                            </div>
-                                        </motion.div>
-                                        }
-                                    </AnimatePresence>
-                                </div>
-                            </motion.div>
-                            <div className={styles.go_to_checkout_wrapper}>
-                                <div className={styles.go_to_checkout_button}>GO TO CHECKOUT</div>
-
-                            </div>
-                            <div className={styles.price_wrapper}>
-                                <p className={styles.price_text}>1720€ w/o VAT</p>
-
-                            </div>
-                            <div className={styles.scroll_down_wrapper}>
-                                <div className={styles.scroll_down_svg}>
-                                    <Link href='#video'>
-                                        <a>
-                                            <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 50 50"
-                                                 height="48px"
-                                                 viewBox="0 0 50 50" width="48px" fill="#FFFFFF">
-                                                <path 
-                                                      d="M15.563,40.836c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l15-15  c0.391-0.391,0.391-1.023,0-1.414l-15-15c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l14.293,14.293L15.563,39.422  C15.172,39.813,15.172,40.446,15.563,40.836z"/>
-                                            </svg>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </div>
-                        </motion.div>
-
-                    </motion.div>*/}
           <div className={styles.page_top_grid}>
             <div className={styles.title_desc_cell}>
               <h1 className={styles.main_title_description_text}>
@@ -875,7 +582,15 @@ export default function Subtitle() {
               </h4>
             </div>
             <div className={styles.dropdown_cell}>
-              <select className={styles.version_dropdown_select}>
+              <div className={styles.dropdown_menu}>
+                <select className={styles.select_custom}>
+                  <option value="">ESSENTIAL</option>
+                  <option value="">STANDARD</option>
+                  <option value="">ULTIMATE</option>
+                </select>
+                <span className={styles.custom_arrow}></span>
+              </div>
+              {/*         <select className={styles.version_dropdown_select}>
                 <option value="essentials">Essentials</option>
                 <option value="standard">Standard</option>
                 <option value="ultimate">Ultimate</option>
@@ -884,7 +599,7 @@ export default function Subtitle() {
 
               <AnimatePresence exitBeforeEnter>
                 {isDropdownOpen && <>{liOptionsElement}</>}
-              </AnimatePresence>
+              </AnimatePresence>*/}
             </div>
             <div className={styles.payment_text_cell}>
               <p className={styles.payment_text_cell_text}>Payment:</p>
@@ -947,8 +662,8 @@ export default function Subtitle() {
               <p className={styles.text_installment}>
                 1 payment of €436 and 3 payments of €435
               </p>
-              <div className={styles.dropdown_installment}>
-                <select className={styles.select_installment}>
+              <div className={styles.dropdown_menu}>
+                <select className={styles.select_custom}>
                   <option value="">12 Months (4 payments)</option>
                   <option value="">24 Months (8 payments)</option>
                   <option value="">36 Months (12 payments)</option>

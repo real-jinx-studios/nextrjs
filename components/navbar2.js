@@ -12,7 +12,7 @@ import { Store } from "../utils/store";
 
 export default function Navbar2() {
   const { state, dispatch } = useContext(Store);
-  const { logged_in } = state;
+  const { logged_in, checkout } = state;
 
   const handleStateChange = (e) => {
     if (logged_in == true) {
@@ -175,7 +175,6 @@ export default function Navbar2() {
                 </span>
               </label>
             </div>
-            <span>{logged_in.toString()}</span>
           </li>
           {/* <li className={cn({
                             [styles.nav_li]: scroll === false,

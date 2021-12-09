@@ -10,6 +10,7 @@ import Modal from "../components/Modal";
 import NavbarSmall from "../components/navbarSmall";
 import Head from "next/head";
 import { StoreProvider } from "../utils/store";
+import StateWindow from "../components/stateWindow";
 
 export default function App({ Component, pageProps }) {
   const [showModal, setModal] = useState(false);
@@ -62,6 +63,7 @@ export default function App({ Component, pageProps }) {
 
       {isBreakpoint ? <NavbarSmall /> : <Navbar2 />}
       <Footer />
+      <StateWindow />
       {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
       <Modal showModal={showModal} setModal={setModal} />
     </StoreProvider>
