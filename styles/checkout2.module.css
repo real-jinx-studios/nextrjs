@@ -1,20 +1,4 @@
-.section{
-    position: relative;
-    padding: 5rem 0;
-}
-.container{
-    position: relative;
-    width: 100%;
-    max-width: 70rem;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    margin: 98px auto;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
 
-}
 .client_info_section{
     width: 70%;
     margin: 0 16px;

@@ -505,12 +505,12 @@ export default function Subtitle() {
   const handleCheckout = async (e) => {
     e.preventDefault();
     const product = {
-      _id: "61af647e6d045de19b810b71",
+      _id: "61b0a72c24d6d0daa195e22a",
+      name: "3dtitles",
     };
-    /*const { data } = await axios.get(`/api/products/${product._id}`);*/
+    const { data } = await axios.get(`/api/mongodb/products/${product._id}`);
     //do some check on data and stuff
-    console.log("fuk");
-    /*console.log(data);*/
+    console.log(data);
     dispatch({
       type: "ADD_TO_CHECKOUT_NORMAL",
       payload: {
@@ -558,10 +558,10 @@ export default function Subtitle() {
                 type="checkbox"
                 id="button-mover-trigger"
               />
+
               <a href="#" className="button button_basic_long">
                 FREE TRIAL
               </a>
-
               <label htmlFor="button-mover-trigger">
                 <div className="chk_trigger"></div>
               </label>
