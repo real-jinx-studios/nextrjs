@@ -12,7 +12,8 @@ export default function Layout({ children, home, title, description }) {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name={title} content={description} />
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(

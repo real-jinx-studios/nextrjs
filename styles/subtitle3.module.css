@@ -2506,6 +2506,7 @@ padding-left:0.6em;
 .dropdown_menu{
     position: relative;
     overflow: hidden;
+    width: max-content;
 }
 .select_custom{
     padding:0.8em 3em 0.8em 0.8em;

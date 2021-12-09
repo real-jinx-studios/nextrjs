@@ -5,7 +5,9 @@ export const Store = createContext();
 const initialState = {
   logged_in: Cookies.get("logged_in") === "true",
   checkout: {
-    checkoutItems: [],
+    checkoutItems: Cookies.get("checkoutItems")
+      ? JSON.parse(Cookies.get("checkoutItems"))
+      : [],
   },
 };
 
@@ -31,6 +33,7 @@ function reducer(state, action) {
               : item
           )
         : [...state.checkout.checkoutItems, newItem];
+      Cookies.set("checkoutItems", JSON.stringify(checkoutItems));
       return { ...state, checkout: { ...state.checkout, checkoutItems } };
     }
     default:

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
 import { useEntries } from "../../lib/swr-hooks";
 import { useRouter } from "next/router";
 import styles from "../../styles/login.module.css";

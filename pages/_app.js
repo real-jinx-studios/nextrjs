@@ -52,14 +52,12 @@ export default function App({ Component, pageProps }) {
           content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg"
         />
       </Head>
-      <main>
-        <Component
-          setModal={setModal}
-          location={router.pathname}
-          key={router.pathname}
-          {...pageProps}
-        />
-      </main>
+      <Component
+        setModal={setModal}
+        location={router.pathname}
+        key={router.pathname}
+        {...pageProps}
+      />
 
       {isBreakpoint ? <NavbarSmall /> : <Navbar2 />}
       <Footer />

@@ -20,25 +20,25 @@ export default function Home(props) {
                 <p>
                   Editions:
                   {x.editions.map((y) => (
-                    <span>&nbsp; &#127569;{y}&nbsp;</span>
+                    <span key={y}>&nbsp; &#127569;{y}&nbsp;</span>
                   ))}
                 </p>
                 <p>
                   prices:
                   {x.price_no_vat.map((z) => (
-                    <span>&nbsp; &#127569;{z}EUR&nbsp;</span>
+                    <span key={z}>&nbsp; &#127569;{z}EUR&nbsp;</span>
                   ))}
                 </p>
                 <p>
                   licenses:
                   {x.license.map((q) => (
-                    <span>&nbsp; &#127569;{q}&nbsp;</span>
+                    <span key={q}>&nbsp; &#127569;{q}&nbsp;</span>
                   ))}
                 </p>
                 <p>
                   tags:
                   {x.categories.map((w) => (
-                    <span>&nbsp; &#127569;{w}&nbsp;</span>
+                    <span key={w}>&nbsp; &#127569;{w}&nbsp;</span>
                   ))}
                 </p>
               </div>

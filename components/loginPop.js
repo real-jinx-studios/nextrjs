@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
 
 import { useRouter } from "next/router";
 import CustomInput from "./customInput";
@@ -80,14 +78,9 @@ export default function SimpleModal(props) {
 
   return (
     <div>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
+
         {body}
-      </Modal>
+
     </div>
   );
 }

@@ -147,7 +147,7 @@ export default function Navbar2() {
               [styles.nav_li_scroll]: scroll === true,
             })}
           >
-            <Link href="/buy/checkout2">
+            <Link href="/buy/checkout">
               <a className={styles.buy_now_wrapper}>BUY NOW</a>
             </Link>
           </li>
