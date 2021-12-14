@@ -4,7 +4,7 @@ import { Store } from "../../utils/store";
 import Layout from "../../components/layout";
 import Link from "next/link";
 import MyImage from "../../components/myImage";
-
+import NumberFormat from "react-number-format";
 export default function Checkout() {
   const { state } = useContext(Store);
   const {
@@ -36,40 +36,47 @@ export default function Checkout() {
     setTotalPrices({ ...tempTotal(tempSub, tempVat) });
   };
 
+  //format numbers to look more like prices
+  const numFormat = (num) => {
+    let fNum = num.toFixed(2);
+    fNum = fNum.replace(/(\d)(?=(\d{3})+(?!\d))/g, "2,");
+    return fNum;
+  };
+
   //generate cart/checkout items
   const items = checkoutItems.map((x) => (
     <div className="cart__items" key={x.name}>
-      <div className="cart__items__icon">
+      <div className="cart__items__icon flex-c-c">
         <MyImage src={x.icon} width={50} height={50} layout="intrinsic" />
       </div>
-      <div className="cart__items__name justify-left font-bold">
+      <div className="cart__items__name flex-c-c justify-left font-bold">
         <span>{x.name}</span>
       </div>
-      <div className="cart__items__edition justify-left">
+      <div className="cart__items__edition flex-c-c justify-left">
         <span className="font-size-xs">{x.edition}</span>
       </div>
-      <div className="cart__items__license justify-left">
+      <div className="cart__items__license flex-c-c justify-left">
         <span>{x.license}</span>
       </div>
-      <div className="cart__items__duration justify-left font-size-s">
-        {x.duration !== "lifetime" ? (
-          <span>
-            {x.duration}
-            /mo.
-          </span>
-        ) : (
-          <span>{x.duration}</span>
-        )}
+      <div className="cart__items__duration flex-c-c justify-left font-size-s">
+        <span>
+          {x.duration}
+          {x.duration !== "lifetime" && "/mo."}
+        </span>
       </div>
-      <div className="cart__items__quantity">
+      <div className="cart__items__quantity flex-c-c">
         <span>
           <sub>x</sub>
           {x.quantity}
         </span>
       </div>
-      <div className="cart__items__total">
+      <div className="cart__items__total flex-c-c">
         <span>
-          {x.price * x.quantity}
+          <NumberFormat
+            value={x.price * x.quantity}
+            displayType={"text"}
+            thousandSeparator={true}
+          />
           <sup>EUR</sup>
         </span>
       </div>
@@ -79,7 +86,7 @@ export default function Checkout() {
   return (
     <Layout
       title="EZTitles store checkout"
-      description="checkout page for products purchased on EZTitles.com."
+      description="checkout page for products purchased on EZTitles.com"
     >
       <section className="checkout">
         <div className="billing">
@@ -107,19 +114,41 @@ export default function Checkout() {
               <h2 className="cart__title">Order Summary</h2>
               <span className="cart__edit">Edit</span>
             </div>
-            {items}
+            {items || "loading..."}
             <div className="cart__sum">
-              <h5 className="cart__sum__title">
-                subtotal: {totalPrices.subtotal}
-                <sup> EUR</sup>
-              </h5>
-              <h5 className="cart__sum__title">
-                VAT 25%: {totalPrices.vat}
-                <sup> EUR</sup>
-              </h5>
-              <h4 className="cart__sum__title-total">
-                TOTAL: {totalPrices.total} <sup> EUR</sup>
-              </h4>
+              <div className="cart__sum__title flex justify-sb">
+                <span className="font-size-m">subtotal: </span>
+                <span className="font-size-m">
+                  <NumberFormat
+                    value={totalPrices.subtotal}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                  />
+                  <sup> EUR</sup>
+                </span>
+              </div>
+              <div className="cart__sum__title flex justify-sb">
+                <span className="font-size-m">VAT 25%: </span>
+                <span className="font-size-m">
+                  <NumberFormat
+                    value={totalPrices.vat}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                  />
+                  <sup> EUR</sup>
+                </span>
+              </div>
+              <div className="cart__sum__title-total flex justify-sb font-bold">
+                <span className="font-size-ml">TOTAL: </span>
+                <span className="font-size-ml">
+                  <NumberFormat
+                    value={totalPrices.total}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                  />
+                  <sup> EUR</sup>
+                </span>
+              </div>
             </div>
           </div>
         </div>

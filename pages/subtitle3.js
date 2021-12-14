@@ -516,8 +516,8 @@ export default function Subtitle() {
       payload: {
         name: "EZTitles",
         icon: "/images/icons/ez_icon3.png",
-        edition: "ESSENTIALS",
-        license: "RENT",
+        edition: "essentials",
+        license: "Rent",
         duration: "1",
         quantity: 1,
         price: 80,
@@ -534,10 +534,26 @@ export default function Subtitle() {
         name: "EZConvert",
         icon: "/images/icons/ezc_icon3.png",
         edition: "PROFESSIONAL",
-        license: "ONE-TIME",
-        duration: "none",
+        license: "Purchase",
+        duration: "lifetime",
         quantity: 1,
         price: 6800,
+      },
+    });
+    router.push("/buy/checkout/#");
+  };
+  const handleCheckoutPlugins = async (e) => {
+    e.preventDefault();
+    dispatch({
+      type: "ADD_TO_CHECKOUT_NORMAL",
+      payload: {
+        name: "EZT Plugins",
+        icon: "/images/icons/ep_icon3.png",
+        edition: "ProMedia Carbon",
+        license: "Purchase",
+        duration: "lifetime",
+        quantity: 1,
+        price: 500,
       },
     });
     router.push("/buy/checkout/#");
@@ -592,7 +608,11 @@ export default function Subtitle() {
               </label>
             </div>
             <div className={styles.license_editions_cell}>
-              <a href="#" className="button button_basic_long">
+              <a
+                onClick={handleCheckoutPlugins}
+                href="#"
+                className="button button_basic_long"
+              >
                 LICENSE EDITIONS
               </a>
             </div>
