@@ -646,11 +646,9 @@ export default function Subtitle() {
                 {isDropdownOpen && <>{liOptionsElement}</>}
               </AnimatePresence>*/}
             </div>
-            <div className={styles.payment_text_cell}>
-              <p className={styles.payment_text_cell_text}>Payment:</p>
-            </div>
 
             <div className={styles.payment_select_cell}>
+              <p className={styles.payment_text_cell_text}>Payment:</p>
               <div className={styles.select}>
                 <div className={styles.purchase_options}>
                   <div

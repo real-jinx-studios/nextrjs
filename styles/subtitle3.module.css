@@ -2482,12 +2482,14 @@ padding-left:0.6em;
     grid-row: span 1;
 }
 .payment_select_cell{
-    grid-column: 4 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 1 / -1;
     border-top:1px solid #fefefe;
 }
 .payment_text_cell_text{
     margin:0;
-    border-top:1px solid #fefefe;
 }
 .payment_empty_cell{
     border-top:1px solid #fefefe;

@@ -1,3 +1,4 @@
+/*
 const paypal = require('@paypal/checkout-server-sdk');
 
 // Creating an environment
@@ -21,4 +22,4 @@ request.requestBody({
             }
         }
     ]
-});
+});*/
