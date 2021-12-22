@@ -2,6 +2,7 @@ import { NextApiHandler } from 'next'
 import { query } from '../../lib/db'
 const { performance } = require('perf_hooks');
 export default async function NextApiHandler1(a, res) {
+    console.log('the fuck')
     try {
         let start= performance.now()
 

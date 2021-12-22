@@ -2456,6 +2456,9 @@ padding-left:0.6em;
     padding-right: 1em;
 
 }
+.page_top_grid > div{
+    border:1px solid #fefefe;
+}
 .title_desc_cell{
     grid-column: 1 / -1;
 }
