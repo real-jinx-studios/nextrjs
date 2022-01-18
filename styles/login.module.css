@@ -1,23 +1,49 @@
-.main_wrapper{
-    position:relative;
-    width:100%;
+.section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section form{
+    position: relative;
+    max-width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:var(--clr-neutral-50);
+    border-radius: 20px;
+    padding: 5em 8em;
     overflow: hidden;
-
 }
-.main_inner{
-    position:relative;
-    padding-top: 175px;
-    margin:0 auto;
-    text-align: center;
-    overflow:hidden;
-    z-index:1;
+.section form::before{
+    user-select: none;
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right:0;
+    background: #ffffff00 url("/images/parrot-img.svg") no-repeat -20% 29%;
 }
+.section form *{z-index: 1}
 .submit_button{
-    width:50%;
+    margin-top: 20px;
+    width:298px;
     height:39px;
-    margin: auto;
+    cursor: pointer;
 }
+.section form p, .section form a{
+    color:var(--clr-neutral-900) !important;
+    margin-top: 20px;
 
-
+}
+.section form a{
+    text-decoration: underline;
+    margin-top:0;
+}
 
 

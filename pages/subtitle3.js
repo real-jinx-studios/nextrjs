@@ -504,13 +504,6 @@ export default function Subtitle() {
   const { state, dispatch } = useContext(Store);
   const handleCheckout = async (e) => {
     e.preventDefault();
-    const product = {
-      _id: "61b0a72c24d6d0daa195e22a",
-      name: "3dtitles",
-    };
-    const { data } = await axios.get(`/api/mongodb/products/${product._id}`);
-    //do some check on data and stuff
-    console.log(data);
     dispatch({
       type: "ADD_TO_CHECKOUT_NORMAL",
       payload: {
@@ -523,7 +516,7 @@ export default function Subtitle() {
         price: 80,
       },
     });
-    router.push("/buy/checkout/#");
+    router.push("/user-login");
   };
   const handleCheckoutConvert = async (e) => {
     e.preventDefault();
@@ -556,7 +549,7 @@ export default function Subtitle() {
         price: 500,
       },
     });
-    router.push("/buy/checkout/#");
+    router.push("/user-login");
   };
 
   return (
@@ -598,7 +591,7 @@ export default function Subtitle() {
 
               <a
                 onClick={handleCheckoutConvert}
-                href="#"
+                href="/user-login"
                 className="button button_basic_long"
               >
                 FREE TRIAL
@@ -716,7 +709,7 @@ export default function Subtitle() {
             </div>
             <div className={styles.checkout_btn_cell}>
               <a
-                href="#"
+                href="/user-login"
                 onClick={handleCheckout}
                 className="button button_basic_long"
               >

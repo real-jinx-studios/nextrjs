@@ -11,11 +11,15 @@ import NavbarSmall from "../components/navbarSmall";
 import Head from "next/head";
 import { StoreProvider } from "../utils/store";
 import StateWindow from "../components/stateWindow";
+import { SessionProvider } from "next-auth/react";
 
-export default function App({ Component, pageProps }) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   const [showModal, setModal] = useState(false);
   const router = useRouter();
-  console.log(Component.name, pageProps, router.pathname, "shit");
+  /*console.log(Component.name, pageProps, router.pathname, "shit");*/
   /*get screen size for correct navbar*/
   const useMediaQuery = (width) => {
     const [targetReached, setTargetReached] = useState(false);
@@ -46,24 +50,26 @@ export default function App({ Component, pageProps }) {
   const isBreakpoint = useMediaQuery(1111);
   return (
     <StoreProvider>
-      <Head>
-        <meta
-          name="google-site-verification"
-          content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg"
+      <SessionProvider session={session}>
+        <Head>
+          <meta
+            name="google-site-verification"
+            content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg"
+          />
+        </Head>
+        <Component
+          setModal={setModal}
+          location={router.pathname}
+          key={router.pathname}
+          {...pageProps}
         />
-      </Head>
-      <Component
-        setModal={setModal}
-        location={router.pathname}
-        key={router.pathname}
-        {...pageProps}
-      />
 
-      {isBreakpoint ? <NavbarSmall /> : <Navbar2 />}
-      <Footer />
-      <StateWindow />
-      {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
-      <Modal showModal={showModal} setModal={setModal} />
+        {isBreakpoint ? <NavbarSmall /> : <Navbar2 />}
+        <Footer />
+        <StateWindow />
+        {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
+        <Modal showModal={showModal} setModal={setModal} />
+      </SessionProvider>
     </StoreProvider>
   );
 }

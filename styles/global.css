@@ -751,3 +751,12 @@ padding: 0.8em;
   margin-bottom: 1.6em;
   align-items: center;
 }
+.billing__fields{
+  display: flex;
+  margin: 0 auto;
+  max-width: 100%;
+  justify-content: space-between;
+  margin-bottom: 1.6em;
+  align-items: center;
+  flex-direction: column;
+}

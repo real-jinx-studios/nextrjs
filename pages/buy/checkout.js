@@ -5,7 +5,15 @@ import Layout from "../../components/layout";
 import Link from "next/link";
 import MyImage from "../../components/myImage";
 import NumberFormat from "react-number-format";
+import { signIn, signOut, useSession } from "next-auth/react";
+import Cookies from "js-cookie";
+import CustomInput from "../../components/customInput";
+import styles from "../../styles/login.module.css";
+import axios from "axios";
 export default function Checkout() {
+  const [login, setLogin] = useState({ login: false });
+  const { data: session } = useSession();
+
   const { state } = useContext(Store);
   const {
     checkout: { checkoutItems },
@@ -19,7 +27,26 @@ export default function Checkout() {
   });
   useEffect(() => {
     calculateTP();
+    checkLogin();
   }, []);
+  const checkLogin = async () => {
+    const loginTemp = JSON.parse(Cookies.get("session"));
+    if (loginTemp.logged_in === "true") {
+      const details = axios
+        .post("http://localhost:5000/get/user", {
+          username: loginTemp.username,
+        })
+        .then(function (response) {
+          setLogin({ login: true, ...response.data[0] });
+        })
+        .catch(function (error) {
+          console.log(error, "error ass");
+        });
+    } else {
+      setLogin({ login: false });
+    }
+  };
+  const fetchLoginDetails = async (username) => {};
   const calculateTP = () => {
     let tempSub = 0;
     const tempVat = 25;
@@ -83,6 +110,8 @@ export default function Checkout() {
     </div>
   ));
 
+  const handleSubmit = (e) => {};
+
   return (
     <Layout
       title="EZTitles store checkout"
@@ -90,20 +119,94 @@ export default function Checkout() {
     >
       <section className="checkout">
         <div className="billing">
-          <div className="billing__inner">
-            <h2 className="billing__title">Welcome to EZTitles store</h2>
-            <h2 className="billing__description">
-              Please, log-in in your profile or continue as new customer
-            </h2>
-            <div className="billing__buttons">
-              <a href="#" className="button button_basic_long">
-                LOG IN
-              </a>
-              <a href="#" className="button button_basic_long_inverted">
-                NEW CUSTOMER
-              </a>
+          {!login.login && (
+            <div className="billing__inner">
+              <h2 className="billing__title">Welcome to EZTitles store</h2>
+              <h2 className="billing__description">
+                Please, log-in in your profile or continue as new customer
+              </h2>
+              <div className="billing__buttons">
+                <a
+                  href="#"
+                  onClick={signIn}
+                  className="button button_basic_long"
+                >
+                  LOG IN
+                </a>
+                <a href="#" className="button button_basic_long_inverted">
+                  NEW CUSTOMER
+                </a>
+              </div>
             </div>
-          </div>
+          )}
+          {login.login && (
+            <div className="billing__inner">
+              <h2 className="billing__title">Billing details</h2>
+              {/*<button onClick={signOut}>ok</button>*/}
+              <form
+                noValidate
+                onSubmit={handleSubmit}
+                className="billing__fields"
+              >
+                <CustomInput
+                  type="text"
+                  placeholder="First name"
+                  defaultValue={login.first_name}
+                />
+                <CustomInput
+                  type="text"
+                  placeholder="last name"
+                  defaultValue={login.last_name}
+                />
+                <CustomInput
+                  type="text"
+                  placeholder="VAT ID"
+                  defaultValue={login.vat}
+                />
+                <CustomInput
+                  type="text"
+                  placeholder="Postal code/ZIP code"
+                  defaultValue={login.postcode}
+                />
+                <CustomInput
+                  type="text"
+                  placeholder="Address line 1"
+                  defaultValue={login.street_address}
+                />
+                <CustomInput
+                  type="text"
+                  placeholder="Address line 2"
+                  defaultValue={login.street_address_2}
+                />
+                <CustomInput
+                  type="text"
+                  placeholder="City"
+                  defaultValue={login.city}
+                />
+                <CustomInput
+                  type="text"
+                  placeholder="Country"
+                  defaultValue={login.country}
+                />
+                <CustomInput
+                  type="text"
+                  placeholder="Phone Number"
+                  defaultValue={login.phone_num}
+                />
+                <button
+                  className="button button_basic_long"
+                  type="submit"
+                  style={{ marginTop: 28 }}
+                >
+                  continue
+                </button>
+                <p>OR</p>
+                <Link href="#">
+                  <a>SIGN-UP</a>
+                </Link>
+              </form>
+            </div>
+          )}
           <div className="billing__inner-step">
             <h2 className="billing-step__title">whatever next step is</h2>
           </div>
