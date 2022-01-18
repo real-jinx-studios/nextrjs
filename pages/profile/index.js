@@ -13,9 +13,12 @@ export async function getServersideProps() {
       },
     };*/
   const data = await query("SELECT * FROM customers WHERE `email` = 'rjs' ");
+  data.forEach((item) => {
+    console.log(item, typeof item);
+  });
   return {
     props: {
-      products: data,
+      products: JSON.parse(JSON.stringify(data)),
     },
   };
 }

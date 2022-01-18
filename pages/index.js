@@ -5,7 +5,7 @@ import HomeMain2 from "../components/homeMain2";
 import Link from "next/link";
 import axios from "axios";
 import useSWR from "swr";
-import { query } from "../../lib/db";
+import { query } from "../lib/db";
 
 export default function Home(props) {
   const { products } = props;
@@ -71,9 +71,10 @@ export async function getStaticProps() {
             SELECT *
             FROM products
         `);
+  console.log(data);
   return {
     props: {
-      products: data,
+      products: JSON.parse(JSON.stringify(data)),
     },
   };
 }
