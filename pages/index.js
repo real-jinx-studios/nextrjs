@@ -5,6 +5,7 @@ import HomeMain2 from "../components/homeMain2";
 import Link from "next/link";
 import axios from "axios";
 import useSWR from "swr";
+import { query } from "../../lib/db";
 
 export default function Home(props) {
   const { products } = props;
@@ -59,8 +60,17 @@ export default function Home(props) {
 export async function getStaticProps() {
   /*const data = await axios.get(`/api/get-products`);*/
   //connection to middleware for static generation
-  const res = await fetch("http://localhost:5000/get-products");
+  /*const res = await fetch("http://localhost:5000/get-products");
   const data = await res.json();
+  return {
+    props: {
+      products: data,
+    },
+  };*/
+  const data = await query(`
+            SELECT *
+            FROM products
+        `);
   return {
     props: {
       products: data,
