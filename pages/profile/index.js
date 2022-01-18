@@ -19,7 +19,6 @@ export async function getServersideProps() {
   return {
     props: {
       products: JSON.parse(JSON.stringify(data)),
-
     },
   };
 }
