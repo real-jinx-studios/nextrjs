@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Subtitling &gt; Find, Replace and Go To &gt; Find &amp; Replace</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="Find &amp; Replace are somewhat similar and we'll discuss them together in the same topic. In addition to the general function of find and replace words and phrases, Find &amp; Replace..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "find-replace_detail.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Find &amp; Replace</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?find-replace_detail.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="subtitling.htm">Subtitling</a> &gt; <a href="find_replace_go_to.htm">Find, Replace and Go To</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Find &amp; Replace</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="find_replace_go_to.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="find_replace_go_to.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="find_replace_wildcards.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">Find &amp; Replace are somewhat similar and we'll discuss them together in the same topic. In addition to the general function of find and replace words and phrases, Find &amp; Replace provide additional options that could come useful in variety of situations.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="generaloptions" class="hmanchor"></a><span class="f_SubHeader">General function</span></p>
+<p class="p_Normal">The Find &amp; Replace options can be displayed by pressing <span class="f_Shortcut">Ctrl + F (Find</span>) ,<span class="f_Shortcut"> Ctrl + R (Replace)</span> or by using the respective options in the <a href="edit_menu.htm" class="topiclink">Edit drop-down</a> menu:</p>
+<p class="p_Picture"><img width="499" height="363" style="margin:0;width:499px;height:363px;border:none" src="find-replace.png"/></p>
+<p class="p_Normal">First type the text in <span class="f_Emphasize">Text to find</span> field and then press one of the buttons below. <span class="f_Emphasize">Next</span> button will search for the text forward though out the whole project and will automatically stop on the first match, highlighting the found word of phrase. Similarly <span class="f_Emphasize">Previous</span> button will search backward. Click <span class="f_Emphasize">Log All</span> to send all subtitles containing the search term to the <a href="working_with_preview_and_draft.htm#loglist" class="topiclink">Log List</a>.</p>
+<p class="p_Normal">To replace text first switch to the <span class="f_Emphasize">Replace</span> sub-page and then fill in the <span class="f_Emphasize">Text to find</span> and <span class="f_Emphasize">Replace with</span> fields. Pressing the <span class="f_Emphasize">Replace</span> button will find the first instance of the searched term and will highlight it in the main editor. The replacement will be performed by pressing the Replace button again. If you want to replace all instances of the searched term simultaneously press the <span class="f_Emphasize">Replace All </span>button. All subtitles that have been modified will be send to the Log List automatically.</p>
+<p class="p_Normal">EZTitles offers a lot more than just the regular and straight forward functionality of finding and/or replacing text. There are additional options grouped into several categories: <a href="find-replace_detail.htm#searchoptions" class="topiclink">Search Options</a>, <a href="find-replace_detail.htm#searchscope" class="topiclink">Search Scope</a>, <a href="find-replace_detail.htm#filtersubtitles" class="topiclink">Filter Subtitles</a>, <a href="find-replace_detail.htm#filterattrib" class="topiclink">Filter Subtitle Attributes</a>, <a href="find-replace_detail.htm#replaceattrib" class="topiclink">Replace Text Attributes</a>. Options from each category can be expanded and displayed by pressing the little plus <img width="11" height="11" style="margin:0;width:11px;height:11px;border:none" src="plus.png"/> button next to it. Whenever an option from the additional search or filter categories is selected, descriptive text below the Text to Find or Replace With fields will be displayed. This way it is not necessary to keep all the categories expanded to see which options are chosen. As you can see on the picture above we are going to search for &quot;color&quot; as whole word in italic. </p>
+<p class="p_Normal">If you need to disable one of these options you can simply click on the <img width="13" height="13" style="margin:0;width:13px;height:13px;border:none" src="close.png"/> button next to its name.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="searchoptions" class="hmanchor"></a><span class="f_SubHeader">Search Options</span></p>
+<p class="p_Normal">The Search Options category provides additional options to find specific instances of the searched term.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Match Case</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Performs case-sensitive search.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Whole Word</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The search will highlight only whole words.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Wildcards</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Clicking the </span><span class="f_Emphasize">Wildcards</span><span class="f_Indented"> checkbox allows special, wildcard characters to be entered. Wildcards are used to substitute one or more characters while searching through the text. The most common example is perhaps the &quot;*&quot; wildcard character and it has the meaning of &quot;any number of characters, zero or more times&quot;. For example if you enter &quot;[*]&quot; in Text to find field you will find everything enclosed in square brackets like &quot;[Peter]&quot;, &quot;[Marry]&quot;, &quot;[John Smith]&quot;, etc.</span></p>
+<p class="p_Indented"><span class="f_Indented">You can check the next topic, <a href="find_replace_wildcards.htm" class="topiclink">Find &amp; Replace - Wildcards</a>, for more details about the available wildcards and the additional options that can be used for a more elaborate and complex searches in EZTitles.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Start/End of Line</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Searches for the specified term only in the beginning or at the end of a text line.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Start/End of Subtitle</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Searches for the specified term in the beginning or the end of a subtitle.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Text not in Italic</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Enables you to find only those instances of the searched term that are not italicized.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Text in Italic</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Searches only for those instances that are written in italic.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="searchscope" class="hmanchor"></a><span class="f_SubHeader">Search Scope</span></p>
+<p class="p_Normal">In the Search Scope category you can find options that enable you to search in the Main and <a href="secondary-subtitle-track.htm" class="topiclink">Secondary Subtitle Tracks</a>, in the <a href="reference_files.htm" class="topiclink">Reference File</a> or in the attached<a href="workspace_elements.htm#comments" class="topiclink"> Comments</a>. Contents of this category will change whenever a secondary track or reference file is loaded.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Search in Subtitle Text</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This is the default option. Text will be searched only within subtitles' text.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Search in Comments</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Enables you to search in the text of the attached to the subtitles comments. </span><span class="f_SubHeader1">Note</span><span class="f_Indented"> that this option is not available for Replace.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Main and Secondary Tracks</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Enables searching of the specified term in both the Main and Secondary tracks. The option is available only when a Secondary Subtitle Track is present.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Main and Reference Track</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Enables searching of the specified in both the Edit and Reference files. The option is available only when a reference file is loaded in the project.</span></p>
+<p class="p_Indented"><span class="f_SubHeader1">Note: </span><span class="f_Indented">Replacing text in the Reference file is not allowed. Only the option to replace text in the main track (Edit File) will be enabled.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Active Track</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Enables you to search only in the currently focused main or secondary subtitle tracks or edit and reference files.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="replaceattrib" class="hmanchor"></a><span class="f_SubHeader">Replace Text Attributes</span></p>
+<p class="p_Normal">The Replace Text Attributes category is visible only when <span class="f_Emphasize">Replace</span> tab is selected. These options allow you to modify the style of the replaced text.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:195px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Set Replaced Text Style</span></p>
+</td>
+<td style="vertical-align:top; width:893px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Allows you to change the style of the replaced text to </span><span class="f_Indented" style="font-style: italic;">italic </span><span class="f_Indented">or</span><span class="f_Indented" style="font-style: italic;"> </span><span class="f_Indented">normal</span><span class="f_Indented" style="font-style: italic;">.</span><br />
+<span class="f_Indented">The option is not available under <a href="project_properties.htm#teletext_settings" class="topiclink">Teletext mode</a> as italics are not supported in Teletext.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Set Replaced Text Color</span></p>
+</td>
+<td style="vertical-align:top; width:893px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Allows you to change the color of the replaced text.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">If none of these options is selected the replaced text will keep the original attributes of the replacing term.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="filtersubtitles" class="hmanchor"></a><span class="f_SubHeader">Filter Subtitles</span></p>
+<p class="p_Normal">In the Filter Subtitles category you can find additional options that will limit the search to a particular group of subtitles only.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitles without text</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Use this option to find all subtitles which doesn't contain any text, thus the find command has to be executed without any text entered in the &quot;Text to Find&quot; field.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Marked subtitles</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Looks for the searched term only among the <a href="working_with_preview_and_draft.htm#preview_list_mark" class="topiclink">marked subtitles</a> in the file.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitles with User Marks</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Executes the command for subtitles containing <a href="pref_editing.htm" class="topiclink">User Marks</a> only.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Commented Subtitles</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Executes the command for subtitles containing <a href="subtitles_editing.htm#subtitles_editing_comments" class="topiclink">comments</a>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Dialogue Subtitles</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The command will be invoked for subtitles which are part of a dialogue. Another person's speech in the same subtitle is usually indicated by</span><span class="f_Shortcut"> dash (-)</span><span class="f_Indented"> or</span><span class="f_Shortcut"> em dash (–)</span><span class="f_Indented">.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Inserted subtitles</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The Find &amp; Replace command will search only in subtitles with a letter index in their number (1a, 1386b, 423c, etc.) which usually are result of the </span><span class="f_Shortcut">Insert (Alt+Ctrl+Ins)</span><span class="f_Indented"> and </span><span class="f_Shortcut">Insert Before (Alt+Shift+Ins)</span><span class="f_Indented"> commands.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Log list</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Find &amp; Replace will be invoked only for the subtitles that are currently logged in the <a href="working_with_preview_and_draft.htm#loglist" class="topiclink">Log List</a>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Draft list</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Looks for the searched term only among the subtitles currently saved in the <a href="working_with_preview_and_draft.htm#draftlist" class="topiclink">Draft List</a>.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="filterattrib" class="hmanchor"></a><span class="f_SubHeader">Filter Subtitles Attributes</span></p>
+<p class="p_Normal">The options listed in here will change along with <a href="project_properties.htm" class="topiclink">EZTitles' mode of operation</a>. Some specific rules are only available when working with Teletext or Closed Captions projects. The positive or negative state of some of the criteria be customized by clicking the <span class="f_Emphasize">Is</span> or <span class="f_Emphasize">Is Not</span> option.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">No Italic in Subtitles</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Search in subtitles that have no italic text at all.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitles in Italic</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Finds the subtitles in which all words and characters are formatted in italics.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Partial Italics in subtitles</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Finds only those subtitles that contain a word or phrase in italics. I.e. the italics style is applied only to parts of subtitles' text.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitles in Uppercase</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Finds subtitles in which all words and characters are written in UPPERCASE.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Partial uppercase in subtitles</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Finds subtitles containing at least one word in UPPERCASE. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Hidden </span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Looks for the searched item in Hidden or Not Hidden subtitles.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Font</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Find all subtitles written with Font 1 or Font 2.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Color</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Find subtitles formatted in particular color. The color can be selected from the corresponding box to the right.</span></p>
+<p class="p_Indented"><span class="f_Indented">The defined in the<a href="pref_color_styles.htm" class="topiclink"> Preferences</a> Color Styles will be displayed as long as their foreground color is different than the default colors (yellow, green, blue, red, black, white, cyan or magenta).</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Alignment</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">When this option is clicked, EZTitles will look for all subtitles aligned in the specified way.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Box Style</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Look for the subtitles with Box effect applied.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Outline/Shadow</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">With this turn on you can find the subtitles which have Outline or Shadow effects applied.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Ruby/Bouten in subtitle</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Finds all subtitles containing Ruby and (or) Bouten characters. The option becomes available after activating </span><span class="f_Emphasize">East Asian text scripts ehancements</span><span class="f_Indented"> from <a href="pref_editing.htm" class="topiclink">Preferences/Editing</a>.</span><br />
+<span class="f_Indented">For more details about adding Bouten or Ruby characters, please check the following <a href="ruby_characters.htm" class="topiclink">topic</a>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Direction</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Enables you to search the selected word or phrase in <a href="ruby_characters.htm#verticaltext" class="topiclink">vertically</a> or horizontally oriented subtitles.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Underline</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Searches for text which is underlined.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Double Height</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The Double Height check option is available only for Teletext subtitles and will be displayed when EZTitles works in Teletext mode and you can locate all subtitles formatted as Double Height.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Captions Style</span></p>
+</td>
+<td style="vertical-align:top; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Captions Style can be used to locate subtitles formatted with the Closed Captions specific Pain-on, Pop-on or Roll-up styles. It is available when EZTitles is working in Closed Captions mode.</span></p>
+</td>
+</tr>
+</table>
+</div>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

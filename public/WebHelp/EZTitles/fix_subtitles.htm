@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Subtitling &gt; Subtitle Verification &gt; Fix Subtitles</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Delete Empty,Fix,Fix Duration,Fix Empty,Fix Empty lines,Fix Intervals,Fix Raised,Fix Subtitles" />
+   <meta name="description" content="The Fix Subtitles tool is there to clean your project file against various rules of your choice. Use &quot;Titles/Fix Subtitles...&quot; menu or the corresponding button on the toolbar..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "fix_subtitles.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Fix Subtitles</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?fix_subtitles.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="subtitling.htm">Subtitling</a> &gt; <a href="subtitle_verification.htm">Subtitle Verification</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Fix Subtitles</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="check_subtitles.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="subtitle_verification.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="sttls_copy_paste_from_file.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">The Fix Subtitles tool is there to clean your project file against various rules of your choice. Use &quot;Titles/Fix Subtitles...&quot; menu or the corresponding button on the toolbar to display the following window:</p>
+<div class="p_Picture"><div style="margin:0;width:489px"><img alt="&nbsp;Fix Subtitles" title="&nbsp;Fix Subtitles" width="489" height="508" style="width:489px;height:508px;border:none" src="fix_subtitles.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Fix Subtitles</span></p></div></div>
+<p class="p_Normal">Available Fix Subtitles options are divided into separate categories for easier navigation and clean preview of the selected options. Whenever there is at least one of selected for a category, category's name would be marked in bold and the checkbox in front of it will look like a square- <img width="22" height="19" style="margin:0;width:22px;height:19px;border:none" src="checks-1-opt.png"/>. And when all options are clicked for a category, the checkbox in front of its name becomes fully checked - <img width="19" height="20" style="margin:0;width:19px;height:20px;border:none" src="checks_all_opt.png"/><span class="f_ImageCaption">.</span></p>
+<p class="p_Normal"><span class="f_Emphasize">Include both subtitle tracks</span> - the option becomes available only if the current project has a <a href="secondary-subtitle-track.htm" class="topiclink">secondary subtitle track</a> and Fix Subtitles will then go through the subtitles from both tracks simultaneously. Otherwise, if the option is disabled, Fix Subtitles will be executed only for the subtitles in the currently selected track.</p>
+<p class="p_Normal"><span class="f_Emphasize">Show fix summary</span> - when enabled displays summary of the subtitles that has been affected by the different fix options. Otherwise, when disabled, modified subtitles will directly be send to the Log List for verification.<br />
+<span class="f_SubHeader1">Note:</span><span class="f_Emphasize"> </span>W<span class="f_Indented">e'd like to recommend you to always pay attention to the </span><span class="f_Emphasize">Fix summary</span><span class="f_Indented"> for subtitles that couldn't be modified automatically. It's quite possible, if not certain, that there will be conflicts considering the large variety of parameters involved in the process. Some problems may require the text to be split or the In-cues to be adjusted before they can be resolved and &quot;Fix Subtitles&quot; isn't designed to modify the text or move the In-cues of the subtitles. In-cues are handled with greatest priority by the Fix Subtitles function.</span></p>
+<p class="p_Normal">EZTitles also provides the functionality to create <span class="f_Emphasize">Presets</span> with the most frequently used &quot;Fix&quot; options.</p>
+<p class="p_Normal">To add new preset you can simply press the triangular button <img width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="dvd_preview_button.png"/> and select the <span class="f_Emphasize">Create New Preset</span> option. All currently selected &nbsp;&quot;Fix&quot; options will be added for this preset. To modify the currently selected preset you just need to click the &quot;Fix&quot; options you want to activate or disable and then select the <span class="f_Emphasize">Save current preset</span> option after clicking the triangular button. From the same menu you can also <span class="f_Emphasize">Delete</span> or <span class="f_Emphasize">Rename</span> the currently activated preset.</p>
+<p class="p_Normal">You can select another of your &quot;Fix&quot; Presets directly from the the <span class="f_Emphasize">Presets drop-down</span> menu.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Cues</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:90%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Fix empty Out-Cues</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">If there are subtitles with empty out-cues EZTitles will automatically calculate the corresponding out-cues based on the next In-cue and the minimum interval between subtitles (or blank between pop-ons for closed captions) you have set with the <a href="project_settings_cues.htm" class="topiclink">Project Settings/Cues</a>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite" style="margin: 4px 5px 0 12px;"><span class="f_IndentedHilite">Delete Chained subtitles Out-Cues</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Deletes the Out-cues for all subtitle which are &quot;chained&quot;, i.e. inserted on the min. interval from the previous subtitle.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Fix below/above reading speed</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">If a subtitle has its duration set below or above the reading speed limits, EZTitles will automatically adjust the out cue to match the current reading speed rules if possible. please check <a href="project_settings_reading_speed.htm" class="topiclink">Project Settings/Reading Speed</a>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Fix below minimum/</span><br />
+<span class="f_IndentedHilite">Fix above maximum duration</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">If a subtitle has its duration set below or above the minimum/maximum duration, EZTitles will automatically adjust its out cue to match the duration rules if possible. please check the <a href="project_settings_cues.htm" class="topiclink">Project Settings/Cues</a> topic for more details.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Fix Intervals</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This command allows you to change the intervals between subtitles to the </span><span class="f_Emphasize">Minimum interval</span><span class="f_Indented"> value specified in <a href="project_settings_cues.htm" class="topiclink">Project Settings/Cues</a>. You can specify a threshold value in order to filter the subtitles. Only the subtitles that are closer than the specified amount of frames are processed. The interval is changed by moving the previous subtitle’s out-cue. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Fix overlapping cues</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Provides three simple ways for dealing with subtitles with overlapping cues (out-cue of the preceding subtitles comes in after the in-cue of the next subtitle):</span></p>
+<p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin: 5px 5px 5px 24px;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span><span class="f_IndentedHilite">Keep In-Cue</span>: keeps the position of next subtitle's in-cue and moves the out-cue of the preceding subtitle to the <a href="project_settings_cues.htm" class="topiclink">min. interval</a> from it;</p>
+<p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin: 5px 5px 5px 24px;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span><span class="f_IndentedHilite">Keep Out-Cue</span><span class="f_Indented"> - keeps position of preceding subtitle's out-cue and moves next subtitle's in-cue to the min. interval from it;</span></p>
+<p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin: 5px 5px 5px 24px;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span><span class="f_IndentedHilite">Middle Position</span><span class="f_Indented"> - moves both preceding subtitle's out-cue and next subtitle's in-cue to a new position in between the initial in- and out- cues.</span></p>
+<p class="p_Indented"><span class="f_Indented">We strongly suggest to always verify the results by sending the modified subtitles to the Log List.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Shot Changes</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:90%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Snap to shot changes</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Allows you to fix already created subtitles according to the snap rules described in <a href="shot_change_detection.htm" class="topiclink">Shot Change Detection</a> topic. If the timecode is closer than &quot;threshold&quot; frames from the shot change, it is automatically snapped.</span></p>
+<p style="margin: 5px 5px 5px 12px;">When <span class="f_Emphasize">Gap</span> interval is used, it isn't set to 0, and it is greater than the threshold interval, EZTitles will look for subtitles appearing between the specified threshold and gap distances from the nearest shot change, then it will move the respective In or Out cue to the specified gap distance from the shot change.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Don't snap In-cues after shot changes</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">By using this option, only the In-cues inserted before a shot change within</span> the<span class="f_Emphasize"> threshold</span>/<span class="f_Emphasize">gap </span>interval<span class="f_Indented"> will be fixed and respectively snapped. It can be used to fulfill specific client requirements, that need only the subtitles crossing a shot change to be snapped to it.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Don't snap Out-cues before shot changes</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">By using this option, only the Out-cues inserted after a shot change will be fixed and respectively snapped. It can be used to fulfill specific client requirements,that need only the subtitles crossing a shot change to be snapped to it.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Netflix mode</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Activating the </span><span class="f_Emphasize">Netflix mode</span><span class="f_Indented"> option will disable all of the above options and instead will run the Fix with pre-defined parameters compliant to the latest <a href="https://partnerhelp.netflixstudios.com/hc/en-us/articles/360051554394" target="_blank" class="weblink" title="https://partnerhelp.netflixstudios.com/hc/en-us/articles/360051554394">Netflix specifications</a>:</span></p>
+<p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin-left: 12px;"><span class="f_Indented" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span><span class="f_Indented">In-cues starting on the shot change or 11 frames after it will be snapped to the shot change.</span></p>
+<p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin-left: 12px;"><span class="f_Indented" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span><span class="f_Indented">In-cues starting 8 frames or less before a shot change will be snapped to the shot change.</span></p>
+<p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin-left: 12px;"><span class="f_Indented" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span><span class="f_Indented">In-cues starting 9, 10 or 11 frames before a shot change will be moved to 12 frames before the shot change.</span></p>
+<p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin-left: 12px;"><span class="f_Indented" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span><span class="f_Indented">In-cues starting 12 frames before or after a shot change will not be moved.</span></p>
+<p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin-left: 12px;"><span class="f_Indented" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span><span class="f_Indented">Out-cues ending up to 11 frames before a shot change will be snapped 2 frames before the shot change.</span></p>
+<p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin-left: 12px;"><span class="f_Indented" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span><span class="f_Indented">Out-cues ending up to 11 frames after a shot change will be snapped 2 frames before the shot change if the Reading Speed allows it, or will be moved to 12 frames after the shot change. </span></p>
+<p class="p_Indented"><span class="f_Indented">&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="text_options" class="hmanchor"></a><span class="f_SubHeader">Text</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:90%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Fix raised subtitles</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">If the subtitle contains empty line(s) at the bottom this command will delete them and shift the whole text down.</span></p>
+<p class="p_Indented"><span class="f_Indented">The subtitles moved up or down by using the <a href="subtitles_editing.htm#subtitles_editing_moving_text" class="topiclink">Fine Move Subtitle Up/Down</a> commands are placed at the default vertical position.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Fit subtitles to one row</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">If there are subtitles in two or more lines and the combined length of the inserted text doesn't exceed the chars. per line limit set in <a href="project_settings_safe_area.htm" class="topiclink">Project Settings/Safe Area</a>, they will be wrapped to one line.</span><br />
+<span class="f_SubHeader1">Note:</span><span class="f_Indented"> Subtitles with dialogue in them will not be Fixed. Dialogue is considered whenever one of the text lines in the subtitle starts with hyphen (long hyphen, em-dash) or one of the lines is in different color.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; height:74px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Delete empty rows</span></p>
+</td>
+<td style="vertical-align:top; height:74px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The command can be used to delete empty rows between text lines like in the following example:</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Subtitle Text Line 1</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">(empty line)</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Subtitle Text Line 2</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Delete extra spaces</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Removes all extra spaces no matter if they occur to be inserted in the beginning, the end or between the words of a subtitle.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Delete spaces before punctuation</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Deletes any space found before punctuation marks (comma, full stop, exclamation mark, question mark, semicolon) and adds space after the punctuation mark if it wasn't there initially.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Snap subtitles to top/bottom Safe Area</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Raised subtitles are moved to the corresponding Safe Area margin (top or bottom) depending on text's presentation on screen: if text appears in the bottom half of the screen it will be moved to the bottom line, i.e will become bottom aligned, and if text appears in the top half of the screen, it will be moved to the top line as top aligned.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Snap subtitles to left, right or center safe area</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Horizontally shifted subtitles will be moved to the default positions of the left, right or center margins configured from the <a href="project_settings_safe_area.htm" class="topiclink">Safe Area</a> menu. Each text line will be repositioned individually to the closest margin. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Only subtitles that go outside of safe area</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The option becomes available only after enabling &quot;Snap subtitles to left, right or center safe area&quot; and will fix only those subtitles that cross the safe area margins. The fix command will try and preserve the original layout of the lines in a subtitle whenever possible and will simply snap them to the closest margin. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Renumber Subtitles</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Starts quick Renumber of the loaded file. Can be started only for &quot;All Subtitles&quot;. More options are available with the global <a href="global_renumber.htm" class="topiclink">Renumber</a> feature available from the Titles drop-down menu.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Replace &quot;full-width low line&quot;</span><br />
+<span class="f_IndentedHilite">with &quot;Ideographic space&quot;</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Replaces the &quot;full-width low line&quot; character (U+FF3F), typically inserted for aesthetics and positioning purposes, with &quot;Ideographic space&quot; character (U+3000). The option becomes available only if the file contains any Japanese characters.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="asian_options" class="hmanchor"></a><span class="f_SubHeader">East Asian Scripts</span></p>
+<p class="p_Normal">These become available once the <a href="pref_editing.htm" class="topiclink">East Asian text scripts enhancements</a> option has been turned on from the Edit/Preferences/Editing menu:</p>
+<p class="p_Picture"><img width="489" height="399" style="margin:0;width:489px;height:399px;border:none" src="fix_subtitles-asian.png"/></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:90%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:289px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Fix Ruby/Bouten positions</span></p>
+</td>
+<td style="vertical-align:top; width:927px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Automatically changes the position of the rubies/boutens currently present in the file. The new positions will be as follows:</span></p>
+<p class="p_Indented" style="margin: 5px 5px 5px 38px;"><span class="f_IndentedHilite">Above/Right</span><span class="f_Indented"> - in horizontal subtitles above the normal text, rubies in vertical subtitles to the right of the normal text;</span></p>
+<p class="p_Indented" style="margin: 5px 5px 5px 38px;"><span class="f_IndentedHilite">Below/Left</span><span class="f_Indented"> - in horizontal subtitles below the normal text, rubies in vertical subtitles to the right of the normal text;</span></p>
+<p class="p_Indented" style="margin: 5px 5px 5px 38px;"><span class="f_IndentedHilite">Outside</span><span class="f_Indented"> - &nbsp;changes the position of the inserted Ruby characters according to the most commonly accepted rules explained earlier in the <a href="ruby_characters.htm" class="topiclink">Ruby Characters</a> topic.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:289px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Single line left positioned</span><br />
+<span class="f_IndentedHilite">vertical subtitles Ruby position</span></p>
+</td>
+<td style="vertical-align:top; width:927px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This option automatically changes ruby or bouten positions in one-line vertical left positioned subtitles to be displayed Left or Right from the base text. The option can be used only if </span><span class="f_Emphasize">Ruby/Bouten position different from</span><span class="f_Indented"> is set to </span><span class="f_Emphasize">Outside</span><span class="f_Indented">.</span></p>
+<p class="p_Indented"><span class="f_Indented">The common practice is ruby/bouten characters to be displayed on the right side of the text in one-line vertical subtitles. But the distinct exception is the </span><span class="f_Emphasize">Disney+</span><span class="f_Indented"> requirement to display ruby in one-line aligned to the left vertical subtitles to the left of the base text. So, when the delivery format is going to be <a href="export_subtitles_disney.htm" class="topiclink">Disney+ Japanese IMSC 1.1</a> we recommend the below configuration:</span><br />
+<span class="f_Indented">&nbsp;</span><br />
+<img width="396" height="58" style="margin:0;width:396px;height:58px;border:none" src="check_disney.png"/></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:289px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Set vertical subtitles alignment to Start</span></p>
+</td>
+<td style="vertical-align:top; width:927px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Automatically aligns all vertical subtitles to the top safe area margin. The term &quot;start&quot; refers to the default/initial value of the tts:textAlign attribute from <a href="https://www.w3.org/TR/2018/CR-ttml2-20180628/#style-attribute-rubyPosition" target="_blank" class="weblink" title="https://www.w3.org/TR/2018/CR-ttml2-20180628/#style-attribute-rubyPosition">TTML2</a>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:289px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Convert between Full- and Half-width digits</span></p>
+</td>
+<td style="vertical-align:top; width:927px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Works for digits in vertical or horizontal subtitles and automatically converts between half- and full-width numerals according to <a href="https://partnerhelp.netflixstudios.com/hc/en-us/articles/215767517-Japanese-Timed-Text-Style-Guide" target="_blank" class="weblink" title="https://partnerhelp.netflixstudios.com/hc/en-us/articles/215767517-Japanese-Timed-Text-Style-Guide">Netflix's requirements- paragraph I.16</a>.</span></p>
+<p class="p_IndentedHilite" style="margin: 5px 5px 5px 38px;"><span class="f_IndentedHilite">Horizontal subtitles</span></p>
+<p class="p_Indented" style="margin: 5px 5px 5px 58px;"><span class="f_Indented">1.1. Single digit numbers should be written using full-width alphanumeric characters.</span></p>
+<p class="p_Indented" style="margin: 5px 5px 5px 58px;"><span class="f_Indented">1.2.Double digit and higher numbers should be written using half-width characters.</span></p>
+<p class="p_IndentedHilite" style="margin: 5px 5px 5px 38px;"><span class="f_IndentedHilite">Vertical Subtitles</span></p>
+<p class="p_Indented" style="margin: 5px 5px 5px 58px;"><span class="f_IndentedHilite">2.1.</span><span class="f_Indented"> Single digit numbers should be written using full-width alphanumeric characters.</span></p>
+<p class="p_Indented" style="margin: 5px 5px 5px 58px;"><span class="f_IndentedHilite">2.2.</span><span class="f_Indented"> Double digit numbers should be written using half-width characters and positioned horizontally using</span><br />
+<span class="f_Indented">“kumi-moji/tatechuyoko” or as we call it <a href="pref_co_vertical_text.htm#horizontalgroups" class="topiclink">horizontal groups</a>.</span></p>
+<p class="p_Indented" style="margin: 5px 5px 5px 58px;"><span class="f_IndentedHilite">2.3.</span><span class="f_Indented"> Three digit and higher numbers should be written using full-width characters and positioned vertically.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:289px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Group Arabic digits horizontally in vertical subtitles</span></p>
+</td>
+<td style="vertical-align:top; width:927px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Automatically creates <a href="pref_co_vertical_text.htm" class="topiclink">horizontal groups</a> of digits in vertical subtitles.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:289px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Fix Boutens</span></p>
+</td>
+<td style="vertical-align:top; width:927px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Allows the characters used for emphasis (Bouten) in Japanese scripts to be replaced automatically. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:289px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Replace full-width Low line with Ideographic space</span></p>
+</td>
+<td style="vertical-align:top; width:927px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Replaces the &quot;Full-width Low line&quot; (U+FF3F) with &quot;Ideographic space&quot; (U+3000). These two characters are typically used for</span><br />
+<span class="f_Indented">Chidori--style placement of song lyrics but different service providers might prefer the one or the other.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:289px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Replace Smart Quotes with Double Prime Quotation Marks</span></p>
+</td>
+<td style="vertical-align:top; width:927px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Replaces the Left (U+201C) and Right (U+201D) Double Quotation Marks typically used in Japanese subtitles with: </span></p>
+<p class="p_Indented" style="margin: 5px 5px 5px 43px;"><span class="f_Indented">Reversed Double Prime (U+301D) and Double Prime (U+301E) quotation marks in horizontal subtitles;</span><br />
+<span class="f_Indented">Reversed Double Prime (U+301D) and Low Double Prime (U+301F) quotation marks in vertical subtitles.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:289px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Replace horizontal bar with</span><br />
+<span class="f_IndentedHilite">two-em dash</span></p>
+</td>
+<td style="vertical-align:top; width:927px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Replaces the &quot;Horizontal Bar&quot; character (U+2015) with &quot;Two em-dash&quot; character (U+2E3A). Two em-dash is typically used to indicate that an ongoing sentence is split between two subtitles.</span></p>
+</td>
+</tr>
+</table>
+</div>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

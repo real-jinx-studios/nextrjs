@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Subtitling &gt; Timing and Timecode Editing &gt; Entering and Modifying Timecode</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Spotting,Timecode Commands,Timecoding,Timing" />
+   <meta name="description" content="Setting In- and Out-cues The following shortcut keys are used for setting In- and Out-cues timecode of the current subtitle: Num Enter – Sets the timecode of the current frame..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "enter_and_modify_timecode.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Entering and Modifying Timecode</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?enter_and_modify_timecode.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="subtitling.htm">Subtitling</a> &gt; <a href="timecode_editing.htm">Timing and Timecode Editing</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Entering and Modifying Timecode</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="timecode_sources.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="timecode_editing.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="timeline.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Setting In- and Out-cues</span></p>
+<p class="p_Normal">The following shortcut keys are used for setting In- and Out-cues timecode of the current subtitle:</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Num Enter</span> – Sets the timecode of the current frame as <span class="f_Emphasize">In-cue</span> value for the current subtitle.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Num Ins</span> – Sets the timecode of the current frame as <span class="f_Emphasize">Out-cue</span> value for the current subtitle.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Num Del</span> - Sets both current subtitle's <span class="f_Emphasize">Out-cue</span> and next <span class="f_Emphasize">In-cue</span>. The command works in slightly different ways depending on the options selected in <a href="pref_co_cues.htm" class="topiclink">Preferences/Command options</a>.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">In-cue and recalc Out-cue</span> - captures the In-cue and automatically calculates the Out-cue for the current subtitle based on text's length and <a href="project_settings_reading_speed.htm" class="topiclink">reading speed parameters</a>.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Num *</span> – <span class="f_Emphasize">Recalculates Out-cue</span> value based on the current In-cue, text length and reading speed (see <a href="project_settings_reading_speed.htm" class="topiclink">Reading Speed Parameters</a>).</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Shift+Num *</span> – <span class="f_Emphasize">Recalculates In-cue</span> value based on the current Out-cue, text length and reading speed.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Num /</span> –<span class="f_Emphasize"> Shifts the previous subtitle Out-cue</span> to the current subtitle In-cue and the time between them matches the <span class="f_Emphasize">minimum interval.</span></p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Shift + Num /</span> – <span class="f_Emphasize">Shifts the next subtitle In-cue</span> to the current subtitle Out-cue and the time between them matches the <span class="f_Emphasize">minimum interval.</span></p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl + Alt + Num Enter </span>– <span class="f_Emphasize">Reset In-cue</span> value to be at minimum interval from the previous Out-cue.</p>
+<p class="p_ShortCutList" style="margin: 0 5px 11px 53px;"><span class="f_ShortCutList">Ctrl + Alt + Num Ins </span> – <span class="f_Emphasize">Reset Out-cue</span> value to be at minimum interval from the next In-cue.</p>
+<p class="p_Normal">All of the above keys are located on the numerical keypad, <span class="f_Emphasize">Num Lock</span> should be <span class="f_Emphasize">off,</span> otherwise the commands will not work as expected. </p>
+<p class="p_Normal">There are two additional commands that don't have shortcuts assigned to them by default and which may provide useful:</p>
+<p class="p_Normal" style="margin: 0 5px 5px 53px;"><span class="f_Emphasize">Fit current In-cue</span> - moves current subtitle's In cue to the minimum interval from previous subtitle.</p>
+<p class="p_Normal" style="margin: 0 5px 11px 53px;"><span class="f_Emphasize">Fit Current Out-cue</span> - moves current subtitle's Out cue to the minimum interval from next subtitle.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Using the Space key</span></p>
+<p class="p_Normal">Another approach is while playing the video file in <span class="f_Emphasize">Preview</span> mode, press and<span class="f_Emphasize"> hold down Space</span> to set the <span class="f_Emphasize">in-cue</span> and then <span class="f_Emphasize">release</span> Space to set the <span class="f_Emphasize">out-cue</span>.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Adjusting In- and Out-cues, chained mode</span></p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Increment/Decrement cues</span></p>
+<p class="p_Normal">The following shortcuts are used to increment/decrement in- and out-cues by one frame:</p>
+<p class="p_Normal"><span class="f_Shortcut">Num + &nbsp; &nbsp; &nbsp; &nbsp;</span>Increases the current In-cue value by one frame. The command works until the minimum duration is reached.</p>
+<p class="p_Normal"><span class="f_Shortcut">Num </span><span style="font-family: Arial,Helvetica,sans-serif;">– &nbsp; &nbsp; &nbsp; &nbsp;</span>Decreases the current In-cue value by one frame. The command works until the In-cue reaches the minimum interval frames from previous subtitle's Out-cue. If you want to continue further press the <span class="f_Shortcut">Control</span> key and you will move both cues. See Chained Mode below.</p>
+<p class="p_Normal"><span class="f_Shortcut">Shift+Num + &nbsp; &nbsp; &nbsp; &nbsp;</span>Increases current Out-cue value by one frame. The command works until the Out-cue reaches the minimum interval frames from the next subtitle In-cue. If you want to continue further press the <span class="f_Shortcut">Control</span> key and you will move both cues. See Chained Mode below.</p>
+<p class="p_Normal"><span class="f_Shortcut">Shift+Num – &nbsp; &nbsp; &nbsp; &nbsp;</span>Decreases current Out-cue value with one frame. Works until the minimum duration is reached.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Note:</span> <span class="f_Shortcut">Num +</span> and <span class="f_Shortcut">Num -</span> are the plus and minus keys located on the numeric keypad.</p>
+<p class="p_Normal"><span class="f_Shortcut">In and Out cue + 1 frame</span> - Offsets the whole subtitle, its in- and out-cue, &nbsp;1 frame forwards.</p>
+<p class="p_Normal"><span class="f_Shortcut">In and Out cue + 1 frame </span><span class="f_Shortcut" style="font-weight: normal;">- Offsets the whole subtitle, its in- and out-cue, 1 frame backwards.</span></p>
+<p class="p_Normal"><span class="f_Shortcut" style="font-weight: normal;">The last two commands don't shortcuts assigned by default and you may need to do that first from <a href="customize_keyboard_shortcuts.htm" class="topiclink">Tools/Customize/Commands</a>.</span></p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Chained mode</span></p>
+<p class="p_Normal">The above commands performed with <span class="f_Shortcut">Alt</span> key pressed change the current cues and the corresponding neighboring subtitle cues:</p>
+<p class="p_Normal"><span class="f_Shortcut">Alt+Num +</span> &nbsp;Increases the in-cue by one frame, the out-cue of the previous subtitle is also increased by one frame keeping the existing interval between the two.</p>
+<p class="p_Normal"><span class="f_Shortcut">Alt+Num </span><span style="font-family: Arial,Helvetica,sans-serif; font-weight: bold;">–</span> Decreases the in-cue by one frame, the out-cue of the previous subtitle is also decreased by one frame keeping the existing interval between the two.</p>
+<p class="p_Normal"><span class="f_Shortcut">Alt+Shift+Num +</span> Increases the out-cue by one frame, the in-cue of the next subtitle is also increased by a frame keeping the existing interval between the two.</p>
+<p class="p_Normal"><span class="f_Shortcut">Alt+Shift+Num </span><span style="font-family: Arial,Helvetica,sans-serif; font-weight: bold;">–</span><span style="font-weight: bold;"> </span>Decreases the out-cue by one frame, the in-cue of the next subtitle is also decreased by one frame keeping the existing interval between the two.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Combined mode</span></p>
+<p class="p_Normal">The same commands performed with the <span class="f_Shortcut">Ctrl </span>key pressed combine the two modes.</p>
+<p class="p_Normal" style="margin: 0 5px 0 38px;"><span class="f_Shortcut">Ctrl+Num +</span> &nbsp;Increases the in-cue by one frame. If the interval between it and the previous out-cue is larger that the minimum interval value the out-cue is not affected and the command is equivalent to<span class="f_Shortcut"> Num +.</span></p>
+<p class="p_Normal" style="margin: 0 5px 0 38px;">If the interval is equal to or smaller than the minimum, the previous out-cue is also increased by one frame and the command becomes equivalent to <span class="f_Shortcut">Alt+Num +.</span></p>
+<p class="p_Normal" style="margin: 11px 5px 11px 38px;"><span class="f_Shortcut">Ctrl+Num </span><span style="font-family: Arial,Helvetica,sans-serif; font-weight: bold;">–</span> &nbsp;Decreases the in-cue by one frame until the minimum interval between subtitles is reached (as <span class="f_Shortcut">Num </span><span style="font-family: Arial,Helvetica,sans-serif;">–). After</span> that point this command starts decreasing both the in-cue and the out-cue of the previous subtitle by one frame keeping the existing interval between the two (as <span class="f_Shortcut">Alt+Num </span><span style="font-family: Arial,Helvetica,sans-serif;">–)</span>.</p>
+<p class="p_Normal"><span class="f_Shortcut">Ctrl+Shift+Num +</span> &nbsp;Increases the out-cue by one frame until the minimum interval between subtitles is reached (as <span class="f_Shortcut">Shift+Num </span><span style="font-family: Arial,Helvetica,sans-serif;">–).</span> After that point this command starts increasing both the out-cue and the in-cue of the next subtitle by one frame keeping the existing interval between the two (as <span class="f_Shortcut">Alt+Shift+Num </span><span style="font-family: Arial,Helvetica,sans-serif;">–)</span>.</p>
+<p class="p_Normal" style="margin: 0 5px 0 38px;"><span class="f_Shortcut">Ctrl+Shift+Num</span><span class="f_Shortcut"> </span><span style="font-family: Arial,Helvetica,sans-serif; font-weight: bold;">–</span> Decreases the in-cue by one frame. If the interval between it and the next in-cue is larger that the minimum interval the out-cue is not affected and the command is equivalent to<span class="f_Shortcut"> Shift+Num +.</span></p>
+<p class="p_Normal" style="margin: 0 5px 0 38px;">If the interval is equal to or smaller than the minimum the next in-cue is also decreased by one frame and the command becomes equivalent to <span class="f_Shortcut">Alt+Shift+Num +.</span></p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Manually Editing Timecode</span></p>
+<p class="p_Normal">Editing timecode is often done manually, entering values in the corresponding in/out cue fields (navigating between them with <span class="f_Shortcut">Tab</span> and <span class="f_Shortcut">Shift+Tab</span> ) or with the keyboard shortcuts related.</p>
+<p class="p_Normal">Modifying the in/out-cue values is similar to a normal Windows text editing process with the difference that in EZTitles you must press Enter (main keyboard) to save the new in/out cue value.</p>
+<p class="p_Normal">If you prefer you can also use the small arrows located beside the in/out-cue edit fields (you don't need to press Enter when you use the arrows).</p>
+<p class="p_Normal">When an arrow is pressed, one frame is added to/subtracted from the TC (if you hold down Shift, the step is fixed at exactly 1 sec).</p>
+<p class="p_Normal">When you have your cursor located &nbsp;at the respective field the same can be done with <span class="f_Emphasize">up</span> and <span class="f_Emphasize">down arrow</span> or the <span class="f_Emphasize">mouse wheel</span>.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

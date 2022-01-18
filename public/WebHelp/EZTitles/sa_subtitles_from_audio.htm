@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Subtitling Assistant &gt; Subtitles from Audio</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Generate subtitles,Subtitles from Audio,synchronize,synchronize script,transcription" />
+   <meta name="description" content="When the video has been processed, the shot changes are detected and the audio is analyzed, subtitles can be created by using the Subtitles from audio option from the..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "sa_subtitles_from_audio.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Subtitles from Audio</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?sa_subtitles_from_audio.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="subtitling_assistant.htm">Subtitling Assistant</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Subtitles from Audio</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="sa_start_sa.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="subtitling_assistant.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="sa_performance.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">When the video has been processed, the shot changes are detected and the audio is analyzed, subtitles can be created by using the <span class="f_Emphasize">Subtitles from audio</span> option from the Subtitling Assistant drop-down menu:</p>
+<p class="p_Picture"><img width="640" height="591" style="margin:0;width:640px;height:591px;border:none" src="sa_configuration.png"/></p>
+<p class="p_Normal">Pressing the <span class="f_Emphasize">Defaults</span> button will revert back to their defaults all options available. Clicking on the <span class="f_Emphasize">Advanced</span> button opens additional rules that can be configured for achieving explicit results.</p>
+<p class="p_Normal">The <span class="f_Emphasize">Preview</span> checkbox opens the preview panel (the right part of the above image) showing how the text would look like after starting the Assistant with the current configuration. Modifying &nbsp;the rules or changing their weight will not simultaneously update text's preview. It will be updated only after pressing the <span class="f_Emphasize">Update</span> button.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Assistant Action</span></p>
+<p class="p_Normal">This section defines the results we want to achieve by using the Assistant and offers the choice between the tasks it can complete or scenarios it can be used in.<br />
+&nbsp;</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:90%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Generate subtitles from audio</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This is the most straight forward operation. Using the audio analysis data acquired in the previous step EZTitles automatically generates subtitles and synchronizes them with the audio.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite" style="margin: 4px 5px 0 12px;"><span class="f_IndentedHilite">Align loaded text to audio</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Splits the loaded transcript into subtitles and automatically times (synchronizes) them with the audio. </span></p>
+<p class="p_Indented"><span class="f_Indented">Useful if you already have a Dialogue List, Spotting List or any kind of transcript. Just import the text into EZTitles and use this option. The only restriction for now is that the audio and the script must be in the same language.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite" style="margin: 4px 5px 0 12px;"><span class="f_IndentedHilite">Extract transcription for subtitles</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Consider this option if you already have well-synchronized empty subtitles and need to fill their text automatically. Subtitling Assistant will not modify their timing but will replace their content with the spoken text recognized from the audio.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:254px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite" style="margin: 4px 5px 0 12px;"><span class="f_IndentedHilite">Generate timecode for subtitles</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This option can be used if you already have well-arranged subtitles without timecodes and you need just to synchronize them automatically. Subtitling Assistant will not change the text in this case and will only set or modify the timing.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">Although the Subtitling Assistant is an advanced tool we recommend you to always Check the generated subtitles for issues. In addition to the regular <a href="check_subtitles.htm" class="topiclink">Checks</a>, <a href="fix_subtitles.htm" class="topiclink">Fixes</a> and <a href="proof_spell_check.htm" class="topiclink">Spell Check</a> options, we can also suggest using <a href="find_replace_go_to.htm" class="topiclink">Find</a> to locate all <span class="f_Emphasize">Commented Subtitles</span>. If the Subtitling Assistant cannot resolve an issue on its own, for example the Assistant couldn't match the part spoken by a character to anything in the loaded transcript, it will still create subtitle but will also add a <a href="working_with_sttls_in_brief.htm#comments" class="topiclink">comment</a> for it with more details about the issue encountered.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Assistant Scope</span></p>
+<p class="p_Normal">The scope options define the range of operation of the Subtitling Assistant.<br />
+&nbsp;</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:90%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:252px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Whole File</span></p>
+</td>
+<td style="vertical-align:top; width:964px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The whole file will be processed at once. Processing the whole file requires some time to complete, usually few minutes if the video is particularly long.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:252px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite" style="margin: 4px 5px 0 12px;"><span class="f_IndentedHilite">From current position to video end</span></p>
+</td>
+<td style="vertical-align:top; width:964px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Starts the Assistant from the current video position. </span></p>
+<p class="p_Indented"><span class="f_Indented">If &quot;Align loaded text to audio&quot; is selected the align process will start &nbsp;from the current video position and currently selected subtitle. Make sure to switch to <a href="working_with_sttls_in_brief.htm#editpreviewmode" class="topiclink">Edit mode</a> first, select the subtitle you want to start with then choose video position from the Timeline somewhere before the selected subtitle's text and then run the Assistant.</span></p>
+<p class="p_Indented"><span class="f_Indented">If the align algorithm finds significant differences between the loaded text and the audio, the whole process will be stopped. If this happens, we suggest correcting the subtitles for the mismatched part and then skip forward to the part where the video and the script are in sync and continue with the Assistant by either using </span><span class="f_Emphasize">From current position to video end</span><span class="f_Indented"> or </span><span class="f_Emphasize">From current position to speech segment</span><span class="f_Indented"> options. </span></p>
+<p class="p_Indented"><span class="f_Indented">Note that if the loaded transcript is timecoded with acceptable precision you can use &quot;</span><span class="f_IndentedHilite">Use In- and Out-cues as sync points&quot; option described below to re-sync the algorithm.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:252px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite" style="margin: 4px 5px 0 12px;"><span class="f_IndentedHilite">From current position to speech segment end</span></p>
+</td>
+<td style="vertical-align:top; width:964px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The speech segment is best described as a small part of the video with speech containing at least 50 words ending up with at least 2 sec pause in the speech.</span></p>
+<p class="p_Indented"><span class="f_Indented">It works for</span><span class="f_Emphasize"> small parts of the video</span><span class="f_Indented"> and almost </span><span class="f_Emphasize">instantly generates subtitles</span><span class="f_Indented"> for them. Then you can quickly review the subtitles, navigate to any position in the video after the last subtitle and run the Assistant for the next speech segment.</span></p>
+<p class="p_Indented"><span class="f_Indented">It can be really handy when tuning various </span><span class="f_Emphasize">Subtitle Preferences</span> and <span class="f_Emphasize">Rules</span>. Specify the parameters and rules, press Go button and if you are no satisfied with the result use Undo and then adjust the parameters again.</p>
+<p class="p_Indented"><span class="f_Indented">Similarly to the previous option, please make sure to select the subtitle you want to start with and after that choose video position from the Timeline prior running the Assistant.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="cueprefs" class="hmanchor"></a><span class="f_SubHeader">Cue Preferences</span></p>
+<p class="p_Normal">At the moment there is just one configurable option under Cue Preferences but we plan to add more in the future.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:90%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:252px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">End of speech - out-cue gap</span></p>
+</td>
+<td style="vertical-align:top; width:964px; padding:0; border:solid thin #000000;"><p class="p_Indented">Specifies the number of frames automatically added to the Out-cue of the last subtitle of a dialogue.</p>
+<p class="p_Indented">Typically, the subtitles composing the dialogue are chained on the minimum interval and the last subtitle in the chain ends up several frames after the audio. The option is set to 12 frames by default but changing the <span class="f_Emphasize">value to 0 frames will switch it off completely</span>.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Closed Captions</span></p>
+<p class="p_Normal">The options are available only when EZTitles is switched to Closed Captions mode in the Project Settings.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:90%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:252px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">CC Style</span></p>
+</td>
+<td style="vertical-align:top; width:964px; padding:0; border:solid thin #000000;"><p class="p_Indented">Specifies the style (Pop-on, Roll-up or Paint-on) of the automatically generated captions.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="sa_prefs" class="hmanchor"></a><span class="f_SubHeader">Subtitles preferences</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:90%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:273px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Use In- and Out-cues as sync points</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Available only when </span><span class="f_Emphasize">Align loaded text to audio</span><span class="f_IndentedHilite"> is used.</span></p>
+<p class="p_Indented"><span class="f_IndentedHilite">If there are significant differences between the loaded text and the recognized audio and the algorithm can't match them it stops. It usually happens if large amount of text is missing in the transcript or there is extra text not present in the audio. If this option is turned on and the loaded transcript is adequately timed the In- and Out-cues are used as synchronization points so the algorithm can continue. As always, the subtitles with possible issues are marked with comments.</span></p>
+<p class="p_Indented"><span class="f_IndentedHilite">Note that this will work properly only if the subtitles doesn't contain</span><span class="f_Indented"> <a href="check_subtitles.htm#inconsistentcues" class="topiclink">inconsistent cues</a> i.e. In-cue before the previous Out-cue, In-cue before the previous subtitle's In-cue, etc.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:273px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Use original subtitles as text breaks</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Available only when </span><span class="f_Emphasize">Align loaded text to audio</span><span class="f_IndentedHilite"> is used.</span></p>
+<p class="p_Indented"><span class="f_Indented">Use this option if you have subtitles containing large amount of text in each of them and these blocks of text are logically separated. Subtitling Assistant will create subtitles in such a way that there are no subtitles containing text from two different text blocks (subtitles) in the original script/text.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:273px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Non-speech information in script</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Provides options to remove </span>character names, sound effects, on-screen text and any other additional descriptive information not included in the spoken dialogue.</p>
+<p class="p_Indented">More details about NSI and examples is available <a href="sa_subtitles_from_audio.htm#nsi" class="topiclink">later in this topic</a>.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:273px; height:29px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Maximum number of rows</span></p>
+</td>
+<td style="vertical-align:top; height:29px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The Maximum Number of Rows is currently limited to 1 or 2 and it determines how many text lines subtitles can have.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:273px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Row doesn't end on</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented">Allows<span class="f_Indented" style="font-weight: bold; color: #ff0000;"> </span><span class="f_Indented">word to be entered in order to prevent subtitle lines ending with them, for example &quot;a&quot;, &quot;an&quot;, &quot;the&quot;, &quot;that&quot;, etc.</span><br />
+<span class="f_Indented">Pressing the </span><span class="f_Emphasize">List</span><span class="f_Indented"> button will open new interface where the words and phrases can be entered for each language:</span></p>
+<p class="p_Picture"><img width="228" height="252" style="margin:0;width:228px;height:252px;border:none" src="auto_adjust_list_gui.png"/></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:273px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Move to a new line text enclosed by</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This option could be really handy when the subtitles contain descriptive text indicated by a special character like the musical note or surrounded by brackets or any other symbol. Text enclosed by the specified symbols will be moved to a separate line, if Max. Number of Rows is set to 2, or to a new subtitle otherwise. </span></p>
+<p class="p_Indented"><span class="f_Indented">If the text is surrounded by two different symbols it is important to enter both of them in the respective field.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Configurable rules with Weights</span></p>
+<p class="p_Normal">The advanced options, found by pressing the <img width="27" height="13" style="margin:0;width:27px;height:13px;border:none" src="sa_advanced_button.png"/> button, can be used to increase the result's precision by modifying their weight to increase or decrease their priority respectively.</p>
+<p class="p_Normal">The weight of a rule can vary <span class="f_Emphasize">between 0 and 100</span>. Rule with weight <span class="f_Emphasize">0</span> will have no impact on the final result, i.e. it is disabled. The greater the weight of a rule, the higher its priority becomes. It's also possible to have multiple rules with weight of <span class="f_Emphasize">100</span>.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:90%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:274px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitle end punctuation</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The specified punctuation characters will be used as split point and when found near the end of a text line or subtitle all the text that follows will be inserted into a new subtitle.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:274px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Prefer longer rows</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This rule instructs the algorithm to favor creating subtitles that have more characters on each text line. Decreasing its weight will result in shorter, containing less text, subtitles overall.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:274px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Single sentences</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Tells the</span><span class="f_Emphasize"> </span><span class="f_Indented">algorithm to prioritize creating subtitles that contain just a sentence in them. Increasing its weight will result in subtitles primarily containing just a single sentence, while decreasing its priority will result into more subtitles containing text from different sentences.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:274px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Row end punctuation</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The specified punctuation characters will be used as word wrap point and when found near the end of the line all the text that follows will be moved to a new text line.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:274px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitle rows layout</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Allows you to select preferable layout for subtitles containing more than 1 text lines:</span></p>
+<p class="p_Indented"><span class="f_Emphasize">Bottom Heavy</span><span class="f_Indented">: the bottom line will be longer than the one above.</span></p>
+<p class="p_Indented"><span class="f_Emphasize">Top Heavy</span><span class="f_Indented">: the first line will be longer than the second one.</span></p>
+<p class="p_Indented"><span class="f_Emphasize">Squared: </span><span class="f_Indented">aims to create two text lines with equal or close to equal length.</span></p>
+<p class="p_Indented"><span class="f_SubHeader1">Note: </span><span class="f_Indented">the line will be split when it goes outside the safe area or contains more than the allowed number of characters in <a href="project_settings_safe_area.htm" class="topiclink">Project Settings/Safe Area</a>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:274px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Preferred max row length</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies the number of characters that each text line should preferably contain. This will instruct the algorithm to prefer text lines with this length but it doesn't mean that there will be no lines longer than that. The total length will never exceed the</span><span class="f_Emphasize"> Max. Number of Characters</span><span class="f_Indented"> set at <a href="project_settings_safe_area.htm" class="topiclink">Project Settings/Safe Area</a> menu.</span></p>
+<p class="p_Indented"><span class="f_Indented">Use 0 to switch this option off.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="nsi" class="hmanchor"></a><span class="f_SubHeader">Non-speech information</span></p>
+<p class="p_Normal">The Non-speech Information options are available only when “Align loaded text to audio” is enabled. The script’s text is searched for character names, sound effects, on-screen text and any other additional descriptive information not included in the spoken dialogue. Then you can decide if they should remain in the final version of the subtitles.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Configure Non-speech information</span></p>
+<p class="p_Normal">Pressing the <span class="f_Emphasize">Config</span> button opens the following dialog:</p>
+<p class="p_Picture"><img width="321" height="119" style="margin:0;width:321px;height:119px;border:none" src="sa_nsi_config.png"/></p>
+<p class="p_SubHeader2"><span class="f_SubHeader2">Speaker ID</span></p>
+<p class="p_Normal">As the name suggests, Speaker ID is used to identify the speaker. When the text is processed new speakers will be moved to a new subtitle or to the beginning of a new line.</p>
+<p class="p_Normal"><span class="f_Emphasize">Speaker ID</span> can be distinguished using the <span class="f_Emphasize">NAME</span> or <span class="f_Emphasize">name</span> wildcards which <span style="text-decoration: underline;">are case sensitive</span>.</p>
+<p class="p_Normal"><span class="f_Emphasize">NAME</span> will match any text in uppercase containing words longer than one symbol. The wildcard can be used alone or surrounded by other tags/symbols like: <span class="f_Emphasize">NAME:</span>, <span class="f_Emphasize">[NAME]</span>, <span class="f_Emphasize">(NAME)</span>, etc. </p>
+<p class="p_Normal">For example, if we have the following:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">MAN&nbsp;IN&nbsp;CAR:</span><span class="f_CodeExample" style="font-weight: normal;">&nbsp;I’ve&nbsp;got&nbsp;something&nbsp;for&nbsp;you.</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">JACK:&nbsp;</span><span class="f_CodeExample" style="font-weight: normal;">Oh,&nbsp;boy…</span></p>
+<p class="p_Normal">The Speaker ID can be configured just as &quot;<span class="f_Emphasize">NAME:</span>&quot;.</p>
+<p class="p_Normal">The lowercase variant &quot;<span class="f_Emphasize">name</span>&quot; will match any uppercase or lowercase letter. It must be surrounded by additional identification tags/symbols like parenthesis: <span class="f_Emphasize">(name)</span>, square brackets: <span class="f_Emphasize">[name]</span> or anything else suitable for the case at hand. Otherwise, the parameter will be ignored because it will match pretty much every word in the script.</p>
+<p class="p_Normal">Consider the following example where the Speakers are in sentence case where the wildcard shall be configured as &quot;<span class="f_Emphasize">[name]:</span>&quot; instead:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">[Man&nbsp;in&nbsp;Car]:&nbsp;</span><span class="f_CodeExample" style="font-weight: normal;">I’ve&nbsp;got&nbsp;something&nbsp;for&nbsp;you.</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">[Jack]:&nbsp;</span><span class="f_CodeExample" style="font-weight: normal;">Oh,&nbsp;boy...</span></p>
+<p class="p_Normal">We cannot use the <span class="f_Emphasize">NAME</span> wildcard because the &quot;Man in Car&quot; and &quot;Jack&quot; IDs contain both capital and lowercase letters. Enclosing the lowercase wildcard in square brackets and adding colon after the right one will only ensure that just the Speaker IDs are picked off. </p>
+<p class="p_SubHeader2"><span class="f_SubHeader2">Other NSI</span></p>
+<p class="p_Normal">Includes sound effects and any other information not included in the speech.</p>
+<p class="p_Normal"><span class="f_Emphasize">Other non-speech information</span> events or simply<span class="f_Emphasize"> NSI</span> can be handled by the NSI <span style="text-decoration: underline;">case-insensitive wildcard</span>.</p>
+<p class="p_Normal">The only limitation is that it must be surrounded by other identification tags/symbols to work properly like, for example, parenthesis: <span class="f_Emphasize">(NSI)</span>, square brackets: <span class="f_Emphasize">[NSI]</span>, hash-tag: <span class="f_Emphasize">#NSI#</span>, etc. Otherwise, if used alone, the parameter will be ignored because it would match every word in the script.</p>
+<p class="p_Normal">Additionally, you can decide if the Speaker ID and/or other NSI will be kept in the text by selecting the <span class="f_Emphasize">Leave in subtitles</span> option.</p>
+<p class="p_Normal">NSI in the middle of the line will not be changed, as long as <span class="f_Emphasize">Leave in subtitles</span> is ticked off:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">I&nbsp;(laughs)&nbsp;fully&nbsp;intend&nbsp;to!</span></p>
+<p class="p_Normal">When the NSI is placed on a separate text line:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">Good&nbsp;bye!</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">[Door&nbsp;Slams]</span></p>
+<p class="p_Normal">it will be moved to a new subtitle with zero duration because the Assistant cannot guess how long the event should be. We recommend doing <a href="check_subtitles.htm" class="topiclink">Check</a> against “Inconsistent Cues” to spot and identify all such subtitles.</p>
+<p class="p_SubHeader2"><span class="f_SubHeader2">Regular Expression syntax</span></p>
+<p class="p_Normal">If using the wildcards described above is not enough you can use Regular Expressions for both parameters. Just add &quot;(?re)&quot; before the expression. For example using &quot;(?re)[\w\d]+##&quot; will match any alpanumeric sequence followed by two &quot;#&quot; symbols. Detailed description of the Regular Expression syntax is available <a href="https://www.pcre.org/original/doc/html/pcrepattern.html" target="_blank" class="weblink">here</a>.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>File Comparison</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="EZTitles allows you &nbsp;to compare the current project to any other file for differences in the text, positioning, formatting and timing.&nbsp;" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "compare_files.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">File Comparison</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?compare_files.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      &raquo;No topics above this level&laquo;
+      </p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">File Comparison</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="labeled_revisions.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="what_is_eztitles.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="about-subtitles-in-japanese.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">EZTitles allows you &nbsp;to compare the current project to any other file for differences in the text, positioning, formatting and timing. </p>
+<p class="p_Normal">First open a project in EZTitles, then click on<span class="f_Emphasize"> File/Compare with</span> and select a file for comparison in any <a href="https://www.eztitles.com/index.php?page=eztitles-file-formats" target="_blank" class="weblink" title="https://www.eztitles.com/index.php?page=eztitles-file-formats">supported format</a> - another .ezt/.eztxml project, an XML, a simple .srt and so on. Then you'll see the subtitles from the two files displayed side by side: </p>
+<p class="p_Picture"><img width="704" height="681" style="margin:0;width:704px;height:681px;border:none" src="labeled_revisions_differences.png"/></p>
+<p class="p_Normal">All the differences are marked in red. All kinds of differences are detected - <span class="f_Emphasize">subtitles text</span>,<span class="f_Emphasize"> time code</span>, <span class="f_Emphasize">style</span>, <span class="f_Emphasize">format</span>, <span class="f_Emphasize">vertical positioning</span>, <span class="f_Emphasize">horizontal alignment,</span> <span class="f_Emphasize">colors and comments</span>. </p>
+<p class="p_Normal">You can choose which attributes to compare from the respective <span class="f_Emphasize">Compare </span>drop-down in the top left. Then, only the subtitles which has this attribute modified will be outlined in red.</p>
+<p class="p_Normal">Subtitles containing comments are indicated by an orange triangle inserted in the top right part. If there is a change in the comment's text, the comment has been removed or a new comment has been added, the triangle will become red and slightly larger. Hint window displaying comment's text will be shown when you move and hold the mouse pointer over the triangle.</p>
+<p class="p_Normal">The  <span class="f_Emphasize">Previous</span>/<span class="f_Emphasize">Next</span> buttons are used to navigate between the differences while pressing the <span class="f_Emphasize">Sync</span> button will focus the selected subtitle in the main editor in EZTitles. </p>
+<p class="p_Normal">Subtitles can be compared according to one of these three attributes: their respective number, their timecode or text.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:150px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitle Number</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Quickly show you all subtitles which have been merged, split, added or completely removed.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:150px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Timecode</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">If the subtitles were renumbered you might consider this option. EZTitles will look for subtitles with the same in-cues and will display them as pairs in the differences window.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:150px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Text</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Furthermore if there are differences in the time-codes and you can't rely on the numbers too you can use this option. The subtitles with matching text are displayed as pairs.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">In addition to simply checking for differences, it is also possible to copy an attribute or subtitle from the comparison file by right clicking &nbsp;with the mouse on a subtitle from the comparison file and then selecting the appropriate option from the context menu:</p>
+<p class="p_Picture"><img width="306" height="193" style="margin:0;width:306px;height:193px;border:none" src="labeled_revisions_context_menu.png"/></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:292px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Get this subtitle</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Overwrites the selected subtitle with the subtitle from the comparison file including timing, position and formatting.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:292px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Get this subtitle's cues</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Overwrites the the In and Out cues for the selected subtitle with these from the comparison file.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:292px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Get this subtitle's position</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Copies the position (horizontal and vertical) from the selected in the comparison file subtitle.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:292px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Get this subtitle's formatting</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Copies the formatting (italics, colors, effects, etc) from the selected in the comparison file subtitle.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:292px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Get this subtitle's text and attributes</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Copies subtitles' text, formatting and position from the selected in the comparison file subtitle. Subtitle's timing will not be modified.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Export</span></p>
+<p class="p_Normal">EZTitles also provides options to Export the comparison list as Excel XLS file in case it has to be shared with a colleague. All differences in the formatting (colors, italics, underline), horizontal positioning (alignment, justification), timing and the text itself can be easily recognized. </p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

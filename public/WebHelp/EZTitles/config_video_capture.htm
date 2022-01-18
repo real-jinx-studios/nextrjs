@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Running and Configuring EZTitles &gt; Configuring Video Capture</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Video Capture,Video Capture configure" />
+   <meta name="description" content="Parameters of audio-, video- and timecode adapters can be adjusted by choosing the Setup… command in the Video menu. Then the following dialog appears:" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "config_video_capture.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Configuring Video Capture</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?config_video_capture.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="running_and_configuring.htm">Running and Configuring EZTitles</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Configuring Video Capture</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="zero_subtitle_templates.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="running_and_configuring.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="config_live_video.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal" style="margin: 0 5px 11px 34px;">Parameters of <span class="f_Emphasize">audio</span>-, <span class="f_Emphasize">video</span>- and <span class="f_Emphasize">timecode adapters</span> can be adjusted by choosing the <span class="f_Emphasize">Setup…</span> command in the <span class="f_Emphasize">Video</span> menu. Then the following dialog appears:</p>
+<div class="p_Picture" style="margin: 19px 367px 19px 34px;"><div style="margin:0;width:336px"><img alt="&nbsp;Video Setup – Video Capture" title="&nbsp;Video Setup – Video Capture" width="336" height="442" style="width:336px;height:442px;border:none" src="video-setup.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Video Setup – Video Capture</span></p></div></div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Capture Method</span></p>
+<p class="p_Normal">The <span class="f_Emphasize">Video Capture</span> page of this dialog is used to set up the <span class="f_Emphasize">Video</span> and <span class="f_Emphasize">Audio Capture</span> devices and <span class="f_Emphasize">Synchronization</span> method. First you must choose the Video Capture Method:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:214px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Video for Windows</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">An older video driver standard, not commonly used by modern capture card manufacturers. Available for Windows XP only.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:214px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">DirectShow</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Video standard part of the </span><span class="f_Emphasize">Microsoft DirectX</span><span class="f_Indented"> interface. Supported by most Video Capture cards.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:214px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">IEEE 1394 (iLink, FireWire)</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Emphasize">Digital Video</span><span class="f_Indented"> interface (DV), also known as </span><span class="f_Emphasize">iLink</span><span class="f_Indented"> on Mac machines. Used for connecting Digital Video devices such as digital cameras.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="page-break-inside: avoid; page-break-after: avoid; border-right: none; border-left: none; margin: 1px 0 7px 0;"><span class="f_SubHeader">Video Settings</span></p>
+<p class="p_Normal">Once you have chosen the Capture Method, you must adjust the <span class="f_Emphasize">Video</span> and <span class="f_Emphasize">Audio Settings</span>. First click on the <span class="f_Emphasize">Setup</span> button located in the lower right corner of the <span class="f_Emphasize">Video Settings</span> box. The following dialog box appears:</p>
+<div class="p_Picture"><div style="margin:0;width:506px"><img alt="&nbsp;Video Capture Configuration" title="&nbsp;Video Capture Configuration" width="506" height="376" style="width:506px;height:376px;border:none" src="video-capt-conf.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Video Capture Configuration</span></p></div></div>
+<p class="p_Normal"><span class="f_SubHeader1">Capture Device</span><br />
+Here you must choose your <span class="f_Emphasize">VFW</span> or <span class="f_Emphasize">DirectShow</span> capture device, depending on what Capture Method you’ve chosen earlier. The name of the capture device depends on the hardware manufacturer.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Video Format</span><br />
+You must also select the <span class="f_Emphasize">video format</span> and <span class="f_Emphasize">color settings</span> you wish to use with your current capture device. They depend on your capture device capabilities. For the normal functioning of EZTitles you would need half PAL – 352x288 or NTSC - 320x240. Mind that you will need 25 fps for PAL/SECAM and 30 (29,97) fps for NTSC. Note that it is recommended to choose YUY2 format if available.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Video Compression</span><br />
+Within EZTitles, &quot;ELF internal MJPEG&quot; is the only compression format available.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Compression Quality</span><br />
+You can choose the degree of video compression when capturing video material. Lower values mean smaller AVI size but at the price of poor quality.</p>
+<p class="p_Normal">Higher values mean larger AVI size, but that is resulting in better quality.</p>
+<p class="p_SubHeader" style="page-break-inside: avoid; page-break-after: avoid; border-right: none; border-left: none; margin: 1px 0 7px 0;"><a id="config_capt_device" class="hmanchor"></a><span class="f_SubHeader">Capture Device Setup</span></p>
+<p class="p_SubHeader1" style="text-indent: -1px; margin: 10px 0 10px 39px;"><span class="f_SubHeader1">Video for Windows</span></p>
+<p class="p_Normal">If you have chosen the <span class="f_Emphasize">VFW Capture Method</span>, click on the Setup button under the Capture Devices listbox. The following dialog box appears:</p>
+<div class="p_Picture"><div style="margin:0;width:253px"><img alt="&nbsp;Video for Windows Capture Setup" title="&nbsp;Video for Windows Capture Setup" width="253" height="294" style="width:253px;height:294px;border:none" src="vid_vfw_cap.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Video for Windows Capture Setup</span></p></div></div>
+<p class="p_Normal">The dialogs, which appear after clicking on the <span class="f_Emphasize">Source</span>, <span class="f_Emphasize">Format</span> and <span class="f_Emphasize">Display</span> buttons are provided by the Video for Windows capture driver, so they will not be discussed here.</p>
+<p class="p_Normal">The only thing to be said is that the <span class="f_Emphasize">Source button</span> provides selection of the <span class="f_Emphasize">video input</span> (S-VHS, Composite, TV Tuner) and the <span class="f_Emphasize">video standard</span> (PAL, NTSC), and the <span class="f_Emphasize">Display button</span> is for changing the <span class="f_Emphasize">picture properties</span>.</p>
+<p class="p_Normal">please mind that Video for Windows method is not available on Windows Vista or later.</p>
+<p class="p_SubHeader1" style="margin: 10px 0 10px 38px;"><span class="f_SubHeader1">DirectShow</span></p>
+<p class="p_Normal">If you have already chosen the <span class="f_Emphasize">DirectShow</span> Capture Method and pressed the Setup button, another dialog will pop up containing settings to adjust the video capture's device settings, like for example:</p>
+<div class="p_Picture"><div style="margin:0;width:697px"><img alt="DirectShow Capture Configuration – Video Page" title="DirectShow Capture Configuration – Video Page" width="697" height="332" style="width:697px;height:332px;border:none" src="vid-ds-conf.png"/><p style="text-align:center"><span class="f_ImageCaption"><br/>
+DirectShow Capture Configuration – Video Page</span></p></div></div>
+<p class="p_Normal">Here you can select the <span class="f_Emphasize">Video Input</span> and the <span class="f_Emphasize">Video Standard</span>, that will be used, and whether the VCR will be locked or not (if the capture driver supports it).</p>
+<p class="p_Normal">The <span class="f_Emphasize">Display</span> settings (shown below) enable you to fine-tune the<span class="f_Emphasize"> picture properties</span> (<span class="f_Emphasize">Brightness</span>, <span class="f_Emphasize">Contrast</span>, <span class="f_Emphasize">Hue</span>, <span class="f_Emphasize">Saturation</span>, <span class="f_Emphasize">Sharpness</span> and others).</p>
+<div class="p_Picture"><div style="margin:0;width:697px"><img alt="DirectShow Capture Configuration – Display Page" title="DirectShow Capture Configuration – Display Page" width="697" height="332" style="width:697px;height:332px;border:none" src="vid-ds-conf1.png"/><p style="text-align:center"><span class="f_ImageCaption"><br/>
+DirectShow Capture Configuration – Display Page</span></p></div></div>
+<p class="p_Normal"><span class="f_SubHeader1">Note:</span> please mind that the ones you see may be different than those given in the above example as they depend completely on the settings and options your video capture device provides. </p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Audio Settings</span></p>
+<p class="p_Normal">Once you have finished with the Video Settings, press the <span class="f_Emphasize">Setup</span> button, located in the <span class="f_Emphasize">lower right corner</span> of the <span class="f_Emphasize">Audio Settings</span> box, so that you can adjust the audio setup. Take a look at the dialog box below:</p>
+<div class="p_Picture"><div style="margin:0;width:522px"><img alt="&nbsp;Audio Capture Configuration" title="&nbsp;Audio Capture Configuration" width="522" height="431" style="width:522px;height:431px;border:none" src="audio-setup.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Audio Capture Configuration</span></p></div></div>
+<p class="p_Normal"><span class="f_Emphasize">Audio Device</span><br />
+With this field you can select your preferred audio device (sound card). If you have only one sound card, it will be selected automatically.</p>
+<p class="p_Normal"><span class="f_Emphasize">Input Line</span><br />
+You must select which sound input you will use to record audio. </p>
+<p class="p_Normal"><span class="f_Emphasize">Audio Format</span><br />
+Select the audio format for audio capture. Higher values mean better sound quality. please mind that more disk space will be required in that case.</p>
+<p class="p_Normal"><span class="f_Emphasize">Mono Audio Capture</span><br />
+Some video players are mono and some use the audio channel to transmit LTC. If that is the case with your video player, then you can use this function to select only one channel.</p>
+<p class="p_Emphasize"><span class="f_Emphasize">please note that EZTitles does not support audio compression.</span></p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Synchronization</span></p>
+<p class="p_Normal">The <span class="f_Emphasize">Synchronization method</span> must also be chosen if you intend to record video with the <span class="f_Emphasize">DirectShow</span> capture method. You can choose from <span class="f_Emphasize">Capture Device</span>, <span class="f_Emphasize">Sound</span> or <span class="f_Emphasize">Sound and Capture</span> <span class="f_Emphasize">synchronization</span>.</p>
+<p class="p_Normal">The Synchronization is needed, because sometimes <span class="f_Emphasize">frames are dropped</span>, but you need to <span class="f_Emphasize">keep the timecode accurate</span>.</p>
+<p class="p_Normal">You can select <span class="f_Emphasize">Capture</span> synchronization if your capture device is reliable and always returns information when a frame is dropped.</p>
+<p class="p_Normal"><span class="f_Emphasize">Sound</span> synchronization is for those, whose capture device never returns information or returns irrelevant information.</p>
+<p class="p_Normal">And finally when your capture device does not always returns information you might choose <span class="f_Emphasize">Sound and Capture</span> <span class="f_Emphasize">synchronization</span>. If you’re not sure what to choose, select <span class="f_Emphasize">Sound</span> synchronization.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

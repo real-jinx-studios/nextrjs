@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Subtitling &gt; Shot Change Detection</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="export shot changes,Shot Changes,Shot Changes Detection,Shot Changes Snap to" />
+   <meta name="description" content="The detection algorithm is automatically started when a new video file is opened or imported. The detection works in background and you can still use EZTitles while the video..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "shot_change_detection.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Shot Change Detection</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?shot_change_detection.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="subtitling.htm">Subtitling</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Shot Change Detection</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="timeline.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="subtitling.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="preview_mode.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">The detection algorithm is automatically started when a new video file is opened or imported. The detection works in background and you can still use EZTitles while the video file is processed. When finished the collected shot changes data is stored in a file so the movie is not processed again next time you open it. The default location for the shot changes data file is the video file's folder but you can change it using the <a href="pref_shot_changes.htm" class="topiclink">Preferences</a> dialog. The data file is named as the video file followed by &quot;<span class="f_CourierFixed" style="font-size: 11pt;">~shots.dat</span>&quot; suffix.</p>
+<p class="p_Normal">The shot changes are displayed on the timeline with yellow vertical lines and thumbnails below the audio graph. You can show/hide the thumbnail track using &quot;View/Timeline&quot; menu.</p>
+<p class="p_Normal">The shot change detection features are activated when EZTitles is installed. If you don't intend to use these features you can turn them off by using the <a href="pref_performace.htm" class="topiclink">Preferences</a> dialog.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="snaptoshotchange" class="hmanchor"></a><span class="f_SubHeader">Snap to Shot Changes</span></p>
+<p class="p_Normal">Often when creating subtitles or closed captions there are requirements that the subtitles appear/disappear on the shot change boundaries.</p>
+<p class="p_Normal">One of the truly remarkable features of EZTitles is the automatic snap to shot changes during the timecoding. And there are also tools that allow you to fix already created subtitles.</p>
+<p class="p_Normal">First you need to activate the snap functionality from the <a href="project_settings_cues.htm#shotchanges" class="topiclink">Project Settings</a>. There is also a threshold value in frames.</p>
+<p class="p_Normal">During the spotting if the captured timecode is less than the &quot;threshold&quot; frames from the shot change, it is automatically snapped.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Snapping Rules</span></p>
+<p class="p_Normal">There are two parameters in <a href="project_settings_cues.htm" class="topiclink">Cues</a> section in Project Settings that controls the snap behavior. They are &quot;<span class="f_Emphasize">Before Cut</span>&quot; and &quot;<span class="f_Emphasize">After Cut</span>&quot; frames.</p>
+<p class="p_Normal">The out-cue is placed on the selected number of frames before the shot change and the in-cue is placed after the shot change.</p>
+<p class="p_Normal">please note that the rule for the minimum interval is applied first.</p>
+<p class="p_Normal">So after the snap, if the next in-cue is closer than minimum interval frames from the previous out-cue it is moved forward to meet the minimum interval.</p>
+<p class="p_Normal">Here is an example that illustrates how the snap works:</p>
+<p class="p_Normal">Suppose that the minimum interval is 4 frames, &quot;Before Cut&quot; parameter is 2 frames and &nbsp;&quot;After Cut&quot; is 1 frame. If there is a shot change at timecode 10:00:00:10 then:</p>
+<p class="p_List" style="text-indent: 0; padding-left: 24px; margin: 0 5px 11px 62px;"><span class="f_List" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:24px;margin-left:-24px">&#9642;</span><span class="f_List">If the subtitle is not chained with the next one and you are setting the out-cue it will be snapped 2 frames before the cut i.e. 10:00:00:08;</span></p>
+<p class="p_List" style="text-indent: 0; padding-left: 24px; margin: 0 5px 11px 62px;"><span class="f_List" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:24px;margin-left:-24px">&#9642;</span><span class="f_List">If the subtitle is not chained with the previous one and you are setting the in-cue it will be snapped 1 frame after the cut i.e. 10:00:00:11;</span></p>
+<p class="p_List" style="text-indent: 0; padding-left: 24px; margin: 0 5px 11px 62px;"><span class="f_List" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:24px;margin-left:-24px">&#9642;</span><span class="f_List">If you have already set the previous out cue to 10:00:00:08 and you are setting the in-cue it will be snapped 4 frames (minimum interval) after the previous out-cue i.e. 10:00:00:12.</span></p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Commands involved</span></p>
+<p class="p_Normal">Activating the automatic snap to shot changes affects the behavior of the following commands in both Edit and Preview modes:</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Num Enter</span> – Sets the timecode of the current frame as In-cue value for the current subtitle.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Num Ins</span> – Sets the timecode of the current frame as Out-cue value for the current subtitle.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Num Del</span><span class="f_List"> – </span>Sets Out-cue value from the current time-code and the next subtitle In-cue at default<span class="f_List"> interval (see <a href="pref_co_cues.htm" class="topiclink">Edit/Presences/Command Options</a>).</span></p>
+<p class="p_Normal">New three commands are introduced that <span class="f_Emphasize">alter the automatic snap</span> to shot changes parameter. If the automatic snap to shot changes is switched on, these three commands set the cues without snapping and if it is off they are used to force the snap.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Shift + Num Enter</span> – Capture current subtitle In-cue and override the &quot;Snap to shot changes option&quot;.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Shift + Num Ins</span> – Capture current subtitle Out-cue and override the &quot;Snap to shot changes option&quot;.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Shift + Num Del</span><span class="f_List"> – </span>Sets the Out-cue value from the current time-code and the next subtitle<span style="font-size: 12pt; font-family: 'Times New Roman',Times,Georgia,serif;">’</span>s In-cue at default interval and over<span class="f_List">rides the &quot;Snap to shot changes option&quot;.</span></p>
+<p class="p_Normal">There are also commands for <span class="f_Emphasize">unconditional snap</span>:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:middle; width:200px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">In-cue snap to shot</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Sets in-cue and snap to the previous shot change.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle; width:200px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Out-cue snap to shot &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Sets out-cue and snap to the next shot change.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle; width:200px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Out/In-cue snap to shot</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Sets Out/In-cue and snap to the next shot change.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">These commands don't have keyboard shortcuts assigned by default. If you want to use them you can assign suitable shortcuts using the <a href="customize_toolbars.htm#customize_toolbars_add_buttons" class="topiclink">Customize</a> options. The commands are located in the <span class="f_Emphasize">Time Code</span> category.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Shot Changes Toolbar</span></p>
+<div class="p_Picture"><div style="margin:0;width:100px"><img alt="&nbsp;Shot Changes Toolbar" title="&nbsp;Shot Changes Toolbar" width="100" height="25" style="width:100px;height:25px;border:none" src="shotchange_toolbar.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Shot Changes Toolbar</span></p></div></div>
+<p class="p_Normal">You can navigate through the shot changes using the two most left buttons.</p>
+<p class="p_Normal">The other two buttons are intended to insert or remove a shot change. The modifications are automatically stored when you save your project (.ezt file).</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="shot_change_options" class="hmanchor"></a><span class="f_SubHeader">Shot Change Detection Options</span></p>
+<p class="p_Normal">It is not so uncommon for a video material to have black stripes above and below the picture. As in a letterboxed video file for example. Those black stripes significantly reduce the accuracy in detection of a shot change, which makes the subtitler's job complicated. They have to be dealt with care and that is why two new options are introduced on the Video/Shot Change Detection menu:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:232px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Use whole video frame</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The Shot Change algorithm analyzes the whole frame. It is suggested to use it only when there are no black stripes around the video's picture.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:232px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Crop video to wide screen (16:9)</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">With this option turned on, the Shot Change analyzes only the picture, excluding the typically existing black stripes over and below the video for wide screen videos.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:232px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Crop video to cinematic (2.35:1)</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">When turned on, the Shot Change analyzes only the picture, excluding the typically existing black stripes over and below the video for files with a cinematic 2.35:1 aspect ratio.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:232px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Export Shot Changes...</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Exports simple XML file containing details about the loaded video clip and list of all shot changes detected with their respective time code of appearing in the video.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">&nbsp;</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

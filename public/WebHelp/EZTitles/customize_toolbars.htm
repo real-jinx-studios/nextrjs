@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>EZTitles Workspace Essentials &gt; Toolbars and Appearance</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Add,Add Button,Add Buttons,Add Toolbar,Commands,Commands Assign,Commands Change,Commands Modify,Layout,Layout Change,Shortcuts,Shortcuts Assign,Shortcuts Change,Shortcuts Modify,Theme,Theme Change" />
+   <meta name="description" content="Customizing Toolbars You can fully customize the toolbars and the buttons displayed on the screen. First the toolbars creation and positioning will be described and later we..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "customize_toolbars.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Toolbars and Appearance</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?customize_toolbars.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="workspace_essentials.htm">EZTitles Workspace Essentials</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Toolbars and Appearance</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="workspace_elements.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="workspace_essentials.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="customize_workspace_layout.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Customizing Toolbars</span></p>
+<p class="p_Normal">You can fully customize the toolbars and the buttons displayed on the screen. First the toolbars creation and positioning will be described and later we will discuss <a href="customize_toolbars.htm#customize_toolbars_add_buttons" class="topiclink">add/remove</a> buttons from the toolbars.</p>
+<p class="p_Normal">If you need to add or remove a particular toolbar from the workspace, you have to right click on the main toolbar and from the context menu select which one you want to hide or show.</p>
+<p class="p_Normal">A tick in front of the toolbar name means that it is displayed:</p>
+<div class="p_Picture"><div style="margin:0;width:191px"><img alt="&nbsp;Toolbars Customize Po-Up" title="&nbsp;Toolbars Customize Po-Up" width="191" height="324" style="width:191px;height:324px;border:none" src="cust_popup.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Toolbars Customize Po-Up</span></p></div></div>
+<p class="p_Normal">If you want to change a toolbar's position, you can simply drag and drop it with the mouse to the new location. The toolbars can be floating or docked on the right, left, top or bottom edges of the main program window. To undock a toolbar, click with the mouse on the toolbar handle (the dotted vertical line on the left side of the toolbar) and while holding down the button drag it to the desired position. To dock a floating toolbar - drag it to the desired window border.</p>
+<p class="p_Normal">When you are ready with positioning the toolbars you can select &quot;Lock Toolbars&quot;. This option will forbid moving the toolbars. </p>
+<p class="p_Normal"><a id="customize_toolbars_toolbars" class="hmanchor"></a>You might want to <span class="f_Emphasize">define a new toolbar</span> which will contain buttons different from the default ones.</p>
+<p class="p_Normal">In order to do this, you have to right click on the main toolbar and from the context menu that is shown click on Customize.</p>
+<p class="p_Normal">The command is also available in <span class="f_Emphasize">Tools/Customize...</span> menu. The following dialog will be displayed:</p>
+<div class="p_Picture"><div style="margin:0;width:493px"><img alt="&nbsp;Customize Dialog - Toolbars Tab" title="&nbsp;Customize Dialog - Toolbars Tab" width="493" height="410" style="width:493px;height:410px;border:none" src="cust_toolbars.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Customize Dialog - Toolbars Tab</span></p></div></div>
+<p class="p_Normal">On the Toolbars tab click on the New button and an empty toolbar will appear. You can add buttons from the Commands page.</p>
+<p class="p_Normal">After adding all the buttons you like you need to drag the newly created toolbar with the mouse to the desired position on the screen.</p>
+<p class="p_Normal">If you want to remove some of the toolbars and be assured they would never appear again, select them from the toolbars page and click on the 'Delete' button on the right.</p>
+<p class="p_Normal">You can also rename some of the toolbars by clicking on the Rename button. </p>
+<p class="p_Normal">The 'Defaults' button, will restore the EZTitles’ default toolbars and their placement whilst keeping any newly created toolbars.</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="customize_toolbars_add_buttons" class="hmanchor"></a><span class="f_SubHeader">Add/Remove buttons to the toolbars</span></p>
+<p class="p_Normal">You can add buttons to your toolbars, when you go to the Commands tab:</p>
+<div class="p_Picture"><div style="margin:0;width:485px"><img alt="&nbsp;Customize Dialog - Commands Tab" title="&nbsp;Customize Dialog - Commands Tab" width="485" height="410" style="width:485px;height:410px;border:none" src="cust_commands.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Customize Dialog - Commands Tab</span></p></div></div>
+<p class="p_Normal">On the left of the window are displayed different categories depending on their functionality (time code operations, file operations and etc.).</p>
+<p class="p_Normal">When you select one of them, the corresponding commands/buttons will be displayed on the right part of the window. </p>
+<p class="p_Normal">To <span class="f_Emphasize">add</span> a button to the toolbars first find and select the command and then drag and drop it to the appropriate position on the toolbars. </p>
+<p class="p_Normal">To <span class="f_Emphasize">remove</span> a button from the toolbars simply drag it off and drop it outside the toolbars area.</p>
+<p class="p_Normal">If you have difficulties finding a particular command you can use the <span class="f_Emphasize">Search commands</span> box at the top of the window.</p>
+<p class="p_Normal">Just type a word or part of the word and the commands will be filtered according to it.</p>
+<p class="p_Normal">For example, by typing &quot;move&quot; you can find all commands containing &quot;move&quot; in their names. &nbsp;</p>
+<p class="p_Normal">Customizing Commands shortcuts are described with the <a href="customize_keyboard_shortcuts.htm" class="topiclink">next section</a>.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="customize_toolbars_appearance" class="hmanchor"></a><span class="f_SubHeader">Appearance</span></p>
+<div class="p_Picture"><div style="margin:0;width:485px"><img alt="&nbsp;Customize Dialog - Appearance" title="&nbsp;Customize Dialog - Appearance" width="485" height="410" style="width:485px;height:410px;border:none" src="cust_appearance.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Customize Dialog - Appearance</span></p></div></div>
+<p class="p_Normal"><span class="f_Emphasize">Layout</span>: the <a href="customize_workspace_layout.htm" class="topiclink">workspace’s layout</a> can be switched from here. </p>
+<p class="p_Normal">If the <span class="f_Emphasize">Smart layout management</span> is selected, when you change the Project's aspect ratio (4:3 or 16:9), EZTitles will automatically choose the most appropriate layout for you.</p>
+<p class="p_Normal">From the <span class="f_Emphasize">Icon Size</span> section you can switch between small (<span class="f_Emphasize">16x16</span> pixels), medium (<span class="f_Emphasize">24x24</span> pixels), large (<span class="f_Emphasize">32x32</span> pixels) or extra large (<span class="f_Emphasize">48x48</span> pixles) icons for the toolbars. The large and extra large icon packages are intended for display devices running at <span class="f_Emphasize">Ultra High Definition</span> resolution with <span class="f_Emphasize">high DPI</span> settings.</p>
+<p class="p_Normal">There is an option to change the <span class="f_Emphasize">background color</span> in the EZTitles’ main window and you can do it by clicking on the <span class="f_Emphasize">Change</span> button.</p>
+<p class="p_Normal">With the <span class="f_Emphasize">Default</span> button you can switch back to the default green background color whenever you like.</p>
+<p class="p_Normal">From the theme drop-down menu you can select between three predefined EZTitles visual themes: <span class="f_Emphasize">Default</span> (current Windows theme), <span class="f_Emphasize">Silver</span> or <span class="f_Emphasize">Graphite</span>.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Subtitling &gt; Editing Subtitles</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Edit subtitles,Navigate between subtitles,Working with subtitles" />
+   <meta name="description" content="Subtitle Text Elements Subtitle stands for a text placed over video, usually at the bottom of the frame, used to translate foreign language dialogue, or to identify the scene...." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "subtitles_editing.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Editing Subtitles</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?subtitles_editing.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="subtitling.htm">Subtitling</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Editing Subtitles</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="format_and_presentation.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="subtitling.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="ruby_characters.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Subtitle Text Elements</span></p>
+<p class="p_Normal">Subtitle stands for a text placed over video, usually at the bottom of the frame, used to translate foreign language dialogue, or to identify the scene.</p>
+<p class="p_Normal">The subtitle text consists of 11 rows at the most. Usually the last two rows are used, i.e. rows 10 and 11. An exception is made for the Zero subtitle, which covers mostly the upper rows.</p>
+<p class="p_Normal">When we talk about editing subtitles, we use the following terms:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:153px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Current subtitle</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The presently edited subtitle. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:153px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Current line</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The line where the cursor is presently located.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:153px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Current word</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The word in which or next to which the cursor is currently located.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">The subtitle editing commands can target different elements – a character, a word, a whole line, even the whole subtitle.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Navigation within a Subtitle</span></p>
+<p class="p_SubHeader1" style="margin: 10px 0 10px 38px;"><span class="f_SubHeader1">Using the Keyboard</span></p>
+<p class="p_Normal">You can navigate within a subtitle in a standard way using the arrow keys, home, end, etc.</p>
+<p class="p_Normal">EZTitles allows you to use two fonts – Font 1 and Font 2. They can be selected by using <img width="31" height="30" style="margin:0;width:31px;height:30px;border:none" src="font1.png"/> or <img width="31" height="30" style="margin:0;width:31px;height:30px;border:none" src="font2.png"/> toolbar buttons or from the <span class="f_Emphasize">Format/Font</span> menu. The default font is set with the <span class="f_Emphasize">File/Properties/Subtitles</span>.</p>
+<p class="p_Normal">If necessary, switching between the different keyboard language mappings is done through the same shortcuts and commands as in all Windows programs you use.</p>
+<p class="p_Normal">When the text you type reaches the set limits (safe area or number of characters per line), the last word is transferred to the next row and it becomes the current row.</p>
+<p class="p_Normal">During this operation the preceding rows move upwards if necessary.</p>
+<p class="p_Normal">If you want to start typing a new row before the text has reached the end of the line, you can use <span class="f_Emphasize">Enter</span>.</p>
+<p class="p_Normal">The following keys and shortcut keys are used for <span class="f_Emphasize">Keyboard navigation</span>:</p>
+<p class="p_Normal" style="margin: 0 5px 11px 53px;"><img src="embim2.png" width="15" height="15" style="margin:1px; border:none" alt="" /><span class="f_ShortCutList">, </span><img src="embim3.png" width="15" height="15" style="margin:1px; border:none" alt="" /><span class="f_ShortCutList">, </span><img src="embim4.png" width="15" height="15" style="margin:1px; border:none" alt="" /><span class="f_ShortCutList">, </span><img src="embim5.png" width="15" height="15" style="margin:1px; border:none" alt="" /> – the cursor moves by one character in the chosen direction limited within the current subtitle text area.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl+</span><img src="embim6.png" width="15" height="15" style="margin:1px; border:none" alt="" /> – the cursor moves one word to the left.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl +</span><img src="embim7.png" width="15" height="15" style="margin:1px; border:none" alt="" /> – the cursor moves one word to the right.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Home</span> – the cursor moves to the beginning of the current row.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">End</span> – the cursor moves to the end of the current row.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl+Home</span> – the cursor moves to the beginning of the current subtitle.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl+End</span> – the cursor moves to the end of the current subtitle.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">F11</span> – enters the comment field.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">F12</span> – returns the cursor directly to the editor area.</p>
+<p class="p_SubHeader1" style="margin: 10px 0 10px 39px;"><span class="f_SubHeader1">Using the Mouse</span></p>
+<p class="p_Normal">Clicking the left mouse button on a specific position in the current subtitle field moves the cursor to that position.</p>
+<p class="p_Normal"><span class="f_Indented">If you click the left mouse button on the left or on the right safe area the cursor will be positioned respectively before the leftmost character or after the rightmost character of the row the cursor was on</span>.</p>
+<p class="p_Indented"><span class="f_Indented">&nbsp;</span></p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Navigation between Subtitles</span></p>
+<p class="p_SubHeader1" style="margin: 10px 0 10px 39px;"><span class="f_SubHeader1">Using the Keyboard</span></p>
+<p class="p_Normal">The keyboard navigation between subtitles is done by using the following keyboard shortcuts.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">PgUp</span> – one subtitle back.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">PgDn</span> – one subtitle forward/new subtitle.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl+PgUp</span> – moves you to the first subtitle in the Preview List.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl+PgDn</span> – moves you to the last subtitle in the Preview List.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl+G</span> (Go to) – moves you to any chosen subtitle specified in a pop-up dialog. This command may be selected from the respective toolbar button, as well as from the Edit/Go to menu.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt+PgUp</span> – goes to the previous subtitle with data in the comments field.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt+PgDn</span> – goes to the next subtitle with data in the comments field.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt+Ctrl+PgDn</span><span style="font-size: 11pt;"> – </span> goes to the last subtitle with non empty time code.</p>
+<p class="p_SubHeader1" style="margin: 10px 0 10px 38px;"><span class="f_SubHeader1">Using the Mouse</span></p>
+<p class="p_Normal">Left-clicking on the previous subtitle field makes that subtitle the current one.</p>
+<p class="p_Normal">Left-clicking on the next subtitle field makes that subtitle the current one or creates a new one if there is no next subtitle.</p>
+<p class="p_Normal">If the mouse has a <span class="f_Indented">wheel</span> button, scrolling it in both directions changes the current subtitle with the previous or the next one.</p>
+<p class="p_SubHeader1"><a id="play_current_subtitle" class="hmanchor"></a><span class="f_SubHeader1">Play current subtitle</span></p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">F4</span> <span class="f_List">–</span> Plays the current subtitle and pauses the video when it reaches the subtitle's out cue (e.a subtitle's end).</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">F3</span> <span class="f_List">–</span> Switches On/Off the <span class="f_Emphasize">Play Subtitle on Change</span>. When the current subtitle is changed in Edit mode (PgUp, PgDwn, click on the preview list, etc), the new subtitle is automatically played.</p>
+<p class="p_ShortCutList">When turned on, a small <img width="31" height="30" style="margin:0;width:31px;height:30px;border:none" src="preview_subtitles_only.png"/><span class="f_ImageCaption"> </span>indicator appears in the upper-right corner of the video.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Entering and Modifying Text</span></p>
+<p class="p_Normal">You can enter or modify text in Insert or Overwrite mode using the keyboard. If you have selected a portion of the text when you type, the new text will overwrite the selection.</p>
+<p class="p_SubHeader1" style="margin: 10px 0 10px 38px;"><span class="f_SubHeader1">Insert and Overwrite Modes</span></p>
+<p class="p_Normal"><span class="f_Indented">You can </span>switch between Insert and Overwrite modes with the Insert key on the keyboard. The Insert typing mode means that all that you type will be inserted in the text at the current cursor position.</p>
+<p class="p_Normal">The Overwrite mode means that your typing replaces the text at the current cursor position.</p>
+<p style="margin: 10px 0 10px 19px;"><a id="subtitles_editing_moving_text" class="hmanchor"></a><span style="font-family: 'Segoe UI',Tahoma,Verdana,Arial,sans-serif; font-weight: bold; color: #2e82ff; text-decoration: underline;">Moving </span><span class="f_SubHeader1">Text in a Subtitle</span></p>
+<p class="p_Normal">Often, when you have already typed the text, it becomes clear that you need to split the line or to arrange the words within the subtitle differently.</p>
+<p class="p_Normal">You can move words within the subtitle using the following shortcut keys:</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl –</span><img src="embim8.png" width="15" height="15" style="margin:1px; border:none" alt="" /> – moves the first word of the current row to the end of the previous one.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl –</span><img src="embim9.png" width="15" height="15" style="margin:1px; border:none" alt="" /> – moves the last word of the current row to the beginning of the next one.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">&nbsp;</span></p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt+Ctrl+</span><img src="embim10.png" width="15" height="15" style="margin:1px; border:none" alt="" /> – moves the whole subtitle one row up.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt+Ctrl+</span><img src="embim11.png" width="15" height="15" style="margin:1px; border:none" alt="" /> – moves the whole subtitle one row down.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt + Shift + </span><img src="embim12.png" width="15" height="15" style="margin:1px; border:none" alt="" /> (<span class="f_Shortcut">Fine Move Subtitle Up</span>) – moves the whole subtitle up with the vertical offset configured at <a href="pref_co_miscellaneous.htm" class="topiclink">Edit-&gt;Preferences-&gt;Miscellaneous</a> menu. </p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt + Shift + </span><img src="embim13.png" width="15" height="15" style="margin:1px; border:none" alt="" /> (<span class="f_Shortcut">Fine Move Subtitle Down</span>) – moves the whole subtitle down with the vertical offset configured at <a href="pref_co_miscellaneous.htm" class="topiclink">Edit-&gt;Preferences-&gt;Miscellaneous</a> menu. </p>
+<p class="p_ShortCutList"><span class="f_SubHeader1">Note: </span>Please mind that the Fine Move Subtitle Up(Down) commands work for Open/Native and Digital Cinema projects only.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">&nbsp;</span></p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Enter</span> – splits the current row into two lines with the cursor as the dividing point and makes the second row current;</p>
+<p class="p_ShortCutList">if the cursor is at the end of the row, the command inserts an empty new line after the current one.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Backspace</span> – if the cursor is at the beginning of the row, it merges the current row with the previous one.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Delete</span> – if the cursor is at the end of the row, it merges the current row with the next one.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt+ Num</span><img src="embim14.png" width="12" height="12" style="margin:1px; border:none" alt="" /><span class="f_ShortCutList">/Num</span><img src="embim15.png" width="12" height="12" style="margin:1px; border:none" alt="" /> – moves the whole row one character left/right. Left and right arrows on the numeric pad are used. The command can be used to override the Safe Area.</p>
+<p class="p_ShortCutList" style="margin: 0 5px 11px 53px;"><span class="f_ShortCutList">Alt+Ctrl+Num</span><img src="embim16.png" width="12" height="12" style="margin:1px; border:none" alt="" /><span class="f_ShortCutList">/Num</span><img src="embim17.png" width="12" height="12" style="margin:1px; border:none" alt="" /> - moves the whole subtitle one character left/right. Left and right arrows on the numeric pad are used. The command can be used to override the Safe Area.</p>
+<p class="p_SubHeader1" style="margin: 10px 0 10px 38px;"><span class="f_SubHeader1">Deleting Text in a Subtitle</span></p>
+<p class="p_Normal">The following shortcuts can be used to delete the text in a subtitle:</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Delete</span> – deletes the character to the right of the cursor or the selected text.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Backspace</span> – deletes the character to the left of the cursor or the selected text.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl+Backspace</span> – deletes the whole word from the mouse pointer to the word's start.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl+Delete</span> – deletes the current word.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt+Space</span> – deletes the text on the current row, but its space is preserved and it remains the current one. This command is useful for deleting the top row.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Shift+Delete</span> – deletes the text from the cursor to the end of the current row.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt+Delete</span> – deletes the current row without preserving its space. It is a useful command for deleting the bottom row of the subtitle, because the previous row takes its place and becomes the current one.</p>
+<p class="p_ShortCutList">If the deleted row is not the bottom one, the next row (the one below it) takes its place and becomes the current one.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt+Ctrl+Space</span> – deletes the whole text of the current subtitle, but its in/out cues are preserved and it remains the current one.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt+Ctrl+Backspace</span> – deletes the whole current subtitle, including its in/out cues, and the next subtitle becomes the current one. </p>
+<p class="p_SubHeader1" style="margin: 10px 0 10px 22px;"><a id="insert_symbol" class="hmanchor"></a><span class="f_SubHeader1">Insert Symbols</span></p>
+<p class="p_Normal">EZTitles allows you to insert different, frequently used accents or special characters via the keyboard using the shortcuts mentioned in the <a href="shortcuts_accents.htm" class="topiclink">Accents, special characters</a> topic as well as directly from the <span class="f_Emphasize">Edit/Insert </span>menu. </p>
+<p class="p_Normal">If the character you need to insert is not among the available there, you can use Insert Symbol tool from <span class="f_Emphasize">Edit/Insert/Insert Symbol</span> or by simply clicking on the <img width="31" height="30" style="margin:0;width:31px;height:30px;border:none" src="insert_symbol_icon.png"/> icon on the toolbars:</p>
+<p class="p_Picture"><img width="531" height="396" style="margin:0;width:531px;height:396px;border:none" src="insert_symbol.png"/></p>
+<p class="p_Normal">All characters and symbols supported by the currently selected font will be displayed in the main part of the dialog.</p>
+<p class="p_Normal">You can insert any of them in EZTitles by simply double clicking the selected character or pressing the <span class="f_Emphasize">Insert</span> button.</p>
+<p class="p_Normal">From the Subset drop-down menu you can select specific category of characters.</p>
+<p class="p_Normal">Some of the fonts support the full range of Unicode characters and it can be quite difficult to quickly find the one you're looking for. You can filter the number of displayed characters by choosing a specific category from the <span class="f_Emphasize">Subset</span> drop-down menu. For example the letter &quot;<span style="font-weight: bold;">я</span>&quot; is part of the Bulgarian and Russian alphabets which are languages using Cyrillic script. It will be much easier to select Cyrillic on the Subset drop-down and quickly locate it than scrolling down through the whole number of available characters otherwise. </p>
+<p class="p_Normal">For your convenience the Insert Symbol tool does also remember the last 15 inserted symbols.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Note:</span> please mind that it isn't necessary to go through all characters before finding the specific one you're looking for. You can always type in the Search box its name to display all characters which are related to it in any way. For example entering &quot;degree&quot; in the Search box will bring a list of a couple of symbols which contain degree in their names.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="subtitles_editing_ins_del_split" class="hmanchor"></a><span class="f_SubHeader">Operations between Subtitles</span></p>
+<p class="p_Normal">The following commands can be used to directly modify one or two consecutive subtitles:</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Insert (Alt+Ctrl+Ins) </span>– inserts a new subtitle after the current one and the new subtitle becomes the current one.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Insert Before (Alt+Shift+Ins)</span> – inserts a new subtitle before the current one and the new subtitles becomes the current one.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Split (Alt+Ctrl+Enter)</span> – splits the current subtitle into two subtitles with the cursor as the dividing point. The first subtitle keeps its in-cue and receives a new out-cue, which is automatically calculated on the basis of the remaining text and the defined reading speed. The second subtitle, which becomes the current one, keeps its old out-cue and receives an in-cue, which corresponds to the minimum interval between two subtitles (but not greater than the out-cue). If the cursor is placed at the beginning or the end of the subtitle text the first or respectively the second subtitle is created empty and given the minimum duration. </p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Move (Alt+Ctrl+ –)</span> – moves the text from the cursor position to the end of the current subtitle into the next subtitle without affecting the timecodes of either.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Move to previous (Alt+Shift+ –)</span> – moves the text from the cursor position to the beginning of the current subtitle into the previous subtitle without affecting the timecodes of either.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Word To Previous Subtitle, Word To Next Subtitle</span> - moves the first/last word to previous/next subtitle. </p>
+<p class="p_ShortCutList"><span class="f_Shortcut">Move text to Previous and add dash</span>, <span class="f_Shortcut">Move text to Next and add dash</span> - Moves the first/last word to previous/next subtitle and inserts dash to the bottom or both text lines.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Merge with Next (Alt+Ctrl+=)</span> – merges the current subtitle with the next one. The merged subtitle keeps the in-cue of the first subtitle and receives the out-cue of the second one.</p>
+<p class="p_ShortCutList"><span class="f_Shortcut">Merge with Previous</span> - merges the current subtitle with the next one.</p>
+<p class="p_ShortCutList"><span class="f_Shortcut">Merge with Next add dash</span>,<span class="f_Shortcut"> Merge with Previous add dash</span> - merges currents subtitle with the previous or next subtitles and inserts dash to the bottom or both text lines.</p>
+<p class="p_ShortCutList"><span class="f_Shortcut">Insert dialogue dashes</span> - Inserts dash at the beginning of both text lines in the current subtitle. If there were dashes already, they will be deleted instead.</p>
+<p class="p_ShortCutList"><span class="f_Shortcut">Fit text to one row</span> - Wraps subtitle's text on a single line if the text can fit on it. These kind of subtitles are indicated by the following icon <img width="23" height="22" style="margin:0;width:23px;height:22px;border:none" src="fit_to_one_line.png"/> below the text in the main editor.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">&nbsp;</span></p>
+<p class="p_ShortCutList">Some &nbsp;commands don't have keyboard shortcuts assigned to them by default but you could easily assign ones or place the commands on the toolbars using the techniques described in the <a href="customize_keyboard_shortcuts.htm" class="topiclink">Keyboard Shortcuts</a> topic.</p>
+<p class="p_ShortCutList">The behavior of<span class="f_Emphasize"> Move text to Previous and add dash</span>, <span class="f_Emphasize">Move text to Next and add dash</span>, <span class="f_Emphasize">Merge with Next add dash</span>,<span class="f_Emphasize"> Merge with Previous add dash</span> and <span class="f_Emphasize">Insert dialogue dashes</span> commands can be tuned further. For more details please refer to the <a href="pref_co_dialogue.htm" class="topiclink">Command Options/ Dialogue in Subtitles</a> topic.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Selecting Text in a Subtitle</span></p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Using the Keyboard</span></p>
+<p class="p_Normal">A portion of text within a subtitle is selected by simultaneously pressing <span class="f_Emphasize">Shift</span> and one of the following keys: <img src="embim18.png" width="12" height="12" style="margin:1px; border:none" alt="" /><span class="f_Emphasize">, </span><img src="embim19.png" width="12" height="12" style="margin:1px; border:none" alt="" /><span class="f_Emphasize">, </span><img src="embim20.png" width="12" height="12" style="margin:1px; border:none" alt="" /><span class="f_Emphasize">, </span><img src="embim21.png" width="12" height="12" style="margin:1px; border:none" alt="" />.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Using the Mouse</span></p>
+<p class="p_Normal">Selection within the subtitle can also be done with the mouse by pressing and holding the left mouse button while moving it along the text. Double clicking with the left mouse button selects the current word. </p>
+<p class="p_Normal">The whole text of the subtitle is selected with <span class="f_Shortcut">Ctrl+A</span>, or using the <span class="f_Emphasize">Edit/Select All</span> menu. </p>
+<p class="p_Indented"><span class="f_Indented">&nbsp;</span></p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="subtitles_editing_change_case" class="hmanchor"></a><span class="f_SubHeader">Change Case</span></p>
+<p class="p_Normal">The next dialog is used to change the case of already typed in letters:</p>
+<div class="p_Picture"><div style="margin:0;width:353px"><img alt="&nbsp;Change Characters Case" title="&nbsp;Change Characters Case" width="353" height="319" style="width:353px;height:319px;border:none" src="edit_change_case.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Change Characters Case</span></p></div></div>
+<p class="p_Normal">The dialog is executed using Edit/Change case menu item. Here you can specify the kind of the operation (uppercase or lowercase) and to what it should be applied to.</p>
+<p class="p_Normal">If Current row is chosen and there are more than one rows selected, the operation is applied to all selected rows.</p>
+<p class="p_Normal">There are also keyboard shortcuts. The default ones are:</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl+U</span> – uppercase the selected text.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Alt+Ctrl+U</span> – uppercase current row/s.</p>
+<p class="p_ShortCutList"><span class="f_ShortCutList">Ctrl+B</span> – lowercase the selected text.</p>
+<p class="p_ShortCutList"><span class="f_SubHeader1">Note:</span> Please mind that the Change Case command executed from the Edit menu works only for the current subtitle. If it's needed to change case for more than one subtitle simultaneously, the <a href="global_changecase.htm" class="topiclink">Titles/Change Case</a> options could be used instead.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="subtitles_editing_ttx" class="hmanchor"></a><span class="f_SubHeader">Position the Text in Teletext or Closed Captions Mode</span></p>
+<p class="p_Normal">When you are working in <span class="f_Emphasize">Teletext</span> or <span class="f_Emphasize">Closed Captions mode</span> or you can use additional formatting commands, specific to this mode. </p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:85%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:163px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Move Subtitle Text</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Using these commands you can move whole subtitles or subtitle rows anywhere over the picture. The following commands are available:</span></p>
+<p class="p_List" style="margin: 0 0 5px 58px;"><span class="f_Shortcut">Alt+Num </span><img src="embim22.png" width="12" height="12" style="margin:1px; border:none" alt="" /><span class="f_Shortcut"> </span><span class="f_List">– moves the current subtitle row left.</span></p>
+<p class="p_List" style="margin: 0 0 5px 58px;"><span class="f_Shortcut">Alt+Num </span><img src="embim23.png" width="12" height="12" style="margin:1px; border:none" alt="" /><span class="f_List"> – moves the current subtitle row right.</span></p>
+<p class="p_List" style="margin: 0 0 5px 58px;"><span class="f_Shortcut">Alt+Ctrl+Num </span><img src="embim24.png" width="12" height="12" style="margin:1px; border:none" alt="" /><span class="f_List"> – moves the current subtitle left.</span></p>
+<p class="p_List" style="margin: 0 0 5px 58px;"><span class="f_Shortcut">Alt+Ctrl+Num </span><img src="embim25.png" width="12" height="12" style="margin:1px; border:none" alt="" /><span class="f_Shortcut"> </span><span class="f_List">– moves the current subtitle right.</span></p>
+<p class="p_List" style="margin: 0 0 5px 58px;"><span class="f_Shortcut">Alt+Ctrl+</span><img src="embim26.png" width="12" height="12" style="margin:1px; border:none" alt="" /><span class="f_List"> – moves the current subtitle up.</span></p>
+<p class="p_List" style="margin: 0 5px 11px 58px;"><span class="f_Shortcut">Alt+Ctrl+</span><img src="embim27.png" width="12" height="12" style="margin:1px; border:none" alt="" /><span class="f_List"> – moves the current subtitle down.</span></p>
+<p class="p_Indented"><span class="f_Indented">After using one of these commands the subtitle becomes Not Aligned.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:163px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Not Aligned Subtitles</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Uses to indicate that the subtitle rows are positioned manually by using the command explained above (if the command is not visible you can find it using the </span><span class="f_Emphasize">Customize</span><span class="f_Indented"> command from the toolbar context menu or </span><span class="f_Emphasize">Tools/Customize...</span><span class="f_Indented">).</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:163px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Box Subtitles</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">If you want to draw a black box around subtitles, you can accomplish this by pressing the </span><span class="f_Shortcut">Alt+Ctrl+B</span><span class="f_Indented"> key combination.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:163px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Double Height</span><br />
+<span class="f_IndentedHilite">Row Double Height</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Use this command to apply/remove the Double Height setting to your current subtitle text selection or a whole subtitle rows.</span></p>
+<p class="p_Indented"><span class="f_Indented">The shortcuts are </span><span class="f_Shortcut">Ctrl+D</span><span class="f_Indented"> and </span><span class="f_Shortcut">Alt+Ctrl+D.</span></p>
+<p class="p_Indented"><span class="f_Indented">Double height is available only in Teletext projects.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="subtitles_editing_comments" class="hmanchor"></a><span class="f_SubHeader">Commenting on Subtitles</span></p>
+<p class="p_Normal">You can add comments to the subtitles for the person revising your work - pointing out a source of reference or any information you consider relevant. This feature greatly improves the coordination between the subtitler and the editor. The comment field can be located on the right of the workspace, docked, or floating wherever you wish to place it. You can Switch the <span class="f_Emphasize">Comment</span> field on and off by selecting the command from the <span class="f_Emphasize">View menu</span>.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Switching between Editor and Comment field</span></p>
+<p class="p_Normal">If you are in the editor area of the current subtitle and you want to add a comment you can do so with a mouse click in the Comment Field or using the <span class="f_Shortcut">F11</span> keyboard shortcut.</p>
+<p class="p_Normal">If you want to move back to the editor field, use the <span class="f_Shortcut">F12</span> keyboard shortcut.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="hidden_sttl" class="hmanchor"></a><span class="f_SubHeader">Hidden Subtitles</span></p>
+<p class="p_Normal">By Hidden we call those subtitles which exist in the current project but must not be exported in the final, output file but shall not be entirely deleted.</p>
+<p class="p_Normal">“Hidden” subtitles will not be exported, but will be saved in the .ezt file.</p>
+<p class="p_Normal">All subtitles marked as “hidden” will appear as crosshatched in the Preview list. </p>
+<p class="p_Picture"><img width="365" height="331" style="margin:0;width:365px;height:331px;border:none" src="hidden_subtitle.png"/></p>
+<p class="p_Normal">You can “hide” any subtitle by either right clicking on it in the Preview list and using the “Hide” option, or by using the “Titles/ Hide-Unhide” subtitles menu.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

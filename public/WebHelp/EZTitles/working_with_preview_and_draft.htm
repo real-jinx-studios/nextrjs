@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Subtitling &gt; Working with Preview and Draft Lists</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Copy subtitles,Cut subtitles,Draft List,Error indication,Indicator,Log List,Paste subtitles,Preview List" />
+   <meta name="description" content="Floating and Docked Lists The Preview and Draft lists and the Comments window can be floating (moved around the workspace) or docked on the right side. In order to undock a..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "working_with_preview_and_draft.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Working with Preview and Draft Lists</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?working_with_preview_and_draft.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="subtitling.htm">Subtitling</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Working with Preview and Draft Lists</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="global_renumber.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="subtitling.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="chapter_list.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Floating and Docked Lists</span></p>
+<p class="p_Normal">The Preview and Draft lists and the Comments window can be floating (moved around the workspace) or docked on the right side. In order to undock a window, just click on the corresponding caption and without releasing the mouse button drag it to the desired position. To dock it again drag it back to the right edge of the main window. For quick switching between docked and undocked state you can right-click on any area of the list window and select the preferred option from the pop-up menu. </p>
+<p class="p_Normal">Preview and Draft lists and the Comments window are shown/hidden using the View menu.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="previewlist" class="hmanchor"></a><span class="f_SubHeader">Preview List</span></p>
+<p class="p_Normal">With the preview list you can navigate easily through the subtitles. All subtitles are displayed along with their in- and out-cues, subtitle number and duration.</p>
+<p class="p_Normal">If a video file is loaded there are <span class="f_Emphasize">thumbnails</span> containing the in-cue frame. You can switch them on and off using <a href="pref_appearance.htm" class="topiclink">Appearance page in Edit/Preferences</a> menu.</p>
+<p class="p_Normal">Along with the text and timecode the following error indicators could be displayed:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:middle; width:53px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><img width="16" height="16" style="margin:0;width:16px;height:16px;border:none" src="indbadcues.png"/></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Indicates the subtitles' cues are either empty or inconsistent.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle; width:53px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><img width="16" height="16" style="margin:0;width:16px;height:16px;border:none" src="indbadchars.png"/></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Outside the safe area and non-printable characters errors - symbols with no representation in the currently selected compatibility font and language, marked with &quot;□&quot;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle; width:53px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><img width="16" height="9" style="margin:0;width:16px;height:9px;border:none" src="indbarreadingspeed.png"/></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Reading speed error. The subtitle duration is below the lower limit of reading speed (see <a href="project_settings_reading_speed.htm" class="topiclink">Reading Speed Parameters</a>)</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">Subtitle indicated as containing errors shall normally be revised, especially if it contains inconsistent cues or non-printable characters. </p>
+<p class="p_Normal">In addition to them, however, there are couple more indicators which does not necessarily indicate an error, but rather provide some general information about the subtitle to the editor. </p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:middle; width:79px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite" style="color: #ff0000;">-12/36</span></p>
+</td>
+<td style="vertical-align:top; width:1129px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Inserted in the left part of the subtitle box, it displays the total number of characters entered in the </span><span class="f_Indented">subtitle</span><span class="f_Indented"> and the optimal number of characters it may contain according to the <a href="project_settings_reading_speed.htm" class="topiclink">Reading Speed Parameters</a>. It becomes </span><span class="f_IndentedHilite" style="color: #ff0000;">red</span><span class="f_Indented"> when the characters are too many and the</span><span class="f_IndentedHilite"> </span><span class="f_IndentedHilite" style="color: #ff0000;">minus sign</span><span class="f_Indented"> shows the extra symbols it contains. Thus it usually shows duration or reading speed issues with the subtitle.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle; width:79px; height:66px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite" style="color: #ff0000;">-4</span></p>
+</td>
+<td style="vertical-align:top; width:1129px; height:66px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">At the beginning of each text line in the preview list, there is a number to indicate the total number of entered characters for each line or respectively the remaining number of symbols until the line exceeds the <a href="project_settings_safe_area.htm" class="topiclink">max. characters per row</a> limit, depending on the selected <a href="pref_appearance.htm#charactercountindicators" class="topiclink">representation options</a>. To mark that the line already exceeds the character limit, the indicator becomes </span><span class="f_IndentedHilite" style="color: #ff0000;">red</span><span class="f_Indented">.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle; width:79px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite" style="font-family: 'Wingdings 3'; font-weight: bold; color: #808080;">p</span><span class="f_IndentedHilite" style="font-weight: bold; color: #808080;">2</span></p>
+</td>
+<td style="vertical-align:top; width:1129px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The small triangle indicates that the text is raised from the bottom line and the number next to it shows the number of lines it is raised by.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">A sequence of vertically positioned triangles may be present to the left and right of the subtitle.</p>
+<p class="p_Normal">They indicate that the subtitles' In-Cue (to the left) or Out-Cue (to the right) are <a href="shot_change_detection.htm#snaptoshotchange" class="topiclink">snapped to a shotchange</a>. please refer to the image below:</p>
+<p class="p_Picture"><span class="f_Picture">&nbsp;</span></p>
+<div class="p_Picture"><div style="margin:0;width:343px"><img alt="&nbsp;Snapped to Shot Change subtitle indication" title="&nbsp;Snapped to Shot Change subtitle indication" width="343" height="90" style="width:343px;height:90px;border:none" src="error_indicators_shotchanges.png"/><p style="text-align:center"><span class="f_ImageCaption" style="font-weight: normal;"><br/>
+Snapped to Shot Change subtitle indication</span></p></div></div>
+<p class="p_Normal">And at the end, when the subtitle appears cross-hatched in the preview list it means that it is <a href="subtitles_editing.htm#hidden_sttl" class="topiclink">hidden</a> and will not be exported to the output file.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="preview_list_mark" class="hmanchor"></a><span class="f_SubHeader">Mark subtitles in Preview List, Copy and Paste</span></p>
+<p class="p_Normal">Subtitles in the preview list can be marked using the corresponding items in the pop-up menu:</p>
+<div class="p_Picture"><div style="margin:0;width:191px"><img alt="&nbsp;Previev List Pop-up Menu" title="&nbsp;Previev List Pop-up Menu" width="191" height="338" style="width:191px;height:338px;border:none" src="r-click-previewlist.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Previev List Pop-up Menu</span></p></div></div>
+<p class="p_Normal">Marked subtitles are indicated with a green border around the subtitle. Mark/Unmark menu items are used for the current subtitle. You can mark/unmark all subtitles or invert marked subtitles as well.</p>
+<p class="p_Normal">There is also a quick way for marking - press the <span class="f_Emphasize">Space bar</span> while the Preview list is focused to <span class="f_Emphasize">toggle</span> the current subtitle's marking, <span class="f_Emphasize">ctrl+mouse click</span> does the same, <span class="f_Emphasize">shift+mouse</span> click can be used to mark a range.</p>
+<p class="p_Normal">Marked subtitles can be copied, formated, deleted or used by <a href="global_subtitle_timecode_op.htm" class="topiclink">Global Subtitle &amp; Timecode commands</a>. </p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Copy, Cut and Paste</span></p>
+<p class="p_Normal"><a id="working_with_preview_and_draft_copycut" class="hmanchor"></a><span class="f_Emphasize">Copy </span>and <span class="f_Emphasize">Cut</span> commands will ask you to choose if you want to copy/cut the current subtitle or all marked subtitles. If there are no marked subtitles the dialog is not shown and the current subtitle is copied/cut.</p>
+<div class="p_Picture"><div style="margin:0;width:176px"><img alt="&nbsp;Copy Opitons" title="&nbsp;Copy Opitons" width="176" height="113" style="width:176px;height:113px;border:none" src="copy-options.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Copy Opitons</span></p></div></div>
+<p class="p_Normal">This way you can copy/paste and rearrange whole blocks of subtitles.</p>
+<p class="p_SubHeader1"><a id="working_with_preview_and_draft_paste" class="hmanchor"></a><span class="f_SubHeader1">Paste block of subtitles or regular text</span></p>
+<p class="p_Normal">In addition you can paste text from other applications like text editor, web browser, etc. Copy the whole text and then right click on the Preview List and select Paste.</p>
+<p class="p_Normal">EZTitles detects if the clipboard contains time codes, text or both and offers you to choose between several options:</p>
+<div class="p_Picture"><div style="margin:0;width:225px"><img alt="&nbsp;Paste from text editor" title="&nbsp;Paste from text editor" width="225" height="313" style="width:225px;height:313px;border:none" src="preview-list-paste.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Paste from text editor</span></p></div></div>
+<p class="p_Normal">In the upper part of the window you need to select what to paste. The <span class="f_Emphasize">Cues Only</span> option pastes only the<span class="f_Emphasize"> time code</span> of the subtitles.</p>
+<p class="p_Normal">With the <span class="f_Emphasize">Text only</span> you can paste only the <span class="f_Emphasize">subtitles text</span> or just any type of regular text you may need to. And using the <span class="f_Emphasize">Whole Subtitles</span> you can paste both the time code and the text.</p>
+<p class="p_Normal">Then you need to select how to paste the subtitles. When you select<span class="f_Emphasize"> Insert subtitles at current position</span>, the current subtitle is moved down and the subtitles from the clipboard are inserted in its position.</p>
+<p class="p_Normal"><span class="f_Emphasize">Overwrite subtitles at current position</span> replaces the subtitles starting from the current one with the contents of the clipboard. And <span class="f_Emphasize">Append subtitles</span> inserts the clipboard after the last subtitle.</p>
+<p class="p_Normal">The recut options are useful if you want to copy block of subtitles to a different position in the movie.</p>
+<p class="p_Normal"><span class="f_Emphasize">Recut from current position</span> places the first subtitle from the clipboard to the current video position. Using the Recut option below you can apply additional displacement.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="draftlist" class="hmanchor"></a><span class="f_SubHeader">Draft List</span></p>
+<p class="p_Normal">You can use the Draft list to store subtitles you want to revise later (i.e. if you need to reconsider a certain subtitle or if it contains a name that is used in many instances in the film you are subtitling and you need it for reference). While the subtitle is on the screen, you can click on it with the right mouse button and select Add to Drafts in the pop-up menu. To remove a subtitle from the list, click on it with the right mouse button and select Remove.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="loglist" class="hmanchor"></a><span class="f_SubHeader">Log List</span></p>
+<p class="p_Normal">The Log list is intended to serve a similar purpose as the Draft list, but in contrast it is temporary and will not be saved with the .ezt file afterwards. </p>
+<p class="p_Normal">In general it provides easier navigation between subtitles which were reported as problematic during the export process, those enlisted by the <a href="find-replace_detail.htm" class="topiclink">Find</a> or <a href="check_subtitles.htm" class="topiclink">Checks</a> commands or affected by the <a href="find-replace_detail.htm" class="topiclink">Replace</a> and <a href="fix_subtitles.htm" class="topiclink">Fix Subtitles</a> commands.</p>
+<p class="p_Normal">The Log List can be focused by using the respective <span class="f_Shortcut">GoTo Log List</span> command. Please mind that there isn't shortcut assigned to the <span class="f_Shortcut">GoTo Log List</span> command and you may need to dedicate one from <a href="customize_keyboard_shortcuts.htm" class="topiclink">Tools/Customize/Commands</a>. </p>
+<p class="p_Normal">You could navigate between the subtitles in the Log List even when it isn't focused. For this, you might need first to <a href="customize_keyboard_shortcuts.htm" class="topiclink">assign shortcuts</a> for the<span class="f_ShortCutList"> Goto Next logged</span> and <span class="f_ShortCutList">Goto Previous</span> logged commands.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

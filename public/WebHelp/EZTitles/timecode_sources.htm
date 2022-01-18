@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Subtitling &gt; Timing and Timecode Editing &gt; Timecode Sources</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Timecode" />
+   <meta name="description" content="Timecode in EZTitles can be obtained from various sources: burned in the picture, encoded in the video file, live time code from a Sony P2 timecode reader or virtual timecode..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "timecode_sources.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Timecode Sources</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?timecode_sources.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="subtitling.htm">Subtitling</a> &gt; <a href="timecode_editing.htm">Timing and Timecode Editing</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Timecode Sources</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="timecode_editing.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="timecode_editing.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="enter_and_modify_timecode.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">Timecode in EZTitles can be obtained from various sources: burned in the picture, encoded in the video file, live time code from a Sony P2 timecode reader or virtual timecode for testing purposes.</p>
+<p class="p_Normal">We will describe them separately:</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Burned in the picture</span></p>
+<p class="p_Normal">Video materials often have a built in (burned in the picture) timecode, which can be used in EZTitles. The idea is simple: synchronize the timecode in EZTitles with the timecode that you see on the picture.</p>
+<p class="p_Normal">This can be done pretty easily by using the features described in <a href="setup_timecode.htm" class="topiclink">Setup timecode</a>.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Video files with embedded timecode</span></p>
+<p class="p_Normal">Certain video files can have embedded timecode which EZTitles can read. Such are the Windows Media Video (.wmv), MPEG 1, 2 (.mpeg, .mpg) and the QuickTime (.mov) video files. No matter if the video file is opened directly or imported EZTitles will read the timecode and display it in the <span class="f_Emphasize">Current Timecode</span> box (please check the <a href="workspace_elements.htm" class="topiclink">Workspace Elements</a>).</p>
+<p class="p_Normal">When loading such videos the regular Setup Timecode window won't pop up.</p>
+<p class="p_Normal">If the video is imported, the converted AVI file will also have the embedded timecode. If you open it using the Open Video File button, the regular Setup Timecode window won't pop up, because the program has already read the timcode. It will be displayed in the <span class="f_Emphasize">Current Timecode</span> box instead.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Live Timecode</span></p>
+<p class="p_Normal">When you’re using live timecode, you will need to manually control your VCR. You must also have an external timecode reader compatible with Sony P2 protocol. If you have that, click on the appropriate toolbar buttons or enable the<span class="f_Emphasize"> Live Timecode</span> and <span class="f_Emphasize">Live Video</span> commands from the <span class="f_Emphasize">Video</span> menu. Then EZTitles will start playing the video signal coming from your Live Video Input Device. Afterwards you can manually control your VCR to navigate through the video material.</p>
+<p class="p_Normal"><span class="f_Emphasize">Note</span> that Live Video and Live Timecode commands are enabled if live video is configured properly (<a href="config_live_video.htm" class="topiclink">Configuring and Using Live Video</a>).</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Virtual Timecode</span></p>
+<p class="p_Normal">The virtual timecode reader can be chosen from the live video setup window. After that you can use it like an external timecode reader device, but for testing purposes only.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

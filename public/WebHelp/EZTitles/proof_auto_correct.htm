@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Subtitling &gt; Subtitle Verification &gt; Proofing &gt; Auto Correct</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Auto Correct,Auto Replace,Autocorrect,Proofing,Proofing Auto Correct" />
+   <meta name="description" content="Auto Correct as the name suggests is a feature which fixes common typos and misspelled words as you type." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "proof_auto_correct.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Auto Correct</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?proof_auto_correct.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="subtitling.htm">Subtitling</a> &gt; <a href="subtitle_verification.htm">Subtitle Verification</a> &gt; <a href="proofing.htm">Proofing</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Auto Correct</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="proof_spell_check.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="proofing.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="proof_short_formts.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal"><span class="f_Emphasize">Auto Correct</span> as the name suggests is a feature which fixes common typos and misspelled words as you type.</p>
+<p class="p_Normal">It is switched on by default and the lists of words are automatically imported from the spell checker application (MS Word, OpenOffice or LibreOffice) so there are no actions required to configure or activate it.</p>
+<p class="p_Normal">However, if you want to switch it off or make changes in the auto correct list you can use <span class="f_Emphasize">Tools/Proofing...</span> menu:</p>
+<div class="p_Picture"><div style="margin:0;width:623px"><img alt="&nbsp;Auto Correct" title="&nbsp;Auto Correct" width="623" height="460" style="width:623px;height:460px;border:none" src="proofing-auto_correct.png"/><p style="text-align:center"><span class="f_ImageCaption" style="font-weight: normal;"><br/>
+Auto Correct</span></p></div></div>
+<p class="p_Normal">There are different auto correct lists for every language used and it is important to choose the appropriate language first. </p>
+<p class="p_Normal">You can easily add entries to the Auto Correct by first typing the misspelled word in the <span class="f_Emphasize">Search Item</span> box, then fill in its correct spelling to the right in <span class="f_Emphasize">Replace With</span> box and finally press the <span class="f_Emphasize">Add Button</span>. </p>
+<p class="p_Normal">If you wish certain word always to appear italicized after typing it, you can use the<span class="f_Emphasize"> &lt;i&gt;</span> parameter, for example:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">Search&nbsp;term:always</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">Replace&nbsp;with:&lt;i&gt;always.</span></p>
+<p class="p_Normal">As easily as inserting new entries you can delete already existing one, by first finding it in the list and then pressing the <span class="f_Emphasize">Delete</span> button.</p>
+<p class="p_Normal">If you want to reset the list you can use <span class="f_Emphasize">Import from Spell Checker</span> button. This will read the auto correct list for the selected language from the spell checker application again. Please be aware that any changes you have made will be lost.</p>
+<p class="p_Normal">In addition to the regular function of the auto-correct EZTitles provides a few other:</p>
+<p class="p_Normal"><span class="f_Emphasize">Correct TWo INitial capitals</span> - automatically corrects words starting in two capital letters.</p>
+<p class="p_Normal"><span class="f_Emphasize">Capitalize first letter of sentence</span> - automatically capitalizes the first letter of a new sentence. Sentence is identified by one of the punctuation marks: full stop, exclamation mark or question mark, every letter that follows one of them will be considered as part of a new sentence and will be capitalized in return. </p>
+<p class="p_Normal"><span class="f_Emphasize">Sentence Delimiters</span> - allows you enter, or respectively remove, &nbsp;punctuation marks which must be followed by a capital letter. This can be required in a number of situations, but especially if direct speech is preceded by a descriptive text, for example: &quot;<span style="font-style: italic;">Jean: - Hello everybody!</span>&quot;. </p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">&nbsp;</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

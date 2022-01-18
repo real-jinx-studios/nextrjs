@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Subtitling Assistant &gt; Starting Audio Analysis</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Analyze video in parts,Command Line,Enable segmented analysis,SA,Segments,Start,Start Audio Analysis,Start Subtitling Assistant" />
+   <meta name="description" content="To start using the Subtitling assistant you need to load the video in EZTitles and wait for it to be processed - shot changes detected and audio graph completely built up on..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "sa_start_sa.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Starting Audio Analysis</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?sa_start_sa.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="subtitling_assistant.htm">Subtitling Assistant</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Starting Audio Analysis</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="sa_wallet_management.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="subtitling_assistant.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="sa_subtitles_from_audio.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">To start using the Subtitling assistant you need to load the video in EZTitles and wait for it to be processed - shot changes detected and audio graph completely built up on the Timeline. The <span style="font-style: italic;">processing video file</span> progress bar at the bottom right corner of EZTitles fills up to the end and indicates when the initial processing is completed.</p>
+<p class="p_Normal">After that you can click on the Subtitling Assistant drop-down and select <span class="f_Emphasize">Start/Resume Audio Analysis</span> from there. Considering that the valid Wallet is already selected, you can check how to do it in the <a href="sa_wallet_management.htm" class="topiclink">previous topic</a>, you need to select Language from the <span class="f_Emphasize">Audio Language</span> drop-down and press the OK button to start the audio analysis:</p>
+<p class="p_Picture"><img width="441" height="149" style="margin:0;width:441px;height:149px;border:none" src="sa_audio_language.png"/></p>
+<p class="p_Normal"><span class="f_SubHeader1">Note: </span>Right now, the Subtitling Assistant works with same language transcriptions only – the language of the original audio must be identical to the language of the subtitles/captions that will be created in the end. Please, make sure to select the appropriate language from the Audio Language drop-down menu.</p>
+<p class="p_Normal">After pressing the OK button EZTitles will start uploading the audio for analysis. This will be indicated by a progress bar in the bottom right:</p>
+<p class="p_Picture"><img width="361" height="24" style="margin:0;width:361px;height:24px;border:none" src="sa_uploading.png"/></p>
+<p class="p_Normal">The audio needs to be uploaded first before the audio analysis actually starts. </p>
+<p class="p_Normal">The Audio Analysis can be stopped only while the audio is uploading via <span class="f_Emphasize">Subtitling Assistant/Stop Audio Analysis </span>and the <span class="f_Emphasize">Stop...</span> button will be grayed out whenever the upload has finished<span class="f_Emphasize">.</span> The audio transcription/speech recognition will begin automatically once the audio finished uploading. </p>
+<p class="p_Normal"><span class="f_SubHeader1">Note:</span> Your wallet will be charged after the audio uploads completely. </p>
+<p class="p_Normal">The audio analysis takes some time to complete and the time required will be displayed below the preview list:</p>
+<p class="p_Picture"><img width="325" height="96" style="margin:0;width:325px;height:96px;border:none" src="sa_approx_ind_preview.png"/></p>
+<p class="p_Normal">as well by the progress bar in the bottom right part of the status bar:</p>
+<p class="p_Picture"><img width="308" height="28" style="margin:0;width:308px;height:28px;border:none" src="sa_approx_ind_status.png"/></p>
+<p class="p_Normal">At this point it isn't necessary to keep EZTitles opened and if the audio analysis takes more than several minutes you can safely close EZTitles or switch to different project in the meantime. The audio transcription will complete and you'll be able to get it next time you open the same video file.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Note:</span> <span class="f_Emphasize">Please mind that the transcription and audio files uploaded to the cloud will be available for limited period only:</span> </p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin: 0 5px 11px 62px;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span>The uploaded audio file will be deleted as soon as the audio analysis ends;</p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin: 0 5px 11px 62px;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span>Audio transcription file will be downloaded automatically when the audio analysis has finished and the video is still opened in EZTitles. If you've closed the EZTitles in the meantime, the audio transcription fill be kept available until you reopen the same video file again but for a maximum of 30 days.</p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin: 0 5px 11px 62px;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span>Audio transcription file will be deleted as soon as it's been downloaded or after 30 days after the audio analysis has been initially started.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="segmentedanalysis" class="hmanchor"></a><span class="f_SubHeader">Sections analysis</span></p>
+<p class="p_Normal">As previously mentioned, the audio analysis will be performed after configuring the language. This means that videos with two or more spoken languages will not be processed and analyzed correctly. </p>
+<p class="p_Normal">The option to<span class="f_Emphasize"> Enable sections analysis</span> provides a workaround to this by allowing you to define which parts of the video are spoken in different languages and thus activate the analysis for each of the sections in the correct language: </p>
+<p class="p_Picture"><img width="440" height="235" style="margin:0;width:440px;height:235px;border:none" src="sa_segmented_analysis.png"/></p>
+<p class="p_Normal">It's possible to add as many language sections as you need as long as they don't overlap in time. If that's the case, the issue will be promptly identified by an &quot;Invalid audio configuration&quot; warning.</p>
+<p class="p_Normal">After activating <span class="f_Emphasize">Enable sections</span> <span style="font-weight: bold;">analysis</span>, EZTitles will automatically create one initial section spanning for the duration of the whole video. To modify its <span class="f_Emphasize">Start</span> <span class="f_Emphasize">Time</span> or <span class="f_Emphasize">End Time</span> points you can either type in the respective timecode value by hand or position the video at the specified point and use the pipette <img width="14" height="18" style="margin:0;width:14px;height:18px;border:none" src="copytc_button.png"/><span class="f_ImageCaption">  </span>button to copy the current timecode from the <a href="timeline.htm" class="topiclink">Timeline</a>. </p>
+<p class="p_Normal">To <span class="f_Emphasize">Add</span> new or<span class="f_Emphasize"> Remove</span> existing segment press the &quot;arrow pointing down&quot; <img width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="dvd_preview_button.png"/> button and select the respective option.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Note:</span> It's important to mention that removing already analyzed section will not delete the analysis data for it. Instead, the section will be removed from the configuration but its data will be kept in case it's added back later on.</p>
+<p class="p_Normal">After the analysis of all configured sections has finished, the Timeline will get colored in light green for the duration of the sections and will mark the parts that have been analyzed by the Assistant. For more details about the different indications, colors and options available for the Timeline, please refer to the <a href="timeline.htm#sa_analysis" class="topiclink">following topic</a>.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="sa-cmd" class="hmanchor"></a><span class="f_SubHeader">Starting Audio Analysis from the command line</span></p>
+<p class="p_Normal">Audio Analysis can also be started from the command line. This could be particularly useful if videos need to be processed in bulk, in advance. Multiple instances of EZTitles can be used to process different video file each. By implementation, a video file can be opened for analysis in only one instance of the program. If, accidentally, another instance starts analyzing video which is processing or has been processed by another instance, the audio analysis will automatically terminate and EZTitles will close. Once the video has been analyzed the particular instance of EZTitles will automatically close as well.</p>
+<p class="p_Normal">The command line for starting the audio analysis is as follows:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">EZTitles6.exe&nbsp;-o=&quot;D:\Work\For&nbsp;Analysis\sample.avi&quot;&nbsp;-AA=&quot;D:\Work\For&nbsp;Analysis\Config.cfg&quot;</span></p>
+<p class="p_Normal">&nbsp;<br />
+<img alt="EZTitles6.exe -o=&quot;D:\Work\For Analysis\sample.avi&quot; -AA=&quot;D:\Work\For Analysis\Config.cfg&quot;" title="EZTitles6.exe -o=&quot;D:\Work\For Analysis\sample.avi&quot; -AA=&quot;D:\Work\For Analysis\Config.cfg&quot;" width="1244" height="101" style="margin:0;width:1244px;height:101px;border:none" src="aa-cmd.png"/></p>
+<p class="p_Normal">The<span class="f_Emphasize"> -o</span> parameter specifies the video that will be analyzed. It can be replaced by the <span class="f_Emphasize">-v</span> parameter which points to a file that will be imported. For more details about the <span class="f_Emphasize">-o</span> and <span class="f_Emphasize">-v </span>parameters, please check the <a href="app_c_command_line_params.htm" class="topiclink">EZTitles Command Line Parameters</a> topic.</p>
+<p class="p_Normal">The <span class="f_Emphasize">-AA</span> parameter must specify the path to the configuration file that will be used for the audio analysis. The configuration file, you may find sample in EZTitles' installation folder, contains just a basic configuration for the Audio Analysis:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">[Analysis]</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">;&nbsp;Enter&nbsp;valid&nbsp;wallet&nbsp;ID&nbsp;with&nbsp;enough&nbsp;tokens&nbsp;to&nbsp;perform&nbsp;the&nbsp;analysis&nbsp;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">AutoAnalyzeWalletId=</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">;&nbsp;Specify&nbsp;audio&nbsp;language&nbsp;using&nbsp;the&nbsp;correct&nbsp;language&nbsp;code&nbsp;from&nbsp;this&nbsp;list:&nbsp;http://www.eztitles.com/download.php?file=sa-supported-langs</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">AutoAnalyzeRecLang=en-US</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">;&nbsp;Specify&nbsp;valid&nbsp;UNC&nbsp;patch&nbsp;where&nbsp;the&nbsp;log&nbsp;file&nbsp;will&nbsp;be&nbsp;created&nbsp;(&nbsp;Optional&nbsp;)</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">LogFile=</span></p>
+<p class="p_Normal">The <span class="f_Emphasize">AutoAnalyzeWalletId</span> parameter must point to a valid Wallet ID which will be charged during the operation. <br />
+&nbsp;<br />
+The <span class="f_Emphasize">AutoAnalyzeRecLang</span> parameter is required for the analysis itself and it must be followed by the correct language. All currently supported languages and their respective language codes are available here:<br />
+<a href="http://www.eztitles.com/download.php?file=sa-supported-langs" target="_blank" class="weblink">http://www.eztitles.com/download.php?file=sa-supported-langs</a>. </p>
+<p class="p_Normal">The <span class="f_Emphasize">LogFile</span> parameter is optional and will keep information of all operations performed. The path must be specified in UNC format.</p>
+<p class="p_Normal">The video can be analyzed in sections from the command line as well. In this case, sections can be defined by adding sequentially numbered sections to the configuration file. Like that: </p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">[AAConfigSection1]</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">Language=&nbsp;en-US</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">StartTC=StartOfVideo</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">EndTC=00:02:43:00</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">[AAConfigSection2]</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">Language=&nbsp;bg-BG</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">StartTC=00:02:43:01</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">EndTC=00:04:43:00</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">[AAConfigSection3]</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">Language=&nbsp;fr-FR</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">StartTC=00:04:43:01</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 10px 72px;"><span class="f_CodeExample">EndTC=EndOfVideo</span></p>
+<p class="p_Normal">The language in each section is specified by the<span class="f_Emphasize"> Language</span> parameter. For reference, here's a list of the supported languages:<br />
+<a href="http://www.eztitles.com/download.php?file=sa-supported-langs" target="_blank" class="weblink">http://www.eztitles.com/download.php?file=sa-supported-langs</a>.<br />
+<span class="f_Emphasize">StartTC</span> parameter specifies the beginning of a section. You can enter either a valid timecode value or use <span class="f_Emphasize">StartOfVideo</span> to indicate the section starts from the very first frame of the video.<br />
+<span class="f_Emphasize">EndTC </span>parameter indicates where a section ends. You can enter a valid timecode value for it or use <span class="f_Emphasize">EndOfVideo</span> to indicate the section continues to the very last frame of the video.</p>
+<p class="p_Normal">Following the sample code from above, the Subtitling Assistant will analyze the video in three sections/parts: </p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 22px; margin: 0 5px 11px 72px;"><span class="f_Normal" style="display:inline-block;width:22px;margin-left:-22px">1.</span>From video's beginning (i.e. from 00:00:00:00) to 00:02:43:00 there will be a section in English.</p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 22px; margin: 0 5px 11px 72px;"><span class="f_Normal" style="display:inline-block;width:22px;margin-left:-22px">2.</span>From 00:02:43:01 to 00:04:43:00 - a section in Bulgarian.</p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 22px; margin: 0 5px 11px 72px;"><span class="f_Normal" style="display:inline-block;width:22px;margin-left:-22px">3.</span>From 00:04:43:01 to end of the video - a section in French.</p>
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

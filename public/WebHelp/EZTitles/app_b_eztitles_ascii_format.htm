@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Appendix B. ASCII File Format used by EZTitles</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="ASCII,ASCII File Format Used by EZTitles" />
+   <meta name="description" content="[Header] Original Title: &nbsp;Translated Title: &nbsp;Original Episode: &nbsp;Translated Episode: &nbsp;Original Languages: &nbsp;Translated Languages: &nbsp;Translator: &nbsp;Editor: &nbsp;Publisher: &nbsp;Max Cha" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "app_b_eztitles_ascii_format.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Appendix B. ASCII File Format used by EZTitles</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?app_b_eztitles_ascii_format.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      &raquo;No topics above this level&laquo;
+      </p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Appendix B. ASCII File Format used by EZTitles</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="notebook_users.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="what_is_eztitles.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="app_c_command_line_params.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_CourierFixed"><span class="f_CourierFixed">[Header]</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Original Title: </span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Translated Title: </span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Original Episode: </span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Translated Episode: </span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Original Languages: </span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Translated Languages: </span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Translator: </span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Editor: </span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Publisher: </span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Max Characters Per Line: 0</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">Frame Rate: 29.97 fps</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">TimeCode Format: 30 frames/sec drop-frame</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[/Header]</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">&nbsp;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">0000 : 00:00:00:00 00:00:00:08</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[L1]Top Gun</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[L1](DVD - PAL)</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[L1]STORY: </span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[L1]LANG: GBR</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[L1]</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[L1]</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[L1]</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[L1]</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[L1]</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[]</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[]</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">&nbsp;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">0001 : 01:24:40:01 01:24:43:16 CC 32</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[C2]You'll also be trained and evaluated</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[C2]by civilian specialists.</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">####This is a comment line</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">&nbsp;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">0002 : 01:24:43:20 01:24:48:14 LC 43 [hidden]</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[C2]They are our best source of</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[C2]information on enemy aircraft.</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">&nbsp;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">0003 : 01:24:48:18 01:24:54:04 CC 50</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[C2]One of the most qualified is call sign</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[C2]Charlie, with a Ph.D. in astrophysics.</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">&nbsp;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">0004 : 01:24:54:08 01:25:01:01 CC 60</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[C2]Listen to her, because the Pentagon</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[C2]listens to her about your proficiency.</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">&nbsp;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">0005 : 01:25:01:05 01:25:04:15 CC 30 </span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[C2]&lt;All yours, Charlie.&gt;</span></p>
+<p style="text-align: justify; margin: 0 0 0 0;"><span style="font-size: 10pt; font-family: Arial,Helvetica,sans-serif; color: #000000;">&nbsp;</span></p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">The Plain ASCII files that EZTitles uses contain as much information as possible about your subtitles and project in general. However, not all of the attributes have to be present in the file in order for EZTitles to open it.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">File Header</span></p>
+<p class="p_Normal">As you can see from the sample above, the file starts with the <span class="f_Emphasize">File</span> <span class="f_Emphasize">Header</span> section which may contain number of somehow descriptive information about the translator who created the file, the languages used in the file, the show it has been intended for as well as general details about the particular project like the Maximum characters per line, its Frame Rate and Timecode Format. The <span class="f_Emphasize">File</span> <span class="f_Emphasize">Header</span> section <span class="f_Emphasize">is not mandatory</span> and isn't required to be present in the file.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Subtitles</span></p>
+<p class="p_Normal">Each subtitle consists of <span class="f_Emphasize">subtitle header</span> and <span class="f_Emphasize">text lines</span>.<span class="f_Emphasize"> </span>Both the subtitle header and text lines must start on separate lines in the file.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Subtitle header</span></p>
+<p class="p_Normal">The subtitle header may contain several attributes, as explained below:</p>
+<p class="p_CourierFixed"><span style="width:43px;display:inline-block">&nbsp;</span><span class="f_CourierFixed">0002 : 01:24:43:20 01:24:48:14 LC 43 [hidden]</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&nbsp;</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:90%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:187px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitle number</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Can be present in different formats: 1, 01, 0001, etc. EZTitles will also read and recognize inserted subtitles if they are indicated by a number followed by a letter index like for example </span><span class="f_Indented" style="font-weight: bold;">001a</span><span class="f_Indented">, </span><span class="f_Indented" style="font-weight: bold;">1476b</span><span class="f_Indented">, </span><span class="f_Indented" style="font-weight: bold;">3c</span><span class="f_Indented">, etc. The subtitle number is </span><span class="f_Indented" style="font-weight: bold;">optional</span><span class="f_Indented">.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:187px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">In- and Out-cues</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Must be present in SMPTE HH:MM:SS:FF format. The two timecodes are separated by space. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:187px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Justification</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Combination of justification and position codes. The first character specifies the position of the whole subtitles text and the second one represents the text justification. The possible values are: L (left), C (center) or R (right). For example CL indicates that the subtitle is center-left aligned (the block of text is positioned at the center of the screen and the individual lines are justified left). </span><span class="f_Indented" style="font-weight: bold;">Optional</span><span class="f_Indented"> attribute.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:187px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Maximum number </span><br />
+<span class="f_IndentedHilite">of allowed characters</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The optimal number of characters calculated on the basis of the subtitle duration and the reading speed parameters. </span><span class="f_Indented" style="font-weight: bold;">Optional</span><span class="f_Indented"> attribute.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:187px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">[Hidden]</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Placed at the end of the subtitle header indicates that the particular subtitle is hidden. </span><span class="f_Indented" style="font-weight: bold;">Optional</span><span class="f_Indented"> attribute. </span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Text lines</span></p>
+<p class="p_Normal">Following the subtitle header are the actual text lines. Each text line starts at a new line. The line could start with <span class="f_Emphasize">format information</span> enclosed in square brackets &quot;<span class="f_Emphasize">[ ]</span>&quot;. The format information indicates the row alignment (L - left, R - right, C - center) and the font number - 1 or 2. Format information is optional. Subtitles lacking these details will be loaded and displayed in EZTitles with the default settings from the <a href="project_settings_subtitles.htm" class="topiclink">Project Settings/Subtitles</a> menu.</p>
+<p class="p_Normal">The subtitle's text itself may be indicated as <span class="f_Emphasize">italics</span> by enclosing it inside angled brackets &quot;<span class="f_Emphasize">&lt; &gt;</span>&quot;. </p>
+<p class="p_Normal">Lines starting with <span class="f_Emphasize">##</span> are considered as commentary and they will be loaded as <a href="subtitles_editing.htm#subtitles_editing_comments" class="topiclink">comments</a> in EZTitles.</p>
+<p class="p_Normal">To make the text appear higher on the screen you may add <span class="f_Emphasize">square brackets []</span> on a new line for each row the text has to be raised by.</p>
+<p class="p_Normal">Looking in the example above, the last subtitle &quot;All yours, Charlie&quot; will appear to the bottom of the screen, but modifying will make EZTitles display it raised to the 3rd row.</p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">0005 : 01:25:01:05 01:25:04:15 CC 30 </span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[C2]&lt;All yours, Charlie.&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[]</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">[]</span></p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Note that the <span class="f_Emphasize">Zero Subtitle</span> obeys the same rules as the regular subtitles but it must always has the <span class="f_Emphasize">0 subtitle number</span> and respectively has to be inserted at the beginning of the file, right below the File Header section.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>
