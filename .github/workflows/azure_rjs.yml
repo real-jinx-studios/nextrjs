@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'rjs'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9040439D2F0B452A966BAF7C478E9EB1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_23A569B77AE54858BC522E8E78FC5542 }}
           package: .
