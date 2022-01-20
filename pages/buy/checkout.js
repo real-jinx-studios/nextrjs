@@ -12,6 +12,7 @@ import styles from "../../styles/login.module.css";
 import axios from "axios";
 export default function Checkout() {
   const [login, setLogin] = useState({ login: false });
+  const [billing, setBilling] = useState(false);
   const { data: session } = useSession();
 
   const { state } = useContext(Store);
@@ -110,7 +111,10 @@ export default function Checkout() {
     </div>
   ));
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setBilling(true);
+  };
 
   return (
     <Layout
@@ -200,10 +204,6 @@ export default function Checkout() {
                 >
                   continue
                 </button>
-                <p>OR</p>
-                <Link href="#">
-                  <a>SIGN-UP</a>
-                </Link>
               </form>
             </div>
           )}
@@ -217,7 +217,7 @@ export default function Checkout() {
               <h2 className="cart__title">Order Summary</h2>
               <span className="cart__edit">Edit</span>
             </div>
-            {items || "loading..."}
+            <div className={"cart__items-section"}>{items}</div>
             <div className="cart__sum">
               <div className="cart__sum__title flex justify-sb">
                 <span className="font-size-m">subtotal: </span>
