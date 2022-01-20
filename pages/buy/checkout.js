@@ -122,6 +122,7 @@ export default function Checkout() {
       description="checkout page for products purchased on EZTitles.com"
     >
       <section className="checkout">
+        <input type="checkbox" id="shit" className="input_c" />
         <div className="billing">
           {!login.login && (
             <div className="billing__inner">
@@ -197,13 +198,15 @@ export default function Checkout() {
                   placeholder="Phone Number"
                   defaultValue={login.phone_num}
                 />
-                <button
-                  className="button button_basic_long"
-                  type="submit"
-                  style={{ marginTop: 28 }}
-                >
-                  continue
-                </button>
+                <label htmlFor="shit" className="btn">
+                  <button
+                    className="button button_basic_long"
+                    type="submit"
+                    style={{ marginTop: 28 }}
+                  >
+                    continue
+                  </button>
+                </label>
               </form>
             </div>
           )}

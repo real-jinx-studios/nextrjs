@@ -594,6 +594,10 @@ font-size: 6rem;
 .checkout-empty__link::before{
   content: "< ";
 }
+.input_c{
+  position: absolute;
+
+}
 .cart,
 .billing {
   /*width: 48%;*/
@@ -664,6 +668,28 @@ padding: 0.8em;
   margin: 0;
   color: var(--clr-neutral-250);
 }
+
+.input_c:checked + .billing > .billing__inner > .billing__title{
+  opacity: 0;
+  transition: opacity ease-in-out 0.3s 0.3s;
+}
+.input_c:checked + .billing > .billing__inner > .billing__fields{
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transition: opacity ease-in-out 0.3s 0.3s;
+}
+.input_c:checked + .billing > .billing__inner{
+  flex:0 0 5%;
+
+}
+.input_c:checked + .billing > .billing__inner-step{
+  flex-shrink: 0;
+  flex-grow: 1;
+
+}
+
+
 .cart__inner{
   position: sticky;
   top:var(--offset-top);
