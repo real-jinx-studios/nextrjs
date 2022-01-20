@@ -29,8 +29,8 @@ module.exports = {
         permanent: true,
       },
       {
-        source: "/WebHelp/EZTitles",
-        destination: "/WebHelp/EZTitles/index.html",
+        source: "/Webhelp/EZTitles",
+        destination: "/Webhelp/EZTitles/index.html",
         permanent: true,
       },
     ];
