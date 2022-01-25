@@ -17,6 +17,7 @@
     border-radius: 20px;
     padding: 5em 8em;
     overflow: hidden;
+    transition: 0.3s;
 }
 .section form::before{
     user-select: none;
@@ -47,3 +48,24 @@
 }
 
 
+.error{
+    background-color:#D92B3A88;
+    color:var(--clr-neutral-50);
+    border:1px solid #D92B3A;
+    border-radius: 15px;
+    line-height: 0;
+    margin-top: -2em;
+    margin-bottom: 15px;
+    transition: 0.15s;
+    width:298px;
+    padding-top:1.5em;
+    padding-bottom:1.5em;
+    text-align: center;
+}
+.register_wrapper{
+    display:grid;
+    gap:1.5em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom:1.3em;
+}

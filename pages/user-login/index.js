@@ -6,12 +6,14 @@ import CustomInput from "../../components/customInput";
 import Link from "next/link";
 import axios from "axios";
 import Cookies from "js-cookie";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ServicePortal() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const { entries, isLoading, time } = useEntries();
+  const [register, setRegister] = useState(false);
   const router = useRouter();
 
   const handleUsernameChange = (e) => {
@@ -19,6 +21,10 @@ export default function ServicePortal() {
   };
   const handlePasswordChange = (e) => {
     console.log(e.target.value);
+  };
+
+  const onChange = (e) => {
+    console.log(e);
   };
 
   const handleSubmit = (e) => {
@@ -39,6 +45,8 @@ export default function ServicePortal() {
             })
           );
           router.push("/buy/checkout");
+        } else if (response.data[0]["COUNT(1)"] == 0) {
+          setError(true);
         }
       })
       .catch(function (error) {
@@ -48,23 +56,52 @@ export default function ServicePortal() {
   return (
     <section className={styles.section}>
       <form noValidate onSubmit={handleSubmit}>
-        <CustomInput
-          handleChange={handleUsernameChange}
-          type="text"
-          placeholder="Username"
-        />
-        <CustomInput
-          handleChange={handlePasswordChange}
-          type="password"
-          placeholder="Password"
-        />
-        <button className={styles.submit_button} type="submit">
-          SIGN IN
-        </button>
-        <p>OR</p>
-        <Link href="#">
-          <a>SIGN-UP</a>
-        </Link>
+        {!register && (
+          <>
+            <div
+              className={styles.error}
+              style={error ? { opacity: "1" } : { opacity: "0" }}
+            >
+              Incorrect username or password.
+            </div>
+            <CustomInput
+              handleChange={handleUsernameChange}
+              type="text"
+              placeholder="Username"
+            />
+            <CustomInput
+              handleChange={handlePasswordChange}
+              type="password"
+              placeholder="Password"
+            />
+            <button className={styles.submit_button} type="submit">
+              SIGN IN
+            </button>
+            <p>OR</p>
+            <Link href="#">
+              <a onClick={() => setRegister(true)}>SIGN-UP</a>
+            </Link>
+          </>
+        )}
+        {register && (
+          <>
+            <div className={styles.register_wrapper}>
+              <CustomInput type="text" placeholder="First Name" />
+              <CustomInput type="text" placeholder="Last Name" />
+              <CustomInput type="text" placeholder="Username" />
+              <CustomInput type="text" placeholder="Email" />
+              <CustomInput type="password" placeholder="Password" />
+              <CustomInput type="password" placeholder="Repeat Password" />
+            </div>
+            <ReCAPTCHA
+              sitekey="6LekZTceAAAAAI6Rd6bKCZ-TPHh4BLwuLq1XavYx"
+              onChange={onChange}
+            />
+            <button className={styles.submit_button} type="submit">
+              REGISTER
+            </button>
+          </>
+        )}
       </form>
     </section>
   );
