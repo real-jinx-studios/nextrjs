@@ -28,7 +28,7 @@ jobs:
           npm run test --if-present
 
       - name: get zip shit
-        run: apt-get install zip
+        run: sudo apt-get install zip
 
       - name: Zip artifact for deployment
         run: zip -r release.zip * .env .next
