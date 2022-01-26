@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Subtitle Types and Properties &gt; Subtitle format specific options</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="ANSI,Code Page,EBU,Font,PAC,SRT,SRT SubRip,SUB,SUB Micro DVD,Timecode,Timecode format,Timed Text,Timed Text dfpx,Timed Text ttml,Timed Text xml,Unicode" />
+   <meta name="description" content="Some file formats have specific settings which need to be considered when loading them with the Plug-in and in this topic you can find them all briefly explained." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "file_format_options.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Subtitle format specific options</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?file_format_options.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="project_types.htm">Subtitle Types and Properties</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Subtitle format specific options</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="closed_captions2.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="project_types.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="multiple_instances.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">Some file formats have specific settings which need to be considered when loading them with the Plug-in and in this topic you can find them all briefly explained.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">PAC settings</span></p>
+<p class="p_Picture"><img width="426" height="50" style="margin:0;width:426px;height:50px;border:none" src="pac.png"/></p>
+<p class="p_Normal">PAC files allow the use of two fonts with different encoding as showed in the image above. The following encodings are available: Latin, Cyrillic, Cyrillic/Latin, Greek, Arabic, Farsi, Hebrew, Thai, Chinese Simplified/Traditional, Japanese and Korean. </p>
+<p class="p_Normal">Please make sure to select the correct encoding for your file or otherwise there will most surely be a lot of non-printable, missing or incorrectly displayed characters in the text.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">EBU (.stl) settings</span></p>
+<p class="p_Picture"><img width="427" height="72" style="margin:0;width:427px;height:72px;border:none" src="ebu.png"/></p>
+<p class="p_Normal">The EBU related settings are useful when an EBU file has not been properly loaded. They are intended to overwrite certain parameters from the source file. </p>
+<p class="p_Normal"><span class="f_Emphasize">Force Start Box control code at the beginning of line</span> - Inserts <span class="f_Emphasize">Start Box</span> control code at the beginning of each line. </p>
+<p class="p_Normal"><span class="f_Emphasize">Force double height at the beginning of line</span> - Insert <span class="f_Emphasize">Double Height</span> control code at the beginning of each line. It can be used to overwrite the characters' height set by the original EBU (.STL) file whenever you feel it's necessary.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">MicroDVD(.sub) and SubRip (.srt)</span></p>
+<p class="p_Normal">Sometimes, when the original .sub or .srt, created in Arabic, Hebrew or other right-to-left language, have been intended for playback on computer via some digital video player software (VLC, Windows Media Player, Media Player Classic, etc.), the punctuation marks at the end of the line may incorrectly appear at the beginning. This is an issue which concerns the video player programs and how they display right-to-left text, but you can use the RTL Reorder option to get the file correctly working in Cambria without editing it.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Code Page for plain text files (.txt, .srt, .sub, .ass, etc.)</span></p>
+<p class="p_Picture"><img width="431" height="59" style="margin:0;width:431px;height:59px;border:none" src="txt.png"/></p>
+<p class="p_Normal">Code Page selection option is available for plain text files only like these with the .TXT, .SRT, .SUB, etc file extensions. </p>
+<p class="p_Normal">Please make sure to select correct code page or otherwise there will most surely be a lot of non-printable, missing or incorrectly displayed characters in the text.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

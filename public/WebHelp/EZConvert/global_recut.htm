@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Working with Subtitle Files &gt; Recut</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Offset Times,Recut" />
+   <meta name="description" content="With the Recut option you can shift forward or backward the time-code of a selected block of subtitles." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "global_recut.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Recut</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?global_recut.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="working_with_subtitle_files.htm">Working with Subtitle Files</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Recut</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="working_with_subtitle_files.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="working_with_subtitle_files.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="check_subtitles.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">With the Recut option you can shift forward or backward the time-code of a selected block of subtitles.</p>
+<p class="p_Normal">This may be needed to adjust manually captured cues or to compensate for errors in capturing or setting the video file<span class="f_Indented">’s</span> timecode.</p>
+<div class="p_Picture"><div style="margin:0;width:376px"><img alt="&nbsp;Recut Subtitles dialog" title="&nbsp;Recut Subtitles dialog" width="376" height="419" style="width:376px;height:419px;border:none" src="recut.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Recut Subtitles dialog</span></p></div></div>
+<p class="p_Normal">After the Recut window opens up you can still freely navigate through the file to locate the desired points. Once the wanted timecode or subtitle are found you can use the Copy button <img width="14" height="18" style="margin:0;width:14px;height:18px;border:none" src="copytc_button.png"/> to get the Time-code or Subtitle number into the corresponding edit box. For example, if you want to Recut by one Reference point, you need to simply open the Recut menu, select the reference subtitle first (locate the subtitle and press <img width="14" height="18" style="margin:0;width:14px;height:18px;border:none" src="copytc_button.png"/> next to the subtitle number edit) then enter the new timecode for this subtitle and click the Recut button.</p>
+<p class="p_Normal"><span class="f_Emphasize">Include both subtitle tracks </span>- the option will be displayed only when the project contains subtitles in <a href="secondary-subtitle-track.htm" class="topiclink">the Main and Secondary tracks</a>. Respectively, after activating it the Recut operation will be applied simultaneously to the respective subtitles in both the<span class="f_Emphasize"> Main</span> and <span class="f_Emphasize">Secondary</span> tracks. When performing Recut by <span class="f_Emphasize">Reference Timecode</span>, <span class="f_Emphasize">Reference Point</span> or <span class="f_Emphasize">Two reference points</span> options, the offset will be calculated between the selected reference point and the first subtitle in the main and secondary tracks. </p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Move by</span></p>
+<p class="p_Normal">Shift the time code forward (increment) if a positive value is entered and backward (decrement) if negative value is entered.</p>
+<p class="p_Emphasize">The Move By operation can affect both the<span class="f_Emphasize"> In- and Out-cues</span> of the subtitles, their <span class="f_Emphasize">In-cues only</span> or their <span class="f_Emphasize">Out-cues only  </span><span class="f_Emphasize" style="font-weight: normal;">depending on the selected in drop-down menu option</span><span class="f_Emphasize">:</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:middle; width:201px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">In- &amp; Out-cues</span></p>
+</td>
+<td style="vertical-align:top; width:705px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Offsets both the in- and out-cues of the subtitles in the selected range.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle; width:201px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">In-cue only</span></p>
+</td>
+<td style="vertical-align:top; width:705px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Offsets just the in-cues of all subtitles in the selected range.</span><br />
+Please mind, that subtitles which are chained on the min. interval from each other, previous subtitle out is on the min. interval from next subtitle in, will be moved together regardless of the selected option. </p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle; width:201px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Out-cue only</span></p>
+</td>
+<td style="vertical-align:top; width:705px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Offsets just the out-cues of all subtitles in the selected range.</span><br />
+Please mind, that subtitles which are chained on the min. interval from each other, previous subtitle out is on the min. interval from next subtitle in, will be moved together regardless of the selected option. </p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:middle; width:201px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Not chained Out-cues only</span></p>
+</td>
+<td style="vertical-align:top; width:705px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Offsets just the out-cues of subtitles that are not chained on the min.interval from the next subtitle.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Emphasize">In other words, it enables you to shift only the in-, out- or both in- and out-cues of the subtitles. Please mind, that subtitles which are chained on the min. interval from each other, previous subtitle out is on the min. interval from next subtitle in, will be moved together regardless of the selected option. </p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Reference Timecode</span></p>
+<p class="p_Emphasize">The option to recut by Reference Timecode works similarly to the <span class="f_Emphasize">Move By</span> one - selected subtitles will be moved by the difference between <span class="f_Emphasize">Ref. TC</span> and <span class="f_Emphasize">New TC</span>, but it wouldn't be necessary to calculate what the specific value of Recut Timecode should be by hand.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Reference Point</span></p>
+<p class="p_Normal">Moves all timecodes forward or backward so the selected subtitle<span class="f_Indented">’s</span> in-cue matches the specified timecode.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Two Reference Points</span></p>
+<p class="p_Normal">There are two reference points that should be specified before executing the command. The subtitles are rearranged in a way that the first and the second subtitle’s in-cues match the specified timecodes. It is recommended that the first subtitle is somewhere at the beginning of the movie and the second one is at the end. This method can be used for timecode or frame-rate conversion if these parameters are unknown for the original file.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

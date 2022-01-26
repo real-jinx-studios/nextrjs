@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Configuring Project Settings &gt; Framerate and Timecode Conversion</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Convert Frame Rates,Convert Timecode Standards,Frame Rate Conversion,Timecode Conversion" />
+   <meta name="description" content="By changing the Video Format, Frame Rate or the Timecode Format you can convert between different video and timecode standards." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "timecode_conversion.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Framerate and Timecode Conversion</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?timecode_conversion.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="configuring-project-settings.htm">Configuring Project Settings</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Framerate and Timecode Conversion</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="project_templates.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="configuring-project-settings.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="ezconvert-environment.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">By changing the Video Format, Frame Rate or the Timecode Format you can convert between different video and timecode standards.</p>
+<p class="p_Normal">First load the subtitles in the original timecode format, then open the <span class="f_Emphasize">Project Settings</span> window and select the new settings.</p>
+<p class="p_Normal">You will be asked if you would like to convert the subtitles timecode to the selected new settings. Clicking the Yes button will bring the following dialog: </p>
+<div class="p_Picture"><div style="margin:0;width:298px"><img alt="&nbsp;Timecode Convertion" title="&nbsp;Timecode Convertion" width="298" height="283" style="width:298px;height:283px;border:none" src="tc_convert.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Timecode Convertion</span></p></div></div>
+<p class="p_Normal">The options listed in the dialog depend on the source and target frame rates and timecode formats. Your choice depends on the conversion algorithm used to produce the two videos.</p>
+<p class="p_Normal">The item marked with Default is the most commonly used method for the selected source/target frame rates and timecode formats.</p>
+<p class="p_Normal">Following is a brief explanation of the common options:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:100%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:216px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">No Conversion</span></p>
+</td>
+<td style="vertical-align:top; width:1136px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The timecodes remain the same. In fact the frames part might be adjusted to match the new frame rate.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:216px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Default</span></p>
+</td>
+<td style="vertical-align:top; width:1136px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The Default option will use the most common way for converting the timecode to the new frame rate. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:216px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Keep Frame Number</span></p>
+</td>
+<td style="vertical-align:top; width:1136px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Keeps the frame when the subtitle appears and according to the selected Video Standard automatically recalculates the timecodes. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:216px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Keep Time</span></p>
+</td>
+<td style="vertical-align:top; width:1136px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">If you convert between different frame rates the program will keep the time when the subtitle appear or disappear.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:216px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Programme Start Timecode</span></p>
+</td>
+<td style="vertical-align:top; width:1136px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Enables you to specify reference base timecode for the conversion which must not be greater than the timecode of the first subtitle in the project. The value of the reference base timecode is critical for the conversion and we recommend using </span><span class="f_Emphasize">Auto</span><span class="f_Indented">.</span></p>
+<p class="p_Indented"><span class="f_Indented">When </span><span class="f_Emphasize">Auto</span><span class="f_Indented"> is selected, the reference base timecode is calculated as the timecode of the first subtitle truncated down to the nearest hour.</span><br />
+<span class="f_Indented">Otherwise, the specified value in the </span><span class="f_Emphasize">Timecode</span><span class="f_Indented"> input field will be taken as reference base timecode. </span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal"><span class="f_SubHeader1">Note : </span>The <span class="f_Emphasize">Default</span> and the options in the Advanced Section could be different from those illustrated by the image above.</p>
+<p class="p_Normal">The <span class="f_Emphasize">Advanced</span> options will vary depending on the original frame rate or TC format which have been set and the new ones.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

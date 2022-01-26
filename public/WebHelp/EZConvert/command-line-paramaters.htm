@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Batch conversions and automation &gt; Command Line Conversion Tool &gt; Command Line Parameters</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Command Line,Command Line parameters,ezc5c,Override parameters" />
+   <meta name="description" content="Command line conversion can be executed directly from the command prompt or batch script for that matter by using the below command:" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "command-line-paramaters.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Command Line Parameters</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?command-line-paramaters.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="batch-conversions.htm">Batch conversions and automation</a> &gt; <a href="app_b_command_line_params.htm">Command Line Conversion Tool</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Command Line Parameters</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="app_b_command_line_params.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="app_b_command_line_params.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="input-and-output-configuration.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">Command line conversion can be executed directly from the command prompt or batch script for that matter by using the below command:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">ezc6c&nbsp;[options]&nbsp;&lt;input&nbsp;file&gt;&nbsp;&lt;output&nbsp;file&gt;&nbsp;</span></p>
+<p class="p_Normal">All of the available options required for the successful execution of the above command are explained below. </p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:100%; border:none; border-spacing:0;">
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:none"><p class="p_Indented"><span class="f_CourierFixed">&lt;input file&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:none"><p class="p_Indented"><span class="f_Indented">Wildcard characters can be used to specify more files.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:none"><p class="p_Indented"><span class="f_CourierFixed">&lt;output file&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:none"><p class="p_Indented"><span class="f_Indented">The exact file name or use @ to specify the input file name. @ is replaced with the input file name without extension.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader1"><span class="f_SubHeader1">[options]</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:100%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:195px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">–c&lt;config file&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies</span> the <span class="f_Indented">configuration</span> file. If no folder is specified, current working folder is assumed. This parameter is <span class="f_Emphasize">mandatory</span>. <br />
+<span class="f_SubHeader1">Note: </span>Configuration files can be created by modifying the sample_config.cfg supplied during the installation or by using the <a href="cmd_config-editor.htm" class="topiclink">Config editor</a> too.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; height:28px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">–i&lt;format&gt;</span></p>
+</td>
+<td style="vertical-align:top; height:28px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Emphasize">Input</span> file's format. This parameter is <span class="f_Emphasize">mandatory</span>.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">–o&lt;format&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Emphasize">Output</span> file format. This parameter is <span class="f_Emphasize">mandatory</span>. </p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">-it&lt;template&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies</span> <span class="f_Indented">template</span> which can be used with the Custom Text Import option. This parameter is <span class="f_Emphasize">optional</span> and is required only if the input can be imported via the Custom Text Import feature.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; height:26px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">-t&lt;template&gt;</span></p>
+</td>
+<td style="vertical-align:top; height:26px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies</span> &nbsp;the <span class="f_Indented">template</span> which will be used for the Custom Text Export option. This parameter is <span class="f_Emphasize">optional</span> and is required only if custom text is exported.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">-r</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies the timecode standard and the frame rate of the input file, </span><span class="f_Emphasize">-r</span><span class="f_Indented"> parameter is </span><span class="f_Emphasize">optional</span><span class="f_Indented">. If present, this option indicates that a frame conversion of the input file shall be executed and it will output in the frame rate specified with the </span><span class="f_Indented" style="font-weight: bold;">sample_config.cfg</span><span class="f_Indented"> file in the</span><span class="f_Indented" style="font-weight: bold;"> [Video/TC] </span><span class="f_Indented">section. Furthermore, the <a href="timecode_conversion.htm" class="topiclink">conversion method</a> can be specified at the </span><span class="f_Indented" style="font-weight: bold;">[TC Conversion]</span><span class="f_Indented"> section. </span></p>
+<p class="p_Indented"><span class="f_Indented">As part of our <a href="metadata-flow.htm" class="topiclink">Metadata pass-through concept</a>, you can use the <a href="metadata-flow-frame_rate.htm" class="topiclink">Frame Rate indicated in the source file</a> when you set </span><span class="f_Emphasize">VideoFrameRate=15 </span>in the .cfg file.<span class="f_Indented"> Please make sure to also select Timecode Format in case the source doesn't contain information about it.</span></p>
+<p class="p_Indented"><span class="f_Indented">The </span><span class="f_Emphasize">–r</span><span class="f_Indented"> switch shall be followed by a time code standard parameter, which must be one of </span><span class="f_Emphasize">24</span><span class="f_Indented">,</span><span class="f_Emphasize"> 25</span><span class="f_Indented">,</span><span class="f_Emphasize"> 30 </span><span class="f_Indented">or</span><span class="f_Emphasize"> 30d </span><span class="f_Indented">(</span><span class="f_Emphasize">30 fps Drop-Frame</span><span class="f_Indented">) and eventually the actual frame rate 23.976, 25, 29.97, etc. For example </span><span class="f_Indented" style="font-weight: bold;">–r 24/23.976</span><span class="f_Indented"> specifies 24 fps timecode on 23.976 fps video</span><span class="f_Indented">. </span></p>
+<p class="p_Indented"><span class="f_Indented">The frame rate attribute is optional and if you miss to specify it, EZConvert will take the default frame rate for the selected time code standard. If the time code format is 24, EZConvert will decide the frame rate is 24 fps for instance.</span></p>
+<p class="p_Indented"><span class="f_Indented">In addition, you can use </span><span class="f_Emphasize">&lt;from_source&gt;</span><span class="f_Indented"> option to indicate that that the frame rate and timecode format of the source will be used, if available. The valid combinations in this case are: </span></p>
+<p class="p_Indented"><span class="f_IndentedHilite" style="font-weight: bold;">-r from_source</span><span class="f_Indented"> - both frame rate and timecode format will be read from the source. If one of them isn't present, respective error will be output in the console and the error stream.</span><br />
+<span class="f_IndentedHilite" style="font-weight: bold;">-r df/from_source</span><span class="f_Indented"> or </span><span class="f_IndentedHilite" style="font-weight: bold;">-r ndf/from_source</span><span class="f_Indented"> - if source frame rate is 30 or 60 fps and the timecode format can't be determined from the source file it is assigned to 30 drop-frame/non-drop or 60 drop-frame/non-drop respectively. Otherwise the timecode format will match the source frame rate.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">-print</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Changes the format of the console and STDOUT outputs to XML:</span><span class="f_Emphasize"> -print XML</span><span class="f_Indented"> and JSON: </span><span class="f_Emphasize">-print JSON</span><span class="f_Indented">. If not used, console and STDOUT outputs will be displayed as plain text. You may refer to the <a href="usage-and-examples.htm" class="topiclink">Usage and Examples</a> topic for more details.</span></p>
+<p class="p_Indented"><span class="f_Indented">The</span><span class="f_Emphasize"> -print</span><span class="f_Indented"> parameter is </span><span class="f_Emphasize">optional</span><span class="f_Indented">. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">-recognize</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Emphasize">Optional</span><span class="f_Indented"> parameter which automatically identifies the format of the subtitle file you can use the </span><span class="f_Emphasize">-recognize</span><span class="f_Indented"> switch followed by the file's name:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:43px;display:inline-block">&nbsp;</span><span class="f_CodeExample">ezc5c&nbsp;-recognize&nbsp;C:\Test\Sample.xml</span></p>
+<p class="p_Indented"><span class="f_Indented">The program will output on StdOut the switch that should be used with -i option:</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:43px;display:inline-block">&nbsp;</span><span class="f_CodeExample">EZConvert&nbsp;6.0.1&nbsp;&nbsp;Command&nbsp;Line&nbsp;Version</span><br />
+<span style="width:43px;display:inline-block">&nbsp;</span><span class="f_CodeExample">DLP_XML</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">-fileDetails</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented">Optional parameter. Shows additional information about the input file such as <span class="f_Emphasize">Title</span>,<span class="f_Emphasize"> Lang</span>, <span class="f_Emphasize">FrameRate</span>, <span class="f_Emphasize">MediaStartTC</span>, <span class="f_Emphasize">FirstInCue</span>, <span class="f_Emphasize">LastOutCue</span>, <span class="f_Emphasize">Subtitles Count</span>. Depending on the source file type additional metadata may be available too.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">-f</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Instructs the program to invoke the <a href="fix_subtitles.htm" class="topiclink">Fix Subtitles</a> commands on all the subtitles according to the rules set in the [Fix Subtitles] section in the config file</span><span class="f_Emphasize">. </span><span class="f_Indented">Fix Subtitles commands executed from the command line converted will be performed for both the main and <a href="secondary-subtitle-track.htm" class="topiclink">secondary subtitle tracks</a> simultaneously.</span></p>
+<p class="p_Indented"><span class="f_Indented">The </span><span class="f_Emphasize">-f</span><span class="f_Indented"> parameter is </span><span class="f_Emphasize">optional</span><span class="f_Indented">.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">-check</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Instructs the program to run <a href="check_subtitles.htm" class="topiclink">Checks</a> on all subtitles in the file according to the respective check rules set in the [Checks] section in the config file.Check Subtitles commands executed from the command line converted will be performed for both the main and <a href="secondary-subtitle-track.htm" class="topiclink">secondary subtitle tracks</a> simultaneously.</span></p>
+<p class="p_Indented"><span class="f_Indented">The</span><span class="f_Emphasize"> -check</span><span class="f_Indented"> parameter is </span><span class="f_Emphasize">optional</span><span class="f_Indented">.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">-detailedCheck</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Emphasize">-detailedCheck</span><span class="f_Indented"> can be used to display detailed information about every error found while running Checks. </span></p>
+<p class="p_Indented"><span class="f_Indented">It needs to be used along with </span><span class="f_Emphasize">-check</span><span class="f_Indented">, otherwise it wouldn't work.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:195px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_CourierFixed">–l&lt;log file name&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Emphasize">Output log</span><span class="f_Indented"> is redirected to the specified file. </span></p>
+<p class="p_Indented"><span class="f_Indented">This is </span><span class="f_Emphasize">optional</span><span class="f_Indented"> parameter. If </span><span class="f_Emphasize">-print</span><span class="f_Indented"> has been used, the output log will be formatted as either XML or JSON too.</span></p>
+<p class="p_Indented"><span class="f_Indented">More details regarding error handling are available with the <a href="usage-and-examples.htm#error_handling" class="topiclink">Usage and Examples</a> topic.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Override configuration file &nbsp;from the Command Line</span></p>
+<p class="p_Normal">EZConvert provides additional functionality to override or alternate any of the parameters in the config.cfg file directly from the command line. The exact syntax is as follows:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample" style="font-weight: normal;">ezc6c&nbsp;[options]&nbsp;&lt;input&nbsp;file&gt;&nbsp;&lt;output&nbsp;file&gt;</span><span class="f_CodeExample">&nbsp;</span><span class="f_CodeExample" style="color: #000080;">&quot;[Section&nbsp;Name&nbsp;in&nbsp;config.cfg]Parameter=New&nbsp;Value&quot;</span></p>
+<p class="p_Normal">where<br />
+<span class="f_CodeExample" style="color: #000080;">[Section Name in config.cfg]</span><span class="f_CodeExample"> </span>- points to the exact section the parameter is part of;</p>
+<p class="p_Normal"><span class="f_CodeExample" style="color: #000080;">Parameter</span><span class="f_CodeExample"> </span>- the exact parameter which we need to alter;</p>
+<p class="p_Normal"><span class="f_CodeExample" style="color: #000080;">New Value</span> - the new value for that parameter.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Note: </span>It isn't necessary to enclose it in quotation marks but we recommend doing so at all times because a lot of the Sections and Parameters contain space.</p>
+<p class="p_Normal">&nbsp;<br />
+So, if we wanted to change text's alignment in the output file directly from the command line we could execute the conversion like this:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample" style="font-weight: normal;">ezc6c&nbsp;[options]&nbsp;&lt;input&nbsp;file&gt;&nbsp;&lt;output&nbsp;file&gt;&nbsp;</span><span class="f_CodeExample" style="font-weight: normal; color: #000080;">&quot;</span><span class="f_CodeExample" style="color: #000080;">[Text&nbsp;Attributes]GlobalAlignment=1</span><span class="f_CodeExample" style="font-weight: normal; color: #000080;">&quot;</span></p>
+<p class="p_Normal">The above line will override the respective GlobalAlignment attribute from the config.cfg file and as a result all subtitles will be exported with new horizontal alignment in the output file. In this case, they'll be aligned to the right.</p>
+<p class="p_Normal">We can alter any of the output file's specific options with the same success. For example:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample" style="font-weight: normal;">ezc6c&nbsp;[options]&nbsp;&lt;input&nbsp;file&gt;&nbsp;-o&nbsp;NFLX_TT&nbsp;</span><span class="f_CodeExample" style="font-weight: normal; color: #000080;">&quot;</span><span class="f_CodeExample" style="color: #000080;">[Netflix&nbsp;Timed&nbsp;Text]Language&nbsp;ID=en</span><span class="f_CodeExample" style="font-weight: normal; color: #000080;">&quot;</span></p>
+<p class="p_Normal">Running the above command will change the Language ID in the output Netflix-TT file to English: xml:lang=&quot;en&quot;.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Text Replace</span></p>
+<p class="p_Normal">Text Replace is intended as an advanced option aimed at resolving various issues with corrupt or unsupported by the selected output file characters. The characters or words specified will be replaced automatically during the conversion. </p>
+<p class="p_Normal">We recommend modifying the configuration .cfg file through the <a href="cmd_config-editor.htm" class="topiclink">Config Editor tool</a> directly, but if this isn't applicable for some reason you can always do that by hand. </p>
+<p class="p_Normal">To do so, add new section in the .cfg file named <span class="f_CodeExample">[TextReplace]</span>. The replacement list itself must follow the following pattern: </p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">[TextReplace]</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">Replaces=[{&quot;Text&quot;:&quot;…&quot;,&quot;Replace:&quot;...&quot;},&nbsp;{&quot;Text&quot;:&quot;&amp;#x201c;&quot;,&quot;Replace&quot;:&quot;&amp;#34;&quot;},{&quot;Text&quot;:&quot;&amp;#x201d;&quot;,&quot;Replace&quot;:&quot;&amp;#34;&quot;}]</span></p>
+<p class="p_Normal">There are three different replacements shown with the example above that will:</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;">1. replace the <span class="f_Emphasize">ellipsis symbol </span><span style="font-family: 'Courier New',Courier,monospace; font-weight: bold; color: #212657;">&quot;…&quot;</span> with <span class="f_Emphasize">three regular full stops </span><span style="font-family: 'Courier New',Courier,monospace; font-weight: bold; color: #212657;">&quot;...&quot;</span>;</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;">2. replace the <span class="f_Emphasize">opening smart quote </span><span style="font-family: 'Courier New',Courier,monospace; font-weight: bold; color: #212657;">'“'</span> with <span class="f_Emphasize">regular quotation mark</span> <span style="font-family: 'Courier New',Courier,monospace;">'&quot;'</span>;</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;">3. replace the <span class="f_Emphasize">opening smart quote </span><span style="font-family: 'Courier New',Courier,monospace; font-weight: bold; color: #212657;">'”'</span> with <span class="f_Emphasize">regular quotation mark</span> <span style="font-family: 'Courier New',Courier,monospace;">'&quot;'</span>;</p>
+<p class="p_Normal"><span class="f_SubHeader1">Note:</span> If the search term contains <span class="f_Emphasize">ampersand &quot;&amp;&quot;</span> it has to be written by its reference code: <span class="f_Emphasize">&amp;amp;</span>. This is a character and has to be <span style="text-decoration: underline;">escaped by its reference code</span>. Thus replacing &nbsp;&quot;&amp;amp;&quot; with &quot;&amp;amp;amp;&quot; will replace the ampersand symbol with its reference code. For example &quot;AT&amp;T&quot; in the source file will become &quot;AT&amp;amp;T&quot; in the output.</p>
+<p class="p_Normal">You may refer <a href="https://dev.w3.org/html5/html-author/charref" target="_blank" class="weblink" title="https://dev.w3.org/html5/html-author/charref">to this page</a> for a list of the most commonly used characters and their respective reference codes.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Merging files from the Command Line</span></p>
+<p class="p_Normal">EZConvert allows subtitle files to be merged directly from the Command Line by using the following command:</p>
+<p class="p_Normal" style="margin: 0 5px 11px 53px;"><span class="f_CodeExample">ezc6c -c config.cfg -i STL - o STL &quot;InputFile_1.stl|InputFile_2.stl&quot; Merged.stl</span></p>
+<p class="p_Normal">The input files must be separated by vertical line &quot;<span class="f_Emphasize">|</span>&quot; and the whole expression must be enclosed in double quotation marks: <span class="f_Emphasize">&quot;InputFile_1.stl|InputFile_2.stl&quot;</span>. </p>
+<p class="p_Normal">It isn't also necessary to merge files in the same format, two input files can be in different format. In order to make this work, however, you may want to use the <a href="input-and-output-configuration.htm" class="topiclink">&quot;-i Auto&quot;</a> switch:</p>
+<p class="p_Normal" style="margin: 0 5px 11px 53px;"><span class="f_CodeExample">ezc6c -c config.cfg -i AUTO - o </span><span class="f_CodeExample">NFLX_TT</span><span class="f_CodeExample"> &quot;InputFile_1.srt|InputFile_2.xml&quot; Merged.dfxp</span></p>
+<p class="p_Normal">It is, however, required to properly configure the section in the config.cfg file for each one of the input file types, as well as for the output file.</p>
+<p class="p_Normal">&nbsp;</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Subtitling in 3D &gt; Export Multiple Files</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="Export multiple files command is intended to help you split your subtitles in several files according to specified timecode ranges. The command allows you output EZT, DLP..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "export_multiple_files.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Export Multiple Files</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?export_multiple_files.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="subtitling_in_3d.htm">Subtitling in 3D</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Export Multiple Files</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="export_custom_script_format.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="subtitling_in_3d.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="reference.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">Export multiple files command is intended to help you split your subtitles in several files according to specified timecode ranges. The command allows you output EZT, DLP Cinema XML, SMPTE 428-7-2014 and MCC CEA-708 Captions files.</p>
+<p class="p_Normal">Use<span class="f_Emphasize"> File/Export Multiple Files …</span> menu to start the command. The following dialog window opens up:</p>
+<p class="p_Picture"><img width="424" height="510" style="margin:0;width:424px;height:510px;border:none" src="export_multiple_files.png"/></p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">General parameters</span></p>
+<p class="p_Normal">You can choose the specific output format by pressing the <span class="f_Emphasize">Select</span> button. Please mind that for the <a href="export_subtitles_dlp.htm" class="topiclink">DLP Cinema subtitle XML</a> and <a href="export_captions_mcc.htm" class="topiclink">MCC CEA-708 Closed Captions</a> formats all available options will be displayed when you press the OK button. And if you choose to output EZT files, all the settings will automatically be saved for each of them.</p>
+<p class="p_Normal">Using the browse <img src="embim20.png" width="19" height="19" style="margin:1px; border:none" alt="" /><span class="f_ImageCaption"> </span>you can select the destination folder. The <span class="f_Emphasize">File Name</span> will be automatically filled with the name of the current project but it can be changed in addition. The individual files will be named by adding a sequential number to the file name specified here. If you want to use a custom naming pattern you can place &quot;@&quot; character anywhere in the specified name. It will be replaced with the sequential number. For example &quot;Part @ Wildlife&quot; will result in the following files: &quot;WildLife-3D_Part1.XML&quot;, &quot;WildLife-3D_Part2.XML&quot;, etc.</p>
+<p class="p_Normal">Please mind that when you choose to export to <a href="export_subtitles_dlp.htm" class="topiclink">DLP Subtitle XML</a> or <a href="export_subtitles_smpte.htm" class="topiclink">SMPTE 428-7-2014</a> each individual &quot;reel&quot; will be saved in separate subfolder containing the XML or PNG subtitles, <span class="f_Emphasize">the font files</span> and<span class="f_IndentedHilite"> </span><span class="f_Emphasize">presentation lists</span> if you have activated the respective options.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Timecode ranges</span></p>
+<p class="p_Normal">The subtitles will be split into couple of consecutive files by specifying <span class="f_Emphasize">Start</span> and <span class="f_Emphasize">End Timecode</span> points for each individual output file. It is not necessary that the timecode ranges are consecutive. There could be gaps or you can exclude some of them from the export by clicking the respective check box. <span class="f_Emphasize">Add</span>/<span class="f_Emphasize">Remove </span>and<span class="f_Emphasize"> Up</span>/<span class="f_Emphasize">Down </span>buttons could be used to arrange the ranges.</p>
+<p class="p_Normal">Loading Start/End points from external file is another useful feature. Use the respective <span class="f_Emphasize">Import Chapter List</span> button and browse to the file containing these details. Almost any plain text file can be used for this purpose and the only requirement is to have one timecode per line. A simple list of timecodes or a file similar to the following example can be used:</p>
+<p style="text-align: justify; margin: 0 0 0 62px;"><span class="f_CourierFixed">Chapter 1: 02:00:00:00</span></p>
+<p style="text-align: justify; margin: 0 0 0 62px;"><span class="f_CourierFixed">Chapter 2: 02:16:24:00</span></p>
+<p style="text-align: justify; margin: 0 0 0 62px;"><span class="f_CourierFixed">Chapter 3: 02:36:36:00</span></p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Options</span></p>
+<p class="p_Normal">Export Multiple Files command allows you to export the Zero Subtitle from your project. The following three options available are: </p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 5px 5px 5px 12px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:182px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Export for first file only</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The Zero Subtitle will be saved in the first, leading, file.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:182px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Export for all files</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The Zero Subtitle will be saved in all files.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:182px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Ignore for all files</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The Zero Subtitle will not be exported. </span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Recut all to same Start Timecode</span></p>
+<p class="p_Normal">Finally, you could consider using the <span class="f_Emphasize">Recut all to same Start Timecode</span> option when all the output files need to start from the very same Start Timecode point. For example looking at the image above the subtitles in the first file will be offset by -<span class="f_Emphasize">01:00:00:00</span>, the second one by <span class="f_IndentedHilite">-</span><span class="f_Emphasize">01:16:24:00</span>, the third by <span class="f_IndentedHilite">-</span><span class="f_Emphasize">01:36:36:00</span> or in other words by the difference between the values specified by the <span class="f_Emphasize">Recut all to same Start TC</span><span class="f_IndentedHilite"> </span>and the <span class="f_Emphasize">Start Timecode for each individual file</span>.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,770 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+   <title>EZConvert Help</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="robots" content="noindex,follow" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ 
+   <!-- This line includes the general project style sheet (not required) -->
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+   <script type="text/javascript">isIE=false</script>
+   <!--[if IE]>
+   <script type="text/javascript">isIE=true</script>
+   <![endif]-->
+
+   <!--HM_KEYWORD_INDEX_AS_LIST-->
+   <style type="text/css">
+       body { 
+        margin: 0; 
+        padding: 0; 
+        width: 100%;
+        height: 100%;
+        }
+       #keyword_entry_div {
+       	position: absolute;
+       	left: 5px;
+       	top: 5px;
+       	right: 5px;
+       	} 
+       #keyword_entry_div p {
+       	font-weight: bold;
+        margin: 0px;
+       }
+       #keyword_list_div {
+       	position: absolute;
+       	left: 5px;
+       	top: 45px;
+       	right: 5px;
+       	bottom: 5px;
+       	padding:0;
+       	} 
+       #keyword_entry {
+       	border: 1px solid silver;
+       	width: 100px;
+       	}
+       #keyword_list {
+       	border: 1px solid silver;
+       	width: 100%;
+      	height: 100%; 
+       	}
+       #keyword_menu {
+        display: none;
+	background: #fff;
+       	border: 1px solid silver;
+	padding: 10px;
+	box-shadow: 4px 4px 8px #888;
+	border-radius: 6px 6px;
+       	}
+       #keyword_menu a {
+       	display: block;
+        text-decoration: none;
+	color: #000;
+	padding: 2px 2px 2px 18px;
+	background: url(hm-keyword-page-icon.png) 2px 2px no-repeat;
+       	}
+       #keyword_menu a:hover {
+       	background: #FFFFFF url(hm-keyword-page-icon.png) 2px 2px no-repeat;
+        text-decoration: none;
+	color: #fff;
+       	}               
+       #keyword_menu_no_entry {
+        display: none;
+	background: #fff;
+       	border: 1px solid silver;
+	padding: 5px;
+	box-shadow: 4px 4px 8px #888;
+	border-radius: 6px 6px;
+	width: 50%;
+	font-size:1em;
+       }
+   </style>       
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){
+     var parentScope = (parent.hmNavigationFrame);
+     if (parentScope) parent.currentNav("index");
+	$("a[target='hmcontent']").on("click",function(event){
+		$("p.hilite").removeClass("hilite");
+		$(this).parent("p").addClass("hilite");
+		if (parentScope)
+			window.parent.showNav("toggle");
+		});
+        });
+   </script>
+   <script type="text/javascript" src="hmcontextids.js"></script>
+</head>
+<body>
+<div id="keyword_menu"></div>
+<div id="keyword_menu_no_entry">To locate information about this keyword, please select one of the subentries in the list.</div>
+<div id="keyword_entry_div"><p>Enter value</p><input type="text" id="keyword_entry" onkeyup="keywordEntryKey()" /></div>
+<div id="keyword_list_div">
+  <select id="keyword_list" size="2">
+  <option value="import_subtitles_softni.htm">.sub</option>
+  <option value="">890</option>
+  <option value="export_subtitles_890.htm">&nbsp;&nbsp;&nbsp;File Export</option>
+  <option value="import_subtitles_890.htm">&nbsp;&nbsp;&nbsp;File Import</option>
+  <option value="project_properties.htm#project_props_native_mode">&nbsp;&nbsp;&nbsp;Mode</option>
+  <option value="project_settings_fonts.htm#pac_890_fonts">&nbsp;&nbsp;&nbsp;Mode Fonts</option>
+  <option value="">Adobe Encore DVD</option>
+  <option value="export_dvd_images.htm">&nbsp;&nbsp;&nbsp;DVD Images Export</option>
+  <option value="export_subtitles_adobe_encore.htm">&nbsp;&nbsp;&nbsp;Text Script Export</option>
+  <option value="import_subtitles_adobe_encore.htm">&nbsp;&nbsp;&nbsp;Text Script Import</option>
+  <option value="">Alignment</option>
+  <option value="project_settings_present_style_parameters.htm">&nbsp;&nbsp;&nbsp;Center</option>
+  <option value="project_settings_present_style_parameters.htm">&nbsp;&nbsp;&nbsp;Center-left</option>
+  <option value="project_settings_present_style_parameters.htm">&nbsp;&nbsp;&nbsp;Left</option>
+  <option value="project_settings_present_style_parameters.htm">&nbsp;&nbsp;&nbsp;Right</option>
+  <option value="project_settings_effects_subtitle_presentation.htm">Anti-aliasing</option>
+  <option value="import_subtitles.htm">Append</option>
+  <option value="working_with_subtitle_files.htm">&nbsp;&nbsp;&nbsp;files</option>
+  <option value="working_with_subtitle_files.htm">&nbsp;&nbsp;&nbsp;subtitles</option>
+  <option value="">Apple DVD Studio Pro</option>
+  <option value="export_dvd_images.htm">&nbsp;&nbsp;&nbsp;DVD Images Export</option>
+  <option value="export_subtitles_spruce_stl.htm">&nbsp;&nbsp;&nbsp;Text Script Export</option>
+  <option value="import_subtitles_spruce_stl.htm">&nbsp;&nbsp;&nbsp;Text Script Import</option>
+  <option value="">Apple iTunes .itt</option>
+  <option value="export_subtitles_itt.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_itt.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="'Import Apple iTunes Timed Text (.itt)','import_subtitles_itt.htm','Export Apple iTunes Timed Text (.itt)','export_subtitles_itt.htm'">&nbsp;&nbsp;&nbsp;iTunes .itt</option>
+  <option value="project_properties.htm">ARTE</option>
+  <option value="export_subtitles_ebu_arte.htm">&nbsp;&nbsp;&nbsp;EBU Export</option>
+  <option value="export_subtitles_ebu_arte.htm">&nbsp;&nbsp;&nbsp;Open Subtitles</option>
+  <option value="export_subtitles_ebu_arte.htm">&nbsp;&nbsp;&nbsp;Teletext Subtitles</option>
+  <option value="">ASCII</option>
+  <option value="app_a_eztitles_ascii_format.htm">&nbsp;&nbsp;&nbsp;File Format Used by EZTitles</option>
+  <option value="">ASCII Text</option>
+  <option value="export_subtitles_ascii.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_ascii.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">Asian Text</option>
+  <option value="project_settings_fonts.htm">&nbsp;&nbsp;&nbsp;Font</option>
+  <option value="project_settings_present_style_parameters.htm">Auto Center-left Aligned</option>
+  <option value="">Avid DS Nitris</option>
+  <option value="import_subtitles_avid_ds_nitris.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="export_subtitles_avid_ds_nitris.htm">&nbsp;&nbsp;&nbsp;Text Script Export</option>
+  <option value="">Batch</option>
+  <option value="usage-and-examples.htm">&nbsp;&nbsp;&nbsp;conversion</option>
+  <option value="export_subtitles_ebu_tt.htm">BBC</option>
+  <option value="export_dvd_images.htm">BluRay Images Export</option>
+  <option value="export_dvd_images.htm">BMP</option>
+  <option value="'Customizing EZConvert','customizing_ezconvert_env.htm','Output Settings','wf_output_settings.htm','About subtitles in East Asian languages','easasian_subtitles.htm'">Bouten</option>
+  <option value="project_settings_effects_subtitle_presentation.htm">Box Color</option>
+  <option value="project_settings_effects_subtitle_presentation.htm">Box Margins</option>
+  <option value="project_settings_effects_subtitle_presentation.htm">Box Opacity</option>
+  <option value="project_settings_present_style_parameters.htm">Boxed</option>
+  <option value="import_subtitles_lambdacap.htm">Cap</option>
+  <option value="cc_project_settings.htm">CEA 608</option>
+  <option value="cc_project_settings.htm">CEA-708</option>
+  <option value="export_captions_mcc.htm">CEA-708 Captions Expoty</option>
+  <option value="export_captions_mcc.htm">CEA-708 Captions Import</option>
+  <option value="project_settings_present_style_parameters.htm">Center-left alignment</option>
+  <option value="'Input and Output configuration','input-and-output-configuration.htm','Config Editor','cmd_config-editor.htm'">cfg</option>
+  <option value="fix_subtitles.htm">Change Intervals</option>
+  <option value="project_settings_reading_speed.htm">Characters per Second</option>
+  <option value="check_subtitles.htm">Check Subtitles</option>
+  <option value="export_subtitles_dlp.htm">Cinecanvas Subtitles Export</option>
+  <option value="">CineCavas</option>
+  <option value="import_subtitles_dlp.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="cc_project_settings.htm">Closed Captions</option>
+  <option value="check_closed_captions.htm">&nbsp;&nbsp;&nbsp;Checks</option>
+  <option value="check_closed_captions.htm">&nbsp;&nbsp;&nbsp;Quality Control</option>
+  <option value="closed_captions.htm">Closed Captions File Formats</option>
+  <option value="import_subtitles_ascii.htm#codepage">Code Page</option>
+  <option value="app_b_command_line_params.htm">Command Line</option>
+  <option value="cmd_config-editor.htm">&nbsp;&nbsp;&nbsp;Config edtor</option>
+  <option value="usage-and-examples.htm">&nbsp;&nbsp;&nbsp;examples</option>
+  <option value="command-line-paramaters.htm">&nbsp;&nbsp;&nbsp;parameters</option>
+  <option value="usage-and-examples.htm">&nbsp;&nbsp;&nbsp;usage</option>
+  <option value="export_subtitles_custom_txt.htm#conditionaluse">Conditional Use</option>
+  <option value="'Input and Output configuration','input-and-output-configuration.htm','Config Editor','cmd_config-editor.htm'">config</option>
+  <option value="timecode_conversion.htm">Convert Frame Rates</option>
+  <option value="timecode_conversion.htm">Convert Timecode Standards</option>
+  <option value="">Custom File</option>
+  <option value="import_subtitles_custom_txt.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="export_subtitles_custom_txt.htm">Custom Text File</option>
+  <option value="">DAS</option>
+  <option value="import_subtitles_das.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">DAS File</option>
+  <option value="export_subtitles_das.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="export_subtitles_fcp_xml.htm">DaVinci Resolve</option>
+  <option value="">DCDM</option>
+  <option value="export_subtitles_dcdm.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_dcdm.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="project_settings_cues.htm">default interval</option>
+  <option value="">DFXP XML</option>
+  <option value="'IMSC v.1','export_subtitles_imsc1.htm','IMSC v.1.1','export_subtitles_imsc1_1.htm','OOYALA Timed Text','export_subtitles_ooyala.htm'">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_ttml1-ttml2.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">Digital Cinema</option>
+  <option value="project_settings_fonts.htm">&nbsp;&nbsp;&nbsp;Fonts</option>
+  <option value="project_properties.htm">&nbsp;&nbsp;&nbsp;Project Type</option>
+  <option value="">Digital Cinema SMPTE 428-7 Subtitles</option>
+  <option value="export_subtitles_dcdm.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_dcdm.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="export_captions_mcc.htm">Digital Television Closed Captions</option>
+  <option value="'Import Disney IMSC 1.1','import_subtitles_disney.htm','Disney IMSC 1.1','export_subtitles_disney.htm'">Disney</option>
+  <option value="'Import Disney IMSC 1.1','import_subtitles_disney.htm','Disney IMSC 1.1','export_subtitles_disney.htm'">Disney+</option>
+  <option value="">DLP</option>
+  <option value="export_subtitles_dlp.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_dlp.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="export_subtitles_dlp.htm">DLP Cinema Subtitle XML Export</option>
+  <option value="">DOC</option>
+  <option value="export_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;File Import</option>
+  <option value="project_settings_present_style_parameters.htm">Drop-Shadow</option>
+  <option value="export_captions_mcc.htm">DTV captions</option>
+  <option value="">DVB Subtitles</option>
+  <option value="dvb_subtitles.htm">&nbsp;&nbsp;&nbsp;DVB Subtitles for Manzanita MP2TSME</option>
+  <option value="dvb_subtitles.htm">&nbsp;&nbsp;&nbsp;DVB Subtitles for ProMedia Carbon</option>
+  <option value="dvb_subtitles.htm">&nbsp;&nbsp;&nbsp;Generic DVB Subtitles</option>
+  <option value="project_properties.htm#project_properties_dvd_auth">DVD Authoring System</option>
+  <option value="export_dvd_images.htm">DVD Images Export</option>
+  <option value="">EBU</option>
+  <option value="export_subtitles_ebu.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_ebu.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="import-timed-text-ebu-tt_-ebu-tt-.htm">&nbsp;&nbsp;&nbsp;Timed Text</option>
+  <option value="">EBU for ARTE</option>
+  <option value="export_subtitles_ebu_arte.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="export_subtitles_ebu_tt.htm">EBU TECH</option>
+  <option value="import-timed-text-ebu-tt_-ebu-tt-.htm">EBU-TT</option>
+  <option value="export_subtitles_ebu_tt.htm">&nbsp;&nbsp;&nbsp;EBU TT</option>
+  <option value="import-timed-text-ebu-tt_-ebu-tt-.htm">EBU-TT-D</option>
+  <option value="export_subtitles_ebu_tt.htm">&nbsp;&nbsp;&nbsp;EBU TT D</option>
+  <option value="cmd_config-editor.htm">editor</option>
+  <option value="project_settings_effects_subtitle_presentation.htm">Effects</option>
+  <option value="'Customizing EZConvert','customizing_ezconvert_env.htm','Output Settings','wf_output_settings.htm','About subtitles in East Asian languages','easasian_subtitles.htm'">Emphasis</option>
+  <option value="import_subtitles_ascii.htm#codepage">Encoding</option>
+  <option value="usage-and-examples.htm">Error handling</option>
+  <option value="usage-and-examples.htm">Errors</option>
+  <option value="">Excel</option>
+  <option value="export_subtitles_xls.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_xls.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">Excel Workbook</option>
+  <option value="export_subtitles_xls.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_xls.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">Excel Worksheet</option>
+  <option value="export_subtitles_xls.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_xls.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">Export</option>
+  <option value="export_subtitles_softni.htm">&nbsp;&nbsp;&nbsp;.sub</option>
+  <option value="export_subtitles_890.htm">&nbsp;&nbsp;&nbsp;890</option>
+  <option value="export_subtitles_adobe_encore.htm">&nbsp;&nbsp;&nbsp;Adobe Encore DVD Text Script</option>
+  <option value="export_subtitles_spruce_stl.htm">&nbsp;&nbsp;&nbsp;Apple DVD Studio Pro Text Script</option>
+  <option value="export_subtitles_itt.htm">&nbsp;&nbsp;&nbsp;Apple iTunes .itt</option>
+  <option value="export_subtitles_ascii.htm">&nbsp;&nbsp;&nbsp;ASCII Text</option>
+  <option value="export_subtitles_substation_alpha.htm">&nbsp;&nbsp;&nbsp;ASS (SubStation Alpha)</option>
+  <option value="export_subtitles_avid_ds_nitris.htm">&nbsp;&nbsp;&nbsp;Avid DS Nitris</option>
+  <option value="export_subtitles_dlp.htm">&nbsp;&nbsp;&nbsp;CineCanvas DLP XML</option>
+  <option value="export_subtitles_das.htm">&nbsp;&nbsp;&nbsp;DAS File</option>
+  <option value="export_subtitles_dcdm.htm">&nbsp;&nbsp;&nbsp;DCDM</option>
+  <option value="export_subtitles_dcdm.htm">&nbsp;&nbsp;&nbsp;Digital Cinema SMPTE 428-7 Subtitles</option>
+  <option value="export_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;DOC</option>
+  <option value="working_with_subtitle_files.htm">&nbsp;&nbsp;&nbsp;DVD</option>
+  <option value="export_subtitles_ebu.htm">&nbsp;&nbsp;&nbsp;EBU (.stl)</option>
+  <option value="export_subtitles_ebu_arte.htm">&nbsp;&nbsp;&nbsp;EBU for ARTE</option>
+  <option value="export_subtitles_xls.htm">&nbsp;&nbsp;&nbsp;Excel Workbook</option>
+  <option value="working_with_subtitle_files.htm">&nbsp;&nbsp;&nbsp;images</option>
+  <option value="export_subtitles_itt.htm">&nbsp;&nbsp;&nbsp;iTunes .it</option>
+  <option value="export_subtitles_microdvd.htm">&nbsp;&nbsp;&nbsp;MicroDVD SUB</option>
+  <option value="export_subtitles_netflix.htm">&nbsp;&nbsp;&nbsp;Netflix Timed Text</option>
+  <option value="export_subtitles_ovr.htm">&nbsp;&nbsp;&nbsp;OVR</option>
+  <option value="export_subtitles_pac.htm">&nbsp;&nbsp;&nbsp;PAC</option>
+  <option value="export_subtitles_qttext.htm">&nbsp;&nbsp;&nbsp;QuickTime Text</option>
+  <option value="export_subtitles_roxio_dvdit.htm">&nbsp;&nbsp;&nbsp;Roxio DVDIt Text Script</option>
+  <option value="export_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;RTF</option>
+  <option value="export_subtitles_swift.htm">&nbsp;&nbsp;&nbsp;SIF</option>
+  <option value="export_subtitles_softitler_txt.htm">&nbsp;&nbsp;&nbsp;Softitler TXT File</option>
+  <option value="export_subtitles_softni.htm">&nbsp;&nbsp;&nbsp;SoftNI</option>
+  <option value="export_subtitles_sony_dvd_arch.htm">&nbsp;&nbsp;&nbsp;Sony DVD Architect Text Script</option>
+  <option value="export_subtitles_spruce_stl.htm">&nbsp;&nbsp;&nbsp;Spruce STL Text Script</option>
+  <option value="export_subtitles_substation_alpha.htm">&nbsp;&nbsp;&nbsp;SSA (SubStation Alpha)</option>
+  <option value="export_subtitles_srt.htm">&nbsp;&nbsp;&nbsp;SubRip SRT</option>
+  <option value="working_with_subtitle_files.htm">&nbsp;&nbsp;&nbsp;subtitles</option>
+  <option value="export_subtitles_ascii.htm">&nbsp;&nbsp;&nbsp;Unicode Text</option>
+  <option value="export_subtitles_win2020_ascii.htm">&nbsp;&nbsp;&nbsp;Win2020 ASCII File</option>
+  <option value="export_subtitles_sami.htm">&nbsp;&nbsp;&nbsp;Windows Media Player SAMI</option>
+  <option value="export_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;Word DOC</option>
+  <option value="export_subtitles_custom_txt.htm">Export Custom Text File</option>
+  <option value="importexport_presets.htm">Export Preset</option>
+  <option value="export_subtitles.htm">Export Subtitles</option>
+  <option value="export_subtitles_webvtt.htm">Export WebVTT</option>
+  <option value="command-line-paramaters.htm">ezc5c</option>
+  <option value="">Final Cut Pro</option>
+  <option value="export_dvd_images.htm">&nbsp;&nbsp;&nbsp;Final Cut Pro X</option>
+  <option value="import_subtitles_fcp_xml.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="export_subtitles_fcp_xml.htm">Final Cut Pro 7</option>
+  <option value="">Final Cut Pro X</option>
+  <option value="export_subtitles_fcp_xml.htm">&nbsp;&nbsp;&nbsp;FCPX</option>
+  <option value="">Final Cut Pro XML</option>
+  <option value="export_subtitles_fcp_xml.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_fcp_xml.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="'Find, Replace and Go To','find_replace_go_to.htm','Find - Wildcards','find_replace_wildcards.htm'">Find</option>
+  <option value="wf-text-replace.htm">Find and Replace</option>
+  <option value="fix_subtitles.htm">Fix Intervals</option>
+  <option value="fix_subtitles.htm">Fix Subtitles</option>
+  <option value="project_settings_fonts.htm">Fonts</option>
+  <option value="'IMSC v.1','export_subtitles_imsc1.htm','IMSC v.1.1','export_subtitles_imsc1_1.htm','Export Apple iTunes Timed Text (.itt)','export_subtitles_itt.htm','Export DVD Images','export_dvd_images.htm'">Forced Narrative</option>
+  <option value="'Export Netflix Timed Text (NFLX-TT) DFXP Files','export_subtitles_netflix.htm','Secondary Subtitle Track','secondary-subtitle-track.htm'">Forced Narratives</option>
+  <option value="timecode_conversion.htm">Frame Rate Conversion</option>
+  <option value="">Go</option>
+  <option value="go-to.htm">&nbsp;&nbsp;&nbsp;to</option>
+  <option value="find_replace_go_to.htm">Go To</option>
+  <option value="export_dvd_images.htm">HD-DVD Images Export</option>
+  <option value="export_subtitles_disney.htm">IMCS 1.1</option>
+  <option value="">Import</option>
+  <option value="import_subtitles_890.htm">&nbsp;&nbsp;&nbsp;890</option>
+  <option value="import_subtitles_adobe_encore.htm">&nbsp;&nbsp;&nbsp;Adobe Encore Text Script</option>
+  <option value="import_subtitles_spruce_stl.htm">&nbsp;&nbsp;&nbsp;Apple DVD Studio Pro Text Script</option>
+  <option value="import_subtitles_itt.htm">&nbsp;&nbsp;&nbsp;Apple iTunes .itt</option>
+  <option value="import_subtitles_substation_alpha.htm">&nbsp;&nbsp;&nbsp;ASS (SubStation Alpha)</option>
+  <option value="import_subtitles_avid_ds_nitris.htm">&nbsp;&nbsp;&nbsp;Avid DS Nitris</option>
+  <option value="import_subtitles_dlp.htm">&nbsp;&nbsp;&nbsp;CineCanvas DLP XML</option>
+  <option value="import_subtitles_das.htm">&nbsp;&nbsp;&nbsp;DAS</option>
+  <option value="import_subtitles_dcdm.htm">&nbsp;&nbsp;&nbsp;DCDM</option>
+  <option value="import_subtitles_ttml1-ttml2.htm">&nbsp;&nbsp;&nbsp;DFXP XML</option>
+  <option value="import_subtitles_dcdm.htm">&nbsp;&nbsp;&nbsp;Digital Cinema SMPTE 428-7 Subtitles</option>
+  <option value="import_subtitles_ebu.htm">&nbsp;&nbsp;&nbsp;EBU (.stl)</option>
+  <option value="import_subtitles_xls.htm">&nbsp;&nbsp;&nbsp;Excel Workbook</option>
+  <option value="import_subtitles_fcp_xml.htm">&nbsp;&nbsp;&nbsp;Final Cut Pro XML</option>
+  <option value="import_subtitles_itt.htm">&nbsp;&nbsp;&nbsp;iTunes .it</option>
+  <option value="import_subtitles_microdvd.htm">&nbsp;&nbsp;&nbsp;MicroDVD SUB</option>
+  <option value="import_subtitles_netflix.htm">&nbsp;&nbsp;&nbsp;Netflix Timed Text</option>
+  <option value="import_subtitles_ovr.htm">&nbsp;&nbsp;&nbsp;OVR</option>
+  <option value="import_subtitles_pac.htm">&nbsp;&nbsp;&nbsp;PAC</option>
+  <option value="import_subtitles_qttext.htm">&nbsp;&nbsp;&nbsp;QuickTime Text</option>
+  <option value="import_subtitles_roxio_dvdit.htm">&nbsp;&nbsp;&nbsp;Roxio DVDIt</option>
+  <option value="import_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;RTF</option>
+  <option value="import_subtitles_sami.htm">&nbsp;&nbsp;&nbsp;SAMI</option>
+  <option value="import_subtitles_swift.htm">&nbsp;&nbsp;&nbsp;SIF</option>
+  <option value="import_subtitles_softitler_txt.htm">&nbsp;&nbsp;&nbsp;Softitler Text</option>
+  <option value="import_subtitles_softni.htm">&nbsp;&nbsp;&nbsp;SoftNI</option>
+  <option value="import_subtitles_sony_dvd_arch.htm">&nbsp;&nbsp;&nbsp;Sony DVD Architect Text Script</option>
+  <option value="import_subtitles_spruce_stl.htm">&nbsp;&nbsp;&nbsp;Spruce STL</option>
+  <option value="import_subtitles_srt.htm">&nbsp;&nbsp;&nbsp;SRT</option>
+  <option value="import_subtitles_substation_alpha.htm">&nbsp;&nbsp;&nbsp;SSA (SubStation Alpha)</option>
+  <option value="import_subtitles_ascii.htm">&nbsp;&nbsp;&nbsp;Text</option>
+  <option value="import_subtitles_ttml1-ttml2.htm">&nbsp;&nbsp;&nbsp;Timed Text</option>
+  <option value="import_subtitles_ascii.htm">&nbsp;&nbsp;&nbsp;Unicode Text</option>
+  <option value="import_subtitles_vdpc.htm">&nbsp;&nbsp;&nbsp;VDPC</option>
+  <option value="import_subtitles_webvtt.htm">&nbsp;&nbsp;&nbsp;Web Video Text Tracks</option>
+  <option value="import_subtitles_webvtt.htm">&nbsp;&nbsp;&nbsp;WebVTT</option>
+  <option value="import_subtitles_win2020_ascii.htm">&nbsp;&nbsp;&nbsp;Win2020 Text</option>
+  <option value="import_subtitles_sami.htm">&nbsp;&nbsp;&nbsp;Windows Media Player SAMI</option>
+  <option value="import_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;Word DOC</option>
+  <option value="import_subtitles_xls.htm">&nbsp;&nbsp;&nbsp;XLS</option>
+  <option value="importexport_presets.htm">Import Preset</option>
+  <option value="'Working with Subtitle Files','working_with_subtitle_files.htm','Import Subtitles','import_subtitles.htm'">Import Subtitles</option>
+  <option value="importexport_presets.htm">Import/Export Presets</option>
+  <option value="import_subtitles_disney.htm">IMSC</option>
+  <option value="export_subtitles_imsc1.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_disney.htm">IMSC 1.1</option>
+  <option value="export_subtitles_imsc1_1.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="input-and-output-configuration.htm">Input</option>
+  <option value="installing_ezconvert.htm">Install</option>
+  <option value="import_subtitles_dlp.htm">InterOP</option>
+  <option value="'Videotron Lambda Cap files','import_subtitles_lambdacap.htm','IMSC v.1.1','export_subtitles_imsc1_1.htm','Disney IMSC 1.1','export_subtitles_disney.htm'">Japanese</option>
+  <option value="">Jump</option>
+  <option value="go-to.htm">&nbsp;&nbsp;&nbsp;to</option>
+  <option value="import_subtitles_lambdacap.htm">Lambda Cap</option>
+  <option value="metadata-flow.htm">LangaugeID</option>
+  <option value="metadata-flow.htm">Language</option>
+  <option value="registering_eztitles.htm">License</option>
+  <option value="cc_project_settings.htm">Line 21</option>
+  <option value="dvb_subtitles.htm">Manzanita MP2TSME</option>
+  <option value="project_settings_cues.htm">maximum duration</option>
+  <option value="export_captions_mcc.htm">MCC</option>
+  <option value="metadata-flow.htm">Metadata</option>
+  <option value="export_subtitles_microdvd.htm">MicroDVD Export</option>
+  <option value="export_subtitles_microdvd.htm">MicroDVD SUB Export</option>
+  <option value="">MicroDVD SUB Import</option>
+  <option value="import_subtitles_microdvd.htm">&nbsp;&nbsp;&nbsp;SUB Import</option>
+  <option value="project_settings_cues.htm">minimum duration</option>
+  <option value="project_settings_cues.htm">minimum interval</option>
+  <option value="project_properties.htm">Mode</option>
+  <option value="import_subtitles_rtf.htm">MS Word</option>
+  <option value="project_properties.htm">Netflix</option>
+  <option value="">Netflix Timed Text</option>
+  <option value="export_subtitles_netflix.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_netflix.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="export_subtitles_netflix.htm">NFLX DFXP</option>
+  <option value="project_settings_present_style_parameters.htm">NO CHANGE</option>
+  <option value="project_properties.htm#project_properties_dvd_auth">NONE/HD/NLE</option>
+  <option value="global_recut.htm">Offset Times</option>
+  <option value="">Ooyala</option>
+  <option value="export_subtitles_ooyala.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles.htm">Open Subtitles</option>
+  <option value="project_settings_present_style_parameters.htm">Outline</option>
+  <option value="input-and-output-configuration.htm">Output</option>
+  <option value="command-line-paramaters.htm">Override parameters</option>
+  <option value="">OVR</option>
+  <option value="import_subtitles_ovr.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">OVR Files</option>
+  <option value="export_subtitles_ovr.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="">PAC</option>
+  <option value="export_subtitles_pac.htm">&nbsp;&nbsp;&nbsp;File Export</option>
+  <option value="'Import Compressed PAC Files (.PAC)','import_subtitles_pac.htm','Unicode PAC files (.fpc)','import_subtitles_unipac.htm'">&nbsp;&nbsp;&nbsp;File Import</option>
+  <option value="import_subtitles_pac.htm">&nbsp;&nbsp;&nbsp;Import PAC</option>
+  <option value="project_properties.htm#project_props_native_mode">&nbsp;&nbsp;&nbsp;Mode</option>
+  <option value="project_settings_fonts.htm#pac_890_fonts">&nbsp;&nbsp;&nbsp;Mode Fonts</option>
+  <option value="import_subtitles_unipac.htm">&nbsp;&nbsp;&nbsp;Unicode</option>
+  <option value="export_dvd_images.htm">Pinnacle Impression DVD</option>
+  <option value="export_dvd_images.htm">PNG</option>
+  <option value="cc_project_settings.htm">Pop-on</option>
+  <option value="project_settings_present_style_parameters.htm">Presentation Style</option>
+  <option value="importexport_presets.htm">Presets</option>
+  <option value="project_settings_reading_speed.htm">Progressive Reading Speed</option>
+  <option value="project_properties.htm">Project Mode</option>
+  <option value="project_settings.htm">Project Settings</option>
+  <option value="project_settings_cues.htm">&nbsp;&nbsp;&nbsp;Cues</option>
+  <option value="project_settings_effects_subtitle_presentation.htm">&nbsp;&nbsp;&nbsp;Effects</option>
+  <option value="project_settings_fonts.htm">&nbsp;&nbsp;&nbsp;Fonts</option>
+  <option value="project_settings_cues.htm">&nbsp;&nbsp;&nbsp;Minimum Interval</option>
+  <option value="project_properties.htm">&nbsp;&nbsp;&nbsp;Mode</option>
+  <option value="project_templates.htm">&nbsp;&nbsp;&nbsp;Project Templates</option>
+  <option value="project_properties.htm">&nbsp;&nbsp;&nbsp;Project Type and Mode</option>
+  <option value="project_settings_reading_speed.htm">&nbsp;&nbsp;&nbsp;Reading Speed</option>
+  <option value="project_settings_safe_area.htm">&nbsp;&nbsp;&nbsp;Safe Area</option>
+  <option value="project_properties.htm">&nbsp;&nbsp;&nbsp;Timecode Format</option>
+  <option value="project_properties.htm">&nbsp;&nbsp;&nbsp;Type</option>
+  <option value="project_properties.htm">&nbsp;&nbsp;&nbsp;Video Format</option>
+  <option value="project_templates.htm">Project Templates</option>
+  <option value="project_properties.htm">Project Type</option>
+  <option value="project_properties.htm">Project Type and Mode</option>
+  <option value="dvb_subtitles.htm">ProMedia Carbon DVB</option>
+  <option value="check_subtitles.htm">Quality Control</option>
+  <option value="">QuickTime</option>
+  <option value="import_subtitles_qttext.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">QuickTime SMIL</option>
+  <option value="export_subtitles_qttext.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_qttext.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">QuickTime Text</option>
+  <option value="export_subtitles_qttext.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_qttext.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="project_settings_reading_speed.htm">Reading Speed</option>
+  <option value="project_settings_reading_speed.htm">&nbsp;&nbsp;&nbsp;Characters per Second</option>
+  <option value="project_settings_reading_speed.htm">&nbsp;&nbsp;&nbsp;Setting</option>
+  <option value="project_settings_reading_speed.htm">&nbsp;&nbsp;&nbsp;Words per Minute</option>
+  <option value="global_recut.htm">Recut</option>
+  <option value="registering_eztitles.htm">Registration</option>
+  <option value="find_replace_wildcards.htm">Regular expressions</option>
+  <option value="'Find, Replace and Go To','find_replace_go_to.htm','Replace','replace.htm'">Replace</option>
+  <option value="wf-text-replace.htm">replacement</option>
+  <option value="">Rich Text Format</option>
+  <option value="export_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;File Export</option>
+  <option value="import_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;File Import</option>
+  <option value="project_settings_fonts.htm">Right to Left</option>
+  <option value="">Right to Left reorder</option>
+  <option value="'Export SubRip (.srt) Files','export_subtitles_srt.htm','Export MicroDVD (.sub) Files','export_subtitles_microdvd.htm'">&nbsp;&nbsp;&nbsp;reverse punctuation</option>
+  <option value="cc_project_settings.htm">Roll-up</option>
+  <option value="">Roxio DVDIt Pro Subtitle Script</option>
+  <option value="export_subtitles_roxio_dvdit.htm">&nbsp;&nbsp;&nbsp;Text Script Export</option>
+  <option value="import_subtitles_roxio_dvdit.htm">&nbsp;&nbsp;&nbsp;Text Script Import</option>
+  <option value="">RP 2052-10:2012</option>
+  <option value="export_captions_smpte-tt.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="">RTF</option>
+  <option value="export_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;File Export</option>
+  <option value="import_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;File Import</option>
+  <option value="export_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;MS Word RTF</option>
+  <option value="export_subtitles_webvtt.htm">Ruby</option>
+  <option value="project_settings_safe_area.htm">Safe Area Set</option>
+  <option value="">SAMI</option>
+  <option value="export_subtitles_sami.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_sami.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="input-and-output-configuration.htm">sample</option>
+  <option value="cc_project_settings.htm">SCC</option>
+  <option value="">Second</option>
+  <option value="usage-and-examples.htm">&nbsp;&nbsp;&nbsp;subtitle track</option>
+  <option value="">SIF</option>
+  <option value="export_subtitles_swift.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_swift.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">SMIL</option>
+  <option value="export_subtitles_qttext.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_qttext.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">SMPTE 428-7</option>
+  <option value="export_subtitles_dcdm.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_dcdm.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">SMPTE ST 2052-1:2010</option>
+  <option value="export_subtitles_smpte-tt_subtitles.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_smpte-tt_subtitles.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">SMPTE-TT Captions</option>
+  <option value="export_captions_smpte-tt.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="">SMPTE-TT Subtitles</option>
+  <option value="export_subtitles_smpte-tt_subtitles.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_smpte-tt_subtitles.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">Softitler Text</option>
+  <option value="import_subtitles_softitler_txt.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">Softitler TXT File</option>
+  <option value="export_subtitles_softitler_txt.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="">SoftNI</option>
+  <option value="export_subtitles_softni.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_softni.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="export_dvd_images.htm">Sonic Reel DVD/ Scenarist</option>
+  <option value="export_dvd_images.htm">Sonic Scenarist Advanced Content</option>
+  <option value="export_dvd_images.htm">Sonic Scenarist HDMV Authoring</option>
+  <option value="">Sony DVD Architect Subtitle Script</option>
+  <option value="export_subtitles_sony_dvd_arch.htm">&nbsp;&nbsp;&nbsp;Text Script Export</option>
+  <option value="import_subtitles_sony_dvd_arch.htm">&nbsp;&nbsp;&nbsp;Text Script Import</option>
+  <option value="export_dvd_images.htm">Spruce DVD Maestro</option>
+  <option value="">Spruce STL</option>
+  <option value="export_subtitles_spruce_stl.htm">&nbsp;&nbsp;&nbsp;Text Script Export</option>
+  <option value="import_subtitles_spruce_stl.htm">&nbsp;&nbsp;&nbsp;Text Script Import</option>
+  <option value="import_subtitles_srt.htm">SRT</option>
+  <option value="export_subtitles_srt.htm">SRT Export</option>
+  <option value="">SUB</option>
+  <option value="export_subtitles_sub.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_sub.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="export_subtitles_microdvd.htm">SUB Export</option>
+  <option value="">SubRip</option>
+  <option value="export_subtitles_srt.htm">&nbsp;&nbsp;&nbsp;SRT Export</option>
+  <option value="import_subtitles_srt.htm">&nbsp;&nbsp;&nbsp;SRT Import</option>
+  <option value="">SubStation Alpha</option>
+  <option value="export_subtitles_substation_alpha.htm">&nbsp;&nbsp;&nbsp;Export ASS</option>
+  <option value="export_subtitles_substation_alpha.htm">&nbsp;&nbsp;&nbsp;Export SSA</option>
+  <option value="import_subtitles_substation_alpha.htm">&nbsp;&nbsp;&nbsp;Import ASS</option>
+  <option value="import_subtitles_substation_alpha.htm">&nbsp;&nbsp;&nbsp;Import SSA</option>
+  <option value="">Swift</option>
+  <option value="export_subtitles_swift.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_swift.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="cc_project_settings.htm">TeleCap I</option>
+  <option value="cc_project_settings.htm">TeleCap II</option>
+  <option value="">Teletext</option>
+  <option value="export_subtitles_ebu.htm">&nbsp;&nbsp;&nbsp;Export EBU (.stl)</option>
+  <option value="import_subtitles_ebu.htm">&nbsp;&nbsp;&nbsp;Import EBU (.stl)</option>
+  <option value="export_subtitles_ebu.htm">&nbsp;&nbsp;&nbsp;Level 1</option>
+  <option value="export_subtitles_ebu.htm">&nbsp;&nbsp;&nbsp;Level 2</option>
+  <option value="project_properties.htm">&nbsp;&nbsp;&nbsp;Project Type</option>
+  <option value="project_templates.htm">Templates</option>
+  <option value="">Text</option>
+  <option value="wf-text-replace.htm">&nbsp;&nbsp;&nbsp;replace</option>
+  <option value="project_settings_effects_subtitle_presentation.htm">Text Color</option>
+  <option value="export_subtitles_custom_txt.htm">Text Export</option>
+  <option value="">Text File</option>
+  <option value="import_subtitles_custom_txt.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="replace.htm">Text replace</option>
+  <option value="export_dvd_images.htm">TIFF</option>
+  <option value="working_in_closed_captions_mod.htm">Time to Build</option>
+  <option value="'Project Type and Mode','project_properties.htm','Framerate and Timecode Conversion','timecode_conversion.htm'">Timecode Conversion</option>
+  <option value="">Timed Text</option>
+  <option value="export_subtitles_ebu_tt.htm">&nbsp;&nbsp;&nbsp;EBU</option>
+  <option value="export_subtitles_timed_text_general2.htm">&nbsp;&nbsp;&nbsp;emphasis</option>
+  <option value="import_subtitles_ttml1-ttml2.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="export_subtitles_timed_text_general2.htm">&nbsp;&nbsp;&nbsp;ruby</option>
+  <option value="export_subtitles_timed_text_general2.htm">&nbsp;&nbsp;&nbsp;ver.2</option>
+  <option value="export_dvd_images.htm">Toshiba DVD Authoring System</option>
+  <option value="project_properties.htm">Type</option>
+  <option value="export_dvd_images.htm">Ultech DV2000</option>
+  <option value="">UNICODE Text</option>
+  <option value="export_subtitles_ascii.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_ascii.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="running_ezconvert.htm">Using EZConvert</option>
+  <option value="export_dvd_images.htm">UYC</option>
+  <option value="">VDPC</option>
+  <option value="import_subtitles_vdpc.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="export_subtitles_webvtt.htm">Vertical Subtitles</option>
+  <option value="import_subtitles_lambdacap.htm">Videotron</option>
+  <option value="">vtt</option>
+  <option value="export_subtitles_webvtt.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_webvtt.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">Watch Folder</option>
+  <option value="'Watch Folder Mode','watch_folder_mode.htm','User Notes','wf_user_notes.htm'">&nbsp;&nbsp;&nbsp;description</option>
+  <option value="wf_user_notes.htm">&nbsp;&nbsp;&nbsp;details</option>
+  <option value="wf_file_settings.htm">&nbsp;&nbsp;&nbsp;E-mail configuration</option>
+  <option value="wf_manager.htm">&nbsp;&nbsp;&nbsp;Management Application</option>
+  <option value="wf_notifications.htm">&nbsp;&nbsp;&nbsp;Notifications by e-mail</option>
+  <option value="wf_post_convert_events.htm">&nbsp;&nbsp;&nbsp;Post Convert Event</option>
+  <option value="wf_notifications.htm">&nbsp;&nbsp;&nbsp;Send e-mail</option>
+  <option value="wf_file_settings.htm">&nbsp;&nbsp;&nbsp;Settings</option>
+  <option value="wf_user_notes.htm">&nbsp;&nbsp;&nbsp;User notes</option>
+  <option value="wfr_menu_commands.htm">Watch Folder Commands</option>
+  <option value="">Watch Folder Configuration</option>
+  <option value="wf_quality_control.htm">&nbsp;&nbsp;&nbsp;Check subtitles before export</option>
+  <option value="wf_quality_control.htm">&nbsp;&nbsp;&nbsp;Checks</option>
+  <option value="wf_fix_subtitles.htm">&nbsp;&nbsp;&nbsp;Fix Subtitles</option>
+  <option value="wf_timecode_convert_and_recut.htm">&nbsp;&nbsp;&nbsp;Frame Rate Convert</option>
+  <option value="wf_general.htm">&nbsp;&nbsp;&nbsp;General</option>
+  <option value="wf_notifications.htm">&nbsp;&nbsp;&nbsp;Notifications by e-mail</option>
+  <option value="wf_output_settings.htm">&nbsp;&nbsp;&nbsp;Output Settings</option>
+  <option value="wf_post_convert_events.htm">&nbsp;&nbsp;&nbsp;Post Convert Event</option>
+  <option value="wf_output_settings.htm">&nbsp;&nbsp;&nbsp;Project Type</option>
+  <option value="wf_quality_control.htm">&nbsp;&nbsp;&nbsp;Quality Control</option>
+  <option value="wf_timecode_convert_and_recut.htm">&nbsp;&nbsp;&nbsp;Recut by timecode segments</option>
+  <option value="wf_timecode_convert_and_recut.htm">&nbsp;&nbsp;&nbsp;Segments</option>
+  <option value="wf_notifications.htm">&nbsp;&nbsp;&nbsp;Send e-mail</option>
+  <option value="wf_timecode_convert_and_recut.htm">&nbsp;&nbsp;&nbsp;Timecode Convert</option>
+  <option value="wf_output_settings.htm">&nbsp;&nbsp;&nbsp;Video Format</option>
+  <option value="wf_zero_subtitle.htm">&nbsp;&nbsp;&nbsp;Zero Subtitle</option>
+  <option value="wfr_menu_commands.htm">Watch Folder Menu</option>
+  <option value="wf_file_settings.htm">Watches Check Interval</option>
+  <option value="export_subtitles_webvtt.htm">Web Video Text Tracks</option>
+  <option value="">WebVTT</option>
+  <option value="export_subtitles_webvtt.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_webvtt.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="'Find, Replace and Go To','find_replace_go_to.htm','Find - Wildcards','find_replace_wildcards.htm'">Wildcards</option>
+  <option value="">Win2020</option>
+  <option value="import_subtitles_win2020_ascii.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">Win2020 ASCII File</option>
+  <option value="export_subtitles_win2020_ascii.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="">Windows Media Player SAMI</option>
+  <option value="export_subtitles_sami.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_sami.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="">Word DOC</option>
+  <option value="import_subtitles_rtf.htm">&nbsp;&nbsp;&nbsp;File Import</option>
+  <option value="project_settings_reading_speed.htm">Words per Minute</option>
+  <option value="">Workflow</option>
+  <option value="wf_workflow.htm">&nbsp;&nbsp;&nbsp;Concepts</option>
+  <option value="wf_configuring_workflows.htm">&nbsp;&nbsp;&nbsp;Configure</option>
+  <option value="">XLS</option>
+  <option value="export_subtitles_xls.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="import_subtitles_xls.htm">&nbsp;&nbsp;&nbsp;Import</option>
+  <option value="export_subtitles_xls.htm">XLSX Export</option>
+  <option value="import_subtitles_xls.htm">XLSX Import</option>
+  <option value="">XML Subtitles</option>
+  <option value="export_subtitles_dlp.htm">&nbsp;&nbsp;&nbsp;DLP XML Export</option>
+  <option value="import_subtitles_dlp.htm">&nbsp;&nbsp;&nbsp;DLP XML Import</option>
+</select>
+
+  <select id="keyword_list_dummy" size="5" style="display:none"></select>
+</div>
+
+   <script type="text/javascript">
+     /* Script for keyword listbox */
+     var idxMenu = null;
+     var idxEntries = new Array(); 
+     var idxEntryHeight = 0;
+
+     function keywordHideMenu() {	
+        if (idxMenu!=null) {
+          idxMenu.stop();
+          idxMenu.hide();
+          idxMenu = null;
+        }
+     }     	
+
+     function keywordEntryKey(value) {
+        var aKeyword = $('#keyword_entry').val().toLowerCase();
+     	var list = document.getElementById('keyword_list');
+    	var idx1 = 0;
+    	var idx2 = idxEntries.length-1;
+    	while (idx2>idx1+1) {
+    	  var delta = parseInt((idx2-idx1)/2) + idx1;
+    	  if (aKeyword.localeCompare(idxEntries[delta]) > 0) idx1 = delta;
+    	  else idx2 = delta;  
+        }
+    	$('#keyword_entry').unbind('onkeyup');
+        if (aKeyword.localeCompare(idxEntries[idx1]) < 0) idx2 = idx1;
+        list.selectedIndex = idx2;
+        if ((idxEntryHeight>0) && (idx2<idxEntries.length-1)) {
+          $(list).stop();	
+          idx1 = idx2 * idxEntryHeight;
+          if (idx1 > ((idxEntryHeight*idxEntries.length)-$(list).innerHeight())) idx1 = (idxEntryHeight*idxEntries.length)-$(list).innerHeight(); 
+          $(list).scrollTop(idx1);
+        } 
+    	$('#keyword_entry').bind('keywordEntryKey');
+        keywordHideMenu();
+     }
+    
+     function keywordListClick(event) {
+     	var list = document.getElementById('keyword_list');
+        var aKeyword = list.options[list.selectedIndex].text;
+        var aTarget = list.options[list.selectedIndex].value; 
+
+        if (aKeyword.substr(0,1)==String.fromCharCode(160)) {
+          var i = list.selectedIndex-1;
+          var aKw = '';
+          while (i>0) {
+          	aKw = list.options[i].text;
+          	if (aKw.substr(0,1)!=String.fromCharCode(160)) { 
+          	  aKeyword = aKw + ', ' + $.trim(aKeyword);
+          	  break;
+          	}
+          	i--;
+          }
+        }
+
+        $('#keyword_entry').attr('value', aKeyword);        
+        keywordHideMenu();
+
+        //if option.value starts with an "'", it's a list of entries => display menu 
+     	if (aTarget.substring(0,1)==String.fromCharCode(39)) {
+     	  var links = aTarget.substring(1,aTarget.length-1).split("','");
+          var i = 0;
+          var aCode = '';
+          while (i<links.length-1) {
+          	aCode = aCode + '<p><a href="javascript:keywordListJump(' + "'" + links[i+1] + "'" + ')">' + links[i] + '</a></p>';
+          	i = i+2;
+          }
+          
+          idxMenu = $('#keyword_menu');
+          idxMenu.html(aCode);
+          idxMenu.css({'z-index':99, 'position':'absolute', 'right':'4px'});
+          var ypos = event.clientY;
+          if ((ypos + idxMenu.outerHeight()) > $(window).height()) ypos = event.clientY - idxMenu.outerHeight();
+          idxMenu.css('top', ypos + 'px');
+          if (hmAnimate) idxMenu.show('fast');
+          else idxMenu.show();
+     	}
+     	else if ((aTarget=='undefined')||(aTarget=='')) {
+          idxMenu = $('#keyword_menu_no_entry');
+          idxMenu.css({'z-index':99, 'position':'absolute', 'right':'4px', 'opacity':1});
+          var ypos = event.clientY;
+          if ((ypos + idxMenu.outerHeight()) > $(window).height()) ypos = event.clientY - idxMenu.outerHeight();
+          idxMenu.css('top', ypos + 'px');
+          if (hmAnimate) idxMenu.show('fast');
+          else idxMenu.show();
+          idxMenu.fadeOut(5000);
+     	}
+     	else {
+     	  keywordListJump(aTarget);
+     	}	
+     }
+     
+     function keywordListJump(aTarget) {
+	
+	
+	parent.document.getElementById("hmcontent").src = aTarget;
+
+        //Google adwords tracking, if enabled:
+        if (parent.frames.length>0) {
+          if (parent.gaaccount) { 
+            var list = document.getElementById('keyword_list');
+            parent.track("index", idxEntries[list.selectedIndex]); 
+          }
+        }          
+     }
+     
+     $(document).ready( function() {
+       idxEntryHeight = parseInt(($('#keyword_list_dummy').innerHeight()/5)+0.5);
+       if (isIE) idxEntryHeight = 0; //autoscrolling in keyword list works well in IE
+       var kwmain = '';
+       var kw = '';
+       var list = document.getElementById('keyword_list');
+       $(list).click(function(event) { keywordListClick(event) });
+       	
+       for (var i=0; i < list.options.length; i++) {
+         kw = list.options[i].text;
+         
+         if ( (kw.substring(0,3)==String.fromCharCode(160,160,160)) || (kw.substring(0,3)==String.fromCharCode(32,32,32)) ) {
+           kw = kw.substr(3);	
+           idxEntries.push( kwmain+', '+kw.toLowerCase() );
+         }            
+         else {  
+           kwmain = kw.toLowerCase();
+           idxEntries.push(kwmain); 
+         }            
+       }
+
+       $(list).scroll(keywordHideMenu);
+       	
+       $(window).resize(function() { 
+         $('#keyword_entry').css('width', $('#keyword_list').width()+'px');
+	     $('#keyword_list_div').css('top', $('#keyword_entry_div').offset().top + $('#keyword_entry_div').outerHeight() + 5 + 'px');
+       });
+	 
+	   $(window).resize();
+	   
+     });
+   </script>
+ 
+</body>
+</html>

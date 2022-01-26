@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Subtitling in 3D &gt; Export subtitles &gt; Custom Script Format</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="Using this export you can create a text script with your own custom layout. The following elements are specific for this type of export:" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "export_custom_script_format.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Custom Script Format</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?export_custom_script_format.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="subtitling_in_3d.htm">Subtitling in 3D</a> &gt; <a href="exporting_the_subtitles.htm">Export subtitles</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Custom Script Format</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="export_generic_image_sequence.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="exporting_the_subtitles.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="export_multiple_files.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">Using this export you can create a text script with your own custom layout. The following elements are specific for this type of export:</p>
+<div class="p_Picture"><div style="margin:0;width:520px"><img alt="Custom Script Export options" title="Custom Script Export options" width="520" height="193" style="width:520px;height:193px;border:none" src="images-export-custom-script.png"/><p style="text-align:center"><span class="f_Picture">Custom Script Export options</span></p></div></div>
+<p class="p_Normal">The output file is organized in the following way:</p>
+<p class="p_Normal" style="text-indent: 1px; margin: 0 0 11px 38px;"><span class="f_CourierFixed">File header</span><br />
+<span class="f_CourierFixed">Individual lines for every subtitle</span><br />
+<span class="f_CourierFixed">...</span><br />
+<span class="f_CourierFixed">...</span><br />
+<span class="f_CourierFixed">File footer</span></p>
+<p class="p_Normal">and every one of the elements can be defined with various parameters.</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">File header/footer</span></p>
+<p class="p_Normal">File header and file footer contains text that is placed at the beginning and at the end of the file. You can use new lines at the beginning or at the end of the text to separate it from the subtitles. The text is copied exactly to the output, except the parameters which are replaced by their values. The parameters are embedded in “&lt;” and “&gt;” tags. The valid parameters for the file header/footer are:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;first_in_cue&gt;, &lt;last_out_cue&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">First subtitles' in-cue and last subtitles' out-cue. By default the timecode is formatted as HH:MM:SS:FF. If you want to export these cues in some other way you can specify the pattern by using the following form: &lt;in_cue hh:mm:ss.ff&gt; &nbsp;(the frames are separated with “.”). The format timecode patterns &nbsp;will be explained later in this topic.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;video_standard&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The video format: PAL, NTSC, etc.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;tc_standard&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The timecode format used: 25fps, 30fps DROP_FRAME, 30fps NON_DROP, 24fps</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;created_on&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The date and time when the file was exported.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;software_version&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">String in the following form: &quot;EZTitles 3.5.5 Classic&quot;.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;directory&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The folder where the scrip is exported.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;orig_title&gt;</span><br />
+<span class="f_IndentedHilite">&lt;orig_episode&gt;</span><br />
+<span class="f_IndentedHilite">&lt;orig_lang&gt;</span><br />
+<span class="f_IndentedHilite">&lt;trans_title&gt;</span><br />
+<span class="f_IndentedHilite">&lt;trans_episode&gt;</span><br />
+<span class="f_IndentedHilite">&lt;trans_lang&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The corresponding attributes from File/Details...</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Individual lines</span></p>
+<p class="p_Normal">In Text Script Format box you can specify the layout of the lines in the text script. The parameters are enclosed in “&lt;” and “&gt;” tags and are replaced by their values in the output. All other text is copied exactly as is. Following is the list of the valid parameters:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:105px; padding:3px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;in_cue&gt;, </span><br />
+<span class="f_IndentedHilite">&lt;out_cue&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:3px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Subtitles’ in- and out-cues. By default the timecode is formatted as HH:MM:SS:FF. If you want to export the timecode in some other way you can specify the pattern in the following form: &lt;in_cue hh:mm:ss.ff&gt; &nbsp;(the frames are separated with “.”). For more information refer to <a href="export_custom_script_format.htm#format_timecode_patterns" class="topiclink">Format Timecode Patterns</a> later in this topic.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:105px; padding:3px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;dur&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:3px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Duration of the subtitle. The duration is formatted as SS:FF by default, but you can change it by specifying another pattern. Thus if you want to separate the seconds and frames by “.”, specify &lt;dur ss.ff&gt; For more information refer to <a href="export_custom_script_format.htm#format_timecode_patterns" class="topiclink">Format Timecode Patterns</a> later in this topic.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:105px; padding:3px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;num&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:3px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Sequential number, starting from 1. You can also specify number of digits and width. If the number is shorter than the width it is right aligned by spaces. If the number contains less than specified number of digits, leading zeros are inserted. </span></p>
+<p class="p_Indented"><span class="f_Indented">Thus if you enter &lt;num:4&gt; the result will look like: “0024”, &lt;num:4:6&gt; will produce: “ &nbsp;0024”.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:105px; padding:3px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;sttl_num&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:3px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Subtitle number as it is in EZTitles. Can contain numbers and a letter. In general this is not the sequential number. For example if you split a subtitle in EZTitles, the new subtitle is created with the same number, concatenated with the letter “a”.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:105px; padding:3px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;file_name&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:3px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The name of the image file. The file names are created from the</span><span class="f_Emphasize"> image file prefix</span><span class="f_Indented"> and the sequential number of the subtitle.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:105px; height:106px; padding:3px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;left&gt;</span><br />
+<span class="f_IndentedHilite">&lt;top&gt;</span><br />
+<span class="f_IndentedHilite">&lt;right&gt;</span><br />
+<span class="f_IndentedHilite">&lt;bottom&gt;</span><br />
+<span class="f_IndentedHilite">&lt;width&gt;</span><br />
+<span class="f_IndentedHilite">&lt;height&gt;</span></p>
+</td>
+<td style="vertical-align:top; height:106px; padding:3px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Position of the image. If the images are cropped these parameters are used to specify the image placement. </span></p>
+<p class="p_Indented"><span class="f_Indented">The values are in pixels.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:105px; padding:3px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;new_line&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:3px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">New line: CR/LF</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:105px; padding:3px; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">&lt;tab&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:3px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Tab character is inserted.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">If you press the “?” button next to the input line you will get a short help article about the parameters. The list box below contains examples and the history of the used patterns.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Example:</span> the following pattern:</p>
+<p style="text-align: justify; text-indent: 48px; margin: 0 0 8px 0;"><span style="font-size: 10pt; font-family: Tahoma,Geneva,Verdana,sans-serif;"> &lt;file_name&gt; &lt;in_cue&gt; &lt;out_cue&gt; &lt;left&gt; &lt;top&gt; &lt;right&gt; &lt;bottom&gt; </span></p>
+<p class="p_Normal">will generate the following lines in the text script:</p>
+<p style="text-align: justify; text-indent: 48px; margin: 0 0 8px 0;"><span style="font-size: 10pt; font-family: 'Courier New',Courier,monospace;">test_0000.png 10:01:18:16 10:01:21:15 202 550 1074 602</span></p>
+<p style="text-align: justify; text-indent: 48px; margin: 0 0 8px 0;"><span style="font-size: 10pt; font-family: 'Courier New',Courier,monospace;">test_0001.png 10:01:37:02 10:01:41:11 197 550 1079 651</span></p>
+<p style="text-align: justify; text-indent: 48px; margin: 0 0 8px 0;"><span style="font-size: 10pt; font-family: 'Courier New',Courier,monospace;">test_0002.png 10:01:41:13 10:01:44:11 446 550 830 651</span></p>
+<p style="text-align: justify; text-indent: 48px; margin: 0 0 8px 0;"><span style="font-size: 10pt; font-family: 'Courier New',Courier,monospace;">test_0003.png 10:01:45:03 10:01:47:05 320 599 955 651</span></p>
+<p style="text-align: justify; text-indent: 48px; margin: 0 0 8px 0;"><span style="font-size: 10pt; font-family: Arial,Helvetica,sans-serif; color: #000000;">&nbsp;</span></p>
+<p class="p_Normal">Before continuing with the export you can <span class="f_Emphasize">preview</span> the result by pressing the appropriate button. Make the necessary changes if the output doesn’t meet your requirements and when you are ready press OK.</p>
+<p class="p_Normal">When the custom layout is defined you can save it as a <span class="f_Emphasize">Template</span> using the <span class="f_Emphasize">Save template</span> button at the bottom of the window. In addition if you have already used the Save template option, you can easily open a template using the <span class="f_Emphasize">Load template</span> button.</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal"><a id="format_timecode_patterns" class="hmanchor"></a><span class="f_Emphasize">Format Timecode Patterns:</span></p>
+<p class="p_Normal">In-, out-cues and duration representation is customizable using timecode format patterns. Here are some examples: &quot; hh:mm:ss:ff&quot;, &quot;hh:mm:ss.ff&quot;, &quot;hh:mm:ss.nn&quot;, &quot;hh:mm:ss.nnn&quot;, &quot;feet+ff&quot;, &quot;feet.ff&quot;, &quot;ms&quot;, &quot;frames&quot;, etc., where:</p>
+<p class="p_Indented" style="margin: 5px 5px 5px 62px;"><span class="f_Emphasize">hh</span><span class="f_Indented"> - hours, </span><span class="f_Emphasize">mm</span><span class="f_Indented"> - minutes ,</span><span class="f_Emphasize">ss</span><span class="f_Indented"> - seconds, </span><span class="f_Emphasize">ff</span><span class="f_Indented"> - frames, </span><span class="f_Emphasize">nnn</span><span class="f_Indented"> - miliseconds, </span><span class="f_Emphasize">nn</span><span class="f_Indented"> - 10 miliseconds (1/100 seconds), </span><br />
+<span class="f_Emphasize">ms</span><span class="f_Indented"> - the whole time is in miliseconds, </span><span class="f_Emphasize">frames</span><span class="f_Indented"> - the whole time is in frames.</span><br />
+<span class="f_Emphasize">feet</span><span class="f_Indented"> - used to specify 35mm feet/frames timecode. Must be followed by a separator (&quot;+&quot;, &quot;.&quot; ...) and frames. 1 feet = 16 frames. After the feet value you can specify the number of digits separated by &quot;:&quot; and in this case the feet's number will be expanded by leading zeros. For example</span><span class="f_Indented" style="font-weight: bold;"> </span><span class="f_Emphasize">feet.ff</span><span class="f_Indented"> will result in a string like 352.12 but</span><span style="font-weight: bold;"> feet:5.ff</span><span class="f_Indented" style="font-weight: bold;"> </span><span class="f_Indented">will produce</span><span class="f_Indented"> </span><span class="f_Indented" style="font-weight: bold;">00352.12</span></p>
+<p class="p_Indented"><span class="f_Indented">&nbsp;</span></p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

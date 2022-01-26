@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Export Subtitles &gt; Standard formats &gt; Custom Text Export</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Custom Text File,Export Custom Text File,Text Export" />
+   <meta name="description" content="Using this export you can create text and RTF or .doc files with your own custom layout. First you need to select the preferred format: &quot;Plain text&quot; or &quot;RTF&quot;." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "export_subtitles_custom_txt.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Custom Text Export</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?export_subtitles_custom_txt.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="export_subtitles.htm">Export Subtitles</a> &gt; <a href="export_subtitles_standard.htm">Standard formats</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Custom Text Export</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="export_subtitles_qttext.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="export_subtitles_standard.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="export_subtitles_extended.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">Using this export you can create text and RTF or .doc files with your own custom layout. First you need to select the preferred format: &quot;Plain text&quot; or &quot;RTF&quot;.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Plain Text Export</span></p>
+<div class="p_Picture"><div style="margin:0;width:451px"><img alt="&nbsp;Custom Text Export Configuration" title="&nbsp;Custom Text Export Configuration" width="451" height="482" style="width:451px;height:482px;border:none" src="export-custom-text.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Custom Text Export Configuration</span></p></div></div>
+<p class="p_Normal">First select the <span class="f_Emphasize">codepage</span>. Unicode (UTF-16 and UTF-8) is also included in the list.</p>
+<p class="p_Normal">When the<span class="f_Emphasize"> Export &quot;&amp;&quot;, &quot;&lt;&quot;, &quot;&gt;&quot; as reference codes</span> option is turned on, these characters will be represented by their respective HTML codes: <span class="f_Emphasize">&amp;amp;</span>, <span class="f_Emphasize">&amp;lt;</span> and <span class="f_Emphasize">&amp;gt;</span></p>
+<p class="p_Normal"><span class="f_SubHeader1">Note:</span> Some of the text fields can contain long text that doesn't fit on the screen. Press <span class="f_Emphasize">F4</span> key and more convenient editor for the selected field will be displayed.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">File header and file footer</span></p>
+<p class="p_Normal"><span class="f_Emphasize">File header</span> and <span class="f_Emphasize">file footer</span> contains text that is placed at the beginning and at the end of the file. You can use new lines at the beginning or at the end of the text to separate it from the subtitles.</p>
+<p class="p_Normal">The text is copied exactly to the output, except the parameters which are replaced by their values. The parameters are embedded in “&lt;” and “&gt;” tags. The valid parameters for the file header/footer are:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;first_in_cue&gt;, &lt;last_out_cue&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">First subtitles' in-cue and last subtitles' out-cue. By default the timecode is formatted as HH:MM:SS:FF.</p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;">If you want to export these cues in a different way you can specify the pattern by using the following form: &lt;in_cue hh:mm:ss.ff&gt; &nbsp;(the frames are separated with “.”).</p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;">The format timecode patterns will be explained later in this topic.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;video_standard&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">The video format: PAL, NTSC, etc.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;tc_standard&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">The timecode format used: 25fps, 30fps DROP_FRAME, 30fps NON_DROP, 24fps</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;created_on&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">The date and time when the file was exported.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;software_version&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">String in the following form: &quot;EZConvert 6.0.1 PRO&quot;.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;directory&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">The folder where the scrip is exported.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:162px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 0 0 0;"><span style="font-weight: bold;">&lt;orig_title&gt;</span><br />
+<span style="font-weight: bold;">&lt;orig_episode&gt;</span><br />
+<span style="font-weight: bold;">&lt;orig_lang&gt;</span><br />
+<span style="font-weight: bold;">&lt;trans_title&gt;</span><br />
+<span style="font-weight: bold;">&lt;trans_episode&gt;</span><br />
+<span style="font-weight: bold;">&lt;trans_lang&gt;</span></p>
+<p class="p_Normal" style="margin: 0 0 0 0;"><span style="font-weight: bold;">&lt;tape_id&gt;</span></p>
+<p class="p_Normal" style="margin: 0 0 0 0;"><span style="font-weight: bold;">&lt;reel_code&gt;</span></p>
+<p class="p_Normal" style="margin: 0 0 0 0;"><span style="font-weight: bold;">&lt;trans_name&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">The corresponding attributes from <span class="f_Emphasize">File/Details...</span></p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;">Those tags or parameters can also have special, conditional usage, depending on how they are used. For more details, please check the <a href="export_subtitles_custom_txt.htm#conditionaluse" class="topiclink">Parameters with special usage</a> section below.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Subtitle section</span></p>
+<p class="p_Normal"><span class="f_SubHeader1">Header</span> is the subtitle's header that usually contains the subtitle's number, in-cue and out-cue. The text is copied exactly to the output file, except the parameters which are replaced by their values.</p>
+<p class="p_Normal">The parameters are embedded in “&lt;” and “&gt;” tags. The valid parameters for the subtitles header are:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;in_cue&gt;, &lt;out_cue&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">Subtitles' in- and out-cues. By default the timecode is formatted as HH:MM:SS:FF.</p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;">If you want to export the timecode in a different way you can specify the pattern by using the following form: &lt;in_cue hh:mm:ss.ff&gt; &nbsp;(the frames are separated with “.”).</p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;">The format timecode patterns are explained later in this topic.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;dur&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">Duration of the subtitle. The duration is formatted as SS:FF by default, but you can change it by specifying another pattern.</p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;">Thus if you want to separate the seconds and frames by “.”, specify &lt;dur ss.ff&gt;. The format timecode patterns are explained later in this topic.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;num&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 0;">Sequential number, starting from 1. You can also specify number of digits and width. If the number is shorter than the width it is right aligned by spaces.</p>
+<p class="p_Normal" style="margin: 0 5px 11px 0;">If the number contains less than the specified number of digits, leading zeros are inserted. </p>
+<p class="p_Normal" style="margin: 0 0 4px 0;">Thus if you enter &lt;num:4&gt; the result will look like: “0024”; as well: &lt;num:4:6&gt; will produce: “ &nbsp;0024”.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;sttl_num&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">Subtitle number as it is in EZConvert. Can contain number and a letter. In general this is not the sequential number.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;chars_count&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">Saves the total number of characters inserted in the subtitle to the output file. Punctuation, spaces and half-width symbols are accounted if the respective options are turned on from the <a href="project_settings_reading_speed.htm" class="topiclink">Project Settings/Reading Speed</a> menu.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;rs_chars&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">The optimal number of characters calculated from the subtitle duration and the reading speed parameters.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;h_align&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">Horizontal alignment - &quot;left&quot;, &quot;center&quot; or &quot;right&quot; is placed in the output. Center-left aligned and not-aligned subtitles are exported as left. Actually the alignment of the first non-empty row is used.</p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;">You can override the default values by using parameters: &lt;h_align L, C, R, CL, NA&gt;</p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;">Left alignment is exported as &quot;L&quot;, center as &quot;C&quot;, right as &quot;R&quot;, center-left as &quot;CL&quot; and not-aligned as &quot;NA&quot;. You can use any other values separated by &quot;,&quot;.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;v_align&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">Vertical alignment - &quot;bottom&quot;, &quot;middle&quot; or &quot;top&quot; is placed in the output.</p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;">You can override the default values by using parameters: &lt;v_align B, M, T&gt;</p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;">Bottom alignment is exported as &quot;B&quot;, middle (vertical center) as &quot;M&quot;, and top as &quot;T&quot;. You can use any other values separated by &quot;,&quot;.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;rs_chars&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">The optimal number of characters calculated from the subtitle duration and the reading speed parameters.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;comments&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">The<span class="f_Emphasize"> &lt;comments&gt;</span> tag can be used in subtitle's header or footer section to export comments attached to subtitles. Please also mind that the comments tag has special, conditional use. For more details about this, please check the <a href="export_subtitles_custom_txt.htm#conditionaluse" class="topiclink">Parameters with special usage</a> section below.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;bold&gt;, &lt;/bold&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">The <span class="f_Emphasize">&lt;bold&gt;</span> tag can be used in the <span class="f_Emphasize">File Header</span>, <span class="f_Emphasize">Subtitle Header</span>, <span class="f_Emphasize">Row Delimiter</span>, <span class="f_Emphasize">Subtitle Delimiter</span>, <span class="f_Emphasize">Subtitle Footer</span> and<span class="f_Emphasize"> File Footer</span> sections to increase the readability of the parameters written there. It's only necessary to use the closing tag &lt;/bold&gt; when you need certain parameter to appear in bold. For example, the pattern below</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;bold&gt;&lt;in_cue&gt;&lt;/bold&gt;&lt;tab&gt;&lt;out_cue&gt;</span></p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;">will make only the In-cues to be displayed in bold, leaving the Out-cues normal.</p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;"><span class="f_SubHeader1">Note:</span> The <span class="f_Emphasize">&lt;bold&gt;</span> tag will not affect text's presentation.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;italic&gt;,&lt;/italic&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">The <span class="f_Emphasize">&lt;italic&gt;</span> tag can be used in the <span class="f_Emphasize">File Header</span>, <span class="f_Emphasize">Subtitle Header</span>, <span class="f_Emphasize">Row Delimiter</span>, <span class="f_Emphasize">Subtitle Delimiter</span>, <span class="f_Emphasize">Subtitle Footer</span> and<span class="f_Emphasize"> File Footer</span> sections to increase the readability of the parameters written there. It's only necessary to use the closing tag &lt;/italic&gt; when you need certain parameter to appear in italics. For example, the pattern below</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;italic&gt;&lt;in_cue&gt;&lt;/italic&gt;&lt;tab&gt;&lt;out_cue&gt;</span></p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;">will make only the In-cues to be displayed in italics, leaving the Out-cues normal.</p>
+<p class="p_Normal" style="margin: 4px 0 4px 0;"><span class="f_SubHeader1">Note:</span> The <span class="f_Emphasize">&lt;italics&gt;</span> tag will not affect text's presentation and shall not be mistaken with the <span class="f_Emphasize">Italic Start/End</span> parameter.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;new_line&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">New line: CR/LF</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;tab&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">Tab character is inserted.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;space&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">Inserts &quot;space&quot; character.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;cr&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">Cartridge return character (ASCII code 13) is inserted.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:117px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;lf&gt;</span></p>
+</td>
+<td style="vertical-align:top; width:1218px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;">Linefeed character (ASCII code 10) is inserted.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal"><span class="f_SubHeader1">Italic markers</span> are specified in <span class="f_Emphasize">Italic start</span> and <span class="f_Emphasize">Italic stop</span> fields. If only the start marker is present it is used to toggle italic on/off. If both markers are empty the italic text is exported as normal text.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Row delimiter</span> is inserted between the rows of the subtitle. &lt;new_line&gt;, &lt;tab&gt;, &lt;cr&gt; and &lt;lf&gt; are replaced by CR/LF, tab, CR and LF characters.</p>
+<p class="p_Normal">There also could be any text which is copied exactly to the output. Thus enter “ | “ if you want to separate the lines by a vertical line, “&lt;new_line&gt;” &nbsp;for CR/LF, etc.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Footer</span>: In some file formats it is required that the out-cue or some other information is placed after the subtitle text. Here you can specify the footer format and use the same formatting tags as in the Header.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Subtitles delimiter</span> is inserted at the end of the subtitle. &lt;new_line&gt;, &lt;tab&gt;, &lt;cr&gt; and &lt;lf&gt; are replaced by CR/LF, tab, CR and LF characters.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Export raised lines:</span> EZConvert will insert the appropriate number of empty rows at the end of the subtitle to keep it raised.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="format_timecode_patterns" class="hmanchor"></a><span class="f_SubHeader">Format Timecode Patterns:</span></p>
+<p class="p_Normal">In-, out-cues and duration representation is customizable by using timecode format patterns.</p>
+<p class="p_Normal">Here are some examples: &quot; hh:mm:ss:ff&quot;, &quot;hh:mm:ss.ff&quot;, &quot;hh:mm:ss.nn&quot;, &quot;hh:mm:ss.nnn&quot;, &quot;ms&quot;, &quot;frames&quot;, etc., where:</p>
+<p class="p_Indented" style="margin: 0 5px 5px 53px;"><span class="f_Indented" style="font-weight: bold;">hh</span><span class="f_Indented"> - hours, </span><span class="f_Indented" style="font-weight: bold;">mm</span><span class="f_Indented"> - minutes, </span><span class="f_Indented" style="font-weight: bold;">ss</span><span class="f_Indented"> - seconds, </span><span class="f_Indented" style="font-weight: bold;">ff</span><span class="f_Indented"> - frames, </span><span class="f_Indented" style="font-weight: bold;">nnn</span><span class="f_Indented"> - miliseconds, </span><span class="f_Indented" style="font-weight: bold;">nn</span><span class="f_Indented"> - 10 miliseconds (1/100 seconds), </span><br />
+<span class="f_Indented" style="font-weight: bold;">ms</span><span class="f_Indented"> - the whole time is in miliseconds, </span><span class="f_Indented" style="font-weight: bold;">frames</span><span class="f_Indented"> - the whole time is in frames,</span><br />
+<span style="font-weight: bold;">feet</span> - used to specify 35mm feet/frames timecode. Must be followed by a separator (&quot;+&quot;, &quot;.&quot; ...) and frames. 1 feet = 16 frames.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Preview</span></p>
+<p class="p_Normal">Before continuing with the export you can <span class="f_Emphasize">preview</span> the result by pressing the appropriate button.</p>
+<p class="p_Normal">Make the necessary changes if the output doesn't meet your requirements and when you are ready press OK.</p>
+<p class="p_Normal">With the settings in the screen shot at the beginning of this chapter, a file with the following format will be generated:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#&nbsp;This&nbsp;is&nbsp;the&nbsp;file&nbsp;header,</span><br />
+<span class="f_CodeExample">#&nbsp;The&nbsp;text&nbsp;placed&nbsp;before&nbsp;the&nbsp;subtitles</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">0001&nbsp;:&nbsp;00:02:43:02&nbsp;00:02:45:06</span><br />
+<span class="f_CodeExample">&lt;I&gt;Do&nbsp;you&nbsp;hear&nbsp;me,&nbsp;lad?&lt;/I&gt;</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">0002&nbsp;:&nbsp;00:02:49:04&nbsp;00:02:51:10</span><br />
+<span class="f_CodeExample">&lt;I&gt;Right&nbsp;on&nbsp;time!&lt;/I&gt;</span><br />
+<span class="f_CodeExample">&lt;I&gt;What's&nbsp;up&nbsp;again&nbsp;?&lt;/I&gt;</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">0003&nbsp;:&nbsp;00:02:51:12&nbsp;00:02:54:05</span><br />
+<span class="f_CodeExample">The&nbsp;fuses&nbsp;blew&nbsp;off,</span><br />
+<span class="f_CodeExample">I&nbsp;can't&nbsp;finish&nbsp;cooking.</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+<span class="f_CodeExample">#&nbsp;This&nbsp;is&nbsp;the&nbsp;footer,</span><br />
+<span class="f_CodeExample">#&nbsp;The&nbsp;Text&nbsp;placed&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;file</span></p>
+<p style="text-align: justify; text-indent: 48px; margin: 0 0 0 0;"><span style="font-size: 10pt; font-family: Arial,Helvetica,sans-serif; color: #000000;">&nbsp;</span></p>
+<p class="p_Normal">When the custom layout is defined you can save it as a <span class="f_Emphasize">Template</span> using the <span class="f_Emphasize">Save template</span> button at the bottom of the window.</p>
+<p class="p_Normal">In addition if you have already used the Save template option, you can easily open a template using the <span class="f_Emphasize">Load template</span> button.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">RTF Export</span></p>
+<div class="p_Picture"><div style="margin:0;width:451px"><img alt="&nbsp;Custom Text Export Configuration" title="&nbsp;Custom Text Export Configuration" width="451" height="482" style="width:451px;height:482px;border:none" src="export-custom-rtf.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Custom Text Export Configuration</span></p></div></div>
+<p class="p_Normal">The principle is the same as in the text export with a few exceptions:</p>
+<p class="p_Normal">The italic text is not surrounded by start and stop tags but it is exported directly as italic. The other parameters in the <span class="f_Emphasize">Subtitle</span> section are the same. </p>
+<p class="p_Normal">With the <span class="f_Emphasize">Settings</span> section you can specify the font used for the generated RTF, whether to export the italics, the row alignment, colors and outline.</p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">When the custom layout is defined you can save it as a <span class="f_Emphasize">Template</span> using the <span class="f_Emphasize">Save template</span> button at the bottom of the menu.</p>
+<p class="p_Normal">In addition if you have already used the Save template option, you can easily open a template using the <span class="f_Emphasize">Load template</span> button.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Additional Formatting Parameters</span></p>
+<p class="p_Normal">You can use the<span class="f_Emphasize"> &lt;bold&gt;</span> and<span class="f_Emphasize"> &lt;italics&gt;</span> tags in the <span class="f_Emphasize">File Header</span>, <span class="f_Emphasize">Subtitle Header</span>, <span class="f_Emphasize">Row Delimiter</span>, <span class="f_Emphasize">Subtitle Delimiter</span>, <span class="f_Emphasize">Subtitle Footer</span> and<span class="f_Emphasize"> File Footer</span> sections to increase the readability of the parameters written there. The effect of the two formatting parameters will reset for the last parameter in the section. Consider using the closing tags <span class="f_Emphasize">&lt;/bold</span>&gt; and <span class="f_Emphasize">&lt;/italics&gt; </span>only some of the parameters in the same section need to have their style changed. For example, if we have the following pattern in the Subtitle Header: </p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;bold&gt;&lt;in_cue&gt;&lt;/bold&gt;&lt;tab&gt;&lt;out_cue&gt;</span></p>
+<p class="p_Normal">will make only the In-cues to be displayed in bold, leaving the Out-cues normal.</p>
+<p class="p_Normal"><span class="f_SubHeader1">Note:</span> The two formatting tags will not affect text's presentation.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="conditionaluse" class="hmanchor"></a><span class="f_SubHeader">Parameters with special usage</span></p>
+<p class="p_Normal">As stated earlier some of the parameters have more specialized usage, those are: <span class="f_Emphasize">&lt;orig_title&gt;</span>, <span class="f_Emphasize">&lt;orig_episode&gt;</span>, <span class="f_Emphasize">&lt;orig_lang&gt;</span>, <span class="f_Emphasize">&lt;trans_title&gt;</span>,<span class="f_Emphasize"> &lt;trans_episode&gt;</span>, <span class="f_Emphasize">&lt;trans_lang&gt;</span>,<span class="f_Emphasize"> &lt;tape_id&gt;</span>, <span class="f_Emphasize">&lt;reel_code&gt;</span> and <span class="f_Emphasize">&lt;comments&gt;</span>. </p>
+<p class="p_Normal">What is so special about them is the fact that they may also include a <span class="f_Emphasize">prefix-</span> or <span class="f_Emphasize">-suffix</span> part in their declarations. They are constructed as follows: &lt;&quot;<span class="f_Emphasize">prefix part</span>&quot; <span class="f_Emphasize">parameter</span> &quot;<span class="f_Emphasize">suffix part</span>&quot;&gt;. The <span class="f_Emphasize">prefix-</span> or <span class="f_Emphasize">-suffix</span> parts can include additional parameters like <span class="f_Emphasize">&lt;new_line</span>&gt;, <span class="f_Emphasize">&lt;tab&gt;</span>, <span class="f_Emphasize">&lt;cr&gt;</span>,<span class="f_Emphasize"> &lt;lf&gt;</span> as well as regular text but at all times must be enclosed in double quotation. </p>
+<p class="p_Normal">So for example, if we have the following comment &quot;John is 46 years old&quot; attached to a subtitle and we want to distinguish it's a commentary more clearly in the output file, we can then set it up like this:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;&quot;#Start&nbsp;of&nbsp;Comment#&lt;new_line&gt;&quot;&nbsp;comments&nbsp;&quot;&lt;new_line&gt;#End&nbsp;of&nbsp;Comment#&quot;&gt;&nbsp;</span></p>
+<p class="p_Normal">this will render in the file as:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#Start&nbsp;of&nbsp;Comment#</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">John&nbsp;is&nbsp;46&nbsp;years&nbsp;old</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">#End&nbsp;of&nbsp;Comment#</span></p>
+<p class="p_Normal">The parameters or text set in the <span class="f_Emphasize">prefix</span>- or <span class="f_Emphasize">-suffix</span> parts will appear in the output file, only if the parameter they are attached will appear too. So, if we take the above example, <span class="f_CodeExample">#Start of Comment#</span> and <span class="f_CodeExample">#End of Comment#</span> text will appear only for the subtitles with comments attached to them.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

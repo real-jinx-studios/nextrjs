@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+   <title>EZTitles Plug-in for Adobe Premiere</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ 
+   <!-- This line includes the general project style sheet (not required) -->
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+   <!-- This block defines the styles of the TOC headings, change them as needed -->
+   <style type="text/css">
+       body { font-size: 1em }
+       .heading1 { color: #000; text-decoration: none; }
+       .heading2 { color: #000; text-decoration: none; }
+       .heading3 { color: #000; text-decoration: none; }
+       .heading4 { color: #000; text-decoration: none; }
+       .heading5 { color: #000; text-decoration: none; }
+       .heading6 { color: #000; text-decoration: none; }
+
+       .hilight1 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight2 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight3 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight4 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight5 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight6 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+
+       /* TOC LIST CSS */
+       #toc    { padding:0; margin:0 }
+       #toc li { margin-top:2px; margin-left:0; padding:1px }
+       #toc ul { padding-left:0; margin-left:0px }       
+       /* TOC LIST CSS */
+       
+       @media (pointer: coarse) {
+         body    { transform-origin: 0 0;
+		   transform:scale(1.25); 
+		   max-width: 80%;
+       }       
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript">
+   $(document).ready(function(){
+   	   var hiTest = /^hilight/im,
+			parentScope = (parent.hmNavigationFrame);
+		if (parentScope) parent.currentNav("toc");
+		$("a[class^='heading']").on("click",function(event){
+			var doSwipe = (hiTest.test($(this).children("span").first().attr("class")) || false || (parentScope && !parent.hmBrowser.nonDeskTouch));
+			if (doSwipe && parentScope) {
+			window.parent.showNav("toggle");
+			}
+			});
+     });
+   </script>
+      <script type="text/javascript">
+     var parentScope = (parent.hmNavigationFrame);
+     if (!parentScope) {
+		      var s = document.createElement("script");
+		      s.setAttribute("type","text/javascript");
+		      s.setAttribute("src", "helpman_navigation.js");
+		      document.getElementsByTagName("head")[0].appendChild(s);
+	    }
+     else {
+       if (initialtocstate != "expandall") parent.hmAddCss(document, "#toc li ul { display: none }");
+     }
+     function loadicons() { var icons = new Array(); for (i=0; i<arguments.length; i++) { icons[i] = new Image(); icons[i].src = arguments[i]; } }
+     function loadtoc() { if (parentScope) parent.loadstate(document.getElementById("toc")); else loadstate(document.getElementById("toc")); }
+     function savetoc() { if (parentScope) parent.savestate(document.getElementById("toc")); else savestate(document.getElementById("toc")); }
+     function clicked(node, event) { deselect(); if (parentScope) parent.hmNodeClicked(node, event); else hmNodeClicked(node, event); }
+     function dblclicked(node) { if (parentScope) parent.hmNodeDblclicked(node); else hmNodeDblclicked(node); }
+     function deselect() { if (window.getSelection) window.getSelection().removeAllRanges(); else if (document.selection) document.selection.empty(); }
+     $(document).ready(function(){
+       loadtoc();
+       $(window).onunload = savetoc;
+     });
+   </script>
+</head>
+<body>
+<ul id="toc" style="list-style-type:none;display:block;padding-left:0">
+<li class="heading1" id="i1" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a1" href="introducing_eztitles_plug-in.htm" target="hmcontent"><span class="heading1" id="s1" ondblclick="return dblclicked(this)">Introducing EZTitles Plug-in</span></a>
+<ul id="ul1" style="list-style-type:none">
+<li class="heading2" id="i1.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a1.1" href="what_is_eztitles_plugin.htm" target="hmcontent"><span class="heading2" id="s1.1">What is EZTitles Plug-in</span></a>
+</li>
+<li class="heading2" id="i1.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a1.2" href="features_requirements.htm" target="hmcontent"><span class="heading2" id="s1.2">Features and Requirements</span></a>
+</li>
+<li class="heading2" id="i1.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a1.3" href="copyright_and_distribution.htm" target="hmcontent"><span class="heading2" id="s1.3">Copyright and Distribution</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i2" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a2" href="setting_up.htm" target="hmcontent"><span class="heading1" id="s2" ondblclick="return dblclicked(this)">Setting Up</span></a>
+<ul id="ul2" style="list-style-type:none">
+<li class="heading2" id="i2.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.1" href="installing_eztitles_plugin.htm" target="hmcontent"><span class="heading2" id="s2.1">Installing EZTitles Plug-in</span></a>
+</li>
+<li class="heading2" id="i2.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.2" href="whats_next.htm" target="hmcontent"><span class="heading2" id="s2.2">What's next</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i3" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a3" href="importing_subtitles.htm" target="hmcontent"><span class="heading1" id="s3" ondblclick="return dblclicked(this)">Importing Subtitles</span></a>
+<ul id="ul3" style="list-style-type:none">
+<li class="heading2" id="i3.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.1" href="compressed__pac_format.htm" target="hmcontent"><span class="heading2" id="s3.1">Compressed .PAC file format</span></a>
+</li>
+<li class="heading2" id="i3.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.2" href="_ebu_file_format__stl.htm" target="hmcontent"><span class="heading2" id="s3.2">EBU file format (.STL)</span></a>
+</li>
+<li class="heading2" id="i3.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.3" href="ascii_file_format__txt.htm" target="hmcontent"><span class="heading2" id="s3.3">ASCII file format (.txt)</span></a>
+</li>
+<li class="heading2" id="i3.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.4" href="srt.htm" target="hmcontent"><span class="heading2" id="s3.4">SubRip file format (.srt)</span></a>
+</li>
+<li class="heading2" id="i3.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.5" href="sub.htm" target="hmcontent"><span class="heading2" id="s3.5">MicroDVD file format (.sub)</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i4" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a4" href="config_subtitle_settings.htm" target="hmcontent"><span class="heading1" id="s4" ondblclick="return dblclicked(this)">Configuring Subtitle Properties</span></a>
+<ul id="ul4" style="list-style-type:none">
+<li class="heading2" id="i4.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.1" href="subtitle_properties.htm" target="hmcontent"><span class="heading2" id="s4.1">Info</span></a>
+</li>
+<li class="heading2" id="i4.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.2" href="safe_area.htm" target="hmcontent"><span class="heading2" id="s4.2">Safe Area</span></a>
+</li>
+<li class="heading2" id="i4.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.3" href="fonts.htm" target="hmcontent"><span class="heading2" id="s4.3">Fonts</span></a>
+</li>
+<li class="heading2" id="i4.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.4" href="effects_subtitle_presentation.htm" target="hmcontent"><span class="heading2" id="s4.4">Effects (Subtitle Presentation)</span></a>
+</li>
+<li class="heading2" id="i4.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.5" href="global_presentation_style.htm" target="hmcontent"><span class="heading2" id="s4.5">Global Presentation Style</span></a>
+</li>
+<li class="heading2" id="i4.6" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.6" href="check_safe_area.htm" target="hmcontent"><span class="heading2" id="s4.6">Check Safe Area</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a5" href="properties_preview.htm" target="hmcontent"><span class="heading1" id="s5">Properties Preview</span></a>
+</li>
+<li class="heading1" id="i6" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a6" href="secondary-subtitles-track.htm" target="hmcontent"><span class="heading1" id="s6">Secondary Subtitle Track</span></a>
+</li>
+<li class="heading1" id="i7" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a7" href="app_a_eztitles_ascii_format.htm" target="hmcontent"><span class="heading1" id="s7">Appendix A. ASCII File Format used by EZTitles Plug-In</span></a>
+</li>
+</ul>
+<script type="text/javascript">loadicons('cicon2.png','cicon1.png','cicon9.png');</script>
+</body>
+</html>

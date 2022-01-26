@@ -1,0 +1,903 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Batch conversions and automation &gt; Command Line Conversion Tool &gt; Input and Output configuration</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="cfg,config,Input,Output,sample" />
+   <meta name="description" content="The table below lists the supported Input/Output formats which can be specified with the -i and -o parameters:" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "input-and-output-configuration.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Input and Output configuration</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?input-and-output-configuration.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="batch-conversions.htm">Batch conversions and automation</a> &gt; <a href="app_b_command_line_params.htm">Command Line Conversion Tool</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Input and Output configuration</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="command-line-paramaters.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="app_b_command_line_params.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="usage-and-examples.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">The table below lists the <span class="f_SubHeader1">supported Input/Output formats</span> which can be specified with the<span class="f_Emphasize"> -i</span> and <span class="f_Emphasize">-o</span> parameters:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_TableText"><span class="f_TableText" style="font-weight: bold;">Format</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_TableText"><span class="f_TableText" style="font-weight: bold;">Description</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">AUTO</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Instead of specifying the particular input format, you can use the AUTO attribute (&quot;-i AUTO&quot;) to instruct the command line tool to automatically recognize the input's file format.</span></p>
+<p class="p_Indented"><span class="f_Indented">Please mind you still have to configure the sections in the &quot;config&quot; file corresponding to the formats you expect to be submitted for conversion. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">EZT</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">EZT file</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">EZT_XML</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">EZTXML file</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">PAC</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Compressed PAC file</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">UNIPAC</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Unicode PAC (.fpc) file</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; height:28px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">890</span></p>
+</td>
+<td style="vertical-align:top; height:28px; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">890 file</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">EBU</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">EBU file</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">EBUA</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">EBU file exported according to ARTE's requirements. Available only for export with </span><span class="f_Indented" style="font-weight: bold;">-o</span><span class="f_Indented"> parameter.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">RTF</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Exports RTF, Doc or Docx files according to output file's extension.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; height:10px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">TXT</span></p>
+</td>
+<td style="vertical-align:top; height:10px; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Plain ASCII exported by EZConvert</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; height:10px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">XLS</span></p>
+</td>
+<td style="vertical-align:top; height:10px; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Excel Workbook XLS files</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; height:10px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">CUSTOM_TXT</span></p>
+</td>
+<td style="vertical-align:top; height:10px; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Custom Text files can be used both as Input and Output. </span><br />
+<span class="f_Indented">When used as </span><span class="f_IndentedHilite">Input</span><span class="f_Indented">, the </span><span class="f_Emphasize">&quot;-it&quot;</span><span class="f_Indented"> parameter must be used and it has to point to actual template used for &quot;importing&quot; the source file.</span></p>
+<p class="p_Indented"><span class="f_Indented">If used as </span><span class="f_IndentedHilite">Output</span><span class="f_Indented">, it must be followed by </span><span class="f_Emphasize">&quot;-t&quot;</span><span class="f_Indented"> and the path to the template file containing the structure for the output Custom file. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">TXT_2020</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">ASCII file used by Win2020</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SAMI</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Webcast- Media Player SAMI files</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">QTT</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">QuickTime Text</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">TT</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Timed Text DFXP XML</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">IMSC</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">IMSC1 and IMSC 1.1 timed text files</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; height:29px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">OOYALA</span></p>
+</td>
+<td style="vertical-align:top; height:29px; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">OOYALA Timed Text</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">ST_2052</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">SMPTE-TT Subtitles following the general SMPTE-TT ST 2052-1:2010 specifications.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">NFLX_TT</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Netflix Timed Text DFXP</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">DISNEY_TT</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Disney IMSC 1.1</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">EBU_TT</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">EBU Timed Text (EBU-TT, EBU-TT-D)</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">ITT</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Apple iTunes Timed Text (.itt)</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SRT</span></p>
+</td>
+<td style="vertical-align:top; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">SubRip</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">VTRON</span></p>
+</td>
+<td style="vertical-align:top; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Videotron Lambda (.cap)</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SUB</span></p>
+</td>
+<td style="vertical-align:top; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Micro DVD .SUB</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">VTT</span></p>
+</td>
+<td style="vertical-align:top; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">WebVTT (.vtt)</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SIF</span></p>
+</td>
+<td style="vertical-align:top; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Swift Interchange (.sif) files</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">USF</span></p>
+</td>
+<td style="vertical-align:top; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Universal Subtitling Format (.usf)</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">DAS</span></p>
+</td>
+<td style="vertical-align:top; height:17px; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">DAS file</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SOFTNI</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Softni (.sub) file</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">TXT_SOF</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Softitler TXT file</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">DLP_XML</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">DLP Cinema XML</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SMPTE_XML</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">DCDM(SMPTE 428-7-2007) XML Subtitles</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SSA</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">SubStation Alpha Files</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">AVID_DS</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Avid DS Nitris files</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">FCP_XML</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Final Cut XML files</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">TXT_ENCORE</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Adobe Encore DVD text script</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">STL</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Spruce STL text script</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SONY_ARCH</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Sony DVD Architect Subtitle Script</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">ROXIO_DVDIT</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Roxio DVDIt Pro Subtitle Script</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">DVD_IMAGES</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Output format only. Export DVD images with text script in a single ZIP file. The DVD authoring system is specified in the configuration file.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">DVB</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Output format only. Exports <a href="project_settings_effects_subtitle_presentation.htm" class="topiclink">DVB</a> compliant file for use with ProMedia Carbon.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">MCC</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">MCC closed captions format. It supports both CEA-608 and CEA-708 captions.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">ONL</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">CPC-715 Online Caption Format</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">CIN</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Caption Inc</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SCC</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Scenarist Closed Caption Format</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">CAP</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Cheetah CAP</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">ASC</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Cheetah ASC</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">PROCAP</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">ProCap Captions (.txt)</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">NCI_CAP</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">NCI CAP Captions (.cap)</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">NCI_FLC</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">NCI Timed Roll Up Captions (.flc)</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:129px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SMPTE_TT</span></p>
+</td>
+<td style="vertical-align:top; padding:5px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">SMPTE-TT CEA-608 Captions (.xml) following the guidelines set by RP 2052-10:2012 for mapping of CEA-608 captions to SMPTE-TT files.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">For information about the <span class="f_Emphasize">configuration file syntax</span> please refer to <span class="f_CourierFixed" style="font-size: 12pt; font-weight: bold;">&quot;sample_config.cfg&quot;</span> file located in the installation folder.</p>
+<p class="p_Normal">You can <span class="f_Emphasize">copy</span> the file and <span class="f_Emphasize">modify</span> it. </p>
+<p class="p_Normal">Every <span class="f_Emphasize">Input</span> and <span class="f_Emphasize">Output</span> format has a section in the configuration file, here is the list of all input/output sections in the  <span class="f_CourierFixed" style="font-size: 12pt; font-weight: bold;">&quot;sample_config.cfg&quot;</span> file:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_TableText"><span class="f_TableText" style="font-weight: bold;">Format</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_TableText"><span class="f_TableText" style="font-weight: bold;">Input section</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_TableText"><span class="f_TableText" style="font-weight: bold;">Output section</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">EZT</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">EZT</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">EZTXML</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">EZTXML</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">PAC</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">PAC</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">PAC</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">UNIPAC</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">UNICODE_PAC</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">UNICODE_PAC</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">890</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">890</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">890</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">EBU</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">EBU</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">EBU</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">EBUA</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">EBUArte</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">RTF</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">RTF</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">RTF</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">TXT</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">ASCII</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">ASCII</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">XLS</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">XLS_Import_Export</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">XLS_Import_Export</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">TXT_2020</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Win2020_ASCII</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Win2020_ASCII</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SAMI</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SAMIImport</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SAMIExport</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">QTT</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">QuickTime Text</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">QuickTime Text</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">TT</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Timed Text</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Timed Text</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">IMSC</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">IMSC Timed Text</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">IMSC Timed Text</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">OOYALA</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">OOYALA Timed Text</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">OOYALA Timed Text</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">ST_2052</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SMPTE 2052-1 Timed Text</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SMPTE 2052-1 Timed Text</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">NFLX_TT</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Netflix Timed Text</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Netflix Timed Text</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">DISNEY_TT</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Disney IMSC11</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">EBU_TT</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">EBU Timed Text</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">EBU Timed Text</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">ITT</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Apple iTunes Timed Text</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SRT</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SRT_File</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SRT_File</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SUB</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">MicroDVD_File</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">MicroDVD_File</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">WebVTT</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">WebVTT_File</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">WebVTT_File</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SIF</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Swift Export</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">USF</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">USF</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">USF</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">DAS</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">DAS_File</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">DAS_File</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">TXT_SOF</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Softitler_TXT_File</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Softitler_TXT_File</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SOFTNI</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SoftNI</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SoftNI</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">DLP_XML</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">DLPXML</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SMPTE_XML</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SMPTE_428_XML</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SSA</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SubStationAlpha</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SubStationAlpha</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">AVID_DS</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">AvidDS Nitris File</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">AvidDS Nitris File</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">FCP_XML</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Final Cut Pro</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Final Cut Pro</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">TXT_ENCORE</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">AdobeEncoreDVD</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">AdobeEncoreDVD</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">STL</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SpruceSTL</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SpruceSTL</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SONY_ARCH</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Sony DVD Architect</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Sony DVD Architect</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">ROXIO_DVDIT</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Roxio DVDit Pro</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Roxio DVDit Pro</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">DVD_IMAGES</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">DVD_IMAGES</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">DVB</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none </span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">DVB Export</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">MCC</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">MCCFiles</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">MCCfiles</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">ONL</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Closed Captions</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">CIN</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Closed Captions</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SCC</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Closed Captions</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">CAP</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Closed Captions</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">ASC</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Closed Captions</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">PROCAP</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Closed Captions</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">NCI_CAP</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Closed Captions</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">NCI_FLC</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">none</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Closed Captions</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:136px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 6px 5px 5px 10px;"><span class="f_CodeExample">SMPTE_TT</span></p>
+</td>
+<td style="vertical-align:top; width:226px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">SMPTE Timed Text</span></p>
+</td>
+<td style="vertical-align:top; width:223px; padding:5px; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 10px;"><span class="f_CodeExample">Closed Captions</span></p>
+</td>
+</tr>
+</table>
+</div>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

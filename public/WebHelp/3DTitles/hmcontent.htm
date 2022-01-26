@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+   <title>3DTitles Help</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ 
+   <!-- This line includes the general project style sheet (not required) -->
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+   <!-- This block defines the styles of the TOC headings, change them as needed -->
+   <style type="text/css">
+       body { font-size: 1em }
+       .heading1 { color: #000; text-decoration: none; }
+       .heading2 { color: #000; text-decoration: none; }
+       .heading3 { color: #000; text-decoration: none; }
+       .heading4 { color: #000; text-decoration: none; }
+       .heading5 { color: #000; text-decoration: none; }
+       .heading6 { color: #000; text-decoration: none; }
+
+       .hilight1 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight2 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight3 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight4 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight5 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight6 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+
+       /* TOC LIST CSS */
+       #toc    { padding:0; margin:0 }
+       #toc li { margin-top:2px; margin-left:0; padding:1px }
+       #toc ul { padding-left:0; margin-left:0px }       
+       /* TOC LIST CSS */
+       
+       @media (pointer: coarse) {
+         body    { transform-origin: 0 0;
+		   transform:scale(1.25); 
+		   max-width: 80%;
+       }       
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript">
+   $(document).ready(function(){
+   	   var hiTest = /^hilight/im,
+			parentScope = (parent.hmNavigationFrame);
+		if (parentScope) parent.currentNav("toc");
+		$("a[class^='heading']").on("click",function(event){
+			var doSwipe = (hiTest.test($(this).children("span").first().attr("class")) || false || (parentScope && !parent.hmBrowser.nonDeskTouch));
+			if (doSwipe && parentScope) {
+			window.parent.showNav("toggle");
+			}
+			});
+     });
+   </script>
+      <script type="text/javascript">
+     var parentScope = (parent.hmNavigationFrame);
+     if (!parentScope) {
+		      var s = document.createElement("script");
+		      s.setAttribute("type","text/javascript");
+		      s.setAttribute("src", "helpman_navigation.js");
+		      document.getElementsByTagName("head")[0].appendChild(s);
+	    }
+     else {
+       if (initialtocstate != "expandall") parent.hmAddCss(document, "#toc li ul { display: none }");
+     }
+     function loadicons() { var icons = new Array(); for (i=0; i<arguments.length; i++) { icons[i] = new Image(); icons[i].src = arguments[i]; } }
+     function loadtoc() { if (parentScope) parent.loadstate(document.getElementById("toc")); else loadstate(document.getElementById("toc")); }
+     function savetoc() { if (parentScope) parent.savestate(document.getElementById("toc")); else savestate(document.getElementById("toc")); }
+     function clicked(node, event) { deselect(); if (parentScope) parent.hmNodeClicked(node, event); else hmNodeClicked(node, event); }
+     function dblclicked(node) { if (parentScope) parent.hmNodeDblclicked(node); else hmNodeDblclicked(node); }
+     function deselect() { if (window.getSelection) window.getSelection().removeAllRanges(); else if (document.selection) document.selection.empty(); }
+     $(document).ready(function(){
+       loadtoc();
+       $(window).onunload = savetoc;
+     });
+   </script>
+</head>
+<body>
+<ul id="toc" style="list-style-type:none;display:block;padding-left:0">
+<li class="heading1" id="i1" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a1" href=javascript:void(0);><span class="heading1" id="s1" ondblclick="return dblclicked(this)">Introduction</span></a>
+<ul id="ul1" style="list-style-type:none">
+<li class="heading2" id="i1.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a1.1" href="welcome_topic.htm" target="hmcontent"><span class="heading2" id="s1.1">What is 3DTitles?</span></a>
+</li>
+<li class="heading2" id="i1.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a1.2" href="second_topic.htm" target="hmcontent"><span class="heading2" id="s1.2">Copyright and Distribution</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i2" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a2" href="short-introduction-to-3d.htm" target="hmcontent"><span class="heading1" id="s2" ondblclick="return dblclicked(this)">Short introduction to 3D</span></a>
+<ul id="ul2" style="list-style-type:none">
+<li class="heading2" id="i2.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.1" href="how_does_3d_work.htm" target="hmcontent"><span class="heading2" id="s2.1">How does 3D work?</span></a>
+</li>
+<li class="heading2" id="i2.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.2" href="how_the_depth_is_measured.htm" target="hmcontent"><span class="heading2" id="s2.2">How the depth is measured?</span></a>
+</li>
+<li class="heading2" id="i2.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.3" href="subtitles_in_a_new_dimension.htm" target="hmcontent"><span class="heading2" id="s2.3">Subtitles in a new dimension</span></a>
+</li>
+<li class="heading2" id="i2.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.4" href="subtitle_preparation_considera.htm" target="hmcontent"><span class="heading2" id="s2.4">Subtitle preparation considerations</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i3" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a3" href="chapter_2.htm" target="hmcontent"><span class="heading1" id="s3" ondblclick="return dblclicked(this)">Setting Up</span></a>
+<ul id="ul3" style="list-style-type:none">
+<li class="heading2" id="i3.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.1" href="system_requirements.htm" target="hmcontent"><span class="heading2" id="s3.1">System Requirements</span></a>
+</li>
+<li class="heading2" id="i3.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.2" href="installing3dtitles.htm" target="hmcontent"><span class="heading2" id="s3.2">Installing 3DTitles</span></a>
+</li>
+<li class="heading2" id="i3.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.3" href="registering_your_software.htm" target="hmcontent"><span class="heading2" id="s3.3">Registering your software</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i4" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a4" href="chapter_2_2.htm" target="hmcontent"><span class="heading1" id="s4" ondblclick="return dblclicked(this)">Basic workflow</span></a>
+<ul id="ul4" style="list-style-type:none">
+<li class="heading2" id="i4.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.1" href="3dtitles_enviornment.htm" target="hmcontent"><span class="heading2" id="s4.1">3DTitles environment</span></a>
+</li>
+<li class="heading2" id="i4.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.2" href="opening_a_subtitle_file.htm" target="hmcontent"><span class="heading2" id="s4.2">Opening a subtitle file</span></a>
+</li>
+<li class="heading2" id="i4.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.3" href="opening_a_video_file.htm" target="hmcontent"><span class="heading2" id="s4.3">Opening a video file</span></a>
+</li>
+<li class="heading2" id="i4.4" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.4" href="project_settings_basig.htm" target="hmcontent"><span class="heading2" id="s4.4" ondblclick="return dblclicked(this)">Basic Project Settings</span></a>
+<ul id="ul4.4" style="list-style-type:none">
+<li class="heading3" id="i4.4.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a4.4.1" href="setting_up_the_layout.htm" target="hmcontent"><span class="heading3" id="s4.4.1">Stereoscopic 3D layout</span></a>
+</li>
+<li class="heading3" id="i4.4.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a4.4.2" href="setup_timecode.htm" target="hmcontent"><span class="heading3" id="s4.4.2">Setup timecode</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i4.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.5" href="build_z-map.htm" target="hmcontent"><span class="heading2" id="s4.5">Z-Map and Shot Changes Detection</span></a>
+</li>
+<li class="heading2" id="i4.6" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.6" href="automatic_depth_estimation.htm" target="hmcontent"><span class="heading2" id="s4.6">Automatic Depth Estimation</span></a>
+</li>
+<li class="heading2" id="i4.7" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.7" href="subtitle_depth_graph.htm" target="hmcontent"><span class="heading2" id="s4.7">Subtitle Depth Graph</span></a>
+</li>
+<li class="heading2" id="i4.8" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.8" href="timeline.htm" target="hmcontent"><span class="heading2" id="s4.8">Timeline</span></a>
+</li>
+<li class="heading2" id="i4.9" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.9" href="go_to_full-screen_for_3d.htm" target="hmcontent"><span class="heading2" id="s4.9">Go to Full-Screen for 3D</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i5" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a5" href="video_playback.htm" target="hmcontent"><span class="heading1" id="s5" ondblclick="return dblclicked(this)">Video Playback</span></a>
+<ul id="ul5" style="list-style-type:none">
+<li class="heading2" id="i5.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a5.1" href="overview.htm" target="hmcontent"><span class="heading2" id="s5.1">Overview</span></a>
+</li>
+<li class="heading2" id="i5.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a5.2" href="basic_controls.htm" target="hmcontent"><span class="heading2" id="s5.2">Basic Controls</span></a>
+</li>
+<li class="heading2" id="i5.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a5.3" href="preview_subtitles_only.htm" target="hmcontent"><span class="heading2" id="s5.3">Preview Subtitles Only</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i6" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a6" href="subtitling_in_3d.htm" target="hmcontent"><span class="heading1" id="s6" ondblclick="return dblclicked(this)">Subtitling in 3D</span></a>
+<ul id="ul6" style="list-style-type:none">
+<li class="heading2" id="i6.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.1" href="basic_commands.htm" target="hmcontent"><span class="heading2" id="s6.1">Basic commands</span></a>
+</li>
+<li class="heading2" id="i6.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.2" href="depth.htm" target="hmcontent"><span class="heading2" id="s6.2">Changing Depth</span></a>
+</li>
+<li class="heading2" id="i6.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.3" href="segments.htm" target="hmcontent"><span class="heading2" id="s6.3">Segments</span></a>
+</li>
+<li class="heading2" id="i6.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.4" href="saving_your_work.htm" target="hmcontent"><span class="heading2" id="s6.4">Saving your work</span></a>
+</li>
+<li class="heading2" id="i6.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.5" href="checks.htm" target="hmcontent"><span class="heading2" id="s6.5">Checks</span></a>
+</li>
+<li class="heading2" id="i6.6" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.6" href="exporting_the_subtitles.htm" target="hmcontent"><span class="heading2" id="s6.6" ondblclick="return dblclicked(this)">Export subtitles</span></a>
+<ul id="ul6.6" style="list-style-type:none">
+<li class="heading3" id="i6.6.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.6.1" href="export_bdn.htm" target="hmcontent"><span class="heading3" id="s6.6.1">Blu-ray BDN XML with 3D Stereoscopic extensions</span></a>
+</li>
+<li class="heading3" id="i6.6.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.6.2" href="export_dostudio_3d.htm" target="hmcontent"><span class="heading3" id="s6.6.2">DoStudio 3D</span></a>
+</li>
+<li class="heading3" id="i6.6.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.6.3" href="export_fcp.htm" target="hmcontent"><span class="heading3" id="s6.6.3">Final Cut Pro XML</span></a>
+</li>
+<li class="heading3" id="i6.6.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.6.4" href="export_edl.htm" target="hmcontent"><span class="heading3" id="s6.6.4">EDL</span></a>
+</li>
+<li class="heading3" id="i6.6.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.6.5" href="export_subtitles_dlp.htm" target="hmcontent"><span class="heading3" id="s6.6.5">DLP Cinema XML Files</span></a>
+</li>
+<li class="heading3" id="i6.6.6" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.6.6" href="export_subtitles_smpte.htm" target="hmcontent"><span class="heading3" id="s6.6.6">SMPTE 428-7-2014</span></a>
+</li>
+<li class="heading3" id="i6.6.7" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.6.7" href="export_captions_mcc.htm" target="hmcontent"><span class="heading3" id="s6.6.7">CEA-708 Closed Captions (.MCC)</span></a>
+</li>
+<li class="heading3" id="i6.6.8" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.6.8" href="export_subtitles_dvb.htm" target="hmcontent"><span class="heading3" id="s6.6.8">Export DVB Subtitles</span></a>
+</li>
+<li class="heading3" id="i6.6.9" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.6.9" href="export_generic_image_sequence.htm" target="hmcontent"><span class="heading3" id="s6.6.9">Generic Image Sequence</span></a>
+</li>
+<li class="heading3" id="i6.6.10" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.6.10" href="export_custom_script_format.htm" target="hmcontent"><span class="heading3" id="s6.6.10">Custom Script Format</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i6.7" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.7" href="export_multiple_files.htm" target="hmcontent"><span class="heading2" id="s6.7">Export Multiple Files</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i7" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a7" href="reference.htm" target="hmcontent"><span class="heading1" id="s7" ondblclick="return dblclicked(this)">Reference</span></a>
+<ul id="ul7" style="list-style-type:none">
+<li class="heading2" id="i7.1" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a7.1" href="project_settings.htm" target="hmcontent"><span class="heading2" id="s7.1" ondblclick="return dblclicked(this)">Project settings</span></a>
+<ul id="ul7.1" style="list-style-type:none">
+<li class="heading3" id="i7.1.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.1" href="project_settongs_media.htm" target="hmcontent"><span class="heading3" id="s7.1.1">Media</span></a>
+</li>
+<li class="heading3" id="i7.1.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.2" href="project_settongs_safe_area.htm" target="hmcontent"><span class="heading3" id="s7.1.2">Safe Area</span></a>
+</li>
+<li class="heading3" id="i7.1.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.3" href="project_settongs_fonts.htm" target="hmcontent"><span class="heading3" id="s7.1.3">Fonts</span></a>
+</li>
+<li class="heading3" id="i7.1.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.4" href="project_settings_effects.htm" target="hmcontent"><span class="heading3" id="s7.1.4">Effects</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i7.2" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a7.2" href="preferences_details.htm" target="hmcontent"><span class="heading2" id="s7.2" ondblclick="return dblclicked(this)">Preferences</span></a>
+<ul id="ul7.2" style="list-style-type:none">
+<li class="heading3" id="i7.2.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.1" href="prefs_general.htm" target="hmcontent"><span class="heading3" id="s7.2.1">General</span></a>
+</li>
+<li class="heading3" id="i7.2.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.2" href="prefs_z-map.htm" target="hmcontent"><span class="heading3" id="s7.2.2">Z-Map and Shot Changes</span></a>
+</li>
+<li class="heading3" id="i7.2.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.3" href="prefs_shortcuts.htm" target="hmcontent"><span class="heading3" id="s7.2.3">Shortcuts</span></a>
+</li>
+<li class="heading3" id="i7.2.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.4" href="appearance.htm" target="hmcontent"><span class="heading3" id="s7.2.4">Appearance</span></a>
+</li>
+<li class="heading3" id="i7.2.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.5" href="prefs_command_options.htm" target="hmcontent"><span class="heading3" id="s7.2.5">Command options</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i7.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a7.3" href="read_merge.htm" target="hmcontent"><span class="heading2" id="s7.3">Merge command</span></a>
+</li>
+<li class="heading2" id="i7.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a7.4" href="setup_the_playback.htm" target="hmcontent"><span class="heading2" id="s7.4">Playback Setup</span></a>
+</li>
+<li class="heading2" id="i7.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a7.5" href="send_feedback.htm" target="hmcontent"><span class="heading2" id="s7.5">Prepare crash report</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i8" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a8" href="appendixa_default_shortcuts.htm" target="hmcontent"><span class="heading1" id="s8" ondblclick="return dblclicked(this)">Appendix A: Default Keyboard Shortcuts</span></a>
+<ul id="ul8" style="list-style-type:none">
+<li class="heading2" id="i8.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a8.1" href="shortcuts_basic.htm" target="hmcontent"><span class="heading2" id="s8.1">Basic Commands</span></a>
+</li>
+<li class="heading2" id="i8.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a8.2" href="shorctuts_format.htm" target="hmcontent"><span class="heading2" id="s8.2">Format and Navigation</span></a>
+</li>
+<li class="heading2" id="i8.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a8.3" href="shorctus_3d.htm" target="hmcontent"><span class="heading2" id="s8.3">3D Position</span></a>
+</li>
+<li class="heading2" id="i8.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a8.4" href="shortcuts_video.htm" target="hmcontent"><span class="heading2" id="s8.4">Video Navigation and Timecode</span></a>
+</li>
+</ul>
+</li>
+</ul>
+<script type="text/javascript">loadicons('cicon2.png','cicon1.png','cicon9.png');</script>
+</body>
+</html>

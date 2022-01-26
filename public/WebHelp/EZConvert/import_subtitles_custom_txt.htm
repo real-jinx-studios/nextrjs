@@ -1,0 +1,502 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Import Subtitles &gt; Standard formats &gt; Custom Text Import</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Custom File,Custom File Import,Text File,Text File Import" />
+   <meta name="description" content="This feature is very helpful if you have to import a text, RTF or Word Document with subtitles that doesn't match any of the file formats natively supported by EZConvert." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "import_subtitles_custom_txt.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Custom Text Import</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?import_subtitles_custom_txt.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="import_subtitles.htm">Import Subtitles</a> &gt; <a href="import_subtitles_standard.htm">Standard formats</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Custom Text Import</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="import_subtitles_qttext.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="import_subtitles_standard.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="import_subtitles_extended.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">This feature is very helpful if you have to import a text, RTF or Word Document with subtitles that doesn't match any of the file formats natively supported by EZConvert.</p>
+<p class="p_Normal">This option can be accessed from the File menu. Choose &quot;Advanced Import...&quot; and then &quot;Custom Text Format&quot;.</p>
+<p class="p_Normal">After you have selected the desired file a window (same as the listed below) shows up. There you can instruct the program how to interpret the file so the timecode, text and format information is extracted correctly:</p>
+<div class="p_Picture"><div style="margin:0;width:489px"><img alt="&nbsp;Custom Text Import Settings" title="&nbsp;Custom Text Import Settings" width="489" height="502" style="width:489px;height:502px;border:none" src="import-custom-text.png"/><p style="text-align:center"><span class="f_Picture"><br/>
+Custom Text Import Settings</span></p></div></div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Basic principles</span></p>
+<p class="p_Normal">Before explaining the available options in the above dialog window it is important to learn more about the Custom Text Import module principles and how it works.</p>
+<p class="p_Normal">The whole process can be split into three parts:</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">1. Find the subtitles segment</span></p>
+<p class="p_Normal">First using the <span class="f_Emphasize">Subtitles begin</span> and <span class="f_Emphasize">Subtitles end</span> fields the program locates the part of the file containing the subtitles.</p>
+<p class="p_Normal">The fields contain search patterns (described below) that helps to locate the subtitles part of the text. This way the header or footer can be skipped. </p>
+<p class="p_Normal">You can define and use both or only one of them. In this case <span style="font-size: 11pt; font-family: Arial,Helvetica,sans-serif;">EZConvert</span> will locate the file's header or footer and each line after the header and before the footer will be considered as the part that contains the subtitles.</p>
+<p class="p_Normal">If you leave the Subtitles Begin and End fields empty, this means that there are no header or footer and the subtitles start with the very first line in the file.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">2. Locate the individual subtitles</span></p>
+<p class="p_Normal">The <span class="f_Emphasize">Subtitle header</span> and <span class="f_Emphasize">Subtitle footer</span> fields are intended to locate the individual subtitles, defining the start and respectively the end of each one.</p>
+<p class="p_Normal">All the text between them is considered a valuable text which has to be imported.</p>
+<p class="p_Normal">At least one of these parameters must be specified. If the subtitle footer is empty the text between the current header and the next one is considered as the subtitle's body containing the text. </p>
+<p class="p_Normal">You can also specify the subtitle's footer only and in this case the text between two footers will be considered as the subtitle's body.</p>
+<p class="p_Normal">The already located subtitle's <span class="f_Emphasize">header</span> and<span class="f_Emphasize"> footer</span> sections will be additionally checked if they consist any time code for the <span class="f_Emphasize">in</span> and <span class="f_Emphasize">out</span> cues.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">3. Extract the subtitle text</span></p>
+<p class="p_Normal">After the subtitles has been located, <span style="font-size: 11pt; font-family: Arial,Helvetica,sans-serif;">EZConvert</span> will interpret all the individual lines in the subtitle using the <span class="f_Emphasize">Row Delimiter</span>. </p>
+<p class="p_Normal">The<span class="f_Emphasize"> Italic Start</span> and <span class="f_Emphasize">Italic End</span> options should be used if you wish to keep the italic formatting of the text.</p>
+<p class="p_Normal">If the Italic End field is empty that means that Italic Start just flips the italic attribute.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Preview</span></p>
+<p class="p_Normal">Any time you make any changes at the Custom Import dialog, &nbsp;you can press the Preview button and have a quick review of the file and check if the text and the time code will be correctly imported.</p>
+<p class="p_Normal">Please note that due to the limitations of the preview window the italic text is surrounded by &quot;&lt;&quot; and &quot;&gt;&quot; marks.</p>
+<p class="p_Normal">If there is nothing displayed in the Preview you have to adjust the Import Settings, because they don't match the layout of the imported file.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Load/Save templates</span></p>
+<p class="p_Normal">When you tune all the parameters, you can save them as a template and you won't need to enter the same settings again and again when you have to handle more files of the same type.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Parameters</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:185px; height:43px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Code Page</span></p>
+</td>
+<td style="vertical-align:top; height:43px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies the text file encoding. More about selecting the proper code page you can find in <a href="import_subtitles_ascii.htm" class="topiclink">Plain ASCII/Unicode Text Files</a> topic.</span></p>
+<p class="p_Indented"><span class="f_Indented">The code page field is not available if you are importing RTF or .doc files.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:185px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Force subtitle text bottom</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This option can be used when the imported text has some empty rows bellow the last text line. EZConvert will always place the subtitles on the bottom row.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:185px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Regular expression syntax</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">You can use regular expressions or direct match when specifying the pattern parameters. More about the regular expression syntax you can find later in this topic.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:185px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Comment line</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">You can define the pattern used in the file as a comment. Comments will be imported and saved to the output as long as the selected output format supports commentaries.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:185px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitles begin</span><br />
+<span class="f_IndentedHilite">Subtitles end</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">These identifies where the subtitles begin and end if there is header or footer section in the file. You can leave them empty when there are no header or footer sections.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:185px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitle header</span><br />
+<span class="f_IndentedHilite">Subtitle footer</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The Subtitles header and footer are used to locate the individual subtitles. At least one of them must be specified. </span></p>
+<p class="p_Indented"><span class="f_Indented">Usually the Subtitles Header/Footer sections contain the timecodes so please remember to properly include the &lt;in_cue&gt;, &lt;out_cue&gt; tags in your pattern.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:185px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Row delimiter</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Using the row delimiter the text between the subtitle header and footer is divided into individual lines. It is important to define it correctly.</span></p>
+<p class="p_Indented"><span class="f_Indented">Otherwise the text won't be properly wrapped in EZConvert.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:185px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Italic start</span><br />
+<span class="f_IndentedHilite">Italic stop</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The Italic Start/Stop options are useful to locate and read the text when it is italics formatted.</span></p>
+<p class="p_Indented"><span class="f_Indented">If you leave the Italic Start option open, EZConvert won't import any italic formatted text.</span></p>
+<p class="p_Indented"><span class="f_Indented">If the Italic End field is empty that means that Italic Start just flips the italic attribute</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:185px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Reset italic on new line</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">By switching this option on each text line will start with italics turned off.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:185px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Reset italic on new subtitle</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">By switching this option on each subtitle will start with italics turned off.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:185px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitle layout</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The available options are </span><span class="f_Emphasize">In- and Out-cues</span><span class="f_Indented"> and </span><span class="f_Emphasize">In-cues only</span><span class="f_Indented">.</span></p>
+<p class="p_Indented"><span class="f_Indented">As the name of the first layout suggests the program looks for In- and Out-cues in the subtitle header and footer.</span></p>
+<p class="p_Indented"><span class="f_Indented">The second option is mostly used for Closed Captions. The subtitles are chained and there are no Out-cues. When the next In-cue is reached the subtitle simply pops-up.</span></p>
+<p class="p_Indented"><span class="f_Indented">If there are no subtitles for some period of time the next subtitle is without text. Here is an example of such layout:</span></p>
+<p class="p_Indented"><span class="f_Indented">&nbsp;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">10:00:00:00&nbsp;The&nbsp;first&nbsp;subtitle.</span><br />
+<span class="f_CodeExample">10:00:02:00&nbsp;and&nbsp;the&nbsp;next&nbsp;one&nbsp;pops-up&nbsp;now.</span><br />
+<span class="f_CodeExample">10:00:04:00</span><br />
+<span class="f_CodeExample">10:00:24:00&nbsp;This&nbsp;one&nbsp;appears&nbsp;after&nbsp;20&nbsp;s&nbsp;gap.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Pattern syntax and Tags</span></p>
+<p class="p_Normal">The parameters explained in the Custom Import setup represent search patterns. If no <span class="f_Emphasize">Regular Expression</span> option is selected the text specified with these patterns will be searched for a direct match with the text in the file. Exception are the <span class="f_Emphasize">Tags</span> which have to be surrounded by &quot;&lt;&quot;, &quot;&gt;&quot; &nbsp;and will instruct the program to search for the following attributes:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:84px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;in_cue&gt;, &lt;out_cue&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Subtitles' in- and out-cues. By default the timecode format is HH:MM:SS:FF. If the timecode in your file is formatted differently you can specify the pattern by using the following form of syntax: &lt;in_cue hh:mm:ss.ff&gt; &nbsp;(note that the frames are separated with “.”). The format timecode patterns are explained later in this topic.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:84px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;space&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The &lt;space&gt; tag is used to instruct EZConvert that the next symbol is either a space or tab character.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:84px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;dur&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Duration of the subtitle. The duration is formatted as SS:FF by default, but you can change it by specifying another pattern.</span></p>
+<p class="p_Indented"><span class="f_Indented">Thus if you want to separate the seconds and frames by “.”, specify &lt;dur ss.ff&gt;. The format timecode patterns are explained later in this topic.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:84px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;num&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This is the subtitle sequential number. Actually this can be used to represent any number in the subtitle header, footer, etc.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:84px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;sttl_num&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Subtitle number as it is in EZConvert. Contains number and an optional letter. For example if there are subtitles numbered 3 and 3a, etc.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:84px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;skip_eol&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Skip any characters until the end of the line is reached. Please note that you are placed at the end of the line and not at the start of the next line.</span></p>
+<p class="p_Indented"><span class="f_Indented">To skip everything until the beginning of the next line use &quot;&lt;skip_eol&gt;&lt;new_line&gt;&quot;</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:84px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;new_line&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">New line.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:84px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;tab&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Tab character is expected.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:84px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;cr&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Cartridge return character (ASCII code 13).</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:84px; padding:4px; border:solid thin #000000;"><p class="p_Normal" style="margin: 4px 0 4px 0;"><span style="font-weight: bold;">&lt;lf&gt;</span></p>
+</td>
+<td style="vertical-align:top; padding:4px; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Linefeed character (ASCII code 10).</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader1"><a id="format_timecode_patterns" class="hmanchor"></a><span class="f_SubHeader1">Format Timecode Patterns:</span></p>
+<p class="p_Normal">In-, out-cues and duration representation are customizable by using timecode format patterns.</p>
+<p class="p_Normal">Here are some examples: &quot; hh:mm:ss:ff&quot;, &quot;hh:mm:ss.ff&quot;, &quot;hh:mm:ss.nn&quot;, &quot;hh:mm:ss.nnn&quot;, &quot;feet+ff&quot;, &quot;feet.ff&quot;, &nbsp;&quot;ms&quot;, &quot;frames&quot;, etc., where:</p>
+<p class="p_Normal" style="margin: 0 5px 11px 53px;"><span style="font-weight: bold;">hh</span> - hours, <span style="font-weight: bold;">mm</span> - minutes, <span style="font-weight: bold;">ss</span> - seconds, <span style="font-weight: bold;">ff</span> - frames, <span style="font-weight: bold;">nnn</span> - miliseconds, <span style="font-weight: bold;">nn</span> - 10 miliseconds (1/100 seconds), <br />
+<span style="font-weight: bold;">ms</span> - the whole time is in miliseconds, <span style="font-weight: bold;">frames</span> - the whole time is in frames.<br />
+<span style="font-weight: bold;">feet</span> - used to specify 35mm feet/frames timecode. Must be followed by a separator (&quot;+&quot;, &quot;.&quot; ...) and frames. 1 feet = 16 frames. &nbsp;</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Regular expressions</span></p>
+<p class="p_Normal">Regular expressions provide a powerful way to precise the patterns and perform comprehensive searching when the corresponding option from the Custom Import dialog is switched on.</p>
+<p class="p_Normal">In addition to the standard syntax you can use the <span class="f_Emphasize">tags</span> described above. This way the pattern:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">^&lt;num&gt;\s+&lt;in_cue&nbsp;hh:mm:ss,nnn&gt;\s+&lt;out_cue&nbsp;hh:mm:ss,nnn&gt;.*(&lt;new_line&gt;)?</span></p>
+<p class="p_Normal">will match any line in the following form:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">433&nbsp;&nbsp;&nbsp;&nbsp;00:43:23,270&nbsp;00:43:25,439&nbsp;&nbsp;&nbsp;2,169&nbsp;L &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>
+<p class="p_Normal">EZConvert uses a fairly standard regular expression syntax and you can search the Internet for any guide as reference. Here is a brief list of the symbols used:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">.</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Any character except new line.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">\s</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Any whitespace character - space or tab.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">\S</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Any non-whitespace character.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">\d</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Any digit.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">\D</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Any non-digit.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">+</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">One or more instances of the previous symbol.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">*</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented" style="font-size: 11pt; font-family: Arial,Helvetica,sans-serif;">Zero or more instances of the previous symbol. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; height:32px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">?</span></p>
+</td>
+<td style="vertical-align:top; height:32px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented" style="font-size: 11pt; font-family: Arial,Helvetica,sans-serif;">Zero or one instances of the previous symbol. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">{n}</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented" style="font-size: 11pt; font-family: Arial,Helvetica,sans-serif; font-weight: bold;">n</span><span class="f_Indented" style="font-size: 11pt; font-family: Arial,Helvetica,sans-serif;"> instances of the previous symbol. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">{n,m}</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">From </span><span class="f_Indented" style="font-weight: bold;">n</span><span class="f_Indented"> to </span><span class="f_Indented" style="font-weight: bold;">m</span><span class="f_Indented"> instances.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">{n,}</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">At least </span><span class="f_Indented" style="font-weight: bold;">n</span><span class="f_Indented"> instances.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">^</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Start of line.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">$</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">End of line.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:78px; padding:0; border:solid thin #000000;"><p class="p_Normal" style="margin: 0 5px 11px 19px;"><span style="font-weight: bold;">\</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Escape character. If for example you want to search for &quot;$&quot; you have to specify &quot;\$&quot;.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">More on how the regular expression works can be found at: <a href="http://en.wikipedia.org/wiki/Regular_expression" target="_blank" class="weblink">http://en.wikipedia.org/wiki/Regular_expression</a></p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Examples</span></p>
+<p class="p_Normal">Here are two examples on how to perform the custom text import option on two different type of files.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Example I.</span></p>
+<p class="p_Normal">If you are sent a file with subtitles listed as:</p>
+<p class="p_Normal" style="margin: 0 0 0 53px;"><span class="f_CodeExample">1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;</span>Here the first row represents the subtitles' number.</p>
+<p class="p_Normal" style="margin: 0 0 0 53px;"><span class="f_CodeExample">00:00:39,254 --&gt; 00:00:44,384 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>The second row contains the timecode for the in- and the out- cues.</p>
+<p class="p_Normal" style="margin: 0 0 0 53px;"><span class="f_CodeExample">ПОРТОКАЛ С &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;</span>And the next two rows represents the subtitles' text.</p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 0 53px;"><span class="f_CodeExample">ЧАСОВНИКОВ&nbsp;МЕХАНИЗЪМ</span></p>
+<p class="p_Normal" style="margin: 0 0 0 19px;">&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 0 53px;"><span class="f_CodeExample">2</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 0 53px;"><span class="f_CodeExample">00:01:40,982&nbsp;--&gt;&nbsp;00:01:42,692</span></p>
+<p class="p_Normal" style="margin: 0 0 0 53px;"><span class="f_CodeExample">&lt;i&gt;Това съм аз.&lt;/i&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>The whole row is in italic</p>
+<p class="p_Normal" style="margin: 0 0 0 53px;">&nbsp;</p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 0 53px;"><span class="f_CodeExample">3</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 0 53px;"><span class="f_CodeExample">00:01:43,151&nbsp;--&gt;&nbsp;00:01:45,862</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 0 53px;"><span class="f_CodeExample">&lt;i&gt;Алекс&nbsp;и&nbsp;моите&nbsp;трима&nbsp;друзя.&lt;/i&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 0 53px;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 0 53px;"><span class="f_CodeExample">4</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 0 53px;"><span class="f_CodeExample">00:01:46,112&nbsp;--&gt;&nbsp;00:01:49,783</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 0 53px;"><span class="f_CodeExample">Пит,&nbsp;Джорджи&nbsp;и&nbsp;Дим.</span></p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">Choose<span style="font-weight: bold;"> </span><span class="f_CodeExample">File\Import\Custom text Format</span> from the EZConvert menu. When the import window appears you will be needed to do as explained below.</p>
+<p class="p_Normal">First choose the appropriate <span style="font-weight: bold;">Code Page</span>. As in this example it should be <span style="font-style: italic;">1251 ANSI Cyrillic</span>.</p>
+<p class="p_Normal">As you have looked at the file you are trying to import you are well aware at this point that no Regular expression syntax is needed so you just have to leave that checkbox unchecked.</p>
+<p class="p_Normal">There are no comments in the file either as well as there are no file header or footer so subtitle begin or subtitle end fields should be left empty.</p>
+<p class="p_Normal">What you need to fulfill is the<span class="f_Emphasize"> subtitle header</span> field. And you can do this by entering:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;num&gt;&lt;new_line&gt;&lt;in_cue&nbsp;hh:mm:ss,nnn&gt;&nbsp;--&gt;&nbsp;&lt;out_cue&nbsp;hh:mm:ss,nnn&gt;&lt;skip_eol&gt;&lt;new_line&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_Normal"><span style="font-weight: bold;">&lt;num&gt;</span> should represent the subtitles number as listed with the first row of the original file.</p>
+<p class="p_Normal"><span style="font-weight: bold;">&lt;new_line&gt;</span> should be applied because the timecode is placed over a new row below the subtitles number.</p>
+<p class="p_Normal"><span style="font-weight: bold;">&lt;in_cue hh:mm:ss,nnn&gt; --&gt; &lt;out_cue hh:mm:ss,nnn&gt;</span> represents the timecode in- and out-cues for the current subtitle. Note that between the in- and out- cue a separator is used. In this case it is a <span style="font-weight: bold;">&quot;--&gt;&quot;</span> but it could be just about any symbol so you have to check it with the original file and apply it correctly in EZConvert. Make sure you have left a blank space between the beginning and the end of the separator if needed.</p>
+<p class="p_Normal">Then you should apply <span style="font-weight: bold;">&lt;skip_eol&gt;</span> to skip any other character until the end of the line is reached.</p>
+<p class="p_Normal"><span style="font-weight: bold;">&lt;new_line&gt;</span> is used in this case because the subtitle text is located on the next row after the header.</p>
+<p class="p_Normal">After you have set the subtitles header you should move on to the <span class="f_Emphasize">Row delimiter</span> field. In this case it should be <span style="font-weight: bold;">&lt;new_line&gt;</span> because the individual text rows are separated by a new line.</p>
+<p class="p_Normal">If the file you are trying to import has some characters listed in italic you could import them as well by applying <span style="font-weight: bold;">&lt;i&gt;</span> at the Italic Star field and <span style="font-weight: bold;">&lt;/i&gt;</span> at the italic stop next to it.</p>
+<p class="p_Normal">With the <span class="f_Emphasize">subtitles footer</span> field you should apply <span style="font-weight: bold;">&lt;new_line&gt;&lt;new_line&gt;</span> as in the original file there always are a new line before each separate subtitle.</p>
+<p class="p_Normal">Then you should check your work by clicking on the <span style="font-weight: bold;">Preview</span> button.</p>
+<p class="p_Normal">After a few seconds EZConvert will display the imported subtitles exactly as they will appear within the program.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Example II.</span></p>
+<p class="p_Normal">If you are given a file with subtitles listed as:</p>
+<p class="p_CourierFixed"><span class="f_CourierFixed" style="font-size: 11pt; font-weight: bold;">c 3 00000002 00000065 'Life and how to live it' 'Episode 1' 0</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed" style="font-size: 11pt; font-weight: bold;">c 1 00000345 00000415 'In fact every end is a beginning.' 'As well as every beginning is an end in fact.' 0</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed" style="font-size: 11pt; font-weight: bold;">c 1 00000417 00000489 'Hello Jonathan.' '-Hello Jane. How are you?' 0</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed" style="font-size: 11pt; font-weight: bold;">c 1 00000493 00000579 'Doing time, you know. Same thing different day. How about you?' 0</span></p>
+<p class="p_Normal">Here the in- and out- cues are represented not with minutes, seconds and etc. but with frames. Next to that the subtitles lines are surrounded by ' character.</p>
+<p class="p_Normal">Here is how you should import this into EZConvert.</p>
+<p class="p_Normal">Choose custom text import as explained with the previous example.</p>
+<p class="p_Normal">This time the <span class="f_Emphasize">Regular expressions syntax</span> will be used.</p>
+<p class="p_Normal">Then in order for EZConvert to import the subtitles correctly you must put down this at the <span class="f_Emphasize">subtitles header</span> field: </p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">\D\s\d\s&lt;in_cue&nbsp;frames&gt;\s&lt;out_cue&nbsp;frames&gt;\s'</span></p>
+<p class="p_Normal"><span style="font-weight: bold;">\D</span> is there to represent the non digit character at the beginning of each line in the original file. In this case its the &quot;c&quot;.</p>
+<p class="p_Normal"><span style="font-weight: bold;">\s</span> should be applied to explain the blank space after the first character.</p>
+<p class="p_Normal"><span style="font-weight: bold;">\d</span> is there to tell EZConvert that right after there is a digit. In this case &quot;1&quot;.</p>
+<p class="p_Normal">Then another <span style="font-weight: bold;">\s</span> should be applied to represent the next blank space between the characters.</p>
+<p class="p_Normal"><span style="font-weight: bold;">&lt;in_cue frames&gt;</span> should stand for the timecode is in frames with the original file.</p>
+<p class="p_Normal">The next <span style="font-weight: bold;">\s</span> is there for the blank space between the in- and out- cues. Then <span style="font-weight: bold;">&lt;out_cue frames&gt;</span> should be applied. And <span style="font-weight: bold;">\s'</span> is needed to represent the next blank space and the next quote character.</p>
+<p class="p_Normal">The next step is specifying the <span class="f_Emphasize">Row delimiter</span>. In this case it should be <span style="font-weight: bold;">'\s'</span> as it is seen in the file.</p>
+<p class="p_Normal">Then you need to specify the <span class="f_Emphasize">subtitles footer</span>. In this example it should be:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">'\s\d&lt;new_line&gt;</span></p>
+<p class="p_Normal"><span style="font-weight: bold;">'</span> is there to represent the end of the line. Then an <span style="font-weight: bold;">\s</span> is applied to mark the blank space in the original file. The <span style="font-weight: bold;">\d</span> should be used to skip the &quot;0&quot; character and then a <span style="font-weight: bold;">&lt;new_line&gt;</span> is applied to mark that the current subtitle is over and the next one will begin with the next row in the original file.</p>
+<p class="p_Normal">The next step should be to <span style="font-weight: bold;">preview</span> the imported subtitles.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

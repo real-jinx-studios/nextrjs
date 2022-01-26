@@ -1,0 +1,362 @@
+/* Text Styles */
+hr { color: #000000 }
+body, table, tr, th /* Normal */
+{
+ font-size: 13pt;
+ font-family: Calibri,Vectora,'Droid Sans','Open Sans',Frutiger,sans-serif;
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+span.f_CodeExample /* Code Example */
+{
+ font-size: 8pt;
+ font-family: 'Courier New',Courier,monospace;
+}
+span.f_Comment /* Comment */
+{
+}
+span.f_CourierFixed /* Courier Fixed */
+{
+ font-size: 9pt;
+ font-family: 'Courier New',Courier,monospace;
+}
+span.f_Emphasize /* Emphasize */
+{
+ font-weight: bold;
+ color: #212657;
+}
+span.f_Figure /* Figure */
+{
+}
+span.f_FileFormatBulet /* File Format + Bulet */
+{
+ font-size: 11pt;
+}
+span.f_Heading1 /* Heading1 */
+{
+ font-size: 14pt;
+ font-weight: bold;
+ color: #ffffff;
+}
+span.f_ImageCaption /* Image Caption */
+{
+ font-size: 8pt;
+ font-weight: bold;
+}
+span.f_Indented /* Indented */
+{
+}
+span.f_IndentedHilite /* Indented Hilite */
+{
+ color: #113b11;
+}
+span.f_List /* List */
+{
+}
+span.f_Navigation /* Navigation */
+{
+ font-size: 9pt;
+ font-family: Tahoma,Geneva,Verdana,sans-serif;
+ color: #ffffff;
+ text-decoration: underline;
+}
+span.f_Notes /* Notes */
+{
+}
+span.f_Picture /* Picture */
+{
+ font-size: 8pt;
+}
+span.f_PrevTopics /* PrevTopics */
+{
+ font-size: 9pt;
+ font-family: Tahoma,Geneva,Verdana,sans-serif;
+ color: #ffffff;
+ letter-spacing: 1px;
+}
+span.f_Review /* Review */
+{
+ font-weight: bold;
+ color: #ffff00;
+}
+span.f_RightEmphasize /* Right Emphasize */
+{
+ font-weight: bold;
+ color: #822b00;
+}
+span.f_Shortcut /* Shortcut */
+{
+ font-size: 11pt;
+ font-family: 'Segoe UI',Tahoma,Verdana,Arial,sans-serif;
+ font-weight: bold;
+}
+span.f_ShortCutList /* ShortCutList */
+{
+ font-size: 11pt;
+ font-family: 'Segoe UI',Tahoma,Verdana,Arial,sans-serif;
+ font-weight: bold;
+}
+span.f_SubHeader /* SubHeader */
+{
+ font-size: 14pt;
+ font-family: 'Segoe UI',Tahoma,Verdana,Arial,sans-serif;
+ font-weight: bold;
+ color: #2e82ff;
+}
+span.f_SubHeader1 /* SubHeader1 */
+{
+ font-family: 'Segoe UI',Tahoma,Verdana,Arial,sans-serif;
+ font-weight: bold;
+ color: #2e82ff;
+ text-decoration: underline;
+}
+span.f_TableText /* Table Text */
+{
+}
+span.f_TableTextPDF /* Table Text PDF */
+{
+ font-size: 9pt;
+ font-family: Tahoma,Geneva,Verdana,sans-serif;
+}
+span.f_TableTextPDFBlue /* Table Text PDF Blue */
+{
+ font-size: 9pt;
+ font-family: Tahoma,Geneva,Verdana,sans-serif;
+ color: #000080;
+}
+span.f_Table_Shortcut /* Table-Shortcut */
+{
+ font-weight: bold;
+ color: #212657;
+}
+span.f_TableText_Label /* TableText-Label */
+{
+ color: #212657;
+}
+span.f_TopicTitle /* TopicTitle */
+{
+ font-size: 32pt;
+ font-family: Garamond;
+ font-weight: bold;
+ color: #ffffff;
+}
+/* Paragraph styles */
+p, p.p_Normal, div.p_Normal, li.p_Normal /* Normal */
+{
+ text-align: left;
+ text-indent: 0;
+ padding: 0 0 0 0;
+ margin: 0 5px 11px 38px;
+}
+.p_CodeExample /* Code Example */
+{
+ font-size: 8pt;
+ line-height: 1.0;
+ white-space: nowrap;
+ page-break-inside: avoid;
+ margin: 0 0 0 0;
+}
+.p_Comment /* Comment */
+{
+ font-size: 13pt;
+}
+.p_CourierFixed /* Courier Fixed */
+{
+ font-size: 9pt;
+ margin: 0 0 0 53px;
+}
+.p_Emphasize /* Emphasize */
+{
+ font-size: 13pt;
+}
+.p_Figure /* Figure */
+{
+ font-size: 13pt;
+ margin: 0 5px 21px 34px;
+}
+.p_FileFormatBulet /* File Format + Bulet */
+{
+ font-size: 11pt;
+ margin: 0 5px 11px 58px;
+}
+.p_Heading1 /* Heading1 */
+{
+ font-size: 100%;
+ font-weight: normal;
+ text-align: left;
+ text-indent: 0;
+ padding: 0 0 0 0;
+ margin: 0 5px 11px 38px;
+}
+.p_ImageCaption /* Image Caption */
+{
+ font-size: 8pt;
+}
+.p_Indented /* Indented */
+{
+ font-size: 13pt;
+ margin: 5px 5px 5px 12px;
+}
+.p_IndentedHilite /* Indented Hilite */
+{
+ font-size: 13pt;
+ margin: 5px 5px 5px 12px;
+}
+.p_List /* List */
+{
+ font-size: 13pt;
+ text-indent: -24px;
+ margin: 0 5px 11px 58px;
+}
+.p_Navigation /* Navigation */
+{
+ font-size: 9pt;
+ margin: 0 0 0 0;
+}
+.p_Notes /* Notes */
+{
+ font-size: 13pt;
+}
+.p_Picture /* Picture */
+{
+ font-size: 8pt;
+ margin: 19px 5px 19px 72px;
+}
+.p_PrevTopics /* PrevTopics */
+{
+ font-size: 9pt;
+ margin: 0 0 0 0;
+}
+.p_Review /* Review */
+{
+ font-size: 13pt;
+ background: #ff0000;
+}
+.p_RightEmphasize /* Right Emphasize */
+{
+ font-size: 13pt;
+ text-align: right;
+ margin: 0 8px 11px 38px;
+}
+.p_Shortcut /* Shortcut */
+{
+ font-size: 11pt;
+ margin: 0 0 0 0;
+}
+.p_ShortCutList /* ShortCutList */
+{
+ font-size: 11pt;
+ margin: 0 5px 5px 53px;
+}
+.p_SubHeader /* SubHeader */
+{
+ font-size: 14pt;
+ border-color: #003300;
+ border-style: solid;
+ border-width: thin;
+ border-right: none;
+ border-left: none;
+ background: #f2f2f2;
+ padding: 4px 4px 4px 4px;
+ margin: 25px 0 25px 0;
+}
+.p_SubHeader1 /* SubHeader1 */
+{
+ font-size: 13pt;
+ margin: 10px 0 10px 19px;
+}
+.p_TableText /* Table Text */
+{
+ font-size: 13pt;
+ margin: 0 5px 0 38px;
+}
+.p_TableTextPDF /* Table Text PDF */
+{
+ font-size: 9pt;
+ margin: 0 0 0 5px;
+}
+.p_TableTextPDFBlue /* Table Text PDF Blue */
+{
+ font-size: 9pt;
+ margin: 0 0 0 5px;
+}
+.p_Table_Shortcut /* Table-Shortcut */
+{
+ font-size: 13pt;
+ margin: 0 5px 11px 10px;
+}
+.p_TableText_Label /* TableText-Label */
+{
+ font-size: 13pt;
+ margin: 0 5px 11px 10px;
+}
+.p_TopicTitle /* TopicTitle */
+{
+ font-size: 32pt;
+ margin: 0 0 0 43px;
+}
+/* Table styles */
+table.RegularTable {
+width: 90px;
+border: none;
+border-spacing: 0;
+border-collapse: collapse;
+}
+table.RegularTable tr.RegularTable {
+text-align: left;
+}
+table.RegularTable th.RegularTable, table.RegularTable td.RegularTable {
+vertical-align: top;
+padding: 0;
+border: solid thin;
+}
+div.hmrotate90  { display:inline-block; -webkit-writing-mode: vertical-rl; -ms-writing-mode: tb-rl; writing-mode: vertical-rl; }
+div.hmrotate270 { display:inline-block; -webkit-writing-mode: vertical-rl; -ms-writing-mode: tb-rl; writing-mode: vertical-rl; transform: rotate(180deg); }
+
+
+
+#hmpopupdiv /* used for javascript text popups */
+{
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  background-color: #FFFFFF;
+  padding: 6px;
+  border:1px solid #000000;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #888;
+}
+
+#hmlightbox /* image lightbox */
+{
+  border: none;
+  padding: 8px;
+  background: #FFF;
+  font-size: 110%;
+  font-weight: bold;
+  color: #777;
+  box-shadow: 5px 5px 5px #888;
+}
+
+a.dropdown-toggle /* dropdown toggle caption */
+{
+  cursor: pointer;
+}
+a.inline-toggle /* inline toggle caption */
+{
+  cursor: pointer;
+}
+img.dropdown-toggle-icon /* toggle icon */
+{
+  cursor: pointer;
+}
+/* CSS for responsive image maps */
+
+.hmImageMap a.hmHotspotRect { display:block; position:absolute; border: 1px solid transparent; background:#000; opacity:0.01; filter:alpha(opacity=1)  }
+.hmImageMap a.hmHotspotEllipse { display:block; position:absolute; border-radius:50%; border: 1px solid transparent; background:#000; opacity:0.01; filter:alpha(opacity=1) }
+.hmImageMap:hover a.hmHotspotRect {opacity:0.3; filter:alpha(opacity=30); }
+.hmImageMap:hover a.hmHotspotEllipse { opacity:0.3; filter:alpha(opacity=30); }
+a.hmHotspotRect:hover { border:1px solid #000; background:#FFF; opacity:0.3; filter:alpha(opacity=30) }
+a.hmHotspotEllipse:hover { border:1px solid #000; background:#FFF; opacity:0.3; filter:alpha(opacity=30) }

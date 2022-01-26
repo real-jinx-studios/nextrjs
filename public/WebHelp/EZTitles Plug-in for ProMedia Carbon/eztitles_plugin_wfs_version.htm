@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>EZTitles Plug-in WFS Version</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="WFS" />
+   <meta name="description" content="This version of the plug-in shares the very same functionality as the standard one except for some changes in the interface which has to follow the WFS specifics." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "eztitles_plugin_wfs_version.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+<p class="sync-toc" style="color:#ff0000; margin-top: 5px; margin-left: 5px;">&lt;&lt; <a rel="nofollow" href="index.html?eztitles_plugin_wfs_version.htm" style="color:#ff0000;" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">This version of the plug-in shares the very same functionality as the standard one except for some changes in the interface which has to follow the WFS specifics.</p>
+<p class="p_Normal">All parameters are available via the default WFS Manager's user interface and there is a short description associated with each of them:</p>
+<p class="p_Picture"><img width="595" height="615" style="margin:0;width:595px;height:615px;border:none" src="wfs.png"/></p>
+<p class="p_Normal">Following is a brief description of these parameters.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">General</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:241px; height:46px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">File</span></p>
+</td>
+<td style="vertical-align:top; height:46px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specify the subtitles files name, extension and location. Both the </span><span class="f_Shortcut">%f</span><span class="f_Indented"> and </span><span class="f_Shortcut">%s</span><span class="f_Indented"> wildcard options can be used, for example &quot;</span><span class="f_Shortcut">%f\%s.pac</span><span class="f_Indented">&quot;. </span></p>
+<p class="p_Indented"><span class="f_Indented">The &quot;%s&quot; wildcard attribute can be used to distinguish if the subtitles need to be encoded for the leading, trailing clips or only for the main video.</span></p>
+<p class="p_Indented"><span class="f_Indented">&quot;%s1&quot; is replaced with the first file's name, which is usually the leading clip; &quot;%s2&quot; stands for the second file's name, usually the main clip; &quot;%s3&quot;- with the third file's name which is usually the trailing one. </span></p>
+<p class="p_Indented"><span class="f_Indented">The same applies for the &quot;%f&quot; wildcard attribute as well. </span></p>
+<p class="p_Indented"><span class="f_Indented">Please note that &quot;%s&quot; and &quot;%f&quot; are also available and are equivalent to &quot;%s1&quot; and &quot;%f1&quot;.</span></p>
+<p class="p_Indented"><span class="f_Indented">Another useful wildcard is </span><span class="f_Shortcut">%f</span><span class="f_Indented"> which matches the source video folder. It is important to mention that %f does not include a trailing \ character. The </span><span class="f_Shortcut">*</span><span class="f_Indented"> and </span><span class="f_Shortcut">?</span><span class="f_Indented"> characters can also be used: the asterisk </span><span class="f_Shortcut">*</span><span class="f_Indented"> matches any sequence or number of characters while the question mark </span><span class="f_Shortcut">? </span><span class="f_Indented">matches any single character.</span></p>
+<p class="p_Indented"><span class="f_SubHeader1">Note:</span> It is important to always enter the subtitle's file extension in these patterns instead of using wildcard characters ( .* or .???). Otherwise, the Plug-in will try to load in the first file which matches the pattern in this folder and respectively result into an error if it doesn't support its format.</p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Reference Timecode</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Very important setting used to synchronize the subtitles with the video. Select &quot;Source timecode&quot; if the video clip contains embedded timecode, otherwise use &quot;Frame counter&quot;.</span></p>
+<p class="p_Indented"><span class="f_Indented">If you select the second option additional field called &quot;Programme start TC&quot; will be displayed and you need to enter the timecode of the first frame of the video there.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Type</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Defines the jobs type: Burned-in, Closed Captions or Teletext subtitles. Upon selection some of the settings will change accordingly.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Timecode Format</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Changes the format of the running timecode when Frame Counter is used for Reference Timecode. It is intended to work in a workflow with the video running at 48, 50, 59.94 or 60 fps while the subtitles are prepared for 24, 25, 29.97 of 30 fps. In such scenarios, adjusting the Timecode Format to match the timecode format of the subtitles will result into perfectly synchronized subtitles.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Burned-in subtitles</span></p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Fonts</span></p>
+<p class="p_Normal">The text in certain subtitle file types (PAC, 890, EZT, etc.) could be formatted using two fonts. In this case you need to fill &quot;Font 2&quot; section as well. Otherwise only Font 1 shall be used.</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Font 1 Name</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Selects the typeface which will be used. There are no restrictions concerning the fonts usage and you can apply any of the fonts you have already installed on your computer.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Font 1 Bold</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Select this option if you want the subtitles text to be rendered in bold.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Font 1 Height</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The font's height in pixels.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Font 1 Spacing</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies the additional space between the characters in pixels. Please mind that you can set either an integer number or a fraction of a pixel.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Font 1 Scale</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This is the horizontal scale defined in percent, ranging from -50 to +150. It specifies the horizontal characters deformation – values lower than 100 will shrink and higher than 100 will expand the character's width.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Font 1 Right to Left</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This option is intended for use with subtitle files in Arabic, Hebrew or Farsi.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Asian Text Font</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented">Enables the Plug-in to display Asian and non Asian text with different font even when they are inserted on the same line.</p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader1" style="margin: 5px 0 14px 0;"><span class="f_SubHeader1">Text settings</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Horizontal alignment</span></p>
+</td>
+<td style="vertical-align:top; width:1120px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Overrides the text alignment specified in the original subtitle file. Select &quot;No change&quot; to keep the original settings.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Auto center-left</span></p>
+</td>
+<td style="vertical-align:top; width:1120px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Mostly used or required for subtitling a dialog. If the subtitle is centered and one of the lines starts with &quot;-&quot; or &quot;–&quot; it will be automatically center-left aligned: the longest line is centered and the other lines are aligned to its left edge.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Force text color</span></p>
+</td>
+<td style="vertical-align:top; width:1120px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Overrides the text color specified in the original subtitle file.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Text color</span></p>
+</td>
+<td style="vertical-align:top; width:1120px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This field is displayed only if the above option &quot;Force text color&quot; was clicked. The color is specified in the following form: #RRGGBB where RR, GG, and BB represents the red, green and blue levels. Please mind those are hexadecimal numbers in the range from 0 to 0xFF.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Outline type</span></p>
+</td>
+<td style="vertical-align:top; width:1120px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies the outline or shadow effect applied to the subtitles. Select &quot;No change&quot; to keep the original setting from the subtitle file.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Outline Size</span></p>
+</td>
+<td style="vertical-align:top; width:1120px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The size of the outline or shadow in pixels.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Outline Color</span></p>
+</td>
+<td style="vertical-align:top; width:1120px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies the outline/shadow color in the following form: #RRGGBB where RR, GG, and BB represents the red, green and blue levels.</span></p>
+<p class="p_Indented"><span class="f_Indented">Please mind those are hexadecimal numbers in the range from 0 to 0xFF.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader1" style="margin: 5px 0 14px 0;"><span class="f_SubHeader1">Box</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Box type</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies the box effect applied to the subtitles. Select &quot;No change&quot; to keep the original setting from the subtitle file.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Box color</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies the box's color in the following form: #RRGGBB where RR, GG, and BB represents the red, green and blue levels.</span></p>
+<p class="p_Indented"><span class="f_Indented">Please mind those are hexadecimal numbers in the range from 0 to 0xFF.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Box opacity</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The opacity in percent. Select 100% for a solid box and 0% for fully transparent one.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Box margins</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The box can be also extended to the Left, Right, Top or Bottom by entering the exact amount of pixels into the corresponding Left, Right, Top, Bottom margin fields.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader1" style="margin: 5px 0 14px 0;"><span class="f_SubHeader1">Safe Area</span></p>
+<p class="p_Normal">The safe area is used to define the placement of the subtitles on the screen. For example all bottom aligned subtitles will be positioned at the bottom Safe Area margin.</p>
+<p class="p_Normal">The margins are defined as percent of the screen width/height from the corresponding edge of the screen. More details are available in <a href="box_and_safe_area_settings.htm#safearea" class="topiclink">Box and Safe Area</a> topic.</p>
+<p class="p_Normal">Except for controlling the text placement the safe area is used to check if the text fits on the screen (check <a href="errors_and_warnings.htm" class="topiclink">Errors and Warnings</a> topic).</p>
+<p class="p_Normal">Please consider the default Safe Area margins are set to 10% off the screen's edge.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Closed captions</span></p>
+<p class="p_Normal">From the Transmit drop-down you can select how the captions will be encoded. The three available options are:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:290px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">NTSC Television Closed Captions(608)</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Captions are encoded in the signal's VBI for NTSC videos only.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:290px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Digital Television Closed Captions (708)</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">CEA-708 captions are considered for digital television only and are encoded directly into the MPEG data packages and are made upon the CEA-708-D FCC recommendations.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:290px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Both CEA-608 and CEA-708</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Defines the jobs type: Burned-in, Closed Captions or Teletext subtitles. Depending on the selection some of the settings will change accordingly.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">Different options will be available when encoding either CEA-608 or CEA-708 captions. </p>
+<p class="p_SubHeader1" style="margin: 5px 0 14px 0;"><span class="f_SubHeader1">NTSC Television CEA-608 Closed Captions</span></p>
+<p class="p_Normal">The only available option is the channel. You can select between &quot;Field 1 (CC1/CC2)&quot; or &quot;Field 2 (CC3/CC4)&quot;.</p>
+<p class="p_SubHeader1" style="margin: 5px 0 14px 0;"><span class="f_SubHeader1">Digital Television CEA-708 Closed Captions</span></p>
+<p class="p_Normal">Whenever you choose to encode CEA-708 captions the following additional options will become available:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Font Style</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Select one of the 8 available font styles as defined by specification. You can choose between Monospaced, Proportionally spaced, Monospaced without serifs and etc. styles.</span></p>
+<p class="p_Indented"><span class="f_Indented">If you have any doubts what to use please leave it the font style to Default.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Font Size</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Enables you to choose between Normal, Small and Large size. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Force Text Color</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Overrides the text color specified in the original subtitle file.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Text Color</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This field is displayed only if the above option &quot;Force text color&quot; was clicked. The color is specified in the following form: #RRGGBB where RR, GG, and BB represents the red, green and blue levels. Please mind that only 64 colors which are defined by the CEA-708 specifications should be used.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Display Effect</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies the effect that will take place when the window is displayed and when it is hidden.</span></p>
+<p class="p_Indented"><span class="f_IndentedHilite">Snap (default) -</span><span class="f_Emphasize"> </span><span class="f_Indented">the window will pop-on the screen when the window is displayed and pop-off when the window is hidden.</span></p>
+<p class="p_Indented"><span class="f_IndentedHilite">Fade</span><span class="f_Indented"> - causes the window to fade onto and off of the screen at the specified </span><span class="f_Emphasize">effect speed</span><span class="f_Indented">.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Effect Rate</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Becomes available when Fade is selected as Display Effect. It specifies how fast windows will appear and disappear from the screen when they are displayed or hidden.</span></p>
+<p class="p_Indented"><span class="f_Indented">The effect rate can be increased in steps of 0.5s in the range from 0.5s to 7.5s.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Horizontal Alignment</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Overrides the text alignment specified in the original subtitle file. Select &quot;No change&quot; to keep the original position</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Box</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Specifies the box effect applied to the subtitles. Select &quot;Not changed&quot; to keep the original setting from the captions file.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Box Opacity</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Changes the appearance of the text's background to Solid or Translucent. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Box Color</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Becomes available only when Box effect is used (Box or Block Box). The color is specified in the following form: #RRGGBB where RR, GG, and BB represents the red, green and blue levels. Please mind that only 64 colors which are defined by the CEA-708 specifications should be used.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Teletext</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Teletext Page No</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The page number the subtitles will be inserted into. The page number has to be set between 100 and 899.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">VBI Lines</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Teletext subtitles are encoded into particular line or lines of the Vertical Blanking Interval (VBI). Comma separated list.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Language</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">There are different code tables used to display and transmit the characters in Teletext subtitles and the correct language has to be specified.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">OP42 Compatible</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Produces Teletext subtitles packets in compliance with OP42 practice.</span></p>
+<p class="p_Indented"><span class="f_Indented">This option can be used in combination with &quot;Teletext (OP42) to OP47&quot; filter for encoding Teletext subtitles in high-resolution DTV target.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Same data on all lines</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The same data is duplicated on all VBI lines.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Continuous time filling packets</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The plug-in will insert time filling packets.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Double transmit captions</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">As the name suggests the subtitles will be transmit twice.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Include initial page</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Please check <a href="teletext_subtitles.htm#teletext_page_100" class="topiclink">Initial page (page 100)</a>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Force double height</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Makes the text double height regardless of the settings in the subtitles file.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Force text color</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Overrides the text color specified in the original subtitle file.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:241px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Text Color</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This field is displayed only if the above option &quot;Force text color&quot; was selected. The color is specified in the following form: s#RRGGBB where RR, GG, and BB represents the red, green and blue levels. Please mind those are hexadecimal numbers in the range from 0 to 0xFF.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Stereoscopic Layout</span></p>
+<p class="p_Normal">The Stereoscopic Layout option shall be considered only when using an<span class="f_Emphasize"> .ezt</span> source subtitle file, containing<span class="f_Emphasize"> 3D</span> positioning information.</p>
+<p class="p_Normal">Such files are created by <span class="f_SubHeader1">3DTitles</span> and it allows you to specify the stereoscopic 3D layout you'll be using to create the 3D clip. </p>
+<p class="p_Normal"><span class="f_SubHeader1">Note:</span> Please mind when you need to create regular 2D subtitles the stereoscopic layout option shall be set to <span class="f_Emphasize">Mono</span>.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Dual stream</span></p>
+<p class="p_Normal">Dual Stream videos contain the two &quot;eye&quot; streams on separate files or video tracks. Carbon Coder currently doesn't handle dual stream 3D content and the process shall be completed in the following steps.</p>
+<p class="p_Normal">Encode individual video streams by using the EZTitles Plug-in for each of them and specifying whether it contains the Left or Right eye image.</p>
+<p class="p_Normal">Later, if required, you can mix these video streams into one dual stream video file by using an external application or Carbon API.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Errors and Warnings</span></p>
+<p class="p_Normal">Please refer to <a href="errors_and_warnings.htm" class="topiclink">Errors and Warnings</a> section.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">File formats specific settings</span></p>
+<p class="p_Normal">For information about these parameters please refer to the <a href="file_formats_settings.htm" class="topiclink">File formats specific settings</a>.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

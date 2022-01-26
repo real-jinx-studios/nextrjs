@@ -1,0 +1,485 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+   <title>EZConvert Help</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ 
+   <!-- This line includes the general project style sheet (not required) -->
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+   <!-- This block defines the styles of the TOC headings, change them as needed -->
+   <style type="text/css">
+       body { font-size: 1em }
+       .heading1 { color: #000; text-decoration: none; }
+       .heading2 { color: #000; text-decoration: none; }
+       .heading3 { color: #000; text-decoration: none; }
+       .heading4 { color: #000; text-decoration: none; }
+       .heading5 { color: #000; text-decoration: none; }
+       .heading6 { color: #000; text-decoration: none; }
+
+       .hilight1 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight2 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight3 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight4 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight5 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+       .hilight6 { color: #FFFFFF; background: #2C5D88; text-decoration: none; }
+
+       /* TOC LIST CSS */
+       #toc    { padding:0; margin:0 }
+       #toc li { margin-top:2px; margin-left:0; padding:1px }
+       #toc ul { padding-left:0; margin-left:0px }       
+       /* TOC LIST CSS */
+       
+       @media (pointer: coarse) {
+         body    { transform-origin: 0 0;
+		   transform:scale(1.25); 
+		   max-width: 80%;
+       }       
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript">
+   $(document).ready(function(){
+   	   var hiTest = /^hilight/im,
+			parentScope = (parent.hmNavigationFrame);
+		if (parentScope) parent.currentNav("toc");
+		$("a[class^='heading']").on("click",function(event){
+			var doSwipe = (hiTest.test($(this).children("span").first().attr("class")) || false || (parentScope && !parent.hmBrowser.nonDeskTouch));
+			if (doSwipe && parentScope) {
+			window.parent.showNav("toggle");
+			}
+			});
+     });
+   </script>
+      <script type="text/javascript">
+     var parentScope = (parent.hmNavigationFrame);
+     if (!parentScope) {
+		      var s = document.createElement("script");
+		      s.setAttribute("type","text/javascript");
+		      s.setAttribute("src", "helpman_navigation.js");
+		      document.getElementsByTagName("head")[0].appendChild(s);
+	    }
+     else {
+       if (initialtocstate != "expandall") parent.hmAddCss(document, "#toc li ul { display: none }");
+     }
+     function loadicons() { var icons = new Array(); for (i=0; i<arguments.length; i++) { icons[i] = new Image(); icons[i].src = arguments[i]; } }
+     function loadtoc() { if (parentScope) parent.loadstate(document.getElementById("toc")); else loadstate(document.getElementById("toc")); }
+     function savetoc() { if (parentScope) parent.savestate(document.getElementById("toc")); else savestate(document.getElementById("toc")); }
+     function clicked(node, event) { deselect(); if (parentScope) parent.hmNodeClicked(node, event); else hmNodeClicked(node, event); }
+     function dblclicked(node) { if (parentScope) parent.hmNodeDblclicked(node); else hmNodeDblclicked(node); }
+     function deselect() { if (window.getSelection) window.getSelection().removeAllRanges(); else if (document.selection) document.selection.empty(); }
+     $(document).ready(function(){
+       loadtoc();
+       $(window).onunload = savetoc;
+     });
+   </script>
+</head>
+<body>
+<ul id="toc" style="list-style-type:none;display:block;padding-left:0">
+<li class="heading1" id="i1" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a1" href=javascript:void(0);><span class="heading1" id="s1" ondblclick="return dblclicked(this)">Introducing EZConvert</span></a>
+<ul id="ul1" style="list-style-type:none">
+<li class="heading2" id="i1.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a1.1" href="what_is_ezconvert.htm" target="hmcontent"><span class="heading2" id="s1.1">What is EZConvert</span></a>
+</li>
+<li class="heading2" id="i1.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a1.2" href="copyright_and_distribution.htm" target="hmcontent"><span class="heading2" id="s1.2">Copyright and Distribution</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i2" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a2" href="setting_up.htm" target="hmcontent"><span class="heading1" id="s2" ondblclick="return dblclicked(this)">Setting Up</span></a>
+<ul id="ul2" style="list-style-type:none">
+<li class="heading2" id="i2.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.1" href="installing_ezconvert.htm" target="hmcontent"><span class="heading2" id="s2.1">Installing EZConvert</span></a>
+</li>
+<li class="heading2" id="i2.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.2" href="registering_eztitles.htm" target="hmcontent"><span class="heading2" id="s2.2">Registering EZConvert</span></a>
+</li>
+<li class="heading2" id="i2.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a2.3" href="running_ezconvert.htm" target="hmcontent"><span class="heading2" id="s2.3">Using EZConvert</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i3" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a3" href="configuring-project-settings.htm" target="hmcontent"><span class="heading1" id="s3" ondblclick="return dblclicked(this)">Configuring Project Settings</span></a>
+<ul id="ul3" style="list-style-type:none">
+<li class="heading2" id="i3.1" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.1" href="project_settings.htm" target="hmcontent"><span class="heading2" id="s3.1" ondblclick="return dblclicked(this)">Project Settings</span></a>
+<ul id="ul3.1" style="list-style-type:none">
+<li class="heading3" id="i3.1.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.1.1" href="project_properties.htm" target="hmcontent"><span class="heading3" id="s3.1.1">Project Type and Mode</span></a>
+</li>
+<li class="heading3" id="i3.1.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.1.2" href="project_settings_safe_area.htm" target="hmcontent"><span class="heading3" id="s3.1.2">Safe Area</span></a>
+</li>
+<li class="heading3" id="i3.1.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.1.3" href="project_settings_fonts.htm" target="hmcontent"><span class="heading3" id="s3.1.3">Fonts</span></a>
+</li>
+<li class="heading3" id="i3.1.4" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.1.4" href="project_settings_effects_subtitle_presentation.htm" target="hmcontent"><span class="heading3" id="s3.1.4" ondblclick="return dblclicked(this)">Effects (Subtitle Presentation)</span></a>
+<ul id="ul3.1.4" style="list-style-type:none">
+<li class="heading4" id="i3.1.4.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a3.1.4.1" href="about_dvd_subtitles_rendering.htm" target="hmcontent"><span class="heading4" id="s3.1.4.1">About DVD Subtitles Rendering and Colors</span></a>
+</li>
+</ul>
+</li>
+<li class="heading3" id="i3.1.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.1.5" href="project_settings_reading_speed.htm" target="hmcontent"><span class="heading3" id="s3.1.5">Reading Speed Parameters</span></a>
+</li>
+<li class="heading3" id="i3.1.6" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.1.6" href="project_settings_cues.htm" target="hmcontent"><span class="heading3" id="s3.1.6">Cues</span></a>
+</li>
+<li class="heading3" id="i3.1.7" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a3.1.7" href="project_settings_present_style_parameters.htm" target="hmcontent"><span class="heading3" id="s3.1.7">Presentation Style</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i3.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.2" href="project_settings_preview.htm" target="hmcontent"><span class="heading2" id="s3.2">Properties Preview</span></a>
+</li>
+<li class="heading2" id="i3.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.3" href="project_templates.htm" target="hmcontent"><span class="heading2" id="s3.3">Project Templates</span></a>
+</li>
+<li class="heading2" id="i3.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a3.4" href="timecode_conversion.htm" target="hmcontent"><span class="heading2" id="s3.4">Framerate and Timecode Conversion</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i4" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a4" href="ezconvert-environment.htm" target="hmcontent"><span class="heading1" id="s4" ondblclick="return dblclicked(this)">EZConvert Environment</span></a>
+<ul id="ul4" style="list-style-type:none">
+<li class="heading2" id="i4.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.1" href="workspace_elements.htm" target="hmcontent"><span class="heading2" id="s4.1">Workspace Elements</span></a>
+</li>
+<li class="heading2" id="i4.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.2" href="tbar_and_basic_menu_commands.htm" target="hmcontent"><span class="heading2" id="s4.2">Toolbar and Basic Menu Commands</span></a>
+</li>
+<li class="heading2" id="i4.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.3" href="importexport_presets.htm" target="hmcontent"><span class="heading2" id="s4.3">Import/Export Presets</span></a>
+</li>
+<li class="heading2" id="i4.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a4.4" href="customizing_ezconvert_env.htm" target="hmcontent"><span class="heading2" id="s4.4">Customizing EZConvert</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i5" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a5" href="working_with_subtitle_files.htm" target="hmcontent"><span class="heading1" id="s5" ondblclick="return dblclicked(this)">Working with Subtitle Files</span></a>
+<ul id="ul5" style="list-style-type:none">
+<li class="heading2" id="i5.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a5.1" href="global_recut.htm" target="hmcontent"><span class="heading2" id="s5.1">Recut</span></a>
+</li>
+<li class="heading2" id="i5.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a5.2" href="check_subtitles.htm" target="hmcontent"><span class="heading2" id="s5.2">Check Subtitles</span></a>
+</li>
+<li class="heading2" id="i5.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a5.3" href="fix_subtitles.htm" target="hmcontent"><span class="heading2" id="s5.3">Fix Subtitles</span></a>
+</li>
+<li class="heading2" id="i5.4" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a5.4" href="find_replace_go_to.htm" target="hmcontent"><span class="heading2" id="s5.4" ondblclick="return dblclicked(this)">Find, Replace and Go To</span></a>
+<ul id="ul5.4" style="list-style-type:none">
+<li class="heading3" id="i5.4.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.4.1" href="find_replace_wildcards.htm" target="hmcontent"><span class="heading3" id="s5.4.1">Find - Wildcards</span></a>
+</li>
+<li class="heading3" id="i5.4.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.4.2" href="replace.htm" target="hmcontent"><span class="heading3" id="s5.4.2">Replace</span></a>
+</li>
+<li class="heading3" id="i5.4.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a5.4.3" href="go-to.htm" target="hmcontent"><span class="heading3" id="s5.4.3">Go To</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i6" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a6" href="import_subtitles.htm" target="hmcontent"><span class="heading1" id="s6" ondblclick="return dblclicked(this)">Import Subtitles</span></a>
+<ul id="ul6" style="list-style-type:none">
+<li class="heading2" id="i6.1" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.1" href="import_subtitles_standard.htm" target="hmcontent"><span class="heading2" id="s6.1" ondblclick="return dblclicked(this)">Standard formats</span></a>
+<ul id="ul6.1" style="list-style-type:none">
+<li class="heading3" id="i6.1.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.1" href="import_subtitles_ebu.htm" target="hmcontent"><span class="heading3" id="s6.1.1">EBU Files</span></a>
+</li>
+<li class="heading3" id="i6.1.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.2" href="import_subtitles_dcdm.htm" target="hmcontent"><span class="heading3" id="s6.1.2">DCDM (SMPTE 428-7-2007) XML Subtitles</span></a>
+</li>
+<li class="heading3" id="i6.1.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.3" href="import_subtitles_dlp.htm" target="hmcontent"><span class="heading3" id="s6.1.3">DLP Cinema XML Files</span></a>
+</li>
+<li class="heading3" id="i6.1.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.4" href="import_subtitles_lambdacap.htm" target="hmcontent"><span class="heading3" id="s6.1.4">Videotron Lambda Cap files</span></a>
+</li>
+<li class="heading3" id="i6.1.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.5" href="import_subtitles_webvtt.htm" target="hmcontent"><span class="heading3" id="s6.1.5">WebVTT (.vtt) Files</span></a>
+</li>
+<li class="heading3" id="i6.1.6" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.6" href="import_subtitles_microdvd.htm" target="hmcontent"><span class="heading3" id="s6.1.6">MicroDVD (.sub) Files</span></a>
+</li>
+<li class="heading3" id="i6.1.7" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.7" href="import_subtitles_srt.htm" target="hmcontent"><span class="heading3" id="s6.1.7">SubRip (.srt) Files</span></a>
+</li>
+<li class="heading3" id="i6.1.8" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.8" href="import_subtitles_sami.htm" target="hmcontent"><span class="heading3" id="s6.1.8">Webcast - Media Player SAMI Files</span></a>
+</li>
+<li class="heading3" id="i6.1.9" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.9" href="import_subtitles_ascii.htm" target="hmcontent"><span class="heading3" id="s6.1.9">Plain ASCII/Unicode Text Files</span></a>
+</li>
+<li class="heading3" id="i6.1.10" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.10" href="import_subtitles_rtf.htm" target="hmcontent"><span class="heading3" id="s6.1.10">RTF/DOC Files</span></a>
+</li>
+<li class="heading3" id="i6.1.11" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.11" href="import_subtitles_xls.htm" target="hmcontent"><span class="heading3" id="s6.1.11">XLS and XLSX Excel Workbook Files</span></a>
+</li>
+<li class="heading3" id="i6.1.12" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.12" href="import_subtitles_qttext.htm" target="hmcontent"><span class="heading3" id="s6.1.12">QuickTime Text Files</span></a>
+</li>
+<li class="heading3" id="i6.1.13" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.1.13" href="import_subtitles_custom_txt.htm" target="hmcontent"><span class="heading3" id="s6.1.13">Custom Text Import</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i6.2" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.2" href="import_subtitles_extended.htm" target="hmcontent"><span class="heading2" id="s6.2" ondblclick="return dblclicked(this)">Extended Formats</span></a>
+<ul id="ul6.2" style="list-style-type:none">
+<li class="heading3" id="i6.2.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.1" href="import_subtitles_pac.htm" target="hmcontent"><span class="heading3" id="s6.2.1">Compressed PAC Files (.PAC)</span></a>
+</li>
+<li class="heading3" id="i6.2.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.2" href="import_subtitles_unipac.htm" target="hmcontent"><span class="heading3" id="s6.2.2">Unicode PAC files (.fpc)</span></a>
+</li>
+<li class="heading3" id="i6.2.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.3" href="import_subtitles_win2020_ascii.htm" target="hmcontent"><span class="heading3" id="s6.2.3">Win2020 ASCII Files</span></a>
+</li>
+<li class="heading3" id="i6.2.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.4" href="import_subtitles_890.htm" target="hmcontent"><span class="heading3" id="s6.2.4">890 Files</span></a>
+</li>
+<li class="heading3" id="i6.2.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.5" href="import_subtitles_substation_alpha.htm" target="hmcontent"><span class="heading3" id="s6.2.5">SubStation Alpha SSA/ASS Files</span></a>
+</li>
+<li class="heading3" id="i6.2.6" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.6" href="import_subtitles_swift.htm" target="hmcontent"><span class="heading3" id="s6.2.6">Swift Interchange (.sif) Files</span></a>
+</li>
+<li class="heading3" id="i6.2.7" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.7" href="import_subtitles_usf.htm" target="hmcontent"><span class="heading3" id="s6.2.7">Universal Subtitling Format (.usf)</span></a>
+</li>
+<li class="heading3" id="i6.2.8" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.8" href="import_subtitles_das.htm" target="hmcontent"><span class="heading3" id="s6.2.8">DAS Files</span></a>
+</li>
+<li class="heading3" id="i6.2.9" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.9" href="import_subtitles_softitler_txt.htm" target="hmcontent"><span class="heading3" id="s6.2.9">Softitler TXT Files</span></a>
+</li>
+<li class="heading3" id="i6.2.10" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.10" href="import_subtitles_softni.htm" target="hmcontent"><span class="heading3" id="s6.2.10">SoftNI (.sub) Files</span></a>
+</li>
+<li class="heading3" id="i6.2.11" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.11" href="import_subtitles_avid_ds_nitris.htm" target="hmcontent"><span class="heading3" id="s6.2.11">Avid DS Nitris Files</span></a>
+</li>
+<li class="heading3" id="i6.2.12" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.12" href="import_subtitles_sub.htm" target="hmcontent"><span class="heading3" id="s6.2.12">SUB Files</span></a>
+</li>
+<li class="heading3" id="i6.2.13" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.13" href="import_subtitles_ovr.htm" target="hmcontent"><span class="heading3" id="s6.2.13">OVR Files</span></a>
+</li>
+<li class="heading3" id="i6.2.14" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.2.14" href="import_subtitles_vdpc.htm" target="hmcontent"><span class="heading3" id="s6.2.14">VDPC Files</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i6.3" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.3" href="import_timed_text_formats.htm" target="hmcontent"><span class="heading2" id="s6.3" ondblclick="return dblclicked(this)">Timed Text formats</span></a>
+<ul id="ul6.3" style="list-style-type:none">
+<li class="heading3" id="i6.3.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.3.1" href="import_subtitles_ttml1-ttml2.htm" target="hmcontent"><span class="heading3" id="s6.3.1">TTML ver.1/ TTML ver.2</span></a>
+</li>
+<li class="heading3" id="i6.3.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.3.2" href="import_subtitles_imsc1-imsc11.htm" target="hmcontent"><span class="heading3" id="s6.3.2">IMSC ver.1/IMSC ver. 1.1</span></a>
+</li>
+<li class="heading3" id="i6.3.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.3.3" href="import-timed-text-ebu-tt_-ebu-tt-.htm" target="hmcontent"><span class="heading3" id="s6.3.3">EBU Timed Text (EBU-TT, EBU-TT-D) XML files</span></a>
+</li>
+<li class="heading3" id="i6.3.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.3.4" href="import_subtitles_smpte-tt_subtitles.htm" target="hmcontent"><span class="heading3" id="s6.3.4">SMPTE-TT Subtitels (.xml)</span></a>
+</li>
+<li class="heading3" id="i6.3.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.3.5" href="import_subtitles_netflix.htm" target="hmcontent"><span class="heading3" id="s6.3.5">Netflix Timed Text (NFLX) DFXP Files</span></a>
+</li>
+<li class="heading3" id="i6.3.6" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.3.6" href="import_subtitles_itt.htm" target="hmcontent"><span class="heading3" id="s6.3.6">Apple iTunes Timed Text (.itt)</span></a>
+</li>
+<li class="heading3" id="i6.3.7" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.3.7" href="import_subtitles_disney.htm" target="hmcontent"><span class="heading3" id="s6.3.7">Import Disney IMSC 1.1</span></a>
+</li>
+<li class="heading3" id="i6.3.8" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.3.8" href="import_subtitles_ooyala.htm" target="hmcontent"><span class="heading3" id="s6.3.8">OOYALA Timed Text</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i6.4" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a6.4" href="import_dvd_nle_authoring_formats.htm" target="hmcontent"><span class="heading2" id="s6.4" ondblclick="return dblclicked(this)">DVD/NLE Authoring formats</span></a>
+<ul id="ul6.4" style="list-style-type:none">
+<li class="heading3" id="i6.4.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.1" href="import_subtitles_fcp_xml.htm" target="hmcontent"><span class="heading3" id="s6.4.1">Final Cut Pro XML Files</span></a>
+</li>
+<li class="heading3" id="i6.4.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.2" href="import_subtitles_spruce_stl.htm" target="hmcontent"><span class="heading3" id="s6.4.2">Apple DVD Studio Pro and Spruce STL Text Script</span></a>
+</li>
+<li class="heading3" id="i6.4.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.3" href="import_subtitles_adobe_encore.htm" target="hmcontent"><span class="heading3" id="s6.4.3">Adobe Encore DVD Script</span></a>
+</li>
+<li class="heading3" id="i6.4.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.4" href="import_subtitles_sony_dvd_arch.htm" target="hmcontent"><span class="heading3" id="s6.4.4">Sony DVD Architect Subtitle Script</span></a>
+</li>
+<li class="heading3" id="i6.4.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a6.4.5" href="import_subtitles_roxio_dvdit.htm" target="hmcontent"><span class="heading3" id="s6.4.5">Roxio DVDIt Pro Subtitle Script</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i7" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a7" href="export_subtitles.htm" target="hmcontent"><span class="heading1" id="s7" ondblclick="return dblclicked(this)">Export Subtitles</span></a>
+<ul id="ul7" style="list-style-type:none">
+<li class="heading2" id="i7.1" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a7.1" href="export_subtitles_standard.htm" target="hmcontent"><span class="heading2" id="s7.1" ondblclick="return dblclicked(this)">Standard formats</span></a>
+<ul id="ul7.1" style="list-style-type:none">
+<li class="heading3" id="i7.1.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.1" href="export_subtitles_ebu.htm" target="hmcontent"><span class="heading3" id="s7.1.1">EBU(.STL) Files</span></a>
+</li>
+<li class="heading3" id="i7.1.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.2" href="export_subtitles_ebu_arte.htm" target="hmcontent"><span class="heading3" id="s7.1.2">EBU for ARTE Files</span></a>
+</li>
+<li class="heading3" id="i7.1.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.3" href="export_subtitles_dlp.htm" target="hmcontent"><span class="heading3" id="s7.1.3">DLP Cinema XML Files</span></a>
+</li>
+<li class="heading3" id="i7.1.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.4" href="export_subtitles_dcdm.htm" target="hmcontent"><span class="heading3" id="s7.1.4">DCDM (SMPTE 428-7-2007) XML Subtitles</span></a>
+</li>
+<li class="heading3" id="i7.1.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.5" href="export_subtitles_webvtt.htm" target="hmcontent"><span class="heading3" id="s7.1.5">WebVTT (.vtt) Files</span></a>
+</li>
+<li class="heading3" id="i7.1.6" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.6" href="export_subtitles_lambdacap.htm" target="hmcontent"><span class="heading3" id="s7.1.6">Videotron Lambda (.cap) Files</span></a>
+</li>
+<li class="heading3" id="i7.1.7" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.7" href="export_subtitles_srt.htm" target="hmcontent"><span class="heading3" id="s7.1.7">SubRip (.srt) Files</span></a>
+</li>
+<li class="heading3" id="i7.1.8" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.8" href="export_subtitles_microdvd.htm" target="hmcontent"><span class="heading3" id="s7.1.8">MicroDVD (.sub) Files</span></a>
+</li>
+<li class="heading3" id="i7.1.9" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.9" href="export_subtitles_sami.htm" target="hmcontent"><span class="heading3" id="s7.1.9">Webcast - Media Player SAMI Files</span></a>
+</li>
+<li class="heading3" id="i7.1.10" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.10" href="export_subtitles_ascii.htm" target="hmcontent"><span class="heading3" id="s7.1.10">Plain ASCII/Unicode Text Files</span></a>
+</li>
+<li class="heading3" id="i7.1.11" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.11" href="export_subtitles_rtf.htm" target="hmcontent"><span class="heading3" id="s7.1.11">RTF/DOC</span></a>
+</li>
+<li class="heading3" id="i7.1.12" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.12" href="export_subtitles_xls.htm" target="hmcontent"><span class="heading3" id="s7.1.12">Excel XLS and XLSX Workbook Files</span></a>
+</li>
+<li class="heading3" id="i7.1.13" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.13" href="export_subtitles_qttext.htm" target="hmcontent"><span class="heading3" id="s7.1.13">QuickTime Text</span></a>
+</li>
+<li class="heading3" id="i7.1.14" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.1.14" href="export_subtitles_custom_txt.htm" target="hmcontent"><span class="heading3" id="s7.1.14">Custom Text Export</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i7.2" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a7.2" href="export_subtitles_extended.htm" target="hmcontent"><span class="heading2" id="s7.2" ondblclick="return dblclicked(this)">Extended formats</span></a>
+<ul id="ul7.2" style="list-style-type:none">
+<li class="heading3" id="i7.2.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.1" href="export_subtitles_pac.htm" target="hmcontent"><span class="heading3" id="s7.2.1">Compressed PAC Files (.PAC)</span></a>
+</li>
+<li class="heading3" id="i7.2.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.2" href="export_subtitles_unipac.htm" target="hmcontent"><span class="heading3" id="s7.2.2">Unicode PAC files (.fpc)</span></a>
+</li>
+<li class="heading3" id="i7.2.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.3" href="export_subtitles_win2020_ascii.htm" target="hmcontent"><span class="heading3" id="s7.2.3">Win2020 ASCII Files</span></a>
+</li>
+<li class="heading3" id="i7.2.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.4" href="export_subtitles_890.htm" target="hmcontent"><span class="heading3" id="s7.2.4">890 Files</span></a>
+</li>
+<li class="heading3" id="i7.2.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.5" href="export_subtitles_substation_alpha.htm" target="hmcontent"><span class="heading3" id="s7.2.5">SubStation Alpha SSA/ASS Files</span></a>
+</li>
+<li class="heading3" id="i7.2.6" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.6" href="export_subtitles_swift.htm" target="hmcontent"><span class="heading3" id="s7.2.6">Swift Interchange (.sif) Files</span></a>
+</li>
+<li class="heading3" id="i7.2.7" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.7" href="export_subtitles_usf.htm" target="hmcontent"><span class="heading3" id="s7.2.7">Universal Subtitling Format (.usf)</span></a>
+</li>
+<li class="heading3" id="i7.2.8" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.8" href="export_subtitles_das.htm" target="hmcontent"><span class="heading3" id="s7.2.8">DAS Files</span></a>
+</li>
+<li class="heading3" id="i7.2.9" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.9" href="export_subtitles_softitler_txt.htm" target="hmcontent"><span class="heading3" id="s7.2.9">Softitler TXT Files</span></a>
+</li>
+<li class="heading3" id="i7.2.10" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.10" href="export_subtitles_softni.htm" target="hmcontent"><span class="heading3" id="s7.2.10">Export SoftNI (.sub) Files</span></a>
+</li>
+<li class="heading3" id="i7.2.11" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.11" href="export_subtitles_avid_ds_nitris.htm" target="hmcontent"><span class="heading3" id="s7.2.11">Avid DS Nitrils Files</span></a>
+</li>
+<li class="heading3" id="i7.2.12" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.12" href="export_subtitles_ovr.htm" target="hmcontent"><span class="heading3" id="s7.2.12">OVR Files</span></a>
+</li>
+<li class="heading3" id="i7.2.13" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.2.13" href="export_subtitles_sub.htm" target="hmcontent"><span class="heading3" id="s7.2.13">SUB Files</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i7.3" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a7.3" href="export_subtitles_tt_formats.htm" target="hmcontent"><span class="heading2" id="s7.3" ondblclick="return dblclicked(this)">Timed Text Formats</span></a>
+<ul id="ul7.3" style="list-style-type:none">
+<li class="heading3" id="i7.3.1" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.1" href="export_subtitles_ttml1-ttml2.htm" target="hmcontent"><span class="heading3" id="s7.3.1" ondblclick="return dblclicked(this)">TTML1/TTML2</span></a>
+<ul id="ul7.3.1" style="list-style-type:none">
+<li class="heading4" id="i7.3.1.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a7.3.1.1" href="export_subtitles_timed_text_general.htm" target="hmcontent"><span class="heading4" id="s7.3.1.1">TTML ver. 1</span></a>
+</li>
+<li class="heading4" id="i7.3.1.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a7.3.1.2" href="export_subtitles_timed_text_general2.htm" target="hmcontent"><span class="heading4" id="s7.3.1.2">TTML ver. 2</span></a>
+</li>
+</ul>
+</li>
+<li class="heading3" id="i7.3.2" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.2" href="export_subtitles_imsc1-imsc11.htm" target="hmcontent"><span class="heading3" id="s7.3.2" ondblclick="return dblclicked(this)">IMSC1/IMSC1.1 files</span></a>
+<ul id="ul7.3.2" style="list-style-type:none">
+<li class="heading4" id="i7.3.2.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a7.3.2.1" href="export_subtitles_imsc1.htm" target="hmcontent"><span class="heading4" id="s7.3.2.1">IMSC v.1</span></a>
+</li>
+<li class="heading4" id="i7.3.2.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a7.3.2.2" href="export_subtitles_imsc1_1.htm" target="hmcontent"><span class="heading4" id="s7.3.2.2">IMSC v.1.1</span></a>
+</li>
+</ul>
+</li>
+<li class="heading3" id="i7.3.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.3" href="export_subtitles_ebu_tt.htm" target="hmcontent"><span class="heading3" id="s7.3.3">EBU Timed Text (EBU-TT, EBU-TT-D) XML files</span></a>
+</li>
+<li class="heading3" id="i7.3.4" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.4" href="export_subtitles_smpte-tt_subtitles.htm" target="hmcontent"><span class="heading3" id="s7.3.4" ondblclick="return dblclicked(this)">SMPTE-TT Subtitels (.xml)</span></a>
+<ul id="ul7.3.4" style="list-style-type:none">
+<li class="heading4" id="i7.3.4.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a7.3.4.1" href="smpte-tt-text-only-subtitles.htm" target="hmcontent"><span class="heading4" id="s7.3.4.1">SMPTE-TT Text Only Subtitles</span></a>
+</li>
+<li class="heading4" id="i7.3.4.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a7.3.4.2" href="smpte-tt-image-based-subtitles.htm" target="hmcontent"><span class="heading4" id="s7.3.4.2">SMPTE-TT Image Based Subtitles</span></a>
+</li>
+</ul>
+</li>
+<li class="heading3" id="i7.3.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.5" href="export_subtitles_netflix.htm" target="hmcontent"><span class="heading3" id="s7.3.5">Netflix Timed Text (NFLX-TT) DFXP Files</span></a>
+</li>
+<li class="heading3" id="i7.3.6" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.6" href="export_subtitles_itt.htm" target="hmcontent"><span class="heading3" id="s7.3.6">Apple iTunes Timed Text (.itt)</span></a>
+</li>
+<li class="heading3" id="i7.3.7" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.7" href="export_subtitles_disney.htm" target="hmcontent"><span class="heading3" id="s7.3.7">Disney IMSC 1.1</span></a>
+</li>
+<li class="heading3" id="i7.3.8" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.3.8" href="export_subtitles_ooyala.htm" target="hmcontent"><span class="heading3" id="s7.3.8">OOYALA Timed Text</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i7.4" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a7.4" href="dvd_nle_auhtoring_formats.htm" target="hmcontent"><span class="heading2" id="s7.4" ondblclick="return dblclicked(this)">DVD/NLE authoring formats</span></a>
+<ul id="ul7.4" style="list-style-type:none">
+<li class="heading3" id="i7.4.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.4.1" href="export_subtitles_fcp_xml.htm" target="hmcontent"><span class="heading3" id="s7.4.1">Final Cut Pro XML Files</span></a>
+</li>
+<li class="heading3" id="i7.4.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.4.2" href="export_subtitles_spruce_stl.htm" target="hmcontent"><span class="heading3" id="s7.4.2">Apple DVD Studio Pro and Spruce STL Text Script</span></a>
+</li>
+<li class="heading3" id="i7.4.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.4.3" href="export_subtitles_adobe_encore.htm" target="hmcontent"><span class="heading3" id="s7.4.3">Adobe Encore DVD Text Script</span></a>
+</li>
+<li class="heading3" id="i7.4.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.4.4" href="export_subtitles_sony_dvd_arch.htm" target="hmcontent"><span class="heading3" id="s7.4.4">Sony DVD Architect Subtitle Script</span></a>
+</li>
+<li class="heading3" id="i7.4.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a7.4.5" href="export_subtitles_roxio_dvdit.htm" target="hmcontent"><span class="heading3" id="s7.4.5">Roxio DVDit Pro Script</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i8" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a8" href="dvb_subtitles.htm" target="hmcontent"><span class="heading1" id="s8">Export DVB Subtitles</span></a>
+</li>
+<li class="heading1" id="i9" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a9" href="export_dvd_images.htm" target="hmcontent"><span class="heading1" id="s9" ondblclick="return dblclicked(this)">Export DVD Images</span></a>
+<ul id="ul9" style="list-style-type:none">
+<li class="heading2" id="i9.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a9.1" href="export_dvd_systems.htm" target="hmcontent"><span class="heading2" id="s9.1">Predefined Authoring Systems</span></a>
+</li>
+<li class="heading2" id="i9.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a9.2" href="dvd_custom_export.htm" target="hmcontent"><span class="heading2" id="s9.2">NONE/HD/NLE and Custom 4 Color Systems</span></a>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i10" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a10" href="closed_captions.htm" target="hmcontent"><span class="heading1" id="s10" ondblclick="return dblclicked(this)">Closed Captions</span></a>
+<ul id="ul10" style="list-style-type:none">
+<li class="heading2" id="i10.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a10.1" href="cc_project_settings.htm" target="hmcontent"><span class="heading2" id="s10.1">Project Settings</span></a>
+</li>
+<li class="heading2" id="i10.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a10.2" href="working_in_closed_captions_mod.htm" target="hmcontent"><span class="heading2" id="s10.2">Working in Closed Captions Mode</span></a>
+</li>
+<li class="heading2" id="i10.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a10.3" href="check_closed_captions.htm" target="hmcontent"><span class="heading2" id="s10.3">Check Closed Captions</span></a>
+</li>
+<li class="heading2" id="i10.4" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a10.4" href="cc_import_export.htm" target="hmcontent"><span class="heading2" id="s10.4" ondblclick="return dblclicked(this)">Import/Export Closed Captions</span></a>
+<ul id="ul10.4" style="list-style-type:none">
+<li class="heading3" id="i10.4.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a10.4.1" href="export_captions_mcc.htm" target="hmcontent"><span class="heading3" id="s10.4.1">MCC Captions</span></a>
+</li>
+<li class="heading3" id="i10.4.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a10.4.2" href="export_captions_smpte-tt.htm" target="hmcontent"><span class="heading3" id="s10.4.2">SMPTE-TT CEA-608 Captions (.xml)</span></a>
+</li>
+<li class="heading3" id="i10.4.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a10.4.3" href="ultech-captions-(ult).htm" target="hmcontent"><span class="heading3" id="s10.4.3">Ultech captions (.ult)</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i11" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a11" href="batch-conversions.htm" target="hmcontent"><span class="heading1" id="s11" ondblclick="return dblclicked(this)">Batch conversions and automation</span></a>
+<ul id="ul11" style="list-style-type:none">
+<li class="heading2" id="i11.1" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a11.1" href="metadata-flow.htm" target="hmcontent"><span class="heading2" id="s11.1" ondblclick="return dblclicked(this)">Metadata pass-through</span></a>
+<ul id="ul11.1" style="list-style-type:none">
+<li class="heading3" id="i11.1.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a11.1.1" href="metadata-flow-frame_rate.htm" target="hmcontent"><span class="heading3" id="s11.1.1">Frame Rate and Timecode</span></a>
+</li>
+<li class="heading3" id="i11.1.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a11.1.2" href="metadata-flow-language.htm" target="hmcontent"><span class="heading3" id="s11.1.2">Language</span></a>
+</li>
+<li class="heading3" id="i11.1.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a11.1.3" href="metadata-flow-translation.htm" target="hmcontent"><span class="heading3" id="s11.1.3">Translation Metadata</span></a>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i11.2" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a11.2" href="watch_folder_mode.htm" target="hmcontent"><span class="heading2" id="s11.2" ondblclick="return dblclicked(this)">Watch Folder Mode</span></a>
+<ul id="ul11.2" style="list-style-type:none">
+<li class="heading3" id="i11.2.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a11.2.1" href="wf_manager.htm" target="hmcontent"><span class="heading3" id="s11.2.1">Watch Folder Management</span></a>
+</li>
+<li class="heading3" id="i11.2.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a11.2.2" href="wfr_menu_commands.htm" target="hmcontent"><span class="heading3" id="s11.2.2">Toolbar and Menus</span></a>
+</li>
+<li class="heading3" id="i11.2.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a11.2.3" href="wf_file_settings.htm" target="hmcontent"><span class="heading3" id="s11.2.3">Watch Folder Settings</span></a>
+</li>
+<li class="heading3" id="i11.2.4" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a11.2.4" href="configuring-watch-folder.htm" target="hmcontent"><span class="heading3" id="s11.2.4" ondblclick="return dblclicked(this)">Configuring Watch Folder</span></a>
+<ul id="ul11.2.4" style="list-style-type:none">
+<li class="heading4" id="i11.2.4.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a11.2.4.1" href="wf_general.htm" target="hmcontent"><span class="heading4" id="s11.2.4.1">General</span></a>
+</li>
+<li class="heading4" id="i11.2.4.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a11.2.4.2" href="wf_output_settings.htm" target="hmcontent"><span class="heading4" id="s11.2.4.2">Output Settings</span></a>
+</li>
+<li class="heading4" id="i11.2.4.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a11.2.4.3" href="wf_timecode_convert_and_recut.htm" target="hmcontent"><span class="heading4" id="s11.2.4.3">Timecode Convert and Recut</span></a>
+</li>
+<li class="heading4" id="i11.2.4.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a11.2.4.4" href="wf-text-replace.htm" target="hmcontent"><span class="heading4" id="s11.2.4.4">Text Replace</span></a>
+</li>
+<li class="heading4" id="i11.2.4.5" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a11.2.4.5" href="wf_fix_subtitles.htm" target="hmcontent"><span class="heading4" id="s11.2.4.5">Fix Subtitles</span></a>
+</li>
+<li class="heading4" id="i11.2.4.6" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a11.2.4.6" href="wf_zero_subtitle.htm" target="hmcontent"><span class="heading4" id="s11.2.4.6">Zero Subtitle</span></a>
+</li>
+<li class="heading4" id="i11.2.4.7" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a11.2.4.7" href="wf_quality_control.htm" target="hmcontent"><span class="heading4" id="s11.2.4.7">Quality Control</span></a>
+</li>
+<li class="heading4" id="i11.2.4.8" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a11.2.4.8" href="wf_post_convert_events.htm" target="hmcontent"><span class="heading4" id="s11.2.4.8">Post Convert Events</span></a>
+</li>
+<li class="heading4" id="i11.2.4.9" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a11.2.4.9" href="wf_user_notes.htm" target="hmcontent"><span class="heading4" id="s11.2.4.9">User Notes</span></a>
+</li>
+<li class="heading4" id="i11.2.4.10" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a11.2.4.10" href="wf_notifications.htm" target="hmcontent"><span class="heading4" id="s11.2.4.10">Notifications</span></a>
+</li>
+</ul>
+</li>
+<li class="heading3" id="i11.2.5" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a11.2.5" href="wf_workflow.htm" target="hmcontent"><span class="heading3" id="s11.2.5" ondblclick="return dblclicked(this)">Workflow</span></a>
+<ul id="ul11.2.5" style="list-style-type:none">
+<li class="heading4" id="i11.2.5.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading4" id="a11.2.5.1" href="wf_configuring_workflows.htm" target="hmcontent"><span class="heading4" id="s11.2.5.1">Configuring Workflows</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="heading2" id="i11.3" data-bg="cicon1.png;cicon2.png" style="background:url(cicon2.png) no-repeat;cursor:pointer;padding-left:20px" onclick="return clicked(this,event)"><a class="heading2" id="a11.3" href="app_b_command_line_params.htm" target="hmcontent"><span class="heading2" id="s11.3" ondblclick="return dblclicked(this)">Command Line Conversion Tool</span></a>
+<ul id="ul11.3" style="list-style-type:none">
+<li class="heading3" id="i11.3.1" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a11.3.1" href="command-line-paramaters.htm" target="hmcontent"><span class="heading3" id="s11.3.1">Command Line Parameters</span></a>
+</li>
+<li class="heading3" id="i11.3.2" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a11.3.2" href="input-and-output-configuration.htm" target="hmcontent"><span class="heading3" id="s11.3.2">Input and Output configuration</span></a>
+</li>
+<li class="heading3" id="i11.3.3" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a11.3.3" href="usage-and-examples.htm" target="hmcontent"><span class="heading3" id="s11.3.3">Usage and Examples</span></a>
+</li>
+<li class="heading3" id="i11.3.4" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading3" id="a11.3.4" href="cmd_config-editor.htm" target="hmcontent"><span class="heading3" id="s11.3.4">Config Editor</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="heading1" id="i12" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a12" href="secondary-subtitle-track.htm" target="hmcontent"><span class="heading1" id="s12">Secondary Subtitle Track</span></a>
+</li>
+<li class="heading1" id="i13" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a13" href="easasian_subtitles.htm" target="hmcontent"><span class="heading1" id="s13">About subtitles in East Asian languages</span></a>
+</li>
+<li class="heading1" id="i14" style="background:url(cicon9.png) no-repeat;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a14" href="app_a_eztitles_ascii_format.htm" target="hmcontent"><span class="heading1" id="s14">Appendix A. ASCII File Format used by EZConvert</span></a>
+</li>
+</ul>
+<script type="text/javascript">loadicons('cicon2.png','cicon1.png','cicon9.png');</script>
+</body>
+</html>

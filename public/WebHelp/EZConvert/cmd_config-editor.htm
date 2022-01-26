@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Batch conversions and automation &gt; Command Line Conversion Tool &gt; Config Editor</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="cfg,Command Line,Command Line Config edtor,config,editor" />
+   <meta name="description" content="Config Editor is another tool aimed at those relying on conversions submitted through the Command Line Conversion. It provide easy to use interface for creating new or..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "cmd_config-editor.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Config Editor</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?cmd_config-editor.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="batch-conversions.htm">Batch conversions and automation</a> &gt; <a href="app_b_command_line_params.htm">Command Line Conversion Tool</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Config Editor</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="usage-and-examples.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="app_b_command_line_params.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="secondary-subtitle-track.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal"><span class="f_Emphasize">Config Editor</span> is another tool aimed at those relying on conversions submitted through the Command Line Conversion. It provide easy to use interface for creating new or modifying existing configuration files used by the Command Line Conversion Tool. It embeds all parameters that can be specified in the config file and allows the user to click and select which ones are required or will be used during the conversion including:</p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin: 0 5px 11px 72px;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span>All <a href="project_settings.htm" class="topiclink">resolution and frame rate</a> related options.</p><p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin: 0 5px 11px 72px;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span>All parameters otherwise associated with the <a href="import_subtitles.htm" class="topiclink">source</a> or <a href="export_subtitles.htm" class="topiclink">output</a> formats.</p><p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin: 0 5px 11px 72px;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span><a href="wf-text-replace.htm" class="topiclink">Text Replacement</a> options.</p><p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin: 0 5px 11px 72px;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span>All <a href="check_subtitles.htm" class="topiclink">Qualirt control</a> or <a href="fix_subtitles.htm" class="topiclink">Fix</a> related options.</p><p class="p_Normal" style="text-indent: 0; padding-left: 13px; margin: 0 5px 11px 72px;"><span class="f_Normal" style="font-family: Arial,'Lucida Sans Unicode','Lucida Grande','Lucida Sans';display:inline-block;width:13px;margin-left:-13px">&#9642;</span>All options required for doing <a href="wf_timecode_convert_and_recut.htm" class="topiclink">Recut and Frame Rate</a> conversion.</p><p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">How to install Config Editor</span></p>
+<p class="p_Normal">Considering that the Command Line converter is available only with the <a href="https://www.eztitles.com/index.php?page=ezconvert-license-editions" target="_blank" class="weblink" title="https://www.eztitles.com/index.php?page=ezconvert-license-editions">EZConvert Pro</a> edition of the software, during installation the option to <span class="f_Emphasize">Install Command Line and Watch Folder</span> must be selected: </p>
+<p class="p_Picture"><img width="597" height="213" style="margin:0;width:597px;height:213px;border:none" src="install_1.png"/></p>
+<p class="p_Normal">And after that, in the next installation step, it'll be possible to add desktop shortcut for the <span class="f_Emphasize">Config Editor</span>: </p>
+<p class="p_Picture"><img width="598" height="234" style="margin:0;width:598px;height:234px;border:none" src="install_2.png"/></p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">How does it work</span></p>
+<p class="p_Normal">As mentioned in the beginning Config Editor is intended as really simple and easy to use tool: </p>
+<p class="p_Picture"><img width="767" height="402" style="margin:0;width:767px;height:402px;border:none" src="config_editor_gui.png"/></p>
+<p class="p_Normal">The Config Editor is really straight-forward to use and to a certain degree it simulates the work of EZConvert, with the exception that it will create config file at the end. </p>
+<p class="p_Normal" style="text-indent: 0; padding-left: 22px; margin-left: 38px;"><span class="f_Normal" style="display:inline-block;width:22px;margin-left:-22px">1.</span>Start <span class="f_Emphasize">New</span> or <span class="f_Emphasize">Open</span> existing configuration file from the<span class="f_Emphasize"> File</span> drop-down menu. <br />
+&nbsp;</p><p class="p_Normal" style="text-indent: 0; padding-left: 22px; margin-left: 38px;"><span class="f_Normal" style="display:inline-block;width:22px;margin-left:-22px">2.</span>Select <span class="f_Emphasize">Source</span> and <span class="f_Emphasize">Destination</span> formats and verify the configuration options available for each of them. The <span class="f_Emphasize">Config Editor</span> will automatically add the necessary for the command line conversion <span class="f_Emphasize">-i</span> and <span class="f_Emphasize">-o</span> paramaters. <br />
+&nbsp;</p><p class="p_Normal" style="text-indent: 0; padding-left: 22px; margin-left: 38px;"><span class="f_Normal" style="display:inline-block;width:22px;margin-left:-22px">3.</span>Decide if you need any of the <span class="f_Emphasize">Check</span>, <span class="f_Emphasize">Fix</span> or <span class="f_Emphasize">Recut</span> options. The <span class="f_Emphasize">Config Editor</span> will automatically add necessary <span class="f_Emphasize">-f</span>, <span class="f_Emphasize">-check</span>, <span class="f_Emphasize">-checkDetailed</span> and<span class="f_Emphasize"> -print</span> parameters depending on your choice of activated options. <br />
+&nbsp;</p><p class="p_Normal" style="text-indent: 0; padding-left: 22px; margin-left: 38px;"><span class="f_Normal" style="display:inline-block;width:22px;margin-left:-22px">4.</span><span class="f_Emphasize">Save</span> the config file using the respective option from the <span class="f_Emphasize">File</span> drop-down menu. Once the config has been saved, its location and name will be automatically added to the <span class="f_Emphasize">Command Line</span>.<br />
+At this point the command line should look similar to: <br />
+&nbsp;<br />
+<span class="f_CodeExample">&quot;C:\Program Files (x86)\EZTitlesDevelopmentStudio\EZConvert6\EZC6C.exe&quot; -c &quot;C:\TEST\config.cfg&quot; -i SRT -o TT &lt;input-file&gt; &lt;output-file&gt;</span><br />
+<span class="f_CodeExample">&nbsp;</span><br />
+There's only one thing to do:<span class="f_Emphasize"> &lt;input-file&gt;</span> and <span class="f_Emphasize">&lt;output-file&gt; </span>must be replaced with the location and name of the <span class="f_Emphasize">Source</span> and<span class="f_Emphasize"> Destination</span> files respectively.<br />
+&nbsp;</p><p class="p_Normal" style="text-indent: 0; padding-left: 22px; margin-left: 38px;"><span class="f_Normal" style="display:inline-block;width:22px;margin-left:-22px">5.</span><span class="f_Emphasize">Config Editor</span> allows you to <span class="f_Emphasize">Test</span> the current configuration. To do so, simply press the on <span class="f_Emphasize">Test Configuration</span>, select  <span style="font-weight: bold;">Source</span> and <span style="font-weight: bold;">Destination</span> files and wait for the conversion to be automatically executed.<br />
+&nbsp;</p><p class="p_Normal" style="text-indent: 0; padding-left: 22px; margin-left: 38px;"><span class="f_Normal" style="display:inline-block;width:22px;margin-left:-22px">6.</span>Copy the edited and ready-to-use <span class="f_Emphasize">Command Line </span>and paste it in the Windows Command Prompt to execute the conversion.</p>
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

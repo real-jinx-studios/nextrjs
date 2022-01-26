@@ -1,0 +1,439 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Working with Subtitle Files &gt; Check Subtitles</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Check Subtitles,Quality Control" />
+   <meta name="description" content="The Checks command will help you find the subtitles that doesn't match certain rules. You can start the Checks from the File menu." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "check_subtitles.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Check Subtitles</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?check_subtitles.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="working_with_subtitle_files.htm">Working with Subtitle Files</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Check Subtitles</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="global_recut.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="working_with_subtitle_files.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="fix_subtitles.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">The Checks command will help you find the subtitles that doesn't match certain rules. You can start the Checks from the File menu.</p>
+<p class="p_Picture"><img width="530" height="484" style="margin:0;width:530px;height:484px;border:none" src="check_subtitles.png"/></p>
+<p class="p_Normal">The available Checks criteria are divided into separate categories for easier navigation and clean preview of the selected options. Whenever there is at least one of selected for a category, category's name would be marked in <span style="font-weight: bold;">bold</span> and the checkbox in front of it will look like a square -<img width="22" height="19" style="margin:0;width:22px;height:19px;border:none" src="checks-1-opt.png"/>. And when all options are clicked for a category, the checkbox in front of its name becomes fully checked - <img width="19" height="20" style="margin:0;width:19px;height:20px;border:none" src="checks_all_opt.png"/><span class="f_ImageCaption">.</span><br />
+<span class="f_ImageCaption">&nbsp;</span><br />
+<span class="f_Emphasize">Check both subtitle tracks</span> - the option becomes available only if the current project has a <a href="secondary-subtitle-track.htm" class="topiclink">secondary subtitle track</a> and the &quot;Check&quot; command will then go through the subtitles from both tracks simultaneously. Otherwise, if the option is disabled, the Check will be performed only for the currently selected track.</p>
+<p class="p_Normal">The text specifying the type of the error found in the current subtitle is displayed at the bottom of the window. You can find the next problematic subtitle using the <span class="f_Emphasize">Next</span> and <span class="f_Emphasize">Previous</span> buttons. By pressing the<span class="f_Emphasize"> Log</span> button, EZConvert will move all subtitles which match the specified criteria to the Log list for revision.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Cues and Text</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Inconsistent cues</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Check for in/out cues with timecode errors. For details please check later in this topic.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Duration</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks whether the subtitle duration is below the minimum/maximum values specified at the <a href="project_settings_cues.htm" class="topiclink">Project Settings/Cues</a> menu.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Below Reading Speed </span><br />
+<span class="f_IndentedHilite">Above Reading Speed</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks for subtitles exceeding the limits of the specified reading speed. </span><span class="f_Emphasize">Below Reading Speed</span><span class="f_Indented"> is the more important parameter – it indicates whether the viewer has enough time to read the subtitle. For more information about reading speed refer to <a href="project_settings_reading_speed.htm" class="topiclink">Reading Speed Parameters</a>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; height:27px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Gap between subtitles</span></p>
+</td>
+<td style="vertical-align:top; height:27px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks the gaps between subtitles. Gives an error message if the gap between two subtitles is less than the specified number of frames and is </span><span class="f_Emphasize">not equal</span><span class="f_Indented"> to the </span><span class="f_Emphasize">minimum interval</span><span class="f_Indented"> defined in <a href="project_settings_cues.htm" class="topiclink">Project Settings/Cues</a> page.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Non-printable characters</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks for characters not supported by the particular language and font or for such which have not been imported correctly from the input file. Non-printable characters are marked as &quot;□&quot;.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Safe Area </span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks whether the subtitles are correctly positioned in the so-called &quot;safe area&quot; – the optimum visible field of the TV screen. </span></p>
+<p class="p_Indented"><span class="f_Indented">It also checks for subtitles with more than 36 characters per row (the number of characters can be specified with the File/Project Settings). For more information you may refer to the <a href="project_settings_safe_area.htm" class="topiclink">Safe Area</a> topic.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Raised Subtitles</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks for subtitles that are placed above or below the Safe Area margins. These are the subtitles that have an empty last line (for bottom vertical alignment) or first line (for top vertical alignment).</span><br />
+<span class="f_Indented">The </span><span class="f_Emphasize">Exclude raised by</span><span class="f_Indented"> option can be used when the prevailing number of subtitles are intentionally raised by a number of lines.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">More than … lines</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks for subtitles that exceed the set maximum number of rows (default – 2 rows).</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Extra Spaces</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks if there are more than one spaces inserted between the text or for space at the beginning and end of the text line.</span><br />
+<span class="f_Indented">When </span><span class="f_Emphasize">Space before punctuation</span><span class="f_Indented"> option is clicked, EZConvert will also check if there are spaces before the punctuation marks.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Extra Rows</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks for subtitles containing text lines separated by at least one empty line.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Horizontally shifted</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks for text which is offset from the default left, right or center alignment positions, for example as a result of using the </span><span class="f_Shortcut">Move Subtitle Left/Right</span><span class="f_Indented"> or </span><span class="f_Shortcut">Move Row Left/Right</span><span class="f_Indented"> commands.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitles without text</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks for subtitles without text.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Inconsistent numbering</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks subtitle numeration is consistent throughout the project. Inconsistent numbering is considered when a subtitle number is skipped: 1, </span><span class="f_Emphasize">2, 4</span><span class="f_Indented">, 5..., or when the letter index is skipped: 1</span><span class="f_Emphasize">a</span><span class="f_Indented">, 1</span><span class="f_Emphasize">b</span><span class="f_Indented">, 1d, 2a, 2b, </span><span class="f_Emphasize">2c</span><span class="f_Indented">, </span><span class="f_Emphasize">3b</span><span class="f_Indented">, 3c.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitles with comments</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks for comments attached to the subtitles.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Wrap subtitle to one line</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks if the text of a subtitle in two or more lines can actually fit on just a single line. However, the text should not exceed the characters per line limit set in &nbsp;the <a href="project_settings_safe_area.htm" class="topiclink">Project Settings/Safe Area</a> menu.</span><br />
+<span class="f_SubHeader1">Note:</span><span class="f_Indented"> Subtitles with dialogue in them will not be marked by the Check. Dialogue is considered whenever one of the text lines in the subtitle starts with hyphen (long hyphen, em-dash) or one of the lines is in different color.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:197px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Not snapped to</span><br />
+<span class="f_IndentedHilite">top/bottom safe area</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This option is intended to find all subtitles which are not aligned to the top or bottom safe area margins. If the text is positioned in the top half of the screen, it will be aligned to the top safe area margin, if in the bottom half - to the bottom one.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="subtitle_attributes" class="hmanchor"></a><span class="f_SubHeader">Attributes</span></p>
+<p class="p_Normal">One of the most important new features is that you can look for subtitles that have particular attribute or for those which <span class="f_Emphasize">don’t have</span> it. For example you can start a check for all subtitles which have yellow text or only for those which are not yellow.</p>
+<p class="p_Normal">The positive or negative state of the command can be customized at the Checks dialog clicking the <span class="f_Emphasize">Is</span> or <span class="f_Emphasize">Is Not</span> option</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Italics</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">You can find all italics formatted text or subtitles.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Partial Italics</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Enables you to find subtitles that have some of their text in italics. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Uppercase</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Finds subtitles for which all words and characters are written in UPPERCASE.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Partial Uppercase</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Finds subtitles containing at least one word in uppercase.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Font</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Allows you to find all subtitles written with Font 1 or Font 2.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Hidden</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Looks for Hidden or Not Hidden subtitles.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Color</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Enables you to find subtitles formatted in particular color. The color can be selected from the corresponding box to the right.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Alignment</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">When this option is clicked, EZTitles will look for all subtitles aligned in the specified way.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Vertical Position</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks if the text appears visually in the top or bottom half of the screen. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Box Style</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Allows you to look for the subtitles with Box effect applied.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Outline/Shadow</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">With this turned on you can find the subtitles which have Outline or Shadow effects applied.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Direction</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Enables you to search the selected word or phrase in <a href="easasian_subtitles.htm" class="topiclink">vertically</a> or horizontally oriented subtitles.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Underline</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Searches for text which is underlined.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Double Height</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">You can locate all subtitles formatted as Double Height. The Double Height check option is available only for Teletext projects and will be displayed when EZTitles works in Teletext mode.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:188px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Captions Style</span></p>
+</td>
+<td style="vertical-align:top; width:895px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Captions Style can be used to locate subtitles formatted with the Closed Captions specific Pain-on, Pop-on or Roll-Up styles. It is available when EZTitles is working in Closed Captions mode.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">The options listed in the Subtitle Attributes section of the Checks dialog will change along with the mode of operation. There are specific checks only available when working in Teletext and Closed Captions mode.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="asian_options" class="hmanchor"></a><span class="f_SubHeader">Options for East Asian Languages</span></p>
+<p class="p_Normal">The options described below become available only if the input file contains any characters from the East Asian writing scripts:</p>
+<p class="p_Picture"><img width="530" height="264" style="margin:0;width:530px;height:264px;border:none" src="check_subtitles-asian.png"/></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:269px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Vertical subtitles alignment</span></p>
+</td>
+<td style="vertical-align:top; width:814px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks for vertical subtitles aligned or not aligned to the top safe area margin. The term &quot;start&quot; refers to the default/initial value of the tts:textAlign attribute from <a href="https://www.w3.org/TR/2018/CR-ttml2-20180628/#style-attribute-rubyPosition" target="_blank" class="weblink" title="https://www.w3.org/TR/2018/CR-ttml2-20180628/#style-attribute-rubyPosition">TTML2</a>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:269px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Ruby/Bouten position</span><br />
+<span class="f_IndentedHilite">different from</span></p>
+</td>
+<td style="vertical-align:top; width:814px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks if <a href="easasian_subtitles.htm" class="topiclink">Ruby/Bouten</a> characters match the specified position: </span></p>
+<p class="p_Indented" style="margin: 5px 5px 5px 38px;"><span class="f_IndentedHilite">Above/Right</span><span class="f_Indented"> - for horizontal subtitles Above the text; for vertical subtitles to the Right of the text;</span></p>
+<p class="p_Indented" style="margin: 5px 5px 5px 38px;"><span class="f_IndentedHilite">Below/Left</span><span class="f_Indented"> - for horizontal subtitles Below the text; for vertical subtitles to the Left of the text;</span></p>
+<p class="p_Indented" style="margin: 5px 5px 5px 38px;"><span class="f_IndentedHilite">Outside</span><span class="f_Indented"> - Outside is the default position for Ruby/Bouten characters. The term &quot;Outside&quot; refers to the initial value of the tts:rubyPosition attribute from <a href="https://www.w3.org/TR/2018/CR-ttml2-20180628/#style-attribute-rubyPosition" target="_blank" class="weblink" title="https://www.w3.org/TR/2018/CR-ttml2-20180628/#style-attribute-rubyPosition">TTML2</a>.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:269px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Single line left positioned vertical subtitles Outside ruby position is</span></p>
+</td>
+<td style="vertical-align:top; width:814px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">This option allows you to check if the ruby/bouten characters in one-line vertical subtitle aligned to the left appear Left or Right from the base text. The option can be used only if </span><span class="f_Emphasize">Ruby/Bouten position different from</span><span class="f_Indented"> is set to </span><span class="f_Emphasize">Outside</span><span class="f_Indented">.</span></p>
+<p class="p_Indented"><span class="f_Indented">The common practice is ruby/bouten characters to be displayed on the right side of the text in one-line vertical subtitles. But there might be a requirement to display ruby in one-line left positioned vertical subtitles to the left of the base text:</span></p>
+<p class="p_Indented"><img width="396" height="56" style="margin:0;width:396px;height:56px;border:none" src="check_disney.png"/></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:269px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Ruby/Bouten on middle lines</span></p>
+</td>
+<td style="vertical-align:top; width:814px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks if there are subtitles with 3 text lines and Ruby/Bouten added on the middle line. The common practice doesn't allow Ruby/Bouten characters on the middle line as well as subtitles with more than 2 text lines</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:269px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Digit representation in horizontal </span><br />
+<span class="f_IndentedHilite">and vertical subtitles</span></p>
+</td>
+<td style="vertical-align:top; width:814px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks for half-width and full-width digits representation in horizontal and vertical subtitles.</span></p>
+<p class="p_Indented"><span class="f_Indented" style="font-weight: bold; color: #2e82ff;">Horizontal subtitles:</span></p>
+<p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin: 0 5px 3px 24px;"><span class="f_Indented" style="font-family: 'Courier New';display:inline-block;width:13px;margin-left:-13px">o</span><span class="f_Indented">Single digit numbers should be written using full-width alphanumeric characters</span></p><p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin: 0 5px 3px 24px;"><span class="f_Indented" style="font-family: 'Courier New';display:inline-block;width:13px;margin-left:-13px">o</span><span class="f_Indented">Double digit and higher numbers should be written using half-width characters</span></p><p class="p_Indented"><span class="f_Indented" style="font-weight: bold; color: #2e82ff;">Vertical subtitles:</span></p>
+<p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin: 0 5px 3px 24px;"><span class="f_Indented" style="font-family: 'Courier New';display:inline-block;width:13px;margin-left:-13px">o</span><span class="f_Indented">Single digit numbers should be written using full-width alphanumeric characters</span></p><p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin: 0 5px 3px 24px;"><span class="f_Indented" style="font-family: 'Courier New';display:inline-block;width:13px;margin-left:-13px">o</span><span class="f_Indented">Consecutive digits up to </span><span class="f_Emphasize">HGroup</span><span class="f_Indented"> parameter should be written using half-width characters and positioned in </span><a href="easasian_subtitles.htm#hgroups" class="topiclink">Horizontal Group</a><span class="f_Indented">.</span></p><p class="p_Indented" style="text-indent: 0; padding-left: 13px; margin: 0 5px 3px 24px;"><span class="f_Indented" style="font-family: 'Courier New';display:inline-block;width:13px;margin-left:-13px">o</span><span class="f_Indented">Consecutive digits above the HGroup parameter should be written using full-width characters and positioned vertically.</span></p></td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Multiple tracks</span></p>
+<p class="p_Normal">Multiple Tracks options become available once<a href="secondary-subtitle-track.htm" class="topiclink"> Secondary Subtitle Track</a> is added or file with two tracks is loaded:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:80%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:269px; height:33px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitles with overlapping text</span></p>
+</td>
+<td style="vertical-align:top; width:814px; height:33px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks for subtitles which might be covering the text of subtitle in the other track. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:269px; height:40px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Subtitles with overlapping cues</span></p>
+</td>
+<td style="vertical-align:top; width:814px; height:40px; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Checks for subtitles with overlapping In and Out cues from the two tracks. </span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Creating Check Presets</span></p>
+<p class="p_Normal">EZConvert also provides the functionality to create <span class="f_Emphasize">Presets</span> with the most frequently used &quot;Check&quot; options.</p>
+<p class="p_Normal">To add new preset you can simply press the triangular button <img width="21" height="21" style="margin:0;width:21px;height:21px;border:none" src="dvd_preview_button.png"/> and select the<span class="f_Emphasize"> Create New Preset</span> option. All currently selected &quot;Check&quot; options will be added for this preset. To modify the currently selected preset you just need to click the &quot;Check&quot; options you want to activate or disable and then select the <span class="f_Emphasize">Save current preset</span> option after clicking the triangular button. From the same menu you can also <span class="f_Emphasize">Delete</span> or <span class="f_Emphasize">Rename</span> the currently activated preset.</p>
+<p class="p_Normal">You can select another of your &quot;Check&quot; Presets directly from the <span class="f_Emphasize">Presets drop-down</span> menu.</p>
+<p class="p_Normal">Note: <span class="f_SubHeader1">Note:</span> Pressing the <img width="30" height="22" style="margin:0;width:30px;height:22px;border:none" src="checks-minimize.png"/><span class="f_ImageCaption"> </span> button next to Presets will hide the main part of the Checks form leaving only the part describing what the particular problem is:</p>
+<p class="p_Picture"><img width="409" height="174" style="margin:0;width:409px;height:174px;border:none" src="checks-minimized.png"/></p>
+<p class="p_Normal">This will be really helpful when EZTitles is used on devices with small display running at low resolution and high DPI settings.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

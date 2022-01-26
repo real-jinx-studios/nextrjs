@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+   <title>3DTitles Help</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="robots" content="noindex,follow" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ 
+   <!-- This line includes the general project style sheet (not required) -->
+   <link type="text/css" href="default.css" rel="stylesheet" />
+
+   <script type="text/javascript">isIE=false</script>
+   <!--[if IE]>
+   <script type="text/javascript">isIE=true</script>
+   <![endif]-->
+
+   <!--HM_KEYWORD_INDEX_AS_LIST-->
+   <style type="text/css">
+       body { 
+        margin: 0; 
+        padding: 0; 
+        width: 100%;
+        height: 100%;
+        }
+       #keyword_entry_div {
+       	position: absolute;
+       	left: 5px;
+       	top: 5px;
+       	right: 5px;
+       	} 
+       #keyword_entry_div p {
+       	font-weight: bold;
+        margin: 0px;
+       }
+       #keyword_list_div {
+       	position: absolute;
+       	left: 5px;
+       	top: 45px;
+       	right: 5px;
+       	bottom: 5px;
+       	padding:0;
+       	} 
+       #keyword_entry {
+       	border: 1px solid silver;
+       	width: 100px;
+       	}
+       #keyword_list {
+       	border: 1px solid silver;
+       	width: 100%;
+      	height: 100%; 
+       	}
+       #keyword_menu {
+        display: none;
+	background: #fff;
+       	border: 1px solid silver;
+	padding: 10px;
+	box-shadow: 4px 4px 8px #888;
+	border-radius: 6px 6px;
+       	}
+       #keyword_menu a {
+       	display: block;
+        text-decoration: none;
+	color: #000;
+	padding: 2px 2px 2px 18px;
+	background: url(hm-keyword-page-icon.png) 2px 2px no-repeat;
+       	}
+       #keyword_menu a:hover {
+       	background: #FFFFFF url(hm-keyword-page-icon.png) 2px 2px no-repeat;
+        text-decoration: none;
+	color: #fff;
+       	}               
+       #keyword_menu_no_entry {
+        display: none;
+	background: #fff;
+       	border: 1px solid silver;
+	padding: 5px;
+	box-shadow: 4px 4px 8px #888;
+	border-radius: 6px 6px;
+	width: 50%;
+	font-size:1em;
+       }
+   </style>       
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){
+     var parentScope = (parent.hmNavigationFrame);
+     if (parentScope) parent.currentNav("index");
+	$("a[target='hmcontent']").on("click",function(event){
+		$("p.hilite").removeClass("hilite");
+		$(this).parent("p").addClass("hilite");
+		if (parentScope)
+			window.parent.showNav("toggle");
+		});
+        });
+   </script>
+   <script type="text/javascript" src="hmcontextids.js"></script>
+</head>
+<body>
+<div id="keyword_menu"></div>
+<div id="keyword_menu_no_entry">To locate information about this keyword, please select one of the subentries in the list.</div>
+<div id="keyword_entry_div"><p>Enter value</p><input type="text" id="keyword_entry" onkeyup="keywordEntryKey()" /></div>
+<div id="keyword_list_div">
+  <select id="keyword_list" size="2">
+  <option value="'How does 3D work?','how_does_3d_work.htm','3DTitles environment','3dtitles_enviornment.htm','Go to Full-Screen for 3D','go_to_full-screen_for_3d.htm'">3D</option>
+  <option value="how_does_3d_work.htm">active</option>
+  <option value="project_settongs_safe_area.htm">Alignment</option>
+  <option value="how_does_3d_work.htm">anaglyph</option>
+  <option value="overview.htm">audio</option>
+  <option value="prefs_general.htm">audio playback</option>
+  <option value="overview.htm">Audio time-stretch filter</option>
+  <option value="export_bdn.htm">BDN</option>
+  <option value="export_bdn.htm">Blu-Print</option>
+  <option value="export_bdn.htm">Blu-ray</option>
+  <option value="project_settongs_safe_area.htm">Bottom Margin</option>
+  <option value="'Saving your work','saving_your_work.htm','Export subtitles','exporting_the_subtitles.htm'">burnt-in</option>
+  <option value="'Stereoscopic 3D layout','setting_up_the_layout.htm','CEA-708 Closed Captions (.MCC)','export_captions_mcc.htm','CEA-708 Closed Captions (.MCC)','export_mcc.htm'">CEA-708</option>
+  <option value="project_settongs_media.htm">CEA-708 Mode</option>
+  <option value="'CEA-708 Closed Captions (.MCC)','export_captions_mcc.htm','CEA-708 Closed Captions (.MCC)','export_mcc.htm'">CEA-708.1</option>
+  <option value="segments.htm">change</option>
+  <option value="checks.htm">Checks</option>
+  <option value="export_subtitles_dlp.htm">Clipster</option>
+  <option value="'Stereoscopic 3D layout','setting_up_the_layout.htm','CEA-708 Closed Captions (.MCC)','export_captions_mcc.htm','CEA-708 Closed Captions (.MCC)','export_mcc.htm'">Closed Captions</option>
+  <option value="project_settongs_media.htm">Closed captions mode</option>
+  <option value="send_feedback.htm">contact</option>
+  <option value="basic_controls.htm">controls</option>
+  <option value="prefs_shortcuts.htm">customize</option>
+  <option value="project_settongs_fonts.htm">Deformation</option>
+  <option value="'How the depth is measured?','how_the_depth_is_measured.htm','Changing Depth','depth.htm','Command options','prefs_command_options.htm'">depth</option>
+  <option value="export_subtitles_dlp.htm">Digital Cinema</option>
+  <option value="3dtitles_enviornment.htm">display</option>
+  <option value="prefs_general.htm">display mode</option>
+  <option value="">DLP Cinema Subtitle XML</option>
+  <option value="export_subtitles_dlp.htm">&nbsp;&nbsp;&nbsp;Export</option>
+  <option value="export_dostudio_3d.htm">dost</option>
+  <option value="export_dostudio_3d.htm">DoStudio 3D</option>
+  <option value="export_dostudio_3d.htm">ds3d</option>
+  <option value="'How does 3D work?','how_does_3d_work.htm','Stereoscopic 3D layout','setting_up_the_layout.htm'">dual stream</option>
+  <option value="'How does 3D work?','how_does_3d_work.htm','Stereoscopic 3D layout','setting_up_the_layout.htm'">dual-stream</option>
+  <option value="export_edl.htm">EDL</option>
+  <option value="3dtitles_enviornment.htm">enviornment</option>
+  <option value="'Saving your work','saving_your_work.htm','Export subtitles','exporting_the_subtitles.htm'">export</option>
+  <option value="send_feedback.htm">feedback</option>
+  <option value="'Opening a subtitle file','opening_a_subtitle_file.htm','Opening a video file','opening_a_video_file.htm'">File</option>
+  <option value="export_fcp.htm">Final Cut Pro</option>
+  <option value="export_fcp.htm">Final Cut Pro X</option>
+  <option value="project_settongs_fonts.htm">Fonts</option>
+  <option value="'3DTitles environment','3dtitles_enviornment.htm','Go to Full-Screen for 3D','go_to_full-screen_for_3d.htm'">full screen</option>
+  <option value="how_does_3d_work.htm">glasses</option>
+  <option value="'Saving your work','saving_your_work.htm','Export subtitles','exporting_the_subtitles.htm'">imprint</option>
+  <option value="installing3dtitles.htm">install</option>
+  <option value="'How does 3D work?','how_does_3d_work.htm','Stereoscopic 3D layout','setting_up_the_layout.htm'">interlaced</option>
+  <option value="'How does 3D work?','how_does_3d_work.htm','Stereoscopic 3D layout','setting_up_the_layout.htm'">layout</option>
+  <option value="project_settongs_safe_area.htm">Left Margin</option>
+  <option value="3dtitles_enviornment.htm">main screen</option>
+  <option value="'CEA-708 Closed Captions (.MCC)','export_captions_mcc.htm','CEA-708 Closed Captions (.MCC)','export_mcc.htm'">MCC</option>
+  <option value="3dtitles_enviornment.htm">mode</option>
+  <option value="'How the depth is measured?','how_the_depth_is_measured.htm','General','prefs_general.htm'">monitor</option>
+  <option value="'What is 3DTitles?','welcome_topic.htm','Opening a subtitle file','opening_a_subtitle_file.htm','Opening a video file','opening_a_video_file.htm'">Open</option>
+  <option value="project_settongs_media.htm">Open mode</option>
+  <option value="setting_up_the_layout.htm">Open Subtitles</option>
+  <option value="'Saving your work','saving_your_work.htm','Export subtitles','exporting_the_subtitles.htm'">output</option>
+  <option value="how_the_depth_is_measured.htm">parallax</option>
+  <option value="how_does_3d_work.htm">passive</option>
+  <option value="'Basic Controls','basic_controls.htm','Playback Setup','setup_the_playback.htm'">playback</option>
+  <option value="how_does_3d_work.htm">polarized</option>
+  <option value="basic_commands.htm">position</option>
+  <option value="'Preview Subtitles Only','preview_subtitles_only.htm','Command options','prefs_command_options.htm'">preview</option>
+  <option value="project_settings.htm">project</option>
+  <option value="'Opening a subtitle file','opening_a_subtitle_file.htm','Opening a video file','opening_a_video_file.htm'">recent</option>
+  <option value="send_feedback.htm">request</option>
+  <option value="system_requirements.htm">requirements</option>
+  <option value="project_settongs_safe_area.htm">Right Margin</option>
+  <option value="'Safe Area','project_settongs_safe_area.htm','Fonts','project_settongs_fonts.htm'">Right to left</option>
+  <option value="project_settongs_safe_area.htm">Safe Area</option>
+  <option value="saving_your_work.htm">save</option>
+  <option value="prefs_command_options.htm">scenes</option>
+  <option value="'3DTitles environment','3dtitles_enviornment.htm','Go to Full-Screen for 3D','go_to_full-screen_for_3d.htm'">screen</option>
+  <option value="segments.htm">segment</option>
+  <option value="send_feedback.htm">send</option>
+  <option value="project_settings.htm">settings</option>
+  <option value="'Setup timecode','setup_timecode.htm','Playback Setup','setup_the_playback.htm'">setup</option>
+  <option value="prefs_shortcuts.htm">shortcuts</option>
+  <option value="segments.htm">shot</option>
+  <option value="segments.htm">shot change</option>
+  <option value="build_z-map.htm">Shot Changes</option>
+  <option value="how_does_3d_work.htm">shutter</option>
+  <option value="'How does 3D work?','how_does_3d_work.htm','Stereoscopic 3D layout','setting_up_the_layout.htm'">side by side</option>
+  <option value="'How does 3D work?','how_does_3d_work.htm','Stereoscopic 3D layout','setting_up_the_layout.htm'">side-by-side</option>
+  <option value="segments.htm">smooth segment</option>
+  <option value="export_bdn.htm">Sonic Scenarist</option>
+  <option value="export_bdn.htm">Sony</option>
+  <option value="project_settongs_fonts.htm">Spacing</option>
+  <option value="how_does_3d_work.htm">stereoscopic</option>
+  <option value="project_settongs_media.htm">stereoscopic layout</option>
+  <option value="subtitle_depth_graph.htm">Subtitle Depth Graph</option>
+  <option value="prefs_command_options.htm">subtitled</option>
+  <option value="'Basic commands','basic_commands.htm','Changing Depth','depth.htm','Command options','prefs_command_options.htm'">subtitles</option>
+  <option value="preview_subtitles_only.htm">subtitles preview</option>
+  <option value="">Subtitles Properties</option>
+  <option value="project_settongs_fonts.htm">&nbsp;&nbsp;&nbsp;Fonts</option>
+  <option value="project_settongs_safe_area.htm">&nbsp;&nbsp;&nbsp;Safe Area</option>
+  <option value="'Basic commands','basic_commands.htm','Changing Depth','depth.htm'">subtitling</option>
+  <option value="send_feedback.htm">support</option>
+  <option value="setting_up_the_layout.htm">swap eyes</option>
+  <option value="system_requirements.htm">system</option>
+  <option value="system_requirements.htm">System requirements</option>
+  <option value="setup_timecode.htm">timecode</option>
+  <option value="project_settongs_media.htm">timecode format</option>
+  <option value="'How does 3D work?','how_does_3d_work.htm','Stereoscopic 3D layout','setting_up_the_layout.htm'">top bottom</option>
+  <option value="project_settongs_safe_area.htm">Top Margin</option>
+  <option value="'How does 3D work?','how_does_3d_work.htm','Stereoscopic 3D layout','setting_up_the_layout.htm'">top-bottom</option>
+  <option value="'Overview','overview.htm','Basic Controls','basic_controls.htm'">video</option>
+  <option value="project_settongs_media.htm">video format</option>
+  <option value="export_bdn.htm">XML</option>
+  <option value="project_settongs_safe_area.htm">Z Safe Area</option>
+  <option value="'Z-Map and Shot Changes Detection','build_z-map.htm','Automatic Depth Estimation','automatic_depth_estimation.htm'">ZMap</option>
+  <option value="'Z-Map and Shot Changes Detection','build_z-map.htm','Automatic Depth Estimation','automatic_depth_estimation.htm'">Z-Map</option>
+</select>
+
+  <select id="keyword_list_dummy" size="5" style="display:none"></select>
+</div>
+
+   <script type="text/javascript">
+     /* Script for keyword listbox */
+     var idxMenu = null;
+     var idxEntries = new Array(); 
+     var idxEntryHeight = 0;
+
+     function keywordHideMenu() {	
+        if (idxMenu!=null) {
+          idxMenu.stop();
+          idxMenu.hide();
+          idxMenu = null;
+        }
+     }     	
+
+     function keywordEntryKey(value) {
+        var aKeyword = $('#keyword_entry').val().toLowerCase();
+     	var list = document.getElementById('keyword_list');
+    	var idx1 = 0;
+    	var idx2 = idxEntries.length-1;
+    	while (idx2>idx1+1) {
+    	  var delta = parseInt((idx2-idx1)/2) + idx1;
+    	  if (aKeyword.localeCompare(idxEntries[delta]) > 0) idx1 = delta;
+    	  else idx2 = delta;  
+        }
+    	$('#keyword_entry').unbind('onkeyup');
+        if (aKeyword.localeCompare(idxEntries[idx1]) < 0) idx2 = idx1;
+        list.selectedIndex = idx2;
+        if ((idxEntryHeight>0) && (idx2<idxEntries.length-1)) {
+          $(list).stop();	
+          idx1 = idx2 * idxEntryHeight;
+          if (idx1 > ((idxEntryHeight*idxEntries.length)-$(list).innerHeight())) idx1 = (idxEntryHeight*idxEntries.length)-$(list).innerHeight(); 
+          $(list).scrollTop(idx1);
+        } 
+    	$('#keyword_entry').bind('keywordEntryKey');
+        keywordHideMenu();
+     }
+    
+     function keywordListClick(event) {
+     	var list = document.getElementById('keyword_list');
+        var aKeyword = list.options[list.selectedIndex].text;
+        var aTarget = list.options[list.selectedIndex].value; 
+
+        if (aKeyword.substr(0,1)==String.fromCharCode(160)) {
+          var i = list.selectedIndex-1;
+          var aKw = '';
+          while (i>0) {
+          	aKw = list.options[i].text;
+          	if (aKw.substr(0,1)!=String.fromCharCode(160)) { 
+          	  aKeyword = aKw + ', ' + $.trim(aKeyword);
+          	  break;
+          	}
+          	i--;
+          }
+        }
+
+        $('#keyword_entry').attr('value', aKeyword);        
+        keywordHideMenu();
+
+        //if option.value starts with an "'", it's a list of entries => display menu 
+     	if (aTarget.substring(0,1)==String.fromCharCode(39)) {
+     	  var links = aTarget.substring(1,aTarget.length-1).split("','");
+          var i = 0;
+          var aCode = '';
+          while (i<links.length-1) {
+          	aCode = aCode + '<p><a href="javascript:keywordListJump(' + "'" + links[i+1] + "'" + ')">' + links[i] + '</a></p>';
+          	i = i+2;
+          }
+          
+          idxMenu = $('#keyword_menu');
+          idxMenu.html(aCode);
+          idxMenu.css({'z-index':99, 'position':'absolute', 'right':'4px'});
+          var ypos = event.clientY;
+          if ((ypos + idxMenu.outerHeight()) > $(window).height()) ypos = event.clientY - idxMenu.outerHeight();
+          idxMenu.css('top', ypos + 'px');
+          if (hmAnimate) idxMenu.show('fast');
+          else idxMenu.show();
+     	}
+     	else if ((aTarget=='undefined')||(aTarget=='')) {
+          idxMenu = $('#keyword_menu_no_entry');
+          idxMenu.css({'z-index':99, 'position':'absolute', 'right':'4px', 'opacity':1});
+          var ypos = event.clientY;
+          if ((ypos + idxMenu.outerHeight()) > $(window).height()) ypos = event.clientY - idxMenu.outerHeight();
+          idxMenu.css('top', ypos + 'px');
+          if (hmAnimate) idxMenu.show('fast');
+          else idxMenu.show();
+          idxMenu.fadeOut(5000);
+     	}
+     	else {
+     	  keywordListJump(aTarget);
+     	}	
+     }
+     
+     function keywordListJump(aTarget) {
+	
+	
+	parent.document.getElementById("hmcontent").src = aTarget;
+
+        //Google adwords tracking, if enabled:
+        if (parent.frames.length>0) {
+          if (parent.gaaccount) { 
+            var list = document.getElementById('keyword_list');
+            parent.track("index", idxEntries[list.selectedIndex]); 
+          }
+        }          
+     }
+     
+     $(document).ready( function() {
+       idxEntryHeight = parseInt(($('#keyword_list_dummy').innerHeight()/5)+0.5);
+       if (isIE) idxEntryHeight = 0; //autoscrolling in keyword list works well in IE
+       var kwmain = '';
+       var kw = '';
+       var list = document.getElementById('keyword_list');
+       $(list).click(function(event) { keywordListClick(event) });
+       	
+       for (var i=0; i < list.options.length; i++) {
+         kw = list.options[i].text;
+         
+         if ( (kw.substring(0,3)==String.fromCharCode(160,160,160)) || (kw.substring(0,3)==String.fromCharCode(32,32,32)) ) {
+           kw = kw.substr(3);	
+           idxEntries.push( kwmain+', '+kw.toLowerCase() );
+         }            
+         else {  
+           kwmain = kw.toLowerCase();
+           idxEntries.push(kwmain); 
+         }            
+       }
+
+       $(list).scroll(keywordHideMenu);
+       	
+       $(window).resize(function() { 
+         $('#keyword_entry').css('width', $('#keyword_list').width()+'px');
+	     $('#keyword_list_div').css('top', $('#keyword_entry_div').offset().top + $('#keyword_entry_div').outerHeight() + 5 + 'px');
+       });
+	 
+	   $(window).resize();
+	   
+     });
+   </script>
+ 
+</body>
+</html>

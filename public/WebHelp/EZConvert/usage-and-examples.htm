@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Batch conversions and automation &gt; Command Line Conversion Tool &gt; Usage and Examples</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Batch,Batch conversion,Command Line,Command Line examples,Command Line usage,Error handling,Errors,Second,Second subtitle track" />
+   <meta name="description" content="Conversion of files with two subtitle tracks EZConvert's command line conversion tool supports conversion of files with two subtitle tracks, but in order to properly handle..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "usage-and-examples.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Use and Examples</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?usage-and-examples.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="batch-conversions.htm">Batch conversions and automation</a> &gt; <a href="app_b_command_line_params.htm">Command Line Conversion Tool</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Use and Examples</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="input-and-output-configuration.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="app_b_command_line_params.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="cmd_config-editor.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Conversion of files with two subtitle tracks</span></p>
+<p class="p_Normal">EZConvert's command line conversion tool supports conversion of files with <a href="secondary-subtitle-track.htm" class="topiclink">two subtitle tracks</a>, but in order to properly handle them, please make sure that the DetectSecondSubtitlesTrack attribute in the config.file is enabled in the [General] section:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">DetectSecondSubtitlesTrack=1</span></p>
+<p class="p_Normal">as well as that the selected subtitles output format <span style="color: #ff0000;"><a href="secondary-subtitle-track.htm#supported_files" class="topiclink">supports</a></span> such subtitles as well.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><a id="error_handling" class="hmanchor"></a><span class="f_SubHeader">Error Handling</span></p>
+<p class="p_Normal">As we already mentioned Command Line conversion tool is able to create conversion log file by using the -l switch from the command line:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">ezc6c&nbsp;-c&nbsp;sample_config.cfg&nbsp;-i&nbsp;PAC&nbsp;-o&nbsp;EBU&nbsp;c:\test\ezcc\exmp1.pac&nbsp;c:\test\ezcc\@.stl&nbsp;-l&nbsp;c:\test\ezcc\log.txt</span></p>
+<p class="p_Normal">This, however, may not be sufficient when EZConvert needs to be integrated in a more complex workflows or it becomes essential to immediately identify if a conversion has been successfully completed or not. Below is additional information intended to the system administrators who may need to automate the process by running advanced scripts or additional programs to effectively detect the outcome of each individual file conversion.</p>
+<p class="p_Normal">EZConvert, like every other Windows application, will output exit code when executes the conversion. <span class="f_Emphasize">Exit Code</span> is &quot;<span class="f_Emphasize">0</span>&quot; if the conversion has been successful and &quot;<span class="f_Emphasize">1</span>&quot; when it has failed. Respectively, the command line application will also output results to the <span class="f_Emphasize">STDOUT</span> and <span class="f_Emphasize">STDERR</span> streams. All warnings are output directly to <span class="f_Emphasize">STDOUT</span>, while all error messages are send to <span class="f_Emphasize">STDERR</span>. </p>
+<p class="p_Normal">Please mind that if a conversion has been successfully completed it may still be beneficial to verify there were no warnings send to <span class="f_Emphasize">STDOUT</span> as they usually indicate potential issues.</p>
+<p class="p_Normal">Sometimes, getting results from the STDOUT in plain text might not be beneficial, for example when using the <span class="f_Emphasize">-detailedCheck</span> parameter to get list of all errors found for each subtitle in the file. Whenever this is required, the <span class="f_Emphasize">-print</span> parameter can be used to change the output format for the STDOUT stream. </p>
+<p class="p_Normal">For example, running the following command:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">ezc6c&nbsp;-c&nbsp;sample_config.cfg&nbsp;-recongize&nbsp;&quot;C:\Test\Test&nbsp;File.xml&quot;&nbsp;-fileDetails&nbsp;-print&nbsp;XML</span></p>
+<p class="p_Normal">will produce nicely structured XML:</p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">&lt;EZConvert version=&quot;6.0.1&quot;&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp;&lt;exitcode&gt;0&lt;/exitcode&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp;&lt;initialization/&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp;&lt;file name=&quot;C:\Test\Test File.dfxp&quot; inputFormat=&quot;NFLX_TT&quot;&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp;&lt;read time=&quot;23.08.2020 10:12:33&quot;/&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp;&lt;details&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;Title/&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;Lang&gt;en&lt;/Lang&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;frameRate&gt;29.97 fps&lt;/frameRate&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;MediaStartTC/&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;ttp-frameRate&gt;30&lt;/ttp-frameRate&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;ttp-frameRateMultiplier&gt;1000 1001&lt;/ttp-frameRateMultiplier&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;ttp-timeBase&gt;smpte&lt;/ttp-timeBase&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;ttp-dropMode&gt;dropNTSC&lt;/ttp-dropMode&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;FirstInCue&gt;00:00:07:15&lt;/FirstInCue&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;LastOutCue&gt;00:01:11:24&lt;/LastOutCue&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;SubtitlesCount&gt;31&lt;/SubtitlesCount&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;SubtitlesWithoutText&gt;0&lt;/SubtitlesWithoutText&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;SubtitlesWithoutTC&gt;0&lt;/SubtitlesWithoutTC&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp; &nbsp;&lt;HiddenSubtitles&gt;0&lt;/HiddenSubtitles&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp; &nbsp;&lt;/details&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed"> &nbsp;&lt;/file&gt;</span></p>
+<p class="p_CourierFixed"><span class="f_CourierFixed">&lt;/EZConvert</span>&gt;</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Custom Text Export using the Command Line</span></p>
+<p class="p_Normal">If you wish to export a file with a custom layout of the subtitles using the Command Line tool you need to define a Template using the <a href="export_subtitles_custom_txt.htm" class="topiclink">Custom Text Export </a> option and save it.</p>
+<p class="p_Normal">Then on the Command line you need to use the -t parameter and to specify the exact path to the template file. For example:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid; margin: 0 0 0 53px;"><span class="f_CodeExample">ezc6c&nbsp;-c&nbsp;sample_config.cfg&nbsp;-i&nbsp;PAC&nbsp;-o&nbsp;CUSTOM_TXT&nbsp;-t&nbsp;C:\ezcc\template.txt&nbsp;c:\ezcc\PAC_file.pac&nbsp;c:\ezcc\Custom_txt.txt</span></p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Examples</span></p>
+<p class="p_Normal">You need to start the <span class="f_Emphasize">command line</span> and then go to the EZConvert <span class="f_Emphasize">installation</span> folder which by default is:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">cd&nbsp;c:\program&nbsp;files\ezconvert</span></p>
+<p class="p_Normal">Then you can start the EZConvert command line version. </p>
+<p class="p_Normal">In the following example EZConvert will <span class="f_Emphasize">import</span> PAC file and will <span class="f_Emphasize">export</span> it to EBU (.stl):</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">ezc6c&nbsp;-c&nbsp;sample_config.cfg&nbsp;-i&nbsp;PAC&nbsp;-o&nbsp;EBU&nbsp;c:\test\ezcc\exmp1.pac&nbsp;c:\test\ezcc\exmp1.stl&nbsp;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">ezc6c&nbsp;-c&nbsp;sample_config.cfg&nbsp;-i&nbsp;PAC&nbsp;-o&nbsp;EBU&nbsp;c:\test\ezcc\exmp1.pac&nbsp;c:\test\ezcc\@.stl</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">ezc6c&nbsp;-c&nbsp;sample_config.cfg&nbsp;-i&nbsp;PAC&nbsp;-r&nbsp;30d/29.97&nbsp;-o&nbsp;EBU&nbsp;c:\test\ezcc\exmp2.pac&nbsp;c:\test\ezcc\exmp2.stl</span></p>
+<p class="p_Normal">The <span class="f_Emphasize">output</span> result of the second example is again exmp1.stl file, but using the '@' character the program will <span class="f_Emphasize">automatically export</span> it using the<span class="f_Emphasize"> input file name</span>. </p>
+<p class="p_Normal">The third example illustrates how a conversion of the frame rate shall be executed.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Batch conversions and automation &gt; Watch Folder Mode &gt; Configuring Watch Folder &gt; Timecode Convert and Recut</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Watch Folder Configuration,Watch Folder Configuration Frame Rate Convert,Watch Folder Configuration Recut by timecode segments,Watch Folder Configuration Segments,Watch Folder Configuration Timecode Convert" />
+   <meta name="description" content="Timecode conversion method Timecode conversion will be performed if the Override timecode standard and frame rate option is used in General page and the specified Frame Rate or" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "wf_timecode_convert_and_recut.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Timecode Convert and Recut</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?wf_timecode_convert_and_recut.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="batch-conversions.htm">Batch conversions and automation</a> &gt; <a href="watch_folder_mode.htm">Watch Folder Mode</a> &gt; <a href="configuring-watch-folder.htm">Configuring Watch Folder</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Timecode Convert and Recut</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="wf_output_settings.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="configuring-watch-folder.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="wf-text-replace.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal" style="margin: 0 5px 11px 72px;"><img width="673" height="509" style="margin:0;width:673px;height:509px;border:none" src="wf_tcconvert_recut.png"/></p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Timecode conversion method</span></p>
+<p class="p_Normal">Timecode conversion will be performed if the <span class="f_Emphasize">Override timecode standard and frame rate</span> option is used in <a href="wf_general.htm" class="topiclink">General</a> page and the specified Frame Rate or Timecode Standard is different from the one selected in the <a href="wf_output_settings.htm" class="topiclink">Output Settings</a>. </p>
+<p class="p_Normal">In the first field you should specify the programme start timecode i.e. the timecode of the first frame of the video associated with the subtitle file.</p>
+<p class="p_Normal">This parameter is very important for the conversion process. Be sure that the correct value is specified.</p>
+<p class="p_Normal">When the <span class="f_Emphasize">Auto calculate the timecode</span> option is clicked it is assumed that the programme starts on the closest hour value <span class="f_Emphasize">before</span> the first subtitle In-cue.</p>
+<p class="p_Normal">For example, if the first subtitle starts at 01:00:10:00 the start TC will be considered to be 01:00:00:00; and if the first subtitle starts on 00:59:52:00, the start TC will be considered to be 00:00:00:00.</p>
+<p class="p_Normal">The options listed below depend on the source and target frame rates and timecode formats. Your choice depends on the conversion algorithm used to produce the two videos.</p>
+<p class="p_Normal">The item marked with Default is the most commonly used method for the selected source/target frame rates and timecode formats.</p>
+<p class="p_Normal">Following is a brief explanation of the common options:</p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:100%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:161px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">No Conversion</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The timecodes remain the same. In fact the frames part might be adjusted to match the new frame rate.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:161px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Default</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The Default option will use the most common way for converting the timecode to the new frame rate. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:161px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Keep Frame Number</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Keeps the frame when the subtitle appears and according to the selected Video Standard automatically recalculates the timecodes. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:161px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Keep Time</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">If you convert between different frame rates the program will keep the time when the subtitle appear or disappear.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal"><span class="f_SubHeader1">Note:</span> The <span class="f_Emphasize">Default</span> and the options in the Advanced Section could be different from those illustrated by the image above.</p>
+<p class="p_Normal">The <span class="f_Emphasize">Advanced</span> options will vary depending on the original frame rate or TC format which have been set and the new ones.</p>
+<p class="p_SubHeader" style="border-right: none; border-left: none;"><span class="f_SubHeader">Recut</span></p>
+<div style="text-align: left; text-indent: 0; padding: 0 0 0 0; margin: 0 5px 11px 38px;"><table style="width:100%; border:none; border-spacing:0; border-collapse:collapse;">
+<tr>
+<td style="vertical-align:top; width:142px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Move by</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Shifts the time code forward (increment) if a positive value is entered and backward (decrement) if negative value is entered.</span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:142px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Reference Point</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">Moves all timecodes forward or backward so the selected subtitle’s in-cue matches the specified timecode. </span></p>
+</td>
+</tr>
+<tr>
+<td style="vertical-align:top; width:142px; height:38px; padding:0; border:solid thin #000000;"><p class="p_IndentedHilite"><span class="f_IndentedHilite">Auto</span></p>
+</td>
+<td style="vertical-align:top; padding:0; border:solid thin #000000;"><p class="p_Indented"><span class="f_Indented">The Auto option will automatically recut the subtitle's timecode to 00:00:00:00.</span></p>
+<p class="p_Indented"><span class="f_Indented">For example, if the first subtitle of the input file starts from 10:00:15:00 after the conversion the first subtitle timecode will be instead changed to 00:00:15:00.</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="p_Normal">The default option is Move by with a timecode of 00:00:00:00 which means that no recut is performed.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Recut by Timecode segments</span></p>
+<p class="p_Normal">As the name suggests the recut is performed on segments. Each segment is defined by <span class="f_Emphasize">Start</span> and <span class="f_Emphasize">End</span> timecodes. All subtitles placed between these timecodes will be moved to the new <span class="f_Emphasize">Destination TC</span>. Typical example for such type of recut is adding or removing space for commercial breaks. </p>
+<p class="p_Normal">Selecting the <span class="f_Emphasize">Recut by Timecode segments</span> option and then pressing the corresponding<span class="f_Emphasize"> Config</span> button will open the following dialog:</p>
+<p class="p_Picture"><img width="444" height="267" style="margin:0;width:444px;height:267px;border:none" src="wf-tc-segments.png"/></p>
+<p class="p_Normal">To add a subtitle segment press the <span class="f_Emphasize">Add</span> button and then fill the start and end points of the segment in <span class="f_Emphasize">Start TC</span> and <span class="f_Emphasize">End TC</span> fields, then enter the new start point for the subtitles in that segment in the <span class="f_Emphasize">Destination TC</span> box. According to the image above all subtitles in the source file located between 00:10:00:00 and 00:25:00:00 will be recut to start from 00:13:00:00 instead. </p>
+<p class="p_Normal"><span class="f_SubHeader1">Note:</span> Subtitles that span across segment's boundaries (Start TC or End TC are placed between the subtitle's In- and Out-cues) are discarded during the recut and this is indicated in the error log.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Recut by using external Timecode Segments file</span></p>
+<p class="p_Normal">Similar to the previous option, the <span class="f_Emphasize">Use external .segments file</span> one enables you to perform Recut on selected parts of the source file. The difference is, however, that it reads the parts which must be Recut from external file which gives the flexibility to perform this kind of operations for each file that will be converted without having to adjust the segment start and end time code by hand. </p>
+<p class="p_Normal">In order for the option to properly work a simple naming convention must be used to ensure that EZConvert correctly recognizes the file containing the Time Code segments for the Recut. It must have the same name as the subtitles file with the <span class="f_Emphasize">.segments</span> extension, for example <span class="f_Emphasize">MySubtitles.stl</span> and <span class="f_Emphasize">MySubtitles.segments</span>. The .segment file must also be submitted to the Watch Folder in advance, before submitting the source file for conversion. </p>
+<p class="p_Normal">The file with the TC segments must follow the hierarchy and the structure of a regular, UTF-8 encoded XML file:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;?xml&nbsp;version=&quot;1.0&quot;&nbsp;encoding=&quot;UTF-8&quot;&nbsp;?&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;tc_segments&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:43px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&lt;tc_segment&nbsp;start_tc=&quot;10:00:00:00&quot;&nbsp;end_tc=&quot;10:20:00:00&quot;&nbsp;destination_tc=&quot;00:00:00:00&quot;&nbsp;/&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:43px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&lt;tc_segment&nbsp;start_tc=&quot;10:20:00:00&quot;&nbsp;end_tc=&quot;10:42:50:00&quot;&nbsp;destination_tc=&quot;00:22:00:00&quot;&nbsp;/&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:43px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&lt;tc_segment&nbsp;start_tc=&quot;10:42:00:00&quot;&nbsp;end_tc=&quot;10:57:00:00&quot;&nbsp;destination_tc=&quot;00:44:57:00&quot;&nbsp;/&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;/tc_segments&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&nbsp;</span></p>
+<p class="p_Normal">Each part of the file for which the Recut will be performed must be described in individual<span class="f_Emphasize"> &lt;tc_segment /&gt;</span> tag with the following attributes:</p>
+<p class="p_Normal"><span style="width:10px;display:inline-block">&nbsp;</span><span class="f_Emphasize">start_tc</span> - declares the start point of the segment in the original file;</p>
+<p class="p_Normal"><span style="width:10px;display:inline-block">&nbsp;</span><span class="f_Emphasize">end_tc</span> - declares the end point of the segment in the original file;</p>
+<p class="p_Normal"><span style="width:10px;display:inline-block">&nbsp;</span><span class="f_Emphasize">destination_tc</span> - sets the new timecode for the subtitles in that segment.</p>
+<p class="p_Normal">Performing the Recut operation using the above example will do two things simultaneously - the timecode of all subtitles found within the segments will change from 10:00:00:00 to 00:00:00:00 and secondly a 2 minute break will be inserted before the beginning of Segment 2 and Segment 3.</p>
+<p class="p_Normal">In addition instead of specifying the <span class="f_Emphasize">end_tc</span> for of the segments, you can give their duration:</p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;?xml&nbsp;version=&quot;1.0&quot;&nbsp;encoding=&quot;UTF-8&quot;&nbsp;?&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;tc_segments&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:43px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&lt;tc_segment&nbsp;start_tc=&quot;00:00:00:00&quot;&nbsp;dur_tc=&quot;00:20:00:00&quot;&nbsp;destination_tc=&quot;10:00:00:00&quot;/&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:43px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&lt;tc_segment&nbsp;start_tc=&quot;00:22:00:00&quot;&nbsp;dur_tc=&quot;00:20:00:00&quot;&nbsp;/&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span style="width:43px;display:inline-block">&nbsp;</span><span class="f_CodeExample">&lt;tc_segment&nbsp;start_tc=&quot;00:44:00:00&quot;&nbsp;dur_tc=&quot;00:42:00:00&quot;&nbsp;/&gt;</span></p>
+<p class="p_CodeExample" style="page-break-inside: avoid;"><span class="f_CodeExample">&lt;/tc_segments&gt;</span></p>
+<p class="p_Normal">Duration of each individual segment can be expressed as:</p>
+<p class="p_Normal"><span style="width:10px;display:inline-block">&nbsp;</span><span class="f_Emphasize">dur_tc</span> - duration in SMPTE HH:MM:SS:FF timecode;</p>
+<p class="p_Normal"><span style="width:10px;display:inline-block">&nbsp;</span><span class="f_Emphasize">dur_frames</span> - duration as number of video frames.</p>
+<p class="p_Normal">If the <span class="f_Emphasize">destination_tc</span> attribute isn't present for the first segment then EZConvert will automatically recut all subtitles to the 00:00:00:00 point as if <span class="f_Emphasize">destination_tc </span>bas been set to<span class="f_Emphasize">&quot;00:00:00:00&quot;</span>. When <span class="f_Emphasize">destination_tc</span> isn't specified set for the subsequent segment, then the subtitles found within it will be recut right after the end of the previous segment. </p>
+<p class="p_Normal">The second example shown above will also perform two actions, it will change the timecode from 00:00:00:00 to 10:00:00:00 for all subtitles found within the segments but unlike the first example it will remove 2 minute breaks from the timecode of the subtitles in Segment 2 and Segment 3. </p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Recut Before/After TC conversion</span></p>
+<p class="p_Normal"><span class="f_Indented">The moment when the recut (offset) is performed could have a great impact on the result. </span></p>
+<p class="p_Normal">In general if for instance the input subtitles starts form 10:00:00:00 and the output should start from 00:00:00:00 the recut should be performed before the timecode conversion. </p>
+<p class="p_Normal">In the opposite situation when the input file starts from zero and the output should start at 10:00:00:00 the recut should be performed after the timecode conversion.</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>

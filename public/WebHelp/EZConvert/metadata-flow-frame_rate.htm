@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <title>Batch conversions and automation &gt; Metadata pass-through &gt; Frame Rate and Timecode</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="" />
+   <meta name="description" content="Utilizing the original frame rate and timecode format of the source file can be extremely helpful as it reduces the number of Watch Folders or Command Line configurations..." />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <link type="text/css" href="custom.css" rel="stylesheet" />
+
+   <style TYPE="text/css" media="screen"> 
+      html, body { margin:0; 
+        padding:0; 
+        background: #ffffff; 
+      } 
+      div#printheader { display: none; }
+      #idheader { 
+        width:100%; 
+        height:auto; 
+        padding: 0; 
+        margin: 0;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      } 
+      /* The "min-height" for "#idheader table" ensures that the (blue) header of the topic
+         has at least the same height as the header of the navigation panel left of it */
+      #idheader table { background: #FFFFFF; min-height: 59px }             
+      #idheader h1 span { color: #2d77bd }    
+      #idheaderbg { background-image: url("head.png"); background-repeat: repeat-x }
+      #idnav {
+        text-align: right;
+        width: 126px;
+        vertical-align: middle;        
+      } 
+      #idnav a { text-decoration: none }
+      #idnav span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 4px;
+        background:url('hm_webhelp_buttons_grey.png') top left no-repeat;
+      } 
+      #idnav a span {
+        background-image:url('hm_webhelp_buttons_white.png');
+      } 
+      #idnav a span:hover {
+        background-image:url('hm_webhelp_buttons_orange.png');
+      } 
+      #idnav span.hmbtnprev { background-position: 0 -32px }
+      #idnav span.hmbtnnext { background-position: -24px -32px }
+      #idnav span.hmbtntop  { background-position: -48px -32px }
+      #idnav span.hmbtntoggle  { width: 20px; background-position: -70px -32px }
+      #idnav span.hmbtnprint  { background-position: -88px -32px }
+
+      #callout-table, #overview-table {display:block; position:relative; top:0; left:0;}
+      #callout-icon {display:block; position:absolute; top:-11px; left:-11px;}
+      #callout-icon-flag {display:block; position:absolute; top:-11px; left:-8px;}
+      #callout-table a {text-decoration: none; color: blue;}
+      #callout-table a:visited {text-decoration: none; color: blue;}
+      #overview-table a {text-decoration: none; color: black;}
+      #overview-table a:visited {text-decoration: none; color: black;}
+      #callout-table a:hover, #overview-table a:hover {text-decoration: underline;}       
+      p.help-url { margin: 20px 0 5px 0; text-align: center; font-size: 80%; text-decoration: none }      
+      #switchtoggles { text-align: right; padding: 0 2px 0 0; font-size: 90%; } 
+      .sync-toc { color: #FFFFFF; font-size: 11pt; font-weight: bold; display: none; }
+      .sync-toc a { color: #FFFFFF; text-decoration: none; font-weight: bold;}
+      .sync-toc a:visited { color: #FFFFFF; }
+      .sync-toc a:hover { text-decoration: underline; color: #ccdbe9; }
+      a.hmanchor { display: inline-block; margin-top: -4em; padding-top: 4em }	  
+   </style>
+   <style TYPE="text/css" media="print">
+      div#idheader, img.dropdown-toggle-icon, p.help-url { display:none } 
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "metadata-flow-frame_rate.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+
+
+<div id="printheader"><p class="p_TopicTitle"><span class="f_TopicTitle">Frame Rate and Timecode</span></p>
+</div>
+<div id="idheader">
+<div id="idheaderbg">
+<table style="width:100%;border:none;margin:0px;background:transparent;" cellspacing="0" cellpadding="0"> 
+  <tr>
+    <td class="topichead" style="text-align:left; vertical-align:bottom">
+      <p class="sync-toc">&lt;&lt; <a rel="nofollow" href="index.html?metadata-flow-frame_rate.htm" target="_top">Click to Display Table of Contents</a> &gt;&gt;</p>
+      <p class="crumbs"><b>Navigation:</b>&nbsp;
+      
+      <a href="batch-conversions.htm">Batch conversions and automation</a> &gt; <a href="metadata-flow.htm">Metadata pass-through</a>&nbsp;&gt;</p>
+   
+      <p class="p_TopicTitle"><span class="f_TopicTitle">Frame Rate and Timecode</span></p>
+
+    </td>
+    <td class="topichead" id="idnav">
+      
+      <a href="metadata-flow.htm" title="Previous Topic"><span class="hmbtnprev"></span></a>
+      <a href="metadata-flow.htm" title="Parent Chapter"><span class="hmbtntop"></span></a>
+      <a href="metadata-flow-language.htm" title="Next Topic"><span class="hmbtnnext"></span></a>
+      
+    </td>
+  </tr>  
+</table>
+</div>
+</div>  
+
+<div id="idcontent"><div id="innerdiv">
+<!-- Ask Internet Explorer 6.users to update their obsolete and dangerous browser --> 
+<!--[if lt IE 7]><div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
+
+<!--ZOOMRESTART-->
+<p class="p_Normal">Utilizing the original frame rate and timecode format of the source file can be extremely helpful as it reduces the number of <a href="watch_folder_mode.htm" class="topiclink">Watch Folders</a> or <a href="app_b_command_line_params.htm" class="topiclink">Command Line</a> configurations needed in the day-to-day operations. Now, a single Watch Folder or the same Command Line configuration can effectively be used for conversions of files intended and created for different frame rates.</p>
+<p class="p_Normal">The process is quite simple: </p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;">1. Set the Frame Rate parameter in the Watch Folder or the .cfg configuration file to <span class="f_Emphasize">&lt;from_source&gt;</span>. </p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;">Note: Please refer to the topics dedicated to configuring <a href="wf_output_settings.htm" class="topiclink">Watch Folder</a> or doing the conversion with the <a href="command-line-paramaters.htm" class="topiclink">Command Line</a> tool for the details.</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;">2. If the <span class="f_Emphasize">source file doesn't contain information</span> about the <span class="f_Emphasize">frame rate</span>, the conversion will be canceled and the appropriate message will be output in Watch Folder's error log or in the Command Line console (error stream). </p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;">3. If the <span class="f_Emphasize">source file has information</span> about the <span class="f_Emphasize">frame rate</span> <span style="text-decoration: underline;">but not about the</span> <span class="f_Emphasize">timecode format</span> (drop or non-drop), the timecode format selected in Watch Folder's/Command Line configuration will be used instead. </p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;">4. If the <span class="f_Emphasize">source file contains both the frame rate and timecode format</span> , the conversion will be initiated and the output will be converted in the same frame rate /timecode format as the frame rate of the source file. </p>
+<p class="p_Normal">For your convenience, we compiled a list of the subtitling formats supporting those parameters.</p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Formats supporting Frame Rate and Timecode Format</span></p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;">Our proprietary EZT and EZTXML formats</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="https://www.eztitles.com/Webhelp/EZTitles/export_subtitles_ascii.htm" target="_blank" class="weblink" title="https://www.eztitles.com/Webhelp/EZTitles/export_subtitles_ascii.htm">Plain ASCII (.txt)</a> created by EZTitles and exported with the File Header option turned on</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="https://www.eztitles.com/Webhelp/EZTitles/export_subtitles_rtf.htm" target="_blank" class="weblink" title="https://www.eztitles.com/Webhelp/EZTitles/export_subtitles_rtf.htm">RTF, Doc or DocX</a> created by EZTitles and exported with the File Header option turned on</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_ttml1-ttml2.htm" class="topiclink">TTML ver.1 and TTML</a> ver.2 when timeBase=&quot;SMPTE&quot;</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_ebu_tt.htm" class="topiclink">EBU-TT and EBU-TT ver. 1.1</a> when timeBase=&quot;SMPTE&quot;</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_ebu_tt.htm" class="topiclink">EBU-TT ver.1.0 BBC</a></p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_netflix.htm" class="topiclink">Netflix Timed Text</a> when timeBase=&quot;SMPTE&quot;. The only exception is Netflix-TT file in Japanese as these are IMSC compliant and as such the timeBase parameter is always set as &quot;Media&quot;</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_itt.htm" class="topiclink">Apple iTunes Timed Text</a></p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_fcp_xml.htm" class="topiclink">Final Cut Pro XML</a> (FCP7 and FCPX)</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_captions_mcc.htm" class="topiclink">MCC</a></p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Formats supporting only Frame Rate</span></p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_dcdm.htm" class="topiclink">DCDM SMPTE 428-7-2007 XML</a></p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_ttml1-ttml2.htm" class="topiclink">TTML ver.1 and TTML</a> ver.2 when timeBase=&quot;Media&quot;</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_ebu_tt.htm" class="topiclink">EBU-TT and EBU-TT ver. 1.1</a> when timeBase=&quot;Media&quot;</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_imsc1-imsc11.htm" class="topiclink">IMSC ver. 1 and IMSC ver.1.1</a></p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_ebu_tt.htm" class="topiclink">EBU-TT-D and EBU-TT-D BBC</a></p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_smpte-tt_subtitles.htm" class="topiclink">SMPTE-TT Subtitles</a></p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_netflix.htm" class="topiclink">Netflix Timed Text</a> when timeBase=&quot;Media&quot;. Netflix-TT files in Japanese are IMSC compliant and such timeBase is always set to &quot;Media&quot; for them</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_disney.htm" class="topiclink">Disney IMSC 1.1</a></p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_ooyala.htm" class="topiclink">OOYALA Timed Text</a></p>
+<p class="p_SubHeader1"><span class="f_SubHeader1">Formats limited to work with certain frame rates only</span></p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_ebu.htm" class="topiclink">EBU STL</a> &amp; <a href="export_subtitles_ebu_arte.htm" class="topiclink">EBU for Arte</a> -limited by the original specifications for use with materials in 25fps and 29.97fps only. With a custom-made change EBU STL do also support 24fps.</p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_890.htm" class="topiclink">890</a> - limited to 23.976fps, 25fps and 29.97fps. </p>
+<p class="p_Normal" style="margin: 0 5px 11px 62px;"><a href="export_subtitles_softitler_txt.htm" class="topiclink">Softitler TXT</a> - limited to 25fps and 29.97fps </p>
+<p class="p_Normal">&nbsp;</p>
+<p class="p_Normal">&nbsp;</p>
+
+<!--ZOOMSTOP-->
+</div></div>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $(window).bind('resize', function() {
+      var y = $('#idheader').height(); 
+      $('#idcontent').css('margin-top', y);
+      var par = window.parent;
+      if ($( par ).width() <= $( window ).width()+20) {
+        $('#idheader').css('position', 'relative');
+        $('#idcontent').css('margin-top', 0);
+        $('#idbacktotop').css('display', 'block');
+        $('.hmanchor').css('margin-top', -20);
+	$('.hmanchor').css('padding-top', 20);
+      }
+      else {
+        $('#idheader').css('position', 'fixed');
+        $('#idcontent').css('margin-top', $('#idheader').height());
+        $('#idbacktotop').css('display', 'none');
+        $('.hmanchor').css('margin-top', -y-20);
+	$('.hmanchor').css('padding-top', y+20);
+      }
+    });
+    
+    $(window).resize(); //trigger event for initially small displays
+  });
+
+if ((!parent.hmNavigationFrame) && (parent.location) && (parent.location.href)) { $('.sync-toc').show();$('p.crumbs').hide();}
+
+</script>
+</body>
+</html>
