@@ -27,6 +27,9 @@ jobs:
           npm run build --if-present
           npm run test --if-present
 
+      - name: get zip shit
+        run: apt-get install zip
+
       - name: Zip artifact for deployment
         run: zip -r release.zip * .env .next
 
@@ -50,7 +53,7 @@ jobs:
           name: node-app
 
       - name: unzip artifact for deployment
-        run: echo "n" | unzip -o release.zip
+        run: unzip -o release.zip
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
