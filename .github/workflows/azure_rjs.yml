@@ -33,7 +33,7 @@ jobs:
       - name: Zip artifact for deployment
         run: |
           zip -r release.zip * .next
-          rm -r .next node_modules
+          rm -r .next node_modules public
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
