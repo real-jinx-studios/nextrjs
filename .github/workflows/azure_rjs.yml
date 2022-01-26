@@ -32,7 +32,7 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          zip -r release.zip ./* .env .next
+          zip -r release.zip ./* .next
           rm -r .env .next node_modules
 
       - name: Upload artifact for deployment job
