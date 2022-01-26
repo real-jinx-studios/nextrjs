@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEntries } from "../../lib/swr-hooks";
 import { useRouter } from "next/router";
 import styles from "../../styles/login.module.css";
-import CustomInput from "../../components/customInput";
+import CustomInput from "../../components/inputs/customInput";
 import Link from "next/link";
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -89,7 +89,7 @@ export default function ServicePortal() {
               <CustomInput type="text" placeholder="First Name" />
               <CustomInput type="text" placeholder="Last Name" />
               <CustomInput type="text" placeholder="Username" />
-              <CustomInput type="text" placeholder="Email" />
+              <CustomInput type="email" placeholder="*Error in Email" error />
               <CustomInput type="password" placeholder="Password" />
               <CustomInput type="password" placeholder="Repeat Password" />
             </div>

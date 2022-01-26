@@ -7,7 +7,7 @@ import MyImage from "../../components/myImage";
 import NumberFormat from "react-number-format";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Cookies from "js-cookie";
-import CustomInput from "../../components/customInput";
+import CustomInput from "../../components/inputs/customInput";
 import styles from "../../styles/login.module.css";
 import axios from "axios";
 export default function Checkout() {

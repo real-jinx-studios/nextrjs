@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { useRouter } from "next/router";
-import CustomInput from "./customInput";
+import CustomInput from "./inputs/customInput";
 
 function getModalStyle() {
   return {
@@ -76,11 +76,5 @@ export default function SimpleModal(props) {
     </div>
   );
 
-  return (
-    <div>
-
-        {body}
-
-    </div>
-  );
+  return <div>{body}</div>;
 }
