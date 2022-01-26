@@ -27,14 +27,6 @@ jobs:
           npm run build --if-present
           npm run test --if-present
 
-      - name: get zip shit
-        run: sudo apt-get install zip
-
-      - name: Zip artifact for deployment
-        run: |
-          zip -r release.zip * .next
-          rm -r .next node_modules
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
@@ -54,16 +46,11 @@ jobs:
         with:
           name: node-app
 
-      - name: unzip artifact for deployment
-        run: |
-          unzip -o release.zip
-          rm -r release.zip
-
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'rjs'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4844EB3487C8440394F28440A2D514FE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9F7DCB45C26C4BD3A9A85152FE663604 }}
           package: .
