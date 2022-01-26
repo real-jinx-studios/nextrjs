@@ -31,7 +31,9 @@ jobs:
         run: sudo apt-get install zip
 
       - name: Zip artifact for deployment
-        run: zip -r release.zip * .env .next
+        run: |
+          zip -r release.zip ./* .env .next
+          rm -r .env .next node_modules
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -53,7 +55,9 @@ jobs:
           name: node-app
 
       - name: unzip artifact for deployment
-        run: unzip -o release.zip
+        run: |
+          unzip -o release.zip
+          rm -r release.zip
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
