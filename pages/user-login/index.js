@@ -94,7 +94,7 @@ export default function ServicePortal() {
               <CustomInput type="password" placeholder="Repeat Password" />
             </div>
             <ReCAPTCHA
-              sitekey="6LekZTceAAAAAI6Rd6bKCZ-TPHh4BLwuLq1XavYx"
+              sitekey="6LeWlToeAAAAAKy0nyjcN6pAOsgq3W1zWlv4beuA"
               onChange={onChange}
             />
             <button className={styles.submit_button} type="submit">
