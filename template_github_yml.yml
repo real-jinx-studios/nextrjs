@@ -59,6 +59,7 @@ jobs:
           unzip -o release.zip
           rm -r release.zip
 
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
