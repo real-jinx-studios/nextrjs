@@ -1,13 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import styles from "./navbar2.module.css";
 import Link from "next/link";
-import utilStyles from "../styles/utils.module.css";
 import MyImage from "./myImage";
 import cn from "classnames";
 import { useRouter } from "next/router";
-import HeaderMenuButton from "./HeaderMenuButton";
 import Cookies from "js-cookie";
-import { motion } from "framer-motion";
 import { Store } from "../utils/store";
 
 export default function Navbar2() {
