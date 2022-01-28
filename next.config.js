@@ -62,8 +62,7 @@ module.exports = {
       },
       {
         source: "/Webhelp/EZTitles Plug-in for ProMedia Carbon",
-        destination:
-          "/Webhelp/EZTitles Plug-in for ProMedia Carbon/index.html",
+        destination: "/Webhelp/EZTitles Plug-in for ProMedia Carbon/index.html",
         permanent: true,
       },
     ];
