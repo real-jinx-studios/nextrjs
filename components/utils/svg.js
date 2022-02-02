@@ -1,4 +1,4 @@
-import styles from "./homeMain.module.css";
+import styles from "../homeMain.module.css";
 
 /*
 <svg className={styles.shape_top} preserveAspectRatio="none" viewBox="0 0 86 86"

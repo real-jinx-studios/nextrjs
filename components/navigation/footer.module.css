@@ -1,7 +1,8 @@
 .footer_main{
     background: url(/images/footer-bg3.svg) no-repeat center bottom;
     color: #fff;
-    padding: 200px 11px 90px;
+    padding: 90px 11px 90px;
+    margin-top:200px;
     font-size: 0.938em;
     position: relative;
     z-index: 3;

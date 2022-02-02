@@ -1,22 +1,19 @@
 import React, { useContext, useState } from "react";
-import { Store } from "../utils/store";
+import { Store } from "../../utils/store";
 import axios from "axios";
 
 export default function StateWindow() {
-  const { state, dispatch } = useContext(Store);
+  const { app_state, dispatch } = useContext(Store);
   const [closed, setClosed] = useState(false);
   const [users, setUsers] = useState(<div>loadign</div>);
   const handleClose = async () => {
     setClosed(!closed);
-    const {data} = await axios.get(`/api/get-entries`);
+    const { data } = await axios.get(`/api/get-entries`);
 
-
-    setUsers((users)=>{
-      return <div>{JSON.stringify(data[data.length-1])}</div>
-    })
+    setUsers((users) => {
+      return <div>{JSON.stringify(data[data.length - 1])}</div>;
+    });
   };
-
-
 
   return (
     <div className={`stats-main ${closed}`}>
@@ -35,7 +32,7 @@ export default function StateWindow() {
           </svg>
         </span>
       </h5>
-      {JSON.stringify(state)
+      {JSON.stringify(app_state)
         .split(",")
         .map((x) => (
           <li key={x}>{x}</li>

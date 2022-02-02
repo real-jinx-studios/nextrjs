@@ -1,7 +1,7 @@
 import { useState, useEffect, Ref, useRef } from "react";
 import styles from "./navbarSmall.module.css";
 import Link from "next/link";
-import MyImage from "./myImage";
+import MyImage from "../utils/myImage";
 import cn from "classnames";
 import { useRouter } from "next/router";
 

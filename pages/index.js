@@ -3,9 +3,7 @@ import Layout, { siteTitle } from "../components/layout";
 import HomeMain from "../components/homeMain";
 import HomeMain2 from "../components/homeMain2";
 import Link from "next/link";
-import axios from "axios";
-import useSWR from "swr";
-import { query } from "../lib/db";
+import { connectToDB, dbQuery } from "../lib/db";
 
 export default function Home(props) {
   const { products } = props;
@@ -16,8 +14,8 @@ export default function Home(props) {
         <HomeMain2 />
         <div className="product-wrapper">
           {products.map((x) => (
-            <Link href="/subtitle3">
-              <div key={x.name} className="grid-wrapper__item">
+            <Link key={x.name} href="/subtitle3">
+              <div className="grid-wrapper__item">
                 <h3>{x.name}</h3>
                 <p>
                   Editions:
@@ -58,23 +56,13 @@ export default function Home(props) {
   );
 }
 export async function getStaticProps() {
-  /*const data = await axios.get(`/api/get-products`);*/
-  //connection to middleware for static generation
-  /*const res = await fetch("http://localhost:5000/get-products");
-  const data = await res.json();
+  const client = await connectToDB();
+  const queryObject = { query: "SELECT * FROM products", values: [] };
+  const results = await dbQuery(client, queryObject);
+
   return {
     props: {
-      products: data,
-    },
-  };*/
-  const data = await query(`
-            SELECT *
-            FROM products
-        `);
-  console.log(data);
-  return {
-    props: {
-      products: JSON.parse(JSON.stringify(data)),
+      products: results,
     },
   };
 }

@@ -1,16 +1,16 @@
 import "../styles/global.css";
-import Navbar2 from "../components/navbar2";
-import Footer from "../components/footer";
+import Navbar2 from "../components/navigation/navbar2";
+import Footer from "../components/navigation/footer";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import Link from "next/link";
 
 import { useRouter } from "next/router";
 import Modal from "../components/Modal";
-import NavbarSmall from "../components/navbarSmall";
+import NavbarSmall from "../components/navigation/navbarSmall";
 import Head from "next/head";
 import { StoreProvider } from "../utils/store";
-import StateWindow from "../components/stateWindow";
+import StateWindow from "../components/utils/stateWindow";
 import { SessionProvider } from "next-auth/react";
 
 export default function App({
@@ -31,6 +31,7 @@ export default function App({
         setTargetReached(false);
       }
     }, []);
+    console.log(pageProps, "assign");
 
     useEffect(() => {
       const media = window.matchMedia(`(max-width: ${width}px)`);

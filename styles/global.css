@@ -5,7 +5,7 @@ html,
 /* ------------------- */
 
 :root {
-  --offset-top: 4.3rem;
+  --offset-top: 4.9rem;
   --large-max-width: 1325px;
   --medium-max-width: 1325px;
   --small-max-width: 1325px;
@@ -31,6 +31,7 @@ html,
   --main-color-somewhat-light: #186eb4;
   --main-color-very-light: #288ee2;
   --main-color-super-light: #6fb4eb;
+  --clr-primary: #288ee2;
   --system-w-blue: #007aff;
   --system-b-blue: #0a84ff;
   --system-w-teal: #5ac8fa;
@@ -798,3 +799,83 @@ padding: 0.8em;
   align-items: center;
   flex-direction: column;
 }
+
+
+/*searchbar*/
+.content-wrapper{
+  position:relative;
+  width:50px;
+  height:44px;
+}
+.content{
+  top:0;
+  left:0;
+  width: 430px;
+  position: absolute;
+  z-index:3;
+}
+.search-bar {
+  --size: 44px;
+  border: 2px solid var(--clr-primary);
+  display: flex;
+  height: var(--size);
+  width: var(--size);
+  border-radius: 100vh;
+  padding: 3px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.11);
+}
+.search-bar__input {
+  flex-grow: 1;
+  font-size: 1.3rem;
+  padding: 0 0.5em;
+  border: 0;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  line-height: calc(var(--size) - 3px);
+}
+.search-bar__input:focus {
+  outline: 0;
+}
+.search-bar__submit {
+  position:relative;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  border-radius: 50%;
+  width: calc(var(--size) - 10px);
+  height: calc(var(--size) - 10px);
+  margin-left: auto;
+  transition: background 0.1s ease-in-out;
+}
+.search-bar__submit > svg{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+.search-bar:focus-within {
+  width: 100%;
+  background-color: #fefefe;
+}
+.search-bar:focus-within .search-bar__input {
+  opacity: 1;
+  cursor: initial;
+  width: calc(100% - var(--size));
+}
+.search-bar:focus-within .search-bar__submit {
+  background: var(--clr-primary);
+  color: #fefefe;
+}
+.search-bar:focus-within .search-bar__submit:focus, .search-bar:focus-within .search-bar__submit:hover {
+  outline: 0;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.35);
+}
+
+

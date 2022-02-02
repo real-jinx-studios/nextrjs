@@ -1,6 +1,6 @@
 import utilStyles from "../styles/utils.module.css";
 import styles from "./homeMain2.module.css";
-import MyImage from "./myImage";
+import MyImage from "./utils/myImage";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import AppShowcase from "./appShowcase";

@@ -1,15 +1,15 @@
 import Head from "next/head";
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 import { Store } from "../utils/store";
 
 const name = "Jinx Studios";
 export const siteTitle = "EZTitles Dev Studio";
 
 export default function Layout({ children, home, title, description }) {
-  const { state, dispatch } = useContext(Store);
-  const { logged_in, checkout } = state;
+  const { app_state, dispatch } = useContext(Store);
+  const { logged_in, checkout } = app_state;
   return (
-    <>
+    <Fragment>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="title" content={title || "EZTitles"} />
@@ -30,6 +30,6 @@ export default function Layout({ children, home, title, description }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main>{children}</main>
-    </>
+    </Fragment>
   );
 }

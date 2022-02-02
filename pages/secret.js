@@ -1,27 +1,12 @@
-import { useState, useEffect } from "react";
-import { useSession } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 
 export default function Secret() {
-  const { data: session } = useSession();
-  const [content, setContent] = useState();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/api/secret");
-      const json = await res.json();
-
-      if (json.content) {
-        setContent(json.content);
-      }
-    };
-    fetchData();
-  }, [session]);
-
+  const { status } = useSession();
   if (typeof window !== "undefined") {
     return null;
   }
 
-  if (!session) {
+  if (status !== "unauthorized") {
     return (
       <main>
         <div>
@@ -32,11 +17,10 @@ export default function Secret() {
   }
 
   return (
-    <main>
+    <section>
       <div>
-        <h1>Protected Page</h1>
-        <p>{content}</p>
+        <button className={"button_basic_long"}>sign out</button>
       </div>
-    </main>
+    </section>
   );
 }

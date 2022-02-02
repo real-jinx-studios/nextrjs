@@ -1,10 +1,12 @@
 import styles from "./input.module.css";
 
 export default function CustomInput(props) {
+  const { isRequired, reference } = props;
   if (props.error) {
     return (
       <label className={`${styles.input_wrapper} ${styles.two}`}>
         <input
+          ref={reference}
           className={styles.input}
           onChange={props.handleChange}
           type={props.type}
@@ -20,6 +22,7 @@ export default function CustomInput(props) {
   return (
     <label className={`${styles.input_wrapper} ${styles.one}`}>
       <input
+        ref={reference}
         className={styles.input}
         onChange={props.handleChange}
         type={props.type}
@@ -27,7 +30,11 @@ export default function CustomInput(props) {
         value={props.value}
         required
       />
-      <span className={styles.placeholder}>{props.placeholder}</span>
+      <span
+        className={`${styles.placeholder} ${isRequired ? styles.required : ""}`}
+      >
+        {props.placeholder}
+      </span>
     </label>
   );
 }

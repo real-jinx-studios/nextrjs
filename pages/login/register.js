@@ -33,7 +33,7 @@ export default function Register() {
       if (!res.ok) throw Error(json.message);
 
       Router.push(
-        "/user-login/register-success?query-insert-execution-time=" +
+        "/login/register-success?query-insert-execution-time=" +
           json.message +
           "ms"
       );

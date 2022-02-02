@@ -1,5 +1,5 @@
 import styles from "../styles/subtitle3.module.css";
-import MyImage from "../components/myImage";
+import MyImage from "../components/utils/myImage";
 import Link from "next/link";
 import ReactTooltip from "react-tooltip";
 import {
@@ -516,7 +516,7 @@ export default function Subtitle() {
         price: 80,
       },
     });
-    router.push("/user-login");
+    router.push("/login");
   };
   const handleCheckoutConvert = async (e) => {
     e.preventDefault();
@@ -549,7 +549,7 @@ export default function Subtitle() {
         price: 500,
       },
     });
-    router.push("/user-login");
+    router.push("/login");
   };
 
   return (

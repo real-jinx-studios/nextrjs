@@ -1,5 +1,5 @@
 import styles from "./subs.module.css";
-import MyImage from "./myImage";
+import MyImage from "./utils/myImage";
 import { useState } from "react";
 
 export default function SubscriptionCards(props) {

@@ -3,7 +3,7 @@ import Router from "next/router";
 import { Store } from "../../utils/store";
 import Layout from "../../components/layout";
 import Link from "next/link";
-import MyImage from "../../components/myImage";
+import MyImage from "../../components/utils/myImage";
 import NumberFormat from "react-number-format";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Cookies from "js-cookie";
@@ -13,12 +13,12 @@ import axios from "axios";
 export default function Checkout() {
   const [login, setLogin] = useState({ login: false });
   const [billing, setBilling] = useState(false);
-  const { data: session } = useSession();
+  const { data: session, state } = useSession();
 
-  const { state } = useContext(Store);
+  const { app_state } = useContext(Store);
   const {
     checkout: { checkoutItems },
-  } = state;
+  } = app_state;
 
   //handle and calculate total prices
   const [totalPrices, setTotalPrices] = useState({
@@ -31,7 +31,7 @@ export default function Checkout() {
     checkLogin();
   }, []);
   const checkLogin = async () => {
-    const loginTemp = JSON.parse(Cookies.get("session"));
+    /*const loginTemp = JSON.parse(Cookies.get("session"));
     if (loginTemp.logged_in === "true") {
       const details = axios
         .post("http://localhost:5000/get/user", {
@@ -45,7 +45,7 @@ export default function Checkout() {
         });
     } else {
       setLogin({ login: false });
-    }
+    }*/
   };
   const fetchLoginDetails = async (username) => {};
   const calculateTP = () => {
