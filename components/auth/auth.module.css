@@ -7,12 +7,37 @@
     top:var(--offset-top);
     margin-top:1em;
     position:relative;
+    background: #ffffff00 url("/images/parrot-img.svg") no-repeat 50% 50%;
+
+    background-size:100% 100%;
+}
+.section_decal_1{
+    position:absolute;
+    background: #ffffff00 url("/images/background-decal.svg") no-repeat 33% 88%;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    opacity:0.5;
+    transform: rotate(125deg);
+
+}
+.section_decal_2{
+    position:absolute;
+    background: #ffffff00 url("/images/background-decal.svg") no-repeat 20% 59%;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    opacity:0.5;
+    transform: rotate(-90deg);
 
 }
 
 .form{
+    width:max-content;
     border-radius: 20px;
-    padding: 3.2em 8em;
+    padding: 3.2em 5em;
     overflow: hidden;
     transition: 0.3s;
     position: relative;
@@ -27,7 +52,31 @@
     left: 0;
     bottom: 0;
     right:0;
-    background: #ffffff00 url("/images/parrot-img.svg") no-repeat -20% 29%;
+   /* background: #ffffff00 url("/images/parrot-img.svg") no-repeat -20% 29%;*/
+}
+.form_section_wrapper{
+    max-width:var(--input-filed-width);
+    position:relative;
+    margin:2em auto;
+}
+
+.form_section_title_wrapper h3{
+color:var(--clr-neutral-900);
+}
+.form_section_title_wrapper::before{
+    position:absolute;
+    content: attr(step-number);
+    text-align: center;
+    border:1px solid var(--clr-primary);
+    border-radius: 50%;
+    line-height:calc(2rem - 1px);
+    font-size:1rem;
+    top:0;
+    left:-2.5em;
+    width:2rem;
+    height:2rem;
+    transform:translateX(-50%);
+
 }
 .input_wrapper{
     position: relative;
@@ -35,7 +84,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap:1.2em;
+    gap:1em;
 }
 
 .input_wrapper *{z-index: 1}
@@ -130,4 +179,8 @@
 .title__section{
     text-align:center;
     padding:2em 0;
+    max-width:var(--input-filed-width);
+}
+.title__section h1, .title__section p{
+    color:var(--clr-neutral-800)
 }

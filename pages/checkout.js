@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import Router from "next/router";
-import { Store } from "../../utils/store";
-import Layout from "../../components/layout";
+import { Store } from "../utils/store";
+import Layout from "../components/layout";
 import Link from "next/link";
-import MyImage from "../../components/utils/myImage";
+import MyImage from "../components/utils/myImage";
 import NumberFormat from "react-number-format";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Cookies from "js-cookie";
-import CustomInput from "../../components/inputs/customInput";
-import styles from "../../styles/login.module.css";
+import CustomInput from "../components/inputs/customInput";
+import styles from "../styles/login.module.css";
 import axios from "axios";
 export default function Checkout() {
   const [login, setLogin] = useState({ login: false });
@@ -124,27 +124,7 @@ export default function Checkout() {
       <section className="checkout">
         <input type="checkbox" id="shit" className="input_c" />
         <div className="billing">
-          {!login.login && (
-            <div className="billing__inner">
-              <h2 className="billing__title">Welcome to EZTitles store</h2>
-              <h2 className="billing__description">
-                Please, log-in in your profile or continue as new customer
-              </h2>
-              <div className="billing__buttons">
-                <a
-                  href="#"
-                  onClick={signIn}
-                  className="button button_basic_long"
-                >
-                  LOG IN
-                </a>
-                <a href="#" className="button button_basic_long_inverted">
-                  NEW CUSTOMER
-                </a>
-              </div>
-            </div>
-          )}
-          {login.login && (
+          {
             <div className="billing__inner">
               <h2 className="billing__title">Billing details</h2>
               {/*<button onClick={signOut}>ok</button>*/}
@@ -209,7 +189,7 @@ export default function Checkout() {
                 </label>
               </form>
             </div>
-          )}
+          }
           <div className="billing__inner-step">
             <h2 className="billing-step__title">Hardware ID</h2>
           </div>

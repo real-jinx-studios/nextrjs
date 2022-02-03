@@ -9,16 +9,64 @@ import Loader from "../../components/utils/loader";
 
 export default function LoginForm(props) {
   //get where to redirect from login since could be checkout or user profile or other
-  const { destination } = props;
   const router = useRouter();
-  //make useRef const to attach to html input fields
+  const destination = router.query.destination;
+  //make useRef const to attach to html input fields for login
   const usernameRef = useRef();
   const passwordRef = useRef();
+  //make useRef const to attach to html input fields for registration billing details
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
+  const countryRef = useRef();
+  const cityRef = useRef();
+  const vatRef = useRef();
+  const streetAddr1Ref = useRef();
+  const streetAddr2Ref = useRef();
+  const postcodeRef = useRef();
+  //make useRef const to attach to html input fields for registration account details
+  const emailRef = useRef();
+  const r_usernameRef = useRef();
+  const r_passwordRef = useRef();
+  const r_passwordRepeatRef = useRef();
+  //make useRef const to attach to html input fields for policy
+  const policyRef = useRef();
 
   //state for the conditional rendering if register is true or false
   const [isLoading, setIsLoading] = useState(false);
   const [isRegister, setIsRegister] = useState(false);
   const [loginError, setIsLoginError] = useState(false);
+  const [reCAPTCHASuccess, setReCaptchaSuccess] = useState(false);
+
+  const onReCAPTCHASuccess = (e) => {
+    setReCaptchaSuccess(true);
+  };
+
+  const handleRegisterSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const registrationObject = {
+      firstName: firstNameRef.current.value,
+      lastName: lastNameRef.current.value,
+      country: countryRef.current.value,
+      city: cityRef.current.value,
+      vat: vatRef.current.value,
+      streetAddr1: streetAddr1Ref.current.value,
+      streetAddr2: streetAddr2Ref.current.value,
+      postcode: postcodeRef.current.value,
+      email: emailRef.current.value,
+      username: r_usernameRef.current.value,
+      password: r_passwordRef.current.value,
+      passwordRepeat: r_passwordRepeatRef.current.value,
+    };
+
+    if (!reCAPTCHASuccess) {
+      setIsLoading(false);
+      return;
+    }
+    console.log(registrationObject);
+    setIsLoading(false);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,52 +99,164 @@ export default function LoginForm(props) {
 
   return (
     <section className={styles.section}>
-      <div className="titleArea">
-        {isRegister ? (
-          <div className={styles.title__section}>
-            <h1>Registration</h1>
-            <p>
-              Please, provide all the necessary data needed for your Account
-              creation.
-            </p>
-          </div>
-        ) : (
-          <div className={styles.title__section}>
-            <h1>Login</h1>
-            <p></p>
-          </div>
-        )}
-      </div>
+      <div className={styles.section_decal_1} />
+      <div className={styles.section_decal_2} />
       <div className="form holder" className={styles.form}>
         {isRegister ? (
-          <form>
-            <div className={styles.input_wrapper}>
-              <CustomInput type="text" placeholder="First Name" isRequired />
-              <CustomInput type="text" placeholder="Last Name" isRequired />
-              <CustomInput type="text" placeholder="Country" isRequired />
-              <CustomInput type="text" placeholder="VAT Number" isRequired />
-              <CustomInput type="text" placeholder="City" isRequired />
-              <CustomInput
-                type="text"
-                placeholder="Street Address line 1"
-                isRequired
-              />
-              <CustomInput type="text" placeholder="Street Address line 2" />
-              <CustomInput type="text" placeholder="Postal Code" isRequired />
+          <form onSubmit={handleRegisterSubmit}>
+            <div className={styles.title__section}>
+              <h1>Registration</h1>
+              <p>
+                Please, provide all the necessary data needed for your Account
+                creation.
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  width="48"
+                  height="48"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
+                  />
+                </svg>
+              </p>
             </div>
-            <div className={styles.input_wrapper}>
-              <CustomInput type="email" placeholder="Email" isRequired />
-              <CustomInput type="text" placeholder="Username" isRequired />
-              <CustomInput type="password" placeholder="Password" isRequired />
-              <CustomInput
-                type="password"
-                placeholder="Repeat Password"
-                isRequired
-              />
+            <div className={styles.form_section_wrapper}>
+              <div
+                className={styles.form_section_title_wrapper}
+                step-number="1"
+              >
+                <h3>Billing Details</h3>
+              </div>
+              <div className={styles.input_wrapper}>
+                <CustomInput
+                  reference={firstNameRef}
+                  type="text"
+                  placeholder="First Name"
+                  isRequired
+                />
+                <CustomInput
+                  reference={lastNameRef}
+                  type="text"
+                  placeholder="Last Name"
+                  isRequired
+                />
+                <CustomInput
+                  reference={countryRef}
+                  type="text"
+                  placeholder="Country"
+                  isRequired
+                />
+                <CustomInput
+                  reference={vatRef}
+                  type="text"
+                  placeholder="VAT Number"
+                  isRequired
+                />
+                <CustomInput
+                  reference={cityRef}
+                  type="text"
+                  placeholder="City"
+                  isRequired
+                />
+                <CustomInput
+                  reference={streetAddr1Ref}
+                  type="text"
+                  placeholder="Street Address line 1"
+                  isRequired
+                />
+                <CustomInput
+                  reference={streetAddr2Ref}
+                  type="text"
+                  placeholder="Street Address line 2"
+                />
+                <CustomInput
+                  reference={postcodeRef}
+                  type="text"
+                  placeholder="Postal Code"
+                  isRequired
+                />
+              </div>
             </div>
-            <div className={styles.input_wrapper}>
-              <div className="recaptcha bullshit and checkbox"></div>
-              <div className="submit button div"></div>
+            <div className={styles.form_section_wrapper}>
+              <div
+                className={styles.form_section_title_wrapper}
+                step-number="2"
+              >
+                <h3>Account Details</h3>
+              </div>
+              <div className={styles.input_wrapper}>
+                <CustomInput
+                  reference={emailRef}
+                  type="text"
+                  placeholder="Email"
+                  isRequired
+                />
+                <CustomInput
+                  reference={r_usernameRef}
+                  type="text"
+                  placeholder="Username"
+                  isRequired
+                />
+                <CustomInput
+                  reference={r_passwordRef}
+                  type="password"
+                  placeholder="Password"
+                  isRequired
+                />
+                <CustomInput
+                  reference={r_passwordRepeatRef}
+                  type="password"
+                  placeholder="Repeat Password"
+                  isRequired
+                />
+              </div>
+            </div>
+            <div className={styles.form_section_wrapper}>
+              <div
+                className={styles.form_section_title_wrapper}
+                step-number="3"
+              >
+                <h3>Accept Privacy Policy:</h3>
+              </div>
+              <div className={styles.input_wrapper}>
+                <div className="recaptcha bullshit and checkbox">
+                  <input ref={policyRef} type="checkbox" id="policy" />
+                  <label for="policy">
+                    &nbsp;&nbsp; I agree that my data will be processed
+                    according to the{" "}
+                    <Link href="/legal/policy">
+                      <a>Privacy Policy</a>
+                    </Link>
+                    .
+                  </label>
+                  <br />
+                  <br />
+                  <ReCAPTCHA
+                    sitekey="6LeWlToeAAAAAKy0nyjcN6pAOsgq3W1zWlv4beuA"
+                    onChange={onReCAPTCHASuccess}
+                  />
+                </div>
+                <div className="">
+                  {!isLoading ? (
+                    <Fragment>
+                      <button className={styles.submit_button} type="submit">
+                        REGISTER
+                      </button>
+                    </Fragment>
+                  ) : (
+                    <div className={styles.loader_wrapper}>
+                      <Loader />
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </form>
         ) : (
@@ -111,11 +271,13 @@ export default function LoginForm(props) {
               reference={usernameRef}
               type="text"
               placeholder="Username"
+              isRequired
             />
             <CustomInput
               reference={passwordRef}
               type="password"
               placeholder="Password"
+              isRequired
             />
             {!isLoading ? (
               <Fragment>

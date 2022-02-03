@@ -516,7 +516,11 @@ export default function Subtitle() {
         price: 80,
       },
     });
-    router.push("/login");
+    /*router.push("/login");*/
+    router.push({
+      pathname: "/login",
+      query: { destination: "checkout" },
+    });
   };
   const handleCheckoutConvert = async (e) => {
     e.preventDefault();

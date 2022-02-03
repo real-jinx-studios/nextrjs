@@ -12,6 +12,14 @@ export default function Navbar2() {
   const { logged_in, checkout } = app_state;
   const { data: session, status } = useSession();
 
+  const logoutHandler = () => {
+    signOut({ redirect: false })
+      .then((response) => response)
+      .then((data) => {
+        router.replace("/login?destination=services-portal");
+      });
+  };
+
   const handleStateChange = (e) => {
     if (logged_in == true) {
       dispatch({ type: "LOG_OUT" });
@@ -179,7 +187,12 @@ export default function Navbar2() {
                       <li className={styles.portal_dropdown_ul_li}>
                         Edit Account
                       </li>
-                      <li className={styles.portal_dropdown_ul_li}>LOGOUT</li>
+                      <li
+                        className={styles.portal_dropdown_ul_li}
+                        onClick={logoutHandler}
+                      >
+                        LOGOUT
+                      </li>
                     </ul>
                   </div>
                 </a>

@@ -10,6 +10,7 @@ html,
   --medium-max-width: 1325px;
   --small-max-width: 1325px;
   --smallest-max-width: 1325px;
+  --input-filed-width: 22rem;
   --clr-neutral-0: #ffffff;
   --clr-neutral-50: #fefefe;
   --clr-neutral-100: #eef2f8;
@@ -807,12 +808,19 @@ padding: 0.8em;
   width:50px;
   height:44px;
 }
+
 .content{
   top:0;
   left:0;
   width: 430px;
   position: absolute;
   z-index:3;
+  user-select: none;
+  pointer-events: none;
+}
+.content-wrapper:hover .content{
+  user-select: initial;
+  pointer-events: initial;
 }
 .search-bar {
   --size: 44px;

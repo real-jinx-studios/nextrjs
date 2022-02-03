@@ -30,11 +30,19 @@ export default function CustomInput(props) {
         value={props.value}
         required
       />
-      <span
-        className={`${styles.placeholder} ${isRequired ? styles.required : ""}`}
-      >
-        {props.placeholder}
-      </span>
+      {isRequired ? (
+        <span
+          className={`${styles.placeholder} /*${
+            isRequired ? styles.required : ""
+          }*/`}
+        >
+          {props.placeholder}
+        </span>
+      ) : (
+        <span className={`${styles.placeholder}`}>
+          {props.placeholder} <small>&nbsp;(optional)</small>
+        </span>
+      )}
     </label>
   );
 }

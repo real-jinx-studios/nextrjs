@@ -1,7 +1,7 @@
 
 
 .input{
---width:18rem;
+--width:var(--input-filed-width);
     width:var(--width);
     border: none;
     appearance: none;
@@ -14,14 +14,15 @@
 
 
 }
-.required::before{
+/*.required::before{
     font-size:20px;
     content: "*";
     position:absolute;
     right:-0.5em;
     top:-0.5em;
     color:#D92B3A;
-}
+}*/
+
 .input::selection{
     background-color: var(--clr-neutral-900);
     color: var(--clr-neutral-50);
