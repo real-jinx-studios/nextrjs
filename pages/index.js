@@ -6,10 +6,10 @@ import Link from "next/link";
 import { connectToDB, dbQuery } from "../lib/db";
 
 export default function Home(props) {
-  const { products } = props;
+  /*const { products } = props;*/
   return (
     <Layout home>
-      <section className="section-one">
+     {/* <section className="section-one">
         <h1>Cutting-edge professional subtitling products</h1>
         <HomeMain2 />
         <div className="product-wrapper">
@@ -45,7 +45,7 @@ export default function Home(props) {
             </Link>
           ))}
         </div>
-      </section>
+      </section>*/}
 
       <Head>
         <title>{siteTitle}</title>
@@ -55,7 +55,7 @@ export default function Home(props) {
     </Layout>
   );
 }
-export async function getStaticProps() {
+/*export async function getStaticProps() {
   const client = await connectToDB();
   const queryObject = { query: "SELECT * FROM products", values: [] };
   const results = await dbQuery(client, queryObject);
@@ -65,4 +65,4 @@ export async function getStaticProps() {
       products: results,
     },
   };
-}
+}*/

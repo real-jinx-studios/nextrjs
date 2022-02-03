@@ -566,8 +566,6 @@ export default function Subtitle() {
       <div className={styles.video_background}>
         <video autoPlay loop>
           <source src="/videos/hero-eztitles.webm" type="video/webm" />
-
-          <source src="/videos/hero-eztitles.mp4" type="video/mp4" />
         </video>
       </div>
       <motion.header className={styles.main_wrapper} ref={ref}>
@@ -1962,8 +1960,6 @@ export default function Subtitle() {
           <div className={styles.v_r_a_video_background}>
             <video autoPlay loop muted>
               <source src="/videos/noway.webm" type="video/webm" />
-
-              <source src="/videos/noway.mp4" type="video/mp4" />
             </video>
           </div>
           <div className={styles.container}>
