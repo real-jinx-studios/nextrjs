@@ -1,3 +1,4 @@
+/*
 
 
 .input{
@@ -14,14 +15,14 @@
 
 
 }
-/*.required::before{
+!*.required::before{
     font-size:20px;
     content: "*";
     position:absolute;
     right:-0.5em;
     top:-0.5em;
     color:#D92B3A;
-}*/
+}*!
 
 .input::selection{
     background-color: var(--clr-neutral-900);
@@ -43,7 +44,15 @@
     color: #19191988;
     transition: 0.3s ease;
 }
-/*
+.error_message{
+    position: absolute;
+    font-size: 14px;
+    top:100%;
+    transform: translateY(-50%);
+    color: #ea2222;
+    transition: 0.3s ease;
+}
+!*
 
 .input:focus + .placeholder, .input:valid + .placeholder{
     top:11px;
@@ -51,7 +60,7 @@
     color: #191919;
 
 }
-*/
+*!
 
 
 
@@ -116,4 +125,78 @@
     padding:0 5px;
     left: 3px;
     color:#D92B3A;
+}
+*/
+.input_label {
+    font-size: 0.89rem;
+    margin-left: 0.3rem;
+    margin-top: 0.48rem;
+    display: block;
+    transition: all 0.3s;
+    transform: translateY(0rem);
+}
+
+.input {
+    color: var(--clr-neutral-800);
+    font-size: 1rem;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    background-color: var(--clr-neutral-50);
+    border: none;
+    width: var(--input-filed-width);
+    display: block;
+    border:1px solid var(--clr-neutral-500);
+    border-bottom: 0.3rem solid var(--clr-neutral-500);
+    transition: all 0.3s;
+
+}
+
+.input::selection {
+
+    color:var(--clr-neutral-50);
+    background-color:var(--clr-primary);
+
+}
+
+.input:placeholder-shown + .input_label {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-4rem);
+    transform: translateY(-4rem);
+}
+.input_wrapper{
+position:relative;
+    width:max-content;
+}
+.input:focus, .input:focus-visible{
+    outline:var(--clr-primary) solid 1px;
+    border:1px solid var(--clr-primary) !important;
+    border-bottom: 0.3rem solid var(--clr-primary) !important;
+
+}
+
+
+
+/*special css for vat*/
+.vat_check{
+    position:absolute;
+    right:0.5em;
+    top:calc(50% - 0.85rem);
+    transform:translateY(-50%);
+    transition: all 0.3s ease;
+    z-index:2;
+    cursor:pointer;
+}
+.vat_check_icon{
+    width:2em;
+    height:2em;
+}
+.valid{
+    fill:#3b8a21;
+    color:#3b8a21;
+}
+.not_valid{
+    fill:#ea2222;
+    color:#ea2222;
 }

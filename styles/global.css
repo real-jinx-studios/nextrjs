@@ -46,6 +46,7 @@ html,
   --not-black: #1f1f1f;
   --not-white: #fefefe;
   --gutter: 60px;
+  --border-radius: 1.2rem;
   --no-color: #19191900;
   --resolution-color-title: #cccccc;
   --ratio-height: 480px;
@@ -340,7 +341,7 @@ li {
   color: #ffffff;
   font-weight: 500;
   background-color: var(--system-b-blue);
-  border: none;
+  border: 1px solid #fefefe00;
   white-space: nowrap;
   padding: 0.35em 1.45em;
   text-align: center;
@@ -392,6 +393,13 @@ li {
 .button_white {
   background-color: var(--not-white);
   color: var(--not-black);
+}
+.button_disabled{
+  background-color: var(--clr-neutral-150);
+  color: var(--not-black);
+  border:1px solid var(--clr-neutral-550);
+  user-select: none;
+  pointer-events: none;
 }
 .button_red {
   background-color: var(--mostly-red);

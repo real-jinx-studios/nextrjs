@@ -14,7 +14,7 @@ export default NextAuth({
         const client = await connectToDB();
         //create db query object
         const queryObject = {
-          query: "SELECT * FROM users WHERE username=?",
+          query: "SELECT * FROM users WHERE username=? LIMIT 1",
           values: [credentials.username],
         };
         const results = await dbQuery(client, queryObject);
@@ -34,6 +34,11 @@ export default NextAuth({
 
         if (!isValid) {
           throw new Error("wrong username or password");
+        }
+        //check if user has activated account
+        const isActivated = new Date(user.isVerified).getTime() > 0;
+        if (!isActivated) {
+          throw new Error("acount not active");
         }
 
         //if all checks pass return user info. here can be returned some fixed object (email,name and image) since username is primary id return it under name.

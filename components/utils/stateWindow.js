@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import { Store } from "../../utils/store";
 import axios from "axios";
 
@@ -8,10 +8,15 @@ export default function StateWindow() {
   const [users, setUsers] = useState(<div>loadign</div>);
   const handleClose = async () => {
     setClosed(!closed);
-    const { data } = await axios.get(`/api/get-entries`);
+    const { data } = await axios.get(`/api/dev/query-performance`);
 
     setUsers((users) => {
-      return <div>{JSON.stringify(data[data.length - 1])}</div>;
+      return (
+        <Fragment>
+          <div>{data.overall}</div>
+          <div>{data.query_exec}</div>
+        </Fragment>
+      );
     });
   };
 

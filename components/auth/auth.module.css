@@ -4,9 +4,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    top:var(--offset-top);
+    top:calc(var(--offset-top) + 2.2em);
     margin-top:1em;
     position:relative;
+    overflow:hidden;
     background: #ffffff00 url("/images/parrot-img.svg") no-repeat 50% 50%;
 
     background-size:100% 100%;
@@ -36,8 +37,8 @@
 
 .form{
     width:max-content;
-    border-radius: 20px;
-    padding: 3.2em 5em;
+    border-radius: var(--border-radius);
+    padding: 2.3em 5em;
     overflow: hidden;
     transition: 0.3s;
     position: relative;
@@ -84,7 +85,7 @@ color:var(--clr-neutral-900);
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap:1em;
+    gap:1.3em;
 }
 
 .input_wrapper *{z-index: 1}
@@ -92,6 +93,12 @@ color:var(--clr-neutral-900);
     width:298px;
     height:39px;
     cursor: pointer;
+}
+.submit_button_disabled{
+    cursor: not-allowed;
+    user-select: none;
+    border:none;
+    background-color:var(--clr-neutral-250)
 }
 .input_wrapper p, .input_wrapper a{
     color:var(--clr-neutral-900) !important;

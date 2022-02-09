@@ -113,13 +113,19 @@ export default function Navbar2() {
           >
             <Link href={router.pathname !== "/" ? "/" : "/buy/products"}>
               <a>
-                <MyImage
+                {/*<MyImage
                   priority={true}
                   src="/images/ezlogo.png"
                   height={50}
                   width={100}
                   alt="EZTitles Logo"
                   layout="intrinsic"
+                />*/}
+                <img
+                  src="/images/ezlogo.png"
+                  width={100}
+                  height={50}
+                  alt="EZTitles"
                 />
               </a>
             </Link>
@@ -170,7 +176,7 @@ export default function Navbar2() {
             })}
           >
             {status === "authenticated" ? (
-              <Link href="/secret">
+              <Link href="/services-portal/">
                 <a className={styles.nav_link_a + " " + styles.portal_link}>
                   Services Portal
                   <div className={styles.portal_dropdown_container}>
@@ -198,7 +204,7 @@ export default function Navbar2() {
                 </a>
               </Link>
             ) : (
-              <Link href="/login">
+              <Link href="/login?destination=services-portal">
                 <a className={styles.nav_link_a}>Login</a>
               </Link>
             )}
