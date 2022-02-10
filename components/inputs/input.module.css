@@ -146,12 +146,16 @@
     border: none;
     width: var(--input-filed-width);
     display: block;
-    border:1px solid var(--clr-neutral-500);
-    border-bottom: 0.3rem solid var(--clr-neutral-500);
+    border:1px solid var(--clr-neutral-700);
+    border-bottom: 0.3rem solid var(--clr-neutral-700);
     transition: all 0.3s;
 
 }
+.input.disabled {
+    border:1px solid var(--clr-neutral-500);
+    border-bottom: 0.3rem solid var(--clr-neutral-350);
 
+}
 .input::selection {
 
     color:var(--clr-neutral-50);
@@ -199,4 +203,71 @@ position:relative;
 .not_valid{
     fill:#ea2222;
     color:#ea2222;
+}
+
+
+/*radio input css*/
+.radio_input_wrapper{
+    display: flex;
+    align-items: center;
+
+    border-radius: 100px;
+    padding: 0.5em 0.8em;
+    margin: 0.5em 0;
+
+    cursor: pointer;
+    transition: .3s;
+    /*use this width so background extends only to cover the text and circle*/
+    /*width:max-content;*/
+}
+.radio_input_wrapper:hover,
+.radio_input_wrapper:focus-within {
+    background: #288EE233;
+}
+
+.radio_input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    z-index: -1;
+}
+.radio_input_circle{
+    width: 18px;
+    height: 18px;
+    border-radius: 100px;
+
+    background: var(--clr-primary);
+    position: relative;
+}
+.radio_input_circle::before {
+    content: '';
+
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+
+    background: var(--clr-neutral-250);
+    transform: scale(1.1);
+    opacity: 1;
+    transition: .3s ease;
+}
+.radio_input:checked+.radio_input_circle::before {
+    /*transform: scale(0.5);*/
+    opacity:0;
+}
+.radio_input_text{
+    color: hsl(0, 0%, 60%);
+    margin-left: 0.92em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 900;
+    transition: .3s;
+}
+.radio_input:checked~.radio_input_text {
+    color: var(--clr-primary);
 }

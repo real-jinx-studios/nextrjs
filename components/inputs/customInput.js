@@ -4,7 +4,6 @@ import { useRef, useState } from "react";
 export default function CustomInput(props) {
   let { isRequired, reference } = props;
   const [isVatValid, setIsVatValid] = useState(false);
-
   if (props.special === "vat") {
     reference = useRef();
     const handleVat = async (e) => {
@@ -24,11 +23,11 @@ export default function CustomInput(props) {
           ref={reference}
           type={props.type}
           className={styles.input}
-          id="name"
+          id={props.id}
           placeholder={props.placeholder}
           value={props.default}
         />
-        <label htmlFor="name" className={styles.input_label}>
+        <label htmlFor={props.id} className={styles.input_label}>
           {props.placeholder}
           {isVatValid ? (
             <small className={styles.valid}>&nbsp;&nbsp;(VALID)</small>
@@ -56,17 +55,39 @@ export default function CustomInput(props) {
     );
   }
 
+  if (props.type === "radio") {
+    return (
+      <label className={styles.radio_input_wrapper}>
+        <input
+          type="radio"
+          className={styles.radio_input}
+          name={props.name}
+          value={props.default}
+          id={props.id}
+          ref={reference}
+          checked={props.checked}
+          onChange={props.handleChange}
+        />
+        <div className={styles.radio_input_circle}></div>
+        <div className={styles.radio_input_text}>{props.placeholder}</div>
+      </label>
+    );
+  }
+
   return (
     <div className={styles.input_wrapper}>
       <input
         ref={reference}
         type={props.type}
-        className={styles.input}
-        id="name"
+        className={`${styles.input} ${props.disabled ? styles.disabled : ""}`}
+        id={props.id}
         placeholder={props.placeholder}
         value={props.default}
+        disabled={props.disabled}
+        onBlur={props.onBlur}
+        onChange={props.handleChange}
       />
-      <label htmlFor="name" className={styles.input_label}>
+      <label htmlFor={props.id} className={styles.input_label}>
         {props.placeholder}
       </label>
     </div>

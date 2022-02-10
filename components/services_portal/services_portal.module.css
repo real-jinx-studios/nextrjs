@@ -140,3 +140,44 @@ padding:0 0.3em;
 
 
 }
+
+
+/*custom payment*/
+.content_inner_custom_payment{
+    display:flex;
+    overflow: hidden;
+    justify-content: space-between;
+}
+.custom_payment_form{
+    max-width:50%;
+
+}
+.custom_payment_token_wrapper{
+    opacity:0;
+    transform: translateX(50%);
+    transition: all 0.3s ease;
+}
+.custom_payment_token_wrapper.visible{
+    max-width:50%;
+    opacity:1;
+    transform: translateX(0);
+}
+.token_field{
+    display:flex;
+
+}
+.token_price_table{
+width:100%;
+    border-collapse: collapse;
+}
+.token_price_table > thead > tr th{
+    border-bottom: 1px solid var(--clr-neutral-550);
+    margin-bottom: 0.5em;
+    color: var(--clr-neutral-800);
+}
+.token_price_table th{
+    padding: 0.5em 0.8em;
+}
+.token_price_table td{
+    padding: 0.3em 0.8em;
+}

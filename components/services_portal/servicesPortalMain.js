@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import BillingInformation from "./billingInformation";
+import CustomPayment from "./customPayment";
+import RerenderCount from "../utils/rerenderCount";
 
 export default function ServicesPortalMain(props) {
   const [selectedItem, setSelectedItem] = useState("billing");
@@ -12,6 +14,7 @@ export default function ServicesPortalMain(props) {
   const handleNavClick = (menuItem) => {
     setSelectedItem(menuItem);
   };
+
   const handleLogout = () => {
     /* signOut({
                  redirect: false,
@@ -83,6 +86,34 @@ export default function ServicesPortalMain(props) {
                   />
                 </svg>
                 Custom Payment
+              </span>
+            </li>
+            <li
+              onClick={() => {
+                handleNavClick("wallet");
+              }}
+              className={
+                selectedItem === "wallet"
+                  ? styles.nav_item_active
+                  : styles.nav_item
+              }
+            >
+              <span className={styles.nav_item_inner}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={styles.nav_item_icon}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z"
+                  />
+                </svg>
+                Wallet Management
               </span>
             </li>
             <li
@@ -164,6 +195,7 @@ export default function ServicesPortalMain(props) {
         </div>
         <div className={styles.content_wrapper}>
           {selectedItem === "billing" && <BillingInformation />}
+          {selectedItem === "payment" && <CustomPayment />}
         </div>
       </div>
     </section>
