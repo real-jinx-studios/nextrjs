@@ -38,6 +38,7 @@ app.get("/get-products", async (req, res) => {
       res.send(rows);
     }
   );
+
 });
 
 app.post("/get/user", async (req, res) => {
