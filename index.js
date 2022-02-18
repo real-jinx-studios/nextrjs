@@ -38,7 +38,6 @@ app.get("/get-products", async (req, res) => {
       res.send(rows);
     }
   );
-
 });
 
 app.post("/get/user", async (req, res) => {
@@ -879,6 +878,6 @@ app.post("/secured", async (req, res) => {
 });
 
 //express start listening on port
-app.listen(5000, (err) => {
-  console.log("listening on 5000");
+app.listen(3000, (err) => {
+  console.log("listening on 3000");
 });
