@@ -147,13 +147,13 @@
     width: var(--input-filed-width);
     display: block;
     border:1px solid var(--clr-neutral-700);
-    border-bottom: 0.3rem solid var(--clr-neutral-700);
+    border-bottom: 0.198rem solid var(--clr-neutral-700);
     transition: all 0.3s;
 
 }
 .input.disabled {
     border:1px solid var(--clr-neutral-500);
-    border-bottom: 0.3rem solid var(--clr-neutral-350);
+    border-bottom: 0.198rem solid var(--clr-neutral-350);
 
 }
 .input::selection {
@@ -176,7 +176,7 @@ position:relative;
 .input:focus, .input:focus-visible{
     outline:var(--clr-primary) solid 1px;
     border:1px solid var(--clr-primary) !important;
-    border-bottom: 0.3rem solid var(--clr-primary) !important;
+    border-bottom: 0.198rem solid var(--clr-primary) !important;
 
 }
 
@@ -192,9 +192,17 @@ position:relative;
     z-index:2;
     cursor:pointer;
 }
-.vat_check_icon{
+.vat_check_icon, .vat_check_icon_verified, .vat_check_icon_failed{
     width:2em;
     height:2em;
+}
+.vat_check_icon_verified{
+    fill:#5bec2b;
+    stroke: #3b8a21;
+}
+.vat_check_icon_failed{
+    fill: #ea2222;
+    stroke: #821212;
 }
 .valid{
     fill:#3b8a21;
@@ -203,6 +211,10 @@ position:relative;
 .not_valid{
     fill:#ea2222;
     color:#ea2222;
+}
+.pending{
+    fill: #ea9a22;
+    color:#ea9a22;
 }
 
 

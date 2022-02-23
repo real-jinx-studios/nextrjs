@@ -212,10 +212,11 @@ export default function LoginForm(props) {
                   isRequired
                 />
                 <CustomInput
-                  reference={vatRef}
                   type="text"
                   placeholder="VAT Number"
                   isRequired
+                  special="vat"
+                  reference={vatRef}
                 />
                 <CustomInput
                   reference={cityRef}

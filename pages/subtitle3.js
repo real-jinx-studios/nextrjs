@@ -2420,6 +2420,12 @@ export default function Subtitle() {
             the "Do Not Enter" sign, he walked past it and onto their property.
           </p>
         </section>
+        <section className={styles.lottie_section}>
+          <div>
+            <div>text</div>
+            <div></div>
+          </div>
+        </section>
       </div>
       {/*<PaypalCheckout/>*/}
     </Layout>

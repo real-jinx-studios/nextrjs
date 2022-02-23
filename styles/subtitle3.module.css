@@ -133,7 +133,7 @@ background: #ffffff;
 
 
 }
-.video_section, .card_section, .video_format_section, .language_section{
+.video_section, .card_section, .video_format_section, .language_section, .lottie_section{
     position: relative;
     padding: 5rem 0;
     background:var(--clr-main);

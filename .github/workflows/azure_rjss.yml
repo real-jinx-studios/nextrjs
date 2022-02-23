@@ -21,6 +21,18 @@ jobs:
         with:
           node-version: '16.x'
 
+    #  - name: Create env file
+     #   run: |
+      #    touch .env
+       #   echo API_ENDPOINT=
+        #  echo API_KEY=${{ secrets.API_KEY }} >> .env
+         # EMAIL_USER=AKIAUE4LVMWRBOJQKQ7T
+          #EMAIL_PASSWORD=BNefYeh8TtzjURa9e7XX85LpThCjco902Z5uijJA5+N+
+          #EMAIL_HOST=email-smtp.eu-central-1.amazonaws.com
+          #EMAIL_PORT=587
+          #EMAIL_FROM=real.martin.zannato@gmail.com
+          #cat .env
+
       - name: npm install, build, and test
         run: |
           npm install

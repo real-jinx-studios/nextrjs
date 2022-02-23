@@ -3,13 +3,23 @@ import { useEffect, useState } from "react";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import BillingInformation from "./billingInformation";
-import CustomPayment from "./customPayment";
+import CustomPayment from "./customPayment/customPayment";
 import RerenderCount from "../utils/rerenderCount";
+import WalletManagement from "./walletManagement/walletManagement";
+import InstallationRegistration from "./installationAndRegistration/installationRegistration";
+import EditAccount from "./editAccount";
 
 export default function ServicesPortalMain(props) {
-  const [selectedItem, setSelectedItem] = useState("billing");
+  const router = useRouter();
+  const [selectedItem, setSelectedItem] = useState(
+    router.query.account || "billing"
+  );
   const [userInfo, setUserInfo] = useState();
   const { session, status } = props;
+
+  useEffect(() => {
+    setSelectedItem(router.query.account);
+  }, [router.query.account]);
 
   const handleNavClick = (menuItem) => {
     setSelectedItem(menuItem);
@@ -25,7 +35,6 @@ export default function ServicesPortalMain(props) {
     });
     router.replace("/login?destination=services-portal");
   };
-  const router = useRouter();
 
   return (
     <section className={styles.section}>
@@ -196,6 +205,9 @@ export default function ServicesPortalMain(props) {
         <div className={styles.content_wrapper}>
           {selectedItem === "billing" && <BillingInformation />}
           {selectedItem === "payment" && <CustomPayment />}
+          {selectedItem === "wallet" && <WalletManagement />}
+          {selectedItem === "install" && <InstallationRegistration />}
+          {selectedItem === "edit" && <EditAccount />}
         </div>
       </div>
     </section>

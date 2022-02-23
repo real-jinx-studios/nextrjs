@@ -34,6 +34,8 @@ html,
   --main-color-very-light: #288ee2;
   --main-color-super-light: #6fb4eb;
   --clr-primary: #288ee2;
+  --clr-primary-opacity-50: #288ee255;
+  --clr-primary-opacity-75: #288ee2bb;
   --system-w-blue: #007aff;
   --system-b-blue: #0a84ff;
   --system-w-teal: #5ac8fa;
@@ -74,6 +76,63 @@ html,
   --ifm-color-gray-800: #444950;
   --ifm-color-gray-900: #1c1e21;
   --ifm-color-gray-1000: #000000;
+
+
+
+
+
+
+
+  /*toast window css*/
+  --toastify-color-light: #fff;
+  --toastify-color-dark: #121212;
+  --toastify-color-info: #3498db;
+  --toastify-color-success: #07bc0c;
+  --toastify-color-warning: #f1c40f;
+  --toastify-color-error: #e74c3c;
+  --toastify-color-transparent: rgba(255, 255, 255, 0.7);
+
+  --toastify-icon-color-info: var(--toastify-color-info);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+
+  --toastify-toast-width: 320px;
+  --toastify-toast-background: #fff;
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-max-height: 800px;
+  --toastify-font-family: sans-serif;
+  --toastify-z-index: 9999;
+
+  --toastify-text-color-light: #757575;
+  --toastify-text-color-dark: #fff;
+
+
+--toastify-text-color-info: #fff;
+  --toastify-text-color-success: #fff;
+  --toastify-text-color-warning: #fff;
+  --toastify-text-color-error: #fff;
+
+  --toastify-spinner-color: #616161;
+  --toastify-spinner-color-empty-area: #e0e0e0;
+
+--toastify-color-progress-light: linear-gradient(
+to right,
+#4cd964,
+#5ac8fa,
+#007aff,
+#34aadc,
+#5856d6,
+#ff2d55
+);
+--toastify-color-progress-dark: #bb86fc;
+  --toastify-color-progress-info: var(--toastify-color-info);
+  --toastify-color-progress-success: var(--toastify-color-success);
+  --toastify-color-progress-warning: var(--toastify-color-warning);
+  --toastify-color-progress-error: var(--toastify-color-error);
+
+
+
 }
 
 /* --------------------- */
@@ -135,6 +194,25 @@ ul {
 /* ---------------------- */
 /* Utility Classes       */
 /* -------------------- */
+.main_wrapper{
+  width: 100%;
+  top:calc(var(--offset-top) + 2.2em);
+  margin-top:1em;
+  position:relative;
+  overflow:hidden;
+}
+.main-color{
+  color:var(--clr-primary);
+}
+.text-bold-m{
+  font-weight:500;
+}
+.text-s{
+  font-size:0.8rem;
+}
+.text-m{
+  font-size:1.3rem;
+}
 .margin-block-s{
   margin-top:0.5em;
   margin-bottom:0.5em;
@@ -142,6 +220,18 @@ ul {
 .margin-block-m{
   margin-top:1em;
   margin-bottom:1em;
+}
+.margin-inline-m{
+  margin-left:1em;
+  margin-right:1em;
+}
+.margin-inline-ml{
+  margin-left:1.5em;
+  margin-right:1.5em;
+}
+.margin-inline-l{
+  margin-left:2em;
+  margin-right:2em;
 }
 .padding-block-s{
   padding-top:0.5em;
@@ -365,7 +455,7 @@ li {
 .button {
   color: #ffffff;
   font-weight: 500;
-  background-color: var(--system-b-blue);
+  background-color: var(--clr-primary-opacity-75);
   border: 1px solid #fefefe00;
   white-space: nowrap;
   padding: 0.35em 1.45em;
@@ -376,17 +466,28 @@ li {
   border-radius: 50px;
   font-size: 1.05rem;
 }
+.button_small{
+  color: #ffffff;
+  font-weight: 300;
+  background-color: var(--clr-primary);
+  border: 1px solid #fefefe00;
+  white-space: nowrap;
+  padding: 0.29em 1.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 0.89rem;
+}
 .button_basic_long {
   width: 13rem;
+  border-radius:12px;
   border:2px solid #ffffff00;
   transition: all 0.3s;
 }
-.button_basic_long_inverted {
-  width: 13rem;
-  background-color:#ffffff00;
-  color: var(--system-b-blue);
-  border:2px solid var(--system-b-blue);
-  transition: all 0.3s;
+.button_basic_long:hover{
+  background-color: var(--clr-primary);
 }
 .white{
   color:var(--clr-neutral-50);
@@ -918,5 +1019,108 @@ padding: 0.8em;
   outline: 0;
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.35);
 }
+.sitemap_wrapper{
+
+}
+.sitemap_wrapper h1{
+  text-align: center;
+}
+.sitemap_section{
+  max-width:1220px;
+  margin:0 auto;
+}
+.sitemap_animation_wrapper{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  position:relative;
+}
+.sitemap_animation_transparency_check{
+  position:absolute;
+  top:50px;
+  left:0;
+  z-index:1;
+}
+.sitemap_animation_animation{
+  z-index:20;  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  position:relative;
+
+}
+.sitemap_section > ul{
+  columns: 3 auto;
+  margin: 11px 0 0;
+  padding-bottom: 25px;
+}
+.sitemap_section li{
+  display: list-item;
+  text-align: match-parent;
+}
+.sitemap_inner{
+  display: inline-block;
+  margin-bottom: 26px;
+  vertical-align: top;
+}
 
 
+/*toast message position classes*/
+/*can't put them in the toast css module because of the way styles is used in the component*/
+.top-right {
+  top: 12px;
+  right: 12px;
+  transition: transform .6s ease-in-out;
+  animation: toast-in-right .7s;
+}
+
+.bottom-right {
+  bottom: 12px;
+  right: 12px;
+  transition: transform .6s ease-in-out;
+  animation: toast-in-right .7s;
+}
+
+.top-left {
+  top: 12px;
+  left: 12px;
+  transition: transform .6s ease-in;
+  animation: toast-in-left .7s;
+}
+
+.bottom-left {
+  bottom: 12px;
+  left: 12px;
+  transition: transform .6s ease-in;
+  animation: toast-in-left .7s;
+}
+.animated_shadow{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.animated_shadow:hover {
+  box-shadow: 0 9px 23px rgba(0,0,0,0.25), 0 6px 6px rgba(0,0,0,0.22);
+}
+.blue{
+  stroke:var(--clr-primary);
+}
+.green{
+  stroke:#3b8a21;
+}
+.red{
+  stroke:#ea2222;
+}
+.warning{
+  border-color:#E4641C55 !important;
+  border-top-color:#E4641C !important;
+}
+.system{
+  border-color:var(--clr-primary-opacity-50) !important;
+  border-top-color:var(--clr-primary) !important;
+}
+.gray{
+  stroke:var(--clr-neutral-500);
+  color:var(--clr-neutral-500);
+}

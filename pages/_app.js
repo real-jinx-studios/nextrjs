@@ -12,6 +12,7 @@ import Head from "next/head";
 import { StoreProvider } from "../utils/store";
 import StateWindow from "../components/utils/stateWindow";
 import { SessionProvider } from "next-auth/react";
+import { ToastContainer } from "react-toastify";
 
 export default function App({
   Component,
@@ -57,6 +58,11 @@ export default function App({
             name="google-site-verification"
             content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg"
           />
+          <script
+            src="https://kit.fontawesome.com/3a98299328.js"
+            crossOrigin="anonymous"
+          />
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         </Head>
         <Component
           setModal={setModal}
@@ -67,6 +73,7 @@ export default function App({
 
         {isBreakpoint ? <NavbarSmall /> : <Navbar2 />}
         <Footer />
+        <ToastContainer />
         <StateWindow />
         {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
         <Modal showModal={showModal} setModal={setModal} />

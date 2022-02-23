@@ -176,23 +176,39 @@ export default function Navbar2() {
             })}
           >
             {status === "authenticated" ? (
-              <Link href="/services-portal/">
+              <Link href="/services-portal?account=billing">
                 <a className={styles.nav_link_a + " " + styles.portal_link}>
                   Services Portal
                   <div className={styles.portal_dropdown_container}>
+                    <div className={styles.portal_dropdown_label}>
+                      <span>Services Portal</span>
+                    </div>
                     <ul className={styles.portal_dropdown_ul}>
-                      <li className={styles.portal_dropdown_ul_li}>
-                        Billing Info
-                      </li>
-                      <li className={styles.portal_dropdown_ul_li}>
-                        Custom Payment
-                      </li>
-                      <li className={styles.portal_dropdown_ul_li}>
-                        Installation & Registration
-                      </li>
-                      <li className={styles.portal_dropdown_ul_li}>
-                        Edit Account
-                      </li>
+                      <Link href="/services-portal?account=billing">
+                        <li className={styles.portal_dropdown_ul_li}>
+                          <a>Billing Info</a>
+                        </li>
+                      </Link>
+                      <Link href="/services-portal?account=payment">
+                        <li className={styles.portal_dropdown_ul_li}>
+                          <a>Custom Payment</a>
+                        </li>
+                      </Link>
+                      <Link href="/services-portal?account=wallet">
+                        <li className={styles.portal_dropdown_ul_li}>
+                          <a>Wallet Management</a>
+                        </li>
+                      </Link>
+                      <Link href="/services-portal?account=install">
+                        <li className={styles.portal_dropdown_ul_li}>
+                          <a>Installation & Registration</a>
+                        </li>
+                      </Link>
+                      <Link href="/services-portal?account=edit">
+                        <li className={styles.portal_dropdown_ul_li}>
+                          <a>Edit Account</a>
+                        </li>
+                      </Link>
                       <li
                         className={styles.portal_dropdown_ul_li}
                         onClick={logoutHandler}
@@ -204,7 +220,7 @@ export default function Navbar2() {
                 </a>
               </Link>
             ) : (
-              <Link href="/login?destination=services-portal">
+              <Link href="/login?destination=/services-portal?account=billing">
                 <a className={styles.nav_link_a}>Login</a>
               </Link>
             )}

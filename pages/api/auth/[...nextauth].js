@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { getToken } from "next-auth/jwt";
 import { connectToDB, dbQuery } from "../../../lib/db";
 import { verifyPassword } from "../../../lib/auth";
 

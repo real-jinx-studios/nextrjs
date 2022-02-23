@@ -8,7 +8,6 @@ export default function ServicesPortal(props) {
 
 export async function getServerSideProps(context) {
   const session = await getSession({ req: context.req });
-  console.log(context.req, "bullshit", session);
   return {
     props: {
       shit: "shit",
