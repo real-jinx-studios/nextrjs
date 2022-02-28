@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
-import lottieJson from "../hooks/sa_anim.json";
 
 export default function Sitemap() {
   return (
