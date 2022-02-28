@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - rjs
+name: Build and deploy Node.js app to Azure Web App - rjss
 
 on:
   push:
@@ -21,14 +21,23 @@ jobs:
         with:
           node-version: '16.x'
 
+          #  - name: Create env file
+          #   run: |
+          #    touch .env
+          #   echo API_ENDPOINT=
+          #  echo API_KEY=${{ secrets.API_KEY }} >> .env
+          # EMAIL_USER=AKIAUE4LVMWRBOJQKQ7T
+          #EMAIL_PASSWORD=BNefYeh8TtzjURa9e7XX85LpThCjco902Z5uijJA5+N+
+          #EMAIL_HOST=email-smtp.eu-central-1.amazonaws.com
+          #EMAIL_PORT=587
+          #EMAIL_FROM=real.martin.zannato@gmail.com
+          #cat .env
+
       - name: npm install, build, and test
         run: |
           npm install
           npm run build --if-present
           npm run test --if-present
-
-      - name: get zip shit
-        run: sudo apt-get install zip
 
       - name: Zip artifact for deployment
         run: |
@@ -57,14 +66,12 @@ jobs:
       - name: unzip artifact for deployment
         run: |
           unzip -o release.zip
-          rm -r release.zip
-
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'rjs'
+          app-name: 'rjss'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9F7DCB45C26C4BD3A9A85152FE663604 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9C956B4284B24B31A5F4B7E6A909C8E9 }}
           package: .

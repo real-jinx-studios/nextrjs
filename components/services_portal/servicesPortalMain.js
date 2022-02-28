@@ -2,6 +2,7 @@ import styles from "./services_portal.module.css";
 import { useEffect, useState } from "react";
 import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+import BillingInformation2 from "./billingInformation2";
 import BillingInformation from "./billingInformation";
 import CustomPayment from "./customPayment/customPayment";
 import RerenderCount from "../utils/rerenderCount";
