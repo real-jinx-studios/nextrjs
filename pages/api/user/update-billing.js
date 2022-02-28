@@ -25,7 +25,9 @@ export default async function handler(req, res) {
     };
 
     const result = await dbQuery(client, queryObject);
-
+    sendEmailSales();
     res.status(200).json({ message: result });
   }
 }
+
+/*function async sendEmailSales(billingData){}*/

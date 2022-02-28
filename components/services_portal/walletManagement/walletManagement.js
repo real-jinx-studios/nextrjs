@@ -53,7 +53,12 @@ export default function WalletManagement() {
   ));
 
   if (isActivityReports) {
-    return <ActivityReports setIsActivityReports={setIsActivityReports} />;
+    return (
+      <ActivityReports
+        setIsActivityReports={setIsActivityReports}
+        wallets={sampleWallets}
+      />
+    );
   }
   return (
     <div className={styles.content}>

@@ -158,6 +158,7 @@ export default function CustomInput(props) {
         disabled={props.disabled}
         onBlur={props.onBlur}
         onChange={props.handleChange}
+        min="2019-01-01"
       />
       <label htmlFor={props.id} className={styles.input_label}>
         {props.placeholder}

@@ -190,7 +190,10 @@ ul {
     scroll-behavior: auto !important;
   }
 }
-
+/*make select and input same height*/
+input, select{
+  line-height: 1;
+}
 /* ---------------------- */
 /* Utility Classes       */
 /* -------------------- */
@@ -1123,4 +1126,7 @@ padding: 0.8em;
 .gray{
   stroke:var(--clr-neutral-500);
   color:var(--clr-neutral-500);
+}
+.anim_space{
+  height:600px;
 }

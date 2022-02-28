@@ -1,6 +1,18 @@
 import styles from "./ins_app.module.css";
 import { Fragment } from "react";
 export default function Versions() {
+  const handleDownloadFile = async (e) => {
+    e.preventDefault();
+    const res = await fetch("/api/dev/file-download-test", {
+      method: "POST",
+      body: JSON.stringify({ name: "EZTitles-6.1.17.exe" }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const file = await res.blob();
+    console.log(res);
+    saveAs(file, "EZTitles-6.1.17.exe");
+  };
   const sampleFiles = [
     {
       title: "EZTitles-6.1.13",
@@ -39,6 +51,7 @@ export default function Versions() {
       <div className={styles.recent_versions}>
         {sampleFiles.map((x) => (
           <div
+            onClick={handleDownloadFile}
             className={styles.file_wrapper}
             key={x.title}
             data-before-content={x.icon}

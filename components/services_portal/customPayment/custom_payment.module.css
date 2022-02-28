@@ -189,7 +189,6 @@
 }
 .custom_checkout_form_fields{
     margin-bottom:3em;
-    width: max-content;
     display:grid;
     grid-gap:1.3em;
     grid-template-columns: 1fr 1fr;

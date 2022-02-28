@@ -140,11 +140,12 @@
     color: var(--clr-neutral-800);
     font-size: 1rem;
     margin: 0 auto;
-    padding: 0.5rem 1rem;
+    padding: 0.72rem 1rem;
     border-radius: 0.2rem;
     background-color: var(--clr-neutral-50);
     border: none;
     width: var(--input-filed-width);
+    width: 98%;
     display: block;
     border:1px solid var(--clr-neutral-700);
     border-bottom: 0.198rem solid var(--clr-neutral-700);
@@ -171,7 +172,7 @@
 }
 .input_wrapper{
 position:relative;
-    width:max-content;
+
 }
 .input:focus, .input:focus-visible{
     outline:var(--clr-primary) solid 1px;

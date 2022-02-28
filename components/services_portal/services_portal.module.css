@@ -128,7 +128,6 @@ padding:0 0.3em;
 }*/
 .billing_form{
     position:relative;
-    width: max-content;
     display:grid;
     grid-gap:1.3em;
 

@@ -1,21 +1,11 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
-import Lottie from "react-lottie-player";
 import lottieJson from "../hooks/sa_anim.json";
 
 export default function Sitemap() {
   return (
     <div className="sitemap_wrapper main_wrapper">
       <h1>EZTitles sitemap</h1>
-      <lottie-player
-        src="https://assets9.lottiefiles.com/datafiles/gUENLc1262ccKIO/data.json"
-        background="transparent"
-        speed="1"
-        style={{ width: 300, height: 300 }}
-        loop
-        controls
-        autoplay
-      ></lottie-player>
       <section className="sitemap_section">
         <h2>EZTitles</h2>
         <ul>
@@ -312,7 +302,7 @@ export default function Sitemap() {
           </div>
           <div className="sitemap_animation_animation">
             <lottie-player
-              src="/animations/sa_anim.json"
+              src="/animations/optimized.json"
               background="transparent"
               speed="1"
               style={{ width: 300, height: 300 }}
@@ -320,8 +310,9 @@ export default function Sitemap() {
               controls
               autoplay
             />
+            <div className="anim_space"></div>
             <lottie-player
-              src="/animations/sa_anim.json"
+              src="/animations/optimized.json"
               background="transparent"
               speed="1"
               style={{ width: 600, height: 600 }}
@@ -329,8 +320,9 @@ export default function Sitemap() {
               controls
               autoplay
             />
+            <div className="anim_space"></div>
             <lottie-player
-              src="/animations/sa_anim.json"
+              src="/animations/optimized.json"
               background="transparent"
               speed="1"
               style={{ width: 900, height: 900 }}
@@ -338,8 +330,9 @@ export default function Sitemap() {
               controls
               autoplay
             />
+            <div className="anim_space"></div>
             <lottie-player
-              src="/animations/sa_anim.json"
+              src="/animations/optimized.json"
               background="transparent"
               speed="1"
               style={{ width: 1200, height: 1200 }}
@@ -347,6 +340,7 @@ export default function Sitemap() {
               controls
               autoplay
             />
+            <div className="anim_space"></div>
           </div>
         </div>
       </section>

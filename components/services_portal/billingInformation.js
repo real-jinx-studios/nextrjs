@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "../loader";
 import LoaderDots from "../utils/loaderDots";
+import CustomInputDropdown from "../inputs/customInputDropdown";
 export default function BillingInformation(props) {
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR("/api/user", fetcher);
@@ -93,12 +94,11 @@ export default function BillingInformation(props) {
               isRequired
               reference={lastNameRef}
             />
-            <CustomInput
-              default={data.country}
-              type="text"
+            <CustomInputDropdown
+              reference=""
               placeholder="Country"
-              isRequired
-              disabled
+              isCountry={true}
+              value={data.country}
               reference={countryRef}
             />
             <CustomInput
