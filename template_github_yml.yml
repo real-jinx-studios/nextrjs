@@ -73,5 +73,5 @@ jobs:
         with:
           app-name: 'rjss'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9C956B4284B24B31A5F4B7E6A909C8E9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BA49E7E8C24D4011B444E50E167F8B3A }}
           package: .
