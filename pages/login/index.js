@@ -1,4 +1,4 @@
-import LoginForm from "../../components/auth/loginForm";
+import LoginForm from "../../components/forms/auth/loginForm";
 
 export default function ServicePortal() {
   return <LoginForm />;

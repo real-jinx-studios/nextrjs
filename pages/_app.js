@@ -4,6 +4,7 @@ import Footer from "../components/navigation/footer";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import Link from "next/link";
+import Script from "next/script";
 
 import { useRouter } from "next/router";
 import Modal from "../components/Modal";
@@ -13,6 +14,7 @@ import { StoreProvider } from "../utils/store";
 import StateWindow from "../components/utils/stateWindow";
 import { SessionProvider } from "next-auth/react";
 import { ToastContainer } from "react-toastify";
+import GenericModal from "../components/modal/GenericModal";
 
 export default function App({
   Component,
@@ -24,7 +26,7 @@ export default function App({
   /*get screen size for correct navbar*/
   const useMediaQuery = (width) => {
     const [targetReached, setTargetReached] = useState(false);
-
+    /*const [showModal, setShowModal] = useState(false);*/
     const updateTarget = useCallback((e) => {
       if (e.matches) {
         setTargetReached(true);
@@ -58,11 +60,6 @@ export default function App({
             name="google-site-verification"
             content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg"
           />
-          <script
-            src="https://kit.fontawesome.com/3a98299328.js"
-            crossOrigin="anonymous"
-          />
-          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         </Head>
         <Component
           setModal={setModal}
@@ -77,6 +74,7 @@ export default function App({
         <StateWindow />
         {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
         <Modal showModal={showModal} setModal={setModal} />
+        {/*  <GenericModal />*/}
       </SessionProvider>
     </StoreProvider>
   );

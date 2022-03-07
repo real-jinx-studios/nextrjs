@@ -26,14 +26,11 @@ export default function CustomCheckout(props) {
   if (data && !error) {
     return (
       <div className={styles.content_inner_custom_checkout}>
-        <div className={styles.cancel_custom_checkout_wrapper}>
-          <div
-            className={styles.cancel_custom_checkout}
-            onClick={props.handleCancel}
-          >
+        <div className="cancel_custom_wrapper">
+          <div className="cancel_custom" onClick={props.handleCancel}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={styles.cancel_icon}
+              className="cancel_icon"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -45,7 +42,7 @@ export default function CustomCheckout(props) {
                 d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <span className={styles.cancel_text}>Cancel Payment</span>
+            <span className="cancel_text">Cancel Payment</span>
           </div>
         </div>
         <div className={styles.fixed}>

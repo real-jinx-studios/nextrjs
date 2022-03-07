@@ -2,10 +2,10 @@ import React, { Fragment, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { signIn } from "next-auth/react";
 import ReCAPTCHA from "react-google-recaptcha";
-import CustomInput from "../inputs/customInput";
+import CustomInput from "../../inputs/customInput";
 import styles from "./auth.module.css";
 import Link from "next/link";
-import Loader from "../../components/utils/loader";
+import Loader from "../../utils/loader";
 
 export default function LoginForm(props) {
   //get where to redirect from login since could be checkout or user profile or other

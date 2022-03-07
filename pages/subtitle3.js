@@ -591,13 +591,9 @@ export default function Subtitle() {
                 id="button-mover-trigger"
               />
 
-              <a
-                onClick={handleCheckoutConvert}
-                href="/user-login"
-                className="button button_basic_long"
-              >
-                FREE TRIAL
-              </a>
+              <Link href="/products/free-trial">
+                <a className="button button_basic_long">FREE TRIAL</a>
+              </Link>
               <label htmlFor="button-mover-trigger">
                 <div className="chk_trigger"></div>
               </label>

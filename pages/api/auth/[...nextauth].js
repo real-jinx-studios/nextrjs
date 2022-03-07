@@ -43,9 +43,14 @@ export default NextAuth({
         //if all checks pass return user info. here can be returned some fixed object (email,name and image) since username is primary id return it under name.
         return {
           email: user.email,
-          name: user.username,
+          name: { name: user.username, type: user.type },
         };
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, user, name, type }) {
+      return token;
+    },
+  },
 });
