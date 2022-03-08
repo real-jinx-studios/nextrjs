@@ -29,7 +29,7 @@ export default function FreeTrialStdFrom({ session, data }) {
           id="products-trial-registration-section"
           className={styles.products_section_title}
         >
-          {!state === "authenticated"
+          {state !== "authenticated"
             ? "In order to offer you a Free Trial, you need to Log in to an existing account or create a new one."
             : "Complete the steps below to receive your free trial!"}
         </h2>

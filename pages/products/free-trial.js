@@ -6,6 +6,9 @@ import FreeTrialProducts from "../../components/free_trials/freeTrialProducts";
 import FreeTrialStdFrom from "../../components/free_trials/freeTrialStdForm";
 export default function FreeTrial() {
   const { data, status } = useSession();
+  useEffect(() => {
+    console.log(status, "session shit");
+  }, [status]);
 
   return (
     <Fragment>
@@ -17,7 +20,7 @@ export default function FreeTrial() {
         />
       </Head>
       <FreeTrialHero />
-      <FreeTrialProducts />
+      {status !== "authenticated" && <FreeTrialProducts />}
       <FreeTrialStdFrom session={status} data={data || null} />
     </Fragment>
   );

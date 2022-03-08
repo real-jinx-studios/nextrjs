@@ -2,9 +2,9 @@ import { connectToDB, dbQuery } from "../../../lib/db";
 import { getSession } from "next-auth/react";
 
 export default async function handler(req, res) {
-  console.log("why?");
   if (req.method === "GET") {
     const session = await getSession({ req });
+    console.log(req.query);
     const username = req.query.username;
     const email = req.query.email;
     const client = await connectToDB();

@@ -19,7 +19,11 @@ export default function ServicesPortalMain(props) {
   const { session, status } = props;
 
   useEffect(() => {
-    setSelectedItem(router.query.account);
+    if (router.query.account) {
+      setSelectedItem(router.query.account);
+    } else {
+      setSelectedItem("billing");
+    }
   }, [router.query.account]);
 
   const handleNavClick = (menuItem) => {

@@ -8,7 +8,7 @@ import { useRef, useState, Fragment } from "react";
 import CustomInputDropdown from "../inputs/customInputDropdown";
 
 export default function TrialRequestForm(props) {
-  const isStudentType = props.data.user.name.type;
+  const userType = props.data.user.name.type;
   //make useRef const to attach to html input fields for login
   const usernameRef = useRef();
   const passwordRef = useRef();
@@ -62,7 +62,7 @@ export default function TrialRequestForm(props) {
         </div>
       </div>
 
-      {!isStudentType ? (
+      {userType !== "student" ? (
         <div className={styles.form_section_wrapper}>
           <style jsx>
             {`

@@ -13,7 +13,7 @@ export default function Navbar2() {
   const { data: session, status } = useSession();
 
   const logoutHandler = () => {
-    signOut({ redirect: false })
+    signOut({ callbackUrl: "/login?destination=services-portal" })
       .then((response) => response)
       .then((data) => {
         router.replace("/login?destination=services-portal");
@@ -66,7 +66,7 @@ export default function Navbar2() {
               [styles.nav_li_scroll]: scroll === true,
             })}
           >
-            <Link href="/subtitle3">
+            <Link href="/subtitle">
               <a className={styles.nav_link_a}>Subtitle</a>
             </Link>
           </li>
@@ -231,10 +231,21 @@ export default function Navbar2() {
               [styles.nav_li_scroll]: scroll === true,
             })}
           >
+            <Link href="/products/help">
+              <a className={styles.nav_link_a}>help</a>
+            </Link>
+          </li>
+          <li
+            className={cn({
+              [styles.nav_li]: scroll === false,
+              [styles.nav_li_scroll]: scroll === true,
+            })}
+          >
             <Link href="/buy/checkout">
               <a className={styles.buy_now_wrapper}>BUY NOW</a>
             </Link>
           </li>
+
           {/*state login control button*/}
           {/*<li
             className={cn({

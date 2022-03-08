@@ -14,7 +14,6 @@ import { StoreProvider } from "../utils/store";
 import StateWindow from "../components/utils/stateWindow";
 import { SessionProvider } from "next-auth/react";
 import { ToastContainer } from "react-toastify";
-import GenericModal from "../components/modal/GenericModal";
 
 export default function App({
   Component,
@@ -61,6 +60,10 @@ export default function App({
             content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg"
           />
         </Head>
+        <Script
+          src="https://kit.fontawesome.com/3a98299328.js"
+          crossOrigin="anonymous"
+        />
         <Component
           setModal={setModal}
           location={router.pathname}

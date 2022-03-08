@@ -1,4 +1,4 @@
-import styles from "../styles/subtitle3.module.css";
+import styles from "../styles/subtitle.module.css";
 import MyImage from "../components/utils/myImage";
 import Link from "next/link";
 import ReactTooltip from "react-tooltip";
