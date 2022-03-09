@@ -11,20 +11,12 @@ import {
   useTransform,
   AnimateSharedLayout,
 } from "framer-motion";
-import { stagger, fadeInUp, easing } from "../components/animations";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import AnimateOnScroll from "../components/animateOnScroll";
-import AnimateDirectionSlide from "../components/animateDirectionSlide";
-import { useSpring } from "react-spring";
 import { useRouter } from "next/router";
-import ScrollDownPrompt from "../components/scrollDownPrompt";
-import PaypalCheckout from "../components/paypalCheckout";
 import Head from "next/head";
-import { ref } from "react";
 import Layout from "../components/layout";
 import { Store } from "../utils/store";
-import axios from "axios";
 
 export default function Subtitle() {
   /*intersection observer shit*/

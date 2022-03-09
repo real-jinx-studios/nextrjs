@@ -1,7 +1,9 @@
 import { Fragment } from "react";
-import HomeMain from "../components/homeMain";
 import styles from "../components/homeMain.module.css";
 import ProductsShowcase from "../components/home_page/products_showcase";
+import FeaturesSection from "../components/home_page/features_section";
+import TestimonialSection from "../components/home_page/testimonials_section";
+import ClientsSection from "../components/home_page/clients_section";
 
 export default function Home(props) {
   return (
@@ -15,9 +17,11 @@ export default function Home(props) {
         <h1 id="ezt-main-page">
           Cutting-edge professional subtitling products
         </h1>
-        {/*<HomeMain />*/}
       </section>
       <ProductsShowcase />
+      <FeaturesSection />
+      <TestimonialSection />
+      <ClientsSection />
     </Fragment>
   );
 }

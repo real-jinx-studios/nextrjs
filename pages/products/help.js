@@ -1,10 +1,7 @@
 import Link from "next/link";
 export default function Help() {
   return (
-    <section
-      aria-labelledby="help-title"
-      className="section container offset-top"
-    >
+    <section aria-labelledby="help-title" className="container">
       <style jsx>{`
         .products,
         .title {

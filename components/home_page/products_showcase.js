@@ -12,7 +12,7 @@ export default function ProductsShowcase() {
     oneRef.current.click();
   }, []);
   return (
-    <section className="container wide">
+    <section className="section wide">
       <style jsx>{`
         .main {
           margin: 0 auto;
@@ -25,10 +25,10 @@ export default function ProductsShowcase() {
         .three {
           border: 2px solid var(--clr-neutral-50);
           border-radius: 9px;
-          width: 380px;
+          width: 350px;
           position: relative;
           z-index: 1;
-          min-height: 550px;
+          min-height: 600px;
           transition: all 0.35s cubic-bezier(1, -0.65, 0, 1.35);
         }
         .one {
@@ -120,10 +120,17 @@ export default function ProductsShowcase() {
         .main_controller {
           display: flex;
           gap: 2em;
+          margin-top: 1.89em;
           justify-content: center;
         }
-        .main_controller i::before {
-          color: var(--clr-primary-50) !important;
+        .main_controller label::before {
+          color: var(--clr-neutral-50) !important;
+          display: inline-block;
+          content: "";
+          width: 0.5em;
+          height: 0.5em;
+          border-radius: 50%;
+          background-color: var(--clr-neutral-50);
           font-size: 1.5rem !important;
         }
         .card {
@@ -155,7 +162,7 @@ export default function ProductsShowcase() {
           justify-content: center;
         }
         .details {
-          flex: 0 0 30%;
+          flex: 0 0 34%;
           padding: 2em;
           margin: 0 auto;
         }
@@ -168,7 +175,9 @@ export default function ProductsShowcase() {
         .details_subtitle {
         }
         .details_buttons {
-          padding: 2em;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
           display: flex;
           gap: 1.8em;
           flex-direction: column;
@@ -271,9 +280,9 @@ export default function ProductsShowcase() {
             </label>
           </div>
           <div className="main_controller">
-            <i className="fa-regular fa-cat"></i>
-            <i className="fa-regular fa-cat"></i>
-            <i className="fa-regular fa-cat"></i>
+            <label htmlFor="green" />
+            <label htmlFor="red" />
+            <label htmlFor="purple" />
           </div>
         </div>
       </div>
