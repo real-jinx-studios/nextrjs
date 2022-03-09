@@ -1,3 +1,4 @@
+/*
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import HomeMain from "../components/homeMain";
@@ -66,3 +67,4 @@ export async function getStaticProps() {
     },
   };
 }
+*/
