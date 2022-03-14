@@ -534,6 +534,36 @@ li {
   border:2px solid #ffffff00;
   transition: all 0.3s;
 }
+.button_basic_long.blue{
+  background: rgb(17, 75, 103);
+  background: linear-gradient(
+          45deg,
+          rgba(17, 75, 103, 1) 0%,
+          rgba(32, 104, 140, 1) 66%,
+          rgba(47, 133, 176, 1) 100%
+  );
+  border-color: #00ffff;
+}
+.button_basic_long.red{
+  background: rgb(106, 19, 9);
+  background: linear-gradient(
+          45deg,
+          rgba(106, 19, 9, 1) 0%,
+          rgba(131, 24, 13, 1) 66%,
+          rgba(142, 27, 15, 1) 100%
+  );
+  border-color: #ce4f4a;
+}
+.button_basic_long.orange{
+  background: rgb(154, 68, 27);
+  background: linear-gradient(
+          45deg,
+          rgba(154, 68, 27, 1) 0%,
+          rgba(183, 66, 6, 1) 66%,
+          rgba(210, 77, 4, 1) 100%
+  );
+  border-color: #fbb03b;
+}
 .button_basic_long_outline{
   min-width: 13rem;
   border-radius:12px;
