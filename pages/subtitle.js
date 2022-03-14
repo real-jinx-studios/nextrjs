@@ -508,9 +508,9 @@ export default function Subtitle() {
         price: 80,
       },
     });
-    /*router.push("/login");*/
+    /*router.push("/user");*/
     router.push({
-      pathname: "/login",
+      pathname: "/user",
       query: { destination: "checkout" },
     });
   };
@@ -545,7 +545,7 @@ export default function Subtitle() {
         price: 500,
       },
     });
-    router.push("/login");
+    router.push("/user");
   };
 
   return (

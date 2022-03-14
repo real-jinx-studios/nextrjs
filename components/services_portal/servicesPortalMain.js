@@ -33,12 +33,12 @@ export default function ServicesPortalMain(props) {
   const handleLogout = () => {
     /* signOut({
                  redirect: false,
-                 callbackUrl: "/login?destination=services_portal",
+                 callbackUrl: "/user?destination=services_portal",
                }).then((data) => router.replace(data.url));*/
     signOut({
       redirect: false,
     });
-    router.replace("/login?destination=services-portal");
+    router.replace("/user?destination=services-portal");
   };
 
   return (

@@ -9,7 +9,7 @@ import CustomInputDropdown from "../../inputs/customInputDropdown";
 import { signIn } from "next-auth/react";
 
 export default function LoginFormTrial({ handleFormStateChange }) {
-  //make useRef const to attach to html input fields for login
+  //make useRef const to attach to html input fields for user
   const usernameRef = useRef();
   const passwordRef = useRef();
 

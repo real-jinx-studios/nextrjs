@@ -15,10 +15,10 @@ export default function Navbar2() {
   const [open, setOpen] = useState(false);
 
   const handleLogout = () => {
-    signOut({ callbackUrl: "/login?destination=services-portal" })
+    signOut({ callbackUrl: "/user?destination=services-portal" })
       .then((response) => response)
       .then((data) => {
-        router.replace("/login?destination=services-portal");
+        router.replace("/user?destination=services-portal");
       });
   };
   const handleBurbur = () => {
@@ -225,7 +225,7 @@ export default function Navbar2() {
                 </a>
               </Link>
             ) : (
-              <Link href="/login?destination=/services-portal?account=billing">
+              <Link href="/user/login?destination=/services-portal?account=billing">
                 <a className={styles.nav_link_a}>Login</a>
               </Link>
             )}

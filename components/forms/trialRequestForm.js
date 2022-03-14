@@ -9,7 +9,7 @@ import CustomInputDropdown from "../inputs/customInputDropdown";
 
 export default function TrialRequestForm(props) {
   const userType = props.data.user.name.type;
-  //make useRef const to attach to html input fields for login
+  //make useRef const to attach to html input fields for user
   const usernameRef = useRef();
   const passwordRef = useRef();
   //make useRef const to attach to html input fields for registration billing details

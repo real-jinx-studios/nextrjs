@@ -38,13 +38,13 @@ export default function Checkout() {
           username: loginTemp.username,
         })
         .then(function (response) {
-          setLogin({ login: true, ...response.data[0] });
+          setLogin({ user: true, ...response.data[0] });
         })
         .catch(function (error) {
           console.log(error, "error ass");
         });
     } else {
-      setLogin({ login: false });
+      setLogin({ user: false });
     }*/
   };
   const fetchLoginDetails = async (username) => {};
