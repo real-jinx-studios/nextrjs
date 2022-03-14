@@ -61,6 +61,7 @@ export default function BillingInformation(props) {
 
     setIsLoading(false);
   };
+
   if (data && !error) {
     return (
       <div className={styles.content}>

@@ -212,6 +212,29 @@ input, select{
 /* ---------------------- */
 /* Utility Classes       */
 /* -------------------- */
+/*a{
+  position:relative;
+  color: var(--clr-primary);
+}
+a::before{
+  content:"";
+  position: absolute;
+  left:0;
+  right:85%;
+  top:96%;
+  bottom:0;
+  transition: all 0.3s var(--cubic-bezier);
+  background-color: var(--clr-primary);
+}
+a:hover::before{
+  content:"";
+  position: absolute;
+  left:0;
+  right:0;
+  top:96%;
+  bottom:0;
+  background-color: var(--clr-primary);
+}*/
 #ezt-main-page{
   opacity:0;
   margin-bottom:2em;
@@ -1234,4 +1257,12 @@ padding: 0.8em;
 
   padding:0;
   max-width:100vw;
+}
+/*clients page shit*/
+.client-logo {
+  cursor: pointer;
+  opacity: 0.65;
+}
+.client-logo:hover {
+  opacity: 1;
 }

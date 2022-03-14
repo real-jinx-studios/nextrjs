@@ -6,15 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "next lint",
-    "start": "node_modules/next/dist/bin/next start -p $PORT"
+    "start": "node_modules/next/dist/bin/next start -p $PORT",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.40.0",
+    "@next/bundle-analyzer": "^12.1.0",
     "@webcomponents/shadydom": "^1.9.0",
     "axios": "^0.24.0",
     "bcryptjs": "^2.4.3",
     "cardinal": "^2.1.1",
     "classnames": "^2.3.1",
+    "cross-env": "^7.0.3",
     "crypto": "^1.0.1",
     "depcheck": "^1.4.2",
     "excel4node": "^1.2.1",
@@ -43,6 +48,7 @@
     "soap": "^0.42.0",
     "swr": "^1.0.1",
     "tls": "^0.0.1",
+    "webpack-bundle-analyzer": "^4.5.0",
     "xlsx": "^0.18.2",
     "xlsx-populate": "^1.21.0"
   }

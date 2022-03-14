@@ -6,6 +6,7 @@ export default function Clients() {
       src="images/clients/012_NASA_last.png"
       width={120}
       height={120}
+      className="client-logo"
     />
   ));
   return (
@@ -20,6 +21,7 @@ export default function Clients() {
           display: flex;
           gap: 1.5em;
           flex-wrap: wrap;
+          background: #ffffff00 url("/images/parrot-img.svg") no-repeat 50% 0%;
         }
       `}</style>
       <h1 id="clients">Clients</h1>

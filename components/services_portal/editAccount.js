@@ -42,7 +42,7 @@ export default function EditAccount() {
       theme: "colored",
     });
   };
-
+  debugger;
   return (
     <div className={styles.content}>
       <div className={styles.title_wrapper}>
@@ -58,7 +58,7 @@ export default function EditAccount() {
             disabled
           />
           <CustomInput
-            default={username}
+            default={username.name}
             type="text"
             placeholder="Username"
             isRequired

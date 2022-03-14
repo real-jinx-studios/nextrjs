@@ -27,7 +27,7 @@ export default function Checkout() {
     total: 0,
   });
   useEffect(() => {
-    calculateTP();
+    calculateTotalPrice();
     checkLogin();
   }, []);
   const checkLogin = async () => {
@@ -48,7 +48,7 @@ export default function Checkout() {
     }*/
   };
   const fetchLoginDetails = async (username) => {};
-  const calculateTP = () => {
+  const calculateTotalPrice = () => {
     let tempSub = 0;
     const tempVat = 25;
     checkoutItems.forEach((item) => {

@@ -2,6 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function ProductsShowcase() {
+  const [selectedProduct, setSelectedProduct] = useState("eztitles");
+  const handleSelectProductChange = (e) => {
+    setSelectedProduct(e.target.value);
+  };
   const oneRef = useRef();
   const twoRef = useRef();
   const threeRef = useRef();
@@ -161,10 +165,14 @@ export default function ProductsShowcase() {
           display: flex;
           justify-content: center;
         }
-        .details {
+        .details_container {
           flex: 0 0 34%;
           padding: 2em;
           margin: 0 auto;
+        }
+        .details_products {
+        }
+        .details_products.active {
         }
         .details_title_wrapper {
           text-align: center;
@@ -184,27 +192,29 @@ export default function ProductsShowcase() {
         }
       `}</style>
       <div className="main_wrapper">
-        <div className="details">
-          <div className="details_title_wrapper">
-            <h3 className="details_title">
-              Subtitles and Closed Captions creation software
-            </h3>
-            <p className="details_subtitle">
-              <strong>Starting from €58/month</strong>
-              <br />
-              <em>for EZTitles Essentials</em>
-            </p>
-          </div>
-          <div className="details_buttons">
-            <Link href="/products/free-trial">
-              <a className="button button_basic_long">FREE TRIAL</a>
-            </Link>
-            <Link href="/checkout">
-              <a className="button button_basic_long">BUY NOW</a>
-            </Link>
-            <Link href="/products/ezt/license">
-              <a className="button button_basic_long">LICENSE EDITIONS</a>
-            </Link>
+        <div className="details_container">
+          <div className="details_product">
+            <div className="details_title_wrapper">
+              <h3 className="details_title">
+                Subtitles and Closed Captions creation software
+              </h3>
+              <p className="details_subtitle">
+                <strong>Starting from €58/month</strong>
+                <br />
+                <em>for EZTitles Essentials</em>
+              </p>
+            </div>
+            <div className="details_buttons">
+              <Link href="/products/free-trial">
+                <a className="button button_basic_long">FREE TRIAL</a>
+              </Link>
+              <Link href="/checkout">
+                <a className="button button_basic_long">BUY NOW</a>
+              </Link>
+              <Link href="/products/ezt/license">
+                <a className="button button_basic_long">LICENSE EDITIONS</a>
+              </Link>
+            </div>
           </div>
         </div>
 

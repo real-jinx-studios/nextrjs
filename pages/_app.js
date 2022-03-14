@@ -74,7 +74,7 @@ export default function App({
         {isBreakpoint ? <NavbarSmall /> : <Navbar2 />}
         <Footer />
         <ToastContainer />
-        <StateWindow />
+        {/*<StateWindow />*/}
         {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
         <Modal showModal={showModal} setModal={setModal} />
         {/*  <GenericModal />*/}
