@@ -513,6 +513,7 @@ li {
   cursor: pointer;
   border-radius: 50px;
   font-size: 1.05rem;
+  text-transform: uppercase;
 }
 .button_small{
   color: #ffffff;
@@ -1298,4 +1299,61 @@ padding: 0.8em;
 }
 .center{
   text-align:center;
+}
+.flex-center-center{
+  display:flex;
+  align-items: center;
+  justify-content:center;
+}
+.flex-center-space_between{
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+}
+.flex-center-space_around{
+  display:flex;
+  align-items: center;
+  justify-content:space-around;
+}
+.flex-col{
+  flex-direction: column;
+}
+.gap-m{
+  gap:4em;
+}
+.gap-l{
+  gap:8em;
+}
+.background-main{
+  background-color: var(--clr-main);
+}
+
+/*so stupid*/
+.feature-details strong {
+  color: var(--clr-text-highlight) !important;
+  font-weight: 500;
+}
+.feature-details p a {
+  color: var(--clr-text-highlight) !important;
+  font-weight: 500;
+  position:relative;
+}
+.feature-details p a::before{
+  content:"";
+  position: absolute;
+  left:0;
+  right:85%;
+  top:96%;
+  bottom:0;
+  transition: all 0.3s var(--cubic-bezier);
+  background-color: var(--clr-text-highlight) !important;
+}
+.feature-details p a:hover::before{
+  content:"";
+  position: absolute;
+  left:0;
+  right:0;
+  top:96%;
+  bottom:0;
+  background-color: var(--clr-text-highlight) !important;
 }

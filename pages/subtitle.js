@@ -17,6 +17,8 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Layout from "../components/layout";
 import { Store } from "../utils/store";
+import ProductFeaturesSection from "../components/products/eztitles/product_features_section";
+import FileFormatsSection from "../components/products/eztitles/file_formats_section";
 
 export default function Subtitle() {
   /*intersection observer shit*/
@@ -2363,6 +2365,8 @@ export default function Subtitle() {
             </div>
           </div>
         </section>
+        <ProductFeaturesSection />
+        <FileFormatsSection />
         <section className={styles.last_section} ref={section5}>
           <h1>Sample section w/text</h1>
           <p>
