@@ -19,6 +19,8 @@ import Layout from "../components/layout";
 import { Store } from "../utils/store";
 import ProductFeaturesSection from "../components/products/eztitles/product_features_section";
 import FileFormatsSection from "../components/products/eztitles/file_formats_section";
+import TimelineSection from "../components/products/eztitles/timeline_section";
+import LicenseOptionsSection from "../components/products/eztitles/license_options_section";
 
 export default function Subtitle() {
   /*intersection observer shit*/
@@ -2365,8 +2367,10 @@ export default function Subtitle() {
             </div>
           </div>
         </section>
+        <TimelineSection />
         <ProductFeaturesSection />
         <FileFormatsSection />
+        <LicenseOptionsSection />
         <section className={styles.last_section} ref={section5}>
           <h1>Sample section w/text</h1>
           <p>

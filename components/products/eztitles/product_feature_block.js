@@ -6,29 +6,38 @@ export default function ProductFeatureBlock({ feature }) {
     <Fragment>
       <style jsx>{`
         .feature-wrapper {
+          width: 100%;
           display: flex;
           flex-wrap: wrap;
           align-items: center;
           justify-content: center;
+          /*outline: red solid 1px;*/
         }
         .feature-details {
           flex: 1;
           display: grid;
           grid-auto-rows: 0.3fr 0.3fr 1fr 0.3fr;
-
-          padding: 3em;
+          justify-content: end;
+          padding: 0.5em 3em;
         }
         .feature-details > * {
         }
-        .feature-details.left {
+        .feature-details.left.split {
           text-align: right;
           position: relative;
+          /*outline: red solid 1px;*/
+        }
+        .feature-details.left {
+          text-align: left;
+          position: relative;
+          /*outline: red solid 1px;*/
         }
         .feature-details.right {
           text-align: right;
           position: relative;
+          /*outline: red solid 1px;*/
         }
-        .feature-details.left::after {
+        .feature-details.left.split::after {
           position: absolute;
           content: "";
           left: calc(100% - 1px);
@@ -38,15 +47,19 @@ export default function ProductFeatureBlock({ feature }) {
           background-color: var(--clr-neutral-50);
         }
         .feature-media {
-          flex: 0 0 50%;
-          padding: 2em;
+          /*outline: red solid 1px;*/
+          /*flex: 0 0 50%;*/
+          height: 100%;
+          padding: 3em;
         }
         .feature-details_title {
           font-size: 2.5rem;
           font-weight: 100;
         }
         .feature-details_actions-wrapper {
-          padding: 0.5em 0em;
+        }
+        .feature-details_actions-wrapper > a:nth-child(1) {
+          margin: 0 1em;
         }
         .highlight-text {
           color: var(--clr-text-highlight);
@@ -60,7 +73,7 @@ export default function ProductFeatureBlock({ feature }) {
       <div className="feature-wrapper">
         {feature.displayOption === "description-media" && (
           <Fragment>
-            <div className="feature-details">
+            <div className="feature-details left">
               <h3 className="feature-details_title">
                 {feature.description.title}
               </h3>
@@ -70,7 +83,7 @@ export default function ProductFeatureBlock({ feature }) {
                   dangerouslySetInnerHTML={{ __html: paragraph }}
                 />
               ))}
-              <div className="feature-details_actions-wrapper flex-center-space_between">
+              <div className="feature-details_actions-wrapper">
                 {feature.description.actions.map((action) => (
                   <Link href={action.href}>
                     <a className="button button_basic_long">{action.name}</a>
@@ -108,7 +121,7 @@ export default function ProductFeatureBlock({ feature }) {
                   dangerouslySetInnerHTML={{ __html: paragraph }}
                 />
               ))}
-              <div className="feature-details_actions-wrapper flex-center-space_between">
+              <div className="feature-details_actions-wrapper">
                 {feature.description.actions.map((action) => (
                   <Link href={action.href}>
                     <a className="button button_basic_long">{action.name}</a>
@@ -120,7 +133,7 @@ export default function ProductFeatureBlock({ feature }) {
         )}
         {feature.displayOption === "description-description" && (
           <Fragment>
-            <div className="feature-details left">
+            <div className="feature-details left split">
               <h3 className="feature-details_title">
                 {feature.description.title}
               </h3>
@@ -130,7 +143,7 @@ export default function ProductFeatureBlock({ feature }) {
                   dangerouslySetInnerHTML={{ __html: paragraph }}
                 />
               ))}
-              <div className="feature-details_actions-wrapper flex-center-space_between">
+              <div className="feature-details_actions-wrapper">
                 {feature.description.actions.map((action) => (
                   <Link href={action.href}>
                     <a className="button button_basic_long">{action.name}</a>
@@ -146,7 +159,7 @@ export default function ProductFeatureBlock({ feature }) {
                   dangerouslySetInnerHTML={{ __html: paragraph }}
                 />
               ))}
-              <div className="feature-details_actions-wrapper flex-center-space_between">
+              <div className="feature-details_actions-wrapper">
                 {feature.media.actions.map((action) => (
                   <Link href={action.href}>
                     <a className="button button_basic_long">{action.name}</a>
