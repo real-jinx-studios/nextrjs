@@ -6,17 +6,18 @@ export default async function handler(req, res) {
     if (req.method === "GET") {
       let session;
       try {
-        session = await getSession({req});
+        session = await getSession({ req });
       } catch (e) {
-        res.status(401).json({message: e.message});
+        res.status(401).json({ message: e.message });
       }
+      res.status(203).json({ sess: session });
       const username = req.query.username;
       const email = req.query.email;
       let client;
       try {
         client = await connectToDB();
       } catch (e) {
-        res.status(402).json({message: e.message});
+        res.status(402).json({ message: e.message });
       }
       const queryObject = {
         query: "SELECT * FROM customers WHERE email=? LIMIT 1",
@@ -26,16 +27,16 @@ export default async function handler(req, res) {
       try {
         result = await dbQuery(client, queryObject);
       } catch (e) {
-        res.status(403).json({message: e.message});
+        res.status(403).json({ message: e.message });
       }
       try {
         client.close();
       } catch (e) {
-        res.status(405).json({message: e.message});
+        res.status(405).json({ message: e.message });
       }
       res.status(200).json(result[0]);
     }
   } catch (e) {
-    res.status(406).json({ message: e.message, fuck:'off' });
+    res.status(406).json({ message: e.message, fuck: "off" });
   }
 }
