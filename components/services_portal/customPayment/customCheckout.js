@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import useSWR from "swr";
 import Loader from "../../loader";
 import LoaderDots from "../../utils/loaderDots";
+import BillingInfoForm from "../../forms/BillingInfoForm";
 export default function CustomCheckout(props) {
   const [vatStatus, setVatStatus] = useState("(w/o VAT)");
   const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -89,79 +90,21 @@ export default function CustomCheckout(props) {
             className={styles.custom_checkout_form}
             onSubmit={handleCheckout}
           >
-            <div className={styles.custom_checkout_form_fields}>
-              <CustomInput
-                default={data.first_name}
-                type="text"
-                placeholder="First Name"
-                isRequired
-                reference={firstNameRef}
-              />
-              <CustomInput
-                default={data.last_name}
-                type="text"
-                placeholder="Last Name"
-                isRequired
-                reference={lastNameRef}
-              />
-              <CustomInput
-                default={data.country}
-                type="text"
-                placeholder="Country"
-                isRequired
-                disabled
-                reference={countryRef}
-              />
-              <CustomInput
-                default={data.vat}
-                type="text"
-                placeholder="VAT Number"
-                isRequired
-                special="vat"
-                reference={vatRef}
-              />
-              <CustomInput
-                default={data.city}
-                type="text"
-                placeholder="City"
-                isRequired
-                reference={cityRef}
-              />
-              <CustomInput
-                default={data.street_address}
-                type="text"
-                placeholder="Street Address line 1"
-                isRequired
-                reference={streetAddr1Ref}
-              />
-              <CustomInput
-                default={data.street_address_2}
-                type="text"
-                placeholder="Street Address line 2"
-                reference={streetAddr2Ref}
-              />
-              <CustomInput
-                default={data.postcode}
-                type="text"
-                placeholder="Postal Code"
-                isRequired
-                reference={postcodeRef}
-              />
-              <CustomInput
-                default={data.company_name}
-                type="text"
-                placeholder="Company Name"
-                isRequired
-                reference={companyNameRef}
-              />
-              <CustomInput
-                default={data.phone_num}
-                type="text"
-                placeholder="Phone Number"
-                isRequired
-                reference={phoneNumberRef}
-              />
-            </div>
+            <BillingInfoForm
+              userInfo={data}
+              references={{
+                firstNameRef: firstNameRef,
+                lastNameRef: lastNameRef,
+                countryRef: countryRef,
+                cityRef: cityRef,
+                vatRef: vatRef,
+                streetAddr1Ref: streetAddr1Ref,
+                streetAddr2Ref: streetAddr2Ref,
+                postcodeRef: postcodeRef,
+                phoneNumberRef: phoneNumberRef,
+                companyNameRef: companyNameRef,
+              }}
+            />
             <div className={styles.paypal_button_container}>
               <h3 className={styles.custom_payment_section_title}>
                 Payment Method:

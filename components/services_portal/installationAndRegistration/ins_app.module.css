@@ -80,6 +80,22 @@ display:flex;
     right:84%;
     background-color: var(--clr-primary);
 }
+.file_wrapper.green:hover::before{
+    right:84%;
+    background-color: #3b8a21;
+}
+.file_wrapper.blue:hover::before{
+    right:84%;
+    background-color: var(--clr-primary);
+}
+.file_wrapper.red:hover::before{
+    right:84%;
+    background-color: #ea2222;
+}
+.file_wrapper.gray:hover::before{
+    right:84%;
+    background-color: var(--clr-neutral-500);
+}
 .file_wrapper p{
 font-size:0.92rem;
     color:var(--clr-neutral-800);

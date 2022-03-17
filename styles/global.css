@@ -908,59 +908,7 @@ font-size: 6rem;
   margin-bottom: 1em;
   transition: all 0.3s ease;
 }
-billing__inner{
-  flex-grow: 1;
-  flex-shrink: 0;
-}
-.billing__inner-step{
-  flex-grow: 0;
-  flex-shrink: 1;
-}
 
-.billing__inner::before{
-  content: "1";
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--clr-neutral-50);
-  font-size: 1.5rem;
-  font-weight: 600;
-  width: 2.3em;
-  height: 2.3em;
-  position: absolute;
-  top:-1em;
-  left:-1em;
-  border-radius: 50%;
-  background-color: var(--system-b-blue);
-}
-.billing__inner-step::before{
-  content: "2";
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--clr-neutral-50);
-  font-size: 1.5rem;
-  font-weight: 600;
-  width: 1.8em;
-  height: 1.8em;
-  position: absolute;
-  top:0.398em;
-  left:-0.8em;
-  border-radius: 50%;
-  background-color: var(--clr-neutral-250);
-}
-.billing__inner-step{
-padding: 0.8em;
-  padding-left: 2.4em;
-}
-.billing-step__title{
-  font-size: 1.5rem;
-  text-align: left;
-  margin: 0;
-  color: var(--clr-neutral-250);
-}
 
 .input_c:checked + .billing > .billing__inner > .billing__title{
   opacity: 0;
@@ -1010,9 +958,14 @@ padding: 0.8em;
 .cart__items {
   margin-bottom: 1em;
   display: grid;
+/*  outline:var(--clr-primary) solid 1px;*/
+  padding:0.2em;
   grid-column-gap: 0.2em;
   grid-template-rows: repeat(2, minmax(0px, auto));
-  grid-template-columns: 3.2em repeat(2, minmax(0px, 0.65fr)) auto 1fr;
+  grid-template-columns: 3.2em repeat(3, minmax(0px, 0.65fr)) 1fr;
+}
+.cart__items > * {
+/*  outline: red solid 1px;*/
 }
 .cart__items__icon{
   grid-column:1 / 2;
@@ -1034,15 +987,37 @@ padding: 0.8em;
   grid-column:3 / 4;
   grid-row:2 / 3;
 }
+.cart__items__quantity_title{
+  grid-column:4 / 5;
+  grid-row:1 / 2;
+}
 .cart__items__quantity{
   grid-column:4 / 5;
-  grid-row:1 / 3;
+  grid-row:2 / 3;
 }
 .cart__items__total{
   grid-column:5 / 6;
   grid-row:1 / 3;
 }
+.cart__items__duration .editable, .cart__items__quantity .editable{
+  display: flex;
+  justify-content: space-around;
 
+}
+.editable > .actions > button{
+
+  border:0;
+color:var(--clr-neutral-50);
+  margin:0 0.1em;
+  padding:0 0.8em;
+  cursor: pointer;
+  border-radius:25px;
+  background-color: #2e82ff;
+
+}
+.editable > .actions > button:hover{
+  background-color: #E4641C;
+}
 .cart__sum {
   position: relative;
   padding: 1.3em 2.1em 1.3em 1.2em;
@@ -1387,4 +1362,9 @@ padding: 0.8em;
 .section-heading{
   font-size: var(--fs-600);
   font-weight: 200;
+}
+.offset-top{
+  margin-top:calc(var(--offset-top) + 4.2em);
+  position:relative;
+
 }

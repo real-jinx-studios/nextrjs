@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LoaderDots from "../utils/loaderDots";
 import CustomInputDropdown from "../inputs/customInputDropdown";
+import BillingInfoForm from "../forms/BillingInfoForm";
 export default function BillingInformation(props) {
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR("/api/user", fetcher);
@@ -80,75 +81,20 @@ export default function BillingInformation(props) {
                 <LoaderDots size="xl" color="system" />
               </div>
             )}
-            <CustomInput
-              default={data.first_name}
-              type="text"
-              placeholder="First Name"
-              isRequired
-              reference={firstNameRef}
-            />
-            <CustomInput
-              default={data.last_name}
-              type="text"
-              placeholder="Last Name"
-              isRequired
-              reference={lastNameRef}
-            />
-            <CustomInputDropdown
-              reference=""
-              placeholder="Country"
-              isCountry={true}
-              value={data.country}
-              reference={countryRef}
-            />
-            <CustomInput
-              default={data.vat}
-              type="text"
-              placeholder="VAT Number"
-              isRequired
-              special="vat"
-              reference={vatRef}
-            />
-            <CustomInput
-              default={data.city}
-              type="text"
-              placeholder="City"
-              isRequired
-              reference={cityRef}
-            />
-            <CustomInput
-              default={data.street_address}
-              type="text"
-              placeholder="Street Address line 1"
-              isRequired
-              reference={streetAddr1Ref}
-            />
-            <CustomInput
-              default={data.street_address_2}
-              type="text"
-              placeholder="Street Address line 2"
-              reference={streetAddr2Ref}
-            />
-            <CustomInput
-              default={data.postcode}
-              type="text"
-              placeholder="Postal Code"
-              isRequired
-              reference={postcodeRef}
-            />
-            <CustomInput
-              default={data.company_name}
-              type="text"
-              placeholder="Company Name"
-              isRequired
-              reference={companyNameRef}
-            />
-            <CustomInput
-              default={data.phone_num}
-              type="text"
-              placeholder="Phone Number"
-              isRequired
-              reference={phoneNumberRef}
+            <BillingInfoForm
+              userInfo={data}
+              references={{
+                firstNameRef: firstNameRef,
+                lastNameRef: lastNameRef,
+                countryRef: countryRef,
+                cityRef: cityRef,
+                vatRef: vatRef,
+                streetAddr1Ref: streetAddr1Ref,
+                streetAddr2Ref: streetAddr2Ref,
+                postcodeRef: postcodeRef,
+                phoneNumberRef: phoneNumberRef,
+                companyNameRef: companyNameRef,
+              }}
             />
             <div className={styles.submit_buttons}>
               <button className="button button_basic_long">save changes</button>

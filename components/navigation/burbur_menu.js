@@ -5,21 +5,25 @@ export default function BurburMenu({ open }) {
       <style jsx>{`
         .burbur-menu {
           width: 320px;
+          /*full screen*/
+          /*width: 100%;*/
           position: absolute;
           overflow-x: hidden;
           top: 0;
           height: 100vh;
           background-color: #fefefeee;
           transform: translateX(100vw);
-          transition: transform 0.25s;
+          transition: transform 0.38s ease-in-out;
           z-index: -1;
           display: grid;
           align-items: center;
-          background: #fefefeee url("/images/parrot-img.svg") no-repeat 44% 36%;
+          background: #fefefefe url("/images/parrot-img.svg") no-repeat 44% 36%;
         }
         .burbur-menu.open {
           visibility: visible;
           transform: translateX(calc(100vw - 320px));
+          /*full screen*/
+          /*transform: translateX(0);*/
         }
         .burbur-inner {
           margin: 0 auto;

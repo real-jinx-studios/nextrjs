@@ -7,10 +7,13 @@ export default async function handler(req, res) {
       let session;
       try {
         session = await getSession({ req });
+        if (!session) {
+          res.status(401).json({ message: "Not authenticated!" });
+          return;
+        }
       } catch (e) {
         res.status(401).json({ message: e.message });
       }
-      res.status(203).json({ sess: session });
       const username = req.query.username;
       const email = req.query.email;
       let client;

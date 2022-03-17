@@ -263,11 +263,7 @@ export default function CustomInputDropdown({
     { name: "Zimbabwe", code: "ZW" },
   ];
   const optionsJsx = countries.map((c) => (
-    <option
-      value={c.name}
-      key={c.code}
-      selected={value === c.name ? "selected" : "false"}
-    >
+    <option value={c.name} key={c.code} selected={value === c.name}>
       {c.name}
     </option>
   ));

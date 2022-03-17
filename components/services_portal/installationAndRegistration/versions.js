@@ -52,7 +52,7 @@ export default function Versions() {
         {sampleFiles.map((x) => (
           <div
             onClick={handleDownloadFile}
-            className={styles.file_wrapper}
+            className={`${styles.file_wrapper} ${styles[x.icon]}`}
             key={x.title}
             data-before-content={x.icon}
           >

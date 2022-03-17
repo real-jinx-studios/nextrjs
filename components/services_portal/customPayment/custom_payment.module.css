@@ -191,7 +191,12 @@
     margin-bottom:3em;
     display:grid;
     grid-gap:1.3em;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+}
+@media (min-width: 432px) {
+    .custom_checkout_form_fields {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 .custom_payment_section_title{
     color:var(--clr-neutral-800);
