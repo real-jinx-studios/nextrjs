@@ -152,6 +152,7 @@ to right,
 /* --------------------- */
 /*    Reset             */
 /* ------------------- */
+
 *,
 *::before,
 *::after {
@@ -211,6 +212,31 @@ input, select{
 /* ---------------------- */
 /* Utility Classes       */
 /* -------------------- */
+
+
+/*specific nextjs div setup*/
+#__next{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  margin-bottom: 0px !important;
+  /*another option for sticking footer to bottom with flex*/
+
+  /*
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;*/
+}
+footer{
+  width: 100%;
+  flex: 1 1 0;
+  flex-shrink: 0;
+}
+
+.disable_scroll{
+  overflow: hidden !important;
+  height: 100% !important;
+}
 /*a{
   position:relative;
   color: var(--clr-primary);

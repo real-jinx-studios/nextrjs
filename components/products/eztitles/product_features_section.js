@@ -3,6 +3,7 @@ import ProductFeatureBlock from "./product_feature_block";
 export default function ProductFeatureSection() {
   const features = [
     {
+      isAnimated: true,
       displayOption: "description-media",
       id: 0,
       description: {
@@ -20,11 +21,12 @@ export default function ProductFeatureSection() {
       },
       media: {
         image: "/images/software/eztitles/subassi.png",
-        video: "/images/software/eztitles/subassi.png",
+        video: "/animations/sub_ass_anim.json",
         alt: "subtitling assistant",
       },
     },
     {
+      isAnimated: true,
       displayOption: "media-description",
       id: 1,
       description: {
@@ -40,11 +42,12 @@ export default function ProductFeatureSection() {
       },
       media: {
         image: "/images/software/eztitles/subassi.png",
-        video: "/images/software/eztitles/subassi.png",
+        video: "/animations/prod_scripts_anim.json",
         alt: "Production scripts import alt",
       },
     },
     {
+      isAnimated: false,
       displayOption: "description-description",
       id: 3,
       description: {
@@ -73,6 +76,7 @@ export default function ProductFeatureSection() {
       },
     },
     {
+      isAnimated: true,
       displayOption: "description-media",
       id: 4,
       description: {
@@ -85,11 +89,12 @@ export default function ProductFeatureSection() {
       },
       media: {
         image: "/images/software/eztitles/subassi.png",
-        video: "/images/software/eztitles/subassi.png",
+        video: "/animations/dragon_anim.json",
         alt: "dragon alt",
       },
     },
     {
+      isAnimated: true,
       displayOption: "media-description",
       id: 5,
       description: {
@@ -104,11 +109,12 @@ export default function ProductFeatureSection() {
       },
       media: {
         image: "/images/software/eztitles/subassi.png",
-        video: "/images/software/eztitles/subassi.png",
+        video: "/animations/split_text_anim.json",
         alt: "split alt",
       },
     },
     {
+      isAnimated: false,
       displayOption: "description-media",
       id: 6,
       description: {
@@ -131,6 +137,7 @@ export default function ProductFeatureSection() {
       },
     },
     {
+      isAnimated: false,
       displayOption: "media-description",
       id: 7,
       description: {
@@ -156,6 +163,7 @@ export default function ProductFeatureSection() {
       },
     },
     {
+      isAnimated: false,
       displayOption: "description-media",
       id: 8,
       description: {

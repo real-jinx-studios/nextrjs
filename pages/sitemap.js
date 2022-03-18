@@ -1,12 +1,9 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
 import Script from "next/script";
-
 export default function Sitemap() {
   return (
     <Fragment>
-      <Script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></Script>
-
       <div className="sitemap_wrapper main_wrapper">
         <h1>EZTitles sitemap</h1>
         <section className="sitemap_section">
@@ -303,48 +300,6 @@ export default function Sitemap() {
               were mere suggestions, not actually absolute rules. That's why the
               moment Jack looked at the "Do Not Enter" sign, he walked past it
               and onto their property.
-            </div>
-            <div className="sitemap_animation_animation">
-              <lottie-player
-                src="/animations/optimized.json"
-                background="transparent"
-                speed="1"
-                style={{ width: 300, height: 300 }}
-                loop
-                controls
-                autoplay
-              />
-              <div className="anim_space"></div>
-              <lottie-player
-                src="/animations/optimized.json"
-                background="transparent"
-                speed="1"
-                style={{ width: 600, height: 600 }}
-                loop
-                controls
-                autoplay
-              />
-              <div className="anim_space"></div>
-              <lottie-player
-                src="/animations/optimized.json"
-                background="transparent"
-                speed="1"
-                style={{ width: 900, height: 900 }}
-                loop
-                controls
-                autoplay
-              />
-              <div className="anim_space"></div>
-              <lottie-player
-                src="/animations/optimized.json"
-                background="transparent"
-                speed="1"
-                style={{ width: 1200, height: 1200 }}
-                loop
-                controls
-                autoplay
-              />
-              <div className="anim_space"></div>
             </div>
           </div>
         </section>

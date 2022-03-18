@@ -9,6 +9,7 @@ import CustomInput from "../components/inputs/customInput";
 import LoaderDots from "../components/utils/loaderDots";
 import Cart from "../components/checkout/cart";
 import BillingInfoStep from "../components/checkout/steps/billing_info_step";
+import EmptyCart from "../components/checkout/emptyCart";
 
 export default function Checkout() {
   const [login, setLogin] = useState({ login: false });
@@ -39,25 +40,29 @@ export default function Checkout() {
   };
 
   if (status === "authenticated") {
-    return (
-      <section className="checkout offset-top">
-        {currentStep === "billing" && (
-          <BillingInfoStep
-            handleSubmit={handleBillingSubmit}
-            isVatValid={isVatValid}
-            stepNumber={1}
+    if (checkoutItems && checkoutItems.length > 0) {
+      return (
+        <section className="checkout offset-top">
+          {currentStep === "billing" && (
+            <BillingInfoStep
+              handleSubmit={handleBillingSubmit}
+              isVatValid={isVatValid}
+              stepNumber={1}
+              isCartEditable={isCartEditable}
+              setIsCartEditable={setIsCartEditable}
+            />
+          )}
+          {currentStep === "hardid" && <div>hardware id step</div>}
+          <Cart
+            checkoutItems={checkoutItems}
             isCartEditable={isCartEditable}
             setIsCartEditable={setIsCartEditable}
           />
-        )}
-        {currentStep === "hardid" && <div>hardware id step</div>}
-        <Cart
-          checkoutItems={checkoutItems}
-          isCartEditable={isCartEditable}
-          setIsCartEditable={setIsCartEditable}
-        />
-      </section>
-    );
+        </section>
+      );
+    } else {
+      return <EmptyCart />;
+    }
   }
   return (
     <section className="section flex-center-center">

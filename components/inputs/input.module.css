@@ -137,6 +137,7 @@
 }
 
 .input {
+    position:relative;
     color: var(--clr-neutral-800);
     font-size: 1rem;
     margin: 0 auto;

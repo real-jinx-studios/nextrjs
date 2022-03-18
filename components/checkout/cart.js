@@ -1,5 +1,6 @@
-import { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, useRef, Fragment } from "react";
 import NumberFormat from "react-number-format";
+import { A11yDialog } from "react-a11y-dialog";
 import MyImage from "../utils/myImage";
 
 export default function Cart({
@@ -34,6 +35,9 @@ export default function Cart({
     };
     setTotalPrices({ ...tempTotal(tempSub, tempVat) });
   };
+
+  const dialog = React.useRef();
+
   useEffect(() => {
     calculateTotalPrice();
   }, []);
@@ -59,7 +63,7 @@ export default function Cart({
           </span>
           {isCartEditable && (
             <div className="actions">
-              <button>+</button>
+              <button onClick={() => modalRef.current.show()}>+</button>
               <button>-</button>
             </div>
           )}
@@ -73,7 +77,7 @@ export default function Cart({
           <span className="value">{x.quantity}</span>
           {isCartEditable && (
             <div className="actions">
-              <button>+</button>
+              <button data-a11y-dialog-show="my-dialog">+</button>
               <button>-</button>
             </div>
           )}
@@ -142,7 +146,12 @@ export default function Cart({
             </span>
           </div>
           <div className="cart__sum__title-total flex justify-sb font-bold">
-            <span className="font-size-ml">TOTAL: </span>
+            <span
+              onClick={() => modalRef.current.show()}
+              className="font-size-ml"
+            >
+              TOTAL:{" "}
+            </span>
             <span className="font-size-ml">
               <NumberFormat
                 value={totalPrices.total}

@@ -1,5 +1,5 @@
 import "../styles/global.css";
-import Navbar2 from "../components/navigation/navbar2";
+import NavbarWide from "../components/navigation/navbarWide";
 import Footer from "../components/navigation/footer";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import React, { useCallback, useContext, useEffect, useState } from "react";
@@ -64,6 +64,7 @@ export default function App({
           src="https://kit.fontawesome.com/3a98299328.js"
           crossOrigin="anonymous"
         />
+        <header>{isBreakpoint ? <NavbarSmall /> : <NavbarWide />}</header>
         <Component
           setModal={setModal}
           location={router.pathname}
@@ -71,13 +72,11 @@ export default function App({
           {...pageProps}
         />
 
-        {isBreakpoint ? <NavbarSmall /> : <Navbar2 />}
         <Footer />
         <ToastContainer />
         {/*<StateWindow />*/}
         {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
         <Modal showModal={showModal} setModal={setModal} />
-        {/*  <GenericModal />*/}
       </SessionProvider>
     </StoreProvider>
   );

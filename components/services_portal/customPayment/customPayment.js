@@ -10,6 +10,7 @@ export default function CustomPayment() {
   const [tokenCost, setTokenCost] = useState(30);
   const [tokenTier, setTokenTier] = useState(0);
   const [isCheckout, setIsCheckout] = useState(false);
+  const priceRef = useRef();
   const handleCancel = () => {
     setIsCheckout(false);
   };
@@ -124,12 +125,13 @@ export default function CustomPayment() {
                 />
               ) : (
                 <CustomInput
+                  special="price"
                   type="text"
                   placeholder="Price, €(VAT excluded)"
                   id="total"
                   name="custom-payment"
-                  handleChange={handleCustomCost}
-                  default={`€${customCost}`}
+                  reference={priceRef}
+                  /*handleChange={handleCustomCost}*/
                 />
               )}
             </div>

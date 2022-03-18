@@ -3,9 +3,10 @@ import { useRef, useState, useEffect } from "react";
 import LoaderDots from "../utils/loaderDots";
 
 export default function CustomInput(props) {
-  let { isRequired, reference } = props;
+  let { isRequired, reference, isCustomPrice } = props;
   const [isVatValid, setIsVatValid] = useState();
   const [vatValue, setVatValue] = useState(props.default);
+  const [priceValue, setPriceValue] = useState(props.default);
 
   //VAT input component
   if (props.special === "vat") {
@@ -141,6 +142,35 @@ export default function CustomInput(props) {
         <div className={styles.radio_input_circle}></div>
         <div className={styles.radio_input_text}>{props.placeholder}</div>
       </label>
+    );
+  }
+
+  //Custom price input component
+  if (props.special === "price") {
+    const handlePriceChange = (e) => {
+      const sanitize = /[^0-9]/g;
+      let priceInputValue = reference.current.value;
+      console.log(priceInputValue, "before removal");
+      priceInputValue = priceInputValue.replace(sanitize, "");
+      console.log(priceInputValue);
+      setPriceValue(priceInputValue);
+    };
+
+    return (
+      <div className={styles.input_wrapper}>
+        <input
+          ref={reference}
+          type={props.type}
+          className={`${styles.input} ${styles.price}`}
+          id={props.id}
+          placeholder={props.placeholder}
+          value={priceValue}
+          onChange={handlePriceChange}
+        />
+        <label htmlFor={props.id} className={styles.input_label}>
+          {props.placeholder}
+        </label>
+      </div>
     );
   }
 

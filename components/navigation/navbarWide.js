@@ -8,7 +8,7 @@ import Cookies from "js-cookie";
 import { Store } from "../../utils/store";
 import { useSession, signOut } from "next-auth/react";
 import BurburMenu from "./burbur_menu";
-export default function Navbar2() {
+export default function NavbarWide() {
   const { app_state, dispatch } = useContext(Store);
   const { logged_in, checkout } = app_state;
   const { data: session, status } = useSession();

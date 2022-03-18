@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { Fragment } from "react";
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
 
 export default function ProductFeatureBlock({ feature }) {
+  console.log(feature.media.video);
   return (
     <Fragment>
       <style jsx>{`
@@ -92,24 +94,52 @@ export default function ProductFeatureBlock({ feature }) {
               </div>
             </div>
             <div className="feature-media flex-center-center">
-              <img
-                src={feature.media.image}
-                alt={feature.media.alt}
-                width={250}
-                height={250}
-              />
+              {!feature.isAnimated ? (
+                <img
+                  src={feature.media.image}
+                  alt={feature.media.alt}
+                  width={250}
+                  height={250}
+                />
+              ) : (
+                <Player
+                  autoplay
+                  loop
+                  src={feature.media.video}
+                  style={{ height: "500px", width: "500px" }}
+                >
+                  <Controls
+                    visible={false}
+                    buttons={["play", "repeat", "frame", "debug"]}
+                  />
+                </Player>
+              )}
             </div>
           </Fragment>
         )}
         {feature.displayOption === "media-description" && (
           <Fragment>
             <div className="feature-media flex-center-center">
-              <img
-                src={feature.media.image}
-                alt={feature.media.alt}
-                width={250}
-                height={300}
-              />
+              {!feature.isAnimated ? (
+                <img
+                  src={feature.media.image}
+                  alt={feature.media.alt}
+                  width={250}
+                  height={250}
+                />
+              ) : (
+                <Player
+                  autoplay
+                  loop
+                  src={feature.media.video}
+                  style={{ height: "500px", width: "500px" }}
+                >
+                  <Controls
+                    visible={false}
+                    buttons={["play", "repeat", "frame", "debug"]}
+                  />
+                </Player>
+              )}
             </div>
             <div className="feature-details right">
               <h3 className="feature-details_title">
