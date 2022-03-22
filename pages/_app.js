@@ -59,11 +59,9 @@ export default function App({
             name="google-site-verification"
             content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg"
           />
+          <link href="/assets/fontawesome/css/all.css" rel="stylesheet" />
         </Head>
-        <Script
-          src="https://kit.fontawesome.com/3a98299328.js"
-          crossOrigin="anonymous"
-        />
+
         <header>{isBreakpoint ? <NavbarSmall /> : <NavbarWide />}</header>
         <Component
           setModal={setModal}
