@@ -6,15 +6,17 @@ import CustomCheckout from "./customCheckout";
 export default function CustomPayment() {
   const [selectedPayment, setSelectedPayment] = useState("tokens");
   const [tokenInput, setTokenInput] = useState(50);
-  const [customCost, setCustomCost] = useState(0);
+  const [customPrice, setCustomPrice] = useState(0);
   const [tokenCost, setTokenCost] = useState(30);
   const [tokenTier, setTokenTier] = useState(0);
   const [isCheckout, setIsCheckout] = useState(false);
-  const priceRef = useRef();
+  const [paymentStatus, setPaymentStatus] = useState("pending");
+  const priceRef = useRef(0);
+
   const handleCancel = () => {
     setIsCheckout(false);
   };
-  const handleCustomCost = (e) => {
+  const handleCustomPrice = (e) => {
     setCustomCost(e.target.value);
   };
   let tokenPrice = 0.6;
@@ -39,6 +41,7 @@ export default function CustomPayment() {
       setTokenTier(5);
     }
   }, [tokenInput]);
+
   const handlePaymentSelection = (e) => {
     setSelectedPayment(e.target.value);
   };
@@ -131,6 +134,7 @@ export default function CustomPayment() {
                   id="total"
                   name="custom-payment"
                   reference={priceRef}
+                  stateHandler={setCustomPrice}
                   /*handleChange={handleCustomCost}*/
                 />
               )}
@@ -196,12 +200,15 @@ export default function CustomPayment() {
       )}
       {isCheckout && (
         <CustomCheckout
+          priceRef={priceRef}
+          setPaymentStatus={setPaymentStatus}
           type={selectedPayment}
-          amount={customCost}
+          amount={customPrice}
           tokensAmount={tokenInput}
           tokensTier={tokenTier}
           tokenCost={tokenCost}
           handleCancel={handleCancel}
+          paymentStatus={paymentStatus}
         />
       )}
     </div>

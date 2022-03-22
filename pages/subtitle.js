@@ -1955,7 +1955,7 @@ export default function Subtitle() {
         <section ref={section3} className={styles.video_format_section}>
           <div className={styles.v_r_a_video_background}>
             <video autoPlay loop muted>
-              <source src="/videos/noway.webm" type="video/webm" />
+              <source src="/videos/noway_cut.mp4" type="video/mp4" />
             </video>
           </div>
           <div className={styles.container}>

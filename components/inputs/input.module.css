@@ -182,7 +182,24 @@ position:relative;
 
 }
 
+/*special for price*/
+.input_price_currency_icon{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:88%;
+    right:0;
+    z-index:1;
+    user-select: none;
+    pointer-events: none;
 
+}
+.input_price_currency_icon svg{
+    margin-top:4px;
+    width:38px;
+    height:38px;
+    stroke:var(--clr-primary-opacity-75);
+}
 
 /*special css for vat*/
 .vat_check{

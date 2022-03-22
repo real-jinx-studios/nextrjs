@@ -5,13 +5,26 @@ import useSWR from "swr";
 import Loader from "../../loader";
 import LoaderDots from "../../utils/loaderDots";
 import BillingInfoForm from "../../forms/BillingInfoForm";
-export default function CustomCheckout(props) {
+import PaymentSuccessful from "./PaymentSuccessful";
+import PaymentFailed from "./PaymentFailed";
+export default function CustomCheckout({
+  priceRef = 0,
+  setPaymentStatus,
+  type,
+  amount,
+  tokensAmount,
+  tokensTier,
+  tokenCost,
+  handleCancel,
+  paymentStatus,
+}) {
   const [vatStatus, setVatStatus] = useState("(w/o VAT)");
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR("/api/user", fetcher);
   const handleCheckout = (e) => {
     e.preventDefault();
   };
+
   //reference all form input fields
   const firstNameRef = useRef();
   const lastNameRef = useRef();
@@ -24,11 +37,18 @@ export default function CustomCheckout(props) {
   const phoneNumberRef = useRef();
   const companyNameRef = useRef();
 
+  if (paymentStatus === "success") {
+    return <PaymentSuccessful type={type} value={0} />;
+  }
+  if (paymentStatus === "failed") {
+    return <PaymentFailed type={type} value={0} />;
+  }
+
   if (data && !error) {
     return (
       <div className={styles.content_inner_custom_checkout}>
         <div className="cancel_custom_wrapper">
-          <div className="cancel_custom" onClick={props.handleCancel}>
+          <div className="cancel_custom" onClick={handleCancel}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="cancel_icon"
@@ -51,21 +71,24 @@ export default function CustomCheckout(props) {
             <div className={styles.type_title}>Payment Type:</div>
             <div className={styles.type_wrapper}>
               <div className={styles.type_decoration}></div>
-              {props.type === "tokens" ? (
+              {type === "tokens" ? (
                 <div className={styles.type_text}>
-                  {props.type} ({props.tokensAmount})
+                  {type} ({tokensAmount})
                 </div>
               ) : (
-                <div className={styles.type_text}>{props.type}</div>
+                <div className={styles.type_text}>{type}</div>
               )}
             </div>
           </div>
           <div className={styles.total_amount}>
-            {props.type !== "tokens" ? (
+            {type !== "tokens" ? (
               <>
                 <div className={styles.total_title}>Total Amount:</div>
                 <div className={styles.total_total}>
-                  <p className={styles.total_cost}>€{props.amount}</p>
+                  <p className={styles.total_cost}>
+                    €
+                    {priceRef.current != undefined ? priceRef.current.value : 0}
+                  </p>
                   <p className={styles.total_cost_per_token}>{vatStatus}</p>
                 </div>
               </>
@@ -74,7 +97,7 @@ export default function CustomCheckout(props) {
                 <div className={styles.total_title}>Total Amount:</div>
                 <div className={styles.total_wrapper}>
                   <div className={styles.total_total}>
-                    <p className={styles.total_cost}>€{props.tokenCost}</p>
+                    <p className={styles.total_cost}>€{tokenCost}</p>
                     <p className={styles.total_cost_per_token}>
                       (€0.60 per token)
                     </p>
@@ -110,7 +133,10 @@ export default function CustomCheckout(props) {
                 Payment Method:
               </h3>
               <div className={styles.paypal_button_container_inner}>
-                <button className={styles.paypal_button}>
+                <button
+                  onClick={() => setPaymentStatus("failed")}
+                  className={styles.paypal_button}
+                >
                   <img
                     src="/images/icons/paypal.svg"
                     alt="Paypal"
@@ -118,7 +144,10 @@ export default function CustomCheckout(props) {
                     height={40}
                   />
                 </button>
-                <button className={styles.card_payment}>
+                <button
+                  onClick={() => setPaymentStatus("success")}
+                  className={styles.card_payment}
+                >
                   Debit or credit card
                 </button>
               </div>

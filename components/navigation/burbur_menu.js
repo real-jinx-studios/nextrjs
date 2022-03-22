@@ -58,7 +58,7 @@ export default function BurburMenu({ open, mobile }) {
             position: absolute;
             left: 0;
             right: 89%;
-            top: 96%;
+            top: 91%;
             bottom: 0;
             transition: all 0.3s var(--cubic-bezier);
             background-color: var(--clr-neutral-800);
@@ -68,7 +68,7 @@ export default function BurburMenu({ open, mobile }) {
             position: absolute;
             left: 0;
             right: 0;
-            top: 96%;
+            top: 91%;
             bottom: 0;
             background-color: var(--clr-neutral-800);
           }
