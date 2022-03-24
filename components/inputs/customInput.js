@@ -1,7 +1,6 @@
 import styles from "./input.module.css";
 import { useRef, useState, useEffect } from "react";
 import LoaderDots from "../utils/loaderDots";
-import usePriceConverter from "../../hooks/usePriceConverter";
 
 export default function CustomInput(props) {
   let { isRequired, reference, isCustomPrice } = props;
@@ -148,40 +147,38 @@ export default function CustomInput(props) {
 
   //Custom price input component
   if (props.special === "price") {
-    const { formattedPrice, formatNumberToCurrency } = usePriceConverter();
     const handlePriceChange = (e) => {
-      console.log(e);
-      /*formatNumberToCurrency(reference.current.value);*/
-      /* /!*const sanitize = /[^0-9]/g;*!/
-
       let priceInputValue = reference.current.value;
-      const sanitize = priceInputValue
-        .replace(/[^0-9.]/g, "")
-        .replace(/(\..*?)\..*!/g, "$1");
-      console.log(priceInputValue, "before removal");
+      setPriceValue(formatPrice(priceInputValue));
+      props.stateHandler(formatPrice(priceInputValue));
+    };
 
-      setPriceValue(sanitize);*/
-      /*setPriceValue(formattedPrice);*/
+    const formatPrice = (value) => {
+      let left;
+      let right;
+      let final;
+      if (value.indexOf(".") >= 0) {
+        let decimalindex = value.indexOf(".");
+        left = value.substring(0, decimalindex);
+        right = value.substring(decimalindex);
+
+        left = left.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        right = right.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        right = right.substring(0, 2);
+
+        final = "€" + left + "." + right;
+      } else {
+        final =
+          "€" + value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        /* final += ".00";*/
+      }
+
+      return final;
     };
 
     return (
       <div className={styles.input_wrapper}>
-        <i className={styles.input_price_currency_icon}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M14.121 15.536c-1.171 1.952-3.07 1.952-4.242 0-1.172-1.953-1.172-5.119 0-7.072 1.171-1.952 3.07-1.952 4.242 0M8 10.5h4m-4 3h4m9-1.5a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-        </i>
         <input
           ref={reference}
           type={props.type}

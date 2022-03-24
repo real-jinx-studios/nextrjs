@@ -85,7 +85,7 @@ export default function PaymentFailed({ type, value }) {
       </svg>
       <h2 className="payment-failed_title">Payment was unsuccessful!</h2>
       <p className="payment-failed_item">
-        <strong>{type}</strong> : € {"34,234"}
+        <strong>{type}</strong> :{value}
       </p>
       <p className="payment-failed_subtitle">
         Something went wrong with the payment process. We are sorry for the

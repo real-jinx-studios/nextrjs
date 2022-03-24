@@ -1,7 +1,9 @@
 import styles from "./wallet_management.module.css";
 import { useState } from "react";
+import GenericModal from "../../modal/GenericModal";
 
 export default function Wallet(props) {
+  const [isOpen, setIsOpen] = useState(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
   const x = props;
   const handleDelete = (e) => {
@@ -93,7 +95,10 @@ export default function Wallet(props) {
         <span className={styles.wallet_tokens_wrapper}>{x.tokens}</span>
 
         <div className={styles.token_operations_wrapper}>
-          <span className={`${styles.operations_button} animated_shadow`}>
+          <span
+            className={`${styles.operations_button} animated_shadow`}
+            onClick={() => setIsOpen(true)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -125,6 +130,19 @@ export default function Wallet(props) {
           </span>
         </div>
       </div>
+      <GenericModal open={isOpen} onClose={() => setIsOpen(false)}>
+        <style jsx>{`
+          .action-container {
+          }
+          .action-container_text {
+            font-size: var(--fs-600);
+            color: var(--clr-neutral-800);
+          }
+        `}</style>
+        <div>
+          <p className="action-container_text">add tokens</p>
+        </div>
+      </GenericModal>
     </div>
   );
 }

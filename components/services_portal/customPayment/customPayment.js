@@ -7,10 +7,10 @@ export default function CustomPayment() {
   const [selectedPayment, setSelectedPayment] = useState("tokens");
   const [tokenInput, setTokenInput] = useState(50);
   const [customPrice, setCustomPrice] = useState(0);
-  const [tokenCost, setTokenCost] = useState(30);
+  const [tokenCost, setTokenCost] = useState(0);
   const [tokenTier, setTokenTier] = useState(0);
   const [isCheckout, setIsCheckout] = useState(false);
-  const [paymentStatus, setPaymentStatus] = useState("pending");
+
   const priceRef = useRef(0);
 
   const handleCancel = () => {
@@ -135,6 +135,7 @@ export default function CustomPayment() {
                   name="custom-payment"
                   reference={priceRef}
                   stateHandler={setCustomPrice}
+                  default={`€${customPrice}`}
                   /*handleChange={handleCustomCost}*/
                 />
               )}
@@ -201,14 +202,12 @@ export default function CustomPayment() {
       {isCheckout && (
         <CustomCheckout
           priceRef={priceRef}
-          setPaymentStatus={setPaymentStatus}
           type={selectedPayment}
           amount={customPrice}
           tokensAmount={tokenInput}
           tokensTier={tokenTier}
           tokenCost={tokenCost}
           handleCancel={handleCancel}
-          paymentStatus={paymentStatus}
         />
       )}
     </div>

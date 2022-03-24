@@ -7,17 +7,20 @@ import LoaderDots from "../../utils/loaderDots";
 import BillingInfoForm from "../../forms/BillingInfoForm";
 import PaymentSuccessful from "./PaymentSuccessful";
 import PaymentFailed from "./PaymentFailed";
+import PaymentHandler from "./PaymentHandler";
 export default function CustomCheckout({
   priceRef = 0,
-  setPaymentStatus,
   type,
   amount,
   tokensAmount,
   tokensTier,
   tokenCost,
   handleCancel,
-  paymentStatus,
 }) {
+  const [paymentStatus, setPaymentStatus] = useState({
+    status: "pending",
+    paymentType: "none",
+  });
   const [vatStatus, setVatStatus] = useState("(w/o VAT)");
   const fetcher = (url) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR("/api/user", fetcher);
@@ -37,11 +40,21 @@ export default function CustomCheckout({
   const phoneNumberRef = useRef();
   const companyNameRef = useRef();
 
-  if (paymentStatus === "success") {
-    return <PaymentSuccessful type={type} value={0} />;
-  }
-  if (paymentStatus === "failed") {
-    return <PaymentFailed type={type} value={0} />;
+  if (paymentStatus.status === "processing") {
+    return (
+      <PaymentHandler
+        paymentType={paymentStatus.paymentType}
+        value={amount}
+        tokenCost={tokenCost}
+        setPaymentStatus={setPaymentStatus}
+      />
+    );
+  } else if (paymentStatus.status === "success") {
+    return (
+      <PaymentSuccessful type={type} value={amount} tokenCost={tokenCost} />
+    );
+  } else if (paymentStatus.status === "failed") {
+    return <PaymentFailed type={type} value={amount} tokenCost={tokenCost} />;
   }
 
   if (data && !error) {
@@ -85,10 +98,7 @@ export default function CustomCheckout({
               <>
                 <div className={styles.total_title}>Total Amount:</div>
                 <div className={styles.total_total}>
-                  <p className={styles.total_cost}>
-                    €
-                    {priceRef.current != undefined ? priceRef.current.value : 0}
-                  </p>
+                  <p className={styles.total_cost}>{amount}</p>
                   <p className={styles.total_cost_per_token}>{vatStatus}</p>
                 </div>
               </>
@@ -134,7 +144,12 @@ export default function CustomCheckout({
               </h3>
               <div className={styles.paypal_button_container_inner}>
                 <button
-                  onClick={() => setPaymentStatus("failed")}
+                  onClick={() =>
+                    setPaymentStatus({
+                      status: "processing",
+                      paymentType: "paypal",
+                    })
+                  }
                   className={styles.paypal_button}
                 >
                   <img
@@ -145,7 +160,12 @@ export default function CustomCheckout({
                   />
                 </button>
                 <button
-                  onClick={() => setPaymentStatus("success")}
+                  onClick={() =>
+                    setPaymentStatus({
+                      status: "processing",
+                      paymentType: "card",
+                    })
+                  }
                   className={styles.card_payment}
                 >
                   Debit or credit card
