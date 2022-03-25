@@ -46,7 +46,7 @@ export default function EditAccount() {
   return (
     <div className={styles.content}>
       <div className={styles.title_wrapper}>
-        <h2>Account Information</h2>
+        <h2>Account Information Shit</h2>
       </div>
       <div className={styles.content_inner_edit_account}>
         <div className={styles.email_username_section}>
