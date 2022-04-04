@@ -1,16 +1,12 @@
-import { useRouter } from 'next/router'
-import {useEffect} from "react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
-export default function Prog_verPhp(){
-    const router = useRouter()
+export default function Prog_verPhp() {
+  const router = useRouter();
 
-    useEffect(()=>{
-        router.push('/api/prog_ver.php')
-    },[])
+  useEffect(() => {
+    router.push("/api/prog_ver.php");
+  }, []);
 
-    return(
-        <>
-        </>
-    )
-
+  return <></>;
 }

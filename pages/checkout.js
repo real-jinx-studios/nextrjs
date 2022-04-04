@@ -10,7 +10,7 @@ import LoaderDots from "../components/utils/loaderDots";
 import Cart from "../components/checkout/cart";
 import BillingInfoStep from "../components/checkout/steps/billing_info_step";
 import EmptyCart from "../components/checkout/emptyCart";
-
+//bullshit
 export default function Checkout() {
   const [login, setLogin] = useState({ login: false });
   const [currentStep, setCurrentStep] = useState("billing");

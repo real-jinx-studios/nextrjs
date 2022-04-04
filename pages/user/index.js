@@ -11,7 +11,7 @@ export default function UserRedirect(props) {
     if (status === "authenticated") {
       router.replace("/services-portal");
     } else {
-      router.replace("/user/login");
+      router.replace("/user/login?" + router.query);
     }
   }, [status]);
 

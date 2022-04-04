@@ -16,6 +16,7 @@ export default function GenericModal({ children, open, onClose }) {
           background-color: #19191955;
         }
         .modal-content {
+          border-radius: 9px;
           position: fixed;
           top: 50%;
           left: 50%;
@@ -25,6 +26,7 @@ export default function GenericModal({ children, open, onClose }) {
           z-index: 998;
           display: grid;
           grid-template-rows: auto 1fr;
+          width: clamp(30em, 70vw, 60em);
         }
         .modal-close {
           /* text-align: right;*/
@@ -43,7 +45,7 @@ export default function GenericModal({ children, open, onClose }) {
           fill: var(--clr-warn);
         }
       `}</style>
-      <div className="modal-overlay" />
+      <div className="modal-overlay" onClick={onClose} />
       <div className="modal-content">
         <span className="modal-close" onClick={onClose}>
           <svg

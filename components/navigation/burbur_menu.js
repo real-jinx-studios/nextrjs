@@ -24,8 +24,8 @@ export default function BurburMenu({ open, mobile }) {
             z-index: -1;
             display: grid;
             align-items: center;
-            background: #fefefefe url("/images/parrot-img.svg") no-repeat 44%
-              36%;
+            background: #fefefefe url("/images/parrot-img-opacity-05.svg")
+              no-repeat 44% 36%;
           }
           .burbur-menu.open {
             visibility: visible;
@@ -137,7 +137,8 @@ export default function BurburMenu({ open, mobile }) {
           display: grid;
           align-items: center;
 
-          background: #fefefefe url("/images/parrot-img.svg") no-repeat 44% 36%;
+          background: #fefefefe url("/images/parrot-img-opacity-05.svg")
+            no-repeat 44% 36%;
         }
         .burbur-menu.open {
           visibility: visible;

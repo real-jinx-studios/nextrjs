@@ -10,7 +10,7 @@ export default function Clients() {
     />
   ));
   return (
-    <section className="container" aria-labelledby="clients">
+    <section className="container offset-top" aria-labelledby="clients">
       <style jsx>{`
         #clients {
           font-size: 3rem;
@@ -21,7 +21,8 @@ export default function Clients() {
           display: flex;
           gap: 1.5em;
           flex-wrap: wrap;
-          background: #ffffff00 url("/images/parrot-img.svg") no-repeat 50% 0%;
+          background: #ffffff00 url("/images/parrot-img-opacity-05.svg")
+            no-repeat 50% 0%;
         }
       `}</style>
       <h1 id="clients">Clients</h1>

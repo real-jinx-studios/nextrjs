@@ -21,7 +21,7 @@ export default function ProductsShowcase() {
     oneRef.current.click();
   }, []);
   return (
-    <section className="section wide">
+    <section className="section wide offset-top">
       <style jsx>{`
         .main_inner {
           margin: 0 auto;

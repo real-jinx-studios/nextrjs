@@ -1,13 +1,11 @@
 import "../styles/global.css";
 import NavbarWide from "../components/navigation/navbarWide";
 import Footer from "../components/navigation/footer";
-import { motion, useAnimation, AnimatePresence } from "framer-motion";
+
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import Script from "next/script";
 
 import { useRouter } from "next/router";
-import Modal from "../components/Modal";
 import NavbarSmall from "../components/navigation/navbarSmall";
 import Head from "next/head";
 import { StoreProvider } from "../utils/store";
@@ -74,97 +72,7 @@ export default function App({
         <ToastContainer />
         {/*<StateWindow />*/}
         {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
-        <Modal showModal={showModal} setModal={setModal} />
       </SessionProvider>
     </StoreProvider>
-  );
-}
-
-function SubtitleButton() {
-  const [hovered, setHovered] = useState({ is: false, xPos: 0, yPos: 0 });
-  const style = {
-    width: 160,
-    position: "fixed",
-    bottom: "2%",
-    right: "1%",
-    backgroundColor: "#699BD2",
-    borderRadius: "8px",
-    color: !hovered.is ? "#ffffff" : "#0A131F",
-    display: "flex",
-    padding: "8px 3px 8px 3px",
-    justifyItems: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-    cursor: "pointer",
-    userSelect: "none",
-    overflow: "hidden",
-    transition: "0.5s ease-in-out 0.1s",
-    zIndex: 5,
-  };
-  const fillStyle = {
-    position: "absolute",
-    borderRadius: 998,
-    width: 300,
-    height: 300,
-    backgroundColor: "#fefefe",
-    left: hovered.xPos,
-    top: -hovered.yPos,
-    userSelect: "none",
-    pointerEvents: "none",
-  };
-
-  const controls = useAnimation();
-  useEffect(() => {
-    if (hovered.is) {
-      controls.start("hover");
-    } else {
-      controls.start("rest");
-    }
-  }, [controls, hovered.is]);
-  const fill = {
-    rest: { scale: 0, transition: { duration: 0.6 } },
-    hover: { scale: 2.5, transition: { duration: 0.5 } },
-  };
-
-  return (
-    <Link href="/subtitle2">
-      <div
-        onMouseEnter={(e) => {
-          setHovered({
-            is: true,
-            xPos: e.clientX - e.target.offsetLeft,
-            yPos: e.clientY - e.target.offsetTop,
-          });
-        }}
-        onMouseLeave={(e) => {
-          setHovered({
-            is: false,
-            xPos: e.clientX - e.target.offsetLeft,
-            yPos: e.clientY - e.target.offsetTop,
-          });
-        }}
-        style={style}
-      >
-        <motion.div
-          animate={controls}
-          variants={fill}
-          initial="rest"
-          whileHover="hover"
-          style={fillStyle}
-        ></motion.div>
-
-        <span
-          style={{
-            position: "relative",
-            zIndex: "2",
-            height: "min-content",
-            userSelect: "none",
-            pointerEvents: "none",
-          }}
-        >
-          Start Subtitling
-        </span>
-      </div>
-    </Link>
   );
 }

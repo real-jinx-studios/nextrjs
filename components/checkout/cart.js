@@ -104,7 +104,7 @@ export default function Cart({
       `}</style>
       <div className="cart__inner">
         <div className="cart__title-section">
-          <h2 className="cart__title">Order Summary</h2>
+          <h2 className="cart__title"> Order Summary</h2>
           {!isCartEditable ? (
             <span
               onClick={() => setIsCartEditable(!isCartEditable)}

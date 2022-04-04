@@ -5,6 +5,7 @@ html,
 /* ------------------- */
 
 :root {
+
   --offset-top: 4.9rem;
   --large-max-width: 1325px;
   --medium-max-width: 1325px;
@@ -14,10 +15,10 @@ html,
   --clr-neutral-0: #ffffff;
   --clr-neutral-50: #fefefe;
   --clr-neutral-100: #eef2f8;
-  --clr-neutral-150: #cecfd2;
+  --clr-neutral-150: #e2e4e7;
   --clr-neutral-200: #c2c2c2;
   --clr-neutral-250: #a8a8a8;
-  --clr-neutral-350: #909090;
+  --clr-neutral-350: #a2a2a2;
   --clr-neutral-500: #6a726d;
   --clr-neutral-550: #3f3f3f;
   --clr-neutral-600: #8d949e;
@@ -93,6 +94,20 @@ html,
   --fs-800: 5.653rem;
   --cubic-bezier: cubic-bezier(0.6,-0.05,0.01,0.99);
   --section-spacing-inner: 6em;
+  --offset-top-1:0.5rem;
+  --offset-top-2:1rem;
+  --offset-top-3:1.5rem;
+  --offset-top-4:2rem;
+  --offset-1:0.5rem;
+  --offset-2:1rem;
+  --offset-3:1.5rem;
+  --offset-4:2rem;
+  --offset-5:3rem;
+  --offset-6:4rem;
+  --offset-7:5rem;
+  --offset-8:6rem;
+
+
 
 
 
@@ -268,7 +283,6 @@ a:hover::before{
   margin-bottom:2em;
 }
 .first_container, .container {
-  margin-top:calc(var(--offset-top) + 4.2em);
   position:relative;
 
   padding: 0 2em;
@@ -506,7 +520,7 @@ h3,
 h4,
 h5 {
   /*make it same as font-size*/
-  margin-bottom: 1em;
+
   color: var(--heading-color-white);
 }
 
@@ -545,6 +559,25 @@ li {
   border-radius: 50px;
   font-size: 1.05rem;
   text-transform: uppercase;
+}
+.button_white-bg{
+  margin: 0 auto;
+  color: var(--clr-neutral-800);
+  font-weight: 500;
+  background-color: var(--clr-neutral-50);
+  border: none;
+  white-space: nowrap;
+  padding: 0.375em 1.4375em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.25s var(--cubic-bezier);
+}
+.button_white-bg:hover{
+  background-color: var(--clr-neutral-800);
+  color: var(--clr-neutral-50);
 }
 .button_small{
   color: #ffffff;
@@ -596,6 +629,18 @@ li {
   );
   border-color: #fbb03b;
 }
+.button_basic_long_outline.dark{
+  min-width: 13rem;
+  border-radius:12px;
+  color: var(--clr-neutral-500);
+  background:#fefefe00;
+  border:2px solid var(--clr-neutral-500);
+  transition: all 0.3s;
+}
+.button_basic_long_outline.dark:hover{
+  color: var(--clr-neutral-50);
+  background:var(--clr-neutral-800);
+}
 .button_basic_long_outline{
   min-width: 13rem;
   border-radius:12px;
@@ -631,10 +676,6 @@ li {
 }
 .button_basic_long:hover, .button_basic_long_auth:hover{
   background-color: var(--clr-primary);
-}
-.white{
-  color:var(--clr-neutral-50);
-  border:1px solid var(--clr-neutral-50);
 }
 
 /*trigger state using checkbox*/
@@ -1412,25 +1453,33 @@ color:var(--clr-neutral-50);
   cursor: pointer;
   color:var(--clr-text-highlight) !important;
 }
-
+.underlined_link.white{
+  color:var(--clr-neutral-50) !important;
+}
 .underlined_link::before{
   content:"";
   position: absolute;
   left:0;
   right:85%;
-  top:91%;
+  top:96%;
   bottom:0;
   transition: all 0.3s var(--cubic-bezier);
   background-color: var(--clr-text-highlight) !important;
+}
+.underlined_link.white::before{
+  background-color: var(--clr-neutral-50) !important;
 }
 .underlined_link:hover::before{
   content:"";
   position: absolute;
   left:0;
   right:0;
-  top:91%;
+  top:96%;
   bottom:0;
   background-color: var(--clr-text-highlight) !important;
+}
+.underlined_link.white:hover::before{
+  background-color: var(--clr-neutral-50) !important;
 }
 .section-heading{
   font-size: var(--fs-600);
@@ -1440,4 +1489,34 @@ color:var(--clr-neutral-50);
   margin-top:calc(var(--offset-top) + 4.2em);
   position:relative;
 
+}
+.full-width-height{
+  height:100vh;
+  width:100vw;
+}
+
+/*add media queries for all screens*/
+@media (min-width: 576px) {
+  .section-heading{
+    font-size: var(--fs-600);
+    font-weight: 200;
+  }
+}
+@media (min-width: 768px) {
+  .section-heading{
+    font-size: var(--fs-600);
+    font-weight: 200;
+  }
+}
+@media (min-width: 992px) {
+  .section-heading{
+    font-size: var(--fs-600);
+    font-weight: 200;
+  }
+}
+@media (min-width: 1200px) {
+  .section-heading{
+    font-size: var(--fs-600);
+    font-weight: 200;
+  }
 }

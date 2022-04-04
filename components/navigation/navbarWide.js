@@ -8,11 +8,13 @@ import Cookies from "js-cookie";
 import { Store } from "../../utils/store";
 import { useSession, signOut } from "next-auth/react";
 import BurburMenu from "./burbur_menu";
+import ProductsModal from "../modal/ProductsModal";
 export default function NavbarWide() {
   const { app_state, dispatch } = useContext(Store);
   const { logged_in, checkout } = app_state;
   const { data: session, status } = useSession();
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const handleLogout = () => {
     signOut({ callbackUrl: "/user?destination=services-portal" })
@@ -116,7 +118,7 @@ export default function NavbarWide() {
               [styles.nav_icon_wrapper_scroll]: scroll === true,
             })}
           >
-            <Link href={router.pathname !== "/" ? "/" : "/buy/products"}>
+            <Link href="/#">
               <a>
                 {/*<MyImage
                   priority={true}
@@ -246,13 +248,19 @@ export default function NavbarWide() {
               [styles.nav_li_scroll]: scroll === true,
             })}
           >
-            <Link href="/buy/checkout">
-              <a className={styles.buy_now_wrapper}>BUY NOW</a>
-            </Link>
+            <a
+              className={styles.buy_now_wrapper}
+              onClick={() => {
+                setOpenModal(true);
+              }}
+            >
+              BUY NOW
+            </a>
           </li>
         </ul>
         <BurburMenu open={open} />
       </div>
+      <ProductsModal open={openModal} onClose={() => setOpenModal(false)} />
     </nav>
   );
 }

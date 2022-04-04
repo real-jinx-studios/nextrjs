@@ -140,13 +140,22 @@ export default function Wallet(props) {
             color: var(--clr-neutral-800);
           }
           .wallet-modal_content {
-            gap: 2em;
-            display: flex;
-            flex-direction: column;
+            gap: 0.5em;
+            display: grid;
+            grid-template-area:
+              "from" "to" "transfer"
+              "amount" "amount" "transfer";
           }
           .wallet-modal_content p {
             color: var(--clr-neutral-800);
           }
+          .wallet-modal_content-from {
+            grid-area: from;
+          }
+          .wallet-modal_content-to {
+            grid-area: to;
+          }
+
           .wallet-modal_content-from,
           .wallet-modal_content-to,
           .wallet-modal_content-confirm,
@@ -156,7 +165,9 @@ export default function Wallet(props) {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 2em;
+          }
+          .wallet-modal_content-to {
+            margin-top: 2.5em;
           }
           .wallet-modal_content-from::before {
             content: "\f063";
@@ -172,32 +183,18 @@ export default function Wallet(props) {
             top: 125%;
             bottom: 0;
             color: var(--clr-neutral-500);
-           
-          animation: animate-arrow 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s both infinite;
-          }
-          
-          @keyframes animate-arrow {
-          0% {
-            top:100%
-            opacity:1;
+            animation: spin 1.8s infinite linear;
           }
 
-          100% {
-            stop:150%
-            opacity:0;
-          }
-        }
-          .wallet-modal_content-from::after,
-          .wallet-modal_content-to::after {
-            content: "from";
-            position: absolute;
-            top: 50%;
-            left: 0%;
-            color: var(--clr-neutral-500);
-            font-size: 0.8rem;
-          }
-          .wallet-modal_content-to::after {
-            content: "to";
+          @keyframes spin {
+            0% {
+              transform: translateY(-19px);
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(20px);
+              opacity: 0;
+            }
           }
         `}</style>
         <div className="wallet-modal">
