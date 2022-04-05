@@ -4,7 +4,8 @@ const encdec = require("./encryptDecrypt");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
+const xml = require("xml");
+const fs = require("fs");
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -24,6 +25,28 @@ sqlConnection.connect();
 
 app.get("/", (req, res) => {
   res.send("y r u here");
+});
+
+app.get("/xml", async (req, res) => {
+  res.setHeader("Content-Type", "text/xml");
+  try {
+    const data = fs.readFileSync("./files/sample.eztlic", "utf8");
+    res.send(data);
+  } catch (err) {
+    console.error(err);
+    res.send(err);
+  }
+});
+app.get("/compressed", async (req, res) => {
+  res.setHeader("Content-Type", "application/zip");
+  try {
+    const data = fs.readFileSync("./files/sample.zip");
+    res.setHeader("Content-Size", data.length);
+    res.send(data);
+  } catch (err) {
+    console.error(err);
+    res.send(err);
+  }
 });
 
 app.get("/get-products", async (req, res) => {
