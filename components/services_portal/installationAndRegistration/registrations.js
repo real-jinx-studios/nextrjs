@@ -5,7 +5,7 @@ export default function Registrations() {
   const handleFileDownload = async (type) => {
     const fileName = "version.zip";
     const fileType = "application/zip";
-    const file = await fetch(`http://localhost:5000/${type}`);
+    const file = await fetch(`https://rjs-server.azurewebsites.net/${type}`);
     const fileBlob = await file.blob();
     if (type === "compressed") {
       saveAs(fileBlob, "license.zip");
