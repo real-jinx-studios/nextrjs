@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function ProductPageNav() {
+export default function ProductPageNav({ navReferences }) {
   return (
     <div className="secondary_nav">
       <style jsx>{`
@@ -13,7 +13,7 @@ export default function ProductPageNav() {
           padding: 1rem;
           display: flex;
           justify-content: center;
-          gap: 1em;
+          gap: 0.3em;
           align-items: center;
           flex-wrap: wrap;
           width: 100%;
@@ -26,10 +26,11 @@ export default function ProductPageNav() {
           height: 1px;
           content: "";
           width: 100%;
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: all 0.3s cubic-bezier(0.6, -0.05, 0.01, 0.99);
-          background-color: var(--clr-neutral-800);
+          transform-origin: 100% 50%;
+          transform: scaleX(0) translateZ(0);
+
+          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          background-color: var(--clr-neutral-500);
         }
         .secondary_nav a {
           cursor: pointer;
@@ -41,12 +42,18 @@ export default function ProductPageNav() {
           color: var(--clr-primary-800);
         }
         .secondary_nav a:hover::before {
-          transform: scaleX(1);
+          transform-origin: 0% 50%;
+          transform: scaleX(0.95) translateZ(0);
         }
         .secondary_nav a.current {
           color: var(--clr-neutral-800);
           font-weight: 400;
           font-size: 1.3rem;
+        }
+        .secondary_nav a.current::before {
+          transform-origin: 0% 50%;
+          transform: scaleX(0.95) translateZ(0);
+          background-color: var(--clr-neutral-800);
         }
         /*make secondary nav sticky and responsive for mobile*/
         @media (max-width: 768px) {
@@ -62,19 +69,27 @@ export default function ProductPageNav() {
         }
       `}</style>
       <Link href="#compatibility">
-        <a className="secondary_nav-item current">What you can do /</a>
+        <a className="secondary_nav-item current" ref={navReferences[0]}>
+          / What you can do&nbsp;
+        </a>
       </Link>
 
       <Link href="#formats">
-        <a className="secondary_nav-item">How to do it easy /</a>
+        <a className="secondary_nav-item" ref={navReferences[1]}>
+          / How to do it easy&nbsp;
+        </a>
       </Link>
 
       <Link href="#features">
-        <a className="secondary_nav-item">Ensure the quality /</a>
+        <a className="secondary_nav-item" ref={navReferences[2]}>
+          / Ensure the quality&nbsp;
+        </a>
       </Link>
 
       <Link href="#editions">
-        <a className="secondary_nav-item">Complete and export</a>
+        <a className="secondary_nav-item" ref={navReferences[3]}>
+          / Complete and export&nbsp;
+        </a>
       </Link>
     </div>
   );

@@ -94,6 +94,7 @@ html,
   --fs-800: 5.653rem;
   --cubic-bezier: cubic-bezier(0.6,-0.05,0.01,0.99);
   --section-spacing-inner: 6em;
+  --offset-character-space:0.25em;
   --offset-top-1:0.5rem;
   --offset-top-2:1rem;
   --offset-top-3:1.5rem;
@@ -461,10 +462,13 @@ body {
   font-weight: 400;
   scroll-behavior: smooth;
   background: var(--clr-main);
-  /*filter: grayscale(100%);*/
+
   box-sizing: border-box;
   scroll-padding-top: 80px;
   color:var(--clr-neutral-550);
+}
+.grayscale{
+  filter: grayscale(100%);
 }
 main {
   padding-top: var(--offset-top);
@@ -1493,6 +1497,12 @@ color:var(--clr-neutral-50);
 .full-width-height{
   height:100vh;
   width:100vw;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /*add media queries for all screens*/

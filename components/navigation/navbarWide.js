@@ -145,7 +145,12 @@ export default function NavbarWide() {
               [styles.nav_li_scroll]: scroll === true,
             })}
           >
-            <a className={styles.search_wrapper}>
+            <a
+              className={styles.search_wrapper}
+              onClick={() => {
+                document.querySelector("body").classList.toggle("grayscale");
+              }}
+            >
               <div className="content-wrapper">
                 <div className="content">
                   <div className="search-bar">
