@@ -901,6 +901,22 @@ app.post("/secured", async (req, res) => {
 });
 
 //express start listening on port
-app.listen(3000, (err) => {
-  console.log("listening on 3000");
+app.listen(process.env.PORT, (err) => {
+  console.log("listening on port", normalizePort(process.env.PORT || "3000"));
 });
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
