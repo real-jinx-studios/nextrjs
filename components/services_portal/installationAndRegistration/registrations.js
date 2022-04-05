@@ -1,6 +1,19 @@
 import styles from "./ins_app.module.css";
 import { Fragment } from "react";
+/*var AdmZip = require("adm-zip");*/
 export default function Registrations() {
+  const handleFileDownload = async (type) => {
+    const fileName = "version.zip";
+    const fileType = "application/zip";
+    const file = await fetch(`http://localhost:5000/${type}`);
+    const fileBlob = await file.blob();
+    if (type === "compressed") {
+      saveAs(fileBlob, "license.zip");
+    } else {
+      saveAs(fileBlob, "license.eztlic");
+    }
+  };
+
   const sampleFiles = [
     {
       title: "x",
@@ -25,35 +38,32 @@ export default function Registrations() {
   ];
   return (
     <Fragment>
-      <h3 className="gray align-center">Registration Files</h3>
-      <div className={styles.recent_versions}>
-        {sampleFiles.map((x) => (
-          <div
-            className={styles.file_wrapper}
-            key={x.title}
-            data-before-content={x.icon}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className={`${x.icon} file`}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-              />
-            </svg>
-            <p>
-              {x.title}
-              <br />
-              <small>{x.size}</small>
-            </p>
-          </div>
-        ))}
+      <h3 className="gray align-center title">Registration Files</h3>
+      <style jsx>{`
+        .title {
+          margin-bottom: var(--offset-6);
+        }
+        .license_download_wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: var(--offset-3);
+        }
+      `}</style>
+      <div className="license_download_wrapper">
+        <button
+          className="button button_basic_long"
+          onClick={() => handleFileDownload("compressed")}
+        >
+          Download
+        </button>
+        <button
+          className="button button_basic_long"
+          onClick={() => handleFileDownload("xml")}
+        >
+          Download
+        </button>
       </div>
     </Fragment>
   );
