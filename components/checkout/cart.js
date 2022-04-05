@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, Fragment } from "react";
 import NumberFormat from "react-number-format";
-import { A11yDialog } from "react-a11y-dialog";
 import MyImage from "../utils/myImage";
 
 export default function Cart({
