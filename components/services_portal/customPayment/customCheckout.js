@@ -2,7 +2,6 @@ import styles from "./custom_payment.module.css";
 import CustomInput from "../../inputs/customInput";
 import React, { useRef, useState } from "react";
 import useSWR from "swr";
-import Loader from "../../loader";
 import LoaderDots from "../../utils/loaderDots";
 import BillingInfoForm from "../../forms/BillingInfoForm";
 import PaymentSuccessful from "./PaymentSuccessful";

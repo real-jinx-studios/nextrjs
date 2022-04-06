@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import useSWR from "swr";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Loader from "../loader";
 import LoaderDots from "../utils/loaderDots";
 import CustomInputDropdown from "../inputs/customInputDropdown";
 export default function BillingInformation2(props) {
@@ -205,7 +204,7 @@ export default function BillingInformation2(props) {
   } else if (!data && !error) {
     return (
       <div className={styles.content}>
-        <Loader />
+        <LoaderDots />
       </div>
     );
   } else {

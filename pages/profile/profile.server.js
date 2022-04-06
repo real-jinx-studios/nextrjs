@@ -1,5 +1,3 @@
-import Loader from "../../components/loader";
-import React from "react";
 
 export default function Profile({}) {
   return (
@@ -15,7 +13,7 @@ export default function Profile({}) {
                     <div>loading shit</div>
                 }
                 >
-                    <Loader/>
+                    <LoaderDots/>
                 </Suspense>*/}
       </aside>
     </main>
