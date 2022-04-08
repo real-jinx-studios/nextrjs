@@ -5,12 +5,50 @@ export default function ClientsSection() {
     <section className={styles.clients_section} aria-labelledby="clients">
       <style jsx>{`
         #clients {
-          text-decoration: underline;
+          position: relative;
+        }
+        .clients-link {
+          position: relative;
+          z-index: 1;
+          padding: 0.5em;
+        }
+        .clients-link::after {
+          content: "";
+          position: absolute;
+          top: calc(100% - 0.2em - 3px);
+          left: 0;
+          bottom: 0;
+          right: 0;
+          height: 3px;
+          background-color: var(--clr-neutral-50);
+          z-index: -1;
+          transition: all 0.23s var(--cubic-bezier);
+        }
+        .clients-link::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0.2em;
+          right: 0;
+          height: 3px;
+          background-color: var(--clr-neutral-50);
+          z-index: -1;
+          transition: all 0.3s var(--cubic-bezier);
+        }
+        .clients-link:hover::before {
+          height: 100%;
+          background-color: var(--clr-neutral-800);
+        }
+        .clients-link:hover::after {
+          top: calc(0.2em + 3px);
+          height: 3px;
+        }
+        .clients-link:hover {
         }
       `}</style>
       <h2 id="clients" className={styles.section_title}>
         <Link href="/clients">
-          <a>Our Clients</a>
+          <a className="clients-link">Our Clients</a>
         </Link>
       </h2>
       <div className={styles.clients_wrapper}>

@@ -5,6 +5,8 @@
     <option name="excludedDirectories">
       <list>
         <option value="$PROJECT_DIR$/public" />
+        <option value="$PROJECT_DIR$/.next" />
+        <option value="$PROJECT_DIR$/node_modules" />
       </list>
     </option>
   </component>

@@ -254,7 +254,7 @@ export default function NavbarWide() {
             })}
           >
             <a
-              className={styles.buy_now_wrapper}
+              className="buy_now_button"
               onClick={() => {
                 setOpenModal(true);
               }}

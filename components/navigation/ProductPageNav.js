@@ -26,8 +26,8 @@ export default function ProductPageNav({ navReferences }) {
           height: 1px;
           content: "";
           width: 100%;
-          transform-origin: 100% 50%;
-          transform: scaleX(0) translateZ(0);
+
+          transform: scaleX(0);
 
           transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
           background-color: var(--clr-neutral-500);
@@ -42,19 +42,14 @@ export default function ProductPageNav({ navReferences }) {
           color: var(--clr-primary-800);
         }
         .secondary_nav a:hover::before {
-          transform-origin: 0% 50%;
-          transform: scaleX(0.95) translateZ(0);
+          transform: scaleX(0.95);
         }
         .secondary_nav a.current {
           color: var(--clr-neutral-800);
           font-weight: 400;
           font-size: 1.3rem;
         }
-        .secondary_nav a.current::before {
-          transform-origin: 0% 50%;
-          transform: scaleX(0.95) translateZ(0);
-          background-color: var(--clr-neutral-800);
-        }
+
         /*make secondary nav sticky and responsive for mobile*/
         @media (max-width: 768px) {
           .secondary_nav {

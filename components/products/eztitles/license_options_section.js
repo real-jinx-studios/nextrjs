@@ -1,12 +1,16 @@
 export default function LicenseOptionsSection() {
   return (
-    <section className="section flex-center-center">
+    <section className="product-section flex-center-center-column gap-2">
       <style jsx>{`
+        .product-container {
+          padding: 3.8em 3em;
+          max-width: 85rem;
+        }
         .section-heading {
           font-size: var(--fs-600);
           font-weight: 200;
         }
-        .c {
+        .product-container {
           text-align: center;
         }
         .license-options-wrapper {
@@ -14,7 +18,7 @@ export default function LicenseOptionsSection() {
           display: grid;
           gap: 2rem;
           grid-template-rows: masonry;
-          margin: 6rem calc(30% - 30vw);
+          margin: 6rem auto;
           padding: 0 1rem;
         }
         .section-subtitle {
@@ -24,24 +28,37 @@ export default function LicenseOptionsSection() {
         .license-option {
           border: 1px solid var(--clr-primary);
           border-radius: 9px;
-          padding: 2em;
+          padding: 1em;
+          height: 100%;
         }
         .license-option_icon {
         }
         .license-option_title {
           font-size: var(--fs-500);
         }
-        .license-options-description,
+        .license-option_description,
         .license-option_title {
           margin-top: 1em;
         }
+        .license-option_description p {
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+        .product-section-footer p {
+          font-size: 1.5rem;
+          font-weight: 500;
+          margin: 0;
+          padding: 0 1em;
+          line-height: 0;
+        }
         @media (min-width: 432px) {
           .license-options-wrapper {
-            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+            /*       grid-template-columns: 1fr 1fr 1fr;*/
           }
         }
       `}</style>
-      <div className="c">
+      <div className="product-container product-container-bg">
         <header>
           <h2 className="section-heading">A license for every need</h2>
           <p className="section-subtitle">
@@ -109,6 +126,12 @@ export default function LicenseOptionsSection() {
               </a>
             </div>
           </div>
+        </div>
+        <div className="product-section-footer flex-center-center">
+          <p>Ask us about the Enterprise solutions.</p>
+          <a className="button button_basic_long" href="#">
+            Contact us
+          </a>
         </div>
       </div>
     </section>

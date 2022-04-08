@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ProductFeatureBlock from "./product_feature_block";
 export default function ProductFeatureSection() {
   const features = [
@@ -193,9 +192,9 @@ export default function ProductFeatureSection() {
   });
 
   return (
-    <section className="section flex-center-center flex-col gap-l">
+    <section className="product-section flex-center-center-column gap-2">
       <style jsx>{``}</style>
-      {features_jsx}
+      <div className="product-container">{features_jsx}</div>
     </section>
   );
 }

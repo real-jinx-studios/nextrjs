@@ -15,6 +15,9 @@ import LicenseOptionsSection from "../components/products/eztitles/license_optio
 import ProductPageNav from "../components/navigation/ProductPageNav";
 import SubtitlesForAnything from "../components/products/eztitles/SubtitlesForAnything";
 import ShotChangeSection from "../components/products/eztitles/ShotChangeSection";
+import LicenseEditionsSection from "../components/products/eztitles/LicenseEditionsSection";
+import PricingSection from "../components/products/eztitles/PricingSection";
+import FileFormatsSectionVariant from "../components/products/eztitles/file_formats_section_variant";
 
 export default function Subtitle() {
   /*intersection observer shit*/
@@ -376,7 +379,10 @@ export default function Subtitle() {
         <ProductPageNav navReferences={navs} />
         <style jsx>{`
           .bounds {
-            outline: #41ff1e solid 1px;
+            outline: #41ff1e00 solid 1px;
+          }
+          section {
+            margin-bottom: var(--offset-11);
           }
         `}</style>
 
@@ -733,15 +739,12 @@ export default function Subtitle() {
           <TimelineSection />
           <ProductFeaturesSection />
           <FileFormatsSection />
-          <LicenseOptionsSection />
+          <FileFormatsSectionVariant />
         </div>
         <div className="bounds" ref={section4}>
-          <section className={styles.lottie_section}>
-            <div>
-              <div>text</div>
-              <div></div>
-            </div>
-          </section>
+          <LicenseOptionsSection />
+          <LicenseEditionsSection />
+          <PricingSection />
         </div>
       </div>
     </Layout>
