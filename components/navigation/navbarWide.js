@@ -1,42 +1,22 @@
 import { useState, useEffect, useContext } from "react";
 import styles from "./navbar2.module.css";
 import Link from "next/link";
-import MyImage from "../utils/myImage";
 import cn from "classnames";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
-import { Store } from "../../utils/store";
-import { useSession, signOut } from "next-auth/react";
 import BurburMenu from "./burbur_menu";
 import ProductsModal from "../modal/ProductsModal";
+import { useLogout } from "../../lib/hookers";
 export default function NavbarWide() {
-  const { app_state, dispatch } = useContext(Store);
-  const { logged_in, checkout } = app_state;
-  const { data: session, status } = useSession();
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
   const handleLogout = () => {
-    signOut({ callbackUrl: "/user?destination=services-portal" })
-      .then((response) => response)
-      .then((data) => {
-        router.replace("/user?destination=services-portal");
-      });
+    useLogout();
+    router.replace("/user/login?destination=services-portal");
   };
   const handleBurbur = () => {
     setOpen(!open);
-  };
-
-  const handleStateChange = (e) => {
-    if (logged_in == true) {
-      dispatch({ type: "LOG_OUT" });
-      Cookies.set("logged_in", "false");
-    } else {
-      if (logged_in == false) {
-        dispatch({ type: "LOG_IN" });
-        Cookies.set("logged_in", "true");
-      }
-    }
   };
 
   const router = useRouter();
@@ -120,14 +100,6 @@ export default function NavbarWide() {
           >
             <Link href="/#">
               <a>
-                {/*<MyImage
-                  priority={true}
-                  src="/images/ezlogo.png"
-                  height={50}
-                  width={100}
-                  alt="EZTitles Logo"
-                  layout="intrinsic"
-                />*/}
                 <img
                   src="/images/ezlogo.png"
                   width={100}
@@ -187,7 +159,7 @@ export default function NavbarWide() {
               [styles.nav_li_scroll]: scroll === true,
             })}
           >
-            {status === "authenticated" ? (
+            {"authenticated" ? (
               <Link href="/services-portal?account=billing">
                 <a className={styles.nav_link_a + " " + styles.portal_link}>
                   Services Portal

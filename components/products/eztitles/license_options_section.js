@@ -58,7 +58,7 @@ export default function LicenseOptionsSection() {
           }
         }
       `}</style>
-      <div className="product-container product-container-bg">
+      <div className="product-container">
         <header>
           <h2 className="section-heading">A license for every need</h2>
           <p className="section-subtitle">

@@ -1,115 +1,181 @@
 import styles from "./services_portal.module.css";
-import CustomInput from "../inputs/customInput";
 import React, { useEffect, useRef, useState } from "react";
-import useSWR from "swr";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import Cookies from "js-cookie";
 import "react-toastify/dist/ReactToastify.css";
 import LoaderDots from "../utils/loaderDots";
-import CustomInputDropdown from "../inputs/customInputDropdown";
 import BillingInfoForm from "../forms/BillingInfoForm";
+import ShippingInfoForm from "../forms/ShippingInfoForm";
+import { promiseResolver } from "../../lib/promiseResolver";
 export default function BillingInformation(props) {
-  const fetcher = (url) => fetch(url).then((res) => res.json());
-  const { data, error } = useSWR("/api/user", fetcher);
-  const [userInfo, setUserInfo] = useState({});
+  const [userInfo, setUserInfo] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [newUserInfo, setNewUserInfo] = useState({});
+  // fetch user profile info with fewtch using POST method
+  useEffect(() => {
+    const fetcher = async () => {
+      const [data, error] = await promiseResolver(
+        fetch("http://localhost:80/kmweb/WebSite/get-customer-info", {
+          method: "POST",
+          body: JSON.stringify({
+            LoginToken: Cookies.get("uat"),
+            GetSAIngo: false,
+            GetLicInfo: false,
+          }),
+        })
+      );
+      if (error) {
+        toast.error(error.message);
+      } else {
+        const [data1, error] = await promiseResolver(data.json());
+        if (error) {
+          toast.error(error.message);
+        } else {
+          setUserInfo(data1);
+        }
+      }
+    };
+    fetcher();
+  }, []);
 
   //reference all form input fields
-  const firstNameRef = useRef();
-  const lastNameRef = useRef();
+  const legalNameRef = useRef();
+  const contactNameRef = useRef();
   const countryRef = useRef();
   const cityRef = useRef();
   const vatRef = useRef();
-  const streetAddr1Ref = useRef();
-  const streetAddr2Ref = useRef();
+  const addressRef = useRef();
+  const recipientPhoneRef = useRef();
+
+  //ref for use shipping info
+  const recipientRef = useRef();
+  const phoneRecipientRef = useRef();
   const postcodeRef = useRef();
-  const phoneNumberRef = useRef();
-  const companyNameRef = useRef();
 
   const handleInfoUpdate = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
     const billingInfoObject = {
-      first_name: firstNameRef.current.value,
-      last_name: lastNameRef.current.value,
-      country: countryRef.current.value,
-      city: cityRef.current.value,
-      vat: vatRef.current.value,
-      streetAddr1: streetAddr1Ref.current.value,
-      streetAddr2: streetAddr2Ref.current.value,
-      postcode: postcodeRef.current.value,
-      company_name: companyNameRef.current.value,
-      phone_number: phoneNumberRef.current.value,
+      LegalName: legalNameRef.current.value,
+      ContactName: contactNameRef.current.value,
+      Country: countryRef.current.value,
+      City: cityRef.current.value,
+      VAT_ID: vatRef.current.value,
+      Address: addressRef.current.value,
+      PostCode: postcodeRef.current.value,
     };
 
-    const answer = await fetch("/api/user/update-billing", {
-      method: "PATCH",
-      body: JSON.stringify(billingInfoObject),
-      headers: { "Content-Type": "application/json" },
-    });
-    const result = await answer.json();
-    toast.success("Billing info updated successfully!", {
-      position: "bottom-right",
-      autoClose: 1500,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
+    const shippingInfoObject = {
+      RecipientName: recipientRef.current.value,
+      Country: countryRef.current.value,
+      City: cityRef.current.value,
+      RecipientPhone: recipientPhoneRef.current.value,
+      Address: addressRef.current.value,
+      PostCode: postcodeRef.current.value,
+    };
 
+    const newUserInfo = {
+      LoginToken: Cookies.get("uat"),
+      Billing: { ...billingInfoObject },
+      Shipping: { ...shippingInfoObject },
+    };
+    /*    console.log(JSON.stringify(newUserInfo));*/
+    const [data, error] = await promiseResolver(
+      fetch("http://localhost:80/kmweb/WebSite/update-billing-info", {
+        method: "POST",
+        body: JSON.stringify(newUserInfo),
+      })
+    );
+    if (error) {
+      toast.error(error.message);
+    } else {
+      const [data1, error] = await promiseResolver(data.json());
+      if (error) {
+        toast.error(error.message);
+      } else {
+        toast.success("Successfully updated");
+      }
+    }
     setIsLoading(false);
   };
 
-  if (data && !error) {
+  if (userInfo) {
     return (
-      <div className={styles.content}>
-        <div className={styles.title_wrapper}>
-          <h2>Billing Information</h2>
+      <>
+        <div className={styles.content}>
+          <div className={styles.title_wrapper}>
+            <h2>Billing Information</h2>
+          </div>
+          <div className={styles.content_inner}>
+            <form
+              className={`${styles.billing_form} ${
+                isLoading ? styles.updating_form : ""
+              }`}
+              onSubmit={handleInfoUpdate}
+            >
+              {isLoading && (
+                <div className={styles.loading_overlay}>
+                  <LoaderDots size="xl" color="system" />
+                </div>
+              )}
+              <BillingInfoForm
+                userInfo={userInfo}
+                references={{
+                  legalNameRef: legalNameRef,
+                  contactNameRef: contactNameRef,
+                  countryRef: countryRef,
+                  cityRef: cityRef,
+                  vatRef: vatRef,
+                  addressRef: addressRef,
+                  postcodeRef: postcodeRef,
+                }}
+              />
+            </form>
+          </div>
         </div>
-        <div className={styles.content_inner}>
-          <form
-            className={`${styles.billing_form} ${
-              isLoading ? styles.updating_form : ""
-            }`}
-            onSubmit={handleInfoUpdate}
-          >
-            {isLoading && (
-              <div className={styles.loading_overlay}>
-                <LoaderDots size="xl" color="system" />
+        <div className={styles.content}>
+          <div className={styles.title_wrapper}>
+            <h2>Shipping Information</h2>
+          </div>
+          <div className={styles.content_inner}>
+            <form
+              className={`${styles.billing_form} ${
+                isLoading ? styles.updating_form : ""
+              }`}
+              onSubmit={handleInfoUpdate}
+            >
+              {isLoading && (
+                <div className={styles.loading_overlay}>
+                  <LoaderDots size="xl" color="system" />
+                </div>
+              )}
+              <ShippingInfoForm
+                userInfo={userInfo}
+                references={{
+                  recipientRef: recipientRef,
+                  countryRef: countryRef,
+                  cityRef: cityRef,
+                  recipientPhoneRef: recipientPhoneRef,
+                  addressRef: addressRef,
+                  postcodeRef: postcodeRef,
+                }}
+              />
+              <div className={styles.submit_buttons}>
+                <button className="button button_basic_long">
+                  save changes
+                </button>
               </div>
-            )}
-            <BillingInfoForm
-              userInfo={data}
-              references={{
-                firstNameRef: firstNameRef,
-                lastNameRef: lastNameRef,
-                countryRef: countryRef,
-                cityRef: cityRef,
-                vatRef: vatRef,
-                streetAddr1Ref: streetAddr1Ref,
-                streetAddr2Ref: streetAddr2Ref,
-                postcodeRef: postcodeRef,
-                phoneNumberRef: phoneNumberRef,
-                companyNameRef: companyNameRef,
-              }}
-            />
-            <div className={styles.submit_buttons}>
-              <button className="button button_basic_long">save changes</button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
+      </>
     );
-  } else if (!data && !error) {
+  } else {
     return (
       <div className={styles.content}>
         <LoaderDots />
       </div>
     );
-  } else {
-    return <div className={styles.content}>{JSON.stringify(error)}</div>;
   }
 }

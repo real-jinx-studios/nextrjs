@@ -1,11 +1,12 @@
 import React, { Fragment, useRef, useState } from "react";
 import { useRouter } from "next/router";
-import { signIn } from "next-auth/react";
-import ReCAPTCHA from "react-google-recaptcha";
+
 import CustomInput from "../../inputs/customInput";
 import styles from "./auth.module.css";
 import Link from "next/link";
 import Loader from "../../utils/loader";
+import { promiseResolver } from "../../../lib/promiseResolver";
+import { useVerifyUserCredentials } from "../../../lib/hookers";
 
 export default function LoginForm(props) {
   //get where to redirect from user since could be checkout or user profile or other
@@ -33,19 +34,17 @@ export default function LoginForm(props) {
 
     if (!isRegister) {
       //configuration object set redirect to false so we dont get next auth error. so we dont change page on wrong user input.
-      const signin = await signIn("credentials", {
-        redirect: false,
-        username: username,
-        password: password,
-      });
+      const [data, error] = await promiseResolver(
+        useVerifyUserCredentials(username, password)
+      );
 
-      if (!signin.error) {
+      if (!error) {
         //set some auth state
 
         router.replace(`/${destination}`);
         setIsLoading(false);
       } else {
-        console.log(signin);
+        console.log(error, "error from login form");
         setIsLoginError(true);
         setIsLoading(false);
       }

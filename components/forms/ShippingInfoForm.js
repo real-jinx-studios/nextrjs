@@ -3,7 +3,7 @@ import CustomInput from "../inputs/customInput";
 import React from "react";
 import CustomInputDropdown from "../inputs/customInputDropdown";
 
-export default function BillingInfoForm({ userInfo = {}, references = {} }) {
+export default function ShippingInfoForm({ userInfo = {}, references = {} }) {
   return (
     <div className="custom_checkout_form_fields">
       <style jsx>{`
@@ -17,21 +17,20 @@ export default function BillingInfoForm({ userInfo = {}, references = {} }) {
 
         @media (min-width: 432px) {
           .custom_checkout_form_fields {
-            /* grid-template-columns: 1fr 1fr;*/
             grid-template-areas:
-              "contact_name legal_name"
-              "address address"
+              "recipient recipient"
               "country city"
-              "postcode vat";
+              "address address"
+              "postcode recipient_phone";
           }
         }
 
-        .contact_name {
-          grid-area: contact_name;
+        .recipient {
+          grid-area: recipient;
         }
 
-        .legal_name {
-          grid-area: legal_name;
+        .recipient_phone {
+          grid-area: recipient_phone;
         }
 
         .address {
@@ -49,41 +48,29 @@ export default function BillingInfoForm({ userInfo = {}, references = {} }) {
         .postcode {
           grid-area: postcode;
         }
-
-        .company {
-          grid-area: company;
-        }
-
-        .vat {
-          grid-area: vat;
-        }
-
-        .phone {
-          grid-area: phone;
-        }
       `}</style>
-      <div className="contact_name">
+      <div className="recipient">
         <CustomInput
-          default={userInfo.ContactName}
+          default={userInfo.Shipping.RecipientName}
           type="text"
           placeholder="Contact Name"
           isRequired
-          reference={references.contactNameRef}
+          reference={references.recipientRef}
         />
       </div>
-      <div className="legal_name">
+      <div className="recipient_phone">
         <CustomInput
-          default={userInfo.LegalName}
+          default={userInfo.Shipping.RecipientPhone}
           type="text"
-          placeholder="Legal Name"
+          placeholder="Contact Phone"
           isRequired
-          reference={references.legalNameRef}
+          reference={references.recipientPhoneRef}
         />
       </div>
       <div className="country">
         <CustomInputDropdown
-          default={userInfo.Billing.Country}
-          value={userInfo.Billing.Country}
+          default={userInfo.Shipping.Country}
+          value={userInfo.Shipping.Country}
           type="text"
           placeholder="Country"
           isRequired
@@ -91,19 +78,9 @@ export default function BillingInfoForm({ userInfo = {}, references = {} }) {
           reference={references.countryRef}
         />
       </div>
-      <div className="vat">
-        <CustomInput
-          default={userInfo.VAT_ID}
-          type="text"
-          placeholder="VAT Number"
-          isRequired
-          special="vat"
-          reference={references.vatRef}
-        />
-      </div>
       <div className="city">
         <CustomInput
-          default={userInfo.Billing.City}
+          default={userInfo.Shipping.City}
           type="text"
           placeholder="City"
           isRequired
@@ -112,7 +89,7 @@ export default function BillingInfoForm({ userInfo = {}, references = {} }) {
       </div>
       <div className="address">
         <CustomInput
-          default={userInfo.Billing.Address}
+          default={userInfo.Shipping.Address}
           type="text"
           placeholder="Address"
           isRequired
@@ -121,7 +98,7 @@ export default function BillingInfoForm({ userInfo = {}, references = {} }) {
       </div>
       <div className="postcode">
         <CustomInput
-          default={userInfo.Billing.PostCode}
+          default={userInfo.Shipping.PostCode}
           type="text"
           placeholder="Postal Code"
           isRequired

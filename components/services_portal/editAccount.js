@@ -1,11 +1,10 @@
 import styles from "./services_portal.module.css";
 import CustomInput from "../inputs/customInput";
 import React, { useRef } from "react";
-import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
-
-export default function EditAccount() {
-  const session = useSession();
+import { promiseResolver } from "../../lib/promiseResolver";
+import Cookies from "js-cookie";
+export default function EditAccount({ session }) {
   let username = "";
   let email = "";
   if (session.status === "authenticated") {
@@ -20,27 +19,30 @@ export default function EditAccount() {
     if (newPass.current.value !== newPassRe.current.value) {
       return;
     }
-    const res = await fetch("/api/user/change-password", {
-      method: "PATCH",
-      body: JSON.stringify({
-        oldPassword: oldPass.current.value,
-        newPassword: newPass.current.value,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const results = await res.json();
-    toast.success("Password changed successfully!", {
-      position: "bottom-right",
-      autoClose: 1500,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
+    const [data, error] = await promiseResolver(
+      fetch("http://localhost:80/kmweb/WebSite/change-password", {
+        method: "POST",
+        body: JSON.stringify({
+          LoginToken: Cookies.get("uat"),
+          PreviousPassword: oldPass.current.value,
+          NewPassword: newPass.current.value,
+        }),
+      })
+    );
+    if (error) {
+      toast.error(error.message);
+    } else if (data.message) {
+      toast.success("Password changed successfully!", {
+        position: "bottom-right",
+        autoClose: 1500,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
   };
   debugger;
   return (

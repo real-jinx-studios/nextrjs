@@ -32,7 +32,7 @@ export default function PricingSection() {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          background: var(--clr-main-900);
+          background: var(--clr-main);
           font-size: 1.5em;
           font-weight: 500;
           color: var(--clr-neutral-50);
@@ -66,7 +66,7 @@ export default function PricingSection() {
           padding: 0 1.3em;
         }
       `}</style>
-      <div className="product-container product-container-bg">
+      <div className="product-container">
         <header>
           <h2 className="section-heading">EZTitles Basic starts from</h2>
         </header>

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import styles from "../components/homeMain.module.css";
-import ProductsShowcase from "../components/home_page/products_showcase";
+import ProductsShowcase from "../components/home_page/ProductsShowcase";
 import FeaturesSection from "../components/home_page/features_section";
 import TestimonialSection from "../components/home_page/testimonials_section";
 import ClientsSection from "../components/home_page/clients_section";

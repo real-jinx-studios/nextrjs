@@ -302,7 +302,18 @@ export default function ProductsShowcase() {
               <Link href="/checkout">
                 <a className="button button_basic_long blue">BUY NOW</a>
               </Link>
-              <Link href="/products/ezt/license">
+              <Link
+                prefetch={true}
+                href={{
+                  pathname: "/products/eztitles-essentials",
+                  query: {
+                    product: "eztitles-essentials",
+                  },
+                }}
+              >
+                <a className="button button_basic_long blue">LEARN MORE</a>
+              </Link>
+              <Link href="/products/eztitles-essentials">
                 <a className="button button_basic_long blue">
                   LICENSE EDITIONS
                 </a>
@@ -325,7 +336,15 @@ export default function ProductsShowcase() {
               <Link href="/checkout">
                 <a className="button button_basic_long red">BUY NOW</a>
               </Link>
-              <Link href="/products/ezt/license">
+              <Link
+                prefetch={false}
+                href={{
+                  pathname: "/ezc",
+                  query: {
+                    product: "ezconvert",
+                  },
+                }}
+              >
                 <a className="button button_basic_long red">LICENSE EDITIONS</a>
               </Link>
             </div>
@@ -371,7 +390,7 @@ export default function ProductsShowcase() {
               </div>
               <div className="card_product_learn_more">
                 <Link href="/subtitle">
-                  <a className="button button_basic_long_outline">LEARN MORE</a>
+                  <a className="button button_basic_long">LEARN MORE</a>
                 </Link>
               </div>
             </label>
@@ -392,7 +411,7 @@ export default function ProductsShowcase() {
               </div>
               <div className="card_product_learn_more">
                 <Link href="/convert">
-                  <a className="button button_basic_long_outline">LEARN MORE</a>
+                  <a className="button button_basic_long">LEARN MORE</a>
                 </Link>
               </div>
             </label>
@@ -413,7 +432,7 @@ export default function ProductsShowcase() {
               </div>
               <div className="card_product_learn_more">
                 <Link href="/plugins">
-                  <a className="button button_basic_long_outline">LEARN MORE</a>
+                  <a className="button button_basic_long">LEARN MORE</a>
                 </Link>
               </div>
             </label>

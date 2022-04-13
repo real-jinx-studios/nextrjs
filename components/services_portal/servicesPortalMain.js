@@ -1,21 +1,18 @@
 import styles from "./services_portal.module.css";
 import { useEffect, useState } from "react";
-import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import BillingInformation from "./billingInformation";
 import CustomPayment from "./customPayment/customPayment";
-import RerenderCount from "../utils/rerenderCount";
 import WalletManagement from "./walletManagement/walletManagement";
 import InstallationRegistration from "./installationAndRegistration/installationRegistration";
 import EditAccount from "./editAccount";
+import { useLogout } from "../../lib/hookers";
 
 export default function ServicesPortalMain(props) {
   const router = useRouter();
   const [selectedItem, setSelectedItem] = useState(
     router.query.account || "billing"
   );
-  const [userInfo, setUserInfo] = useState();
-  const { session, status } = props;
 
   useEffect(() => {
     if (router.query.account) {
@@ -30,14 +27,8 @@ export default function ServicesPortalMain(props) {
   };
 
   const handleLogout = () => {
-    /* signOut({
-                 redirect: false,
-                 callbackUrl: "/user?destination=services_portal",
-               }).then((data) => router.replace(data.url));*/
-    signOut({
-      redirect: false,
-    });
-    router.replace("/user?destination=services-portal");
+    useLogout();
+    router.replace("/user/login?destination=services-portal");
   };
 
   return (

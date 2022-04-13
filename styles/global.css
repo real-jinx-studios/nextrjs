@@ -729,7 +729,7 @@ position: absolute;
   font-size: 0.89rem;
 }
 
-.button_basic_long.blue{
+.button_basic_long.blue::after{
   background: rgb(17, 75, 103);
   background: linear-gradient(
           45deg,
@@ -737,9 +737,8 @@ position: absolute;
           rgba(32, 104, 140, 1) 66%,
           rgba(47, 133, 176, 1) 100%
   );
-  border-color: #00ffff;
 }
-.button_basic_long.red{
+.button_basic_long.red::after{
   background: rgb(106, 19, 9);
   background: linear-gradient(
           45deg,
@@ -749,7 +748,7 @@ position: absolute;
   );
   border-color: #ce4f4a;
 }
-.button_basic_long.orange{
+.button_basic_long.orange::after{
   background: rgb(154, 68, 27);
   background: linear-gradient(
           45deg,
@@ -757,7 +756,6 @@ position: absolute;
           rgba(183, 66, 6, 1) 66%,
           rgba(210, 77, 4, 1) 100%
   );
-  border-color: #fbb03b;
 }
 .button_basic_long_outline.dark{
   min-width: 13rem;

@@ -1,11 +1,9 @@
 import { Fragment, useEffect, useState } from "react";
 import Head from "next/head";
-import { useSession } from "next-auth/react";
 import FreeTrialHero from "../../components/free_trials/freeTrialHero";
 import FreeTrialProducts from "../../components/free_trials/freeTrialProducts";
 import FreeTrialStdFrom from "../../components/free_trials/freeTrialStdForm";
-export default function FreeTrial() {
-  const { data, status } = useSession();
+export default function FreeTrial({ status, data }) {
   useEffect(() => {
     console.log(status, "session shit");
   }, [status]);

@@ -1,30 +1,19 @@
-import React, { useContext, useEffect, useState } from "react";
-import Router, { useRouter } from "next/router";
-import { Store } from "../utils/store";
-import Layout from "../components/layout";
-import MyImage from "../components/utils/myImage";
-import NumberFormat from "react-number-format";
-import { useSession } from "next-auth/react";
-import CustomInput from "../components/inputs/customInput";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+
 import LoaderDots from "../components/utils/loaderDots";
 import Cart from "../components/checkout/cart";
 import BillingInfoStep from "../components/checkout/steps/billing_info_step";
 import EmptyCart from "../components/checkout/emptyCart";
 //bullshit
-export default function Checkout() {
-  const [login, setLogin] = useState({ login: false });
+export default function Checkout({ status = "unauthenticated" }) {
   const [currentStep, setCurrentStep] = useState("billing");
-  const [hasShippings, setHasShippings] = useState(false);
   const [isCartEditable, setIsCartEditable] = useState(false);
   const [isVatValid, setIsVatValid] = useState(false);
 
-  const { data: session, status } = useSession();
   const router = useRouter();
 
-  const { app_state } = useContext(Store);
-  const {
-    checkout: { checkoutItems },
-  } = app_state;
+  const checkoutItems = [];
 
   useEffect(() => {
     if (status === "unauthenticated") {

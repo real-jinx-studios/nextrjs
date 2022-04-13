@@ -1,5 +1,4 @@
 import { connectToDB, dbQuery } from "../../../lib/db";
-import { hashPassword } from "../../../lib/auth";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
@@ -7,7 +6,7 @@ export default async function handler(req, res) {
     const username = req.body.username;
     const password = req.body.password;
     const verifiedTime = Date.now();
-    const hashedPassword = await hashPassword(password);
+    const hashedPassword = password;
 
     const client = await connectToDB();
     const queryObject = {

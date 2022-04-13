@@ -6,8 +6,6 @@ const name = "Jinx Studios";
 export const siteTitle = "EZTitles Dev Studio";
 
 export default function Layout({ children, home, title, description }) {
-  const { app_state, dispatch } = useContext(Store);
-  const { logged_in, checkout } = app_state;
   return (
     <Fragment>
       <Head>
@@ -26,7 +24,6 @@ export default function Layout({ children, home, title, description }) {
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
         <meta name="og:title" content={siteTitle || "EZTitles"} />
-        <meta name="logged_in" content={logged_in.toString() || "false"} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main>{children}</main>

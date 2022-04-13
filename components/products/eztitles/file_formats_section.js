@@ -33,7 +33,7 @@ export default function FileFormatsSection() {
           grid-template-columns: repeat(4, 1fr);
         }
       `}</style>
-      <div className="product-container product-container-bg">
+      <div className="product-container">
         <header>
           <h2 className="section-heading">
             Export your work in any file format used in the industry today

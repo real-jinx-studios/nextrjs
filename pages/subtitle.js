@@ -1,13 +1,10 @@
 import styles from "../styles/subtitle.module.css";
 import MyImage from "../components/utils/myImage";
 import Link from "next/link";
-import ReactTooltip from "react-tooltip";
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { useInView } from "react-intersection-observer";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Layout from "../components/layout";
-import { Store } from "../utils/store";
 import ProductFeaturesSection from "../components/products/eztitles/product_features_section";
 import FileFormatsSection from "../components/products/eztitles/file_formats_section";
 import TimelineSection from "../components/products/eztitles/timeline_section";
@@ -18,6 +15,7 @@ import ShotChangeSection from "../components/products/eztitles/ShotChangeSection
 import LicenseEditionsSection from "../components/products/eztitles/LicenseEditionsSection";
 import PricingSection from "../components/products/eztitles/PricingSection";
 import FileFormatsSectionVariant from "../components/products/eztitles/file_formats_section_variant";
+import FuckedUpMenu from "../components/products/eztitles/FuckedUpMenu";
 
 export default function Subtitle() {
   /*intersection observer shit*/
@@ -93,7 +91,6 @@ export default function Subtitle() {
   };
 
   /*state management is below*/
-  const [currentNav, setCurrentNav] = useState("none");
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isRentDropdownOpen, setIsRentDropdownOpen] = useState(false);
@@ -117,12 +114,6 @@ export default function Subtitle() {
   const toggleInstallmentDropdown = () =>
     setIsInstallmentDropdownOpen(!isInstallmentDropdownOpen);
 
-  /*dynamic element generation*/
-  const toggleDropdown = (e) => {
-    setIsDropdownOpen(!isDropdownOpen);
-    setLicense(e);
-  };
-
   const license_editions = [
     {
       name: "Essentials",
@@ -139,10 +130,10 @@ export default function Subtitle() {
   ];
   const [license, setLicense] = useState("Essentials");
 
-  const { state, dispatch } = useContext(Store);
+  /*const { state, dispatch } = useContext(Store);*/
   const handleCheckout = async (e) => {
     e.preventDefault();
-    dispatch({
+    /* dispatch({
       type: "ADD_TO_CHECKOUT_NORMAL",
       payload: {
         name: "EZTitles",
@@ -153,13 +144,13 @@ export default function Subtitle() {
         quantity: 1,
         price: 80,
       },
-    });
+    });*/
     /*router.push("/user");*/
     router.push("/user?destination=checkout");
   };
   const handleCheckoutPlugins = async (e) => {
     e.preventDefault();
-    dispatch({
+    /*   dispatch({
       type: "ADD_TO_CHECKOUT_NORMAL",
       payload: {
         name: "EZT Plugins",
@@ -170,7 +161,7 @@ export default function Subtitle() {
         quantity: 1,
         price: 500,
       },
-    });
+    });*/
     router.push("/checkout");
   };
 
@@ -738,6 +729,7 @@ export default function Subtitle() {
         <div className="bounds" ref={section3}>
           <TimelineSection />
           <ProductFeaturesSection />
+          <FuckedUpMenu />
           <FileFormatsSection />
           <FileFormatsSectionVariant />
         </div>

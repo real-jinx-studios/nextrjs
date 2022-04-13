@@ -6,7 +6,8 @@ import Loader from "../../utils/loader";
 import { useRouter } from "next/router";
 import React, { useRef, useState, Fragment } from "react";
 import CustomInputDropdown from "../../inputs/customInputDropdown";
-import { signIn } from "next-auth/react";
+import { promiseResolver } from "../../../lib/promiseResolver";
+import { useVerifyUserCredentials } from "../../../lib/hookers";
 
 export default function LoginFormTrial({ handleFormStateChange }) {
   //make useRef const to attach to html input fields for user
@@ -29,19 +30,17 @@ export default function LoginFormTrial({ handleFormStateChange }) {
 
     if (!isRegister) {
       //configuration object set redirect to false so we dont get next auth error. so we dont change page on wrong user input.
-      const signin = await signIn("credentials", {
-        redirect: false,
-        username: username,
-        password: password,
-      });
+      const [data, error] = await promiseResolver(
+        useVerifyUserCredentials(username, password)
+      );
 
-      if (!signin.error) {
+      if (!error && data.status === 200) {
         //set some auth state
 
         handleFormStateChange("authenticated");
         setIsLoading(false);
       } else {
-        console.log(signin);
+        console.log(error);
         setIsLoginError(true);
         setIsLoading(false);
       }

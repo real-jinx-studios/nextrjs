@@ -3,23 +3,17 @@ import NavbarWide from "../components/navigation/navbarWide";
 import Footer from "../components/navigation/footer";
 
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import Link from "next/link";
 
 import { useRouter } from "next/router";
 import NavbarSmall from "../components/navigation/navbarSmall";
 import Head from "next/head";
-import { StoreProvider } from "../utils/store";
-import StateWindow from "../components/utils/stateWindow";
-import { SessionProvider } from "next-auth/react";
-import { ToastContainer } from "react-toastify";
 
-export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
-}) {
-  const [showModal, setModal] = useState(false);
+import { ToastContainer } from "react-toastify";
+import { useVerifyUserCredentials } from "../lib/hookers";
+import { UserContext } from "../lib/context";
+
+export default function App({ Component, pageProps: { ...pageProps } }) {
   const router = useRouter();
-  /*console.log(Component.name, pageProps, router.pathname, "shit");*/
   /*get screen size for correct navbar*/
   const useMediaQuery = (width) => {
     const [targetReached, setTargetReached] = useState(false);
@@ -31,7 +25,11 @@ export default function App({
         setTargetReached(false);
       }
     }, []);
-    console.log(pageProps, "assign");
+    console.log(
+      pageProps,
+      "assign",
+      "put user token auth shit here to send to other pages so we don't re-auth"
+    );
 
     useEffect(() => {
       const media = window.matchMedia(`(max-width: ${width}px)`);
@@ -47,32 +45,30 @@ export default function App({
 
     return targetReached;
   };
+  /*  const userData = useVerifyUserCredentials();*/
 
   const isBreakpoint = useMediaQuery(1111);
   return (
-    <StoreProvider>
-      <SessionProvider session={session}>
-        <Head>
-          <meta
-            name="google-site-verification"
-            content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg"
-          />
-          <link href="/assets/fontawesome/css/all.css" rel="stylesheet" />
-        </Head>
-
-        <header>{isBreakpoint ? <NavbarSmall /> : <NavbarWide />}</header>
-        <Component
-          setModal={setModal}
-          location={router.pathname}
-          key={router.pathname}
-          {...pageProps}
+    <UserContext.Provider /*value={userData}*/>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg"
         />
+        <link href="/assets/fontawesome/css/all.css" rel="stylesheet" />
+      </Head>
 
-        <Footer />
-        <ToastContainer />
-        {/*<StateWindow />*/}
-        {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
-      </SessionProvider>
-    </StoreProvider>
+      <header>{isBreakpoint ? <NavbarSmall /> : <NavbarWide />}</header>
+      <Component
+        location={router.pathname}
+        key={router.pathname}
+        {...pageProps}
+      />
+
+      <Footer />
+      <ToastContainer />
+      {/*<StateWindow />*/}
+      {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
+    </UserContext.Provider>
   );
 }

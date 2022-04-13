@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
-import Script from "next/script";
+
 export default function Sitemap() {
   return (
     <Fragment>
