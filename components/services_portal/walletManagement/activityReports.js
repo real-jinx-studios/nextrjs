@@ -4,7 +4,7 @@ import CustomInput from "../../inputs/customInput";
 import { useMemo } from "react";
 import { saveAs } from "file-saver";
 import { useTable, usePagination, useSortBy } from "react-table";
-import ExportSheets from "../../utils/exportSheets";
+
 export default function ActivityReports(props) {
   const wallets = props.wallets;
   const data = useMemo(

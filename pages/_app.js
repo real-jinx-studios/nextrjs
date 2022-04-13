@@ -17,7 +17,6 @@ export default function App({ Component, pageProps: { ...pageProps } }) {
   /*get screen size for correct navbar*/
   const useMediaQuery = (width) => {
     const [targetReached, setTargetReached] = useState(false);
-    /*const [showModal, setShowModal] = useState(false);*/
     const updateTarget = useCallback((e) => {
       if (e.matches) {
         setTargetReached(true);
@@ -49,26 +48,30 @@ export default function App({ Component, pageProps: { ...pageProps } }) {
 
   const isBreakpoint = useMediaQuery(1111);
   return (
-    <UserContext.Provider /*value={userData}*/>
+    <>
       <Head>
         <meta
           name="google-site-verification"
           content="ysxVMioFPf2YJs3BRu3gefvPmShIoplEtnSp3FJJbAg"
         />
         <link href="/assets/fontawesome/css/all.css" rel="stylesheet" />
+        <title>EZTitles: professional subtitling and conversion tools.</title>
       </Head>
 
-      <header>{isBreakpoint ? <NavbarSmall /> : <NavbarWide />}</header>
+      <header>
+        {isBreakpoint ? (
+          <NavbarSmall />
+        ) : (
+          <NavbarWide status={"authenticated"} />
+        )}
+      </header>
       <Component
         location={router.pathname}
         key={router.pathname}
         {...pageProps}
       />
-
       <Footer />
       <ToastContainer />
-      {/*<StateWindow />*/}
-      {/*{(router.pathname!='/subtitle' && router.pathname!='/checkout2' && router.pathname!='/checkout3' )&&<SubtitleButton/>}*/}
-    </UserContext.Provider>
+    </>
   );
 }

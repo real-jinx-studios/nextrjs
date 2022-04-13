@@ -16,7 +16,6 @@
     "@lottiefiles/react-lottie-player": "^3.4.4",
     "@next/bundle-analyzer": "^12.1.0",
     "@webcomponents/shadydom": "^1.9.0",
-    "adm-zip": "^0.5.9",
     "axios": "^0.24.0",
     "classnames": "^2.3.1",
     "cross-env": "^7.0.3",
@@ -35,7 +34,6 @@
     "react-dom": "^18.0.0",
     "react-google-recaptcha": "^2.1.0",
     "react-gsap": "^3.2.1",
-    "react-intersection-observer": "^8.32.2",
     "react-number-format": "^4.8.0",
     "react-scrollmagic": "^2.3.0",
     "react-table": "^7.7.0",
@@ -44,9 +42,7 @@
     "sharp": "^0.29.3",
     "soap": "^0.42.0",
     "swr": "^1.0.1",
-    "tls": "^0.0.1",
     "webpack-bundle-analyzer": "^4.5.0",
-    "xlsx": "^0.18.2",
     "xlsx-populate": "^1.21.0"
   }
 }

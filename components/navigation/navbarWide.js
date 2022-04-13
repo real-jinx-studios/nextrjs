@@ -3,11 +3,10 @@ import styles from "./navbar2.module.css";
 import Link from "next/link";
 import cn from "classnames";
 import { useRouter } from "next/router";
-import Cookies from "js-cookie";
 import BurburMenu from "./burbur_menu";
 import ProductsModal from "../modal/ProductsModal";
 import { useLogout } from "../../lib/hookers";
-export default function NavbarWide() {
+export default function NavbarWide({ status = "" }) {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
@@ -159,52 +158,14 @@ export default function NavbarWide() {
               [styles.nav_li_scroll]: scroll === true,
             })}
           >
-            {"authenticated" ? (
+            {status === "authenticated" ? (
               <Link href="/services-portal?account=billing">
                 <a className={styles.nav_link_a + " " + styles.portal_link}>
                   Services Portal
-                  <div className={styles.portal_dropdown_container}>
-                    <div className={styles.portal_dropdown_label}>
-                      <span>Services Portal</span>
-                    </div>
-                    <ul className={styles.portal_dropdown_ul}>
-                      <Link href="/services-portal?account=billing">
-                        <li className={styles.portal_dropdown_ul_li}>
-                          <a>Billing Info</a>
-                        </li>
-                      </Link>
-                      <Link href="/services-portal?account=payment">
-                        <li className={styles.portal_dropdown_ul_li}>
-                          <a>Custom Payment</a>
-                        </li>
-                      </Link>
-                      <Link href="/services-portal?account=wallet">
-                        <li className={styles.portal_dropdown_ul_li}>
-                          <a>Wallet Management</a>
-                        </li>
-                      </Link>
-                      <Link href="/services-portal?account=install">
-                        <li className={styles.portal_dropdown_ul_li}>
-                          <a>Installation & Registration</a>
-                        </li>
-                      </Link>
-                      <Link href="/services-portal?account=edit">
-                        <li className={styles.portal_dropdown_ul_li}>
-                          <a>Edit Account</a>
-                        </li>
-                      </Link>
-                      <li
-                        className={styles.portal_dropdown_ul_li}
-                        onClick={handleLogout}
-                      >
-                        LOGOUT
-                      </li>
-                    </ul>
-                  </div>
                 </a>
               </Link>
             ) : (
-              <Link href="/user/login?destination=/services-portal?account=billing">
+              <Link href="/user/login?destination=services-portal?account=billing">
                 <a className={styles.nav_link_a}>Login</a>
               </Link>
             )}
